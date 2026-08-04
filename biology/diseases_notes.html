@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Diseases Notes – RISE NOTES</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Hind:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--cream:#FAEED9;--gold:#E1A837;--olive:#8D7A02;--dark:#38370D;--light:#FDF7EE;--shadow:rgba(56,55,13,0.15);}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:var(--cream);font-family:'Hind',sans-serif;color:var(--dark);}
+
+  /* HEADER */
+  header{background:var(--dark);padding:36px 40px 28px;text-align:center;position:relative;overflow:hidden;}
+  header::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(-45deg,transparent,transparent 18px,rgba(225,168,55,.06) 18px,rgba(225,168,55,.06) 19px);}
+  .badge{display:inline-block;background:var(--gold);color:var(--dark);font-weight:700;font-size:11px;letter-spacing:3px;text-transform:uppercase;padding:5px 18px;border-radius:2px;margin-bottom:14px;position:relative;}
+  header h1{font-family:'Playfair Display',serif;font-size:clamp(34px,6vw,64px);color:var(--cream);line-height:1.1;position:relative;}
+  header h1 span{color:var(--gold);}
+  header .sub{margin-top:10px;color:rgba(250,238,217,.6);font-size:14px;letter-spacing:1px;position:relative;}
+  .gold-line{width:80px;height:3px;background:var(--gold);margin:18px auto 0;border-radius:2px;}
+
+  /* LAYOUT */
+  .container{max-width:980px;margin:0 auto;padding:40px 24px 60px;}
+
+  /* SECTION TITLE */
+  .sec-title{display:flex;align-items:center;gap:14px;margin:48px 0 20px;}
+  .sec-title .num{width:44px;height:44px;background:var(--dark);color:var(--gold);border-radius:50%;display:grid;place-items:center;font-family:'Playfair Display',serif;font-size:18px;font-weight:900;flex-shrink:0;}
+  .sec-title h2{font-family:'Playfair Display',serif;font-size:clamp(20px,4vw,28px);color:var(--dark);}
+  .sec-title h2 span{color:var(--olive);}
+  .sec-title .line{flex:1;height:2px;background:linear-gradient(to right,var(--gold),transparent);border-radius:1px;}
+
+  /* CARDS */
+  .card{background:var(--light);border-left:5px solid var(--gold);border-radius:0 12px 12px 0;padding:20px 24px;margin-bottom:18px;box-shadow:3px 4px 14px var(--shadow);}
+  .card.dark-card{background:var(--dark);color:var(--cream);border-left-color:var(--gold);}
+  .card.dark-card h3{color:var(--gold);}
+  .card.dark-card p,.card.dark-card li{color:rgba(250,238,217,.92);}
+  .card.olive-card{background:var(--olive);color:var(--cream);border-left-color:var(--gold);}
+  .card.olive-card h3{color:var(--gold);}
+  .card.olive-card p,.card.olive-card li{color:rgba(250,238,217,.92);}
+  .card h3{font-family:'Playfair Display',serif;font-size:17px;color:var(--olive);margin-bottom:10px;display:flex;align-items:center;gap:8px;}
+  .card p,.card li{font-size:14.5px;line-height:1.75;color:#3a380e;margin-bottom:5px;}
+  .card ul{padding-left:20px;}
+  .card li::marker{color:var(--gold);}
+
+  /* GRID */
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:18px;}
+  .grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-bottom:18px;}
+  @media(max-width:640px){.grid2,.grid3{grid-template-columns:1fr;}}
+
+  /* DISEASE CARD */
+  .dis-card{border-radius:12px;padding:18px 20px;margin-bottom:14px;}
+  .dis-card.v{background:var(--dark);color:var(--cream);}
+  .dis-card.b{background:var(--olive);color:var(--cream);}
+  .dis-card.f{background:linear-gradient(135deg,#f5e3b8,#e8c96a);color:var(--dark);}
+  .dis-card.p{background:var(--dark);color:var(--cream);}
+  .dis-card h4{font-family:'Playfair Display',serif;font-size:16px;margin-bottom:8px;display:flex;align-items:center;gap:8px;}
+  .dis-card.v h4{color:var(--gold);}
+  .dis-card.b h4{color:var(--gold);}
+  .dis-card.f h4{color:var(--dark);}
+  .dis-card.p h4{color:var(--gold);}
+  .dis-card p,.dis-card li{font-size:13.5px;line-height:1.65;opacity:.92;margin-bottom:4px;}
+  .dis-card ul{padding-left:16px;}
+  .dis-card li::marker{color:var(--gold);}
+
+  /* TABLE */
+  .tbl{width:100%;border-collapse:collapse;margin:14px 0 20px;font-size:13.5px;border-radius:10px;overflow:hidden;box-shadow:2px 4px 12px var(--shadow);}
+  .tbl thead tr{background:var(--dark);color:var(--gold);font-family:'Playfair Display',serif;}
+  .tbl th,.tbl td{padding:11px 15px;text-align:left;border-bottom:1px solid #e8d9b8;}
+  .tbl tbody tr:nth-child(even){background:#f5e8cc;}
+  .tbl tbody tr:nth-child(odd){background:var(--light);}
+  .tbl tbody tr:hover{background:#f0d89a;}
+
+  /* HIGHLIGHT */
+  .highlight{background:linear-gradient(135deg,#f5e3b8,#fdf7ee);border:2px solid var(--gold);border-radius:12px;padding:16px 20px;margin:16px 0;font-size:14px;line-height:1.7;}
+  .highlight strong{color:var(--olive);}
+
+  /* PILL */
+  .pill{display:inline-block;background:var(--gold);color:var(--dark);font-weight:700;font-size:11px;padding:3px 11px;border-radius:20px;margin:2px 2px 2px 0;}
+  .pill.d{background:var(--dark);color:var(--gold);}
+  .pill.o{background:var(--olive);color:var(--cream);}
+
+  /* TRICK BOX */
+  .trick{background:var(--gold);color:var(--dark);border-radius:14px;padding:20px 24px;margin:18px 0;}
+  .trick h4{font-family:'Playfair Display',serif;font-size:18px;margin-bottom:12px;}
+  .trick-letters{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0;}
+  .trick-letters .lt{background:var(--dark);color:var(--gold);border-radius:8px;padding:8px 12px;text-align:center;min-width:54px;font-weight:700;font-size:13px;}
+  .trick-letters .lt small{display:block;color:var(--cream);font-size:9.5px;font-weight:400;margin-top:3px;line-height:1.2;}
+
+  /* FACT */
+  .fact{background:var(--gold);color:var(--dark);border-radius:10px;padding:13px 18px;font-weight:600;font-size:14px;margin:10px 0;display:flex;gap:10px;align-items:flex-start;}
+  .fact .em{font-size:20px;flex-shrink:0;}
+
+  /* INTRO */
+  .intro-block{background:var(--dark);border-radius:14px;padding:26px 30px;color:var(--cream);margin-bottom:30px;position:relative;overflow:hidden;}
+  .intro-block h2{font-family:'Playfair Display',serif;color:var(--gold);font-size:22px;margin-bottom:12px;}
+  .intro-block p{font-size:14.5px;line-height:1.8;opacity:.9;}
+
+  /* SEPARATOR */
+  .sep{height:2px;background:linear-gradient(to right,transparent,var(--gold),transparent);margin:36px 0;border-radius:2px;}
+
+  /* SECTION HEADER BANNER */
+  .section-banner{background:var(--dark);color:var(--gold);font-family:'Playfair Display',serif;font-size:20px;font-weight:700;text-align:center;padding:14px 20px;border-radius:10px;margin:32px 0 18px;letter-spacing:1px;}
+
+  /* MINI INFO BOX */
+  .mini-box{background:var(--olive);color:var(--cream);border-radius:10px;padding:14px 18px;font-size:13.5px;line-height:1.7;margin:12px 0;}
+  .mini-box strong{color:var(--gold);}
+
+  /* FOOTER */
+  footer{background:var(--dark);text-align:center;padding:22px;color:rgba(250,238,217,.5);font-size:12.5px;letter-spacing:1px;}
+  footer span{color:var(--gold);}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="badge">RISE NOTES · Biology Notes</div>
+  <h1><span>Diseases</span></h1>
+  <p class="sub">Complete Notes · Simple Language</p>
+  <div class="gold-line"></div>
+</header>
+
+<div class="container">
+
+<!-- ══ INTRO ══ -->
+<div class="intro-block">
+  <h2>🦠 Disease क्या होती है?</h2>
+  <p>Disease = शरीर के किसी organ या हिस्से की internal structure और function में कोई <strong style="color:var(--gold)">disturbance</strong>, जो specific signs और symptoms के साथ आती है। सीधे शब्दों में — जब body की normal working बिगड़ जाए, उसे disease कहते हैं।</p>
+</div>
+
+<!-- ══ SECTION 1: CLASSIFICATION ══ -->
+<div class="sec-title"><div class="num">1</div><h2>Disease का <span>Classification</span></h2><div class="line"></div></div>
+
+<div class="grid2">
+  <div class="card dark-card">
+    <h3>⏱️ Acute Diseases</h3>
+    <ul>
+      <li>Short period में आती हैं</li>
+      <li>जल्दी बड़ा असर करती हैं</li>
+      <li><strong>E.g.:</strong> Fever, Cold, Cough</li>
+    </ul>
+  </div>
+  <div class="card olive-card">
+    <h3>📅 Chronic Diseases</h3>
+    <ul>
+      <li>लंबे समय तक चलती हैं</li>
+      <li>धीरे-धीरे असर करती हैं</li>
+      <li><strong>E.g.:</strong> Diabetes, TB, Elephantiasis</li>
+    </ul>
+  </div>
+  <div class="card dark-card">
+    <h3>🔁 Communicable Diseases</h3>
+    <ul>
+      <li>एक person से दूसरे को फैलती हैं</li>
+      <li>Pathogens से होती हैं</li>
+      <li><strong>E.g.:</strong> Malaria, AIDS, TB, COVID</li>
+    </ul>
+  </div>
+  <div class="card olive-card">
+    <h3>🚫 Non-Communicable Diseases</h3>
+    <ul>
+      <li>एक से दूसरे को नहीं फैलतीं</li>
+      <li>Nutrients की कमी, allergy, या abnormal cells से</li>
+      <li><strong>E.g.:</strong> Diabetes, Arthritis, Asthma, Cancer</li>
+    </ul>
+  </div>
+</div>
+
+<div class="fact"><span class="em">🐾</span><span><strong>Zoonotic Diseases</strong> = Animals से Humans में transfer होने वाली बीमारियाँ। E.g. — Rabies, Bird Flu</span></div>
+
+<!-- ══ SECTION 2: PATHOGENS ══ -->
+<div class="sec-title"><div class="num">2</div><h2><span>Pathogens</span> — Disease के कारण</h2><div class="line"></div></div>
+
+<div class="grid2">
+  <div class="card">
+    <h3>🦠 Virus</h3>
+    <ul>
+      <li>छोटे infectious agents — <strong>20–400 nm</strong></li>
+      <li>Genetic material: <strong>DNA या RNA</strong> + Protein coat (Capsid)</li>
+      <li>Host cell के बिना replicate नहीं कर सकते</li>
+      <li><strong>Semi-living</strong> माने जाते हैं</li>
+      <li>Antibiotics <strong>काम नहीं</strong> करते</li>
+      <li>COVID-19 = SARS-CoV-2 (RNA Virus) — Lungs को host बनाता है</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h3>🔬 Bacteria</h3>
+    <ul>
+      <li>Single-celled, <strong>Prokaryotic</strong> organisms</li>
+      <li>Kingdom: <strong>Monera</strong></li>
+      <li>Size: <strong>1000 nm</strong></li>
+      <li>Genetic material = <strong>Genophore</strong> (Bacterial DNA)</li>
+      <li>खुद divide कर सकते हैं</li>
+      <li>Antibiotics <strong>काम करते हैं</strong></li>
+    </ul>
+  </div>
+  <div class="card">
+    <h3>🧫 Protozoa</h3>
+    <ul>
+      <li>One-celled organisms</li>
+      <li>Contaminated water या insect bites से फैलते हैं</li>
+      <li>Diseases: Amoebiasis, Giardiasis, Malaria</li>
+      <li>Paramecium — cilia (बाल जैसी structures) से चलता है</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h3>🍄 Fungus</h3>
+    <ul>
+      <li>Eukaryotic organisms</li>
+      <li>Diseases: Athlete's foot, Yeast infections</li>
+      <li><strong>Penicillin</strong> — पहला antibiotic, 1928 में Alexander Fleming ने Penicillium fungus से discover किया</li>
+    </ul>
+  </div>
+</div>
+
+<!-- Virus vs Bacteria Table -->
+<div class="card">
+  <h3>⚔️ Virus VS Bacteria — तुलना</h3>
+  <table class="tbl" style="margin-top:10px;">
+    <thead><tr><th>Feature</th><th>Virus</th><th>Bacteria</th></tr></thead>
+    <tbody>
+      <tr><td>Nature</td><td>Non-living (semi-living)</td><td>Living, unicellular</td></tr>
+      <tr><td>Size</td><td>20–400 nm (छोटा)</td><td>1000 nm (बड़ा)</td></tr>
+      <tr><td>Genetic Material</td><td>DNA/RNA + Capsid</td><td>Genophore (DNA)</td></tr>
+      <tr><td>Replication</td><td>Host cell चाहिए</td><td>खुद divide करता है</td></tr>
+      <tr><td>Nature</td><td>Parasitic</td><td>Parasitic/Saprophytic</td></tr>
+      <tr><td>Antibiotics</td><td>काम नहीं करते ❌</td><td>काम करते हैं ✅</td></tr>
+      <tr><td>Nucleus</td><td>नहीं</td><td>नहीं (Nucleoid होता है)</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- Types of Bacteria -->
+<div class="highlight">
+  <strong>🔬 Types of Bacteria (Shape के आधार पर):</strong><br>
+  <span class="pill">Cocci — गोल (Sphere-shaped)</span>
+  <span class="pill">Bacilli — छड़ी जैसे (Rod-shaped)</span>
+  <span class="pill">Spirochetes — Spiral-shaped (घुमावदार)</span>
+</div>
+
+<!-- ══ SECTION 3: VIRAL DISEASES ══ -->
+<div class="section-banner">🦠 DISEASES CAUSED BY VIRUS</div>
+
+<div class="grid2">
+  <div class="dis-card v">
+    <h4>🫀 Hepatitis (A, B & C)</h4>
+    <ul>
+      <li><strong>Affects:</strong> Liver</li>
+      <li><strong>Symptom:</strong> Jaundice</li>
+      <li><strong>Hep A:</strong> Food से फैलता है</li>
+      <li><strong>Hep B:</strong> Sexually / bodily fluids से</li>
+      <li><strong>Hep C:</strong> Infected blood से</li>
+      <li>India का पहला Hep-A vaccine: <strong>Havisure</strong></li>
+    </ul>
+  </div>
+  <div class="dis-card v">
+    <h4>💉 AIDS</h4>
+    <ul>
+      <li>Full form: Acquired Immunodeficiency Syndrome</li>
+      <li><strong>Caused by:</strong> HIV (Retrovirus)</li>
+      <li><strong>Transmission:</strong> Sexual contact, Blood transfusion, Mother to baby</li>
+      <li><strong>Test:</strong> ELISA Test</li>
+      <li><strong>AIDS Day:</strong> December 1st</li>
+    </ul>
+  </div>
+  <div class="dis-card v">
+    <h4>🦟 Dengue</h4>
+    <ul>
+      <li><strong>Caused by:</strong> Flavivirus</li>
+      <li><strong>Vector:</strong> Female Aedes aegypti mosquito</li>
+    </ul>
+  </div>
+  <div class="dis-card v">
+    <h4>🐕 Rabies</h4>
+    <ul>
+      <li><strong>Caused by:</strong> Lyssavirus</li>
+      <li><strong>Affects:</strong> CNS (Central Nervous System)</li>
+      <li>Hydrophobia (पानी से डर) — main symptom</li>
+    </ul>
+  </div>
+  <div class="dis-card v">
+    <h4>💊 Polio</h4>
+    <ul>
+      <li><strong>Caused by:</strong> Poliomyelitis Virus</li>
+      <li><strong>Affects:</strong> Nervous system (Spinal cord)</li>
+      <li>India से 2014 में <strong>eradicated</strong></li>
+      <li>First vaccine: <strong>Dr. Jonas Salk</strong></li>
+      <li>Pulse Polio Programme: 2 Oct 1995</li>
+    </ul>
+  </div>
+  <div class="dis-card v">
+    <h4>🐔 Chicken Pox</h4>
+    <ul>
+      <li><strong>Caused by:</strong> Varicella Zoster Virus</li>
+    </ul>
+    <h4 style="margin-top:12px">👶 Small Pox</h4>
+    <ul>
+      <li><strong>Caused by:</strong> Variola Virus</li>
+      <li>Vaccine: <strong>Edward Jenner</strong> (1796)</li>
+      <li>India से 1977 में eradicated</li>
+    </ul>
+  </div>
+  <div class="dis-card v">
+    <h4>😷 Mumps</h4>
+    <ul>
+      <li>Parotid salivary glands (cheek & jaw) को affect करता है</li>
+    </ul>
+    <h4 style="margin-top:12px">🤧 Flu</h4>
+    <ul>
+      <li><strong>Caused by:</strong> Influenza Virus (Type A, B, C)</li>
+      <li>"Evil influence of stars" भी कहते हैं</li>
+    </ul>
+  </div>
+  <div class="dis-card v">
+    <h4>🤒 Common Cold</h4>
+    <ul>
+      <li><strong>Caused by:</strong> Rhinovirus</li>
+      <li><strong>Symptoms:</strong> Runny nose, fever, sore throat, headache</li>
+    </ul>
+    <h4 style="margin-top:12px">💗 Cervical Cancer</h4>
+    <ul>
+      <li><strong>Caused by:</strong> HPV (Human Papillomavirus)</li>
+      <li>Affects Cervix region in women</li>
+      <li>Test: <strong>PAP Smear Test</strong></li>
+    </ul>
+  </div>
+</div>
+
+<div class="mini-box">
+  <strong>🐷 Swine Flu:</strong> Zoonotic disease, Virus = <strong>H1N1</strong><br>
+  <strong>🐦 Bird Flu:</strong> Zoonotic disease, Virus = <strong>H5N1</strong><br>
+  <strong>🧠 Encephalitis:</strong> Brain की inflammation, caused by <strong>Herpes Simplex Virus</strong>
+</div>
+
+<!-- TRICK: Dr MISHRA BEST MP -->
+<div class="trick">
+  <h4>🧠 TRICK: Dr. MISHRA BEST MP — Viral Diseases याद करें!</h4>
+  <div class="trick-letters">
+    <div class="lt">Dr<small>Dengue</small></div>
+    <div class="lt">M<small>Measles</small></div>
+    <div class="lt">I<small>Influenza</small></div>
+    <div class="lt">S<small>Swine Flu</small></div>
+    <div class="lt">H<small>Hepatitis</small></div>
+    <div class="lt">R<small>Rabies</small></div>
+    <div class="lt">A<small>AIDS</small></div>
+    <div class="lt">B<small>Bird Flu</small></div>
+    <div class="lt">E<small>Encephalitis</small></div>
+    <div class="lt">S<small>Small Pox</small></div>
+    <div class="lt">T<small>—</small></div>
+    <div class="lt">M<small>Mumps</small></div>
+    <div class="lt">P<small>Polio</small></div>
+  </div>
+</div>
+
+<!-- ══ SECTION 4: BACTERIAL DISEASES ══ -->
+<div class="section-banner">🔬 DISEASES CAUSED BY BACTERIA</div>
+
+<div class="grid2">
+  <div class="dis-card b">
+    <h4>💀 Plague</h4>
+    <ul>
+      <li><strong>Caused by:</strong> Yersinia pestis</li>
+      <li>Death = <strong>"Black Death"</strong></li>
+      <li>1897–1906: 12 Million deaths in India</li>
+      <li><strong>Bubonic Plague:</strong> Flea/Rat bite → lymph nodes swell (buboes)</li>
+    </ul>
+  </div>
+  <div class="dis-card b">
+    <h4>🤕 Leprosy</h4>
+    <ul>
+      <li><strong>Caused by:</strong> Mycobacterium leprae</li>
+      <li>Skin को affect करता है</li>
+      <li>Also known as: <strong>Hansen's Disease</strong></li>
+    </ul>
+  </div>
+  <div class="dis-card b">
+    <h4>💧 Cholera</h4>
+    <ul>
+      <li><strong>Caused by:</strong> Vibrio cholerae</li>
+      <li>Water-borne disease</li>
+      <li>Death = <strong>"Blue Death"</strong></li>
+    </ul>
+  </div>
+  <div class="dis-card b">
+    <h4>🫁 TB (Tuberculosis)</h4>
+    <ul>
+      <li><strong>Caused by:</strong> Mycobacterium tuberculosis</li>
+      <li><strong>Vaccine:</strong> BCG (Bacillus Calmette-Guerin)</li>
+      <li>Lung cells में cavities (empty spaces) बनती हैं</li>
+    </ul>
+  </div>
+  <div class="dis-card b">
+    <h4>🫁 Pneumonia</h4>
+    <ul>
+      <li><strong>Caused by:</strong> Streptococcus pneumoniae</li>
+      <li>Lungs के alveoli में fluid या pus भर जाता है</li>
+    </ul>
+  </div>
+  <div class="dis-card b">
+    <h4>🌬️ Bronchitis</h4>
+    <ul>
+      <li><strong>Caused by:</strong> Bordetella pertussis</li>
+      <li>Bronchial tubes की lining में inflammation</li>
+    </ul>
+  </div>
+  <div class="dis-card b">
+    <h4>🤒 Typhoid</h4>
+    <ul>
+      <li><strong>Caused by:</strong> Salmonella typhi</li>
+      <li>Small intestine (gut) को affect करता है</li>
+      <li>Contaminated food/water से फैलता है</li>
+      <li><strong>Test:</strong> Widal Test</li>
+    </ul>
+  </div>
+  <div class="dis-card b">
+    <h4>💩 Diarrhoea & Diphtheria</h4>
+    <ul>
+      <li><strong>Diarrhoea:</strong> E. coli (Escherichia coli)</li>
+      <li><strong>Diphtheria:</strong> Corynebacterium diphtheriae</li>
+      <li>Diphtheria — Respiratory system (nose & throat) affect करता है</li>
+    </ul>
+  </div>
+  <div class="dis-card b">
+    <h4>🔒 Tetanus</h4>
+    <ul>
+      <li><strong>Caused by:</strong> Clostridium tetani</li>
+      <li>Soil, dust, rusty iron से wounds के through</li>
+      <li>Nervous system को affect करता है</li>
+      <li>Symptom: Severe muscle stiffness — <strong>"Lockjaw"</strong></li>
+      <li>Prevention: तुरंत Tetanus injection लगवाएं</li>
+    </ul>
+  </div>
+  <div class="dis-card b">
+    <h4>🍽️ Peptic Ulcer & Acne</h4>
+    <ul>
+      <li><strong>Peptic Ulcer:</strong> Helicobacter pylori → stomach lining burn</li>
+      <li><strong>Acne:</strong> Staphylococcus bacteria</li>
+    </ul>
+  </div>
+</div>
+
+<!-- TRICK: TWo GoL PoTATo ChiPS Di -->
+<div class="trick">
+  <h4>🧠 TRICK: TWo GoL PoTATo ChiPS Di — Bacterial Diseases याद करें!</h4>
+  <div class="trick-letters">
+    <div class="lt">T<small>Tetanus</small></div>
+    <div class="lt">Wo<small>Whooping Cough</small></div>
+    <div class="lt">Go<small>Gonorrhoea</small></div>
+    <div class="lt">L<small>Leprosy</small></div>
+    <div class="lt">Po<small>Pneumonia</small></div>
+    <div class="lt">T<small>Typhoid</small></div>
+    <div class="lt">A<small>Anthrax</small></div>
+    <div class="lt">To<small>Tuberculosis</small></div>
+    <div class="lt">S<small>Cholera</small></div>
+    <div class="lt">Chi<small>Plague</small></div>
+    <div class="lt">S<small>Syphillis</small></div>
+    <div class="lt">Di<small>Diphtheria</small></div>
+  </div>
+</div>
+
+<!-- ══ SECTION 5: FUNGAL DISEASES ══ -->
+<div class="section-banner">🍄 DISEASES CAUSED BY FUNGUS</div>
+
+<div class="grid3">
+  <div class="dis-card f">
+    <h4>🦲 Baldness</h4>
+    <p>Tinea capitis (scalp ringworm) — patchy hair loss</p>
+  </div>
+  <div class="dis-card f">
+    <h4>👣 Athlete's Foot</h4>
+    <p>Ringworm का type — Feet को affect करता है</p>
+  </div>
+  <div class="dis-card f">
+    <h4>🔴 Ring Worm</h4>
+    <p>Red, itchy rash — common skin infection</p>
+  </div>
+  <div class="dis-card f">
+    <h4>💨 Asthma</h4>
+    <p>Fungal exposure trigger करता है। Genetic factors भी बड़ा role play करते हैं।</p>
+  </div>
+  <div class="dis-card f">
+    <h4>🪲 Scabies</h4>
+    <p><strong>Caused by:</strong> Sarcoptes scabiei (mite) — skin में बुरता है, itchy rash</p>
+  </div>
+</div>
+
+<!-- TRICK: BARSA -->
+<div class="trick">
+  <h4>🧠 TRICK: BARSA — Fungal Diseases याद करें!</h4>
+  <div class="trick-letters">
+    <div class="lt">B<small>Baldness</small></div>
+    <div class="lt">A<small>Athlete's Foot</small></div>
+    <div class="lt">R<small>Ring Worm</small></div>
+    <div class="lt">S<small>Scabies</small></div>
+    <div class="lt">A<small>Asthma</small></div>
+  </div>
+</div>
+
+<!-- ══ SECTION 6: PROTOZOAN DISEASES ══ -->
+<div class="section-banner">🧫 DISEASES CAUSED BY PROTOZOA</div>
+
+<div class="grid3">
+  <div class="dis-card p">
+    <h4>🦟 Malaria</h4>
+    <ul>
+      <li><strong>Protozoa:</strong> Plasmodium</li>
+      <li><strong>Carrier:</strong> Female Anopheles mosquito</li>
+      <li><strong>Treatment:</strong> Quinine (Cinchona tree की छाल से)</li>
+      <li><strong>Malaria Day:</strong> 25 April</li>
+    </ul>
+  </div>
+  <div class="dis-card p">
+    <h4>😴 Sleeping Sickness</h4>
+    <ul>
+      <li><strong>Protozoa:</strong> Trypanosoma</li>
+      <li><strong>Carrier:</strong> Tse Tse Fly</li>
+    </ul>
+  </div>
+  <div class="dis-card p">
+    <h4>🟤 Kala Azar</h4>
+    <ul>
+      <li><strong>Protozoa:</strong> Leishmania</li>
+      <li><strong>Carrier:</strong> Sandfly</li>
+      <li>Spleen बड़ी हो जाती है, skin dark होती है</li>
+      <li><strong>Test:</strong> ELISA Test</li>
+    </ul>
+  </div>
+</div>
+
+<!-- TRICK: MaSk -->
+<div class="trick">
+  <h4>🧠 TRICK: MaSK — Protozoan Diseases याद करें!</h4>
+  <div class="trick-letters">
+    <div class="lt">Ma<small>Malaria</small></div>
+    <div class="lt">S<small>Sleeping Sickness</small></div>
+    <div class="lt">K<small>Kala Azar</small></div>
+  </div>
+</div>
+
+<!-- ══ SECTION 7: WATER & AIR BORNE ══ -->
+<div class="sec-title"><div class="num">7</div><h2>Water-borne vs <span>Air-borne</span> Diseases</h2><div class="line"></div></div>
+
+<div class="grid2">
+  <div class="card dark-card">
+    <h3>💧 Water-borne Diseases</h3>
+    <ul>
+      <li>Hepatitis A</li>
+      <li>Diarrhoea</li>
+      <li>Typhoid</li>
+      <li>Cholera</li>
+      <li>Giardiasis</li>
+    </ul>
+  </div>
+  <div class="card olive-card">
+    <h3>💨 Air-borne Diseases</h3>
+    <ul>
+      <li>Influenza (Flu)</li>
+      <li>Tuberculosis (TB)</li>
+      <li>Measles</li>
+      <li>Pertussis (Whooping Cough)</li>
+      <li>Chickenpox</li>
+      <li>COVID-19</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ══ SECTION 8: GENETIC DISORDERS ══ -->
+<div class="sec-title"><div class="num">8</div><h2>Genetic <span>Disorders</span></h2><div class="line"></div></div>
+
+<div class="card">
+  <h3>🧬 1. Chromosomal Disorders</h3>
+  <p style="margin-bottom:12px">Chromosomes में problem से होने वाले disorders।</p>
+  <div class="grid2">
+    <div style="background:#f5e8cc;border-radius:8px;padding:14px">
+      <strong style="color:var(--olive)">Autosomal Disorders</strong>
+      <p style="font-size:13.5px;margin-top:6px">Non-sex chromosome पर gene mutate हो जाए।</p>
+      <ul style="padding-left:16px;margin-top:6px;">
+        <li style="font-size:13px"><strong>Down's Syndrome:</strong> Extra copy of chromosome 21 (Trisomy 21) → 47 chromosomes</li>
+        <li style="font-size:13px"><strong>Albinism:</strong> Body melanin नहीं बना पाती</li>
+      </ul>
+    </div>
+    <div style="background:#f5e8cc;border-radius:8px;padding:14px">
+      <strong style="color:var(--olive)">Sex-linked Disorders</strong>
+      <p style="font-size:13.5px;margin-top:6px">Sex chromosomes पर disorder।</p>
+      <ul style="padding-left:16px;margin-top:6px;">
+        <li style="font-size:13px"><strong>Turner's Syndrome:</strong> Female में एक X chromosome missing (XO)</li>
+        <li style="font-size:13px"><strong>Klinefelter's Syndrome:</strong> Male में extra X chromosome (XXY)</li>
+        <li style="font-size:13px"><strong>Haemophilia:</strong> Blood clot नहीं होता — X chromosome पर recessive gene</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <h3>🧬 2. Mendelian Disorders</h3>
+  <p>Single gene के alteration/mutation से होने वाले disorders।</p>
+  <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:8px;">
+    <span class="pill d">Sickle Cell Anaemia</span>
+    <span class="pill d">Thalassemia</span>
+    <span class="pill d">Colour Blindness</span>
+    <span class="pill d">Haemophilia</span>
+  </div>
+</div>
+
+<div class="fact"><span class="em">🔬</span><span><strong>Chromosomes</strong> primarily DNA + Proteins से बने होते हैं। Human में total 46 chromosomes (23 pairs) होते हैं — 22 autosomal pairs + 1 sex pair (XX = Female, XY = Male)।</span></div>
+
+<!-- ══ SECTION 9: GLAUCOMA + PANDEMIC ══ -->
+<div class="sec-title"><div class="num">9</div><h2>Glaucoma & <span>Pandemic / Epidemic / Endemic</span></h2><div class="line"></div></div>
+
+<div class="grid2">
+  <div class="card dark-card">
+    <h3>👁️ Glaucoma</h3>
+    <ul>
+      <li>Eye का optic nerve damage → vision loss या blindness</li>
+      <li>Cause: Eye fluid pressure बढ़ जाना</li>
+      <li><strong>Trachoma:</strong> Eye pressure बढ़ता है लेकिन bacteria Chlamydia trachomatis से</li>
+      <li><strong>Tonometer:</strong> Eye pressure (Intraocular Pressure) measure करने की device</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h3>🌍 Pandemic vs Epidemic vs Endemic</h3>
+    <table class="tbl" style="margin-top:8px;font-size:12.5px;">
+      <thead><tr><th>Pandemic</th><th>Epidemic</th><th>Endemic</th></tr></thead>
+      <tbody>
+        <tr><td>World-wide फैले</td><td>Large population में अचानक बढ़े</td><td>Constantly present, low spread</td></tr>
+        <tr><td>E.g. COVID-19</td><td>E.g. Dengue outbreak</td><td>E.g. Malaria in some regions</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ══ SECTION 10: OTHER DISEASES ══ -->
+<div class="sec-title"><div class="num">10</div><h2>कुछ <span>Other Important Diseases</span></h2><div class="line"></div></div>
+
+<table class="tbl">
+  <thead><tr><th>Disease</th><th>Cause</th><th>याद करने की बात</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Wilson Disease</strong></td><td>Copper accumulation</td><td>Brain, Liver, Cornea affected</td></tr>
+    <tr><td><strong>Mad Hatter Disease</strong></td><td>Mercury Poisoning</td><td>Minamata Disease भी Mercury से</td></tr>
+    <tr><td><strong>Siderosis</strong></td><td>Iron deposition</td><td>Body tissue में iron जमा</td></tr>
+    <tr><td><strong>Itai Itai</strong></td><td>Cadmium deposition</td><td>Japan में famous case</td></tr>
+    <tr><td><strong>Blue Baby Syndrome</strong></td><td>Nitrate deposition</td><td>Baby का blood oxygen carry नहीं कर पाता</td></tr>
+    <tr><td><strong>Patau Syndrome</strong></td><td>Trisomy 13</td><td>Chromosome 13 का extra copy</td></tr>
+    <tr><td><strong>Charcot-Marie-Tooth</strong></td><td>PMP22 gene duplication</td><td>Chromosome 17 पर</td></tr>
+  </tbody>
+</table>
+
+<!-- ══ SECTION 11: STDs ══ -->
+<div class="sec-title"><div class="num">11</div><h2>Sexually Transmitted <span>Diseases (STDs)</span></h2><div class="line"></div></div>
+
+<div class="grid3">
+  <div class="card dark-card">
+    <h3>🔴 AIDS / HIV</h3>
+    <p>HIV (Retrovirus) — Viral STD</p>
+    <p>Test: ELISA Test</p>
+  </div>
+  <div class="card dark-card">
+    <h3>🔴 Warts</h3>
+    <p>HPV (Human Papillomavirus) से small hard bumps on skin</p>
+  </div>
+  <div class="card dark-card">
+    <h3>🔴 Gonorrhea</h3>
+    <p>Bacterial infection — reproductive tract की mucous membranes</p>
+  </div>
+  <div class="card dark-card">
+    <h3>🔴 Syphilis</h3>
+    <p><strong>Caused by:</strong> Treponema pallidum — skin, mucous membranes, फिर multiple organs</p>
+  </div>
+</div>
+
+<!-- ══ SECTION 12: PLANT DISEASES ══ -->
+<div class="sec-title"><div class="num">12</div><h2>Diseases <span>in Plants</span></h2><div class="line"></div></div>
+
+<table class="tbl">
+  <thead><tr><th>Disease</th><th>Causal Organism</th><th>Affects</th></tr></thead>
+  <tbody>
+    <tr><td>Citrus Canker</td><td>Bacteria</td><td>Citrus fruits</td></tr>
+    <tr><td>Rust of Wheat</td><td>Fungus</td><td>Wheat</td></tr>
+    <tr><td>Yellow Vein Mosaic</td><td>Virus</td><td>Okra (Bhindi)</td></tr>
+    <tr><td>Aster Yellow</td><td>Bacteria</td><td>—</td></tr>
+    <tr><td>Crown Gall</td><td>Bacteria</td><td>—</td></tr>
+    <tr><td>Ergot</td><td>Fungus</td><td>Bajra plants</td></tr>
+    <tr><td>Snow Mold</td><td>Fungus</td><td>—</td></tr>
+    <tr><td>Black Knot</td><td>Fungus</td><td>—</td></tr>
+    <tr><td>Blight</td><td>Fungus/Bacteria</td><td>—</td></tr>
+    <tr><td>Tobacco Mosaic Virus</td><td>Fungus</td><td>Tobacco plant</td></tr>
+  </tbody>
+</table>
+
+<!-- ══ SECTION 13: GRAM STAINING ══ -->
+<div class="sec-title"><div class="num">13</div><h2>Gram Staining <span>of Bacteria</span></h2><div class="line"></div></div>
+
+<div class="card">
+  <h3>🔬 Gram Staining क्या है?</h3>
+  <p>Bacteria को identify करने की major technique। Cell wall की structure के आधार पर दो groups में बाँटती है।</p>
+</div>
+
+<div class="grid2">
+  <div class="dis-card v">
+    <h4>🟣 Gram-Positive (Purple/Blue)</h4>
+    <ul>
+      <li>Thick Peptidoglycan layer</li>
+      <li>Color: <strong>Purple</strong> retain करते हैं</li>
+      <li>Antibiotics को ज्यादा resist नहीं करते</li>
+      <li><strong>E.g.:</strong> Staphylococcus, Streptococcus, Bacillus</li>
+    </ul>
+  </div>
+  <div class="dis-card b">
+    <h4>🩷 Gram-Negative (Pink/Red)</h4>
+    <ul>
+      <li>Thin Peptidoglycan layer + Outer lipid membrane</li>
+      <li>Color: <strong>Pink</strong> हो जाते हैं</li>
+      <li>Antibiotics को ज्यादा <strong>resist</strong> करते हैं</li>
+      <li><strong>E.g.:</strong> E. coli, Salmonella, Vibrio cholerae</li>
+    </ul>
+  </div>
+</div>
+
+<div class="fact"><span class="em">🔬</span><span><strong>Father of Microbiology:</strong> Antonie van Leeuwenhoek &nbsp;|&nbsp; <strong>Penicillin:</strong> पहला antibiotic — 1928, Alexander Fleming द्वारा Penicillium fungus से discover किया गया</span></div>
+
+<!-- ══ QUICK REVISION ══ -->
+<div class="sep"></div>
+
+<div class="sec-title"><div class="num">✓</div><h2>Quick <span>Revision — Exam Ready!</span></h2><div class="line"></div></div>
+
+<table class="tbl">
+  <thead><tr><th>Disease</th><th>Caused By</th><th>Key Fact</th></tr></thead>
+  <tbody>
+    <tr><td>Malaria</td><td>Plasmodium (Protozoa)</td><td>Female Anopheles mosquito | Quinine treatment</td></tr>
+    <tr><td>Dengue</td><td>Flavivirus</td><td>Female Aedes aegypti mosquito</td></tr>
+    <tr><td>AIDS</td><td>HIV (Retrovirus)</td><td>ELISA Test | AIDS Day = Dec 1</td></tr>
+    <tr><td>Rabies</td><td>Lyssavirus</td><td>CNS affect | Hydrophobia</td></tr>
+    <tr><td>Polio</td><td>Polio Virus</td><td>India-free 2014 | Jonas Salk vaccine</td></tr>
+    <tr><td>TB</td><td>Mycobacterium tuberculosis</td><td>BCG vaccine | Lung cavities</td></tr>
+    <tr><td>Cholera</td><td>Vibrio cholerae</td><td>Water-borne | Blue Death</td></tr>
+    <tr><td>Typhoid</td><td>Salmonella typhi</td><td>Widal Test | Small intestine</td></tr>
+    <tr><td>Tetanus</td><td>Clostridium tetani</td><td>Lockjaw | Rusty iron se</td></tr>
+    <tr><td>Plague</td><td>Yersinia pestis</td><td>Black Death | Flea carrier</td></tr>
+    <tr><td>Leprosy</td><td>Mycobacterium leprae</td><td>Hansen's Disease | Skin</td></tr>
+    <tr><td>Hepatitis A</td><td>Virus</td><td>Food-borne | Liver | Jaundice</td></tr>
+    <tr><td>Hepatitis B</td><td>Virus</td><td>Sexually transmitted | Havisure vaccine</td></tr>
+    <tr><td>Small Pox</td><td>Variola Virus</td><td>Vaccine: Edward Jenner 1796 | Eradicated 1977</td></tr>
+    <tr><td>Kala Azar</td><td>Leishmania (Protozoa)</td><td>Sandfly | Splenomegaly | ELISA Test</td></tr>
+    <tr><td>Sleeping Sickness</td><td>Trypanosoma (Protozoa)</td><td>Tse Tse Fly</td></tr>
+    <tr><td>Down's Syndrome</td><td>Trisomy 21</td><td>47 chromosomes</td></tr>
+    <tr><td>Turner's Syndrome</td><td>Chromosomal</td><td>Female XO</td></tr>
+    <tr><td>Klinefelter's</td><td>Chromosomal</td><td>Male XXY</td></tr>
+    <tr><td>Cervical Cancer</td><td>HPV</td><td>PAP Smear Test | Women</td></tr>
+    <tr><td>Swine Flu</td><td>H1N1</td><td>Zoonotic</td></tr>
+    <tr><td>Bird Flu</td><td>H5N1</td><td>Zoonotic</td></tr>
+    <tr><td>Peptic Ulcer</td><td>Helicobacter pylori</td><td>Stomach lining damage</td></tr>
+    <tr><td>Wilson Disease</td><td>Copper accumulation</td><td>Brain, Liver, Cornea</td></tr>
+  </tbody>
+</table>
+
+</div><!-- /container -->
+
+<footer>
+  RISE NOTES · Diseases &nbsp;|&nbsp; <span>RISE NOTES</span> &nbsp;|&nbsp; Complete Notes
+</footer>
+
+</body>
+</html>

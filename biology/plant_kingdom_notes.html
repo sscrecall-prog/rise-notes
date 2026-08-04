@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Plant Kingdom Notes – RISE NOTES</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Hind:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--cream:#FAEED9;--gold:#E1A837;--olive:#8D7A02;--dark:#38370D;--light:#FDF7EE;--shadow:rgba(56,55,13,0.15);}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--cream);font-family:'Hind',sans-serif;color:var(--dark);}
+
+  /* HEADER */
+  header{background:var(--dark);padding:36px 40px 30px;text-align:center;position:relative;overflow:hidden;}
+  header::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(-45deg,transparent,transparent 18px,rgba(225,168,55,.06) 18px,rgba(225,168,55,.06) 19px);}
+  .badge{display:inline-block;background:var(--gold);color:var(--dark);font-weight:700;font-size:11px;letter-spacing:3px;text-transform:uppercase;padding:5px 18px;border-radius:2px;margin-bottom:14px;position:relative;}
+  header h1{font-family:'Playfair Display',serif;font-size:clamp(32px,6vw,62px);color:var(--cream);line-height:1.1;position:relative;}
+  header h1 span{color:var(--gold);}
+  header .sub{margin-top:10px;color:rgba(250,238,217,.6);font-size:14px;letter-spacing:1px;position:relative;}
+  .gold-line{width:80px;height:3px;background:var(--gold);margin:18px auto 0;border-radius:2px;}
+
+  .container{max-width:980px;margin:0 auto;padding:40px 24px 60px;}
+
+  /* TOPICS AT A GLANCE */
+  .toc{background:var(--dark);border-radius:16px;padding:28px 32px;margin-bottom:36px;}
+  .toc h2{font-family:'Playfair Display',serif;color:var(--gold);font-size:22px;margin-bottom:18px;border-bottom:2px solid var(--olive);padding-bottom:10px;}
+  .toc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px;}
+  .toc-item{background:rgba(225,168,55,.12);border:1px solid rgba(225,168,55,.3);border-radius:8px;padding:10px 14px;display:flex;align-items:center;gap:10px;cursor:pointer;transition:background .2s,transform .15s;}
+  .toc-item:hover{background:rgba(225,168,55,.35);transform:translateY(-2px);}
+  .toc-item:active{transform:translateY(0);}
+  html{scroll-behavior:smooth;}
+  .toc-item .toc-num{background:var(--gold);color:var(--dark);width:26px;height:26px;border-radius:50%;display:grid;place-items:center;font-weight:700;font-size:12px;flex-shrink:0;}
+  .toc-item span{color:var(--cream);font-size:13px;font-weight:500;}
+
+  /* SECTION TITLE */
+  .sec-title{display:flex;align-items:center;gap:14px;margin:48px 0 20px;scroll-margin-top:20px;}
+  .section-banner{scroll-margin-top:20px;}
+  .sec-title .num{width:44px;height:44px;background:var(--dark);color:var(--gold);border-radius:50%;display:grid;place-items:center;font-family:'Playfair Display',serif;font-size:18px;font-weight:900;flex-shrink:0;}
+  .sec-title h2{font-family:'Playfair Display',serif;font-size:clamp(20px,4vw,27px);color:var(--dark);}
+  .sec-title h2 span{color:var(--olive);}
+  .sec-title .line{flex:1;height:2px;background:linear-gradient(to right,var(--gold),transparent);}
+
+  /* CARDS */
+  .card{background:var(--light);border-left:5px solid var(--gold);border-radius:0 12px 12px 0;padding:20px 24px;margin-bottom:18px;box-shadow:3px 4px 14px var(--shadow);}
+  .card.dk{background:var(--dark);border-left-color:var(--gold);}
+  .card.dk h3{color:var(--gold);}
+  .card.dk p,.card.dk li{color:rgba(250,238,217,.92);}
+  .card.ol{background:var(--olive);border-left-color:var(--gold);}
+  .card.ol h3{color:var(--gold);}
+  .card.ol p,.card.ol li{color:rgba(250,238,217,.92);}
+  .card.gd{background:var(--gold);border-left-color:var(--dark);}
+  .card.gd h3{color:var(--dark);}
+  .card.gd p,.card.gd li{color:var(--dark);}
+  .card h3{font-family:'Playfair Display',serif;font-size:17px;color:var(--olive);margin-bottom:10px;display:flex;align-items:center;gap:8px;}
+  .card p,.card li{font-size:14.5px;line-height:1.75;color:#3a380e;margin-bottom:5px;}
+  .card ul{padding-left:20px;}
+  .card li::marker{color:var(--gold);}
+
+  /* GRIDS */
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:18px;}
+  .grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-bottom:18px;}
+  @media(max-width:640px){.grid2,.grid3{grid-template-columns:1fr;}}
+
+  /* TABLE */
+  .tbl{width:100%;border-collapse:collapse;margin:14px 0 20px;font-size:13.5px;border-radius:10px;overflow:hidden;box-shadow:2px 4px 12px var(--shadow);}
+  .tbl thead tr{background:var(--dark);color:var(--gold);font-family:'Playfair Display',serif;}
+  .tbl th,.tbl td{padding:11px 15px;text-align:left;border-bottom:1px solid #e8d9b8;}
+  .tbl tbody tr:nth-child(even){background:#f5e8cc;}
+  .tbl tbody tr:nth-child(odd){background:var(--light);}
+  .tbl tbody tr:hover{background:#f0d89a;}
+
+  /* HIGHLIGHT */
+  .highlight{background:linear-gradient(135deg,#f5e3b8,#fdf7ee);border:2px solid var(--gold);border-radius:12px;padding:16px 20px;margin:16px 0;font-size:14px;line-height:1.7;}
+  .highlight strong{color:var(--olive);}
+
+  /* FACT */
+  .fact{background:var(--gold);color:var(--dark);border-radius:10px;padding:13px 18px;font-weight:600;font-size:14px;margin:10px 0;display:flex;gap:10px;align-items:flex-start;}
+  .fact .em{font-size:20px;flex-shrink:0;}
+
+  /* SECTION BANNER */
+  .section-banner{background:var(--dark);color:var(--gold);font-family:'Playfair Display',serif;font-size:20px;font-weight:700;text-align:center;padding:14px 20px;border-radius:10px;margin:32px 0 18px;letter-spacing:1px;}
+
+  /* MINI BOX */
+  .mini-box{background:var(--olive);color:var(--cream);border-radius:10px;padding:14px 18px;font-size:13.5px;line-height:1.7;margin:12px 0;}
+  .mini-box strong{color:var(--gold);}
+
+  /* PILL */
+  .pill{display:inline-block;background:var(--gold);color:var(--dark);font-weight:700;font-size:11px;padding:3px 11px;border-radius:20px;margin:2px 2px 2px 0;}
+  .pill.d{background:var(--dark);color:var(--gold);}
+  .pill.o{background:var(--olive);color:var(--cream);}
+
+  /* TRICK BOX */
+  .trick{background:var(--gold);color:var(--dark);border-radius:14px;padding:20px 24px;margin:18px 0;}
+  .trick h4{font-family:'Playfair Display',serif;font-size:18px;margin-bottom:12px;}
+  .trick-letters{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0;}
+  .trick-letters .lt{background:var(--dark);color:var(--gold);border-radius:8px;padding:8px 12px;text-align:center;min-width:54px;font-weight:700;font-size:13px;}
+  .trick-letters .lt small{display:block;color:var(--cream);font-size:9.5px;font-weight:400;margin-top:3px;line-height:1.2;}
+
+  /* TAXONOMY HIERARCHY */
+  .hierarchy{display:flex;flex-direction:column;gap:0;margin:16px 0;}
+  .h-row{display:flex;align-items:center;gap:0;}
+  .h-label{background:var(--dark);color:var(--gold);font-weight:700;font-size:12px;padding:8px 14px;min-width:120px;border-bottom:1px solid rgba(225,168,55,.2);}
+  .h-val{background:var(--light);color:var(--dark);font-size:13px;padding:8px 16px;flex:1;border-bottom:1px solid #e8d9b8;font-weight:500;}
+  .h-trick{background:var(--gold);color:var(--dark);font-size:12px;font-weight:700;padding:8px 14px;min-width:100px;border-bottom:1px solid rgba(56,55,13,.1);}
+
+  /* KINGDOM CARD */
+  .k-card{border-radius:14px;padding:20px 22px;margin-bottom:16px;}
+
+  /* EVOLUTION TIMELINE */
+  .evo{display:flex;align-items:center;flex-wrap:wrap;gap:0;margin:16px 0;justify-content:center;}
+  .evo-step{background:var(--dark);color:var(--cream);border-radius:10px;padding:12px 16px;text-align:center;min-width:120px;font-size:12px;}
+  .evo-step strong{display:block;font-size:14px;color:var(--gold);margin-bottom:4px;}
+  .evo-arrow{font-size:22px;color:var(--gold);padding:0 6px;font-weight:900;}
+
+  /* MONOCOT DICOT COMPARISON */
+  .mono-dico{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:14px 0;}
+  .mono-box{border-radius:12px;padding:18px 20px;}
+
+  .sep{height:2px;background:linear-gradient(to right,transparent,var(--gold),transparent);margin:36px 0;}
+
+  footer{background:var(--dark);text-align:center;padding:22px;color:rgba(250,238,217,.5);font-size:12.5px;letter-spacing:1px;}
+  footer span{color:var(--gold);}
+</style>
+<script>
+  function scrollTo(id){
+    const el=document.getElementById(id);
+    if(el){el.scrollIntoView({behavior:'smooth',block:'start'});}
+  }
+</script>
+</head>
+<body>
+
+<header>
+  <div class="badge">RISE NOTES · Biology Notes</div>
+  <h1>Plant <span>Kingdom</span></h1>
+  <p class="sub">Complete Notes · Taxonomy से Angiosperms तक</p>
+  <div class="gold-line"></div>
+</header>
+
+<div class="container">
+
+<!-- ══ TOPICS AT A GLANCE ══ -->
+<div class="toc">
+  <h2>📋 Topics at a Glance</h2>
+  <div class="toc-grid">
+    <div class="toc-item" onclick="scrollTo('sec-taxonomy')"><div class="toc-num">1</div><span>Taxonomy — Science of Classification</span></div>
+    <div class="toc-item" onclick="scrollTo('sec-classification')"><div class="toc-num">2</div><span>Two Kingdom Classification (Linnaeus)</span></div>
+    <div class="toc-item" onclick="scrollTo('sec-classification')"><div class="toc-num">3</div><span>Three Kingdom (Haeckel)</span></div>
+    <div class="toc-item" onclick="scrollTo('sec-classification')"><div class="toc-num">4</div><span>Three Domain (Carl Woese)</span></div>
+    <div class="toc-item" onclick="scrollTo('sec-classification')"><div class="toc-num">5</div><span>Five Kingdom (Whittaker)</span></div>
+    <div class="toc-item" onclick="scrollTo('sec-monera')"><div class="toc-num">6</div><span>Kingdom Monera</span></div>
+    <div class="toc-item" onclick="scrollTo('sec-protista')"><div class="toc-num">7</div><span>Kingdom Protista</span></div>
+    <div class="toc-item" onclick="scrollTo('sec-fungi')"><div class="toc-num">8</div><span>Kingdom Fungi</span></div>
+    <div class="toc-item" onclick="scrollTo('sec-plantae')"><div class="toc-num">9</div><span>Kingdom Plantae — Overview</span></div>
+    <div class="toc-item" onclick="scrollTo('sec-thallophyta')"><div class="toc-num">10</div><span>Thallophyta (Algae)</span></div>
+    <div class="toc-item" onclick="scrollTo('sec-bryophyta')"><div class="toc-num">11</div><span>Bryophyta (Bryophytes)</span></div>
+    <div class="toc-item" onclick="scrollTo('sec-pteridophyta')"><div class="toc-num">12</div><span>Pteridophyta (Ferns)</span></div>
+    <div class="toc-item" onclick="scrollTo('sec-gymnosperms')"><div class="toc-num">13</div><span>Gymnosperms</span></div>
+    <div class="toc-item" onclick="scrollTo('sec-angiosperms')"><div class="toc-num">14</div><span>Angiosperms + Monocots/Dicots</span></div>
+    <div class="toc-item" onclick="scrollTo('sec-evolution')"><div class="toc-num">15</div><span>Plant Evolution Order</span></div>
+    <div class="toc-item" onclick="scrollTo('sec-revision')"><div class="toc-num">16</div><span>Quick Revision Table</span></div>
+  </div>
+</div>
+
+<!-- ══ SECTION 1: TAXONOMY ══ -->
+<div id="sec-taxonomy" class="sec-title"><div class="num">1</div><h2><span>Taxonomy</span> — Classification की Science</h2><div class="line"></div></div>
+
+<div class="card dk">
+  <h3>🔬 Taxonomy क्या है?</h3>
+  <p>यह Science है जो organisms को <strong style="color:var(--gold)">describe, name और classify</strong> करती है — सभी plants, animals और microorganisms को। सीधे शब्दों में: जीवों को systematically group करने की science।</p>
+</div>
+
+<!-- LINNAEUS HIERARCHY -->
+<div class="card">
+  <h3>📊 Linnaeus का Classification Hierarchy — 7 Levels</h3>
+  <p style="margin-bottom:12px;font-size:13px;color:var(--olive)"><strong>Trick: Some Girls Of Our Class Play Kabaddi</strong> (Species से Kingdom तक याद करें — नीचे से ऊपर)</p>
+  <div class="hierarchy">
+    <div class="h-row"><div class="h-label">Kingdom</div><div class="h-val">Animalia</div><div class="h-trick">Kabaddi</div></div>
+    <div class="h-row"><div class="h-label">Phylum</div><div class="h-val">Chordata</div><div class="h-trick">Play</div></div>
+    <div class="h-row"><div class="h-label">Class</div><div class="h-val">Mammalia</div><div class="h-trick">Class</div></div>
+    <div class="h-row"><div class="h-label">Order</div><div class="h-val">Primates</div><div class="h-trick">Our</div></div>
+    <div class="h-row"><div class="h-label">Family</div><div class="h-val">Hominidae</div><div class="h-trick">Of</div></div>
+    <div class="h-row"><div class="h-label">Genus</div><div class="h-val">Homo</div><div class="h-trick">Girls</div></div>
+    <div class="h-row"><div class="h-label">Species</div><div class="h-val">sapiens</div><div class="h-trick">Some</div></div>
+  </div>
+</div>
+
+<!-- ══ SECTION 2-5: CLASSIFICATIONS ══ -->
+<div id="sec-classification" class="sec-title"><div class="num">2</div><h2>Classification <span>Systems</span></h2><div class="line"></div></div>
+
+<table class="tbl">
+  <thead><tr><th>Classification</th><th>Proposed By</th><th>Year</th><th>Kingdoms/Domains</th><th>Special Fact</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Two Kingdom</strong></td><td>Carolus Linnaeus</td><td>1758</td><td>Plantae, Animalia</td><td>Father of Taxonomy | Book: Systema Naturae (1735)</td></tr>
+    <tr><td><strong>Three Kingdom</strong></td><td>Ernst Haeckel</td><td>1866</td><td>Plantae, Animalia, Protista</td><td>"Ecology" शब्द coin किया | Protista = Amoeba, Paramecium, Euglena</td></tr>
+    <tr><td><strong>Three Domain</strong></td><td>Carl Woese</td><td>1990</td><td>Bacteria, Archaea, Eukarya</td><td>Prokaryotes और Eukaryotes दोनों cover</td></tr>
+    <tr><td><strong>Five Kingdom</strong></td><td>R.H. Whittaker</td><td>1969</td><td>Monera, Protista, Fungi, Plantae, Animalia</td><td>Basis: Cell structure, Nutrition, Organization, Reproduction</td></tr>
+    <tr><td><strong>Six Kingdom</strong></td><td>Cavalier-Smith</td><td>—</td><td>6 kingdoms</td><td>Living organisms को 6 groups में divide किया</td></tr>
+  </tbody>
+</table>
+
+<div class="card gd">
+  <h3>👨‍🔬 Carolus Linnaeus — Triple Title</h3>
+  <ul>
+    <li><strong>Father of Taxonomy</strong> — organisms को systematically classify किया</li>
+    <li><strong>Father of Modern Botany</strong></li>
+    <li><strong>Father of Binomial Nomenclature</strong> — 2-part naming system (Genus + Species)</li>
+  </ul>
+</div>
+
+<!-- THREE DOMAIN -->
+<div class="card">
+  <h3>🌐 Three Domain Classification (Carl Woese 1990)</h3>
+  <div class="grid3" style="margin-top:12px;">
+    <div style="background:var(--dark);border-radius:10px;padding:14px;">
+      <strong style="color:var(--gold)">1. Bacteria</strong>
+      <p style="color:var(--cream);font-size:13px;margin-top:6px">True Prokaryotes — most common</p>
+    </div>
+    <div style="background:var(--olive);border-radius:10px;padding:14px;">
+      <strong style="color:var(--gold)">2. Archaea</strong>
+      <p style="color:var(--cream);font-size:13px;margin-top:6px">Extreme environments में — hot springs, salt lakes. No peptidoglycan</p>
+    </div>
+    <div style="background:var(--gold);border-radius:10px;padding:14px;">
+      <strong style="color:var(--dark)">3. Eukarya</strong>
+      <p style="color:var(--dark);font-size:13px;margin-top:6px">All Eukaryotes: Protists, Fungi, Plants, Animals</p>
+    </div>
+  </div>
+</div>
+
+<!-- ══ SECTION 3: KINGDOM MONERA ══ -->
+<div id="sec-monera" class="sec-title"><div class="num">3</div><h2>Kingdom <span>Monera</span></h2><div class="line"></div></div>
+
+<div class="card dk">
+  <h3>🦠 Kingdom Monera — Key Features</h3>
+  <ul>
+    <li><strong>Cell type:</strong> Prokaryotic (no true nucleus, no membrane-bound organelles)</li>
+    <li><strong>Organization:</strong> Unicellular, microscopic</li>
+    <li><strong>Cell Wall:</strong> Peptidoglycan (bacteria में)</li>
+    <li><strong>Nutrition:</strong> Autotrophic (photosynthetic/chemosynthetic) या Heterotrophic (saprophytic/parasitic)</li>
+    <li><strong>Example:</strong> Cyanobacteria (blue-green algae — photosynthetic), Eubacteria</li>
+  </ul>
+</div>
+
+<div class="grid2">
+  <div class="card ol">
+    <h3>✅ Eubacteria (True Bacteria)</h3>
+    <ul>
+      <li>Most common group</li>
+      <li>Cell wall में <strong>Peptidoglycan</strong> होता है</li>
+      <li>Normal environments में रहते हैं</li>
+    </ul>
+  </div>
+  <div class="card ol">
+    <h3>🌋 Archaebacteria (Ancient Bacteria)</h3>
+    <ul>
+      <li>Extreme environments: Hot springs, Salt lakes, Swamps</li>
+      <li>Cell wall में <strong>Peptidoglycan absent</strong></li>
+    </ul>
+  </div>
+</div>
+
+<!-- ══ SECTION 4: KINGDOM PROTISTA ══ -->
+<div id="sec-protista" class="sec-title"><div class="num">4</div><h2>Kingdom <span>Protista</span></h2><div class="line"></div></div>
+
+<div class="card">
+  <h3>🔭 Kingdom Protista — Key Features</h3>
+  <ul>
+    <li><strong>Cell type:</strong> Eukaryotic (true nucleus + organelles) — cell wall absent</li>
+    <li><strong>Organization:</strong> Mostly unicellular, कुछ colonial या simple multicellular</li>
+    <li><strong>Locomotion:</strong> Appendages से (cilia, flagella, pseudopodia)</li>
+    <li><strong>Nutrition:</strong> Autotrophic (Algae) या Heterotrophic (Protozoans)</li>
+  </ul>
+</div>
+
+<div class="card gd">
+  <h3>🦠 Phylum Protozoa — Examples</h3>
+  <table class="tbl" style="margin-top:10px;">
+    <thead><tr><th>Organism</th><th>Movement</th><th>Special Feature</th></tr></thead>
+    <tbody>
+      <tr><td>Euglena</td><td>Flagellum</td><td>Autotrophic + Heterotrophic दोनों</td></tr>
+      <tr><td>Amoeba</td><td>Pseudopodia</td><td>Food को engulf करता है</td></tr>
+      <tr><td>Paramecium</td><td>Cilia</td><td>Hair-like structures से movement</td></tr>
+      <tr><td>Plasmodium</td><td>—</td><td>Malaria का कारण</td></tr>
+    </tbody>
+  </table>
+  <p style="font-size:13px;margin-top:6px;color:var(--dark)"><strong>Kelp</strong> को Phylum Protista में classify किया जाता है।</p>
+</div>
+
+<!-- ══ SECTION 5: KINGDOM FUNGI ══ -->
+<div id="sec-fungi" class="sec-title"><div class="num">5</div><h2>Kingdom <span>Fungi</span></h2><div class="line"></div></div>
+
+<div class="card dk">
+  <h3>🍄 Kingdom Fungi — Key Features</h3>
+  <ul>
+    <li><strong>Cell type:</strong> Eukaryotic</li>
+    <li><strong>Organization:</strong> Mostly multicellular (कुछ unicellular — जैसे Yeast)</li>
+    <li><strong>Cell Wall:</strong> <strong>Chitin</strong> से बनी (cellulose नहीं!)</li>
+    <li><strong>Nutrition:</strong> Heterotrophic, Saprophytic (dead matter खाते हैं), कुछ parasitic/mutualistic</li>
+    <li><strong>Study of Fungi:</strong> Mycology</li>
+    <li><strong>Study of Algae:</strong> Phycology (Algology)</li>
+  </ul>
+</div>
+
+<div class="highlight">
+  <strong>🤝 Lichen = Fungi + Algae का Symbiotic Relationship (साथ रहना)</strong><br>
+  Fungus → Shelter, Protection, Water और Nutrients देता है<br>
+  Blue-green algae (या Green algae) → Photosynthesis से Fungus को food बनाकर देता है<br>
+  <strong>Lichen = Natural Indicator भी है!</strong>
+</div>
+
+<div class="card">
+  <h3>🍄 Types of Fungi (4 Classes)</h3>
+  <div class="grid2" style="margin-top:10px;">
+    <div style="background:#f5e8cc;border-radius:8px;padding:12px;">
+      <span class="pill d">Chytridiomycota</span>
+      <p style="font-size:13px;margin-top:6px">Aquatic fungi — simplest</p>
+    </div>
+    <div style="background:#f5e8cc;border-radius:8px;padding:12px;">
+      <span class="pill d">Zygomycota</span>
+      <p style="font-size:13px;margin-top:6px">E.g. Bread mold (Rhizopus)</p>
+    </div>
+    <div style="background:#f5e8cc;border-radius:8px;padding:12px;">
+      <span class="pill d">Basidiomycota</span>
+      <p style="font-size:13px;margin-top:6px">E.g. Mushrooms</p>
+    </div>
+    <div style="background:#f5e8cc;border-radius:8px;padding:12px;">
+      <span class="pill d">Ascomycota</span>
+      <p style="font-size:13px;margin-top:6px">E.g. Yeast, Penicillium</p>
+    </div>
+  </div>
+</div>
+
+<!-- ══ SECTION 6: KINGDOM PLANTAE ══ -->
+<div id="sec-plantae" class="section-banner">🌿 KINGDOM PLANTAE — Complete Classification</div>
+
+<div class="sec-title"><div class="num">6</div><h2>Kingdom <span>Plantae</span> — Overview</h2><div class="line"></div></div>
+
+<div class="card">
+  <h3>🌱 Kingdom Plantae — Basic Features</h3>
+  <ul>
+    <li><strong>Cell type:</strong> Eukaryotic</li>
+    <li><strong>Organization:</strong> Multicellular</li>
+    <li><strong>Cell Wall:</strong> Cellulose से बनी</li>
+    <li><strong>Nutrition:</strong> Autotrophic (Chlorophyll से Photosynthesis)</li>
+  </ul>
+</div>
+
+<div class="card">
+  <h3>📏 Classification का Basis</h3>
+  <ul>
+    <li>Plant body और distinct components का differentiation</li>
+    <li>Vascular tissues की presence या absence</li>
+    <li>Seeds bear करने की ability</li>
+    <li>Seeds fruits के अंदर enclosed हैं या नहीं</li>
+    <li>Flowers produce करने की ability</li>
+  </ul>
+</div>
+
+<!-- Cryptogamae vs Phanerogamae -->
+<div class="card">
+  <h3>🌿 Cryptogamae vs Phanerogamae</h3>
+  <table class="tbl" style="margin-top:10px;">
+    <thead><tr><th>Feature</th><th>Cryptogamae (छुपे reproductive organs)</th><th>Phanerogamae (दिखते reproductive organs)</th></tr></thead>
+    <tbody>
+      <tr><td>Seeds/Fruits/Flowers</td><td>❌ Absent</td><td>✅ Present</td></tr>
+      <tr><td>Reproductive Organs</td><td>Hidden (छुपे)</td><td>Exposed (दिखते हैं)</td></tr>
+      <tr><td>Evolution</td><td>Less evolved (कम evolved)</td><td>Highly evolved (ज्यादा evolved)</td></tr>
+      <tr><td>Examples</td><td>Thallophytes, Bryophytes, Pteridophytes</td><td>Gymnosperms, Angiosperms</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="mini-box">
+  🧬 <strong>Ploidy का जरूरी point:</strong><br>
+  Thallophyta + Bryophyta → Dominant plant body <strong>Haploid</strong> (Gametophytic)<br>
+  Gymnosperms + Angiosperms → Dominant plant body <strong>Diploid</strong> (Sporophytic)
+</div>
+
+<!-- ══ SECTION 7: THALLOPHYTA ══ -->
+<div id="sec-thallophyta" class="sec-title"><div class="num">7</div><h2>1. Thallophyta <span>(Algae)</span></h2><div class="line"></div></div>
+
+<div class="card dk">
+  <h3>🌊 Thallophyta — Key Features</h3>
+  <ul>
+    <li><strong>Cell type:</strong> Eukaryotic</li>
+    <li><strong>Structure:</strong> Simple — no differentiated roots/stems (Thallus होता है)</li>
+    <li><strong>Vascularity:</strong> Non-vascular (No xylem, No phloem)</li>
+    <li><strong>Habitat:</strong> Mostly aquatic (freshwater/marine)</li>
+    <li><strong>Movement:</strong> Non-motile</li>
+    <li><strong>Nutrition:</strong> Autotrophic, photosynthetic (chlorophyll)</li>
+    <li><strong>Study:</strong> Phycology (Algology)</li>
+    <li>Algae cell wall = outer layer of <strong>Cellulose</strong> + inner layer of <strong>Pectin</strong></li>
+  </ul>
+</div>
+
+<div class="card">
+  <h3>🎨 Types of Algae — Color के आधार पर</h3>
+  <table class="tbl" style="margin-top:10px;">
+    <thead><tr><th>Type</th><th>Color</th><th>Food Storage</th><th>Examples</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><strong>🟢 Chlorophyceae</strong></td>
+        <td>Green (हरी)</td>
+        <td>Starch</td>
+        <td>Chlorella (proteins), Spirulina (superfood), Spirogyra, Ulothrix, Ulva, Chara, Volvox, Cladophora</td>
+      </tr>
+      <tr>
+        <td><strong>🟤 Phaeophyceae</strong></td>
+        <td>Brown (भूरी)</td>
+        <td>Mannitol + Laminarin</td>
+        <td>Sargassum, Laminaria (Kelp), Ectocarpus, Fucus</td>
+      </tr>
+      <tr>
+        <td><strong>🔴 Rhodophyceae</strong></td>
+        <td>Red (लाल)</td>
+        <td>—</td>
+        <td>Gelidium, Porphyra, Gracilaria, Polysiphonia</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- TRICKS -->
+<div class="grid2">
+  <div class="trick">
+    <h4>🧠 Green Algae याद करें: SUVCC</h4>
+    <div class="trick-letters">
+      <div class="lt">S<small>Spirogyra</small></div>
+      <div class="lt">U<small>Ulothrix</small></div>
+      <div class="lt">V<small>Volvox</small></div>
+      <div class="lt">C<small>Chara</small></div>
+      <div class="lt">C<small>Cladophora</small></div>
+    </div>
+  </div>
+  <div class="trick">
+    <h4>🧠 Brown Algae याद करें: SELF</h4>
+    <div class="trick-letters">
+      <div class="lt">S<small>Sargassum</small></div>
+      <div class="lt">E<small>Ectocarpus</small></div>
+      <div class="lt">L<small>Laminaria (Kelp)</small></div>
+      <div class="lt">F<small>Fucus</small></div>
+    </div>
+  </div>
+</div>
+
+<div class="highlight">
+  <strong>🍮 Algae से बनने वाले Products (Exam Important!):</strong><br>
+  <strong>Agar</strong> → Red algae (Gelidium, Gracilaria) → Jelly बनाने में use<br>
+  <strong>Algin (Alginic acid)</strong> → Brown algae → Hydrocolloid<br>
+  <strong>Carrageenan</strong> → Red algae → Food products में gelling agent<br>
+  <strong>Mannitol</strong> → Brown algae (Kelp) → Sweet alcohol<br>
+  <strong>Spirulina</strong> → Green algae → Superfood (protein से भरपूर)
+</div>
+
+<!-- ══ SECTION 8: BRYOPHYTA ══ -->
+<div id="sec-bryophyta" class="sec-title"><div class="num">8</div><h2>2. Bryophyta <span>(Amphibians of Plant Kingdom)</span></h2><div class="line"></div></div>
+
+<div class="card dk">
+  <h3>🌿 Bryophyta — Key Features</h3>
+  <ul>
+    <li>Plant Kingdom के <strong>"Amphibians"</strong> — Land और Water दोनों में exist करते हैं</li>
+    <li><strong>Vascularity:</strong> Non-vascular (No xylem, No phloem)</li>
+    <li><strong>Nutrition:</strong> Autotrophic</li>
+    <li><strong>Structure:</strong> Well-differentiated body लेकिन true roots/stems/leaves absent</li>
+    <li>Root-like structures = <strong>Rhizoids</strong></li>
+    <li><strong>Reproduction:</strong> Spores से (seeds नहीं) — water में</li>
+    <li><strong>Male part:</strong> Antheridium | <strong>Female part:</strong> Archegonium</li>
+    <li><strong>Habitat:</strong> Damp और moist areas</li>
+  </ul>
+</div>
+
+<div class="grid3">
+  <div class="card ol">
+    <h3>🌱 Mosses</h3>
+    <p>Examples: <strong>Funaria</strong></p>
+    <p style="font-size:13px;margin-top:6px">Damp walls और मिट्टी पर उगते हैं</p>
+  </div>
+  <div class="card ol">
+    <h3>🍃 Liverworts</h3>
+    <p>Examples: <strong>Marchantia, Riccia</strong></p>
+    <p style="font-size:13px;margin-top:6px">Flat, liver-shaped body</p>
+  </div>
+  <div class="card ol">
+    <h3>🌿 Hornworts</h3>
+    <p>Horn-like sporophyte होता है</p>
+    <p style="font-size:13px;margin-top:6px">Moist habitats में</p>
+  </div>
+</div>
+
+<!-- ══ SECTION 9: PTERIDOPHYTA ══ -->
+<div id="sec-pteridophyta" class="sec-title"><div class="num">9</div><h2>3. Pteridophyta <span>(First Vascular Plants)</span></h2><div class="line"></div></div>
+
+<div class="card">
+  <h3>🌿 Pteridophyta — Key Features</h3>
+  <ul>
+    <li><strong>पहले terrestrial vascular plants</strong> — Xylem और Phloem दोनों present</li>
+    <li>Well-differentiated <strong>roots, stems और leaves</strong> (Ferns में leaves = <strong>Fronds</strong>)</li>
+    <li>Leaves के leaflets जो spores bear करते हैं = <strong>Sporophylls</strong></li>
+    <li>Hidden reproductive organs → <strong>Cryptogams</strong> में आते हैं</li>
+    <li><strong>Habitat:</strong> Rocks की cracks, moist और shady places</li>
+    <li><strong>Examples:</strong> Marsilea, Ferns, Horsetails, Selaginella, Adiantum</li>
+  </ul>
+</div>
+
+<!-- ══ SECTION 10: GYMNOSPERMS ══ -->
+<div id="sec-gymnosperms" class="sec-title"><div class="num">10</div><h2>4. Gymnosperms <span>(Naked Seeds)</span></h2><div class="line"></div></div>
+
+<div class="card dk">
+  <h3>🌲 Gymnosperms — Key Features</h3>
+  <ul>
+    <li><strong>Meaning:</strong> Gymno (without cover) + Sperma (seeds) = <strong>Naked seeds</strong></li>
+    <li><strong>Vascularity:</strong> Vascular plants — True roots, stem, leaves (xylem + phloem)</li>
+    <li><strong>⚠️ Note:</strong> Phloem Companion Cells और Xylem Vessels <strong>absent</strong></li>
+    <li><strong>Seeds:</strong> Produce करते हैं लेकिन seeds <strong>naked</strong> हैं — fruit में enclosed नहीं</li>
+    <li><strong>Characteristics:</strong> Perennials, Evergreen, Mostly woody</li>
+    <li><strong>Examples:</strong> Pine, Deodar (देवदार), Cycas</li>
+    <li><strong>Phanerogamae</strong> में आते हैं</li>
+  </ul>
+</div>
+
+<!-- ══ SECTION 11: ANGIOSPERMS ══ -->
+<div id="sec-angiosperms" class="sec-title"><div class="num">11</div><h2>5. Angiosperms <span>(Covered Seeds — Flowering Plants)</span></h2><div class="line"></div></div>
+
+<div class="card">
+  <h3>🌸 Angiosperms — Key Features</h3>
+  <ul>
+    <li><strong>Meaning:</strong> Angio (covered) + Sperma (seeds) = Seeds fruit में enclosed</li>
+    <li><strong>Characteristics:</strong> Flowering plants — seeds fruit के अंदर बंद</li>
+    <li><strong>Vascularity:</strong> Fully vascular (Xylem + Phloem) — Highly evolved</li>
+    <li><strong>Reproduction:</strong> Flowers = reproductive organs</li>
+    <li><strong>Flower → Fruit:</strong> Ovary → Fruit बनता है | Ovules → Seeds बनते हैं</li>
+  </ul>
+</div>
+
+<!-- MONOCOT vs DICOT -->
+<div class="card">
+  <h3>🌾 Monocots vs Dicots</h3>
+  <table class="tbl" style="margin-top:12px;">
+    <thead><tr><th>Feature</th><th>🌾 Monocots (एक बीजपत्री)</th><th>🌹 Dicots (दो बीजपत्री)</th></tr></thead>
+    <tbody>
+      <tr><td>Cotyledons</td><td><strong>1</strong> cotyledon</td><td><strong>2</strong> cotyledons</td></tr>
+      <tr><td>Roots</td><td>Fibrous roots (झाड़ीदार)</td><td>Tap root (मूसला जड़)</td></tr>
+      <tr><td>Leaf Veins</td><td>Parallel (समानांतर)</td><td>Net/Reticulate (जालनुमा)</td></tr>
+      <tr><td>Vascular Bundles</td><td>Scattered (scattered throughout)</td><td>Ring में arranged</td></tr>
+      <tr><td>Flower Parts</td><td>Threes में (3 या 6)</td><td>Fours या Fives में (4 या 5)</td></tr>
+      <tr><td>Examples</td><td>Grass, Lily, Wheat, Rice, Onion, Garlic</td><td>Rose, Sunflower, Tamarind, Mango, Pea, Gram</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ══ SECTION 12: EVOLUTION ORDER ══ -->
+<div id="sec-evolution" class="sec-title"><div class="num">12</div><h2>Plant <span>Evolution Order</span></h2><div class="line"></div></div>
+
+<div class="card dk">
+  <h3>🧬 Simplest से Most Evolved — Plant Evolution Timeline</h3>
+  <div style="margin-top:14px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:center;">
+    <div style="background:var(--olive);border-radius:10px;padding:12px 16px;text-align:center;min-width:110px;">
+      <strong style="color:var(--gold);display:block;">Thallophytes</strong>
+      <small style="color:var(--cream);font-size:11px;">Simplest plants<br>Algae</small>
+    </div>
+    <div style="color:var(--gold);font-size:22px;font-weight:900;">→</div>
+    <div style="background:var(--olive);border-radius:10px;padding:12px 16px;text-align:center;min-width:110px;">
+      <strong style="color:var(--gold);display:block;">Bryophytes</strong>
+      <small style="color:var(--cream);font-size:11px;">Land Adaptation<br>begins</small>
+    </div>
+    <div style="color:var(--gold);font-size:22px;font-weight:900;">→</div>
+    <div style="background:var(--olive);border-radius:10px;padding:12px 16px;text-align:center;min-width:110px;">
+      <strong style="color:var(--gold);display:block;">Pteridophytes</strong>
+      <small style="color:var(--cream);font-size:11px;">First Vascular<br>plants</small>
+    </div>
+    <div style="color:var(--gold);font-size:22px;font-weight:900;">→</div>
+    <div style="background:var(--olive);border-radius:10px;padding:12px 16px;text-align:center;min-width:110px;">
+      <strong style="color:var(--gold);display:block;">Gymnosperms</strong>
+      <small style="color:var(--cream);font-size:11px;">Seeds appear<br>(Naked)</small>
+    </div>
+    <div style="color:var(--gold);font-size:22px;font-weight:900;">→</div>
+    <div style="background:var(--gold);border-radius:10px;padding:12px 16px;text-align:center;min-width:110px;">
+      <strong style="color:var(--dark);display:block;">Angiosperms</strong>
+      <small style="color:var(--dark);font-size:11px;">Flowers + Fruits<br>Most evolved!</small>
+    </div>
+  </div>
+</div>
+
+<!-- ══ QUICK REVISION ══ -->
+<div class="sep"></div>
+
+<div id="sec-revision" class="sec-title"><div class="num">✓</div><h2>Quick <span>Revision — Exam Ready!</span></h2><div class="line"></div></div>
+
+<table class="tbl">
+  <thead><tr><th>Topic</th><th>Key Fact</th></tr></thead>
+  <tbody>
+    <tr><td>Taxonomy Father</td><td>Carolus Linnaeus (1758) | Book: Systema Naturae (1735)</td></tr>
+    <tr><td>Binomial Nomenclature</td><td>Carolus Linnaeus | 2-part name: Genus + Species</td></tr>
+    <tr><td>Hierarchy Trick</td><td>Some Girls Of Our Class Play Kabaddi (Species→Kingdom)</td></tr>
+    <tr><td>Ecology term</td><td>Ernst Haeckel ने coin किया (Three Kingdom, 1866)</td></tr>
+    <tr><td>Three Domain</td><td>Carl Woese (1990) — Bacteria, Archaea, Eukarya</td></tr>
+    <tr><td>Five Kingdom</td><td>R.H. Whittaker (1969) — Monera, Protista, Fungi, Plantae, Animalia</td></tr>
+    <tr><td>Six Kingdom</td><td>Cavalier-Smith</td></tr>
+    <tr><td>Monera cell wall</td><td>Peptidoglycan (bacteria) | Archaebacteria में absent</td></tr>
+    <tr><td>Protista locomotion</td><td>Euglena = flagellum | Amoeba = pseudopodia | Paramecium = cilia</td></tr>
+    <tr><td>Fungi cell wall</td><td>Chitin (cellulose नहीं!) | Study = Mycology</td></tr>
+    <tr><td>Lichen</td><td>Blue-green algae + Fungi | Natural Indicator | Symbiotic</td></tr>
+    <tr><td>Algae study</td><td>Phycology (Algology)</td></tr>
+    <tr><td>Green algae food storage</td><td>Starch | Brown algae = Mannitol + Laminarin</td></tr>
+    <tr><td>Agar source</td><td>Red algae (Gelidium, Gracilaria) → Jelly में use</td></tr>
+    <tr><td>Algin source</td><td>Brown algae</td></tr>
+    <tr><td>Carrageenan source</td><td>Red algae → Gelling agent in food</td></tr>
+    <tr><td>Green Algae Trick</td><td>SUVCC: Spirogyra, Ulothrix, Volvox, Chara, Cladophora</td></tr>
+    <tr><td>Brown Algae Trick</td><td>SELF: Sargassum, Ectocarpus, Laminaria, Fucus</td></tr>
+    <tr><td>Bryophyta nickname</td><td>"Amphibians of Plant Kingdom" | Non-vascular</td></tr>
+    <tr><td>Bryophyta roots</td><td>Rhizoids (true roots नहीं) | Male = Antheridium | Female = Archegonium</td></tr>
+    <tr><td>Bryophyta examples</td><td>Mosses (Funaria), Liverworts (Marchantia, Riccia)</td></tr>
+    <tr><td>Pteridophyta</td><td>First vascular plants | Fern leaves = Fronds | Spore-bearing leaves = Sporophylls</td></tr>
+    <tr><td>Pteridophyta examples</td><td>Marsilea, Ferns, Horsetails, Selaginella, Adiantum</td></tr>
+    <tr><td>Gymnosperms meaning</td><td>Gymno (naked) + Sperma (seeds) | No Phloem Companion + No Xylem Vessel</td></tr>
+    <tr><td>Gymnosperms examples</td><td>Pine, Deodar, Cycas</td></tr>
+    <tr><td>Angiosperms meaning</td><td>Angio (covered) + Sperma = seeds in fruit | Most evolved</td></tr>
+    <tr><td>Monocots</td><td>1 cotyledon | Fibrous roots | Parallel veins | E.g. Wheat, Rice, Onion</td></tr>
+    <tr><td>Dicots</td><td>2 cotyledons | Tap root | Net veins | E.g. Mango, Rose, Pea</td></tr>
+    <tr><td>Haploid plants</td><td>Thallophyta + Bryophyta (Gametophytic)</td></tr>
+    <tr><td>Diploid plants</td><td>Gymnosperms + Angiosperms (Sporophytic)</td></tr>
+    <tr><td>Cryptogamae</td><td>No seeds/flowers | Thallophytes, Bryophytes, Pteridophytes</td></tr>
+    <tr><td>Phanerogamae</td><td>Seeds + Flowers present | Gymnosperms + Angiosperms</td></tr>
+    <tr><td>Ovary → Fruit</td><td>Angiosperms में Ovary → Fruit | Ovules → Seeds बनते हैं</td></tr>
+    <tr><td>Kelp classification</td><td>Phylum Protista</td></tr>
+    <tr><td>Spirulina</td><td>Green algae → Superfood (protein-rich)</td></tr>
+    <tr><td>Algae cell wall</td><td>Outer = Cellulose | Inner = Pectin</td></tr>
+  </tbody>
+</table>
+
+</div>
+
+<footer>
+  RISE NOTES · Plant Kingdom &nbsp;|&nbsp; <span>RISE NOTES</span> &nbsp;|&nbsp; Complete Notes with Topics at a Glance
+</footer>
+
+</body>
+</html>

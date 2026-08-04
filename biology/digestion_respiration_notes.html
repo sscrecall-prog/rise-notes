@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Digestion & Respiration – RISE NOTES</title>
+<style>
+  :root {
+    --cream: #FAEED9;
+    --gold: #E1A837;
+    --olive: #8D7A02;
+    --dark: #38370D;
+    --darkest: #2a2a0a;
+    --accent: #c49020;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--cream); color: var(--dark); line-height: 1.75; }
+
+  .hero {
+    background: linear-gradient(135deg, var(--dark) 0%, var(--olive) 55%, var(--gold) 100%);
+    color: var(--cream); padding: 3rem 2rem 2rem; text-align: center; position: relative; overflow: hidden;
+  }
+  .hero::before { content: '🫁'; font-size: 8rem; position: absolute; right: -1rem; top: -1rem; opacity: 0.08; line-height: 1; }
+  .hero h1 { font-size: 2.5rem; font-weight: 800; letter-spacing: -1px; margin-bottom: 0.4rem; }
+  .hero p { font-size: 1.05rem; opacity: 0.85; margin-bottom: 1.5rem; }
+  .badge { display: inline-block; background: var(--gold); color: var(--dark); font-weight: 700; font-size: 0.8rem; padding: 0.3rem 1rem; border-radius: 20px; letter-spacing: 1px; text-transform: uppercase; }
+
+  .toc { background: var(--dark); color: var(--cream); padding: 2rem; }
+  .toc h2 { font-size: 1.3rem; font-weight: 700; color: var(--gold); margin-bottom: 1.2rem; letter-spacing: 1px; text-transform: uppercase; }
+  .toc-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 0.5rem; }
+  .toc-item {
+    display: flex; align-items: center; gap: 0.6rem; padding: 0.55rem 0.9rem;
+    background: rgba(225,168,55,0.12); border: 1px solid rgba(225,168,55,0.25);
+    border-radius: 8px; text-decoration: none; color: var(--cream);
+    font-size: 0.88rem; font-weight: 500; transition: all 0.2s;
+  }
+  .toc-item:hover { background: rgba(225,168,55,0.25); border-color: var(--gold); color: var(--gold); transform: translateX(4px); }
+  .toc-num { width: 22px; height: 22px; border-radius: 50%; background: var(--gold); color: var(--dark); font-size: 0.72rem; font-weight: 800; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+
+  main { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
+  .section { margin-bottom: 3rem; scroll-margin-top: 80px; }
+  .section-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; padding-bottom: 0.8rem; border-bottom: 3px solid var(--gold); }
+  .section-icon { width: 46px; height: 46px; border-radius: 12px; background: var(--dark); color: var(--gold); font-size: 1.4rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .section-header h2 { font-size: 1.5rem; font-weight: 800; color: var(--dark); }
+
+  .card { background: white; border: 1.5px solid rgba(141,122,2,0.2); border-radius: 14px; padding: 1.3rem 1.5rem; margin-bottom: 1rem; }
+  .card h3 { font-size: 1rem; font-weight: 700; color: var(--olive); margin-bottom: 0.6rem; }
+  .card p, .card li { font-size: 0.94rem; color: #3a3700; margin-bottom: 0.3rem; }
+  .card ul, .card ol { padding-left: 1.2rem; }
+
+  .highlight { background: var(--dark); color: var(--cream); border-radius: 12px; padding: 1.1rem 1.4rem; margin: 1rem 0; font-size: 0.94rem; border-left: 5px solid var(--gold); }
+  .highlight strong { color: var(--gold); }
+
+  .pathway-box {
+    background: var(--dark); color: var(--cream); border-radius: 14px;
+    padding: 1.4rem 1.6rem; margin: 1.2rem 0; text-align: center;
+    font-size: 0.95rem; font-weight: 600; line-height: 2;
+    border: 2px solid var(--gold);
+  }
+  .pathway-box .title { color: var(--gold); font-size: 1rem; font-weight: 800; margin-bottom: 0.6rem; }
+  .arrow { color: var(--gold); font-weight: 900; }
+
+  .fact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(185px, 1fr)); gap: 0.9rem; margin-bottom: 1rem; }
+  .fact-pill { background: var(--dark); color: var(--cream); border-radius: 12px; padding: 0.9rem 1.1rem; border-left: 4px solid var(--gold); }
+  .fact-pill .label { font-size: 0.74rem; color: var(--gold); font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.3rem; }
+  .fact-pill .value { font-size: 0.9rem; font-weight: 600; }
+
+  .tag { display: inline-block; background: var(--gold); color: var(--dark); font-size: 0.78rem; font-weight: 700; padding: 0.2rem 0.7rem; border-radius: 20px; margin: 0.2rem 0.2rem 0.2rem 0; }
+  .tag.olive { background: var(--olive); color: var(--cream); }
+  .tag.dark { background: var(--dark); color: var(--cream); }
+  .tag.red { background: #7a1010; color: #ffe8e8; }
+  .tag.green { background: #1a5c1a; color: #e6ffe6; }
+
+  .table-wrap { overflow-x: auto; margin: 1rem 0; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+  th { background: var(--dark); color: var(--gold); font-weight: 700; padding: 0.8rem 1rem; text-align: left; font-size: 0.85rem; }
+  td { padding: 0.7rem 1rem; border-bottom: 1px solid rgba(141,122,2,0.15); color: var(--dark); vertical-align: top; }
+  tr:nth-child(even) td { background: rgba(225,168,55,0.07); }
+  tr:last-child td { border-bottom: none; }
+
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem; }
+  @media (max-width: 600px) { .two-col { grid-template-columns: 1fr; } }
+
+  .three-col { display: grid; grid-template-columns: repeat(3,1fr); gap: 1rem; margin-bottom: 1rem; }
+  @media (max-width: 650px) { .three-col { grid-template-columns: 1fr; } }
+
+  .exception { background: #fff8e6; border: 2px dashed var(--gold); border-radius: 12px; padding: 1.1rem 1.4rem; margin: 1rem 0; font-size: 0.92rem; }
+  .exception .exc-title { font-weight: 800; color: var(--accent); font-size: 0.95rem; margin-bottom: 0.5rem; }
+
+  /* organ card */
+  .organ-card { background: white; border: 1.5px solid rgba(141,122,2,0.2); border-radius: 14px; padding: 1.1rem 1.3rem; margin-bottom: 0.9rem; border-left: 5px solid var(--gold); }
+  .organ-card h3 { font-size: 1.02rem; font-weight: 800; color: var(--dark); margin-bottom: 0.5rem; }
+  .organ-card .aka { font-size: 0.78rem; background: var(--dark); color: var(--gold); padding: 0.15rem 0.6rem; border-radius: 6px; display: inline-block; margin-bottom: 0.5rem; font-weight: 700; }
+  .organ-card ul { padding-left: 1.1rem; font-size: 0.9rem; color: #3a3700; }
+  .organ-card li { margin-bottom: 0.28rem; }
+
+  /* step list */
+  .step-list { display: flex; flex-direction: column; gap: 0.6rem; margin: 0.8rem 0; }
+  .step-item { display: flex; align-items: flex-start; gap: 0.9rem; background: white; border: 1px solid rgba(141,122,2,0.2); border-radius: 12px; padding: 0.8rem 1rem; }
+  .step-num { width: 28px; height: 28px; border-radius: 50%; background: var(--gold); color: var(--dark); font-weight: 800; font-size: 0.85rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+  .step-content h4 { font-weight: 700; font-size: 0.92rem; color: var(--dark); margin-bottom: 0.15rem; }
+  .step-content p { font-size: 0.87rem; color: #555; }
+
+  .back-btn { display: inline-flex; align-items: center; gap: 0.4rem; background: var(--dark); color: var(--gold); border: none; padding: 0.45rem 1rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600; cursor: pointer; margin-bottom: 1.5rem; text-decoration: none; }
+  .back-btn:hover { background: var(--olive); }
+
+  /* divider banner */
+  .banner { background: linear-gradient(90deg, var(--dark), var(--olive)); color: var(--gold); text-align: center; font-size: 1.2rem; font-weight: 800; padding: 0.9rem; border-radius: 12px; margin: 2rem 0 1.5rem; letter-spacing: 1px; }
+
+  footer { background: var(--darkest); color: var(--cream); text-align: center; padding: 1.5rem; font-size: 0.85rem; opacity: 0.85; }
+  footer span { color: var(--gold); font-weight: 700; }
+  html { scroll-behavior: smooth; }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="badge">RISE NOTES</div>
+  <h1 style="margin-top:0.8rem;">🫁 Digestion & Respiration</h1>
+  <p>Complete Study Notes – Simple aur Easy Language mein</p>
+</div>
+
+<!-- TOC -->
+<div class="toc" id="top">
+  <h2>📋 Topics at a Glance</h2>
+  <div class="toc-grid">
+    <a class="toc-item" href="#digestive-intro"><span class="toc-num">1</span> Digestive System Intro</a>
+    <a class="toc-item" href="#mouth"><span class="toc-num">2</span> Mouth & Oesophagus</a>
+    <a class="toc-item" href="#stomach"><span class="toc-num">3</span> Stomach</a>
+    <a class="toc-item" href="#small-intestine"><span class="toc-num">4</span> Small Intestine</a>
+    <a class="toc-item" href="#bile"><span class="toc-num">5</span> Bile & Pancreas</a>
+    <a class="toc-item" href="#large-intestine"><span class="toc-num">6</span> Large Intestine</a>
+    <a class="toc-item" href="#liver"><span class="toc-num">7</span> Liver</a>
+    <a class="toc-item" href="#villi"><span class="toc-num">8</span> Villi, Rectum & Anus</a>
+    <a class="toc-item" href="#pathway"><span class="toc-num">9</span> Food Pathway</a>
+    <a class="toc-item" href="#plant-resp"><span class="toc-num">10</span> Respiration in Plants</a>
+    <a class="toc-item" href="#human-resp"><span class="toc-num">11</span> Human Respiratory System</a>
+    <a class="toc-item" href="#nose"><span class="toc-num">12</span> Nose → Alveoli</a>
+    <a class="toc-item" href="#inhale-exhale"><span class="toc-num">13</span> Inhale vs Exhale</a>
+    <a class="toc-item" href="#epiglottis"><span class="toc-num">14</span> Epiglottis</a>
+    <a class="toc-item" href="#aerobic-anaerobic"><span class="toc-num">15</span> Aerobic vs Anaerobic</a>
+    <a class="toc-item" href="#cellular-resp"><span class="toc-num">16</span> Cellular Respiration</a>
+    <a class="toc-item" href="#steps-cr"><span class="toc-num">17</span> Steps in Cellular Respiration</a>
+  </div>
+</div>
+
+<main>
+
+<!-- ═══════════════ DIGESTION ═══════════════ -->
+<div class="banner">🍽️ PART 1 — THE HUMAN DIGESTIVE SYSTEM</div>
+
+<!-- 1. INTRO -->
+<div class="section" id="digestive-intro">
+  <a href="#top" class="back-btn">↑ Back to Topics</a>
+  <div class="section-header">
+    <div class="section-icon">🍽️</div>
+    <h2>1. Digestive System — Introduction</h2>
+  </div>
+  <div class="card">
+    <h3>Digestive System kya hai?</h3>
+    <p>Food ko simpler substances mein break down karne ka process — nutrient absorption ke liye.</p>
+  </div>
+  <div class="fact-grid">
+    <div class="fact-pill"><div class="label">Largest Organ</div><div class="value">🧴 Skin</div></div>
+    <div class="fact-pill"><div class="label">Largest Gland</div><div class="value">🫀 Liver</div></div>
+    <div class="fact-pill"><div class="label">Study of Liver</div><div class="value">Hepatology</div></div>
+    <div class="fact-pill"><div class="label">Study of Blood</div><div class="value">Hematology</div></div>
+  </div>
+</div>
+
+<!-- 2. MOUTH & OESOPHAGUS -->
+<div class="section" id="mouth">
+  <a href="#top" class="back-btn">↑ Back to Topics</a>
+  <div class="section-header">
+    <div class="section-icon">👄</div>
+    <h2>2. Mouth & Oesophagus</h2>
+  </div>
+  <div class="organ-card">
+    <h3>👄 Mouth (Oral / Buccal Cavity)</h3>
+    <ul>
+      <li>Digestion yahan se <strong>start</strong> hoti hai.</li>
+      <li>Teeth → food chew karte hain (<strong>mechanical digestion</strong>).</li>
+      <li><strong>Saliva</strong> (salivary glands se) → <strong>Salivary Amylase</strong> contain karta hai → starch (complex carbs) → simple carbs.</li>
+      <li>Tongue food mix karne aur swallowing mein help karta hai.</li>
+    </ul>
+  </div>
+  <div class="organ-card">
+    <h3>🔗 Pharynx & Oesophagus</h3>
+    <ul>
+      <li><strong>Pharynx:</strong> Mouth ko oesophagus se connect karta hai.</li>
+      <li><strong>Oesophagus:</strong> Length = <strong>25 cm</strong> — muscular tube jo food ko stomach tak push karta hai <strong>peristalsis</strong> (wave-like movement) se.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- 3. STOMACH -->
+<div class="section" id="stomach">
+  <a href="#top" class="back-btn">↑ Back to Topics</a>
+  <div class="section-header">
+    <div class="section-icon">🫙</div>
+    <h2>3. Stomach</h2>
+  </div>
+  <div class="organ-card">
+    <h3>Stomach — J-shaped muscular organ</h3>
+    <div class="aka">Gastric Juice pH: 1.6</div>
+    <ul>
+      <li><strong>HCl (Hydrochloric Acid):</strong> Germs kill karta hai, acidic medium provide karta hai. Gastric juice mein present (pH 1.6).</li>
+      <li><strong>Pepsin:</strong> Proteins digest karta hai — <span class="tag red">sirf acidic medium mein kaam karta hai</span>.</li>
+      <li><strong>Mucus:</strong> Delicate stomach lining ko acid se protect karta hai.</li>
+      <li><strong>Sphincter Muscle:</strong> Food ko stomach se small intestine mein pass karne deta hai.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- 4. SMALL INTESTINE -->
+<div class="section" id="small-intestine">
+  <a href="#top" class="back-btn">↑ Back to Topics</a>
+  <div class="section-header">
+    <div class="section-icon">🌀</div>
+    <h2>4. Small Intestine</h2>
+  </div>
+  <div class="organ-card">
+    <h3>Small Intestine — Longest part of alimentary canal</h3>
+    <div class="aka">Length: 6.5 to 7.5 meters</div>
+    <ul>
+      <li><strong>Main site of digestion and absorption.</strong></li>
+      <li>3 parts mein divided: <span class="tag">Duodenum</span> <span class="tag">Jejunum</span> <span class="tag">Ileum</span></li>
+      <li>Yahan liver se bile aur pancreas se pancreatic juice receive hoti hai.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- 5. BILE & PANCREAS -->
+<div class="section" id="bile">
+  <a href="#top" class="back-btn">↑ Back to Topics</a>
+  <div class="section-header">
+    <div class="section-icon">💛</div>
+    <h2>5. Bile & Pancreas</h2>
+  </div>
+  <div class="two-col">
+    <div class="organ-card">
+      <h3>💛 Bile (Bile Juice)</h3>
+      <div class="aka">Liver se, Gall Bladder mein stored</div>
+      <ul>
+        <li>Bile ek enzyme nahi — supporting role play karta hai.</li>
+        <li><strong>Alkaline (basic)</strong> in nature.</li>
+        <li>Acidic food ko neutralize karta hai small intestine se pehle.</li>
+        <li>Pancreatic + intestinal enzymes ke liye favorable pH create karta hai.</li>
+        <li><strong>Emulsification of Fats:</strong> Large fat globules → small globules.</li>
+      </ul>
+    </div>
+    <div class="organ-card">
+      <h3>🟡 Pancreas</h3>
+      <div class="aka">Pancreatic Juice release karta hai</div>
+      <ul>
+        <li><strong>Function:</strong> Carbs, proteins aur fats digest karta hai.</li>
+        <li><strong>Amylase:</strong> Carbs break down.</li>
+        <li><strong>Lipase:</strong> Fats → fatty acids + glycerol.</li>
+        <li><strong>Trypsin:</strong> <span class="tag green">Basic medium</span> mein kaam karta hai → Proteins → amino acids.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="highlight">
+    <strong>Pepsin vs Trypsin:</strong> Pepsin = Acidic medium (Stomach) | Trypsin = Basic medium (Small Intestine) — dono protein digest karte hain!
+  </div>
+</div>
+
+<!-- 6. LARGE INTESTINE -->
+<div class="section" id="large-intestine">
+  <a href="#top" class="back-btn">↑ Back to Topics</a>
+  <div class="section-header">
+    <div class="section-icon">🔵</div>
+    <h2>6. Large Intestine</h2>
+  </div>
+  <div class="organ-card">
+    <h3>Large Intestine — Length: 1.5 m</h3>
+    <ul>
+      <li><strong>Function:</strong> Remaining undigested food se water + electrolytes absorb karna → feces solidify → elimination.</li>
+      <li><strong>Cecum:</strong> Large intestine ka pehla part — small intestine ko colon se connect karta hai.</li>
+      <li><strong>Colon:</strong> Indigestible food residues se water absorb karna.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- 7. LIVER -->
+<div class="section" id="liver">
+  <a href="#top" class="back-btn">↑ Back to Topics</a>
+  <div class="section-header">
+    <div class="section-icon">🟤</div>
+    <h2>7. Liver</h2>
+  </div>
+  <div class="organ-card">
+    <h3>Liver — Human body ki sabse badi gland</h3>
+    <div class="aka">Hepatology = Study of Liver | Dark red-brown, right side of abdomen</div>
+    <ul>
+      <li>Glucose → Glycogen (storage) — process = <strong>Glycogenesis</strong>.</li>
+      <li>Plasma proteins synthesize karta hai.</li>
+      <li>Amino acid metabolism (deamination + urea formation).</li>
+      <li>Blood sugar levels maintain karne ke liye glycogen store karta hai.</li>
+    </ul>
+  </div>
+  <div class="two-col">
+    <div class="card">
+      <h3>Kupffer Cells</h3>
+      <ul>
+        <li>Star-shaped phagocytic cells — liver sinusoids ki lining mein.</li>
+        <li>Old/damaged RBCs break down karte hain.</li>
+        <li>Blood se pathogens + debris clean karte hain.</li>
+        <li>Regenerative ability hoti hai.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Hepatocytes</h3>
+      <ul>
+        <li>Liver ki main parenchymal (functional) cells.</li>
+        <li>Carbs, proteins aur fats ka metabolism.</li>
+        <li>Blood detoxification.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- 8. VILLI RECTUM ANUS -->
+<div class="section" id="villi">
+  <a href="#top" class="back-btn">↑ Back to Topics</a>
+  <div class="section-header">
+    <div class="section-icon">🔬</div>
+    <h2>8. Villi, Rectum & Anus</h2>
+  </div>
+  <div class="three-col">
+    <div class="card">
+      <h3>Villi</h3>
+      <ul>
+        <li>Small intestine ki inner wall pe finger-like projections.</li>
+        <li>Surface area significantly increase karte hain.</li>
+        <li>Nutrient absorption (assimilation) enhance karte hain.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Rectum</h3>
+      <ul>
+        <li>Feces store karta hai.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Anus</h3>
+      <ul>
+        <li>Opening jisse waste body se excrete hota hai.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- 9. FOOD PATHWAY -->
+<div class="section" id="pathway">
+  <a href="#top" class="back-btn">↑ Back to Topics</a>
+  <div class="section-header">
+    <div class="section-icon">🗺️</div>
+    <h2>9. Food Pathway — Complete Route</h2>
+  </div>
+  <div class="pathway-box">
+    <div class="title">🍽️ HUMAN DIGESTIVE SYSTEM — PATHWAY OF FOOD</div>
+    <span class="tag dark">MOUTH</span> <span class="arrow">→</span>
+    <span class="tag dark">PHARYNX</span> <span class="arrow">→</span>
+    <span class="tag dark">ESOPHAGUS</span> <span class="arrow">→</span>
+    <span class="tag dark">STOMACH</span> <span class="arrow">→</span>
+    <span class="tag">SMALL INTESTINE</span><br>
+    <span style="color:var(--gold); font-size:0.85rem;">(Duodenum → Jejunum → Ileum)</span>
+    <span class="arrow">→</span>
+    <span class="tag">LARGE INTESTINE</span><br>
+    <span style="color:var(--gold); font-size:0.85rem;">(Cecum → Colon → Rectum)</span>
+    <span class="arrow">→</span>
+    <span class="tag">ANUS</span>
+  </div>
+
+  <!-- Enzyme Summary Table -->
+  <div class="table-wrap">
+    <table>
+      <tr><th>Organ</th><th>Secretion</th><th>Works On</th><th>Medium</th></tr>
+      <tr><td>Mouth</td><td>Salivary Amylase</td><td>Starch → Simple sugars</td><td>Neutral</td></tr>
+      <tr><td>Stomach</td><td>HCl + Pepsin + Mucus</td><td>Proteins → Peptides</td><td>Acidic (pH 1.6)</td></tr>
+      <tr><td>Liver</td><td>Bile (not enzyme)</td><td>Fat emulsification</td><td>Alkaline</td></tr>
+      <tr><td>Pancreas</td><td>Amylase, Lipase, Trypsin</td><td>Carbs, Fats, Proteins</td><td>Basic</td></tr>
+      <tr><td>Small Intestine</td><td>Intestinal enzymes</td><td>Final digestion + Absorption</td><td>Basic</td></tr>
+      <tr><td>Large Intestine</td><td>—</td><td>Water + Electrolyte absorption</td><td>—</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- ═══════════════ RESPIRATION ═══════════════ -->
+<div class="banner">🌬️ PART 2 — RESPIRATION</div>
+
+<!-- 10. PLANT RESPIRATION -->
+<div class="section" id="plant-resp">
+  <a href="#top" class="back-btn">↑ Back to Topics</a>
+  <div class="section-header">
+    <div class="section-icon">🌿</div>
+    <h2>10. Respiration in Plants</h2>
+  </div>
+  <div class="highlight">
+    <strong>Respiration:</strong> Biochemical process — organic compounds ka oxidative breakdown → energy <strong>ATP</strong> (Adenosine Triphosphate) ke form mein release.
+  </div>
+  <div class="highlight" style="margin-top:0.5rem;">
+    <strong>Breathing:</strong> Oxygen inhale karna aur Carbon Dioxide exhale karna (lungs ke through).
+  </div>
+  <div class="two-col">
+    <div class="card">
+      <h3>🌱 By Roots</h3>
+      <ul>
+        <li>Air soil particles ke beech spaces mein hoti hai (soil interspaces).</li>
+        <li>Root hairs + epiblema cells (outermost layer of young roots) soil air ke direct contact mein.</li>
+        <li>O₂ diffuse hoti hai root hairs → inner tissues → aerobic respiration → glucose break down → energy.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>🍃 By Leaves</h3>
+      <ul>
+        <li>Leaves + young stems — thin structure + pores → quick gas exchange.</li>
+        <li>Mature stems → impermeable epidermis → water loss prevent.</li>
+        <li>Epidermis mein <strong>stomata</strong> (tiny openings) hote hain.</li>
+        <li>Har stoma ke 2 <strong>guard cells</strong> hote hain → opening/closing control.</li>
+        <li>Gas exchange + transpiration regulate karte hain.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="exception">
+    <div class="exc-title">📌 Guttation</div>
+    <p style="font-size:0.92rem;">Plants mein <strong>raat ko</strong> water loss — <strong>hydathodes</strong> (leaf edges pe present) ke through — water droplets ki form mein.</p>
+  </div>
+</div>
+
+<!-- 11. HUMAN RESPIRATORY SYSTEM -->
+<div class="section" id="human-resp">
+  <a href="#top" class="back-btn">↑ Back to Topics</a>
+  <div class="section-header">
+    <div class="section-icon">🫁</div>
+    <h2>11. Human Respiratory System</h2>
+  </div>
+  <div class="pathway-box">
+    <div class="title">🌬️ Mechanism of Respiration — Air Pathway</div>
+    <span class="tag">Nose</span> <span class="arrow">→</span>
+    <span class="tag">Pharynx</span> <span class="arrow">→</span>
+    <span class="tag">Larynx</span> <span class="arrow">→</span>
+    <span class="tag">Trachea</span> <span class="arrow">→</span>
+    <span class="tag">Bronchi</span> <span class="arrow">→</span>
+    <span class="tag">Bronchioles</span> <span class="arrow">→</span>
+    <span class="tag">Alveoli</span>
+  </div>
+</div>
+
+<!-- 12. NOSE TO ALVEOLI -->
+<div class="section" id="nose">
+  <a href="#top" class="back-btn">↑ Back to Topics</a>
+  <div class="section-header">
+    <div class="section-icon">👃</div>
+    <h2>12. Nose → Pharynx → Larynx → Trachea → Bronchi → Bronchioles → Alveoli</h2>
+  </div>
+  <div class="organ-card">
+    <h3>👃 Nose & Nasal Cavity</h3>
+    <div class="aka">First entry point for air</div>
+    <ul>
+      <li>Nose ke andar hair → dust + impurities trap karte hain.</li>
+      <li>Mucus lining → air moisten karta hai, dust + bacteria trap karta hai, respiratory tract protect karta hai.</li>
+    </ul>
+  </div>
+  <div class="organ-card">
+    <h3>🗣️ Pharynx</h3>
+    <ul>
+      <li>Air aur food dono ke liye common passage.</li>
+      <li>Nasal cavity ko larynx se connect karta hai.</li>
+      <li>Air ko trachea ki taraf direct karta hai.</li>
+    </ul>
+  </div>
+  <div class="organ-card">
+    <h3>🎤 Larynx (Voice Box)</h3>
+    <div class="aka">Adam's Apple bhi kehte hain</div>
+    <ul>
+      <li>Vocal cords contain karta hai — air pass hone par sound produce hoti hai.</li>
+      <li>Trachea ke top pe located hai.</li>
+    </ul>
+  </div>
+  <div class="organ-card">
+    <h3>🌬️ Trachea (Windpipe)</h3>
+    <ul>
+      <li>Long tube — larynx se bronchi tak air carry karta hai.</li>
+      <li><strong>C-shaped cartilage rings</strong> — trachea ko collapse hone se rokते hain, airway open rakhte hain.</li>
+    </ul>
+  </div>
+  <div class="organ-card">
+    <h3>🌿 Bronchi</h3>
+    <ul>
+      <li>Trachea 2 bronchi mein divide hoti hai — ek har lung ke liye.</li>
+      <li>Har bronchus lung mein enter karta hai, air deeper carry karta hai.</li>
+      <li>Mucus + cilia — dust aur microbes trap karte hain.</li>
+    </ul>
+  </div>
+  <div class="organ-card">
+    <h3>🌱 Bronchioles</h3>
+    <ul>
+      <li>Lungs ke andar har bronchus aur chhoti tubes mein branch karta hai = bronchioles.</li>
+      <li>Narrower + more numerous — lungs mein air spread karte hain.</li>
+      <li>Directly alveoli (air sacs) mein lead karte hain.</li>
+    </ul>
+  </div>
+  <div class="organ-card">
+    <h3>🫧 Alveoli</h3>
+    <div class="aka">Gas Exchange Site</div>
+    <ul>
+      <li>Tiny balloon-like structures — bronchioles ke ends pe.</li>
+      <li>Lungs mein millions of alveoli — capillaries (tiny blood vessels) se surrounded.</li>
+      <li><strong>Function:</strong> O₂ air se blood mein diffuse hoti hai → CO₂ blood se alveoli mein → exhale.</li>
+      <li>Thin walls + large surface area → gas exchange bahut efficient.</li>
+    </ul>
+  </div>
+  <div class="highlight">
+    <strong>Diaphragm:</strong> Chest cavity ka floor banata hai. | <strong>Respiration Centre:</strong> Medulla Oblongata mein hota hai.
+  </div>
+</div>
+
+<!-- 13. INHALE VS EXHALE -->
+<div class="section" id="inhale-exhale">
+  <a href="#top" class="back-btn">↑ Back to Topics</a>
+  <div class="section-header">
+    <div class="section-icon">↕️</div>
+    <h2>13. Inhale vs Exhale</h2>
+  </div>
+  <div class="table-wrap">
+    <table>
+      <tr><th>Process</th><th>Rib Cage Movement</th><th>Diaphragm Movement</th><th>Lungs</th><th>O₂ (%)</th><th>CO₂ (%)</th></tr>
+      <tr><td><span class="tag green">Inhale</span></td><td>Goes UP ↑</td><td>Goes DOWN ↓</td><td>Expands</td><td>21%</td><td>0.04%</td></tr>
+      <tr><td><span class="tag red">Exhale</span></td><td>Goes DOWN ↓</td><td>Goes UP ↑</td><td>Contracts</td><td>16.40%</td><td>4.4%</td></tr>
+    </table>
+  </div>
+  <div class="highlight">
+    <strong>Trick:</strong> Inhale mein sab expand hota hai (rib cage up, diaphragm down, lungs expand) | Exhale mein sab contract hota hai (rib cage down, diaphragm up, lungs contract)
+  </div>
+</div>
+
+<!-- 14. EPIGLOTTIS -->
+<div class="section" id="epiglottis">
+  <a href="#top" class="back-btn">↑ Back to Topics</a>
+  <div class="section-header">
+    <div class="section-icon">🚪</div>
+    <h2>14. Epiglottis</h2>
+  </div>
+  <div class="card">
+    <h3>Epiglottis kya karta hai?</h3>
+    <p>Hamara airway protect karta hai — swallowing ke time food aur liquid ko <strong>lungs mein enter hone se rokta</strong> hai.</p>
+  </div>
+</div>
+
+<!-- 15. AEROBIC VS ANAEROBIC -->
+<div class="section" id="aerobic-anaerobic">
+  <a href="#top" class="back-btn">↑ Back to Topics</a>
+  <div class="section-header">
+    <div class="section-icon">⚡</div>
+    <h2>15. Aerobic vs Anaerobic Respiration</h2>
+  </div>
+  <div class="table-wrap">
+    <table>
+      <tr><th>Basis</th><th>Aerobic Respiration</th><th>Anaerobic Respiration</th></tr>
+      <tr><td>Oxygen</td><td>O₂ required</td><td>O₂ NOT required</td></tr>
+      <tr><td>Site</td><td>Mitochondria + Cytoplasm</td><td>Cytoplasm only</td></tr>
+      <tr><td>End Products</td><td>CO₂ + H₂O + Energy</td><td>CO₂ + C₂H₅OH (ethanol) + Energy</td></tr>
+      <tr><td>Energy Released</td><td><span class="tag green">Large amount</span></td><td><span class="tag red">Small amount</span></td></tr>
+      <tr><td>ATP Produced</td><td><strong>38 ATP</strong></td><td><strong>Only 2 ATP</strong></td></tr>
+      <tr><td>Example</td><td>Humans, most animals</td><td>Yeast (dough), Muscle cells (lack of O₂)</td></tr>
+    </table>
+  </div>
+  <div class="two-col">
+    <div class="exception">
+      <div class="exc-title">🍞 Yeast in Dough</div>
+      <p style="font-size:0.92rem;">Yeast anaerobic respiration karta hai → CO₂ release → dough soft aur fluffy banta hai (baked goods mein use).</p>
+    </div>
+    <div class="exception">
+      <div class="exc-title">💪 Muscle Cramps</div>
+      <p style="font-size:0.92rem;">Muscles mein O₂ ki kami → Anaerobic respiration → <strong>Lactic acid</strong> accumulate hota hai → <strong>Cramps</strong>.</p>
+    </div>
+  </div>
+  <div class="highlight">
+    <strong>Glycolysis pathway:</strong><br>
+    Glucose (C₆H₁₂O₆) → Pyruvate (3C) + 2 ATP<br>
+    <strong>In Yeast (no O₂):</strong> Pyruvate → Ethanol + CO₂ + Energy<br>
+    <strong>In Muscles (no O₂):</strong> Pyruvate → Lactic Acid + Energy<br>
+    <strong>In Mitochondria (O₂ present):</strong> Pyruvate → CO₂ + H₂O + Energy (Aerobic)
+  </div>
+</div>
+
+<!-- 16. CELLULAR RESPIRATION -->
+<div class="section" id="cellular-resp">
+  <a href="#top" class="back-btn">↑ Back to Topics</a>
+  <div class="section-header">
+    <div class="section-icon">🔋</div>
+    <h2>16. Cellular Respiration</h2>
+  </div>
+  <div class="card">
+    <h3>Cellular Respiration kya hai?</h3>
+    <p>Process jisme cells glucose (sugar) break down karte hain — O₂ ki presence mein — energy <strong>ATP</strong> (Adenosine Triphosphate) ke form mein release karte hain.</p>
+    <p style="margin-top:0.5rem; font-size:0.92rem; color:#555;">Formula: C₆H₁₂O₆ + 6O₂ → 6CO₂ + 6H₂O + Energy (ATP & heat)</p>
+  </div>
+</div>
+
+<!-- 17. STEPS OF CELLULAR RESPIRATION -->
+<div class="section" id="steps-cr">
+  <a href="#top" class="back-btn">↑ Back to Topics</a>
+  <div class="section-header">
+    <div class="section-icon">📋</div>
+    <h2>17. Steps in Cellular Respiration</h2>
+  </div>
+  <div class="step-list">
+    <div class="step-item">
+      <div class="step-num">1</div>
+      <div class="step-content">
+        <h4>Glycolysis — Cytoplasm mein</h4>
+        <p>Glucose (6C) → 2 molecules of Pyruvate (3C each). Small amount of <strong>ATP + NADH</strong> produce hote hain.</p>
+      </div>
+    </div>
+    <div class="step-item">
+      <div class="step-num">2</div>
+      <div class="step-content">
+        <h4>Krebs Cycle (Citric Acid Cycle) — Mitochondria mein</h4>
+        <p>Pyruvate further break down hota hai. CO₂ release hoti hai. Energy carriers <strong>NADH + FADH₂</strong> produce hote hain.</p>
+      </div>
+    </div>
+    <div class="step-item">
+      <div class="step-num">3</div>
+      <div class="step-content">
+        <h4>Electron Transport Chain (ETC) — Inner Mitochondrial Membrane mein</h4>
+        <p>NADH + FADH₂ electrons donate karte hain. O₂ = final electron acceptor. <strong>Up to 34 ATP</strong> produce hota hai. Total ~<strong>38 ATP per glucose</strong> aerobic respiration mein.</p>
+      </div>
+    </div>
+  </div>
+  <div class="highlight">
+    <strong>NADH (Nicotinamide Adenine Dinucleotide):</strong> ek coenzyme hai jo cellular respiration mein electrons ko Electron Transport Chain tak transport karta hai — vital role.
+  </div>
+  <div class="table-wrap" style="margin-top:1rem;">
+    <table>
+      <tr><th>Step</th><th>Location</th><th>Input</th><th>Output</th><th>ATP</th></tr>
+      <tr><td>Glycolysis</td><td>Cytoplasm</td><td>Glucose (6C)</td><td>2 Pyruvate (3C)</td><td>2 ATP</td></tr>
+      <tr><td>Krebs Cycle</td><td>Mitochondria</td><td>Pyruvate</td><td>CO₂ + NADH + FADH₂</td><td>2 ATP</td></tr>
+      <tr><td>ETC</td><td>Inner mitochondrial membrane</td><td>NADH + FADH₂</td><td>H₂O</td><td>~34 ATP</td></tr>
+      <tr><td><strong>Total</strong></td><td>—</td><td>—</td><td>—</td><td><strong>~38 ATP</strong></td></tr>
+    </table>
+  </div>
+</div>
+
+</main>
+
+<footer>
+  <p>📚 RISE NOTES • Digestion & Respiration Made with ❤️ for Smart Preparation</p>
+  
+</footer>
+
+</body>
+</html>
