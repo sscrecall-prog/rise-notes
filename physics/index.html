@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Physics Notes — Rise Notes</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#eaf0f6;color:#1c2833;font-family:Arial,sans-serif;padding-bottom:75px}
+header{background:linear-gradient(135deg,#0d1b2a,#1a5c8a);color:white;padding:25px 16px 34px}.w{max-width:950px;margin:auto}
+.crumb{font-size:12px;color:#bed0df}.crumb a{color:#edb830;text-decoration:none}h1{font-size:clamp(32px,8vw,52px);margin:22px 0 5px;color:#edb830}
+header p{color:#d2dfeb;font-size:14px}.search{display:flex;background:white;border-radius:12px;margin-top:18px;max-width:600px;padding:4px}
+input{border:0;outline:0;padding:12px;width:100%;font-size:14px}button{border:0;background:#edb830;border-radius:9px;padding:0 15px;font-weight:bold}
+main{max-width:950px;margin:auto;padding:24px 16px}h2{margin:0 0 14px}.grid{display:grid;gap:11px}
+.card{background:white;border:1px solid #d5e0ec;border-left:5px solid #edb830;border-radius:14px;padding:14px;display:flex;align-items:center;gap:12px;text-decoration:none;color:inherit}
+.num{background:#0d1b2a;color:#edb830;border-radius:10px;width:42px;height:42px;display:grid;place-items:center;font-weight:bold;flex:none}
+.txt{display:flex;flex-direction:column}.txt b{font-size:15px}.txt small{color:#64748b;margin-top:4px;line-height:1.4}.go{margin-left:auto;font-size:25px;color:#d95f1a}
+#empty{display:none;text-align:center;background:white;padding:18px;border-radius:12px}
+nav{position:fixed;bottom:0;left:0;right:0;background:#0d1b2a;display:grid;grid-template-columns:repeat(3,1fr);padding:10px;z-index:10}
+nav a{text-align:center;color:#edb830;text-decoration:none;font-size:12px}
+@media(min-width:700px){.grid{grid-template-columns:1fr 1fr}nav{max-width:450px;left:50%;transform:translateX(-50%);border-radius:16px 16px 0 0}}
+</style></head>
+<body><header><div class="w"><div class="crumb"><a href="../index.html">Rise Notes</a> › Physics</div>
+<h1>⚛️ Physics</h1><p>7 free topic-wise Physics notes for competitive exam preparation.</p>
+<div class="search"><input id="q" placeholder="Search Physics topic..."><button onclick="f()">Search</button></div></div></header>
+<main><h2>📚 All Chapters</h2><div class="grid"><a class="card" href="motion_notes.html" data-search="motion distance, displacement, speed, velocity and motion concepts.">
+<span class="num">01</span><span class="txt"><b>Motion</b><small>Distance, displacement, speed, velocity and motion concepts.</small></span><span class="go">›</span></a>
+<a class="card" href="gravitation_work_done_notes.html" data-search="gravitation & work done gravitation, kepler laws, work and related concepts.">
+<span class="num">02</span><span class="txt"><b>Gravitation & Work Done</b><small>Gravitation, Kepler laws, work and related concepts.</small></span><span class="go">›</span></a>
+<a class="card" href="sound_notes.html" data-search="sound sound waves, frequency, wavelength and related concepts.">
+<span class="num">03</span><span class="txt"><b>Sound</b><small>Sound waves, frequency, wavelength and related concepts.</small></span><span class="go">›</span></a>
+<a class="card" href="reflection_refraction_notes.html" data-search="reflection & refraction light, mirrors, reflection and refraction.">
+<span class="num">04</span><span class="txt"><b>Reflection & Refraction</b><small>Light, mirrors, reflection and refraction.</small></span><span class="go">›</span></a>
+<a class="card" href="human_eye_vision_notes.html" data-search="human eye & vision human eye, vision and optical concepts.">
+<span class="num">05</span><span class="txt"><b>Human Eye & Vision</b><small>Human eye, vision and optical concepts.</small></span><span class="go">›</span></a>
+<a class="card" href="electricity_notes.html" data-search="electricity current, resistance, circuits and electrical concepts.">
+<span class="num">06</span><span class="txt"><b>Electricity</b><small>Current, resistance, circuits and electrical concepts.</small></span><span class="go">›</span></a>
+<a class="card" href="magnetic_effect_notes.html" data-search="magnetic effect of electric current magnetic effects, rules and electromagnetic concepts.">
+<span class="num">07</span><span class="txt"><b>Magnetic Effect of Electric Current</b><small>Magnetic effects, rules and electromagnetic concepts.</small></span><span class="go">›</span></a></div><div id="empty">No matching Physics note found.</div></main>
+<nav><a href="../index.html">⌂<br>Home</a><a href="#">▦<br>Chapters</a><a href="#" onclick="document.getElementById('q').focus();return false">⌕<br>Search</a></nav>
+<script>function f(){let q=document.getElementById('q').value.toLowerCase(),n=0;document.querySelectorAll('.card').forEach(c=>{let ok=!q||c.dataset.search.includes(q);c.style.display=ok?'flex':'none';if(ok)n++});document.getElementById('empty').style.display=n?'none':'block'}document.getElementById('q').addEventListener('input',f)</script>
+</body></html>
