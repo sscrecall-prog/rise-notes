@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Banking System Part 1 – Lecture 7 | Parmar SSC</title>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700;800&family=Hind:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --deep:#08192E; --navy:#122038; --teal:#1A5C8A;
+    --saffron:#D95F1A; --gold:#EDB830; --green:#1A7A42;
+    --red:#B03A2E; --purple:#6C3483; --blue:#1A6EA8;
+    --cyan:#0E8A74; --amber:#C87D00; --light:#F3F7FB;
+    --card:#FFFFFF; --text:#1C2833;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:'Hind',sans-serif;background:#E8EFF7;color:var(--text);line-height:1.78;}
+
+  header{background:linear-gradient(135deg,#08192E 0%,#122038 55%,#1A5C8A 100%);padding:46px 20px;text-align:center;position:relative;overflow:hidden;}
+  header::before{content:'🏦';position:absolute;font-size:220px;opacity:0.05;right:20px;top:-20px;}
+  header h1{font-family:'Baloo 2',cursive;font-size:2.5rem;font-weight:800;color:var(--gold);}
+  header p{color:#85A9C8;margin-top:6px;font-size:.97rem;}
+  .badge{display:inline-block;background:var(--saffron);color:white;font-size:.73rem;font-weight:700;padding:4px 16px;border-radius:20px;margin-top:10px;letter-spacing:1px;text-transform:uppercase;}
+
+  .container{max-width:920px;margin:0 auto;padding:30px 16px 70px;}
+
+  .section-title{font-family:'Baloo 2',cursive;font-size:1.4rem;font-weight:800;color:white;background:linear-gradient(135deg,var(--teal),var(--navy));padding:13px 24px;border-radius:12px 12px 0 0;border-left:6px solid var(--gold);margin-top:38px;}
+  .section-body{background:var(--card);border-radius:0 0 12px 12px;padding:22px 26px;box-shadow:0 4px 22px rgba(0,0,0,.07);border:1px solid #CCDAEB;border-top:none;}
+
+  .card{background:var(--light);border-radius:10px;padding:16px 18px;margin:12px 0;border-left:4px solid var(--blue);}
+  .card.green{border-left-color:var(--green);}.card.orange{border-left-color:var(--saffron);}
+  .card.purple{border-left-color:var(--purple);}.card.red{border-left-color:var(--red);}
+  .card.gold{border-left-color:var(--gold);}.card.cyan{border-left-color:var(--cyan);}
+  .card.teal{border-left-color:var(--teal);}
+  .card-title{font-family:'Baloo 2',cursive;font-weight:700;font-size:1.05rem;color:var(--teal);margin-bottom:6px;}
+
+  .example{background:linear-gradient(135deg,#fff9e6,#fff3cd);border:1px solid #ffc107;border-radius:8px;padding:10px 14px;margin-top:10px;font-size:.9rem;}
+  .example::before{content:'💡 Real Life Example: ';font-weight:700;color:#c47d00;}
+  .exam-tip{background:linear-gradient(135deg,#ffecd2,#fcb69f);border-radius:8px;padding:10px 16px;margin-top:10px;font-size:.88rem;font-weight:600;color:#7d2a00;}
+  .exam-tip::before{content:'🎯 Exam Tip: ';}
+  .key{background:#E4F0FB;border-radius:8px;padding:10px 14px;margin:8px 0;font-size:.92rem;border-left:3px solid var(--blue);}
+  .key b{color:var(--teal);}
+  .alert{background:linear-gradient(135deg,#fdecea,#fad7d7);border:1px solid #e74c3c;border-radius:8px;padding:10px 14px;margin:8px 0;font-size:.9rem;font-weight:600;color:#922b21;}
+
+  table{width:100%;border-collapse:collapse;margin:14px 0;font-size:.88rem;}
+  th{background:linear-gradient(135deg,var(--teal),var(--navy));color:white;padding:10px 12px;text-align:left;font-family:'Baloo 2',cursive;}
+  td{padding:9px 12px;border-bottom:1px solid #D8E4F0;vertical-align:top;}
+  tr:nth-child(even) td{background:#EEF4FB;}
+  tr:hover td{background:#DFF0FA;}
+
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:14px 0;}
+  .grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin:14px 0;}
+
+  .box{border-radius:12px;padding:16px;color:white;font-size:.88rem;}
+  .box .btitle{font-family:'Baloo 2';font-size:1rem;font-weight:700;margin-bottom:6px;}
+  .box.blue{background:linear-gradient(135deg,#1A6EA8,#155E90);}
+  .box.green{background:linear-gradient(135deg,#1A7A42,#166835);}
+  .box.purple{background:linear-gradient(135deg,#6C3483,#5B2C6F);}
+  .box.orange{background:linear-gradient(135deg,#D95F1A,#BA5217);}
+  .box.red{background:linear-gradient(135deg,#B03A2E,#962D22);}
+  .box.teal{background:linear-gradient(135deg,#0E8A74,#0B7560);}
+  .box.gold{background:linear-gradient(135deg,#C87D00,#A96A00);}
+  .box.dark{background:linear-gradient(135deg,#122038,#08192E);}
+  .box.cyan{background:linear-gradient(135deg,#1C5F82,#165070);}
+
+  /* Timeline */
+  .timeline{position:relative;margin:20px 0;}
+  .tl-item{display:flex;gap:16px;margin-bottom:16px;align-items:flex-start;}
+  .tl-year{background:var(--teal);color:white;font-family:'Baloo 2';font-weight:800;font-size:.9rem;padding:6px 12px;border-radius:8px;min-width:60px;text-align:center;flex-shrink:0;}
+  .tl-content{background:var(--light);border-radius:10px;padding:12px 16px;flex:1;font-size:.9rem;border-left:3px solid var(--teal);}
+  .tl-content strong{color:var(--teal);}
+
+  /* RRB ownership */
+  .own-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:3px;margin:12px 0;border:2px solid var(--teal);border-radius:12px;overflow:hidden;}
+  .own-header{background:var(--teal);color:white;padding:10px;font-family:'Baloo 2';font-weight:700;text-align:center;font-size:.9rem;}
+  .own-cell{background:var(--light);padding:10px;text-align:center;font-size:.88rem;border-bottom:1px solid #dde;}
+  .own-cell.pct{font-family:'Baloo 2';font-size:1.3rem;font-weight:800;background:white;}
+  .own-cell.c1 .pct{color:#B03A2E;}
+  .own-cell.c2 .pct{color:#1A6EA8;}
+  .own-cell.c3 .pct{color:#1A7A42;}
+
+  /* PSL Bar */
+  .psl-bar{background:#E8EFF7;border-radius:10px;padding:14px;margin:10px 0;}
+  .psl-row{display:flex;align-items:center;gap:12px;margin:6px 0;}
+  .psl-label{font-size:.85rem;font-weight:600;min-width:220px;}
+  .psl-track{flex:1;background:#dde;border-radius:6px;height:22px;position:relative;}
+  .psl-fill{height:100%;border-radius:6px;display:flex;align-items:center;padding-left:8px;color:white;font-family:'Baloo 2';font-size:.85rem;font-weight:700;}
+  .fill40{width:40%;background:linear-gradient(90deg,#1A6EA8,#1557A0);}
+  .fill75{width:75%;background:linear-gradient(90deg,#1A7A42,#166835);}
+
+  /* PMMY */
+  .mudra-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:12px 0;}
+  .mudra-card{border-radius:10px;padding:14px;color:white;}
+  .m1{background:linear-gradient(135deg,#1A7A42,#166835);}
+  .m2{background:linear-gradient(135deg,#1A6EA8,#155E90);}
+  .m3{background:linear-gradient(135deg,#D95F1A,#BA5217);}
+  .m4{background:linear-gradient(135deg,#6C3483,#5B2C6F);}
+  .mudra-card .mtitle{font-family:'Baloo 2';font-size:1.05rem;font-weight:800;margin-bottom:4px;}
+
+  /* Coin minting */
+  .coin-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:12px 0;}
+  .coin-card{border-radius:10px;padding:12px 14px;background:white;border:2px solid;text-align:center;font-size:.88rem;}
+  .coin-card .csym{font-size:1.8rem;display:block;margin-bottom:4px;}
+  .coin-card .cloc{font-family:'Baloo 2';font-weight:700;font-size:1rem;}
+  .cc1{border-color:#1A7A42;}.cc1 .cloc{color:#1A7A42;}
+  .cc2{border-color:#D95F1A;}.cc2 .cloc{color:#D95F1A;}
+  .cc3{border-color:#1A6EA8;}.cc3 .cloc{color:#1A6EA8;}
+  .cc4{border-color:#6C3483;}.cc4 .cloc{color:#6C3483;}
+
+  .formula{background:linear-gradient(135deg,#08192E,#122038);color:#EDB830;font-family:'Baloo 2',cursive;font-size:1rem;font-weight:700;text-align:center;padding:13px;border-radius:10px;margin:10px 0;}
+  .highlight{background:linear-gradient(120deg,#ffeaa7,#fdcb6e);padding:2px 6px;border-radius:4px;font-weight:700;}
+  p{margin:8px 0;font-size:.93rem;}
+  ul{padding-left:20px;margin:6px 0;}
+  li{margin:5px 0;font-size:.92rem;}
+
+  footer{text-align:center;padding:30px;background:var(--deep);color:#85A9C8;font-size:.85rem;}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>🏦 Banking System (Part 1)</h1>
+  <p>Complete Detailed Notes — Lecture 7 | Parmar SSC</p>
+  <span class="badge">SSC Exam Preparation</span>
+</header>
+
+<div class="container">
+
+  <!-- ═══════════════════════════ 1. RBI ═══════════════════════════ -->
+  <div class="section-title">🏛️ 1. Reserve Bank of India (RBI) — Introduction & History</div>
+  <div class="section-body">
+
+    <div class="card">
+      <div class="card-title">📌 What is Banking?</div>
+      <p>Banking = एक financial activity जिसमें individuals, businesses और governments को <strong>money manage करने और financial services provide</strong> करने का काम होता है।</p>
+      <p><strong>Core Activities:</strong> Deposits accept करना + Loans देना + Transactions facilitate करना।</p>
+    </div>
+
+    <div class="card gold">
+      <div class="card-title">🏦 RBI — "Father of All Banks"</div>
+      <p>RBI = India का <strong>Central Bank</strong>। यह पूरे banking system को manage, control और regulate करती है। इसीलिए इसे <strong>"Father of All Banks"</strong> या <strong>"Bank of Banks"</strong> कहते हैं।</p>
+    </div>
+
+    <p style="font-weight:700;color:var(--teal);margin-top:16px;">📅 RBI का Timeline:</p>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-year">1926</div>
+        <div class="tl-content"><strong>Hilton Young Commission</strong> ने RBI establish करने की recommendation दी।</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">1934</div>
+        <div class="tl-content"><strong>Reserve Bank of India Act, 1934</strong> pass हुआ — RBI officially established।</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">1935</div>
+        <div class="tl-content">Operations शुरू हुई — <strong>1st April 1935, Calcutta</strong> में।</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">1937</div>
+        <div class="tl-content">Headquarters <strong>Calcutta से Mumbai</strong> permanently move किया गया।</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">1949</div>
+        <div class="tl-content">RBI <strong>Nationalized on 1st January 1949</strong> — Reserve Bank of India (Transfer to Public Ownership) Act, 1948 के तहत। Government ने private players से full ownership ले ली।</div>
+      </div>
+    </div>
+
+    <div class="card blue">
+      <div class="card-title">👑 Key Leadership & Symbols</div>
+      <ul>
+        <li><strong>First Governor:</strong> Sir Osborne Smith</li>
+        <li><strong>First Indian Governor:</strong> Sir C.D. Deshmukh</li>
+        <li><strong>Current Governor (2026):</strong> Sanjay Malhotra</li>
+        <li><strong>Logo:</strong> Tiger and a Palm Tree 🐯🌴</li>
+      </ul>
+    </div>
+
+    <div class="example">
+      RBI वही है जो commercial banks (SBI, HDFC, etc.) को regulate करती है — जैसे CBSE schools को regulate करती है। आम आदमी directly RBI से deal नहीं करता — हम banks से deal करते हैं, banks RBI से।
+    </div>
+    <div class="exam-tip">Hilton Young Commission 1926 → RBI Act 1934 → Operations 1 April 1935 → HQ Mumbai 1937 → Nationalized 1 Jan 1949। यह sequence बहुत important है।</div>
+  </div>
+
+  <!-- ═══════════════════════════ 2. FUNCTIONS OF RBI ═══════════════════════════ -->
+  <div class="section-title">⚙️ 2. Functions of RBI</div>
+  <div class="section-body">
+
+    <div class="card blue">
+      <div class="card-title">1️⃣ Regulator of Banks — "Bank of Banks"</div>
+      <p>Authority: <strong>Banking Regulation Act, 1949</strong> के तहत banking system regulate करती है।</p>
+      <ul>
+        <li>Banking companies को <strong>licenses grant</strong> करती है।</li>
+        <li><strong>CRR और SLR</strong> regulate करती है।</li>
+        <li>Banks specific criteria meet करें तभी operate करें — यह ensure करती है।</li>
+      </ul>
+      <p><strong>Scheduled Banks:</strong> वो banks जो RBI Act, 1934 की <span class="highlight">Second Schedule</span> में listed हैं।</p>
+    </div>
+
+    <div class="card green">
+      <div class="card-title">2️⃣ Monetary Authority</div>
+      <p>Inflation control करने, money supply manage करने और credit flow ensure करने के लिए <strong>monetary policy formulate और implement</strong> करती है।</p>
+      <p>Tools: Repo Rate, CRR, SLR, OMO, etc.</p>
+    </div>
+
+    <div class="card orange">
+      <div class="card-title">3️⃣ Currency Printing & Management</div>
+      <p>RBI India में currency print और manage करती है।</p>
+      <p><strong>⚠️ Exception:</strong> <span class="highlight">₹1 note और सभी Coins</span> = Ministry of Finance (Government of India) issue करती है — RBI नहीं।</p>
+
+      <div class="grid2" style="margin-top:12px;">
+        <div>
+          <p style="font-weight:700;color:var(--teal);">🖨️ Note Printing Press (4 Locations):</p>
+          <ul>
+            <li>Nasik (Maharashtra)</li>
+            <li>Dewas (Madhya Pradesh)</li>
+            <li>Mysore (Karnataka)</li>
+            <li>Salboni (West Bengal)</li>
+          </ul>
+        </div>
+        <div>
+          <p style="font-weight:700;color:var(--teal);">🪙 Coin Minting (4 Locations):</p>
+          <ul>
+            <li>Mumbai</li>
+            <li>Hyderabad</li>
+            <li>Kolkata (Calcutta)</li>
+            <li>Noida</li>
+          </ul>
+        </div>
+      </div>
+
+      <p style="font-weight:700;color:var(--teal);margin-top:12px;">🔍 Coin पर Mint कहाँ था — कैसे पहचानें?</p>
+      <p>Coin पर साल के नीचे छोटा mark देखें:</p>
+      <div class="coin-grid">
+        <div class="coin-card cc1"><span class="csym">💎</span><div class="cloc">Diamond</div><small>Mumbai में Minted</small></div>
+        <div class="coin-card cc2"><span class="csym">⭐</span><div class="cloc">Star</div><small>Hyderabad में Minted</small></div>
+        <div class="coin-card cc3"><span class="csym">—</span><div class="cloc">No Mark</div><small>Kolkata में Minted</small></div>
+        <div class="coin-card cc4"><span class="csym">●</span><div class="cloc">Dot</div><small>Noida में Minted</small></div>
+      </div>
+    </div>
+
+    <div class="card purple">
+      <div class="card-title">4️⃣ Publication of Reports</div>
+      <p><strong>Financial Stability Report (FSR):</strong> Biannual (June और December — साल में 2 बार)। Purpose: Financial system के risks assess करना।</p>
+      <p><strong>Handbook of Statistics on the Indian Economy:</strong> Annually (साल में 1 बार)। Purpose: Indian economy के comprehensive data और statistics।</p>
+    </div>
+
+    <div class="card cyan">
+      <div class="card-title">5️⃣ Lender of Last Resort (अंतिम ऋणदाता)</div>
+      <p>Financial crisis में जब commercial banks कहीं से loan नहीं पा सकतीं, तो <strong>RBI last resort के रूप में funding provide</strong> करती है।</p>
+      <div class="alert">Public (individuals) directly RBI से account open नहीं कर सकता, और न directly borrow कर सकता है। हम Banks से deal करते हैं — Banks RBI से deal करती हैं।</div>
+    </div>
+
+    <div class="card teal">
+      <div class="card-title">📄 Clean Note Policy — 1999</div>
+      <ul>
+        <li><strong>Introduction:</strong> RBI ने 1999 में introduce किया।</li>
+        <li><strong>Objective:</strong> Banks soiled (गंदे), torn (फटे) या scribbled (लिखे हुए) notes customers को pass नहीं करेंगी — इन्हें RBI को वापस deposit करना होगा।</li>
+        <li><strong>Legal Basis:</strong> Section 35A of the Banking Regulation Act, 1949।</li>
+      </ul>
+    </div>
+
+    <div class="exam-tip">₹1 Note + सभी Coins = Ministry of Finance। बाकी सभी Notes = RBI। Clean Note Policy 1999। FSR = Biannual (June+Dec)।</div>
+  </div>
+
+  <!-- ═══════════════════════════ 3. BANKING CLASSIFICATION ═══════════════════════════ -->
+  <div class="section-title">🗂️ 3. Classification of Banking System in India (RBI Act 1934)</div>
+  <div class="section-body">
+
+    <div class="grid2">
+      <div class="box blue">
+        <div class="btitle">✅ Scheduled Banks</div>
+        RBI Act, 1934 की <strong>Second Schedule</strong> में listed।<br>
+        CRR maintain करना mandatory।<br>
+        RBI की facilities (Repo Rate, etc.) use कर सकती हैं।<br><br>
+        <strong>Types:</strong><br>
+        → Commercial Banks (Profit Motive)<br>
+        → Cooperative Banks (Service Motive)<br>
+        → Local Area Banks
+      </div>
+      <div class="box dark">
+        <div class="btitle">❌ Non-Scheduled Banks</div>
+        Second Schedule में listed नहीं।<br>
+        Small/local banks जो RBI की criteria meet नहीं करतीं।<br><br>
+        ये बहुत rare हैं।
+      </div>
+    </div>
+
+    <p style="font-weight:700;color:var(--teal);margin-top:14px;">Commercial Banks (Profit Motive) के 4 Types:</p>
+    <table>
+      <tr><th>Type</th><th>Ownership</th><th>Examples</th></tr>
+      <tr><td><strong>Public Sector Banks</strong></td><td>Govt. owned (majority stake)</td><td>SBI, PNB, BOB (12 total)</td></tr>
+      <tr><td><strong>Private Sector Banks</strong></td><td>Indian owned, private</td><td>HDFC, ICICI, Axis, Kotak Mahindra</td></tr>
+      <tr><td><strong>Foreign Banks</strong></td><td>Foreign owned</td><td>Citi Bank, HSBC, Standard Chartered</td></tr>
+      <tr><td><strong>Regional Rural Banks (RRBs)</strong></td><td>Jointly owned (Govt+Bank+State)</td><td>Prathama Bank</td></tr>
+    </table>
+
+    <p style="font-weight:700;color:var(--teal);margin-top:12px;">Cooperative Banks (Service Motive) के 2 Types:</p>
+    <div class="grid2">
+      <div class="card green"><strong>Urban Cooperative Banks</strong><br>Urban areas में — service motive + some profit</div>
+      <div class="card orange"><strong>Rural Cooperative Banks</strong><br>Rural areas में — farmers, rural workers</div>
+    </div>
+
+    <div class="exam-tip">12 Public Sector Banks हैं currently। SBI India की largest bank है। Cooperative Banks का motive = Service (profit नहीं)।</div>
+  </div>
+
+  <!-- ═══════════════════════════ 4. HISTORY OF BANKING ═══════════════════════════ -->
+  <div class="section-title">📜 4. Evolution & History of Indian Banking</div>
+  <div class="section-body">
+
+    <p>India की banking history colonial era से आज तक — <span class="highlight">"Class Banking" से "Mass Banking"</span> का सफर।</p>
+
+    <div class="card gold">
+      <div class="card-title">🥇 First Banks of India</div>
+      <ul>
+        <li><strong>First Bank in India:</strong> <span class="highlight">Bank of Hindustan</span> — 1770, Calcutta में।</li>
+        <li><strong>First Indian-Owned Bank:</strong> <span class="highlight">Allahabad Bank</span> — 1865।</li>
+      </ul>
+    </div>
+
+    <p style="font-weight:700;color:var(--teal);margin-top:14px;">🏦 SBI की Journey — Presidency Banks से State Bank तक:</p>
+    <table>
+      <tr><th>Year</th><th>Event</th><th>Details</th></tr>
+      <tr><td><strong>1806</strong></td><td>Bank of Calcutta</td><td>First Presidency Bank (British established)</td></tr>
+      <tr><td><strong>1840</strong></td><td>Bank of Bombay</td><td>Second Presidency Bank</td></tr>
+      <tr><td><strong>1843</strong></td><td>Bank of Madras</td><td>Third Presidency Bank</td></tr>
+      <tr><td><strong>1921</strong></td><td>Imperial Bank of India</td><td>तीनों Presidency Banks merge होकर एक entity बनी</td></tr>
+      <tr><td><strong>1955</strong></td><td>State Bank of India (SBI)</td><td>Imperial Bank nationalized और renamed — national development के लिए</td></tr>
+    </table>
+
+    <div class="exam-tip">3 Presidency Banks → 1921 Imperial Bank → 1955 SBI। यह sequence बहुत important है।</div>
+  </div>
+
+  <!-- ═══════════════════════════ 5. NATIONALIZATION ═══════════════════════════ -->
+  <div class="section-title">🏛️ 5. Nationalization of Banks (1969 & 1980)</div>
+  <div class="section-body">
+
+    <div class="card">
+      <div class="card-title">📌 Why Nationalization?</div>
+      <p>Commercial banks cities और trade hubs (Gujarat, Maharashtra) में concentrate थीं — <strong>"Class Banking"</strong>। Rural areas और गरीब लोगों तक banking नहीं पहुँच रही थी।</p>
+      <p>Government ने private banks का ownership लेकर rural areas तक banking पहुँचाने के लिए nationalization की — <strong>"Mass Banking"</strong> की तरफ।</p>
+    </div>
+
+    <div class="grid2">
+      <div class="box red">
+        <div class="btitle">🔴 Phase I — 1969</div>
+        <strong>PM:</strong> Indira Gandhi<br>
+        <strong>Action:</strong> 14 Major Banks nationalized<br>
+        <strong>Criteria:</strong> ₹50 Crore से ज़्यादा deposits<br>
+        <strong>Legislation:</strong> Banking Companies (Acquisition and Transfer of Undertakings) Act, 1969
+      </div>
+      <div class="box orange">
+        <div class="btitle">🟠 Phase II — 1980</div>
+        <strong>PM:</strong> Indira Gandhi<br>
+        <strong>Action:</strong> 6 Additional Banks nationalized<br>
+        <strong>Criteria:</strong> ₹200 Crore से ज़्यादा deposits<br><br>
+        <strong>6 Banks:</strong> Andhra, Corporation, New Bank of India (PNB में merged 1993), OBC, Punjab & Sind, Vijaya Bank
+      </div>
+    </div>
+
+    <div class="card blue">
+      <div class="card-title">Nationalization vs. Consolidation (Merger)</div>
+      <div class="grid2">
+        <div>
+          <strong>Nationalization:</strong><br>
+          Government private banks की ownership ले लेती है। (1969, 1980)
+        </div>
+        <div>
+          <strong>Consolidation (Merger):</strong><br>
+          Multiple banks को merge करके fewer, larger, globally competitive banks बनाना।
+        </div>
+      </div>
+    </div>
+
+    <div class="card green">
+      <div class="card-title">🏦 Narasimham Committee — Banking Reforms</div>
+      <ul>
+        <li><strong>1991 Committee:</strong> CRR/SLR कम करने की recommendation। Mandatory government investment requirements हटाने की recommendation।</li>
+        <li><strong>1998 Committee:</strong> Strong banks को merge करके <span class="highlight">"Global Sized Banks"</span> create करने की recommendation।</li>
+      </ul>
+    </div>
+
+    <div class="example">
+      2019-2021 में India ने 10 Public Sector Banks को merge करके 4 बड़े banks बनाए — यही Consolidation है। जैसे Vijaya Bank + Dena Bank → Bank of Baroda। Narasimham Committee 1998 की same recommendation थी।
+    </div>
+    <div class="exam-tip">Phase I 1969 = 14 Banks, ₹50 Cr criteria। Phase II 1980 = 6 Banks, ₹200 Cr criteria। दोनों PM = Indira Gandhi।</div>
+  </div>
+
+  <!-- ═══════════════════════════ 6. COMMERCIAL BANK FUNCTIONS ═══════════════════════════ -->
+  <div class="section-title">💼 6. Functions of Commercial Banks</div>
+  <div class="section-body">
+
+    <div class="grid2">
+      <div class="box blue">
+        <div class="btitle">📦 A. Primary Functions</div>
+        <strong>1. Accepting Deposits (Liability):</strong><br>
+        Bank customer का पैसा owe करती है — Liability।<br>
+        → Demand Deposits: Savings, Current (anytime withdrawal)<br>
+        → Time Deposits: FD, RD (fixed tenure)<br><br>
+        <strong>2. Advancing Loans (Asset):</strong><br>
+        Loans interest generate करते हैं — Asset।
+      </div>
+      <div class="box green">
+        <div class="btitle">🛠️ B. Secondary Functions</div>
+        <strong>1. Overdraft Facility:</strong><br>
+        Account balance से ज़्यादा withdraw करने की permission। Credit score based short-term loan।<br><br>
+        <strong>2. Agency Functions:</strong><br>
+        → Fund Transfer<br>
+        → Tax Collection (Govt. की तरफ से)<br><br>
+        <strong>3. General Utility Functions:</strong><br>
+        → Locker Facility (stolen हो तो bank compensate करेगी)<br>
+        → Financial guarantees, info
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════ 7. RRBS ═══════════════════════════ -->
+  <div class="section-title">🌾 7. Regional Rural Banks (RRBs)</div>
+  <div class="section-body">
+
+    <div class="card">
+      <div class="card-title">📌 Purpose</div>
+      <p>Commercial banks cities में थीं — rural areas, farmers, और weaker sections ignore होते थे। <strong>RRBs rural areas में credit और banking services provide</strong> करने के लिए बनाए गए।</p>
+    </div>
+
+    <div class="card green">
+      <div class="card-title">📋 Establishment Facts</div>
+      <ul>
+        <li><strong>First RRB:</strong> <span class="highlight">Pratham Grameen Bank</span></li>
+        <li><strong>Date:</strong> <span class="highlight">2nd October 1975 (Gandhi Jayanti)</span></li>
+        <li><strong>Location:</strong> Moradabad, Uttar Pradesh</li>
+        <li><strong>Act:</strong> RRB Act, 1976 के तहत formally established</li>
+        <li><strong>Kelkar Committee:</strong> New RRBs खोलना बंद करने की recommendation दी — viability पर focus करने के लिए।</li>
+      </ul>
+    </div>
+
+    <p style="font-weight:700;color:var(--teal);margin-top:14px;">🏦 RRB Ownership Structure (50-35-15):</p>
+    <div class="own-grid">
+      <div class="own-header">Stakeholder</div>
+      <div class="own-header">Ownership</div>
+      <div class="own-header">Role</div>
+
+      <div class="own-cell" style="font-weight:700;color:#B03A2E;">Central Government</div>
+      <div class="own-cell pct" style="color:#B03A2E;">50%</div>
+      <div class="own-cell">Largest stakeholder — govt. backing</div>
+
+      <div class="own-cell" style="font-weight:700;color:#1A6EA8;">Sponsor Bank</div>
+      <div class="own-cell pct" style="color:#1A6EA8;">35%</div>
+      <div class="own-cell">Commercial Bank (SBI, HDFC) — technical & financial support</div>
+
+      <div class="own-cell" style="font-weight:700;color:#1A7A42;">State Government</div>
+      <div class="own-cell pct" style="color:#1A7A42;">15%</div>
+      <div class="own-cell">State जहाँ RRB operate करती है</div>
+    </div>
+
+    <div class="card blue">
+      <div class="card-title">🔍 Regulation vs. Supervision</div>
+      <ul>
+        <li><strong>Regulator:</strong> RBI (Reserve Bank of India) — guidelines और rules।</li>
+        <li><strong>Supervisor:</strong> NABARD — inspect और oversee करता है।</li>
+      </ul>
+    </div>
+
+    <div class="exam-tip">First RRB = Pratham Grameen Bank। Date = 2 Oct 1975। Ownership = 50:35:15 (Centre:Sponsor Bank:State)। Regulator = RBI। Supervisor = NABARD।</div>
+  </div>
+
+  <!-- ═══════════════════════════ 8. IMPORTANT FINANCIAL INSTITUTIONS ═══════════════════════════ -->
+  <div class="section-title">🏦 8. Important Financial Institutions (IFIs)</div>
+  <div class="section-body">
+
+    <div class="card blue">
+      <div class="card-title">🌾 NABARD — National Bank for Agriculture and Rural Development</div>
+      <ul>
+        <li><strong>Established:</strong> <span class="highlight">12 July 1982</span></li>
+        <li><strong>Committee:</strong> B. Sivaraman Committee (1979) की recommendation पर।</li>
+        <li><strong>Act:</strong> NABARD Act, 1981</li>
+        <li><strong>HQ:</strong> Mumbai</li>
+      </ul>
+      <p style="margin-top:10px;font-weight:700;color:var(--teal);">Key Functions:</p>
+      <ul>
+        <li><strong>Rural Credit:</strong> Agriculture और rural development को loans।</li>
+        <li><strong>Supervision:</strong> Cooperative Banks और RRBs को oversee करता है।</li>
+        <li><strong>Refinancing:</strong> Directly public को नहीं — Banks (RRBs) को funding देता है।</li>
+      </ul>
+      <p style="margin-top:8px;font-weight:700;color:var(--teal);">Schemes:</p>
+      <ul>
+        <li><strong>SHG-Bank Linkage Program (1992):</strong> Self Help Groups को banks से link करना।</li>
+        <li><strong>E-Shakti & LEDP (2015):</strong> SHGs का digitization।</li>
+        <li>PMAY, KCC (Kisan Credit Cards), RuPay Kisan Cards facilitate करता है।</li>
+      </ul>
+    </div>
+
+    <p style="font-weight:700;color:var(--teal);margin-top:16px;">📊 Other Important Financial Institutions:</p>
+    <table>
+      <tr><th>Institution</th><th>Year</th><th>HQ</th><th>Main Objective</th></tr>
+      <tr>
+        <td><strong>SEBI</strong><br><small>Securities & Exchange Board of India</small></td>
+        <td>Est. 12 April 1988<br>Statutory status: SEBI Act 1992</td>
+        <td>Mumbai<br><em>Tuhin Kanta Pandey</em></td>
+        <td>Securities market में investors के interests protect करना</td>
+      </tr>
+      <tr>
+        <td><strong>SIDBI</strong><br><small>Small Industries Development Bank</small></td>
+        <td>2 April 1990</td>
+        <td>Lucknow<br><em>Manoj Mittal</em></td>
+        <td>MSMEs को financial और developmental assistance</td>
+      </tr>
+      <tr>
+        <td><strong>NHB</strong><br><small>National Housing Bank</small></td>
+        <td>1988 (Act of 1987)</td>
+        <td>New Delhi<br><em>Sanjay Shukla</em></td>
+        <td>Housing finance sector को regulate और promote करना</td>
+      </tr>
+      <tr>
+        <td><strong>IRDAI</strong><br><small>Insurance Regulatory & Development Authority</small></td>
+        <td>April 2000 (IRDAI Act 1999)</td>
+        <td>Hyderabad<br><em>Ajay Seth</em></td>
+        <td>Insurance sector regulate करना + policyholders protect करना</td>
+      </tr>
+      <tr>
+        <td><strong>IDBI</strong><br><small>Industrial Development Bank of India</small></td>
+        <td>1964 (RBI subsidiary as origin)<br>LIC ने 51% stake acquire किया</td>
+        <td>Mumbai<br><em>T.N. Manoharan (Chairman)</em></td>
+        <td>Industries के development के लिए loans और financial facilities</td>
+      </tr>
+      <tr>
+        <td><strong>NAFED</strong><br><small>National Agricultural Cooperative Marketing Federation</small></td>
+        <td>2 October 1958</td>
+        <td>New Delhi<br><em>Jethabhai Ahir</em></td>
+        <td>Agricultural produce के लिए apex marketing cooperative organization</td>
+      </tr>
+    </table>
+
+    <div class="exam-tip">SEBI = Stock market regulator, Mumbai। IRDAI = Insurance regulator, Hyderabad। NABARD = Rural banking supervisor, Mumbai। SIDBI = MSME finance, Lucknow।</div>
+  </div>
+
+  <!-- ═══════════════════════════ 9. MICROFINANCE ═══════════════════════════ -->
+  <div class="section-title">🤝 9. Microfinance Institutions (MFIs), SHGs & JLGs</div>
+  <div class="section-body">
+
+    <div class="card">
+      <div class="card-title">📌 Microfinance — क्या है?</div>
+      <p>MFIs = Low-income population को <strong>micro-loans, credit, savings, insurance और remittances</strong> provide करती हैं।</p>
+      <p><strong>Eligibility:</strong> Annual income ₹3 lakh तक के households को बिना collateral loans।</p>
+    </div>
+
+    <div class="card gold">
+      <div class="card-title">📜 Important Facts</div>
+      <ul>
+        <li><strong>Father of Microfinance:</strong> <span class="highlight">Muhammad Yunus</span> — 2006 Nobel Peace Prize (Bangladesh Grameen Bank)।</li>
+        <li><strong>First MFI in India:</strong> <span class="highlight">SEWA Bank (Self Employed Women's Association)</span> — 1974, Ahmedabad।</li>
+      </ul>
+    </div>
+
+    <div class="grid2">
+      <div class="card green">
+        <div class="card-title">👩‍👩‍👧 Self Help Groups (SHG)</div>
+        <ul>
+          <li><strong>Structure:</strong> <span class="highlight">10-20 लोग</span> — BPL (Below Poverty Line), rural areas</li>
+          <li>Living conditions improve करने के लिए साथ आते हैं।</li>
+          <li><strong>Loans:</strong> Members को बिना collateral + low interest (informal sector / moneylenders से कम)।</li>
+          <li><strong>Impact:</strong> Women और marginalized groups को self-reliant बनाते हैं।</li>
+        </ul>
+      </div>
+      <div class="card blue">
+        <div class="card-title">🤝 Joint Liability Groups (JLG)</div>
+        <ul>
+          <li><strong>Structure:</strong> <span class="highlight">4-10 लोग</span> — bank loan लेने के लिए।</li>
+          <li><strong>Collateral-free Loan:</strong> Group मिलकर loan लेती है — बिना security।</li>
+          <li><strong>Target:</strong> Individuals, sharecroppers, tenant farmers, small & marginal farmers।</li>
+          <li>Group members एक-दूसरे के loan के लिए jointly liable होते हैं।</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="example">
+      गाँव की 15 महिलाएं मिलकर SHG बनाती हैं। हर महीने ₹500 जोड़ती हैं। जिसे ज़रूरत हो उसे group से loan मिलता है — bank से नहीं। NABARD इन्हें banks से link करता है (SHG-Bank Linkage Program)।
+    </div>
+    <div class="exam-tip">SHG = 10-20 members, BPL। JLG = 4-10 members, farmers। SEWA = First MFI India 1974। Muhammad Yunus = Father of Microfinance, Nobel 2006।</div>
+  </div>
+
+  <!-- ═══════════════════════════ 10. NBFC ═══════════════════════════ -->
+  <div class="section-title">🏢 10. Non-Banking Financial Companies (NBFCs)</div>
+  <div class="section-body">
+
+    <div class="card">
+      <div class="card-title">📌 Definition</div>
+      <p>NBFCs = वो financial institutions जो <strong>banking services provide करती हैं लेकिन banking license नहीं होती</strong>।</p>
+      <p><strong>Registration:</strong> Companies Act, 1956 के तहत।</p>
+      <p><strong>Regulation:</strong> RBI Act, 1934 के तहत RBI regulate करती है।</p>
+    </div>
+
+    <div class="grid2">
+      <div class="box red">
+        <div class="btitle">❌ NBFC क्या नहीं कर सकती</div>
+        → Demand deposits (Savings/Current) accept नहीं कर सकती<br>
+        → Cheques issue नहीं कर सकती<br>
+        → Payment & Settlement System का हिस्सा नहीं<br>
+        → CRR/SLR maintain करना mandatory नहीं<br>
+        → DICGC insurance नहीं — deposits at risk
+      </div>
+      <div class="box green">
+        <div class="btitle">✅ NBFC क्या कर सकती है</div>
+        → Gold loans provide कर सकती है<br>
+        → Vehicle/asset finance कर सकती है<br>
+        → Consumer loans दे सकती है<br>
+        → Term deposits accept कर सकती है<br>
+        → Insurance, investment services
+      </div>
+    </div>
+
+    <p style="font-weight:700;color:var(--teal);margin-top:14px;">📊 NBFC Examples by Specialization:</p>
+    <table>
+      <tr><th>Specialization</th><th>Examples</th></tr>
+      <tr><td>Gold Loans</td><td>Muthoot Finance, Manappuram Finance</td></tr>
+      <tr><td>Asset/Vehicle Finance</td><td>Shriram Finance, Mahindra Finance</td></tr>
+      <tr><td>Consumer/Personal Finance</td><td>Bajaj Finance, Tata Capital</td></tr>
+      <tr><td>Infrastructure Finance</td><td>Power Finance Corporation (PFC), REC Limited</td></tr>
+    </table>
+
+    <div class="card blue">
+      <div class="card-title">Capital Requirements Comparison</div>
+      <table>
+        <tr><th>Entity</th><th>Min. Capital</th><th>Key Fact</th></tr>
+        <tr><td>Scheduled Commercial Bank</td><td>₹500 Crore</td><td>Part of Payment & Settlement System</td></tr>
+        <tr><td>Payments Bank</td><td>₹100 Crore</td><td>Cannot issue loans or credit cards</td></tr>
+        <tr><td>NBFC-MFI (Pan India)</td><td>₹5 Crore (NOF)</td><td>Malegam Committee 2010 basis</td></tr>
+        <tr><td>NBFC-MFI (North-East)</td><td>₹2 Crore (NOF)</td><td>Financial inclusion encourage करने के लिए</td></tr>
+      </table>
+    </div>
+
+    <div class="card purple">
+      <div class="card-title">📋 NBFC-MFI — Special Notes</div>
+      <ul>
+        <li><strong>Established based on:</strong> Malegam Committee (2010) recommendations।</li>
+        <li><strong>NBFC-MFI License के लिए:</strong> <span class="highlight">60%</span> qualifying microfinance loans hold करनी होंगी (excluding intangible assets)। Previously 75% था (2022 revision में 85% से घटाया)।</li>
+        <li><strong>Regulation:</strong> RBI के under registered और regulated।</li>
+      </ul>
+    </div>
+
+    <div class="card cyan">
+      <div class="card-title">💳 Payment and Settlement Systems Act, 2007</div>
+      <p>UPI, NEFT, RTGS, Credit Cards जैसे <strong>सभी payment systems को RBI</strong> इस Act के तहत regulate करती है।</p>
+      <p>यह Act RBI को legal authority देता है — किसी भी payment system को supervise और oversee करने की।</p>
+      <div class="alert">NBFCs Payment and Settlement System का part नहीं हैं।</div>
+    </div>
+
+    <div class="exam-tip">NBFCs = Banking services but no banking license। No demand deposits, No cheques, No CRR/SLR mandatory। NBFC-MFI = 60% qualifying loans। PSS Act 2007 = All digital payments regulated by RBI।</div>
+  </div>
+
+  <!-- ═══════════════════════════ 11. PSL + UCB + MUDRA ═══════════════════════════ -->
+  <div class="section-title">🎯 11. Priority Sector Lending (PSL) + UCBs + MUDRA</div>
+  <div class="section-body">
+
+    <div class="card">
+      <div class="card-title">📌 Priority Sector Lending (PSL)</div>
+      <p>RBI banks को mandate करती है कि अपनी lending का एक <strong>specific portion priority sectors</strong> (agriculture, small businesses, education, housing, weaker sections) को दें।</p>
+    </div>
+
+    <p style="font-weight:700;color:var(--teal);margin-top:12px;">PSL Targets:</p>
+    <div class="psl-bar">
+      <div class="psl-row">
+        <span class="psl-label">Commercial Banks (Domestic &gt;20 branches)</span>
+        <div class="psl-track"><div class="psl-fill fill40">40% of ANBC</div></div>
+      </div>
+      <div class="psl-row">
+        <span class="psl-label">Foreign Banks (&lt;20 branches)</span>
+        <div class="psl-track"><div class="psl-fill fill40">40% of ANBC</div></div>
+      </div>
+      <div class="psl-row">
+        <span class="psl-label">RRBs & Small Finance Banks (SFBs)</span>
+        <div class="psl-track"><div class="psl-fill fill75">75% of ANBC</div></div>
+      </div>
+    </div>
+
+    <div class="card orange">
+      <div class="card-title">📊 PSL Sub-targets & Non-Achievement</div>
+      <ul>
+        <li><strong>Agriculture:</strong> Total PSL का 18%।</li>
+        <li><strong>Weaker Sections (SC, ST, Women):</strong> 12%।</li>
+        <li><strong>Non-Achievement Penalty:</strong> Shortfall को <span class="highlight">Rural Infrastructure Development Fund (RIDF)</span> में deposit करना — NABARD manage करता है।</li>
+        <li><strong>NBFCs:</strong> PSL targets mandatory नहीं।</li>
+      </ul>
+    </div>
+
+    <div class="card blue">
+      <div class="card-title">🏙️ Urban Cooperative Banks (UCBs) — Dual Regulation</div>
+      <p>UCBs दो regulatory bodies के under काम करती हैं:</p>
+      <ul>
+        <li><strong>RBI:</strong> Banking functions, prudential norms, monetary policy।</li>
+        <li><strong>Registrar of Cooperative Societies (RCS):</strong> Incorporation, management, elections, audit।</li>
+      </ul>
+    </div>
+
+    <div class="card green">
+      <div class="card-title">💰 Pradhan Mantri Mudra Yojana (PMMY) — 8 April 2015</div>
+      <p>Small businesses को micro-credit/loans provide करके financial inclusion promote करना।</p>
+      <div class="mudra-grid">
+        <div class="mudra-card m1"><div class="mtitle">🐣 Shishu</div>Loans up to ₹50,000</div>
+        <div class="mudra-card m2"><div class="mtitle">📈 Kishor</div>₹50,000 – ₹5 Lakh</div>
+        <div class="mudra-card m3"><div class="mtitle">🚀 Tarun</div>₹5 Lakh – ₹10 Lakh</div>
+        <div class="mudra-card m4"><div class="mtitle">⭐ Tarun Plus</div>₹10 Lakh – ₹20 Lakh</div>
+      </div>
+    </div>
+
+    <div class="card teal">
+      <div class="card-title">🏭 MUDRA (Micro Units Development & Refinance Agency Ltd.)</div>
+      <ul>
+        <li><strong>Launched:</strong> 8 April 2015</li>
+        <li><strong>Funding:</strong> 100% SIDBI (Small Industries Development Bank of India) से।</li>
+        <li>PMMY के loans MUDRA के through provide होते हैं।</li>
+      </ul>
+    </div>
+
+    <div class="exam-tip">PSL = 40% ANBC for Commercial Banks। RRBs/SFBs = 75%। Agriculture sub-target = 18%। MUDRA launched 8 April 2015। PMMY = Shishu (₹50K) → Kishor (₹5L) → Tarun (₹10L) → Tarun Plus (₹20L)।</div>
+  </div>
+
+  <!-- ═══════════════════════════ QUICK REVISION ═══════════════════════════ -->
+  <div class="section-title">⚡ Quick Revision — सभी Key Facts एक नज़र में</div>
+  <div class="section-body">
+    <table>
+      <tr><th>Topic</th><th>Key Fact</th></tr>
+      <tr><td>RBI — "Father of All Banks"</td><td>Central Bank, manages entire banking system</td></tr>
+      <tr><td>Hilton Young Commission</td><td>1926 — RBI establishment recommend किया</td></tr>
+      <tr><td>RBI Act</td><td>1934</td></tr>
+      <tr><td>RBI Operations Start</td><td>1 April 1935, Calcutta</td></tr>
+      <tr><td>RBI HQ Shift</td><td>1937, Calcutta → Mumbai</td></tr>
+      <tr><td>RBI Nationalization</td><td>1 January 1949 (Transfer to Public Ownership Act, 1948)</td></tr>
+      <tr><td>First RBI Governor</td><td>Sir Osborne Smith</td></tr>
+      <tr><td>First Indian RBI Governor</td><td>Sir C.D. Deshmukh</td></tr>
+      <tr><td>Current RBI Governor (2026)</td><td>Sanjay Malhotra</td></tr>
+      <tr><td>RBI Logo</td><td>Tiger + Palm Tree 🐯🌴</td></tr>
+      <tr><td>Banking Regulation Act</td><td>1949 — RBI regulates banks under this</td></tr>
+      <tr><td>₹1 Note + All Coins issued by</td><td>Ministry of Finance (Not RBI)</td></tr>
+      <tr><td>Note Printing Presses</td><td>Nasik, Dewas, Mysore, Salboni (4)</td></tr>
+      <tr><td>Coin Minting Locations</td><td>Mumbai, Hyderabad, Kolkata, Noida (4)</td></tr>
+      <tr><td>Mumbai Mint Mark</td><td>💎 Diamond</td></tr>
+      <tr><td>Hyderabad Mint Mark</td><td>⭐ Star</td></tr>
+      <tr><td>Kolkata Mint Mark</td><td>No mark</td></tr>
+      <tr><td>Noida Mint Mark</td><td>● Dot</td></tr>
+      <tr><td>FSR Published</td><td>Biannually — June & December</td></tr>
+      <tr><td>Clean Note Policy</td><td>1999 — Section 35A of Banking Regulation Act</td></tr>
+      <tr><td>Scheduled Banks listed in</td><td>Second Schedule of RBI Act 1934</td></tr>
+      <tr><td>Public Sector Banks (currently)</td><td>12 banks</td></tr>
+      <tr><td>First Bank in India</td><td>Bank of Hindustan — 1770, Calcutta</td></tr>
+      <tr><td>First Indian-Owned Bank</td><td>Allahabad Bank — 1865</td></tr>
+      <tr><td>3 Presidency Banks → Imperial Bank</td><td>1921 (Bank of Calcutta 1806, Bombay 1840, Madras 1843)</td></tr>
+      <tr><td>SBI Formed</td><td>1955 — Imperial Bank renamed/nationalized</td></tr>
+      <tr><td>Nationalization Phase I</td><td>1969 — 14 Banks — ₹50 Cr criteria — PM Indira Gandhi</td></tr>
+      <tr><td>Nationalization Phase II</td><td>1980 — 6 Banks — ₹200 Cr criteria — PM Indira Gandhi</td></tr>
+      <tr><td>Narasimham Committee 1991</td><td>CRR/SLR reduce करने की recommendation</td></tr>
+      <tr><td>Narasimham Committee 1998</td><td>Global Sized Banks बनाने की recommendation</td></tr>
+      <tr><td>First RRB</td><td>Pratham Grameen Bank — 2 October 1975, Moradabad, UP</td></tr>
+      <tr><td>RRB Act</td><td>1976</td></tr>
+      <tr><td>RRB Ownership</td><td>50% Centre + 35% Sponsor Bank + 15% State Govt.</td></tr>
+      <tr><td>RRB Regulator</td><td>RBI</td></tr>
+      <tr><td>RRB Supervisor</td><td>NABARD</td></tr>
+      <tr><td>NABARD Established</td><td>12 July 1982 — B. Sivaraman Committee (1979)</td></tr>
+      <tr><td>NABARD Act</td><td>1981</td></tr>
+      <tr><td>NABARD HQ</td><td>Mumbai</td></tr>
+      <tr><td>SHG-Bank Linkage Program</td><td>1992 — NABARD launched</td></tr>
+      <tr><td>SEBI Statutory Status</td><td>SEBI Act 1992, Mumbai, Securities market regulator</td></tr>
+      <tr><td>IRDAI HQ</td><td>Hyderabad — Insurance regulator</td></tr>
+      <tr><td>SIDBI HQ</td><td>Lucknow — MSME finance</td></tr>
+      <tr><td>NAFED Founded</td><td>2 October 1958, New Delhi</td></tr>
+      <tr><td>Father of Microfinance</td><td>Muhammad Yunus — Nobel Peace 2006</td></tr>
+      <tr><td>First MFI India</td><td>SEWA Bank — 1974, Ahmedabad</td></tr>
+      <tr><td>SHG Members</td><td>10-20 (BPL, rural)</td></tr>
+      <tr><td>JLG Members</td><td>4-10 (farmers, sharecroppers)</td></tr>
+      <tr><td>NBFC Cannot</td><td>No demand deposits, No cheques, No Payment & Settlement</td></tr>
+      <tr><td>NBFC-MFI Basis</td><td>Malegam Committee 2010</td></tr>
+      <tr><td>NBFC-MFI License Condition</td><td>60% qualifying microfinance loans</td></tr>
+      <tr><td>PSS Act</td><td>2007 — RBI regulates UPI, NEFT, RTGS, Credit Cards</td></tr>
+      <tr><td>PSL Target — Commercial Banks</td><td>40% of ANBC</td></tr>
+      <tr><td>PSL Target — RRBs/SFBs</td><td>75% of ANBC</td></tr>
+      <tr><td>PSL Agriculture Sub-target</td><td>18%</td></tr>
+      <tr><td>PSL Non-achievement → Deposit to</td><td>RIDF (Rural Infrastructure Development Fund) — NABARD</td></tr>
+      <tr><td>PMMY Launched</td><td>8 April 2015</td></tr>
+      <tr><td>MUDRA Funded by</td><td>100% SIDBI</td></tr>
+      <tr><td>Shishu Loans</td><td>Up to ₹50,000</td></tr>
+      <tr><td>Kishor Loans</td><td>₹50,000 – ₹5 Lakh</td></tr>
+      <tr><td>Tarun Loans</td><td>₹5 Lakh – ₹10 Lakh</td></tr>
+      <tr><td>Tarun Plus Loans</td><td>₹10 Lakh – ₹20 Lakh</td></tr>
+      <tr><td>UCB Dual Regulation</td><td>RBI + Registrar of Cooperative Societies (RCS)</td></tr>
+    </table>
+  </div>
+
+</div>
+
+<footer>
+  📚 Based on Parmar SSC — Banking System Part 1, Lecture 7 | Prepared for SSC Exam Preparation
+</footer>
+
+</body>
+</html>
