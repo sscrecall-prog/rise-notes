@@ -1,0 +1,1589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>⭐All Questions of Fill in the Blanks Asked In SSC CGL 2025</title>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Baloo+2:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #04080f;
+            --navy: #070f1d;
+            --card: #0c1828;
+            --card2: #101f32;
+            --card3: #152438;
+            --border: #1c3158;
+            --border2: #243d6a;
+            --gold: #f5c518;
+            --gold2: #ffd94d;
+            --gold-dark: #c9a000;
+            --gold-glow: rgba(245,197,24,0.18);
+            --accent: #ff6b35;
+            --green: #00e676;
+            --red: #ff4444;
+            --blue: #4fc3f7;
+            --blue2: #38bdf8;
+            --tele: #229ED9;
+            --text: #ddeaff;
+            --muted: #6a85a8;
+            --muted2: #8aa0be;
+            --timer-warn: #ff9800;
+            --timer-danger: #ff4444;
+            --review: #a855f7;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            background: var(--bg);
+            font-family: 'Baloo 2', sans-serif;
+            color: var(--text);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 80% 50% at 50% -10%, rgba(245,197,24,0.07) 0%, transparent 60%),
+                radial-gradient(ellipse 60% 40% at 90% 80%, rgba(79,195,247,0.05) 0%, transparent 50%),
+                radial-gradient(ellipse 40% 30% at 10% 90%, rgba(245,197,24,0.04) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        body::after {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background-image:
+                radial-gradient(1.5px 1.5px at 12% 18%, rgba(255,255,255,0.18) 0%, transparent 100%),
+                radial-gradient(1px 1px at 28% 55%, rgba(255,255,255,0.12) 0%, transparent 100%),
+                radial-gradient(1.5px 1.5px at 55% 22%, rgba(255,255,255,0.15) 0%, transparent 100%),
+                radial-gradient(1px 1px at 75% 68%, rgba(255,255,255,0.1) 0%, transparent 100%),
+                radial-gradient(1px 1px at 88% 35%, rgba(255,255,255,0.12) 0%, transparent 100%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .screen { display: none; position: relative; z-index: 1; }
+        .screen.active { display: block; }
+
+        /* ===== LANDING ===== */
+        #landingScreen {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        #landingScreen.active { display: flex; }
+
+        .brand-logo {
+            position: relative;
+            width: 90px; height: 90px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 40px;
+            margin: 0 auto 14px;
+            box-shadow: 0 0 0 4px rgba(245,197,24,0.15), 0 0 50px rgba(245,197,24,0.35);
+            animation: logoPulse 2.5s ease-in-out infinite;
+        }
+        @keyframes logoPulse {
+            0%, 100% { box-shadow: 0 0 0 4px rgba(245,197,24,0.15), 0 0 50px rgba(245,197,24,0.35); }
+            50% { box-shadow: 0 0 0 8px rgba(245,197,24,0.08), 0 0 80px rgba(245,197,24,0.6); }
+        }
+
+        .powered-badge {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: linear-gradient(135deg, rgba(245,197,24,0.12) 0%, rgba(245,197,24,0.04) 100%);
+            border: 1.5px solid rgba(245,197,24,0.4);
+            border-radius: 50px;
+            padding: 7px 18px 7px 10px;
+            margin-bottom: 20px;
+            cursor: pointer; text-decoration: none;
+            transition: all 0.25s; position: relative; overflow: hidden;
+        }
+        .powered-badge:hover {
+            border-color: rgba(245,197,24,0.75);
+            box-shadow: 0 0 24px rgba(245,197,24,0.22);
+            transform: translateY(-1px);
+        }
+        .pb-icon {
+            width: 28px; height: 28px; border-radius: 50%;
+            background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+            display: flex; align-items: center; justify-content: center;
+            font-size: 14px; flex-shrink: 0;
+        }
+        .pb-text { display: flex; flex-direction: column; align-items: flex-start; line-height: 1.25; }
+        .pb-line1 { font-size: 9px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--muted2); font-weight: 600; }
+        .pb-line2 {
+            font-size: 18px; font-weight: 800; letter-spacing: 0.5px;
+            background: linear-gradient(90deg, var(--gold), var(--gold2));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+            text-shadow: 0 0 14px rgba(245,197,24,0.6);
+        }
+        .pb-arrow { font-size: 13px; color: var(--gold); margin-left: 4px; opacity: 0.7; }
+
+        .landing-title {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: clamp(24px, 6vw, 48px);
+            font-weight: 700; line-height: 1.1;
+            margin-bottom: 6px;
+            background: linear-gradient(150deg, #fff 0%, var(--gold2) 45%, var(--gold) 70%, #e8a800 100%);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+            filter: drop-shadow(0 2px 20px rgba(245,197,24,0.2));
+            text-decoration: none;
+        }
+        .landing-title:hover { filter: drop-shadow(0 2px 30px rgba(245,197,24,0.45)); }
+
+        .landing-created-by {
+            font-size: 13px; color: var(--gold2); font-weight: 700;
+            letter-spacing: 1.5px; margin-bottom: 6px; opacity: 0.85;
+        }
+        .landing-created-by a {
+            color:#ffd94d !important;
+            font-weight:900 !important;
+            text-shadow:0 0 12px rgba(245,197,24,0.7);
+            letter-spacing:2px;
+        }
+
+        .landing-sub {
+            font-size: clamp(12px, 3vw, 15px);
+            color: var(--blue2); font-weight: 700; letter-spacing: 2px;
+            text-transform: uppercase; margin-bottom: 8px;
+        }
+
+        .landing-exam-row {
+            display: flex; flex-wrap: wrap; gap: 6px;
+            justify-content: center; margin-bottom: 26px;
+        }
+        .exam-chip {
+            background: rgba(255,255,255,0.04); border: 1px solid var(--border2);
+            border-radius: 4px; padding: 3px 10px; font-size: 11px;
+            font-weight: 700; color: var(--muted2); letter-spacing: 0.5px;
+        }
+
+        .info-pills {
+            display: flex; flex-wrap: wrap; gap: 10px;
+            justify-content: center; margin-bottom: 30px;
+        }
+        .pill {
+            background: var(--card); border: 1px solid var(--border2);
+            border-radius: 30px; padding: 9px 20px; font-size: 13px;
+            font-weight: 700; display: flex; align-items: center; gap: 7px;
+            color: var(--text); transition: all 0.2s;
+        }
+        .pill:hover { border-color: var(--gold); background: rgba(245,197,24,0.05); }
+        .pill .pi { font-size: 17px; }
+
+        .landing-btns {
+            display: flex; flex-direction: column; gap: 14px;
+            width: 100%; max-width: 400px;
+        }
+
+        .btn-telegram {
+            background: linear-gradient(135deg, #229ED9 0%, #1680b5 100%);
+            color: #fff; border: none; border-radius: 14px;
+            padding: 15px 24px; font-family: 'Baloo 2', sans-serif;
+            font-size: 15px; font-weight: 700; cursor: pointer;
+            display: flex; align-items: center; justify-content: center; gap: 10px;
+            transition: all 0.25s; box-shadow: 0 4px 24px rgba(34,158,217,0.28);
+            text-decoration: none; letter-spacing: 0.3px; flex-direction: column;
+        }
+        .btn-telegram .tele-label-top {
+            font-size: 10px; opacity: 0.85; font-weight: 600;
+            letter-spacing: 0.5px; line-height: 1;
+        }
+        .btn-telegram .tele-label-main {
+            display: flex; align-items: center; gap: 8px; font-size: 15px;
+        }
+        .btn-telegram:hover { transform: translateY(-3px); box-shadow: 0 8px 36px rgba(34,158,217,0.42); }
+        .btn-telegram .t-icon {
+            width: 30px; height: 30px; border-radius: 50%;
+            background: rgba(255,255,255,0.15);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 16px; flex-shrink: 0;
+        }
+
+        .btn-start {
+            position: relative; overflow: hidden;
+            background: linear-gradient(135deg, var(--gold) 0%, #e8a800 60%, var(--gold-dark) 100%);
+            color: #000; border: none; border-radius: 14px; padding: 16px 24px;
+            font-family: 'Baloo 2', sans-serif; font-size: 16px; font-weight: 800;
+            cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 10px;
+            transition: all 0.25s; box-shadow: 0 4px 28px rgba(245,197,24,0.38); letter-spacing: 0.5px;
+        }
+        .btn-start:hover { transform: translateY(-3px); box-shadow: 0 10px 40px rgba(245,197,24,0.52); }
+        .btn-start .s-icon {
+            width: 32px; height: 32px; border-radius: 50%;
+            background: rgba(0,0,0,0.15);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 17px; flex-shrink: 0;
+        }
+
+        .disclaimer {
+            font-size: 11px; color: var(--muted); margin-top: 22px; max-width: 390px;
+            line-height: 1.7; background: rgba(255,255,255,0.02);
+            border: 1px solid var(--border); border-radius: 8px; padding: 10px 14px;
+        }
+
+        .part-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 16px; margin-bottom: 30px; max-width: 900px;
+        }
+
+        .part-card {
+            background: var(--card); border: 1px solid var(--border2);
+            border-radius: 16px; padding: 20px; cursor: pointer;
+            transition: all 0.3s; position: relative; overflow: hidden;
+        }
+        .part-card::before {
+            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+            background: linear-gradient(90deg, var(--gold), transparent);
+        }
+        .part-card:hover {
+            border-color: var(--gold); background: rgba(245,197,24,0.05);
+            transform: translateY(-4px); box-shadow: 0 12px 40px rgba(245,197,24,0.15);
+        }
+        .part-card-number {
+            font-family: 'Rajdhani', sans-serif; font-size: 28px; font-weight: 700;
+            background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 8px;
+        }
+        .part-card-title { font-size: 16px; font-weight: 700; color: var(--text); margin-bottom: 6px; }
+        .part-card-subtitle { font-size: 12px; color: var(--muted); margin-bottom: 12px; }
+        .part-card-stats {
+            display: flex; gap: 12px; font-size: 11px; color: var(--muted2);
+            padding-top: 12px; border-top: 1px solid var(--border);
+        }
+
+        .part-card-start-btn {
+            margin-top: 14px;
+            background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+            color: #000; border: none; border-radius: 10px;
+            padding: 10px 18px; font-family: 'Baloo 2', sans-serif;
+            font-size: 13px; font-weight: 800; cursor: pointer;
+            width: 100%; transition: all 0.2s; letter-spacing: 0.3px;
+            display: flex; align-items: center; justify-content: center; gap: 6px;
+        }
+        .part-card-start-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(245,197,24,0.4); }
+
+        /* ===== TEST SCREEN ===== */
+        #testOverlay {
+            display: none; position: fixed; inset: 0; z-index: 500;
+            background: var(--bg); flex-direction: column; overflow: hidden;
+        }
+        #testOverlay.open { display: flex; }
+
+        #solutionScreen { animation: none; }
+        #solutionScreen.active {
+            animation: slideInUp 0.35s cubic-bezier(0.25,0.46,0.45,0.94) forwards;
+        }
+        @keyframes slideInUp {
+            from { opacity: 0; transform: translateY(60px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        .test-header {
+            flex-shrink: 0; background: rgba(4,8,15,0.98);
+            backdrop-filter: blur(16px); border-bottom: 1px solid var(--border2);
+            padding: 10px 16px; box-shadow: 0 2px 20px rgba(0,0,0,0.5);
+        }
+        .test-header-row {
+            display: flex; align-items: center; justify-content: space-between;
+            gap: 10px; flex-wrap: wrap;
+        }
+        .th-brand { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
+        .th-logo {
+            width: 36px; height: 36px; border-radius: 50%;
+            background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+            display: flex; align-items: center; justify-content: center; font-size: 18px;
+        }
+        .th-info {}
+        .th-title {
+            font-family: 'Rajdhani', sans-serif; font-size: 15px; font-weight: 700;
+            color: var(--gold); line-height: 1.2;
+        }
+        .th-title a { color: var(--gold); text-decoration: none; }
+        .th-subtitle { font-size: 10px; color: var(--muted2); font-weight: 600; letter-spacing: 0.5px; }
+        .th-progress { flex: 1; min-width: 100px; max-width: 200px; }
+        .th-prog-text { font-size: 11px; color: var(--muted2); font-weight: 700; margin-bottom: 4px; text-align: center; }
+        .prog-bar { height: 5px; border-radius: 3px; background: var(--border2); overflow: hidden; }
+        .prog-fill { height: 100%; border-radius: 3px; background: linear-gradient(90deg, var(--gold), var(--gold2)); transition: width 0.3s; }
+        .timer-box {
+            background: var(--card2); border: 1.5px solid var(--border2);
+            border-radius: 10px; padding: 7px 14px; font-family: 'Rajdhani', sans-serif;
+            font-size: 20px; font-weight: 700; color: var(--gold2);
+            display: flex; align-items: center; gap: 6px; flex-shrink: 0;
+        }
+        .timer-box.warn { border-color: var(--timer-warn); color: var(--timer-warn); }
+        .timer-box.danger { border-color: var(--timer-danger); color: var(--timer-danger); animation: timerBlink 0.5s ease-in-out infinite alternate; }
+        @keyframes timerBlink { from { opacity: 1; } to { opacity: 0.5; } }
+        .timer-icon { font-size: 16px; }
+        .header-btns { display: flex; gap: 8px; align-items: center; flex-shrink: 0; }
+        .btn-overview {
+            background: var(--card2); border: 1px solid var(--border2); color: var(--text);
+            border-radius: 9px; padding: 8px 12px; font-family: 'Baloo 2', sans-serif;
+            font-size: 12px; font-weight: 700; cursor: pointer; transition: all 0.2s;
+        }
+        .btn-overview:hover { border-color: var(--gold); color: var(--gold); }
+        .btn-submit-top {
+            background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+            color: #000; border: none; border-radius: 9px; padding: 8px 16px;
+            font-family: 'Baloo 2', sans-serif; font-size: 13px; font-weight: 800;
+            cursor: pointer; transition: all 0.2s;
+        }
+        .btn-submit-top:hover { transform: translateY(-1px); box-shadow: 0 4px 14px rgba(245,197,24,0.4); }
+
+        .test-body-scroll { flex: 1; overflow-y: auto; }
+        .test-body { max-width: 760px; margin: 0 auto; padding: 18px 14px 30px; }
+
+        .q-card {
+            background: var(--card); border: 1px solid var(--border2);
+            border-radius: 18px; padding: 22px 20px;
+        }
+        .q-meta { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 14px; }
+        .q-num-badge {
+            background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+            color: #000; border-radius: 8px; padding: 4px 12px;
+            font-family: 'Rajdhani', sans-serif; font-size: 15px; font-weight: 700;
+        }
+        .q-review-badge {
+            background: rgba(168,85,247,0.12); border: 1px solid rgba(168,85,247,0.4);
+            color: var(--review); border-radius: 7px; padding: 3px 10px;
+            font-size: 11px; font-weight: 700; display: none;
+        }
+        .q-review-badge.visible { display: block; }
+        .q-exam-badge {
+            background: var(--card2); border: 1px solid var(--border);
+            color: var(--muted2); border-radius: 7px; padding: 3px 10px;
+            font-size: 11px; font-weight: 600; margin-left: auto;
+        }
+        .q-text {
+            font-size: 17px; font-weight: 600; line-height: 1.65;
+            color: var(--text); margin-bottom: 20px;
+        }
+        .options-grid { display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px; }
+        .option-btn {
+            background: var(--card2); border: 1.5px solid var(--border2);
+            border-radius: 12px; padding: 13px 16px;
+            font-family: 'Baloo 2', sans-serif; font-size: 14px; font-weight: 600;
+            color: var(--text); cursor: pointer; text-align: left;
+            display: flex; align-items: center; gap: 12px; transition: all 0.18s;
+        }
+        .option-btn:hover { border-color: var(--gold); background: rgba(245,197,24,0.05); }
+        .option-btn.selected { border-color: var(--gold); background: rgba(245,197,24,0.1); color: var(--gold2); }
+        .opt-circle {
+            width: 30px; height: 30px; border-radius: 50%; flex-shrink: 0;
+            background: var(--border2); display: flex; align-items: center; justify-content: center;
+            font-family: 'Rajdhani', sans-serif; font-size: 14px; font-weight: 700;
+        }
+        .option-btn.selected .opt-circle { background: var(--gold); color: #000; }
+        .q-nav {
+            display: flex; gap: 8px; flex-wrap: wrap; padding-top: 16px;
+            border-top: 1px solid var(--border);
+        }
+        .btn-prev, .btn-mark-review, .btn-clear, .btn-next {
+            border-radius: 10px; padding: 10px 14px; font-family: 'Baloo 2', sans-serif;
+            font-size: 13px; font-weight: 700; cursor: pointer; border: none; transition: all 0.2s;
+        }
+        .btn-prev { background: var(--card2); border: 1px solid var(--border2); color: var(--text); }
+        .btn-prev:hover { border-color: var(--gold); color: var(--gold); }
+        .btn-mark-review { background: rgba(168,85,247,0.1); border: 1px solid rgba(168,85,247,0.4); color: var(--review); }
+        .btn-mark-review.marked { background: rgba(168,85,247,0.22); border-color: var(--review); }
+        .btn-clear { background: rgba(255,68,68,0.08); border: 1px solid rgba(255,68,68,0.3); color: var(--red); }
+        .btn-next { background: linear-gradient(135deg, var(--gold), var(--gold-dark)); color: #000; font-weight: 800; margin-left: auto; }
+        .btn-next:hover { transform: translateY(-1px); box-shadow: 0 4px 14px rgba(245,197,24,0.4); }
+
+        /* ===== OVERVIEW ===== */
+        .overview-panel {
+            display: none; position: fixed; inset: 0; z-index: 600;
+            background: rgba(4,8,15,0.92); backdrop-filter: blur(10px);
+            align-items: flex-end; justify-content: center;
+        }
+        .overview-panel.open { display: flex; }
+        .overview-inner {
+            background: var(--card); border: 1px solid var(--border2);
+            border-radius: 20px 20px 0 0; padding: 20px 16px 30px;
+            width: 100%; max-width: 500px; max-height: 80vh; overflow-y: auto;
+        }
+        .overview-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; }
+        .overview-title { font-family: 'Rajdhani', sans-serif; font-size: 20px; font-weight: 700; color: var(--gold); }
+        .btn-close-overview {
+            background: var(--card2); border: 1px solid var(--border2); color: var(--muted2);
+            border-radius: 9px; padding: 7px 14px; font-family: 'Baloo 2', sans-serif;
+            font-size: 13px; font-weight: 700; cursor: pointer;
+        }
+        .overview-stats-row { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 14px; }
+        .ov-stat {
+            flex: 1; min-width: 100px; background: var(--card2); border: 1px solid var(--border2);
+            border-radius: 10px; padding: 10px 8px; text-align: center;
+        }
+        .ov-stat-num { font-family: 'Rajdhani', sans-serif; font-size: 24px; font-weight: 700; }
+        .ov-stat-label { font-size: 10px; font-weight: 700; margin-top: 2px; }
+        .overview-legend { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 12px; font-size: 11px; color: var(--muted2); font-weight: 600; }
+        .legend-item { display: flex; align-items: center; gap: 5px; }
+        .legend-dot { width: 14px; height: 14px; border-radius: 4px; }
+        .legend-dot.current { background: var(--gold); }
+        .legend-dot.answered { background: rgba(0,230,118,0.3); border: 1.5px solid var(--green); }
+        .legend-dot.unanswered { background: var(--card2); border: 1.5px solid var(--border2); }
+        .legend-dot.review { background: rgba(168,85,247,0.15); }
+        .ov-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(44px, 1fr)); gap: 6px; margin-bottom: 16px; }
+        .ov-btn {
+            aspect-ratio: 1; border-radius: 8px; font-family: 'Rajdhani', sans-serif;
+            font-size: 13px; font-weight: 700; cursor: pointer; border: 1.5px solid var(--border2);
+            background: var(--card2); color: var(--muted2); transition: all 0.15s;
+        }
+        .ov-btn.current { border-color: var(--gold); background: rgba(245,197,24,0.15); color: var(--gold); }
+        .ov-btn.answered { background: rgba(0,230,118,0.12); border-color: var(--green); color: var(--green); }
+        .ov-btn.review-attempted { background: linear-gradient(135deg, rgba(168,85,247,0.18), rgba(79,195,247,0.08)); border: 2px solid var(--review); color: var(--review); }
+        .ov-btn.review-unattempted { background: rgba(168,85,247,0.1); border: 2px dashed var(--review); color: #c084fc; }
+        .ov-actions { display: flex; gap: 10px; }
+        .btn-ov-submit {
+            flex: 1; background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+            color: #000; border: none; border-radius: 11px; padding: 12px;
+            font-family: 'Baloo 2', sans-serif; font-size: 14px; font-weight: 800; cursor: pointer;
+        }
+
+        /* ===== CONFIRM MODAL ===== */
+        .confirm-modal {
+            display: none; position: fixed; inset: 0; z-index: 700;
+            background: rgba(4,8,15,0.92); backdrop-filter: blur(10px);
+            align-items: center; justify-content: center;
+        }
+        .confirm-modal.open { display: flex; }
+        .confirm-box {
+            background: var(--card); border: 1px solid var(--border2);
+            border-radius: 20px; padding: 28px 24px; width: 90%; max-width: 360px; text-align: center;
+        }
+        .confirm-icon { font-size: 36px; margin-bottom: 12px; }
+        .confirm-title { font-family: 'Rajdhani', sans-serif; font-size: 22px; font-weight: 700; color: var(--text); margin-bottom: 10px; }
+        .confirm-stats { font-size: 13px; color: var(--muted2); font-weight: 600; margin-bottom: 18px; line-height: 1.8; }
+        .confirm-btns { display: flex; gap: 10px; }
+        .btn-confirm-no {
+            flex: 1; background: var(--card2); border: 1px solid var(--border2);
+            color: var(--muted2); border-radius: 11px; padding: 12px;
+            font-family: 'Baloo 2', sans-serif; font-size: 14px; font-weight: 700; cursor: pointer;
+        }
+        .btn-confirm-yes {
+            flex: 1; background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+            color: #000; border: none; border-radius: 11px; padding: 12px;
+            font-family: 'Baloo 2', sans-serif; font-size: 14px; font-weight: 800; cursor: pointer;
+        }
+
+        /* ===== RESULT / SUMMARY SCREEN ===== */
+        .result-screen {
+            min-height: 100vh; padding: 30px 16px;
+            display: flex; flex-direction: column; align-items: center;
+        }
+        .result-part-header { margin-bottom: 20px; text-align: center; }
+        .result-part-title { font-family: 'Rajdhani', sans-serif; font-size: 22px; font-weight: 700; color: var(--gold); }
+        .result-part-creator { font-size: 12px; color: var(--muted2); margin-top: 4px; }
+        .result-card {
+            background: var(--card); border: 1px solid var(--border2);
+            border-radius: 20px; padding: 28px 22px; width: 100%; max-width: 460px;
+        }
+        .result-title { font-family: 'Rajdhani', sans-serif; font-size: 26px; font-weight: 700; color: var(--text); text-align: center; margin-bottom: 18px; }
+        .result-score-circle {
+            width: 110px; height: 110px; border-radius: 50%;
+            border: 3px solid var(--gold); background: rgba(245,197,24,0.07);
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+            margin: 0 auto 20px;
+        }
+        .rsc-num { font-family: 'Rajdhani', sans-serif; font-size: 38px; font-weight: 700; color: var(--gold); line-height: 1; }
+        .rsc-label { font-size: 13px; color: var(--muted2); font-weight: 700; }
+        .stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 18px; }
+        .stat-item {
+            background: var(--card2); border: 1px solid var(--border); border-radius: 12px;
+            padding: 12px 8px; text-align: center;
+        }
+        .stat-number { font-family: 'Rajdhani', sans-serif; font-size: 28px; font-weight: 700; }
+        .stat-label { font-size: 11px; color: var(--muted); font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
+        .correct-stat .stat-number { color: var(--green); }
+        .wrong-stat .stat-number { color: var(--red); }
+        .unat-stat .stat-number { color: var(--muted2); }
+        .acc-stat .stat-number { color: var(--blue2); }
+        .perf-bar-wrap { margin-bottom: 16px; }
+        .perf-bar-label { font-size: 10px; color: var(--muted); font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 6px; }
+        .perf-bar { height: 8px; border-radius: 4px; background: var(--border2); overflow: hidden; }
+        .perf-fill { height: 100%; border-radius: 4px; transition: width 1s ease; }
+        .perf-fill.correct { background: linear-gradient(90deg, var(--green), #00c853); }
+        .result-message { font-size: 14px; font-weight: 700; color: var(--gold2); text-align: center; margin-bottom: 18px; }
+        .result-nav { display: flex; flex-direction: column; gap: 12px; }
+
+        /* ===== SOLUTION SCREEN ===== */
+        .solution-screen {
+            min-height: 100vh; padding: 16px 14px 40px;
+            display: flex; flex-direction: column; align-items: center;
+        }
+        .inline-score-banner {
+            width: 100%; max-width: 760px; background: var(--card);
+            border: 1px solid var(--border2); border-radius: 20px; padding: 18px 16px;
+            margin-bottom: 16px;
+        }
+        .isb-top { margin-bottom: 12px; }
+        .isb-title { font-family: 'Rajdhani', sans-serif; font-size: 20px; font-weight: 700; color: var(--gold); }
+        .isb-title-link { text-decoration: none; }
+        .isb-sub { font-size: 12px; color: var(--muted2); margin-top: 2px; }
+        .isb-sub a { color: var(--muted2); text-decoration: none; }
+        .isb-body { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; margin-bottom: 10px; }
+        .isb-circle {
+            width: 72px; height: 72px; border-radius: 50%;
+            border: 3px solid var(--gold); background: rgba(245,197,24,0.07);
+            display: flex; flex-direction: column; align-items: center; justify-content: center; flex-shrink: 0;
+        }
+        .isb-score-big { font-family: 'Rajdhani', sans-serif; font-size: 26px; font-weight: 700; color: var(--gold); line-height: 1; }
+        .isb-score-denom { font-size: 11px; color: var(--muted2); font-weight: 700; }
+        .isb-stats { display: flex; gap: 8px; flex-wrap: wrap; flex: 1; }
+        .isb-stat {
+            background: var(--card2); border: 1px solid var(--border); border-radius: 10px;
+            padding: 8px 10px; text-align: center; flex: 1; min-width: 60px;
+            display: flex; flex-direction: column; align-items: center; gap: 3px;
+        }
+        .isb-stat span { font-family: 'Rajdhani', sans-serif; font-size: 22px; font-weight: 700; }
+        .isb-stat small { font-size: 10px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; }
+        .correct-stat span { color: var(--green); }
+        .wrong-stat span { color: var(--red); }
+        .unat-stat span { color: var(--muted2); }
+        .acc-stat span { color: var(--blue2); }
+        .isb-perf-wrap { margin-bottom: 10px; }
+        .isb-perf-bar { height: 6px; border-radius: 3px; background: var(--border2); overflow: hidden; }
+        .isb-message {
+            background: rgba(245,197,24,0.06); border: 1px solid rgba(245,197,24,0.2);
+            border-radius: 10px; padding: 10px 14px; margin-bottom: 16px;
+            font-size: 13px; font-weight: 600; color: var(--gold2); text-align: center;
+        }
+
+        /* Solution filter tabs */
+        .sol-filter-tabs {
+            display: flex; gap: 8px; margin-bottom: 18px; flex-wrap: wrap;
+            width: 100%; max-width: 760px;
+        }
+        .sol-tab {
+            background: var(--card2); border: 1px solid var(--border2); color: var(--muted2);
+            border-radius: 10px; padding: 8px 16px; font-family: 'Baloo 2', sans-serif;
+            font-size: 12px; font-weight: 700; cursor: pointer; transition: all 0.2s;
+        }
+        .sol-tab.active { background: rgba(245,197,24,0.12); border-color: var(--gold); color: var(--gold); }
+        .sol-tab:hover:not(.active) { border-color: var(--muted2); color: var(--text); }
+
+        /* Solution items */
+        .solutions-container { width: 100%; max-width: 760px; }
+        .sol-item {
+            background: var(--card); border: 1px solid var(--border2);
+            border-radius: 16px; padding: 18px 16px; margin-bottom: 12px;
+        }
+        .sol-top { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 10px; }
+        .sol-qnum {
+            background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+            color: #000; border-radius: 7px; padding: 3px 10px;
+            font-family: 'Rajdhani', sans-serif; font-size: 14px; font-weight: 700;
+        }
+        .sol-status {
+            border-radius: 7px; padding: 3px 10px; font-size: 11px; font-weight: 700;
+        }
+        .sol-status.correct { background: rgba(0,230,118,0.12); color: var(--green); border: 1px solid rgba(0,230,118,0.3); }
+        .sol-status.wrong { background: rgba(255,68,68,0.1); color: var(--red); border: 1px solid rgba(255,68,68,0.3); }
+        .sol-status.unattempted { background: rgba(138,160,190,0.1); color: var(--muted2); border: 1px solid var(--border2); }
+        .sol-text { font-size: 15px; font-weight: 600; color: var(--text); margin-bottom: 8px; line-height: 1.55; }
+        .sol-exam { font-size: 11px; color: var(--muted2); font-weight: 600; margin-bottom: 10px; }
+        .sol-options { display: flex; flex-direction: column; gap: 7px; margin-bottom: 12px; }
+        .sol-opt {
+            background: var(--card2); border: 1px solid var(--border);
+            border-radius: 9px; padding: 9px 12px; font-size: 13px; font-weight: 600;
+            color: var(--muted2); display: flex; align-items: center; gap: 10px;
+        }
+        .sol-opt.correct-opt { background: rgba(0,230,118,0.08); border-color: var(--green); color: var(--green); }
+        .sol-opt.wrong-opt { background: rgba(255,68,68,0.08); border-color: var(--red); color: var(--red); }
+        .sol-opt-circle {
+            width: 24px; height: 24px; border-radius: 50%; flex-shrink: 0;
+            background: var(--border2); display: flex; align-items: center; justify-content: center;
+            font-family: 'Rajdhani', sans-serif; font-size: 12px; font-weight: 700;
+        }
+        .sol-opt.correct-opt .sol-opt-circle { background: var(--green); color: #000; }
+        .sol-opt.wrong-opt .sol-opt-circle { background: var(--red); color: #fff; }
+        .sol-explanation {
+            background: rgba(79,195,247,0.05); border: 1px solid rgba(79,195,247,0.18);
+            border-radius: 10px; padding: 11px 14px; font-size: 13px;
+            color: var(--text); line-height: 1.6; font-weight: 500;
+        }
+
+        .telegram-footer {
+            margin-top: 24px; text-align: center; width: 100%; max-width: 500px;
+            padding: 20px 16px; background: var(--card); border: 1px solid var(--border2);
+            border-radius: 16px;
+        }
+        .telegram-footer p { font-size: 13px; color: var(--muted2); margin-bottom: 12px; font-weight: 600; }
+        .btn-tele-footer {
+            background: linear-gradient(135deg, #229ED9, #1680b5);
+            color: #fff; text-decoration: none; border-radius: 12px; padding: 12px 20px;
+            font-family: 'Baloo 2', sans-serif; font-size: 14px; font-weight: 700;
+            display: inline-flex; align-items: center; gap: 8px;
+        }
+
+        @media (max-width: 768px) {
+            .part-grid { grid-template-columns: 1fr; }
+            .stats-grid { grid-template-columns: 1fr 1fr; }
+            .test-header-row { flex-wrap: wrap; }
+            .q-card { padding: 18px 14px; }
+            .header-btns { gap: 6px; }
+            .btn-overview { padding: 7px 8px; font-size: 11px; }
+            .ov-grid { grid-template-columns: repeat(auto-fill, minmax(42px, 1fr)); }
+        }
+
+        /* ===== TELEGRAM POPUP OVERLAY ===== */
+        #tgPopupOverlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(4, 8, 15, 0.92);
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        #tgPopupBox {
+            background: linear-gradient(145deg, #0c1828, #101f32);
+            border: 1px solid #1c3158;
+            border-radius: 22px;
+            padding: 36px 28px 28px;
+            max-width: 400px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 8px 48px rgba(0,0,0,0.6), 0 0 60px rgba(34,158,217,0.08);
+            position: relative;
+        }
+        #tgPopupBox .tgp-plane {
+            font-size: 56px;
+            margin-bottom: 16px;
+            display: block;
+            animation: planeBounce 2s ease-in-out infinite;
+        }
+        @keyframes planeBounce {
+            0%, 100% { transform: translateY(0) rotate(-5deg); }
+            50% { transform: translateY(-8px) rotate(5deg); }
+        }
+        #tgPopupBox h2 {
+            font-family: 'Baloo 2', sans-serif;
+            font-size: 20px;
+            font-weight: 800;
+            color: #ddeaff;
+            line-height: 1.35;
+            margin-bottom: 18px;
+        }
+        .tgp-chips {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 16px;
+        }
+        .tgp-chip {
+            background: rgba(245,197,24,0.1);
+            border: 1px solid rgba(245,197,24,0.3);
+            border-radius: 30px;
+            padding: 5px 14px;
+            font-size: 12px;
+            font-weight: 700;
+            color: #f5c518;
+            font-family: 'Baloo 2', sans-serif;
+        }
+        .tgp-desc {
+            font-size: 13px;
+            color: #8aa0be;
+            margin-bottom: 22px;
+            line-height: 1.5;
+            font-family: 'Baloo 2', sans-serif;
+        }
+        .tgp-desc span {
+            color: #229ED9;
+            font-weight: 700;
+        }
+        #tgJoinBtn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            width: 100%;
+            background: linear-gradient(135deg, #229ED9, #1680b5);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 14px;
+            padding: 16px 20px;
+            font-family: 'Baloo 2', sans-serif;
+            font-size: 15px;
+            font-weight: 800;
+            margin-bottom: 14px;
+            box-shadow: 0 4px 20px rgba(34,158,217,0.35);
+            cursor: pointer;
+            transition: transform 0.15s, box-shadow 0.15s;
+            border: none;
+        }
+        #tgJoinBtn:hover { transform: translateY(-2px); box-shadow: 0 6px 28px rgba(34,158,217,0.5); }
+        #tgJoinBtn .tgp-icon {
+            width: 36px; height: 36px;
+            background: rgba(255,255,255,0.18);
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 18px; flex-shrink: 0;
+        }
+        #tgSkipBtn {
+            background: none;
+            border: none;
+            color: #6a85a8;
+            font-size: 13px;
+            font-family: 'Baloo 2', sans-serif;
+            font-weight: 600;
+            cursor: pointer;
+            padding: 6px 12px;
+            transition: color 0.2s;
+        }
+        #tgSkipBtn:hover { color: #8aa0be; }
+    </style>
+</head>
+<body>
+
+<!-- TELEGRAM JOIN POPUP -->
+<div id="tgPopupOverlay">
+    <div id="tgPopupBox">
+        <span class="tgp-plane">✈️</span>
+        <h2>Join Our Telegram Channel &amp; Boost Your Preparation for SSC CGL 2026</h2>
+        <div class="tgp-chips">
+            <span class="tgp-chip">📚 Free PYQs</span>
+            <span class="tgp-chip">🏆 Daily Vocab</span>
+            <span class="tgp-chip">⚡ SSC CGL 2026</span>
+        </div>
+        <p class="tgp-desc">
+            Get <span>daily vocabulary tests, PYQ series, tricks &amp; tips</span><br>
+            directly on Telegram — completely free!
+        </p>
+        <a id="tgJoinBtn" href="https://t.me/+oohc-N40E2ZlZmI1" target="_blank" onclick="closeTgPopup()">
+            <span class="tgp-icon">✈️</span>
+            <span>Click Here to Join Our Telegram Channel</span>
+        </a>
+        <button id="tgSkipBtn" onclick="closeTgPopup()">Skip for now</button>
+    </div>
+</div>
+
+<!-- LANDING SCREEN -->
+<div id="landingScreen" class="screen active">
+    <a href="https://t.me/+oohc-N40E2ZlZmI1" class="powered-badge" target="_blank">
+        <div class="pb-icon">🎯</div>
+        <div class="pb-text">
+            <div class="pb-line1">OFFICIAL</div>
+            <div class="pb-line2">SSC Achievers Official</div>
+        </div>
+        <div class="pb-arrow">→</div>
+    </a>
+
+    <div class="brand-logo">📝</div>
+
+    <a href="https://t.me/+oohc-N40E2ZlZmI1" class="landing-title" target="_blank">⭐All Questions of Fill in the Blanks Asked In SSC CGL 2025</a>
+    <div class="landing-created-by"><a href="https://t.me/+oohc-N40E2ZlZmI1" target="_blank" style="color:inherit;text-decoration:none;">Created by SSC Achievers Official</a></div>
+    <div class="landing-sub">Complete PYQ Test Series</div>
+
+    <div class="landing-exam-row">
+        <span class="exam-chip">91 Questions</span>
+        <span class="exam-chip">5 Parts</span>
+        <span class="exam-chip">SSC CGL 2025</span>
+    </div>
+
+    <div class="info-pills">
+        <div class="pill"><span class="pi">✅</span><span>Real Exam Questions</span></div>
+        <div class="pill"><span class="pi">📊</span><span>Detailed Solutions</span></div>
+        <div class="pill"><span class="pi">⏱</span><span>Auto-Timer</span></div>
+    </div>
+
+    <div class="part-grid">
+        <div class="part-card">
+            <div class="part-card-number">01</div>
+            <div class="part-card-title">Fill in the Blanks Part-1</div>
+            <div class="part-card-subtitle">Questions 1–20</div>
+            <div class="part-card-stats">
+                <span>📋 20 Questions</span>
+                <span>⏱ 12 Minutes</span>
+            </div>
+            <button class="part-card-start-btn" onclick="startTest(1)">▶ Click Here to Start</button>
+        </div>
+        <div class="part-card">
+            <div class="part-card-number">02</div>
+            <div class="part-card-title">Fill in the Blanks Part-2</div>
+            <div class="part-card-subtitle">Questions 21–40</div>
+            <div class="part-card-stats">
+                <span>📋 20 Questions</span>
+                <span>⏱ 12 Minutes</span>
+            </div>
+            <button class="part-card-start-btn" onclick="startTest(2)">▶ Click Here to Start</button>
+        </div>
+        <div class="part-card">
+            <div class="part-card-number">03</div>
+            <div class="part-card-title">Fill in the Blanks Part-3</div>
+            <div class="part-card-subtitle">Questions 41–60</div>
+            <div class="part-card-stats">
+                <span>📋 20 Questions</span>
+                <span>⏱ 12 Minutes</span>
+            </div>
+            <button class="part-card-start-btn" onclick="startTest(3)">▶ Click Here to Start</button>
+        </div>
+        <div class="part-card">
+            <div class="part-card-number">04</div>
+            <div class="part-card-title">Fill in the Blanks Part-4</div>
+            <div class="part-card-subtitle">Questions 61–80</div>
+            <div class="part-card-stats">
+                <span>📋 20 Questions</span>
+                <span>⏱ 12 Minutes</span>
+            </div>
+            <button class="part-card-start-btn" onclick="startTest(4)">▶ Click Here to Start</button>
+        </div>
+        <div class="part-card">
+            <div class="part-card-number">05</div>
+            <div class="part-card-title">Fill in the Blanks Part-5</div>
+            <div class="part-card-subtitle">Questions 81–91</div>
+            <div class="part-card-stats">
+                <span>📋 11 Questions</span>
+                <span>⏱ 7 Minutes</span>
+            </div>
+            <button class="part-card-start-btn" onclick="startTest(5)">▶ Click Here to Start</button>
+        </div>
+    </div>
+
+    <div style="width:100%;max-width:400px;">
+        <a href="https://t.me/+oohc-N40E2ZlZmI1" class="btn-telegram" target="_blank">
+            <span class="tele-label-top">Click Here to Join Our Telegram Channel &amp; Boost Your Preparation For SSC CGL 2026</span>
+            <span class="tele-label-main">
+                <span class="t-icon">📱</span>
+                <span>Join SSC Achievers Official</span>
+            </span>
+        </a>
+    </div>
+</div>
+
+<!-- TEST SCREEN -->
+<div id="testOverlay" class="screen">
+    <div class="test-header">
+        <div class="test-header-row">
+            <div class="th-brand">
+                <div class="th-logo">📝</div>
+                <div class="th-info">
+                    <div class="th-title" id="testPartTitle">Fill in the Blanks Part-1</div>
+                    <div class="th-subtitle">SSC CGL 2025 · SSC Achievers Official</div>
+                </div>
+            </div>
+            <div class="th-progress">
+                <div class="th-prog-text" id="progressText">0 / 20</div>
+                <div class="prog-bar">
+                    <div class="prog-fill" id="progFill" style="width:0%"></div>
+                </div>
+            </div>
+            <div class="timer-box" id="timerBox">
+                <span class="timer-icon">⏱</span>
+                <span id="timerDisplay">12:00</span>
+            </div>
+            <div class="header-btns">
+                <button class="btn-overview" onclick="openOverview()">📊 Overview</button>
+                <button class="btn-submit-top" onclick="confirmSubmit()">Submit</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="test-body-scroll">
+        <div class="test-body">
+            <div class="q-card">
+                <div class="q-meta">
+                    <div class="q-num-badge" id="questionNum">Q 1/20</div>
+                    <div class="q-review-badge" id="reviewBadge">🔖 Marked for Review</div>
+                    <div class="q-exam-badge" id="examBadge">SSC CGL 12/09/2025 (Shift 1)</div>
+                </div>
+                <div class="q-text" id="questionText"></div>
+                <div class="options-grid" id="optionsGrid"></div>
+                <div class="q-nav">
+                    <button class="btn-prev" onclick="prevQuestion()">← Previous</button>
+                    <button class="btn-mark-review" id="markReviewBtn" onclick="toggleMarkReview()">🔖 Mark for Review</button>
+                    <button class="btn-clear" onclick="clearAnswer()">🗑 Clear Response</button>
+                    <button class="btn-next" onclick="nextQuestion()">Save &amp; Next →</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- OVERVIEW PANEL -->
+<div class="overview-panel" id="overviewPanel">
+    <div class="overview-inner">
+        <div class="overview-header">
+            <div class="overview-title">📊 Question Overview</div>
+            <button class="btn-close-overview" onclick="closeOverview()">✕ Close</button>
+        </div>
+        <div class="overview-stats-row">
+            <div class="ov-stat answered">
+                <div class="ov-stat-num" id="ovAnswered" style="color:var(--green);">0</div>
+                <div class="ov-stat-label" style="color:#00e676;">✅ Attempted</div>
+            </div>
+            <div class="ov-stat unanswered">
+                <div class="ov-stat-num" id="ovUnanswered" style="color:var(--muted2);">0</div>
+                <div class="ov-stat-label" style="color:var(--muted2);">⬜ Not Answered</div>
+            </div>
+            <div class="ov-stat" style="border-color:rgba(168,85,247,0.55);background:linear-gradient(135deg,rgba(168,85,247,0.1),rgba(79,195,247,0.08));">
+                <div class="ov-stat-num" id="ovMarkedAttempted" style="color:var(--review);">0</div>
+                <div class="ov-stat-label" style="color:var(--review);">🔖✓ Marked &amp; Attempted</div>
+            </div>
+            <div class="ov-stat" style="border-color:rgba(168,85,247,0.4);border-style:dashed;background:rgba(168,85,247,0.05);">
+                <div class="ov-stat-num" id="ovMarkedUnattempted" style="color:#c084fc;">0</div>
+                <div class="ov-stat-label" style="color:#c084fc;">🔖? Marked &amp; Unattempted</div>
+            </div>
+        </div>
+        <div class="overview-legend">
+            <div class="legend-item"><div class="legend-dot current"></div> Current</div>
+            <div class="legend-item"><div class="legend-dot answered"></div> Answered</div>
+            <div class="legend-item"><div class="legend-dot unanswered"></div> Not Answered</div>
+            <div class="legend-item" style="position:relative"><div class="legend-dot review" style="border:2px solid var(--review);background:linear-gradient(135deg,rgba(168,85,247,0.18),rgba(79,195,247,0.12));"></div> 🔖✓ Marked &amp; Attempted</div>
+            <div class="legend-item" style="position:relative"><div class="legend-dot review" style="border:2px dashed var(--review);background:rgba(168,85,247,0.12);"></div> 🔖? Marked &amp; Unattempted</div>
+        </div>
+        <div class="ov-grid" id="overviewGrid"></div>
+        <div class="ov-actions">
+            <button class="btn-ov-submit" onclick="closeOverview(); confirmSubmit();">🚀 Submit Test</button>
+            <button class="btn-close-overview" style="flex:0.6" onclick="closeOverview()">Continue Test</button>
+        </div>
+    </div>
+</div>
+
+<!-- CONFIRM SUBMIT MODAL -->
+<div class="confirm-modal" id="confirmModal">
+    <div class="confirm-box">
+        <div class="confirm-icon">🚨</div>
+        <div class="confirm-title">Submit Test?</div>
+        <div class="confirm-stats" id="confirmStats">
+            Answered: <span id="csAnswered">0</span> &nbsp;|&nbsp;
+            Unanswered: <span id="csUnanswered">0</span> &nbsp;|&nbsp;
+            Review: <span id="csReview">0</span>
+        </div>
+        <div class="confirm-btns">
+            <button class="btn-confirm-no" onclick="closeConfirm()">Cancel</button>
+            <button class="btn-confirm-yes" onclick="doSubmitTest()">Yes, Submit</button>
+        </div>
+    </div>
+</div>
+
+<!-- RESULT SCREEN -->
+<div id="resultScreen" class="screen" style="display:none !important;">
+    <div class="result-screen">
+        <div class="result-part-header">
+            <div class="result-part-title" id="resultPartTitle">SSC CGL 2025 Fill in the Blanks Part-1</div>
+            <div class="result-part-creator"><a href="https://t.me/+oohc-N40E2ZlZmI1" target="_blank" style="color:inherit;text-decoration:none;">Created by SSC Achievers Official</a></div>
+        </div>
+        <div class="result-card">
+            <h1 class="result-title">Test Completed! 🎉</h1>
+            <div class="result-score-circle">
+                <div class="rsc-num" id="resultScoreNum">0</div>
+                <div class="rsc-label">Score</div>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-item correct-stat"><div class="stat-number" id="resultCorrect">0</div><div class="stat-label">✅ Correct</div></div>
+                <div class="stat-item wrong-stat"><div class="stat-number" id="resultWrong">0</div><div class="stat-label">❌ Wrong</div></div>
+                <div class="stat-item unat-stat"><div class="stat-number" id="resultUnat">0</div><div class="stat-label">⬜ Unattempted</div></div>
+                <div class="stat-item acc-stat"><div class="stat-number" id="resultAccuracy">0%</div><div class="stat-label">🎯 Accuracy</div></div>
+            </div>
+            <div class="perf-bar-wrap">
+                <div class="perf-bar-label">PERFORMANCE BREAKDOWN</div>
+                <div class="perf-bar"><div class="perf-fill correct" id="perfCorrectBar" style="width:0%"></div></div>
+            </div>
+            <div class="result-message" id="resultMessage">Keep practicing! 💪</div>
+            <div class="result-nav">
+                <button class="btn-start" onclick="showSolutions()"><span class="s-icon">📖</span>View Full Analysis &amp; Solutions</button>
+                <a href="https://t.me/+oohc-N40E2ZlZmI1" class="btn-telegram" target="_blank">
+                    <span class="tele-label-top">Boost Your Preparation For SSC CGL 2026</span>
+                    <span class="tele-label-main"><span>📱</span><span>Join Our Telegram Channel</span></span>
+                </a>
+                <button class="btn-home" onclick="goHome()">🏠 Back to Home</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- SUMMARY SCREEN -->
+<div id="summaryScreen" class="screen">
+<div style="width:100%;max-width:760px;margin:0 auto;padding:14px 12px;display:flex;flex-direction:column;gap:12px;">
+  <div style="background:var(--card);border:1px solid var(--border2);border-radius:16px;padding:16px 18px;display:flex;justify-content:space-between;align-items:center;gap:12px;">
+    <div>
+      <a id="s_title" href="https://t.me/+oohc-N40E2ZlZmI1" target="_blank" style="font-family:'Rajdhani',sans-serif;font-size:21px;font-weight:700;color:var(--gold);line-height:1.25;text-decoration:none;display:block;">SSC CGL 2025</a>
+      <div style="font-size:11px;color:var(--muted2);margin-top:3px;">Created by <a href="https://t.me/+oohc-N40E2ZlZmI1" target="_blank" style="color:var(--gold2);text-decoration:none;">SSC Achievers Official</a></div>
+    </div>
+    <button onclick="goHome()" style="background:linear-gradient(135deg,var(--gold),var(--gold-dark));color:#000;border:none;border-radius:12px;padding:11px 20px;font-family:'Baloo 2',sans-serif;font-size:14px;font-weight:800;cursor:pointer;white-space:nowrap;box-shadow:0 3px 14px rgba(245,197,24,0.35);">🏠 Home</button>
+  </div>
+  <div style="background:var(--card);border:1px solid rgba(245,197,24,0.3);border-radius:16px;padding:16px 18px;">
+    <div style="font-family:'Rajdhani',sans-serif;font-size:20px;font-weight:700;color:var(--gold);">📋 Complete Analysis &amp; Solutions</div>
+    <div style="font-size:12px;color:var(--muted2);margin-top:4px;">⭐All Questions of Fill in the Blanks Asked In SSC CGL 2025</div>
+  </div>
+  <div style="background:var(--card);border:1px solid var(--border2);border-radius:16px;padding:20px 16px;display:flex;flex-direction:column;gap:14px;">
+    <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;">
+      <div style="width:88px;height:88px;border-radius:50%;border:3px solid var(--gold);background:rgba(245,197,24,0.07);display:flex;flex-direction:column;align-items:center;justify-content:center;flex-shrink:0;margin:0 auto;">
+        <div id="s_score" style="font-family:'Rajdhani',sans-serif;font-size:28px;font-weight:700;color:var(--gold);line-height:1;">0</div>
+        <div style="font-size:12px;color:var(--muted2);font-weight:700;">/ <span id="s_total">0</span></div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;flex:1;min-width:190px;">
+        <div style="background:var(--card2);border:1px solid var(--border);border-radius:10px;padding:10px 6px;text-align:center;">
+          <div id="s_correct" style="font-family:'Rajdhani',sans-serif;font-size:22px;font-weight:700;color:var(--green);">0</div>
+          <div style="font-size:10px;color:var(--muted);font-weight:700;text-transform:uppercase;letter-spacing:.5px;">✅ CORRECT</div>
+        </div>
+        <div style="background:var(--card2);border:1px solid var(--border);border-radius:10px;padding:10px 6px;text-align:center;">
+          <div id="s_wrong" style="font-family:'Rajdhani',sans-serif;font-size:22px;font-weight:700;color:var(--red);">0</div>
+          <div style="font-size:10px;color:var(--muted);font-weight:700;text-transform:uppercase;letter-spacing:.5px;">❌ WRONG</div>
+        </div>
+        <div style="background:var(--card2);border:1px solid var(--border);border-radius:10px;padding:10px 6px;text-align:center;">
+          <div id="s_unat" style="font-family:'Rajdhani',sans-serif;font-size:22px;font-weight:700;color:var(--muted2);">0</div>
+          <div style="font-size:10px;color:var(--muted);font-weight:700;text-transform:uppercase;letter-spacing:.5px;">⬜ UNATTEMPTED</div>
+        </div>
+        <div style="background:var(--card2);border:1px solid var(--border);border-radius:10px;padding:10px 6px;text-align:center;">
+          <div id="s_accuracy" style="font-family:'Rajdhani',sans-serif;font-size:22px;font-weight:700;color:#3bc4f2;">0%</div>
+          <div style="font-size:10px;color:var(--muted);font-weight:700;text-transform:uppercase;letter-spacing:.5px;">🎯 ACCURACY</div>
+        </div>
+      </div>
+    </div>
+    <div style="height:7px;border-radius:4px;background:var(--border);overflow:hidden;">
+      <div id="s_bar" style="height:100%;border-radius:4px;background:var(--green);width:0%;transition:width 1s ease;"></div>
+    </div>
+    <a id="s_msg" href="https://t.me/+oohc-N40E2ZlZmI1" target="_blank" style="background:rgba(245,197,24,0.06);border:1px solid rgba(245,197,24,0.2);border-radius:10px;padding:11px 14px;font-size:13px;font-weight:600;color:var(--gold2);text-align:center;text-decoration:none;display:block;">Keep practicing! 💪</a>
+    <button onclick="showSolutions()" style="width:100%;background:linear-gradient(135deg,var(--gold),var(--gold-dark));color:#000;border:none;border-radius:13px;padding:15px;font-family:'Baloo 2',sans-serif;font-size:15px;font-weight:800;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:9px;box-shadow:0 4px 18px rgba(245,197,24,0.35);">
+      📖 View Detailed Solutions
+    </button>
+    <a href="https://t.me/+oohc-N40E2ZlZmI1" target="_blank" style="width:100%;background:linear-gradient(135deg,#229ED9,#1680b5);color:#fff;text-decoration:none;border-radius:13px;padding:14px;font-family:'Baloo 2',sans-serif;display:flex;flex-direction:column;align-items:center;gap:3px;box-shadow:0 4px 18px rgba(34,158,217,0.28);">
+      <span style="font-size:10px;opacity:.85;font-weight:600;">Boost Your Preparation For SSC CGL 2026</span>
+      <span style="font-size:15px;font-weight:800;display:flex;align-items:center;gap:8px;">📱 Join SSC Achievers Official</span>
+    </a>
+  </div>
+</div>
+</div>
+
+<!-- SOLUTION SCREEN -->
+<div id="solutionScreen" class="screen">
+    <div class="solution-screen" style="padding-top:10px;">
+
+        <!-- Inline Score Summary Banner -->
+        <div class="inline-score-banner" id="inlineScoreBanner">
+            <div class="isb-top">
+                <a href="https://t.me/+oohc-N40E2ZlZmI1" id="inlinePartTitle" target="_blank" class="isb-title isb-title-link">SSC CGL 2025</a>
+                <div class="isb-sub"><a href="https://t.me/+oohc-N40E2ZlZmI1" target="_blank">⭐All Questions of Fill in the Blanks Asked In SSC CGL 2025</a></div>
+            </div>
+            <div class="isb-body">
+                <div class="isb-circle">
+                    <div class="isb-score-big" id="inlineScoreNum">0</div>
+                    <div class="isb-score-denom">/ <span id="inlineTotal">0</span></div>
+                </div>
+                <div class="isb-stats">
+                    <div class="isb-stat correct-stat"><span id="inlineCorrect">0</span><small>✅ Correct</small></div>
+                    <div class="isb-stat wrong-stat"><span id="inlineWrong">0</span><small>❌ Wrong</small></div>
+                    <div class="isb-stat unat-stat"><span id="inlineUnat">0</span><small>⬜ Unattempted</small></div>
+                    <div class="isb-stat acc-stat"><span id="inlineAccuracy">0%</span><small>🎯 Accuracy</small></div>
+                </div>
+            </div>
+            <div class="isb-perf-wrap">
+                <div class="isb-perf-bar"><div class="perf-fill correct" id="inlinePerfBar" style="width:0%"></div></div>
+            </div>
+            <div class="isb-message" id="inlineMessage">Keep practicing! 💪</div>
+            <div style="width:100%;max-width:420px;margin:0 auto 4px;">
+                <a href="https://t.me/+oohc-N40E2ZlZmI1" class="btn-telegram" target="_blank">
+                    <span class="tele-label-top">Boost Your Preparation For SSC CGL 2026</span>
+                    <span class="tele-label-main"><span>📱</span><span>Join SSC Achievers Official</span></span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Back / Home buttons -->
+        <div style="width:100%;max-width:760px;margin-bottom:12px;display:flex;align-items:center;justify-content:space-between;gap:10px;">
+            <button onclick="goBackToSummary()" style="background:var(--card);border:1px solid var(--border2);color:var(--gold);border-radius:12px;padding:10px 18px;font-family:'Baloo 2',sans-serif;font-size:14px;font-weight:700;cursor:pointer;display:flex;align-items:center;gap:7px;">
+                ← Back to Analysis
+            </button>
+            <button onclick="goHome()" style="background:var(--card);border:1px solid var(--border2);color:var(--muted2);border-radius:12px;padding:10px 18px;font-family:'Baloo 2',sans-serif;font-size:13px;font-weight:700;cursor:pointer;">
+                🏠 Home
+            </button>
+        </div>
+
+        <!-- Filter Tabs -->
+        <div class="sol-filter-tabs" id="solFilterTabs">
+            <button class="sol-tab active" onclick="filterSolutions('all', this)">All</button>
+            <button class="sol-tab" onclick="filterSolutions('correct', this)">✅ Correct</button>
+            <button class="sol-tab" onclick="filterSolutions('wrong', this)">❌ Wrong</button>
+            <button class="sol-tab" onclick="filterSolutions('unattempted', this)">⬜ Unattempted</button>
+        </div>
+
+        <div style="width:100%;max-width:760px;background:var(--card);border:1px solid rgba(245,197,24,0.3);border-radius:16px;padding:14px 18px;margin-bottom:14px;">
+            <div style="font-family:'Rajdhani',sans-serif;font-size:19px;font-weight:700;color:var(--gold);">📋 Complete Analysis &amp; Solutions</div>
+        </div>
+
+        <div class="solutions-container" id="solutionsList"></div>
+
+        <div class="telegram-footer">
+            <p>Join Our Telegram Channel to Boost Your Preparation For SSC CGL 2026</p>
+            <a href="https://t.me/+oohc-N40E2ZlZmI1" class="btn-tele-footer" target="_blank">
+                <span>📱</span>
+                <span>Click Here to Join SSC Achievers Official</span>
+            </a>
+        </div>
+    </div>
+</div>
+
+<script>
+    const questionsData = {
+        1: [
+            { id: 1, text: "The ancient manuscript was so fragile that the historian handled it with ___ care.", options: ["utmost", "most", "almost", "mostly"], correct: 0, explanation: "'Utmost' means extreme. The given sentence states that due to the fragility of the manuscript, the historian handled it with extreme care. Hence, 'utmost' is the most appropriate answer.", exam: "SSC CGL 12/09/2025 (Shift 1)" },
+            { id: 2, text: "The abstruse philosophical treatise delved ______ the very essence of existentialism.", options: ["into", "onto", "beside", "above"], correct: 0, explanation: "'Into' is a fixed preposition used with the verb 'delve'. Hence, 'into' is the most appropriate answer.", exam: "SSC CGL 12/09/2025 (Shift 1)" },
+            { id: 3, text: "Despite initial optimism, the second attempt at the experiment was ______ successful than the first.", options: ["little", "less", "least", "much"], correct: 1, explanation: "'Less' is the comparative form of 'little' and is used here to compare the success of the second attempt with the first. The sentence indicates a reduced level of success in the second attempt. Hence, 'less' is the most appropriate answer.", exam: "SSC CGL 12/09/2025 (Shift 1)" },
+            { id: 4, text: "You can either submit your research paper today _____ by the end of the week.", options: ["so", "but", "or", "not"], correct: 2, explanation: "'Either…or' is a fixed conjunction pair. Hence, 'or' is the most appropriate answer.", exam: "SSC CGL 12/09/2025 (Shift 2)" },
+            { id: 5, text: "The venerable professor, ______ lectures always captivated his students, announced his retirement.", options: ["what", "whom", "whose", "that"], correct: 2, explanation: "'Whose' is a relative adjective used to refer to people or things, indicating possession. In this sentence, the lectures belong to the professor, so 'whose' correctly shows this relationship. Hence, 'whose' is the most appropriate answer.", exam: "SSC CGL 12/09/2025 (Shift 2)" },
+            { id: 6, text: "The incessant debate began to ______ the enthusiasm of even the most dedicated participants.", options: ["bolster", "invigorate", "enervate", "dislodge"], correct: 2, explanation: "'Enervate' means to cause (someone) to feel drained of energy or vitality. The given sentence states that the incessant debate began to enervate the enthusiasm of even the most dedicated participants. Hence, 'enervate' is the most appropriate answer.", exam: "SSC CGL 12/09/2025 (Shift 2)" },
+            { id: 7, text: "So intricate______the machinery that even experts took hours to assemble it.", options: ["is", "was", "are", "were"], correct: 1, explanation: "This sentence is an example of inversion for emphasis, where the auxiliary verb precedes the subject. The subject 'machinery' is singular, so the verb must also be singular. Hence, 'was' is the most appropriate answer.", exam: "SSC CGL 12/09/2025 (Shift 3)" },
+            { id: 8, text: "His explanation was ____ than confusing; it was a tangled mess of ideas.", options: ["less", "more", "other", "rather"], correct: 1, explanation: "The word 'more' is used here to emphasize that his explanation went beyond merely being confusing, suggesting it was an even greater degree of disorganization and lack of clarity. Hence, 'more' is the most appropriate answer.", exam: "SSC CGL 12/09/2025 (Shift 3)" },
+            { id: 9, text: "The leader's speech, meant to inspire unity, instead managed to _______ further division among the already fractured factions.", options: ["assuage", "foment", "mitigate", "appease"], correct: 1, explanation: "The word 'foment' means to instigate or stir up (an undesirable or violent sentiment or course of action), which perfectly fits the context of stirring up division. Hence, 'foment' is the most appropriate answer.", exam: "SSC CGL 12/09/2025 (Shift 3)" },
+            { id: 10, text: "Hardly ever______the opportunity to witness such a rare celestial event.", options: ["we have", "do we have", "we had", "did have we"], correct: 1, explanation: "When a sentence begins with a negative adverbial phrase (like 'hardly ever', 'scarcely', 'never', 'seldom', 'rarely'), inversion of the subject and auxiliary verb is required for emphasis. Therefore, 'do we have' is the most appropriate answer.", exam: "SSC CGL 13/09/2025 (Shift 1)" },
+            { id: 11, text: "The detective's unwavering commitment to justice often led him to pursue cases with unbridled ______.", options: ["zealot", "zealous", "zealotry", "zealand"], correct: 2, explanation: "'Zealotry' means extreme devotion. The given sentence states that the detective's unwavering commitment to justice often led him to pursue cases with unbridled zealotry. Hence, 'zealotry' is the most appropriate answer.", exam: "SSC CGL 13/09/2025 (Shift 1)" },
+            { id: 12, text: "The constant dripping of water began to ____the stone, eroding it slowly over centuries.", options: ["strengthen", "solidify", "abrade", "dilute"], correct: 2, explanation: "'Abrade' means to scrape or wear away by friction or erosion. The given sentence states that the constant dripping of water began to abrade the stone, eroding it slowly over centuries. Hence, 'abrade' is the most appropriate answer.", exam: "SSC CGL 13/09/2025 (Shift 1)" },
+            { id: 13, text: "Although the expedition was fraught with peril, they encountered ______ challenges than anticipated.", options: ["fewer", "less", "much", "many"], correct: 0, explanation: "'Fewer' is a comparative degree used with plural countable nouns. Similarly, in the given sentence, 'challenges' is a plural countable noun. Hence, 'fewer' is the most appropriate answer.", exam: "SSC CGL 13/09/2025 (Shift 2)" },
+            { id: 14, text: "The new software promised to streamline operations; ______, initial implementation proved unexpectedly complex.", options: ["therefore", "moreover", "however", "consequently"], correct: 2, explanation: "'However' is an adverb used to introduce a statement that contrasts with or contradicts something that has been said previously. Here, it presents a contrast between the promise of streamlined operations and complex implementation. Hence, 'however' is the most appropriate answer.", exam: "SSC CGL 13/09/2025 (Shift 2)" },
+            { id: 15, text: "If not for the early warning system, the city would have ______significant damage from the tsunami.", options: ["sustained", "avoided", "prevented", "circumvented"], correct: 0, explanation: "'Sustained' means to suffer (something unpleasant, especially an injury, a defeat, or a loss). The given sentence states that the city would have sustained significant damage from the tsunami if not for the early warning system. Hence, 'sustained' is the most appropriate answer.", exam: "SSC CGL 13/09/2025 (Shift 2)" },
+            { id: 16, text: "The constant criticism from his peers ______ him to rethink his approach.", options: ["motivate", "have motivated", "were motivating", "motivates"], correct: 3, explanation: "In the given sentence, 'the constant criticism' is a singular subject that will take 'motivates' as a singular verb. Hence, 'motivates' is the most appropriate answer.", exam: "SSC CGL 13/09/2025 (Shift 3)" },
+            { id: 17, text: "The diplomat was adept _________ negotiating complex international treaties.", options: ["at", "in", "of", "to"], correct: 0, explanation: "'At' is a fixed preposition used with 'adept'. Hence, 'at' is the most appropriate answer.", exam: "SSC CGL 13/09/2025 (Shift 3)" },
+            { id: 18, text: "By the time the rescue team ______ at the site, most of the villagers had already been evacuated to safer ground.", options: ["will arrive", "had arrived", "arrives", "arrived"], correct: 3, explanation: "If two actions took place in the past then the 1st action must be in the Past perfect tense (Had + V3) and the 2nd action must be in the Simple Past tense (V2). In the given sentence, 'evacuation' is the 1st action and 'arrival' is the 2nd action. Hence, 'arrived (V2)' is the most appropriate answer.", exam: "SSC CGL 13/09/2025 (Shift 3)" },
+            { id: 19, text: "The committee reviewed all the proposals, none of _____ met the required criteria.", options: ["who", "which", "them", "those"], correct: 1, explanation: "'Which' is a relative pronoun used to introduce a non-restrictive clause that refers to things or animals. In this case, 'which' refers back to 'proposals'. Hence, 'which' is the most appropriate answer.", exam: "SSC CGL 14/09/2025 (Shift 1)" },
+            { id: 20, text: "Hardly _______the team completed the report when the boss called them for a presentation.", options: ["did", "have", "had", "was"], correct: 2, explanation: "If a sentence starts with a negative word (hardly / barely / scarcely / rarely / no sooner / not only / never / little), the correct grammatical structure is 'Negative word + Helping verb + Subject + Main Verb'. The sentence describes an action completed before another past action, so it requires Past Perfect Tense (had + V3). Hence, 'had' is the most appropriate answer.", exam: "SSC CGL 14/09/2025 (Shift 1)" }
+        ],
+        2: [
+            { id: 21, text: "The scientist's conclusions were entirely _____ to the data presented in the report.", options: ["contradictory", "conducive", "conforming", "correspondent"], correct: 0, explanation: "The word 'contradictory' means opposite or inconsistent with something else. The sentence suggests that the scientist's conclusions did not agree with the data in the report. Hence, 'Contradictory' is the most appropriate answer.", exam: "SSC CGL 14/09/2025 (Shift 1)" },
+            { id: 22, text: "No sooner had the curtain fallen _____the audience erupted into applause.", options: ["when", "before", "than", "after"], correct: 2, explanation: "'No sooner–than' is the fixed conjunction pair. Hence, 'than' is the most appropriate answer.", exam: "SSC CGL 14/09/2025 (Shift 2)" },
+            { id: 23, text: "______ having been warned about the risks, she proceeded with the experimental procedure.", options: ["In spite of", "Due to", "As", "Since"], correct: 0, explanation: "'In spite of' is a prepositional phrase meaning 'despite' or 'regardless of.' It correctly conveys a contrast between being warned and proceeding with the action. Hence, 'In spite of' is the most appropriate answer.", exam: "SSC CGL 14/09/2025 (Shift 2)" },
+            { id: 24, text: "The committee recommended that the new policy _________ implemented immediately.", options: ["is", "was", "be", "will be"], correct: 2, explanation: "The given sentence uses the subjunctive mood after verbs like recommendation, demand, suggest, etc. The subjunctive mood requires the base form of the verb. Hence, 'be' is the most appropriate answer.", exam: "SSC CGL 14/09/2025 (Shift 2)" },
+            { id: 25, text: "The new manager promised to _____ the old, inefficient procedures with more modern methods.", options: ["do up", "do without", "do for", "do away with"], correct: 3, explanation: "The phrasal verb 'do away with' means to get rid of something. The given sentence states that the new manager promised to get rid of the old, inefficient procedures and replace them with more modern methods. Hence, 'do away with' is the most appropriate answer.", exam: "SSC CGL 14/09/2025 (Shift 3)" },
+            { id: 26, text: "The party leader appealed to the electorate to consider the long-term implications _____ the proposed reforms.", options: ["for", "of", "against", "about"], correct: 1, explanation: "'Of' means relating to something. The given sentence talks about implications related to the proposed reforms. Hence, 'of' is the most appropriate answer.", exam: "SSC CGL 14/09/2025 (Shift 3)" },
+            { id: 27, text: "The new policy proved to be entirely ______to the needs of the working class, exacerbating existing inequalities.", options: ["harm", "hazard", "detrimental", "detriment"], correct: 2, explanation: "'Entirely' is an adverb which modifies an adjective coming after it. 'Detrimental' is an adjective which takes the preposition 'to' after it. Hence, 'detrimental' is the most appropriate answer.", exam: "SSC CGL 14/09/2025 (Shift 3)" },
+            { id: 28, text: "Not until the results were officially announced ____ the students celebrate.", options: ["they did", "did they", "had they", "were they"], correct: 1, explanation: "The given sentence is an example of inversion, which often occurs with 'not until' at the beginning of a sentence. The auxiliary verb (did) comes before the subject (they). Hence, 'did they' is the most appropriate answer.", exam: "SSC CGL 15/09/2025 (Shift 1)" },
+            { id: 29, text: "The scientist, ____ discovery changed the course of modern medicine, was awarded the Nobel Prize.", options: ["who", "whom", "whose", "which"], correct: 2, explanation: "'Whose' is a possessive pronoun that refers to the scientist's discovery. Hence, 'whose' is the most appropriate answer.", exam: "SSC CGL 15/09/2025 (Shift 1)" },
+            { id: 30, text: "The committee reached a _____ decision after hours of intense discussion.", options: ["well-thought", "well-thought of", "well-thought-out", "thought-well"], correct: 2, explanation: "The collocation 'well-thought-out' means carefully considered or planned in detail before being implemented. Hence, option c is the most appropriate answer.", exam: "SSC CGL 15/09/2025 (Shift 2)" },
+            { id: 31, text: "The proposal, ________ was initially dismissed, later gained widespread approval.", options: ["who", "which", "that", "whom"], correct: 1, explanation: "The relative pronoun 'which' is used to add non-defining information about the proposal. Hence, 'which' is the most appropriate answer.", exam: "SSC CGL 15/09/2025 (Shift 2)" },
+            { id: 32, text: "Had he arrived on time, he _____the beginning of the presentation.", options: ["would catch", "would have caught", "will catch", "had caught"], correct: 1, explanation: "The given sentence is an example of the third conditional sentence and 'had + V3 ... would have + V3' is the correct grammatical structure for it. Hence, 'would have caught (V3)' is the most appropriate answer.", exam: "SSC CGL 15/09/2025 (Shift 3)" },
+            { id: 33, text: "Despite ample resources being allocated, bureaucratic inefficiencies continued to ______the project's progress.", options: ["accelerate", "catalyse", "facilitate", "impede"], correct: 3, explanation: "'Impede' means to interfere with the activity or progress of something. The given sentence states that bureaucratic inefficiencies continued to impede the project's progress despite ample resources being allocated. Hence, 'impede' is the most appropriate answer.", exam: "SSC CGL 15/09/2025 (Shift 3)" },
+            { id: 34, text: "The health of an ecosystem is directly proportional _____the diversity of species it supports.", options: ["yet", "but", "to", "via"], correct: 2, explanation: "'To' is a fixed preposition used after the word 'proportional'. Hence, 'to' is the most appropriate answer.", exam: "SSC CGL 15/09/2025 (Shift 3)" },
+            { id: 35, text: "After hours of discussion, they finally __________ a reasonable solution.", options: ["came up with", "went through", "took over", "fell back on"], correct: 0, explanation: "The phrasal verb 'came up with' means to think of or produce an idea, plan, or solution. In the given sentence, the context suggests that after a long discussion, the people involved were able to think of or suggest a reasonable solution. Hence, 'came up with' is the most appropriate answer.", exam: "SSC CGL 16/09/2025 (Shift 1)" },
+            { id: 36, text: "The scientist's theory was praised for its originality but criticized for the ______ of supporting evidence.", options: ["paucity", "abundance", "clarity", "rigidity"], correct: 0, explanation: "The word 'paucity' means a small amount or scarcity of something. The given sentence states that the scientist's theory was praised for its originality but criticized for the lack of supporting evidence. Hence, 'paucity' is the most appropriate answer.", exam: "SSC CGL 16/09/2025 (Shift 1)" },
+            { id: 37, text: "She had to _____ her previous statements after new evidence emerged.", options: ["take back", "give away", "hold off", "turn down"], correct: 0, explanation: "'Take back' means to withdraw something said. The given sentence states that she had to take back her previous statements after new evidence emerged. Hence, 'take back' is the most appropriate answer.", exam: "SSC CGL 16/09/2025 (Shift 2)" },
+            { id: 38, text: "Despite the unexpected challenges, the team remained ______focused on their objective.", options: ["resolve", "resolutely", "resolution", "more resolute"], correct: 1, explanation: "The given sentence requires an adverb to modify the adjective 'focused'. 'Resolutely' is an adverb, meaning in a determined way. Hence, 'resolutely' is the most appropriate answer.", exam: "SSC CGL 16/09/2025 (Shift 2)" },
+            { id: 39, text: "Seldom ______ so many people interested in a poetry reading.", options: ["have I seen", "I have seen", "was I seeing", "had I seen"], correct: 0, explanation: "The adverb 'seldom' is a negative word that causes inversion i.e., the auxiliary verb comes before the subject. Hence, 'have I seen' is the most appropriate answer.", exam: "SSC CGL 16/09/2025 (Shift 3)" },
+            { id: 40, text: "Not until the evidence was re-examined did the scientist fully____the implications of her discovery.", options: ["apprehend", "improvise", "invalidate", "replicate"], correct: 0, explanation: "The word 'Apprehend' means to understand or grasp the meaning of something. The given sentence states that the scientist did not fully understand or grasp the implications of her discovery until the evidence was re-examined. Hence, 'Apprehend' is the most appropriate answer.", exam: "SSC CGL 16/09/2025 (Shift 3)" }
+        ],
+        3: [
+            { id: 41, text: "Although the proposal appeared promising at first, further analysis revealed it to be _____ in logic.", options: ["impeccable", "fallacious", "pragmatic", "coherent"], correct: 1, explanation: "The word 'Fallacious' means based on a mistaken belief, illogical, or unsound. The given sentence implies that initial impressions were positive, but further analysis uncovered flaws. Hence, 'Fallacious' is the most appropriate answer.", exam: "SSC CGL 17/09/2025 (Shift 1)" },
+            { id: 42, text: "The philosopher's discourse was so _____ that only a handful of scholars could fully comprehend its nuanced intricacies.", options: ["perspicuous", "pellucid", "recondite", "facile"], correct: 2, explanation: "'Recondite' means difficult to understand for one having ordinary knowledge. The given sentence states that the philosopher's discourse was so recondite that only a handful of scholars could fully comprehend its nuanced intricacies. Hence, 'recondite' is the most appropriate answer.", exam: "SSC CGL 17/09/2025 (Shift 2)" },
+            { id: 43, text: "The detective had to ______ many clues to solve the complex case.", options: ["put up", "break down", "piece together", "give in"], correct: 2, explanation: "'Piece together' means to understand something by combining individual pieces of information. The given sentence states that the detective had to piece together many clues to solve the complex case. Hence, 'piece together' is the most appropriate answer.", exam: "SSC CGL 17/09/2025 (Shift 2)" },
+            { id: 44, text: "Hardly had the train left the station ______ it started raining heavily.", options: ["when", "than", "before", "until"], correct: 0, explanation: "'Hardly….when' is a fixed conjunction pair. Hence, 'when' is the most appropriate answer.", exam: "SSC CGL 17/09/2025 (Shift 3)" },
+            { id: 45, text: "The historian often alluded ______ ancient myths in his lectures, enriching the narrative.", options: ["at", "but", "to", "towards"], correct: 2, explanation: "'To' is a fixed preposition used after the verb 'allude'. Hence, 'to' is the most appropriate answer.", exam: "SSC CGL 18/09/2025 (Shift 1)" },
+            { id: 46, text: "The old factory will be ______ into a modern art gallery next year.", options: ["pulled down", "turned into", "put off", "brought up"], correct: 1, explanation: "'Turned into' means transformed into something else. The given sentence states that the old factory will be turned into a modern art gallery next year. Hence, 'turned into' is the most appropriate answer.", exam: "SSC CGL 18/09/2025 (Shift 1)" },
+            { id: 47, text: "If they ______ the warning, they wouldn't have made that mistake.", options: ["heeded", "had heeded", "would heed", "have heeded"], correct: 1, explanation: "The given sentence is an example of a third conditional sentence and the correct grammatical structure for it is 'If + past perfect (had + V3)…….. Would have + V3'. Hence, 'had heeded' is the most appropriate answer.", exam: "SSC CGL 18/09/2025 (Shift 2)" },
+            { id: 48, text: "The artist's ______ brushstrokes captured the essence of the landscape.", options: ["masterful", "master", "masterfully", "mastery"], correct: 0, explanation: "The given sentence requires an adjective to describe the 'brushstrokes'. 'Masterful' is an adjective, which means performed with the skill of a master. Hence, 'masterful' is the most appropriate answer.", exam: "SSC CGL 18/09/2025 (Shift 3)" },
+            { id: 49, text: "The professor, ______ reputation for rigorous research was widely known, retired last year.", options: ["who", "whom", "whose", "when"], correct: 2, explanation: "'Whose' is a relative adjective denoting a sense of possession or belonging. The given sentence states that the professor, whose reputation for rigorous research was widely known, retired last year. Hence, 'whose' is the most appropriate answer.", exam: "SSC CGL 18/09/2025 (Shift 3)" },
+            { id: 50, text: "The committee's decision was a major ______ in the company's expansion plans.", options: ["impetus", "setback", "stimulant", "leverage"], correct: 1, explanation: "The word 'Setback' means an obstacle or delay in progress. The given sentence implies that the committee's decision had a negative impact on the company's expansion plans. Hence, 'Setback' is the most appropriate answer.", exam: "SSC CGL 19/09/2025 (Shift 1)" },
+            { id: 51, text: "The prevalence of infectious diseases among vulnerable populations ______ a constant concern for public health organisations.", options: ["has remaining", "remain", "have remained", "remains"], correct: 3, explanation: "The true subject of the sentence is 'prevalence' (singular), not 'populations' (plural). The phrase 'of infectious diseases among vulnerable populations' is a prepositional phrase. Therefore, the verb must agree with the singular subject 'prevalence'. 'Remains' is the correct singular verb for simple present tense. Hence, 'remains' is the most appropriate answer.", exam: "SSC CGL 19/09/2025 (Shift 2)" },
+            { id: 52, text: "The ancient scroll, previously thought to be lost, ______ in a hidden chamber.", options: ["was discovered", "is discovered", "discovers", "are discovered"], correct: 0, explanation: "The given sentence describes a past event where the scroll was found. Since 'the scroll' is the object of the action (it didn't discover itself), the passive voice is required. 'Was + V3' is the correct passive structure for simple past tense. Hence, 'was discovered (V3)' is the most appropriate answer.", exam: "SSC CGL 19/09/2025 (Shift 2)" },
+            { id: 53, text: "The manager handled the crisis so _____that everyone praised his calmness.", options: ["efficiently", "efficiency", "efficient", "efficacious"], correct: 0, explanation: "'Efficiently' is the adverb form of 'efficient' and means 'in a well-organized and productive manner.' The given sentence describes how the manager handled the crisis, which requires an adverb to modify the verb 'handled.' Hence, 'efficiently' is the most appropriate answer.", exam: "SSC CGL 19/09/2025 (Shift 3)" },
+            { id: 54, text: "Her calm demeanor in the face of chaos acted like ______ for the anxious team members.", options: ["provocation", "catalyst", "reassurance", "distraction"], correct: 2, explanation: "'Reassurance' means the act of relieving someone of anxiety. The given sentence states that her calm demeanor in the face of chaos acted as a reassurance for the team members. Hence, 'reassurance' is the most appropriate answer.", exam: "SSC CGL 20/09/2025 (Shift 1)" },
+            { id: 55, text: "After a long journey, they decided to ______ for the night at a small inn.", options: ["set off", "put up", "give in", "stand by"], correct: 1, explanation: "'Put up' means to stay somewhere for a short time. The given sentence states that after a long journey, they decided to put up for the night at a small inn. Hence, 'put up' is the most appropriate answer.", exam: "SSC CGL 20/09/2025 (Shift 1)" },
+            { id: 56, text: "The journalist was praised for her _______ investigation into the corruption scandal.", options: ["meticulous", "meticulously", "meticulousness", "meticulosity"], correct: 0, explanation: "'Meticulous' means showing great attention to detail; very careful and precise. In the given sentence, the word qualifies the noun investigation, indicating that the journalist's work was careful, thorough, and detailed. Hence, 'meticulous' is the most appropriate answer.", exam: "SSC CGL 20/09/2025 (Shift 2)" },
+            { id: 57, text: "Scarcely had the CEO signed the contract ____ the company announced the merger.", options: ["when", "than", "before", "until"], correct: 0, explanation: "'Scarcely-when' is the fixed conjunction pair. Hence, 'when' is the most appropriate answer.", exam: "SSC CGL 20/09/2025 (Shift 3)" },
+            { id: 58, text: "He was remembered not for what he said but ____he refrained from saying.", options: ["which", "what", "that", "for what"], correct: 3, explanation: "The given sentence is a contrastive statement that emphasizes the difference between what he spoke and what he deliberately refrained from saying. Hence, 'for what' is the most appropriate answer.", exam: "SSC CGL 20/09/2025 (Shift 3)" },
+            { id: 59, text: "________ his rigorous training, the athlete struggled to complete the marathon.", options: ["As a result of", "By dint of", "Due to", "Despite"], correct: 3, explanation: "'Despite' is used to introduce a contrasting statement that does not affect the main event. Similarly, in the given sentence, his rigorous training did not help him complete the marathon. Hence, 'Despite' is the most appropriate answer.", exam: "SSC CGL 21/09/2025 (Shift 1)" },
+            { id: 60, text: "This movie is not ______ interesting as the book it was based on.", options: ["more", "that", "so", "much"], correct: 2, explanation: "The given sentence is a negative comparison, and the correct structure is 'not so…as', which is used to compare two things when the first is less than the second. Hence, 'so' is the most appropriate answer.", exam: "SSC CGL 21/09/2025 (Shift 2)" }
+        ],
+        4: [
+            { id: 61, text: "Not until the auditors had submitted their exhaustive report ______ the full extent of procedural lapses become evident.", options: ["did", "had", "was", "has"], correct: 0, explanation: "This is an example of inversion, which occurs when a sentence begins with a negative or restrictive expression such as 'only after,' 'never,' or 'hardly.' In these cases, the auxiliary verb comes before the subject. Hence, 'did' is the most appropriate answer.", exam: "SSC CGL 21/09/2025 (Shift 2)" },
+            { id: 62, text: "The manager felt caught _____ a rock and a hard place when he had to choose between laying off staff or cutting salaries.", options: ["upon", "between", "inside", "outside"], correct: 1, explanation: "'Caught between a rock and a hard place' is the correct idiom. Hence, 'between' is the most appropriate answer.", exam: "SSC CGL 21/09/2025 (Shift 3)" },
+            { id: 63, text: "The novel was ______ complex for young readers to understand fully.", options: ["far", "too", "very", "much"], correct: 1, explanation: "The adverb 'too' is used to indicate that something has an excessive degree of a particular quality, resulting in a negative consequence. The structure 'too + adjective + to + verb' is appropriate here because it shows that the novel's complexity exceeds a level that prevents young readers from fully understanding it. Hence, 'too' is the most appropriate answer.", exam: "SSC CGL 22/09/2025 (Shift 1)" },
+            { id: 64, text: "The generous severance package was commensurate______his long and dedicated service to the company.", options: ["for", "with", "to", "on"], correct: 1, explanation: "'With' is a fixed preposition used after the adjective 'commensurate' to indicate proportion or correspondence. Hence, 'commensurate with' is the most appropriate answer.", exam: "SSC CGL 22/09/2025 (Shift 1)" },
+            { id: 65, text: "Hardly had the game started ______ the rain began to pour.", options: ["when", "then", "than", "as"], correct: 0, explanation: "'Hardly…when' is a fixed conjunction pair. Hence, 'when' is the most appropriate answer.", exam: "SSC CGL 22/09/2025 (Shift 2)" },
+            { id: 66, text: "______ the sun set, the temperature began to drop.", options: ["When", "While", "Before", "Where"], correct: 0, explanation: "When indicates that one event happened at the time another began. In the given sentence, the event of the temperature beginning to drop happened after the sun set. Hence, 'when' is the most appropriate answer.", exam: "SSC CGL 22/09/2025 (Shift 3)" },
+            { id: 67, text: "The minister addressed the issue _________, ensuring no misunderstanding remained.", options: ["ambiguously", "unambiguously", "ambiguity", "ambiguous"], correct: 1, explanation: "The adverb 'unambiguously' means clearly or without any doubt. In the given sentence, the minister addressed the issue in a clear and definite manner so that no misunderstanding remained. Hence, 'unambiguously' is the most appropriate answer.", exam: "SSC CGL 22/09/2025 (Shift 3)" },
+            { id: 68, text: "No sooner had the referee blown the whistle ______the match officials intervened.", options: ["when", "than", "then", "while"], correct: 1, explanation: "'No sooner … than' is a fixed conjunction pair. Hence, 'than' is the most appropriate answer.", exam: "SSC CGL 23/09/2025 (Shift 1)" },
+            { id: 69, text: "The detective's brilliant _____ led him to the solution of the complex crime.", options: ["ratiocination", "ratiocinasion", "ratiosinacion", "ratiosenation"], correct: 0, explanation: "'Ratiocination' is the correct spelling, meaning the process of exact thinking; reasoning.", exam: "SSC CGL 23/09/2025 (Shift 1)" },
+            { id: 70, text: "While the students _____on their research projects, the professor entered the lab.", options: ["worked", "were working", "has worked", "had been working"], correct: 1, explanation: "The given sentence describes an action that occurred while another action was in progress. The action that was in progress in the past is written in past continuous tense. 'Students' is a plural subject, therefore the plural helping verb 'were' will be used. Hence, 'were working' is the most appropriate answer.", exam: "SSC CGL 23/09/2025 (Shift 1)" },
+            { id: 71, text: "In ______ event of a system failure, employees must follow ________ protocol established by the IT department.", options: ["the, the", "a, a", "an, the", "the, a"], correct: 2, explanation: "'An' is used before 'event' because it is a singular, countable noun that starts with a vowel sound and refers to any possible occurrence of a system failure. 'The' is used before 'protocol' because it refers to a specific set of rules already established by the IT department. Hence, 'an, the' is the most appropriate answer.", exam: "SSC CGL 23/09/2025 (Shift 2)" },
+            { id: 72, text: "Of all the remedies suggested, this treatment seems the _______.", options: ["more effective", "most effective", "effectiver", "much effective"], correct: 1, explanation: "When comparing one thing with all others, we use the superlative degree of comparison. The sentence uses 'of all the remedies suggested' which indicates a comparison among more than two things. 'Most effective' is the superlative form of 'effective.' Hence, 'most effective' is the most appropriate answer.", exam: "SSC CGL 23/09/2025 (Shift 3)" },
+            { id: 73, text: "The team performed ______ well that they broke all previous records.", options: ["very", "so", "too", "as"], correct: 1, explanation: "'So... that' is a common correlative conjunction structure used to show cause and effect. Hence, 'so' is the most appropriate answer.", exam: "SSC CGL 23/09/2025 (Shift 3)" },
+            { id: 74, text: "She wants to buy _____ new dress for ______ party next week.", options: ["a, the", "the, a", "an, a", "a, an"], correct: 0, explanation: "For the first blank, 'new dress' is a singular countable noun and is being introduced for the first time, so 'a' is appropriate. For the second blank, 'party next week' refers to a specific party known to the speaker, therefore the article 'the' will be used before it. Hence, 'a, the' is the most appropriate answer.", exam: "SSC CGL 24/09/2025 (Shift 1)" },
+            { id: 75, text: "She wants to become ______ engineer and work on renewable energy projects.", options: ["a", "an", "the", "no article"], correct: 1, explanation: "Article 'an' is used before words starting with a vowel sound (an apple, an engineer, an umbrella). Hence, 'an' is the most appropriate answer.", exam: "SSC CGL 24/09/2025 (Shift 2)" },
+            { id: 76, text: "The teacher advised revising the entire syllabus ______ than focusing on a single topic.", options: ["more", "rather", "other", "as"], correct: 1, explanation: "The phrase 'rather than' is used to indicate a preference or contrast between two actions or ideas. In the given sentence, it shows a preference for revising everything instead of concentrating on a single topic. Hence, 'rather' is the most appropriate answer.", exam: "SSC CGL 24/09/2025 (Shift 2)" },
+            { id: 77, text: "The archaeologist unearthed _______ancient artefact, providing _______ invaluable glimpse into ______ prehistoric civilization.", options: ["a, an, the", "an, an, a", "the, a, an", "an, a, the"], correct: 1, explanation: "For the first blank, 'ancient' starts with a vowel sound, so 'an' is appropriate. For the second blank, 'invaluable' starts with a vowel sound, so 'an' is also appropriate. For the third blank, 'prehistoric civilization' is being introduced as one example, not a specific or previously mentioned one, so 'a' is correct. Hence, 'an, an, a' is the most appropriate answer.", exam: "SSC CGL 24/09/2025 (Shift 3)" },
+            { id: 78, text: "The CEO ______ a speech at the annual conference.", options: ["gave", "made", "spoke", "delivered"], correct: 3, explanation: "'Deliver a speech' is the correct collocation. Hence, 'delivered' is the most appropriate answer.", exam: "SSC CGL 25/09/2025 (Shift 1)" },
+            { id: 79, text: "The ancient city, ______ ruins lay buried beneath centuries of sand, was once a thriving metropolis.", options: ["what", "whose", "that", "its"], correct: 1, explanation: "The blank requires a possessive relative pronoun to link 'ruins' to 'the ancient city', indicating that the ruins belong to the city. 'Whose' is the correct relative pronoun to express possession. Hence, 'whose' is the most appropriate answer.", exam: "SSC CGL 25/09/2025 (Shift 1)" },
+            { id: 80, text: "By next week, they ________ launched the new product.", options: ["will have", "have", "will be", "had"], correct: 0, explanation: "In this sentence, the future perfect tense is used to indicate that an action will be completed before a specific point in the future. The structure of the future perfect tense is 'will have' + the past participle of the main verb. Here, the verb 'launch' in its past participle form is 'launched.' Hence, 'will have' is the most appropriate answer.", exam: "SSC CGL 25/09/2025 (Shift 2)" }
+        ],
+        5: [
+            { id: 81, text: "After weeks of resistance, the smaller company had to ______to the demands of the larger corporation.", options: ["knuckle out", "knuckle down", "knuckle up", "knuckle under"], correct: 3, explanation: "'Knuckle under' means to submit or yield to the demands of someone. The given sentence states that after weeks of resistance, the smaller company had to knuckle under to the demands of the larger corporation. Hence, 'knuckle under' is the most appropriate answer.", exam: "SSC CGL 25/09/2025 (Shift 3)" },
+            { id: 82, text: "Scarcely had the alarm sounded ______ the building was evacuated.", options: ["that", "when", "as soon as", "then"], correct: 1, explanation: "'Scarcely…when' is a fixed conjunction pair. Hence, 'when' is the most appropriate answer.", exam: "SSC CGL 25/09/2025 (Shift 3)" },
+            { id: 83, text: "She tried to ____the sensitive information during the meeting.", options: ["play down", "phase out", "hand off", "come across"], correct: 0, explanation: "The phrasal verb 'play down' means to make something seem less important or significant. In the given sentence, she attempted to minimize the importance of the sensitive information. Hence, 'play down' is the most appropriate answer.", exam: "SSC CGL 26/09/2025 (Shift 1)" },
+            { id: 84, text: "Due to his family connections on the board, John seemed to _______ in the promotion race, leaving other qualified candidates at a disadvantage.", options: ["hold all the cards", "play by the rules", "lay his cards on the table", "deal a raw deal"], correct: 0, explanation: "'Hold all the cards' is an idiom which means to be in a strong, advantageous position, often implying that one has an unfair advantage or control due to circumstances (like family connections). Hence, 'hold all the cards' is the most appropriate answer.", exam: "SSC CGL 26/09/2025 (Shift 2)" },
+            { id: 85, text: "After hours of discussion, the committee ______ a decision regarding the budget allocation.", options: ["arrived to", "arrived at", "arrived in", "arrived on"], correct: 1, explanation: "The phrasal verb 'arrive at' is used when referring to reaching a conclusion, decision, or agreement. In the given sentence, the committee reached a decision regarding the budget allocation. Hence, 'arrived at' is the most appropriate answer.", exam: "SSC CGL 26/09/2025 (Shift 3)" },
+            { id: 86, text: "Although the proposal appeared promising at first, further analysis revealed it to be _______ in logic.", options: ["impeccable", "fallacious", "pragmatic", "coherent"], correct: 1, explanation: "The word 'Fallacious' means based on a mistaken belief, illogical, or unsound. The given sentence implies that initial impressions were positive, but further analysis uncovered flaws. Hence, 'Fallacious' is the most appropriate answer.", exam: "SSC CGL 14/10/2025 (Shift 1)" },
+            { id: 87, text: "Not until the auditors had submitted their exhaustive report ______ the full extent of procedural lapses become evident.", options: ["did", "had", "was", "has"], correct: 0, explanation: "This is an example of inversion, which occurs when a sentence begins with a negative or restrictive expression such as 'only after,' 'never,' or 'hardly.' In these cases, the auxiliary verb comes before the subject. Hence, 'did' is the most appropriate answer.", exam: "SSC CGL 14/10/2025 (Shift 1)" },
+            { id: 88, text: "The government's new policies sought to ______ economic growth, not stifle it.", options: ["hinder", "impede", "stimulate", "curtail"], correct: 2, explanation: "'Stimulate' means to encourage something to grow. The given sentence states that the government's new policies sought to stimulate economic growth, not stifle it. Hence, 'stimulate' is the most appropriate answer.", exam: "SSC CGL 14/10/2025 (Shift 2)" },
+            { id: 89, text: "The new manager promised to _____ the old, inefficient procedures with more modern methods.", options: ["do up", "do without", "do for", "do away with"], correct: 3, explanation: "The phrasal verb 'do away with' means to get rid of something. The given sentence states that the new manager promised to get rid of the old, inefficient procedures and replace them with more modern methods. Hence, 'do away with' is the most appropriate answer.", exam: "SSC CGL 14/10/2025 (Shift 3)" },
+            { id: 90, text: "The ancient scroll, previously thought to be lost, ______ in a hidden chamber.", options: ["was discovered", "is discovered", "discovers", "are discovered"], correct: 0, explanation: "The given sentence describes a past event where the scroll was found. Since 'the scroll' is the object of the action (it didn't discover itself), the passive voice is required. 'Was + V3' is the correct passive structure for simple past tense. Hence, 'was discovered (V3)' is the most appropriate answer.", exam: "SSC CGL 14/10/2025 (Shift 3)" },
+            { id: 91, text: "Hardly had the game started ______ the rain began to pour.", options: ["when", "then", "than", "as"], correct: 0, explanation: "'Hardly…when' is a fixed conjunction pair. Hence, 'when' is the most appropriate answer.", exam: "SSC CGL 14/10/2025 (Shift 3)" }
+        ]
+    };
+
+    const LETTERS = ['A', 'B', 'C', 'D'];
+    const partTimers = { 1: 720, 2: 720, 3: 720, 4: 720, 5: 420 };
+
+    let currentPart = 1;
+    let current = 0;
+    let userAnswers = new Array(20).fill(-1);
+    let markedForReview = new Set();
+    let timeLeft = 720;
+    let timerInterval = null;
+    let testSubmitted = false;
+    let questionTimes = [];
+    let questionStartTime = null;
+    let currentSolFilter = 'all';
+
+    const partNames = {
+        1: 'Fill in the Blanks Part-1',
+        2: 'Fill in the Blanks Part-2',
+        3: 'Fill in the Blanks Part-3',
+        4: 'Fill in the Blanks Part-4',
+        5: 'Fill in the Blanks Part-5'
+    };
+
+    function startTest(part) {
+        currentPart = part;
+        current = 0;
+        const totalQ = questionsData[part].length;
+        userAnswers = new Array(totalQ).fill(-1);
+        markedForReview = new Set();
+        questionTimes = new Array(totalQ).fill(0);
+        timeLeft = partTimers[part];
+        testSubmitted = false;
+        questionStartTime = Date.now();
+
+        document.getElementById('landingScreen').classList.remove('active');
+        document.getElementById('landingScreen').style.display = 'none';
+        document.getElementById('testOverlay').classList.add('open');
+        document.getElementById('testOverlay').style.display = 'flex';
+        document.getElementById('testPartTitle').innerHTML = `<a href="https://t.me/+oohc-N40E2ZlZmI1" target="_blank">${partNames[part]}</a>`;
+
+        const timerBox = document.getElementById('timerBox');
+        timerBox.classList.remove('warn', 'danger');
+
+        loadQuestion(0);
+        startTimer();
+    }
+
+    function startTimer() {
+        clearInterval(timerInterval);
+        updateTimerDisplay();
+        timerInterval = setInterval(() => {
+            timeLeft--;
+            updateTimerDisplay();
+            if (timeLeft <= 0) {
+                clearInterval(timerInterval);
+                doSubmitTest();
+            }
+        }, 1000);
+    }
+
+    function updateTimerDisplay() {
+        const mins = Math.floor(timeLeft / 60);
+        const secs = timeLeft % 60;
+        document.getElementById('timerDisplay').textContent = `${mins}:${secs.toString().padStart(2, '0')}`;
+        const timerBox = document.getElementById('timerBox');
+        if (timeLeft <= 60) {
+            timerBox.classList.add('danger');
+        } else if (timeLeft <= 180) {
+            timerBox.classList.add('warn');
+        }
+    }
+
+    function loadQuestion(index) {
+        if (questionStartTime !== null) {
+            const spent = Math.round((Date.now() - questionStartTime) / 1000);
+            if (questionTimes[current] !== undefined) questionTimes[current] += spent;
+        }
+        questionStartTime = Date.now();
+        current = index;
+        const q = questionsData[currentPart][index];
+        const total = questionsData[currentPart].length;
+
+        document.getElementById('questionNum').textContent = `Q ${index + 1}/${total}`;
+        document.getElementById('examBadge').textContent = '📋 ' + q.exam;
+        document.getElementById('questionText').textContent = q.text;
+        document.getElementById('progressText').textContent = `${index + 1} / ${total}`;
+        document.getElementById('progFill').style.width = ((index + 1) / total * 100) + '%';
+
+        const rb = document.getElementById('reviewBadge');
+        if (markedForReview.has(index)) {
+            rb.classList.add('visible');
+        } else {
+            rb.classList.remove('visible');
+        }
+
+        const mrBtn = document.getElementById('markReviewBtn');
+        if (markedForReview.has(index)) {
+            mrBtn.classList.add('marked');
+            mrBtn.textContent = '🔖 Marked';
+        } else {
+            mrBtn.classList.remove('marked');
+            mrBtn.textContent = '🔖 Mark for Review';
+        }
+
+        const grid = document.getElementById('optionsGrid');
+        grid.innerHTML = '';
+        q.options.forEach((opt, i) => {
+            const btn = document.createElement('button');
+            btn.className = 'option-btn' + (userAnswers[index] === i ? ' selected' : '');
+            btn.innerHTML = `<div class="opt-circle">${LETTERS[i]}</div><span>${opt}</span>`;
+            btn.onclick = () => selectAnswer(i);
+            grid.appendChild(btn);
+        });
+
+        updateOverviewGrid();
+    }
+
+    function selectAnswer(optIndex) {
+        userAnswers[current] = optIndex;
+        const btns = document.querySelectorAll('.option-btn');
+        btns.forEach((b, i) => {
+            b.classList.toggle('selected', i === optIndex);
+        });
+        updateOverviewGrid();
+    }
+
+    function clearAnswer() {
+        userAnswers[current] = -1;
+        document.querySelectorAll('.option-btn').forEach(b => b.classList.remove('selected'));
+        updateOverviewGrid();
+    }
+
+    function toggleMarkReview() {
+        if (markedForReview.has(current)) {
+            markedForReview.delete(current);
+        } else {
+            markedForReview.add(current);
+        }
+        loadQuestion(current);
+    }
+
+    function prevQuestion() {
+        if (current > 0) loadQuestion(current - 1);
+    }
+
+    function nextQuestion() {
+        const total = questionsData[currentPart].length;
+        if (current < total - 1) loadQuestion(current + 1);
+    }
+
+    function openOverview() {
+        updateOverviewGrid();
+        document.getElementById('overviewPanel').classList.add('open');
+    }
+
+    function closeOverview() {
+        document.getElementById('overviewPanel').classList.remove('open');
+    }
+
+    function updateOverviewGrid() {
+        const total = questionsData[currentPart].length;
+        const grid = document.getElementById('overviewGrid');
+        if (!grid) return;
+        grid.innerHTML = '';
+
+        let answered = 0, markedAtt = 0, markedUnatt = 0;
+        for (let i = 0; i < total; i++) {
+            const btn = document.createElement('button');
+            btn.className = 'ov-btn';
+            btn.textContent = i + 1;
+            const isAnswered = userAnswers[i] !== -1;
+            const isMarked = markedForReview.has(i);
+            if (i === current) btn.classList.add('current');
+            else if (isMarked && isAnswered) { btn.classList.add('review-attempted'); markedAtt++; }
+            else if (isMarked && !isAnswered) { btn.classList.add('review-unattempted'); markedUnatt++; }
+            else if (isAnswered) { btn.classList.add('answered'); answered++; }
+            btn.onclick = () => { loadQuestion(i); closeOverview(); };
+            grid.appendChild(btn);
+        }
+
+        const totalAnswered = userAnswers.filter(a => a !== -1).length;
+        const el = id => document.getElementById(id);
+        if (el('ovAnswered')) el('ovAnswered').textContent = totalAnswered;
+        if (el('ovUnanswered')) el('ovUnanswered').textContent = total - totalAnswered;
+        if (el('ovMarkedAttempted')) el('ovMarkedAttempted').textContent = markedAtt;
+        if (el('ovMarkedUnattempted')) el('ovMarkedUnattempted').textContent = markedUnatt;
+    }
+
+    function confirmSubmit() {
+        const total = questionsData[currentPart].length;
+        const ans = userAnswers.filter(a => a !== -1).length;
+        const rev = markedForReview.size;
+        document.getElementById('csAnswered').textContent = ans;
+        document.getElementById('csUnanswered').textContent = total - ans;
+        document.getElementById('csReview').textContent = rev;
+        document.getElementById('confirmModal').classList.add('open');
+    }
+
+    function closeConfirm() {
+        document.getElementById('confirmModal').classList.remove('open');
+    }
+
+    function doSubmitTest() {
+        if (testSubmitted) return;
+        testSubmitted = true;
+        clearInterval(timerInterval);
+        closeConfirm();
+        closeOverview();
+
+        const qs = questionsData[currentPart];
+        let correct = 0, wrong = 0, unat = 0;
+        qs.forEach((q, i) => {
+            if (userAnswers[i] === -1) unat++;
+            else if (userAnswers[i] === q.correct) correct++;
+            else wrong++;
+        });
+
+        const total = qs.length;
+        const accuracy = total > 0 ? Math.round((correct / total) * 100) : 0;
+        const score = correct;
+        let msg = correct >= total * 0.8 ? '🌟 Excellent performance!' : correct >= total * 0.6 ? '👍 Good job! Keep it up!' : '💪 Keep practicing!';
+
+        document.getElementById('testOverlay').classList.remove('open');
+        document.getElementById('testOverlay').style.display = 'none';
+
+        const el = id => document.getElementById(id);
+        el('s_title').textContent = partNames[currentPart];
+        el('s_score').textContent = score;
+        el('s_total').textContent = total;
+        el('s_correct').textContent = correct;
+        el('s_wrong').textContent = wrong;
+        el('s_unat').textContent = unat;
+        el('s_accuracy').textContent = accuracy + '%';
+        el('s_msg').textContent = msg;
+        setTimeout(() => { el('s_bar').style.width = accuracy + '%'; }, 100);
+
+        document.getElementById('summaryScreen').classList.add('active');
+        document.getElementById('summaryScreen').style.display = 'block';
+        window.scrollTo({ top: 0, behavior: 'instant' });
+    }
+
+    function buildSolutionsList() {
+        const list = document.getElementById('solutionsList');
+        list.innerHTML = '';
+        const qs = questionsData[currentPart];
+
+        qs.forEach((q, idx) => {
+            const ua = userAnswers[idx];
+            let sc, sl;
+            if (ua === -1) { sc = 'unattempted'; sl = '⬜ Unattempted'; }
+            else if (ua === q.correct) { sc = 'correct'; sl = '✅ Correct'; }
+            else { sc = 'wrong'; sl = '❌ Incorrect'; }
+
+            const secs = questionTimes[idx] || 0;
+            const mm = Math.floor(secs / 60);
+            const ss = secs % 60;
+            const timeStr = mm > 0 ? `${mm}m ${ss}s` : `${ss}s`;
+
+            let optionsHtml = '<div class="sol-options">';
+            q.options.forEach((opt, oi) => {
+                let cls = 'sol-opt';
+                let icon = '';
+                if (oi === q.correct) { cls += ' correct-opt'; icon = ' ✓'; }
+                else if (oi === ua && ua !== q.correct) { cls += ' wrong-opt'; icon = ' ✗'; }
+                optionsHtml += `<div class="${cls}"><div class="sol-opt-circle">${LETTERS[oi]}</div><span>${opt}${icon}</span></div>`;
+            });
+            optionsHtml += '</div>';
+
+            const item = document.createElement('div');
+            item.className = 'sol-item';
+            item.dataset.status = sc;
+            item.innerHTML = `
+                <div class="sol-top">
+                    <div class="sol-qnum">Q${q.id}</div>
+                    <div class="sol-status ${sc}">${sl}</div>
+                    <div style="margin-left:auto;font-size:11px;color:var(--muted2);font-weight:600;background:var(--card2);border:1px solid var(--border);border-radius:7px;padding:3px 9px;white-space:nowrap;">⏱ ${timeStr}</div>
+                    ${markedForReview.has(idx) ? '<span style="font-size:11px;color:var(--review);font-weight:700;margin-left:6px;">🔖</span>' : ''}
+                </div>
+                <div class="sol-text">${q.text}</div>
+                <div class="sol-exam">📋 ${q.exam}</div>
+                ${optionsHtml}
+                <div class="sol-explanation">📖 <strong>Explanation:</strong> ${q.explanation}</div>`;
+            list.appendChild(item);
+        });
+    }
+
+    function filterSolutions(type, btn) {
+        currentSolFilter = type;
+        document.querySelectorAll('.sol-tab').forEach(t => t.classList.remove('active'));
+        btn.classList.add('active');
+        document.querySelectorAll('.sol-item').forEach(item => {
+            if (type === 'all' || item.dataset.status === type) {
+                item.style.display = '';
+            } else {
+                item.style.display = 'none';
+            }
+        });
+    }
+
+    function showSolutions() {
+        buildSolutionsList();
+        document.getElementById('inlinePartTitle').textContent = document.getElementById('s_title').textContent;
+        document.getElementById('inlineScoreNum').textContent  = document.getElementById('s_score').textContent;
+        document.getElementById('inlineTotal').textContent     = document.getElementById('s_total').textContent;
+        document.getElementById('inlineCorrect').textContent   = document.getElementById('s_correct').textContent;
+        document.getElementById('inlineWrong').textContent     = document.getElementById('s_wrong').textContent;
+        document.getElementById('inlineUnat').textContent      = document.getElementById('s_unat').textContent;
+        document.getElementById('inlineAccuracy').textContent  = document.getElementById('s_accuracy').textContent;
+        document.getElementById('inlineMessage').textContent   = document.getElementById('s_msg').textContent;
+        document.getElementById('inlinePerfBar').style.width   = document.getElementById('s_bar').style.width;
+
+        document.getElementById('summaryScreen').classList.remove('active');
+        document.getElementById('summaryScreen').style.display = 'none';
+        const sol = document.getElementById('solutionScreen');
+        sol.classList.add('active');
+        sol.style.display = 'block';
+
+        filterSolutions('all', document.querySelector('.sol-tab'));
+        window.scrollTo({ top: 0, behavior: 'instant' });
+    }
+
+    function goBackToSummary() {
+        document.getElementById('solutionScreen').classList.remove('active');
+        document.getElementById('solutionScreen').style.display = 'none';
+        document.getElementById('summaryScreen').classList.add('active');
+        document.getElementById('summaryScreen').style.display = 'block';
+        window.scrollTo({ top: 0, behavior: 'instant' });
+    }
+
+    function goHome() {
+        clearInterval(timerInterval);
+        closeConfirm();
+        closeOverview();
+        document.getElementById('testOverlay').classList.remove('open');
+        document.getElementById('testOverlay').style.display = 'none';
+        document.getElementById('resultScreen').classList.remove('active');
+        document.getElementById('solutionScreen').classList.remove('active');
+        document.getElementById('solutionScreen').style.display = 'none';
+        document.getElementById('summaryScreen').classList.remove('active');
+        document.getElementById('summaryScreen').style.display = 'none';
+        document.getElementById('landingScreen').classList.add('active');
+        document.getElementById('landingScreen').style.display = 'flex';
+        window.scrollTo({ top: 0, behavior: 'instant' });
+    }
+
+    function closeTgPopup() {
+        const overlay = document.getElementById('tgPopupOverlay');
+        overlay.style.opacity = '0';
+        overlay.style.transition = 'opacity 0.3s ease';
+        setTimeout(function() { overlay.style.display = 'none'; }, 300);
+    }
+</script>
+</body>
+</html>
