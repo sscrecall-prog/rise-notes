@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BEST 100 HOMONYMS — Interactive Study Notes (SSC | BANK | CDS)</title>
+<meta name="description" content="Bilingual (Roman Hindi + English) interactive study notes for the 100 best homonyms for SSC, BANK & CDS exams — definitions, examples, practice questions, quick revision.">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  :root{
+    --bg:#0F1115; --card:#1A1D24; --card2:#232833; --accent:#E1A837; --accent2:#8D7A02;
+    --text:#EAEAEA; --text2:#B8B8B8; --border:#2A2F3A;
+    --accent-soft:rgba(225,168,55,.10); --accent2-soft:rgba(141,122,2,.14); --ok:#6FCF97; --bad:#E06C6C;
+  }
+  [data-theme="light"]{
+    --bg:#F6F6F3; --card:#FFFFFF; --card2:#F2F1EC; --accent:#9A7A1B; --accent2:#B08D1F;
+    --text:#1B1E26; --text2:#4A5060; --border:#E0DFD9;
+    --accent-soft:rgba(154,122,27,.10); --accent2-soft:rgba(176,141,31,.12); --ok:#2E8B57; --bad:#C0392B;
+  }
+  html{scroll-behavior:smooth}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    background:var(--bg);color:var(--text);line-height:1.65;font-size:16px;
+    transition:background .3s ease,color .3s ease;
+    -webkit-font-smoothing:antialiased;
+  }
+  .container{max-width:980px;margin:0 auto;padding:0 16px}
+  a{color:var(--accent);text-decoration:none}
+  a:hover{text-decoration:underline}
+  h1,h2,h3,h4{line-height:1.3}
+  h2{font-size:clamp(1.15rem,2.6vw,1.5rem);color:var(--accent);margin:10px 0 6px}
+  h3{font-size:1.05rem}
+  .sub{color:var(--text2);font-size:.9rem}
+
+  /* Header */
+  header{position:sticky;top:0;z-index:50;background:var(--bg);border-bottom:1px solid var(--border);transition:background .3s ease,border-color .3s ease}
+  .header-top{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px;padding:14px 0 8px}
+  .brand h1{font-size:clamp(1.3rem,3vw,1.75rem);color:var(--text)}
+  .brand h1 span{color:var(--accent)}
+  .header-actions{display:flex;gap:8px;flex-wrap:wrap}
+  .btn{border:1px solid var(--border);background:var(--card);color:var(--text);padding:8px 14px;border-radius:10px;font-size:.88rem;cursor:pointer;transition:all .25s ease;font-weight:500}
+  .btn:hover{border-color:var(--accent);color:var(--accent)}
+  .btn-accent{background:var(--accent);border-color:var(--accent);color:#17130A;font-weight:600}
+  .btn-accent:hover{filter:brightness(1.1);color:#17130A}
+  .toolbar{display:flex;flex-wrap:wrap;align-items:center;gap:10px;padding:6px 0 10px}
+  #search{
+    flex:1;min-width:200px;background:var(--card);border:1px solid var(--border);color:var(--text);
+    padding:9px 14px;border-radius:10px;font-size:.92rem;transition:border-color .25s ease;
+  }
+  #search:focus{outline:none;border-color:var(--accent)}
+  #search::placeholder{color:var(--text2)}
+  #stats{font-size:.82rem;color:var(--text2);white-space:nowrap}
+  nav.glance{border-top:1px solid var(--border);padding:10px 0;background:var(--bg);transition:background .3s ease}
+  .glance-title{display:flex;align-items:center;gap:8px;font-size:.92rem;color:var(--accent);font-weight:600;margin-bottom:8px}
+  .chips{display:flex;flex-wrap:wrap;gap:6px;max-height:130px;overflow-y:auto;padding:2px}
+  .chip{font-size:.78rem;color:var(--text2);background:var(--card);border:1px solid var(--border);border-radius:999px;padding:3px 10px;transition:all .2s ease;white-space:nowrap}
+  .chip:hover{color:var(--accent);border-color:var(--accent);text-decoration:none}
+  .chip.revised{color:var(--ok);border-color:var(--ok)}
+
+  /* Cards */
+  main{padding:16px 0 60px}
+  .card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px 22px;margin:16px 0;box-shadow:0 6px 22px rgba(0,0,0,.18);transition:background .3s ease,border-color .3s ease,box-shadow .3s ease}
+  section{scroll-margin-top:150px}
+  .hcard .card-head{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;border-bottom:1px solid var(--border);padding-bottom:8px;margin-bottom:10px}
+  .num{font-size:.78rem;font-weight:700;color:#17130A;background:var(--accent);border-radius:8px;padding:2px 9px;white-space:nowrap}
+  .words{display:flex;flex-wrap:wrap;gap:6px;margin-left:auto}
+  .wchip{font-size:.8rem;color:var(--accent);border:1px solid var(--accent);border-radius:8px;padding:1px 8px;font-weight:600}
+  .word-row{border-left:3px solid var(--accent2);background:var(--accent2-soft);border-radius:0 10px 10px 0;padding:10px 14px;margin:12px 0}
+  .word-top{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:2px}
+  .word-top b{font-size:1.02rem}
+  .pos{font-size:.7rem;letter-spacing:.4px;text-transform:uppercase;color:var(--accent);background:var(--accent-soft);border:1px solid var(--accent);border-radius:6px;padding:1px 7px;font-weight:600}
+  .roman{color:var(--text);font-weight:500}
+  .eng{color:var(--text2)}
+  .exbox{background:var(--card2);border:1px solid var(--border);border-radius:10px;padding:9px 13px;margin-top:8px;font-size:.9rem}
+  .exbox .lbl{color:var(--accent2);font-weight:600;font-size:.78rem;letter-spacing:.3px;text-transform:uppercase}
+  .exbox em{color:var(--text2)}
+  .tipbox{border:1px solid var(--accent);background:var(--accent-soft);border-radius:10px;padding:10px 14px;margin-top:10px;font-size:.9rem}
+  .tipbox .lbl{color:var(--accent);font-weight:700;font-size:.8rem;letter-spacing:.3px;text-transform:uppercase}
+  .pqbox{background:var(--card2);border:1px dashed var(--border);border-radius:12px;padding:13px 16px;margin-top:12px;font-size:.92rem}
+  .pqbox .lbl{color:var(--accent);font-weight:700;font-size:.8rem;letter-spacing:.3px;text-transform:uppercase;display:block;margin-bottom:6px}
+  .pqbox ol{margin:8px 0 8px 22px}
+  .pqbox li{padding:3px 0;cursor:pointer}
+  .pqbox li.correct{color:var(--ok);font-weight:700}
+  .pqbox li.wrong{color:var(--bad);text-decoration:line-through}
+  .ansnote{margin-top:8px;font-size:.86rem;color:var(--text2)}
+  .ansnote b{color:var(--ok)}
+  .reveal-btn{background:transparent;border:1px solid var(--accent);color:var(--accent);border-radius:8px;padding:5px 13px;font-size:.82rem;cursor:pointer;transition:all .2s ease;font-weight:600}
+  .reveal-btn:hover{background:var(--accent);color:#17130A}
+  .revise-btn{margin-left:8px;background:transparent;border:1px solid var(--border);color:var(--text2);border-radius:8px;padding:5px 12px;font-size:.8rem;cursor:pointer;transition:all .2s ease}
+  .revise-btn:hover{border-color:var(--ok);color:var(--ok)}
+  .revise-btn.done{background:var(--ok);border-color:var(--ok);color:#0F2016}
+  .hide{display:none!important}
+  .count-info{color:var(--text2);font-size:.85rem;margin:4px 0 0}
+
+  /* Tables */
+  .table-wrap{overflow-x:auto;border:1px solid var(--border);border-radius:12px;margin-top:10px}
+  table{width:100%;border-collapse:collapse;font-size:.88rem;min-width:640px}
+  th{background:var(--accent-soft);color:var(--accent);text-align:left;padding:8px 12px;position:sticky;top:0}
+  td{padding:7px 12px;border-top:1px solid var(--border);vertical-align:top}
+  tbody tr:hover td{background:var(--accent-soft)}
+  td b{color:var(--text)}
+  .rtag{color:var(--accent);font-size:.72rem;border:1px solid var(--accent);border-radius:6px;padding:0 6px;white-space:nowrap}
+
+  /* Intro */
+  .intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:10px}
+  .intro-card{background:var(--card2);border:1px solid var(--border);border-radius:12px;padding:14px 16px}
+  .intro-card h4{color:var(--accent);margin-bottom:6px;font-size:.95rem}
+  @media(max-width:640px){.intro-grid{grid-template-columns:1fr}}
+
+  /* Footer */
+  footer{border-top:1px solid var(--border);padding:22px 0 40px;color:var(--text2);font-size:.85rem;background:var(--bg);transition:background .3s ease}
+  footer a{color:var(--accent)}
+
+  /* Back to top */
+  #toTop{position:fixed;right:18px;bottom:18px;width:44px;height:44px;border-radius:12px;border:1px solid var(--accent);
+    background:var(--accent);color:#17130A;font-size:1.1rem;cursor:pointer;display:none;align-items:center;justify-content:center;
+    box-shadow:0 6px 18px rgba(0,0,0,.35);transition:all .25s ease;z-index:60}
+  #toTop.show{display:flex}
+  #toTop:hover{transform:translateY(-2px)}
+
+  :focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style>
+</head>
+<body>
+<header>
+  <div class="container">
+    <div class="header-top">
+      <div class="brand">
+        <h1>📚 BEST <span>100 HOMONYMS</span></h1>
+        <p class="sub">SSC • BANK • CDS | Sunny Rise | Bilingual Notes — Roman Hindi + English</p>
+      </div>
+      <div class="header-actions">
+        <button id="themeToggle" class="btn btn-accent" aria-label="Toggle dark / light mode">🌙 Dark Mode</button>
+      </div>
+    </div>
+    <div class="toolbar">
+      <input id="search" type="search" placeholder="🔍 Khojein — search any homonym (e.g. affect, abate, principal)..." aria-label="Search homonyms">
+      <span id="stats" aria-live="polite"></span>
+    </div>
+    <nav class="glance" aria-label="Topics at a Glance">
+      <div class="glance-title">📌 Topics at a Glance — <span class="sub">(100% topics, click karke jump karein)</span></div>
+      <div id="chipWrap" class="chips"></div>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+
+  <section id="intro" class="card" aria-label="Introduction">
+    <h2>🔰 Homonym Kya Hai? (What is a Homonym?)</h2>
+    <div class="tipbox">
+      <span class="lbl">Paribhasha (Definition)</span>
+      <span class="roman">Homonym wo shabd hain jo same spelling ya same sound rakhte hain lekin unke <b>alag-alag meanings</b> hote hain.</span><br>
+      <span class="eng">(Homonyms are words that have the same spelling or sound but different meanings.)</span>
+    </div>
+    <div class="intro-grid">
+      <div class="intro-card">
+        <h4>🔊 Homophones</h4>
+        <p><span class="roman">Same sound, alag spelling + meaning</span> <span class="eng">(same sound, different spelling and meaning)</span></p>
+        <p class="eng" style="margin-top:4px">e.g. Access / Excess • Aisle / Isle • Cite / Site / Sight • Pray / Prey</p>
+      </div>
+      <div class="intro-card">
+        <h4>🔍 Homographs</h4>
+        <p><span class="roman">Same spelling, alag meaning (kabhi kabhi alag pronunciation)</span> <span class="eng">(same spelling, different meaning or pronunciation)</span></p>
+        <p class="eng" style="margin-top:4px">e.g. Refuse (kachra) / Refuse (inkaar) • Desert (tyaag) / Desert (registan)</p>
+      </div>
+    </div>
+    <div class="tipbox" style="margin-top:12px">
+      <span class="lbl">Pariksha Bindu (Exam Point)</span>
+      <span class="roman">SSC / BANK / CDS exams me homonyms se <b>fill-in-the-blanks</b>, <b>spelling-based</b> aur <b>word-substitution</b> questions roz aate hain. Ye 100 high-frequency pairs revise karna selection ke liye zaroori hai.</span>
+      <span class="eng">(Homonym-based fill-in-the-blank and error-spotting questions are highly testable — revise these 100 pairs smartly.)</span>
+    </div>
+  </section>
+
+  <div id="cards" aria-live="polite"></div>
+
+  <section id="revision" class="card" aria-label="Quick Revision">
+    <h2>🧠 Quick Revision — All Homonyms (Ek Nazar Mein)</h2>
+    <p class="count-info">Poori table — 102 word-pairs / 160+ words. Har row: word → Roman Hindi arth → English meaning.</p>
+    <div class="table-wrap">
+      <table id="revTable">
+        <thead><tr><th>#</th><th>Word</th><th>Roman Hindi Arth</th><th>English Meaning</th><th>Type</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <div id="oneLiners" style="margin-top:16px"></div>
+  </section>
+
+  <section id="pattern" class="card" aria-label="Pattern Based Practice">
+    <h2>🎯 Pattern-Based Practice (5 Exam-Style Questions)</h2>
+    <p class="count-info">“Homonym of the highlighted word” pattern — option pe click karke answer check karein.</p>
+    <div id="patternBox" style="margin-top:8px"></div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <p><b>Source:</b> BEST 100 HOMONYMS by <a href="https://telegram.me/SunnyRise_Official" target="_blank" rel="noopener">SUNNY RISE</a> (for SSC, BANK &amp; CDS Exams).</p>
+    <p style="margin-top:4px">📖 Interactive study notes: dark/light mode • search • revise-tracker • practice questions • quick revision table. Revised: <b id="revFoot">0/102</b></p>
+  </div>
+</footer>
+
+<button id="toTop" aria-label="Back to top">↑</button>
+
+<script>
+"use strict";
+const HOMONYMS = [
+  [1,"Abate vs Abet","Abate = kam hona (storm/anger); Abet = kisi ke apraadh mein madad karna. Dono verbs hain.",[
+    ["Abate","verb","kam hona / teevrata mein kami aana","To become less intense, severe, or strong","After several hours, the intensity of the storm finally abated, allowing rescue operations to begin safely."],
+    ["Abet","verb","apraadh mein sahayata karna / uksana","To encourage, assist, or support someone in committing a crime","Anyone who knowingly abets an illegal act is equally liable under the law."]
+  ],["The public anger slowly began to ______, but the police warned that no one should ______ violence.",["abet, abate","abate, abet"],1,"Gussa 'abated' (kam hua); kisi ko violence ke liye 'abet' (ukasana) nahi karna chahiye."]],
+  [2,"Abjure vs Adjure","Abjure = chhod dena (renounce); Adjure = shapath dekar aagrah karna (urge solemnly).",[
+    ["Abjure","verb","aupcharik roop se tyaag karna / kasam kha kar chhod dena","To formally reject or renounce a belief or practice","The group publicly abjured extremism to regain public trust."],
+    ["Adjure","verb","gambhirta se aagrah karna / shapath dekar kehna","To urge or command someone solemnly","The judge adjured the witness to speak the truth."]
+  ],["The leader decided to ______ violence, while the court ______ the accused to reveal all facts.",["adjure, abjure","abjure, adjure"],1,"Leader ne violence 'abjure' (tyaag) kiya; court ne 'adjure' (aagrah) kiya."]],
+  [3,"Access vs Excess","Access = pahunch (entry); Excess = zaroorat se zyada (extra).",[
+    ["Access","noun","pahunch / pravesh ka adhikaar","The right or opportunity to enter or use something","Only senior officials have access to classified files."],
+    ["Excess","noun","adhikta / zaroorat se zyada","More than what is necessary or permitted","Excess use of resources leads to wastage."]
+  ],["Only managers were given ______ to the database, and any ______ use of data was strictly monitored.",["access, excess","excess, access"],0,"Managers ko 'access' (pahunch); data ka 'excess' (zyada) use monitored."]],
+  [4,"Adapt vs Adept vs Adopt","Adapt = adjust karna; Adept = kushal / nipun (skilled); Adopt = apna lena (accept).",[
+    ["Adapt","verb","anukool banna","To adjust to new conditions","Employees must adapt to rapid technological changes."],
+    ["Adept","adjective","nipun / kushal","Highly skilled or proficient","She is adept at handling complex accounts."],
+    ["Adopt","verb","apnana / sweekar karna","To take up or accept a method or idea","The company decided to adopt a new work policy."]
+  ],["To survive in competition, firms must ______ new strategies and ensure that staff are ______ enough to ______ change quickly.",["adapt, adept, adopt","adopt, adept, adapt","adapt, adopt, adept","adopt, adapt, adept"],1,"Strategies 'adopt' (apnana); staff 'adept' (kushal); change 'adapt' (adjust)."]],
+  [5,"Adduce vs Deduce","Adduce = pramaan pesh karna (present evidence); Deduce = nishkarsh nikalna (conclude).",[
+    ["Adduce","verb","pramaan prastut karna","To cite or bring forward evidence","The lawyer adduced several documents to support the claim."],
+    ["Deduce","verb","nishkarsh nikalna","To arrive at a conclusion through reasoning","From the evidence, the court deduced that the witness was unreliable."]
+  ],["The prosecutor ______ fresh evidence, from which the judge could ______ the intent of the accused.",["deduced, adduce","adduced, deduce"],1,"Evidence 'adduced' (pesh kiya); intent 'deduce' (nishkarsh) kiya."]],
+  [6,"Advice vs Advise","YAD RAKHEIN: Advice = noun (salah — ice ki tarah noun); Advise = verb (salah dena).",[
+    ["Advice","noun","salah","A recommendation or suggestion","The senior officer gave valuable advice to new recruits."],
+    ["Advise","verb","salah dena","To give guidance or recommendation","Doctors often advise patients to avoid self-medication."]
+  ],["The mentor offered practical ______ and strongly ______ the students to remain disciplined.",["advise, advice","advice, advise"],1,"'Advice' noun (salah); 'advise' verb (salah dena)."]],
+  [7,"Affect vs Effect","GOLDEN RULE: Affect = verb (prabhaav daalna); Effect = noun (parinaam).",[
+    ["Affect","verb","prabhaav daalna","To influence something","Lack of sleep can negatively affect concentration."],
+    ["Effect","noun","parinaam","A result or outcome","The new policy had a positive effect on productivity."]
+  ],["Poor time management can seriously ______ performance, and its long-term ______ may be difficult to reverse.",["affect, effect","effect, affect"],0,"'Affect' performance (verb); long-term 'effect' (noun)."]],
+  [8,"Aesthetic vs Ascetic","Aesthetic = saundarya (beauty); Ascetic = tapasvi (sanyaasi / sadha jeevan).",[
+    ["Aesthetic","adjective","saundarya se sambandhit","Concerned with beauty or artistic taste","The monument has great aesthetic appeal."],
+    ["Ascetic","adjective","tapasvi / saada jeevan jeene wala","Practicing severe self-discipline and simplicity","The monk lived an ascetic life away from worldly comforts."]
+  ],["The artist focused on the ______ beauty of the painting, while the saint followed an ______ lifestyle.",["ascetic, aesthetic","aesthetic, ascetic"],1,"Painting ki 'aesthetic' (saundarya) beauty; saint ka 'ascetic' (tapasvi) lifestyle."]],
+  [9,"Aisle vs Isle","Aisle = galiyaara (seats ke beech passage); Isle = dweep (island).",[
+    ["Aisle","noun","galiyaara","A passage between rows of seats","The flight attendant walked down the aisle."],
+    ["Isle","noun","dweep","An island","The ship anchored near a small tropical isle."]
+  ],["The passengers moved through the ______ to take their seats, dreaming of a peaceful ______ vacation.",["isle, aisle","aisle, isle"],1,"Passengers 'aisle' (galiyaara) se guzre; 'isle' (dweep) vacation."]],
+  [10,"Allude vs Elude","Allude = parioksh sanket karna (refer indirectly); Elude = bach nikalna (escape).",[
+    ["Allude","verb","parioksh roop se sanket karna","To refer to something indirectly","The speaker alluded to recent political events."],
+    ["Elude","verb","bach nikalna / pakad mein na aana","To escape or avoid","The criminal managed to elude the police."]
+  ],["The minister ______ to corruption in his speech, but the main issue continued to ______ investigators.",["alluded, elude","eluded, allude"],0,"Minister ne 'alluded' (sanket kiya); issue 'elude' (bach) kar raha tha."]],
+  [11,"Allusion vs Illusion","Allusion = parioksh sanket (reference); Illusion = bhram (false idea).",[
+    ["Allusion","noun","parioksh sanket","An indirect reference to something","The author made an allusion to historical events without naming them."],
+    ["Illusion","noun","bhram","A false idea or deceptive appearance","The mirage in the desert was only an illusion."]
+  ],["The speech contained an ______ to ancient texts, but the idea of instant success is merely an ______.",["illusion, allusion","allusion, illusion"],1,"'Allusion' (sanket) ancient texts ka; 'illusion' (bhram) instant success ka."]],
+  [12,"Altar vs Alter","Altar = vedi / pooja sthal (worship table); Alter = badalna (change).",[
+    ["Altar","noun","vedi / pooja sthal","A table or structure used in religious worship","Flowers were placed on the altar during the ceremony."],
+    ["Alter","verb","badalna","To change or modify","The committee decided to alter the rules."]
+  ],["The priest stood near the ______, while the authorities refused to ______ the final decision.",["altar, alter","alter, altar"],0,"Priest 'altar' (vedi) ke paas; authorities 'alter' (badalna) nahi chahte."]],
+  [13,"Amicable vs Amiable","Amicable = relations friendly (sahadayapurn); Amiable = nature friendly (milansaar).",[
+    ["Amicable","adjective","sahadayapurn (relations)","Friendly and peaceful in relations","The dispute was settled in an amicable manner."],
+    ["Amiable","adjective","milansaar (personality)","Pleasant and friendly by nature","He is an amiable colleague loved by everyone."]
+  ],["Despite initial tension, the talks ended on an ______ note, and the negotiator remained ______ throughout.",["amiable, amicable","amicable, amiable"],1,"Talks 'amicable' (sahadayapurn) note par; negotiator 'amiable' (milansaar)."]],
+  [14,"Amoral vs Immoral","Amoral = naitikta se pare (neither right nor wrong); Immoral = anaitik (morally wrong).",[
+    ["Amoral","adjective","naitikta se pare","Lacking moral sense; neither right nor wrong","Business decisions are sometimes treated as amoral."],
+    ["Immoral","adjective","anaitik","Morally wrong or unethical","Cheating in exams is considered immoral."]
+  ],["The machine itself is ______, but using it for fraud would be ______.",["immoral, amoral","amoral, immoral"],1,"Machine 'amoral' (naitikta se pare); fraud 'immoral' (anaitik)."]],
+  [15,"Apposite vs Opposite","Apposite = upyukt / sahi jagah par (appropriate); Opposite = vipreet (contrary).",[
+    ["Apposite","adjective","upyukt","Highly appropriate or relevant","His remarks were apposite to the situation."],
+    ["Opposite","adjective","vipreet","Completely different or contrary","Her views were the opposite of mine."]
+  ],["The example given was perfectly ______, not the ______ of what was required.",["apposite, opposite","opposite, apposite"],0,"Example 'apposite' (upyukt); 'opposite' (vipreet) nahi."]],
+  [16,"Appraise vs Apprise","Appraise = mulyankan karna (assess value); Apprise = soochit karna (inform).",[
+    ["Appraise","verb","mulyankan karna","To assess the value, quality, or importance of something","The officer was asked to appraise the damage caused by the flood."],
+    ["Apprise","verb","soochit karna","To inform or notify someone","The manager apprised the staff of the new guidelines."]
+  ],["The committee will ______ the situation and then ______ the authorities of its findings.",["apprise, appraise","appraise, apprise"],1,"Situation 'appraise' (mulyankan); authorities ko 'apprise' (soochit) karna."]],
+  [17,"Apprehend vs Prehend","Apprehend = pakadna (arrest) / samajhna; Prehend = pakadna (grasp, rare word).",[
+    ["Apprehend","verb","pakadna / samajhna","To arrest someone or to understand something","The police managed to apprehend the suspect late at night."],
+    ["Prehend","verb","pakadna (manasik / shabdik)","To grasp or seize (used rarely and mostly in compounds)","The concept is difficult to prehend without prior knowledge."]
+  ],["It was hard to ______ the abstract theory, but the police were able to ______ the offender.",["apprehend, prehend","prehend, apprehend"],1,"Theory 'prehend' (grasp); offender 'apprehend' (arrest) kiya."]],
+  [18,"Rise vs Arise vs Raise","Rise/Arise = object nahi chahiye (khud badhna/utpann hona); Raise = object chahiye (uthana).",[
+    ["Rise","verb","uthna / badhna","To go up or increase by itself (no object needed)","Prices usually rise during the festive season."],
+    ["Arise","verb","utpann hona / paida hona","To come into existence, especially for problems or situations (formal use)","Unexpected issues arose during the project."],
+    ["Raise","verb","uthana / badhana","To lift, increase, or bring up something (object required)","The teacher asked students to raise their hands."]
+  ],["During the meeting, a serious issue ______, so the manager decided to ______ salaries after profits began to ______.",["raised, arise, rise","arose, raise, rise","rose, raise, arise","arose, rose, raised"],1,"Issue 'arose' (utpanna hui); salaries 'raise' (badhana); profits 'rise' (badhna)."]],
+  [19,"Ascent vs Assent","Ascent = chadhai (going up); Assent = sahamati (approval).",[
+    ["Ascent","noun","chadhai / upar ki or gati","The act of going up","The final ascent to the peak was extremely challenging."],
+    ["Assent","noun","sahamati","Expression of approval or agreement","The proposal was passed after unanimous assent."]
+  ],["The climbers began their ______ at dawn, while the chief gave his ______ to the plan.",["ascent, assent","assent, ascent"],0,"Climbers ki 'ascent' (chadhai); chief ki 'assent' (sahamati)."]],
+  [20,"Assure vs Ensure vs Insure","Assure = kisi ko vishwas dilana; Ensure = pakka karna; Insure = beema karna.",[
+    ["Assure","verb","aashvast karna","To give confidence to someone","The officer assured citizens of their safety."],
+    ["Ensure","verb","sunishchit karna","To make certain that something happens","Proper checks ensure accuracy."],
+    ["Insure","verb","beema karna","To provide financial protection through insurance","It is wise to insure valuable property."]
+  ],["The agent tried to ______ the client about safety, ______ compliance with rules, and advised him to ______ the property.",["insure, ensure, assure","assure, insure, ensure","ensure, assure, insure","assure, ensure, insure"],3,"'Assure' (vishwas), 'ensure' (pakka karna), 'insure' (beema)."]],
+  [21,"Bail vs Bale","Bail = zamaanat (court release); Bale = gaththi (bundle of goods).",[
+    ["Bail","noun","zamaanat","Money or security given for temporary release of an accused","The accused was released on bail after the hearing."],
+    ["Bale","noun","gaththi","A large bundle of goods (cotton, hay, paper, etc.)","Farmers loaded bales of cotton onto the truck."]
+  ],["The court granted ______ to the accused, while a ______ of hay was kept in the warehouse.",["bale, bail","bail, bale"],1,"Court ne 'bail' (zamaanat); 'bale' (gaththi) of hay."]],
+  [22,"Beneficial vs Beneficent","Beneficial = laabhdaayak (helpful); Beneficent = paropkaari (charitable).",[
+    ["Beneficial","adjective","laabhdaayak","Producing good or helpful results","Regular exercise is beneficial for health."],
+    ["Beneficent","adjective","paropkaari","Showing kindness or charity","The king was known as a beneficent ruler."]
+  ],["The scheme proved ______ for farmers, and the minister was remembered as a ______ leader.",["beneficial, beneficent","beneficent, beneficial"],0,"Scheme 'beneficial' (laabhdaayak); minister 'beneficent' (paropkaari)."]],
+  [23,"Berth vs Birth","Berth = sone ki jagah (train/ship); Birth = janm (being born).",[
+    ["Berth","noun","sone ki jagah / jahaz ki jagah","A sleeping place in a train or ship","He booked a lower berth for the journey."],
+    ["Birth","noun","janm","The act of being born","The certificate records the date of his birth."]
+  ],["She secured a lower ______ in the train, while the hospital issued the ______ certificate.",["berth, birth","birth, berth"],0,"Train mein 'berth'; hospital 'birth' certificate."]],
+  [24,"Beside vs Besides","Beside = ke bagal mein (next to); Besides = iske alava (in addition to).",[
+    ["Beside","preposition","ke bagal mein","Next to or by the side of","He sat beside his friend during the lecture."],
+    ["Besides","preposition","iske alava","In addition to","Besides English, she speaks French fluently."]
+  ],["He placed his bag ______ the chair, and ______ this, he carried a laptop.",["besides, beside","beside, besides"],1,"Bag 'beside' (bagal) chair; 'besides' (alava) laptop."]],
+  [25,"Born vs Borne","Born = janma hua (life); Borne = vahan kiya hua (carried/endured — bear ka past participle).",[
+    ["Born","adjective","janma hua","Brought into life","She was born in Delhi."],
+    ["Borne","verb","vahan kiya hua","Past participle of bear (carried or endured)","The cost was borne by the company."]
+  ],["She was ______ in a small town, and all expenses were ______ by her parents.",["borne, born","born, borne"],1,"'Born' (janm) town mein; expenses 'borne' (vahan) by parents."]],
+  [26,"Bridal vs Bridle","Bridal = vivah se sambandhit (wedding); Bridle = lagaam (horse reins).",[
+    ["Bridal","adjective","vivah se sambandhit","Related to a wedding","She wore an elegant bridal dress."],
+    ["Bridle","noun","lagaam","The reins used to control a horse","The rider tightened the bridle to control the horse."]
+  ],["The ______ procession passed through the village, while the horse's ______ was decorated with flowers.",["bridal, bridle","bridle, bridal"],0,"'Bridal' (vivah) procession; horse ki 'bridle' (lagaam)."]],
+  [27,"Callous vs Callus","Callous = asanvedansheel (no empathy); Callus = kathor twacha (hardened skin).",[
+    ["Callous","adjective","asanvedansheel","Showing lack of empathy or concern","His callous attitude towards the poor shocked everyone."],
+    ["Callus","noun","kathor twacha","A thickened area of skin formed due to friction","Years of manual work had formed a callus on his palm."]
+  ],["Years of hard labour created a ______ on his hands, yet his ______ remarks hurt many people.",["callous, callus","callus, callous"],1,"Hands par 'callus' (kathor twacha); 'callous' (kathor) remarks."]],
+  [28,"Canon vs Cannon","Canon = niyam / siddhant (standard); Cannon = top (large gun).",[
+    ["Canon","noun","niyam / siddhant","A rule, principle, or authoritative standard","The book is part of the literary canon."],
+    ["Cannon","noun","top","A large, heavy gun","The old fort still displays a historic cannon."]
+  ],["The novel is considered part of the literary ______, while a huge ______ was placed at the entrance of the fort.",["cannon, canon","canon, cannon"],1,"Literary 'canon' (siddhant); fort par 'cannon' (top)."]],
+  [29,"Canvas vs Canvass","Canvas = mota kapda (cloth); Canvass = samarthan maangna (solicit votes).",[
+    ["Canvas","noun","mota kapda","A strong cloth used for tents, bags, or painting","The artist stretched the canvas before painting."],
+    ["Canvass","verb","samarthan maangna","To solicit votes or opinions","Volunteers went door to door to canvass for votes."]
+  ],["The leader bought a new ______, while party workers began to ______ voters.",["canvas, canvass","canvass, canvas"],0,"'Canvas' (cloth) khareeda; workers 'canvass' (vote maangna)."]],
+  [30,"Carat vs Caret vs Karat","Carat = ratna ka bhaar; Karat = sone ki shuddhata; Caret = sudhaar chinh (proofreading).",[
+    ["Carat","noun","ratna ka bhaar","A unit for measuring the weight of gemstones","The diamond weighed two carats."],
+    ["Caret","noun","sudhaar chinh","A proofreading symbol indicating insertion","The editor used a caret to add a missing word."],
+    ["Karat","noun","sone ki shuddhata","A measure of gold purity","This ring is made of 22-karat gold."]
+  ],["The jeweller explained that the ring was 22-______, the diamond weighed one ______, and the editor marked the error with a ______.",["carat, karat, caret","caret, carat, karat","karat, carat, caret","caret, karat, carat"],2,"Ring 22-'karat' (gold); diamond 'carat' (weight); editor 'caret' (chinh)."]],
+  [31,"Censor vs Censure","Censor = pratibandh lagana (suppress content); Censure = ninda karna (criticize).",[
+    ["Censor","verb","sensor karna / pratibandh lagana","To suppress or remove objectionable content","The board decided to censor violent scenes in the film."],
+    ["Censure","verb","ninda karna","To express strong disapproval or criticism","The minister was censured for misconduct."]
+  ],["The committee chose to ______ the controversial report and later ______ the officials responsible.",["censor, censure","censure, censor"],0,"Report 'censor' (roka); officials 'censure' (ninda)."]],
+  [32,"Cereal vs Serial","Cereal = anaaj (grain); Serial = kramik (in sequence).",[
+    ["Cereal","noun","anaaj","Grain used as food","Wheat is a common cereal crop."],
+    ["Serial","adjective","kramik","Arranged in a sequence","The story was published in serial form."]
+  ],["Rice is an important ______ crop, while the novel appeared in ______ installments.",["serial, cereal","cereal, serial"],1,"'Cereal' (anaaj) crop; novel 'serial' (kramik) form."]],
+  [33,"Chord vs Cord","Chord = swaron ka samuh (music notes); Cord = rassi / taar (string).",[
+    ["Chord","noun","swaron ka samuh","A group of musical notes played together","The guitarist played a pleasant chord."],
+    ["Cord","noun","rassi / taar","A thin rope or string","He tied the box with a cord."]
+  ],["The musician struck a ______ on the guitar and used a ______ to secure the equipment.",["cord, chord","chord, cord"],1,"Guitar par 'chord' (swar); 'cord' (rassi) se equipment."]],
+  [34,"Cite vs Site vs Sight","Cite = uddhrit karna (quote); Site = sthaan (place); Sight = drishti (vision).",[
+    ["Cite","verb","uddhrit karna","To quote or refer to","The lawyer cited several cases."],
+    ["Site","noun","sthaan","A location or place","This is a construction site."],
+    ["Sight","noun","drishti","The ability to see","The child lost his sight temporarily."]
+  ],["The lawyer chose to ______ recite articles at the accident ______, which was a shocking ______ for onlookers.",["site, cite, sight","cite, sight, site","sight, site, cite","cite, site, sight"],3,"'Cite' (uddhrit) articles; accident 'site' (sthaan); shocking 'sight' (drishti)."]],
+  [35,"Climactic vs Climatic","Climactic = charam bindu (climax); Climatic = jalaayu (climate).",[
+    ["Climactic","adjective","charam bindu se sambandhit","Relating to a climax","The movie ended with a climactic scene."],
+    ["Climatic","adjective","jalaayu se sambandhit","Relating to climate","Climatic changes affect agriculture."]
+  ],["The novel reached a ______ moment, while ______ conditions forced the event to be postponed.",["climactic, climatic","climatic, climactic"],0,"Novel 'climactic' (charam) moment; 'climatic' (jalaayu) conditions."]],
+  [36,"Coarse vs Course","Coarse = khurdura / asabhya (rough); Course = marg / paathyakram (path/lessons).",[
+    ["Coarse","adjective","khurdura / asabhya","Rough in texture or crude in behaviour or language","The cloth felt coarse against the skin, and his coarse remarks during the meeting offended several senior members."],
+    ["Course","noun","marg / paathyakram","A path, direction, or a series of lessons or lectures","After completing the training course, the officer decided to change the course of his career toward public administration."]
+  ],["The worker complained about the ______ fabric of the uniform, while the students enrolled in a professional ______ to improve their skills.",["coarse, course","course, coarse"],0,"'Coarse' (khurdura) fabric; professional 'course' (paathyakram)."]],
+  [37,"Complement vs Compliment","Complement = poorak (completes); Compliment = prashansa (praise).",[
+    ["Complement","noun","poorak","Something that completes or enhances another thing","The new software acts as a perfect complement to the existing system by improving both speed and accuracy."],
+    ["Compliment","noun","prashansa","An expression of praise or admiration","The teacher gave a sincere compliment to the student for maintaining consistency and discipline throughout the year."]
+  ],["The two departments ______ each other well, and the manager gave a generous ______ to the team for their performance.",["compliment, complement","complement, compliment"],1,"Departments 'complement' (poorak); manager ne 'compliment' (prashansa)."]],
+  [38,"Confidant vs Confidante vs Confident","Confidant = vishwaspatra (male); Confidante = vishwaspatra (female); Confident = aatmavishwasi (sure of oneself).",[
+    ["Confidant","noun","vishwaspatra (vyakti)","A person trusted with private or sensitive matters (male)","He shared all his professional concerns with his closest confidant, who had supported him through every critical phase of his career."],
+    ["Confidante","noun","vishwaspatra (mahila)","A female person with whom you share private matters","She spoke to her confidante about her family problems."],
+    ["Confident","adjective","aatmavishwasi","Feeling sure of oneself or having firm trust in one's abilities","She appeared confident during the interview because she had prepared thoroughly and understood every concept clearly."]
+  ],["The leader remained ______ during the crisis and shared sensitive details only with his ______ and his wife, who was his closest ______.",["confident, confidant, confidante","confidant, confident, confidante","confident, confidante, confidant","confidante, confidant, confident"],0,"Leader 'confident' (aatmavishwasi); 'confidant' (male) aur wife 'confidante' (female)."]],
+  [39,"Contagious vs Contiguous","Contagious = sankraamak (spreads); Contiguous = sata hua (sharing border).",[
+    ["Contagious","adjective","sankraamak","Capable of being spread by direct or indirect contact","Doctors warned that the disease was highly contagious, and even brief contact could result in infection."],
+    ["Contiguous","adjective","sata hua / seemavarti","Sharing a common boundary or touching","The two districts are contiguous, which makes administrative coordination much easier during emergencies."]
+  ],["This virus is extremely ______, and the affected region shares ______ borders with neighbouring states.",["contiguous, contagious","contagious, contiguous"],1,"Virus 'contagious' (sankraamak); borders 'contiguous' (sate hue)."]],
+  [40,"Council vs Counsel","Council = parishad / sabha (official body); Counsel = salah / wakeel (advice or lawyer).",[
+    ["Council","noun","parishad / sabha","An official body formed for discussion or decision-making","The city council held a long meeting to discuss urban development, budget allocation, and public welfare measures."],
+    ["Counsel","noun","salah / wakeel","Advice given formally, or a lawyer representing a case","The legal counsel advised the client to carefully review all documents before signing the agreement."]
+  ],["The municipal ______ approved the proposal, while the legal ______ warned about possible consequences.",["counsel, council","council, counsel"],1,"Municipal 'council' (parishad); legal 'counsel' (wakeel)."]],
+  [41,"Dairy vs Diary","Dairy = doodh utpaad (milk business); Diary = dainandin (daily record book).",[
+    ["Dairy","noun","dairy / doodh-utpaad se sambandhit","A place or business where milk and milk products are produced or sold","The cooperative dairy supplies fresh milk every morning to thousands of households in the city."],
+    ["Diary","noun","vyaktigat dainandin","A book in which daily events, thoughts, or experiences are recorded","She regularly writes her professional challenges and daily reflections in her personal diary."]
+  ],["He maintains a small ______ business, while she records her daily routine carefully in her ______.",["dairy, diary","diary, dairy"],0,"'Dairy' (doodh) business; 'diary' (dainandin) mein routine."]],
+  [42,"Decent vs Descent vs Dissent","Decent = shisht / uchit (proper); Descent = avrohan / neeche utarna (going down); Dissent = asahamati (disagreement).",[
+    ["Decent","adjective","shisht / uchit","Acceptable in behaviour, quality, or standard","He maintained a decent tone during the debate despite strong disagreement from others."],
+    ["Descent","noun","avrohan / neeche utarna","The act of moving downward or origin from ancestors","The aircraft began its descent as it approached the airport runway."],
+    ["Dissent","noun","asahamati","Disagreement with an official opinion or decision","Several members expressed strong dissent against the proposed policy changes."]
+  ],["The pilot announced the ______ of the aircraft, while some members voiced their ______, though maintaining a ______ manner.",["descent, dissent, decent","dissent, descent, decent","descent, decent, dissent","decent, descent, dissent"],0,"'Descent' (neeche utarna) aircraft ka; 'dissent' (asahamati) members ki; 'decent' (shisht) manner."]],
+  [43,"Defer vs Differ","Defer = sthagit karna (postpone); Differ = bhinn hona (be unlike / disagree).",[
+    ["Defer","verb","sthagit karna","To postpone or delay an action","The committee decided to defer the final decision until all reports were reviewed."],
+    ["Differ","verb","bhinn hona","To be unlike or disagree","Experts often differ in their opinions regarding economic reforms."]
+  ],["The panel chose to ______ the meeting, as members continued to ______ on key issues.",["defer, differ","differ, defer"],0,"Meeting 'defer' (sthagit); members 'differ' (asahamat)."]],
+  [44,"Defuse vs Diffuse","Defuse = tanaav kam karna (reduce tension); Diffuse = failana (spread widely).",[
+    ["Defuse","verb","tanaav kam karna / nishkriya karna","To reduce tension or remove danger","The officer spoke calmly to defuse the tense situation between the protesters and police."],
+    ["Diffuse","verb","failana","To spread widely in all directions","The fragrance slowly diffused throughout the room, creating a pleasant atmosphere."]
+  ],["The negotiator tried to ______ the conflict, while the news quickly ______ across social media.",["diffuse, defuse","defuse, diffuse"],1,"Conflict 'defuse' (tanaav kam); news 'diffused' (faili)."]],
+  [45,"Depravation vs Deprivation","Depravation = naitik patan (moral corruption); Deprivation = abhaav (lack of needs).",[
+    ["Depravation","noun","naitik patan","Moral corruption or degradation","The report highlighted the moral depravation prevalent among officials involved in the scam."],
+    ["Deprivation","noun","abhaav","Lack of basic needs or comforts","Long-term deprivation of education can severely affect social development."]
+  ],["The investigation exposed moral ______ among leaders, while widespread ______ of basic facilities angered the public.",["deprivation, depravation","depravation, deprivation"],1,"Moral 'depravation' (patan); 'deprivation' (abhaav) of facilities."]],
+  [46,"Deprecate vs Depreciate","Deprecate = napasand karna (disapprove); Depreciate = moolya ghatana (value down).",[
+    ["Deprecate","verb","napasand karna / ninda karna","To express disapproval of something","Senior officials deprecated the use of unfair means in competitive examinations."],
+    ["Depreciate","verb","moolya ghatana","To reduce in value over time","Vehicles tend to depreciate rapidly within a few years of purchase."]
+  ],["The authority ______ unethical practices, while the asset continued to ______ in market value.",["depreciate, deprecate","deprecate, depreciate"],1,"Practices 'deprecated' (ninda); asset 'depreciate' (moolya kam)."]],
+  [47,"Desert vs Dessert","Desert = tyaag dena / registan (abandon / dry land); Dessert = mithai (sweet). YAD RAKHEIN: sweet mein do 's' — jitna sweet utne 's'.",[
+    ["Desert","verb","tyaag dena / registan","To abandon, or a dry barren land","Soldiers were warned never to desert their post even under extreme conditions."],
+    ["Dessert","noun","mithai","A sweet dish eaten after the main course","The guests enjoyed a traditional Indian dessert after dinner."]
+  ],["The soldier refused to ______ his duty, and later enjoyed a sweet ______ with his team after victory.",["dessert, desert","desert, dessert"],1,"Duty 'desert' (tyaag) nahi kiya; sweet 'dessert' (mithai)."]],
+  [48,"Disassemble vs Dissemble","Disassemble = alag-alag karna (take apart); Dissemble = chhipana / bahana (conceal).",[
+    ["Disassemble","verb","alag-alag karna","To take something apart","The technician had to disassemble the machine to locate the fault."],
+    ["Dissemble","verb","chhipana / bahana karna","To conceal true feelings or intentions","The official tried to dissemble his involvement during questioning."]
+  ],["The mechanic had to ______ the device, while the accused attempted to ______ his true intentions.",["disassemble, dissemble","dissemble, disassemble"],0,"Device 'disassemble' (alag karna); intentions 'dissemble' (chhipana)."]],
+  [49,"Discreet vs Discrete","Discreet = savdhaan / gopniya (careful); Discrete = prithak / alag (separate).",[
+    ["Discreet","adjective","savdhaan / gopniya","Careful and cautious, especially to avoid attention","The officer handled the sensitive matter in a discreet and professional manner."],
+    ["Discrete","adjective","prithak / alag-alag","Individually separate or distinct","The data was divided into discrete categories for accurate analysis."]
+  ],["The inquiry was conducted in a ______ manner, and the information was stored in ______ units.",["discrete, discreet","discreet, discrete"],1,"Inquiry 'discreet' (gopniya); data 'discrete' (alag) units."]],
+  [50,"Dual vs Duel","Dual = dohra (two parts); Duel = dwandva (fight between two).",[
+    ["Dual","adjective","dohra","Consisting of two parts or elements","He holds dual responsibility as both administrator and auditor."],
+    ["Duel","noun","dwandva","A fight between two people","In earlier times, disputes were sometimes settled through a duel."]
+  ],["The officer has a ______ role in the department, unlike the historical practice of settling disputes through a ______.",["dual, duel","duel, dual"],0,"'Dual' (dohra) role; 'duel' (dwandva) se disputes."]],
+  [51,"Egoist vs Egotist","Egoist = swaarthvaadi (self-interest); Egotist = aatmprashansak (boasts about self).",[
+    ["Egoist","noun","swaarthvaadi","A person who believes in or practices self-interest","The leader was often labelled an egoist because every policy he supported clearly prioritised his own benefit over public welfare."],
+    ["Egotist","noun","aatmamugdh / aatmprashansak","A person who constantly talks about themselves and boasts about achievements","His habit of endlessly praising his own success made him appear as an egotist in professional meetings."]
+  ],["The politician behaved like an ______ by promoting policies for personal gain, while his colleague appeared an ______ who never stopped boasting.",["egoist, egotist","egotist, egoist"],0,"Personal gain = 'egoist'; boasting = 'egotist'."]],
+  [52,"Elicit vs Illicit","Elicit = bahar nikalna (draw out); Illicit = avaidh (illegal).",[
+    ["Elicit","verb","bahar nikalna / prapt karna","To draw out a response, reaction, or information","The investigator used careful questioning to elicit truthful answers from the witness."],
+    ["Illicit","adjective","avaidh","Illegal or forbidden by law","Authorities cracked down on illicit trade operating across state borders."]
+  ],["The officer tried to ______ information during the inquiry and exposed an ______ network operating secretly.",["elicit, illicit","illicit, elicit"],0,"'Elicit' (nikalna) information; 'illicit' (avaidh) network."]],
+  [53,"Eligible vs Illegible","Eligible = paatra (qualified); Illegible = apathneey (cannot read).",[
+    ["Eligible","adjective","paatra","Qualified or entitled to apply or participate","Only candidates with the required educational background are eligible for the examination."],
+    ["Illegible","adjective","apathneey","Difficult or impossible to read","The application was rejected because the handwriting was illegible."]
+  ],["Although the candidate was ______ for the post, his form was rejected due to ______ handwriting.",["illegible, eligible","eligible, illegible"],1,"Candidate 'eligible' (paatra); handwriting 'illegible' (apathneey)."]],
+  [54,"Emigrant vs Immigrant","YAD RAKHEIN: E = Exit (desh chhodne wala); I = In (desh mein aane wala).",[
+    ["Emigrant","noun","pravaasi (desh chhodne wala)","A person who leaves their own country to settle elsewhere","Many emigrants left the country in search of better employment opportunities."],
+    ["Immigrant","noun","pravaasi (desh mein aane wala)","A person who comes to live permanently in another country","The government introduced new policies to support legal immigrants."]
+  ],["He became an ______ when he left his homeland, and later an ______ in the country where he settled.",["immigrant, emigrant","emigrant, immigrant"],1,"Left homeland = 'emigrant'; settle = 'immigrant'."]],
+  [55,"Eminent vs Imminent","Eminent = prasiddh (famous person); Imminent = aasann (about to happen).",[
+    ["Eminent","adjective","pratishthit / prasiddh","Famous or respected within a profession or field","An eminent scientist was invited to address the international conference."],
+    ["Imminent","adjective","aasann","About to happen very soon","The dark clouds suggested that a storm was imminent."]
+  ],["An ______ scholar warned that a financial crisis was ______ unless corrective measures were taken.",["imminent, eminent","eminent, imminent"],1,"Scholar 'eminent' (prasiddh); crisis 'imminent' (aasann)."]],
+  [56,"Enervate vs Innervate","Enervate = durbal karna (weaken); Innervate = tantrika shakti dena (stimulate nerves).",[
+    ["Enervate","verb","durbal karna","To weaken or drain energy","Continuous stress can enervate even the most resilient individuals."],
+    ["Innervate","verb","tantrika shakti dena","To supply with nerves or stimulate","Physical therapy helps innervate muscles after injury."]
+  ],["Excessive workload tends to ______ employees, whereas proper training can ______ weakened muscles.",["enervate, innervate","innervate, enervate"],0,"Workload 'enervates' (durbal); training 'innervates' (stimulate)."]],
+  [57,"Erupt vs Irrupt","Erupt = phoot padna (burst out); Irrupt = achaanak ghus aana (rush in).",[
+    ["Erupt","verb","phoot padna","To burst out suddenly","The volcano may erupt after remaining dormant for decades."],
+    ["Irrupt","verb","achaanak ghus aana","To rush in suddenly","Protesters irrupted into the hall, disrupting the meeting."]
+  ],["The volcano could ______ at any moment, while angry crowds might ______ into the restricted area.",["irrupt, erupt","erupt, irrupt"],1,"Volcano 'erupt' (phootna); crowds 'irrupt' (ghusna)."]],
+  [58,"Faint vs Feint","Faint = be-hosh hona (lose consciousness); Feint = jalpurn chaal (deceptive move).",[
+    ["Faint","verb","be-hosh hona","To lose consciousness briefly","She nearly fainted due to exhaustion and dehydration."],
+    ["Feint","noun","jalpurn chaal","A deceptive movement meant to mislead","The boxer used a clever feint to confuse his opponent."]
+  ],["The patient began to ______ due to fatigue, while the athlete used a strategic ______ to win the match.",["faint, feint","feint, faint"],0,"Patient 'faint' (be-hosh); athlete ki 'feint' (chaal)."]],
+  [59,"Forbear vs Forebear","Forbear = sanmam rakhna (refrain); Forebear = poorvaj (ancestor).",[
+    ["Forbear","verb","sanmam rakhna / rukna","To refrain from doing something","He chose to forbear from commenting until all facts were known."],
+    ["Forebear","noun","poorvaj","An ancestor","His forebears served in the army for generations."]
+  ],["She decided to ______ from criticism, remembering that her ______ had faced similar challenges.",["forebear, forbear","forbear, forebears"],1,"'Forbear' (rukhna) criticism se; 'forebears' (poorvaj) ne saamna kiya."]],
+  [60,"Gamble vs Gambol","Gamble = jokhim lena (risk); Gambol = uchal-kood karna (playful jumping).",[
+    ["Gamble","verb","jua khelna / jokhim lena","To take a risky action hoping for gain","Investing without research is a gamble that may result in heavy losses."],
+    ["Gambol","verb","uchal-kood karna","To jump or run playfully","The children gambolled freely in the open field after school."]
+  ],["Risking public funds is a dangerous ______, while children continued to ______ joyfully in the park.",["gambol, gamble","gamble, gambol"],1,"Funds = 'gamble' (jokhim); children 'gambol' (uchal-kood)."]],
+  [61,"Gourmand vs Gourmet","Gourmand = petoo (excessive eater); Gourmet = bhojan vishweshagya (food expert).",[
+    ["Gourmand","noun","petoo / adhik khane wala","A person who eats excessively and is overly fond of food","Despite medical advice, he continued to behave like a gourmand, consuming rich food late at night without restraint."],
+    ["Gourmet","noun","bhojan-vishweshagya","A connoisseur of fine food and drink with refined taste","As a gourmet, she could easily distinguish subtle flavors and cooking techniques in a professionally prepared meal."]
+  ],["He was known more as a ______ because of his excessive eating habits, whereas his friend was a true ______ with refined culinary taste.",["gourmet, gourmand","gourmand, gourmet"],1,"Excessive eater = 'gourmand'; refined taste = 'gourmet'."]],
+  [62,"Hallow vs Hollow","Hallow = pavitra karna (make holy); Hollow = khokhla (empty inside).",[
+    ["Hallow","verb","pavitra karna","To make something holy or sacred","The priest performed rituals to hallow the place before the inauguration ceremony began."],
+    ["Hollow","adjective","khokhla / khaali","Having an empty space inside or lacking substance","The old tree trunk was completely hollow, and its weak structure made it unsafe during storms."]
+  ],["The priest was invited to ______ the temple, but the pillar inside was found to be ______ and structurally weak.",["hallow, hollow","hollow, hallow"],0,"Temple 'hallow' (pavitra); pillar 'hollow' (khokhla)."]],
+  [63,"Hoard vs Horde","Hoard = jama karna (collect secretly); Horde = bheed / jhund (large crowd).",[
+    ["Hoard","verb","jama karna","To collect and store something secretly or excessively","During the crisis, many people began to hoard essential supplies without considering others' needs."],
+    ["Horde","noun","bheed / jhund","A large group of people moving together","A horde of protesters gathered outside the government building demanding action."]
+  ],["Some traders chose to ______ food supplies, while a large ______ of citizens assembled in protest.",["hoard, horde","horde, hoard"],0,"'Hoard' (jama karna) supplies; 'horde' (bheed) of citizens."]],
+  [64,"Human vs Humane","Human = maanav (people); Humane = karunaamay (compassionate).",[
+    ["Human","adjective","maanav se sambandhit","Relating to people or mankind","The report focused on human rights violations affecting marginalized communities."],
+    ["Humane","adjective","karunaamay","Showing compassion and kindness toward others","The organization is known for its humane treatment of animals and vulnerable individuals."]
+  ],["The campaign emphasized basic ______ dignity and promoted a more ______ approach toward prisoners.",["human, humane","humane, human"],0,"'Human' (maanav) dignity; 'humane' (karunaamay) approach."]],
+  [65,"Immanent vs Imminent","Immanent = antarnihit (existing within); Imminent = aasann (about to happen).",[
+    ["Immanent","adjective","antarnihit","Existing or operating within something","Philosophers argue that moral values are immanent in social behaviour rather than imposed externally."],
+    ["Imminent","adjective","aasann","About to happen very soon","Authorities issued warnings as a natural disaster seemed imminent."]
+  ],["While ethical principles may be ______ in society, a major policy change was considered ______.",["imminent, immanent","immanent, imminent"],1,"Principles 'immanent' (antarnihit); change 'imminent' (aasann)."]],
+  [66,"Incipient vs Insipient","Incipient = praarambhik (beginning stage); Insipient = moorkh (foolish).",[
+    ["Incipient","adjective","praarambhik avastha","Beginning to exist or develop","The disease was detected at an incipient stage, making early treatment possible."],
+    ["Insipient","adjective","moorkh / naasamajh","Lacking intelligence or insight","His insipient remarks during the meeting revealed a poor understanding of the issue."]
+  ],["The illness was still at an ______ stage, but his ______ comments complicated the discussion.",["insipient, incipient","incipient, insipient"],1,"Illness 'incipient' (praarambhik); comments 'insipient' (moorkh)."]],
+  [67,"Incite vs Insight","Incite = bhadkana (provoke); Insight = antardrishti (deep understanding).",[
+    ["Incite","verb","bhadkana","To encourage or provoke violent or unlawful behavior","The speech was intended to incite unrest among dissatisfied groups."],
+    ["Insight","noun","antardrishti","Deep understanding of a situation or problem","Her report provided valuable insight into administrative inefficiencies."]
+  ],["The leader tried to ______ the crowd, but the analyst offered deep ______ into the causes of unrest.",["incite, insight","insight, incite"],0,"'Incite' (bhadkana) crowd; 'insight' (antardrishti) causes ki."]],
+  [68,"Indict vs Indite","Indict = abhiyog lagana (formally accuse); Indite = likhna (write).",[
+    ["Indict","verb","abhiyog lagana","To formally accuse someone of a crime","The court decided to indict the official after reviewing substantial evidence."],
+    ["Indite","verb","likhna","To write or compose formally","The author took months to indite the final draft of the book."]
+  ],["The jury chose to ______ the accused, while the writer continued to ______ his memoirs.",["indite, indict","indict, indite"],1,"Jury 'indict' (abhiyog); writer 'indite' (likhna)."]],
+  [69,"Ingenious vs Ingenuous","Ingenious = chatur / aavishkaarsheel (clever, inventive); Ingenuous = bhola (innocent, open).",[
+    ["Ingenious","adjective","chatur / aavishkaarsheel","Clever, original, or inventive","The engineer proposed an ingenious solution to reduce energy consumption."],
+    ["Ingenuous","adjective","bhola / saadha","Innocent, open, and lacking guile","Her ingenuous response reflected honesty rather than calculation."]
+  ],["The design was remarkably ______, while her ______ reply won everyone's trust.",["ingenuous, ingenious","ingenious, ingenuous"],1,"Design 'ingenious' (chatur); reply 'ingenuous' (bholi)."]],
+  [70,"Later vs Latter","Later = baad mein (afterwards); Latter = doosra (second of two).",[
+    ["Later","adverb","baad mein","At a time after the present or mentioned time","The issue will be discussed later after all reports are submitted."],
+    ["Latter","adjective","doosra (do mein se)","The second of two mentioned things","Between honesty and intelligence, the latter is often considered more valuable in leadership."]
+  ],["The meeting was postponed to ______, and of the two proposals discussed, the ______ was approved.",["later, latter","latter, later"],0,"Time = 'later'; do proposals mein se 'latter' (doosra)."]],
+  [71,"Laterally vs Literally","Laterally = paarshva disha mein (sideways); Literally = shabdhshah (exactly).",[
+    ["Laterally","adverb","paarshva disha mein","Sideways or from the side","The vehicle slid laterally on the wet road, causing a minor accident."],
+    ["Literally","adverb","shabdhshah / vastav mein","In a strict or exact sense","He literally followed the instructions word for word."]
+  ],["The car moved ______ due to the slope, while the trainee followed the manual ______.",["laterally, literally","literally, laterally"],0,"Car 'laterally' (sideways); manual 'literally' (shabdhshah)."]],
+  [72,"Laterite vs Literate","Laterite = laterite mitti (soil type); Literate = saakshar (can read and write).",[
+    ["Laterite","noun","laterite mitti","A type of soil rich in iron and aluminium","Laterite soil is commonly found in tropical regions with heavy rainfall."],
+    ["Literate","adjective","saakshar","Able to read and write","Government programs aim to make every citizen literate."]
+  ],["The road was built of ______ soil, while efforts were made to make the population fully ______.",["literate, laterite","laterite, literate"],1,"'Laterite' (mitti) soil; population 'literate' (saakshar)."]],
+  [73,"Lightning vs Lightening","Lightning = bijli ki chamak (electric flash); Lightening = halka karna (making lighter).",[
+    ["Lightning","noun","bijli ki chamak","A sudden electrical discharge in the sky","A flash of lightning illuminated the entire sky during the storm."],
+    ["Lightening","noun","halka karna","The act of making something lighter","The company focused on lightening the workload of employees."]
+  ],["A bolt of ______ struck nearby, while management discussed ______ the burden on staff.",["lightening, lightning","lightning, lightening"],1,"'Lightning' (bijli) bolt; 'lightening' (halka) burden."]],
+  [74,"Loath vs Loathe","Loath = anichchhuk (unwilling); Loathe = ghrina karna (hate).",[
+    ["Loath","adjective","anichchhuk","Unwilling or reluctant","He was loath to accept the offer without reviewing the terms carefully."],
+    ["Loathe","verb","ghrina karna","To hate or dislike intensely","She loathes dishonesty in any form."]
+  ],["He was ______ to compromise, as he deeply ______ corruption.",["loathe, loath","loath, loathe"],1,"'Loath' (anichchhuk) compromise; 'loathes' (ghrina) corruption."]],
+  [75,"Loose vs Lose","Loose = dheela (not tight); Lose = kho dena (misplace / fail to keep). YAD RAKHEIN: loose mein extra 'o' hai (dheela), lose mein nahi.",[
+    ["Loose","adjective","dheela","Not tight or firmly fixed","The bolt was loose, which caused the machine to malfunction during operation."],
+    ["Lose","verb","kho dena","To be deprived of something or fail to keep it","If you neglect practice, you may lose confidence over time."]
+  ],["A ______ screw can cause damage, and careless handling may ______ important data.",["lose, loose","loose, lose"],1,"'Loose' (dheela) screw; 'lose' (kho dena) data."]],
+  [76,"Mantel vs Mantle","Mantel = shelf (fireplace ke upar); Mantle = aavaran / prithvi ki parat (cloak / earth layer).",[
+    ["Mantel","noun","shelf / chulhe ka kinara","A shelf above a fireplace","Family photographs were displayed neatly on the mantel above the fireplace."],
+    ["Mantle","noun","aavaran / prithvi ki parat","A cloak or the layer beneath Earth's crust","Scientists study the Earth's mantle to understand geological activity."]
+  ],["The clock rested on the ______, while scientists researched the Earth's ______.",["mantel, mantle","mantle, mantel"],0,"Clock 'mantel' (shelf) par; Earth ka 'mantle' (parat)."]],
+  [77,"Metal vs Mettle","Metal = dhaatu (iron/copper); Mettle = saahas / dhairya (courage).",[
+    ["Metal","noun","dhaatu","A hard substance such as iron or copper","Steel is a widely used metal in construction projects."],
+    ["Mettle","noun","saahas / dhairya","Courage or strength of character","She showed great mettle by remaining calm under pressure."]
+  ],["The bridge is made of strong ______, and the team proved its ______ during the crisis.",["mettle, metal","metal, mettle"],1,"Bridge 'metal' (dhaatu) ka; team ki 'mettle' (saahas)."]],
+  [78,"Militate vs Mitigate","Militate = ke viruddh kaam karna (work against); Mitigate = kam karna (lessen severity).",[
+    ["Militate","verb","ke viruddh kaam karna","To work against or have a strong effect against something","Poor planning may militate against the success of the project."],
+    ["Mitigate","verb","kam karna","To make something less severe or serious","Immediate action helped mitigate the impact of the disaster."]
+  ],["Lack of resources may ______ progress, but timely measures can ______ the damage.",["mitigate, militate","militate, mitigate"],1,"'Militate' (viruddh) progress ke; 'mitigate' (kam) damage."]],
+  [79,"Momentary vs Momentous","Momentary = kshanik (very short time); Momentous = atyant mahatvapurn (very important).",[
+    ["Momentary","adjective","kshanik","Lasting for a very short time","There was a momentary silence before the announcement."],
+    ["Momentous","adjective","atyant mahatvapurn","Of great importance or significance","The decision marked a momentous turning point in policy."]
+  ],["There was a ______ pause before a ______ announcement that changed the course of events.",["momentary, momentous","momentous, momentary"],0,"'Momentary' (kshanik) pause; 'momentous' (mahatvapurn) announcement."]],
+  [80,"Moral vs Morale","Moral = naitik (ethics / lesson); Morale = manobal (confidence of group).",[
+    ["Moral","noun","naitik shiksha / naitik","Relating to principles of right and wrong","The story carried a strong moral lesson about honesty and responsibility."],
+    ["Morale","noun","manobal","Confidence or enthusiasm of a group","Regular appreciation helped boost team morale during difficult times."]
+  ],["The story conveyed a clear ______, and the leader's speech improved the team's ______.",["morale, moral","moral, morale"],1,"Story ka 'moral' (naitik shiksha); team ka 'morale' (manobal)."]],
+  [81,"Ordinance vs Ordnance","Ordinance = adhyadesh (law by authority); Ordnance = hathiyaar (military weapons).",[
+    ["Ordinance","noun","adhyadesh / kanoon","A law or regulation officially enacted by an authority","The government promulgated an ordinance to address the emergency situation until Parliament reconvened."],
+    ["Ordnance","noun","hathiyaar / senya sajoo-samaan","Military weapons, ammunition, and equipment","Large quantities of outdated ordnance were safely dismantled by the defence forces."]
+  ],["The President issued an ______ to manage the crisis, while surplus ______ was removed from storage.",["ordnance, ordinance","ordinance, ordnance"],1,"President ka 'ordinance' (adhyadesh); military 'ordnance' (hathiyaar)."]],
+  [82,"Palate vs Palette","Palate = swaadendriya / taalu (sense of taste); Palette = rang pattika (colour board).",[
+    ["Palate","noun","swaadendriya / taalu","The sense of taste or the roof of the mouth","Spicy food appeals to his palate, but excessive spices irritate his mouth."],
+    ["Palette","noun","rang pattika","A board on which an artist mixes colours","The painter carefully arranged colours on his palette before starting the artwork."]
+  ],["The chef adjusted the spices to suit the customer's ______, while the artist cleaned his ______ after painting.",["palette, palate","palate, palette"],1,"Chef 'palate' (swaad); artist ki 'palette' (rang pattika)."]],
+  [83,"Patrol vs Petrol","Patrol = gasht (guard rounds); Petrol = eindhan (fuel).",[
+    ["Patrol","noun","gasht","The act of moving around an area to guard or monitor it","Police conducted a night patrol to prevent thefts in the neighbourhood."],
+    ["Petrol","noun","petrol (eindhan)","A fuel used in vehicles","Rising petrol prices directly affect transportation costs."]
+  ],["The police intensified their ______, while the increase in ______ prices angered commuters.",["patrol, petrol","petrol, patrol"],0,"Police ki 'patrol' (gasht); 'petrol' (eindhan) prices."]],
+  [84,"Perpetrate vs Perpetuate","Perpetrate = apraadh karna (commit crime); Perpetuate = jaari rakhna (continue).",[
+    ["Perpetrate","verb","apraadh karna","To commit a crime or wrongdoing","The accused was found guilty of perpetrating financial fraud over several years."],
+    ["Perpetuate","verb","jaari rakhna","To cause something to continue indefinitely","Spreading misinformation only serves to perpetuate social division."]
+  ],["The investigation revealed who had ______ the crime, while false narratives continued to ______ public mistrust.",["perpetuated, perpetrated","perpetrated, perpetuate"],1,"Crime 'perpetrated' (kiya); mistrust 'perpetuate' (jaari)."]],
+  [85,"Personal vs Personnel","Personal = vyaktigat (private); Personnel = karmchaari (staff). YAD RAKHEIN: personnel mein double 'n' — staff ke paas double 'n' hai.",[
+    ["Personal","adjective","vyaktigat","Relating to an individual's private life or matters","He refused to discuss personal issues during an official meeting."],
+    ["Personnel","noun","karmchaari varg","The body of people employed in an organization","The company hired additional personnel to manage the increased workload."]
+  ],["She kept her ______ matters private, while the department recruited more ______.",["personnel, personal","personal, personnel"],1,"'Personal' (vyaktigat) matters; 'personnel' (karmchaari) recruited."]],
+  [86,"Perspicacious vs Perspicuous","Perspicacious = teekshna buddhi (keen insight); Perspicuous = spasht (clearly expressed).",[
+    ["Perspicacious","adjective","teekshna buddhi wala","Having keen insight or understanding","The perspicacious analyst quickly identified flaws in the proposal."],
+    ["Perspicuous","adjective","spasht","Clearly expressed and easy to understand","The report was written in a perspicuous manner, making it accessible to all readers."]
+  ],["The ______ officer noticed hidden risks, and the explanation was so ______ that no clarification was needed.",["perspicacious, perspicuous","perspicuous, perspicacious"],0,"Officer 'perspicacious' (teekshna); explanation 'perspicuous' (spasht)."]],
+  [87,"Practice vs Practise","Practice = noun (abhyaas); Practise = verb (abhyaas karna). YAD RAKHEIN: noun 'c', verb 's'.",[
+    ["Practice","noun","abhyaas / pratha","A customary action or repeated exercise","Regular practice is essential for mastering quantitative aptitude."],
+    ["Practise","verb","abhyaas karna","To perform repeatedly to improve skill","Candidates must practise mock tests under timed conditions."]
+  ],["Consistent ______ improves accuracy, and students should ______ questions daily.",["practise, practice","practice, practise"],1,"'Practice' (noun) accuracy sudhaarta; 'practise' (verb) karna chahiye."]],
+  [88,"Pray vs Prey","Pray = praarthana karna (worship); Prey = shikaar (victim).",[
+    ["Pray","verb","praarthana karna","To address God or make a request earnestly","Many people pray for strength during difficult times."],
+    ["Prey","noun","shikaar / shikaar banna","An animal hunted by another, or a victim","Innocent citizens often fall prey to online frauds."]
+  ],["People often ______ for peace, but criminals look for easy ______.",["prey, pray","pray, prey"],1,"'Pray' (praarthana) peace ke liye; 'prey' (shikaar) criminals ke liye."]],
+  [89,"Principal vs Principle","Principal = pradhaan / mukhya (head of school / main); Principle = siddhant (rule). YAD RAKHEIN: principal 'pal' hai (headmaster); principle 'rule' hai.",[
+    ["Principal","noun","pradhaan / mukhya","The head of an institution or the most important","The school principal addressed students on discipline and values."],
+    ["Principle","noun","siddhant","A fundamental rule or belief","Honesty is a core principle in public service."]
+  ],["The ______ emphasized ethical conduct based on strong ______.",["principal, principle","principle, principal"],0,"'Principal' (pradhaan) ne 'principle' (siddhant) par jor diya."]],
+  [90,"Proceed vs Precede","Proceed = aage badhna (go forward); Precede = pehle aana (come before).",[
+    ["Proceed","verb","aage badhna","To move forward or continue","The inquiry will proceed after all evidence is reviewed."],
+    ["Precede","verb","pehle aana","To come before in time or order","Registration must precede the examination process."]
+  ],["Approval must ______ implementation, after which the project can ______ smoothly.",["proceed, precede","precede, proceed"],1,"Approval 'precede' (pehle); project 'proceed' (aage)."]],
+  [91,"Quiet vs Quite","Quiet = shaant (silent); Quite = poornatah / kaafi (completely / fairly).",[
+    ["Quiet","adjective","shaant","Making little or no noise","The library remained quiet to maintain a study-friendly environment."],
+    ["Quite","adverb","poornatah / kaafi","Completely or to a considerable degree","The task was quite challenging for beginners."]
+  ],["The room was completely ______, and the instructions were ______ clear to everyone.",["quite, quiet","quiet, quite"],1,"Room 'quiet' (shaant); instructions 'quite' (kaafi) clear."]],
+  [92,"Raise vs Raze","Raise = uthana / badhana (lift or increase); Raze = dhwast karna (destroy completely).",[
+    ["Raise","verb","uthana / badhana","To lift or increase","The government plans to raise funds for infrastructure development."],
+    ["Raze","verb","dhwast karna","To completely destroy","Illegal structures were razed by the authorities."]
+  ],["The policy aims to ______ revenue, not ______ historical buildings.",["raise, raze","raze, raise"],0,"'Raise' (badhana) revenue; 'raze' (dhwast) buildings nahi."]],
+  [93,"Refuse (Noun) vs Refuse (Verb)","Same spelling — alag pronunciation + meaning. Noun = kachra (waste); Verb = inkaar karna (decline).",[
+    ["Refuse","noun","kachra","Waste material","Household refuse must be disposed of properly."],
+    ["Refuse","verb","inkaar karna","To decline or reject","He chose to refuse the offer due to ethical concerns."]
+  ],["The workers collected the ______, while the officer decided to ______ the proposal.",["refuse (N), refuse (V)","refuse (V), refuse (N)"],0,"Workers ne 'refuse' (kachra) uthaya; officer 'refuse' (inkaar) kiya."]],
+  [94,"Sensual vs Sensuous","Sensual = indriya-sukh (physical pleasure); Sensuous = saundaryabodh (refined sensory enjoyment).",[
+    ["Sensual","adjective","indriya-sukh se juda","Relating to physical pleasure","The novel was criticised for its overly sensual descriptions."],
+    ["Sensuous","adjective","saundaryabodh se juda","Relating to refined sensory enjoyment","The music created a sensuous atmosphere without being explicit."]
+  ],["The painting evoked a ______ response, while the film was criticised for being overly ______.",["sensuous, sensual","sensual, sensuous"],0,"Painting 'sensuous' (saundarya); film 'sensual' (physical)."]],
+  [95,"Stationary vs Stationery","Stationary = sthira (not moving); Stationery = lekhan-saamagri (paper, pens). YAD RAKHEIN: stationery mein 'e' — paper, envelope.",[
+    ["Stationary","adjective","sthira","Not moving","The vehicle remained stationary during inspection."],
+    ["Stationery","noun","lekhan-saamagri","Writing materials like paper and pens","The office ordered new stationery supplies."]
+  ],["The bus stayed ______, while the clerk purchased fresh ______.",["stationery, stationary","stationary, stationery"],1,"Bus 'stationary' (sthira); clerk ne 'stationery' (saamagri) khareedi."]],
+  [96,"Tortuous vs Torturous","Tortuous = ghumavdaar (twists and turns); Torturous = peedadaayak (causing pain).",[
+    ["Tortuous","adjective","ghumavdaar","Full of twists and turns","The road through the hills was tortuous and difficult to navigate."],
+    ["Torturous","adjective","atyant peedadaayak","Causing extreme pain or suffering","The delay was torturous for anxious candidates."]
+  ],["The mountain path was ______, and the long traffic jam proved ______ for passengers.",["torturous, tortuous","tortuous, torturous"],1,"Path 'tortuous' (ghumavdaar); jam 'torturous' (peeda)."]],
+  [97,"Urban vs Urbane","Urban = shahri (city); Urbane = shisht / sabhya (refined, polite).",[
+    ["Urban","adjective","shahri","Relating to cities","Urban development requires sustainable planning."],
+    ["Urbane","adjective","shisht / sabhya","Polite and refined in manner","He remained urbane even during heated discussions."]
+  ],["The report focused on ______ growth, while the officer's ______ conduct impressed everyone.",["urban, urbane","urbane, urban"],0,"'Urban' (shahri) growth; 'urbane' (shisht) conduct."]],
+  [98,"Vain vs Vein","Vain = vyarth / ahankaari (useless / proud); Vein = shira (blood vessel).",[
+    ["Vain","adjective","vyarth / ahankaari","Having no result or excessive pride","His efforts were vain, despite repeated attempts."],
+    ["Vein","noun","shira","A blood vessel","The nurse carefully inserted the needle into the vein."]
+  ],["All attempts proved ______, and the injection was administered through a ______.",["vein, vain","vain, vein"],1,"Attempts 'vain' (vyarth); injection 'vein' (shira) mein."]],
+  [99,"Venal vs Venial","Venal = bhrasht (open to bribery); Venial = kshamya (forgivable, minor).",[
+    ["Venal","adjective","bhrasht","Open to bribery or corruption","Venal officials undermine public trust."],
+    ["Venial","adjective","kshamya","Forgivable or minor","The court treated the error as venial, not intentional."]
+  ],["The act was considered ______ rather than criminal, unlike the ______ conduct exposed in the scam.",["venal, venial","venial, venal"],1,"Act 'venial' (kshamya); conduct 'venal' (bhrasht)."]],
+  [100,"Veracious vs Voracious","Veracious = satyavaadi (truthful); Voracious = atyadhik bhookh (eager appetite).",[
+    ["Veracious","adjective","satyavaadi","Truthful or accurate","The journalist is known for veracious reporting."],
+    ["Voracious","adjective","atyadhik bhookh wala","Having a very eager appetite","He has a voracious appetite for books."]
+  ],["The reporter was admired for his ______ writing, and the readers showed a ______ appetite for knowledge.",["veracious, voracious","voracious, veracious"],0,"Writing 'veracious' (satyavaadi); appetite 'voracious' (tez)."]],
+  [101,"Waive vs Wave","Waive = tyaag dena (give up a right); Wave = lehrana (hand motion).",[
+    ["Waive","verb","tyaag dena","To give up a right or claim","The authority decided to waive the penalty."],
+    ["Wave","verb","lehrana","To move one's hand or something back and forth","She gave a friendly wave to the crowd."]
+  ],["The officer chose to ______ the fine and ______ at the gathering afterward.",["wave, waive","waive, wave"],1,"'Waive' (maaf karna) fine; 'wave' (lehrana) gathering par."]],
+  [102,"Wreath vs Wreathe","Wreath = pushpmaala (ring of flowers); Wreathe = gher lena (encircle).",[
+    ["Wreath","noun","pushpmaala","A ring of flowers","A floral wreath was placed at the memorial."],
+    ["Wreathe","verb","gher lena / lapetna","To encircle or surround","Thick fog began to wreathe the entire valley."]
+  ],["A garlanded ______ was laid in tribute, while mist started to ______ the hills.",["wreathe, wreath","wreath, wreathe"],1,"'Wreath' (pushpmaala) laid; mist 'wreathe' (gherna) hills."]]
+];
+
+const PATTERN = [
+  ["Q1. CANON — highlighted word ka homonym dhoondein","In the base sentence, 'canon' means an authoritative collection of accepted literary works — Option C uses 'canon' as a musical structure (strict imitation of a melody), a completely different domain. Baki options literary authority wala meaning hi rakhte hain.",
+   [["A","Critics argued that the novel deserved a permanent place in the literary canon because of its enduring influence on modern narrative techniques."],
+    ["B","The professor explained how the canon of European literature evolved over centuries through selective inclusion and exclusion of texts."],
+    ["C","During the symphony's final movement, the composer introduced a complex canon in which each instrument repeated the same melody at staggered intervals."],
+    ["D","Many universities periodically revise their canon of prescribed readings to reflect changing cultural perspectives."]],2],
+  ["Q2. TENOR — highlighted word ka homonym dhoondein","'Tenor' in the base sentence = general tone or character of a discussion. Option B uses 'tenor' as a category of male singing voice — a technical musical classification. Baki options 'atmosphere/direction' wala meaning rakhte hain.",
+   [["A","Observers noted that the overall tenor of the negotiations changed sharply after new evidence was presented to the committee."],
+    ["B","The tenor, trained in classical opera, effortlessly sustained the high notes during the final aria, drawing prolonged applause from the audience."],
+    ["C","The editorial captured the aggressive tenor of the campaign by highlighting the candidates' increasingly hostile rhetoric."],
+    ["D","Despite repeated interruptions, the speaker managed to maintain a calm and measured tenor throughout his address to the audience."]],1],
+  ["Q3. CAPITAL — highlighted word ka homonym dhoondein","'Capital' here = financial resources for investment. Option C uses 'capital' in a legal sense (crime punishable by death) — economics se bilkul alag field. Baki options financial/economic domain mein hi hain.",
+   [["A","Foreign investors injected fresh capital into the firm after reviewing its long-term growth projections."],
+    ["B","The board approved a plan to restructure capital allocation across multiple business divisions."],
+    ["C","Under the new legislation, the offence was classified as a capital crime, making it punishable by the highest penalty prescribed by law."],
+    ["D","Economists warned that inadequate capital reserves could expose the company to serious financial risks."]],2],
+  ["Q4. ORDER — highlighted word ka homonym dhoondein","'Order' in the base sentence = an authoritative command. Option D uses 'order' as a taxonomic rank in biology (Carnivora) — scientific classification system. Baki options directive/command wala meaning rakhte hain.",
+   [["A","The order was transmitted through official channels to ensure swift implementation."],
+    ["B","Legal experts later examined whether the order complied with established procedural norms."],
+    ["C","The soldiers carried out the order without questioning its urgency or legality."],
+    ["D","In biological classification, Carnivora is an order that includes animals such as lions, tigers, and wolves."]],3],
+  ["Q5. SPRING — highlighted word ka homonym dhoondein","'Spring' in the base sentence = a natural water source. Option B uses 'spring' as a mechanical coil/elastic component — entirely different technical domain. Options A, C, D water-source wala meaning rakhte hain.",
+   [["A","Environmental groups demanded legal protection for the spring to prevent contamination from nearby industries."],
+    ["B","The machine malfunctioned when the spring inside the mechanism snapped under sustained mechanical stress."],
+    ["C","Clear, mineral-rich water flowed continuously from the spring even during the hottest months of summer."],
+    ["D","The villagers depended heavily on the spring, especially during periods of prolonged drought."]],1]
+];
+
+const ONELINERS = [
+  "Affect = verb (prabhaav daalna) • Effect = noun (parinaam)",
+  "Advice = noun (salah) • Advise = verb (salah dena)",
+  "Practice = noun ('c') • Practise = verb ('s')",
+  "Principal = school ka head (pal) • Principle = rule (siddhant)",
+  "Emigrant = E for Exit (desh chhodne wala) • Immigrant = I for In (desh mein aane wala)",
+  "Stationary = sthira (not moving) • Stationery = paper-pens (e for envelope)",
+  "Loose = dheela (extra 'o') • Lose = kho dena",
+  "Desert = tyaag / registan (ek 's') • Dessert = mithai (do 's' — sweet)",
+  "Carat = ratna ka bhaar • Karat = sone ki shuddhata • Caret = sudhaar chinh (proofreading)",
+  "Confidant = vishwaspatra (male) • Confidante = vishwaspatra (female) • Confident = aatmavishwasi",
+  "Dual = do (two parts) • Duel = do vyaktiyon ki ladai",
+  "Personal = vyaktigat (private) • Personnel = karmchaari (staff — double 'n')",
+  "Rise / Arise = object nahi chahiye • Raise = object chahiye (uthana)",
+  "Assure = kisi ko vishwas dilana • Ensure = pakka karna • Insure = beema karna",
+  "Elicit = bahar nikalna (draw out) • Illicit = avaidh (illegal)",
+  "Decent = shisht • Descent = neeche utarna • Dissent = asahamati",
+  "Ordinance = adhyadesh (kanoon) • Ordnance = military hathiyaar",
+  "Tortuous = ghumavdaar (twists) • Torturous = peedadaayak (torture jaisa)",
+  "Venal = bhrasht (bribe lene wala) • Venial = kshamya (forgivable)",
+  "Veracious = satyavaadi (truth) • Voracious = atyadhik bhookh (appetite)",
+  "Lightning = bijli ki chamak • Lightening = halka karna",
+  "Eminent = prasiddh (famous) • Imminent = aasann (about to happen)"
+];
+
+/* ---------- State ---------- */
+let revised = new Set();
+try { revised = new Set(JSON.parse(localStorage.getItem("hm_revised") || "[]")); } catch(e){}
+
+/* ---------- Theme toggle ---------- */
+const root = document.documentElement;
+const tBtn = document.getElementById("themeToggle");
+const savedTheme = localStorage.getItem("hm_theme") || "dark";
+root.setAttribute("data-theme", savedTheme);
+updateThemeBtn();
+tBtn.addEventListener("click", () => {
+  const next = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
+  root.setAttribute("data-theme", next);
+  localStorage.setItem("hm_theme", next);
+  updateThemeBtn();
+});
+function updateThemeBtn(){
+  tBtn.textContent = root.getAttribute("data-theme") === "dark" ? "🌙 Dark Mode" : "☀️ Light Mode";
+}
+
+/* ---------- Render chips (Topics at a Glance) ---------- */
+const chipWrap = document.getElementById("chipWrap");
+HOMONYMS.forEach(h => {
+  const a = document.createElement("a");
+  a.className = "chip" + (revised.has(h[0]) ? " revised" : "");
+  a.href = "#h" + h[0];
+  a.dataset.id = h[0];
+  a.textContent = h[0] + ". " + h[1].replace(/ vs /g,"/");
+  chipWrap.appendChild(a);
+});
+
+/* ---------- Render cards ---------- */
+const cardsEl = document.getElementById("cards");
+const LETTERS = ["A","B","C","D"];
+HOMONYMS.forEach(h => {
+  const id = h[0], title = h[1], tip = h[2], words = h[3], pq = h[4];
+  const sec = document.createElement("section");
+  sec.className = "card hcard";
+  sec.id = "h" + id;
+  sec.dataset.search = (title + " " + words.map(w=>w[0]).join(" ") + " " + words.map(w=>w[2]).join(" ") + " " + words.map(w=>w[3]).join(" ")).toLowerCase();
+
+  let head = '<div class="card-head"><span class="num">'+id+'</span><h3>'+title+'</h3><div class="words">';
+  words.forEach(w => { head += '<span class="wchip">'+w[0]+'</span>'; });
+  head += '</div></div>';
+  sec.innerHTML = head;
+
+  words.forEach(w => {
+    const row = document.createElement("div");
+    row.className = "word-row";
+    row.innerHTML =
+      '<div class="word-top"><b>'+w[0]+'</b><span class="pos">'+w[1]+'</span></div>' +
+      '<div class="def"><span class="roman">'+w[2]+'</span> <span class="eng">('+w[3]+')</span></div>' +
+      '<div class="exbox"><span class="lbl">Udaharan (Example):</span> <em>'+w[4]+'</em></div>';
+    sec.appendChild(row);
+  });
+
+  if (tip) {
+    const t = document.createElement("div");
+    t.className = "tipbox";
+    t.innerHTML = '<span class="lbl">⭐ Yaad Rakhein (Remember) / Pariksha Bindu (Exam Point):</span> <span class="roman">'+tip+'</span>';
+    sec.appendChild(t);
+  }
+
+  if (pq) {
+    const b = document.createElement("div");
+    b.className = "pqbox";
+    let opts = '<ol>';
+    pq[1].forEach((o,i) => { opts += '<li data-i="'+i+'">'+LETTERS[i]+') '+o+'</li>'; });
+    opts += '</ol>';
+    b.innerHTML = '<span class="lbl">📝 Pariksha Prashna (Practice Question):</span><p>'+pq[0]+'</p>' + opts +
+      '<button class="reveal-btn" type="button">Show Answer / Uttar dekhein</button>' +
+      '<div class="ansnote hide" data-ans="'+pq[2]+'"><b>✓ Sahi Uttar (Correct Answer): '+LETTERS[pq[2]]+') '+pq[1][pq[2]]+'</b> &nbsp;—&nbsp; '+pq[3]+'</div>';
+    sec.appendChild(b);
+  }
+
+  const rBtn = document.createElement("button");
+  rBtn.type = "button";
+  rBtn.className = "revise-btn" + (revised.has(id) ? " done" : "");
+  rBtn.dataset.id = id;
+  rBtn.textContent = revised.has(id) ? "✔ Revised" : "Mark Revised";
+  rBtn.setAttribute("aria-pressed", revised.has(id) ? "true" : "false");
+  const act = document.createElement("div");
+  act.style.marginTop = "12px";
+  act.appendChild(rBtn);
+  sec.appendChild(act);
+
+  cardsEl.appendChild(sec);
+});
+
+/* Back to Topics link after cards */
+const btt = document.createElement("div");
+btt.style.textAlign = "center";
+btt.style.margin = "10px 0";
+btt.innerHTML = '<a class="btn" href="#chipWrap" style="display:inline-block">⬆ Back to Topics (Topics par wapas)</a>';
+cardsEl.appendChild(btt);
+
+/* ---------- Answer reveal (delegation) ---------- */
+function revealAnswer(box){
+  const btn = box.querySelector(".reveal-btn");
+  if(!btn || btn.disabled) return;
+  const note = box.querySelector(".ansnote");
+  const lis = box.querySelectorAll("li");
+  const ansIdx = +note.dataset.ans;
+  lis.forEach(li => {
+    const i = +li.dataset.i;
+    li.classList.add(i === ansIdx ? "correct" : "wrong");
+  });
+  note.classList.remove("hide");
+  btn.disabled = true;
+  btn.textContent = "✓ Answer Dekha Gaya";
+}
+function bindReveal(root){
+  root.addEventListener("click", e => {
+    const btn = e.target.closest(".reveal-btn");
+    if(btn){ revealAnswer(btn.parentElement); return; }
+    const li = e.target.closest("li");
+    if(li && li.parentElement.classList.contains("pqbox")){ revealAnswer(li.parentElement); }
+  });
+}
+cardsEl.addEventListener("click", e => {
+  const rev = e.target.closest(".revise-btn");
+  if (rev) {
+    const id = +rev.dataset.id;
+    revised.has(id) ? revised.delete(id) : revised.add(id);
+    localStorage.setItem("hm_revised", JSON.stringify([...revised]));
+    const on = revised.has(id);
+    rev.classList.toggle("done", on);
+    rev.textContent = on ? "✔ Revised" : "Mark Revised";
+    rev.setAttribute("aria-pressed", on ? "true" : "false");
+    const chip = chipWrap.querySelector('[data-id="'+id+'"]');
+    if (chip) chip.classList.toggle("revised", on);
+    updateStats();
+  }
+});
+bindReveal(cardsEl);
+
+/* ---------- Pattern questions ---------- */
+const pBox = document.getElementById("patternBox");
+PATTERN.forEach(p => {
+  const d = document.createElement("div");
+  d.className = "pqbox";
+  d.style.marginTop = "14px";
+  const qTxt = p[0], expl = p[1], optsArr = p[2], ansIdx = p[3];
+  let opts = '<ol>';
+  optsArr.forEach((o,j) => { opts += '<li data-i="'+j+'">'+o[0]+') '+o[1]+'</li>'; });
+  opts += '</ol>';
+  d.innerHTML = '<span class="lbl">'+qTxt+'</span>' + opts +
+    '<button class="reveal-btn" type="button">Show Answer / Uttar dekhein</button>' +
+    '<div class="ansnote hide" data-ans="'+ansIdx+'"><b>✓ Sahi Uttar (Correct Answer): '+LETTERS[ansIdx]+') '+optsArr[ansIdx][1].slice(0,80)+'…</b><br><span class="eng">'+expl+'</span></div>';
+  pBox.appendChild(d);
+});
+bindReveal(pBox);
+
+/* ---------- Revision table ---------- */
+const tb = document.querySelector("#revTable tbody");
+HOMONYMS.forEach(h => {
+  h[3].forEach(w => {
+    const tr = document.createElement("tr");
+    const cells =
+      '<td><b>'+h[0]+'</b></td>' +
+      '<td><b>'+w[0]+'</b></td>' +
+      '<td>'+w[2]+'</td>' +
+      '<td>'+w[3]+'</td>' +
+      '<td><span class="rtag">'+w[1]+'</span></td>';
+    tr.innerHTML = cells;
+    tb.appendChild(tr);
+  });
+});
+
+/* ---------- One-liners ---------- */
+const olBox = document.getElementById("oneLiners");
+olBox.innerHTML = '<div class="tipbox"><span class="lbl">🔥 One-Liner Facts (High-Retention):</span><ul style="margin:8px 0 0 20px">' +
+  ONELINERS.map(o => '<li style="margin:3px 0">'+o+'</li>').join("") + '</ul></div>';
+
+/* ---------- Stats ---------- */
+const statsEl = document.getElementById("stats");
+const revFoot = document.getElementById("revFoot");
+function updateStats(){
+  const shown = cardsEl.querySelectorAll(".hcard:not(.hide)").length;
+  statsEl.textContent = "✅ Revised: "+revised.size+"/102  •  Dikha rahe (showing): "+shown+"/102";
+  revFoot.textContent = revised.size+"/102";
+}
+updateStats();
+
+/* ---------- Search ---------- */
+const search = document.getElementById("search");
+search.addEventListener("input", () => {
+  const q = search.value.trim().toLowerCase();
+  cardsEl.querySelectorAll(".hcard").forEach(c => {
+    c.classList.toggle("hide", q !== "" && !c.dataset.search.includes(q));
+  });
+  updateStats();
+});
+
+/* ---------- Back to top ---------- */
+const toTop = document.getElementById("toTop");
+window.addEventListener("scroll", () => {
+  toTop.classList.toggle("show", window.scrollY > 500);
+});
+toTop.addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
+</script>
+</body>
+</html>
