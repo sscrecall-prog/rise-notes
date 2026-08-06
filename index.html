@@ -1,64 +1,24 @@
-<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Rise Notes</title><style>*{box-sizing:border-box}body{margin:0;background:#faeed9;color:#38370d;font-family:Arial,sans-serif}header{background:#38370d;color:white;padding:35px 18px}header div,main{max-width:950px;margin:auto}h1{font-size:clamp(34px,9vw,58px);margin:20px 0 4px}h1 span{color:#e1a837}header p{color:#c9b87a}.brand{color:#e1a837;font-weight:bold}.topbar{display:flex;align-items:center;justify-content:space-between;gap:15px}.about-btn{color:#38370d;background:#e1a837;border-radius:10px;padding:9px 14px;font-size:13px;font-weight:bold;text-decoration:none;white-space:nowrap}main{padding:27px 16px}.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.card{background:white;border:2px solid #f5d98a;border-radius:16px;padding:17px;text-decoration:none;color:inherit;min-height:125px}.icon{font-size:28px}.card h2{font-size:16px;margin:8px 0 4px}.card p{font-size:12px;color:#6c6742}.tag{display:inline-block;font-size:10px;font-weight:bold;background:#fdf6e8;border:1px solid #f5d98a;padding:4px 8px;border-radius:20px;margin-top:8px}@media(min-width:700px){.grid{grid-template-columns:repeat(4,1fr)}}.section{margin:28px 0}.section-head{display:flex;align-items:end;justify-content:space-between;gap:12px;margin-bottom:12px}.section-head h2{margin:0}.section-head p{margin:0;color:#77704c;font-size:12px}.english-card{border-color:#d8b45b;background:#fffaf0}
-:root{--bg:#faeed9;--text:#38370d;--header:#38370d;--headerText:#fff;--muted:#6c6742;--card:#fff;--border:#f5d98a;--accent:#e1a837;--soft:#fdf6e8}
-body{background:var(--bg);color:var(--text);transition:background .25s,color .25s}
-header{background:var(--header);color:var(--headerText);transition:background .25s,color .25s}
-.card{background:var(--card);border-color:var(--border);color:var(--text);transition:background .25s,color .25s,border-color .25s,transform .2s}
-.card:hover{transform:translateY(-2px)}
-.card p,.section-head p{color:var(--muted)}
-.tag{background:var(--soft);border-color:var(--border)}
-.brand-wrap{display:flex;align-items:center;gap:10px}
-.brand-logo{width:46px;height:46px;border-radius:50%;object-fit:cover;border:2px solid var(--accent);box-shadow:0 0 0 2px rgba(225,168,55,.12)}
-.brand-text{display:flex;flex-direction:column;line-height:1.05}
-.brand-name{font-weight:900;font-size:18px;letter-spacing:.5px;color:#fff}
-.brand-name b{color:var(--accent)}
-.brand-sub{font-size:9px;color:#c9b87a;margin-top:4px}
-.top-actions{display:flex;gap:7px;align-items:center}
-.theme-btn{border:1px solid var(--accent);background:transparent;color:var(--accent);border-radius:10px;padding:9px 11px;font-weight:800;cursor:pointer}
-body.dark{--bg:#07111f;--text:#eaf0f8;--header:#030914;--headerText:#fff;--muted:#9aabc0;--card:#0d1928;--border:#263a53;--soft:#132338}
-body.dark .english-card{background:#101b2b;border-color:#6b5522}
-body.dark .about-btn{color:#07111f}
-@media(max-width:560px){.brand-logo{width:40px;height:40px}.brand-name{font-size:15px}.brand-sub{display:none}.about-btn{padding:8px 9px}.theme-label{display:none}.topbar{gap:8px}.top-actions{gap:5px}}
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#38370D"><title>Sunny Rise — Free SSC Study Notes</title>
+<style>
+:root{--cream:#FAEED9;--gold:#E1A837;--olive:#8D7A02;--ink:#38370D;--paper:#fffdf8;--muted:#756f55;--line:#ead9ad;--shadow:0 14px 35px rgba(56,55,13,.10)}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;background:var(--cream);color:var(--ink);line-height:1.5}.wrap{width:min(1120px,calc(100% - 32px));margin:auto}.nav{position:sticky;top:0;z-index:20;background:rgba(56,55,13,.94);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.08)}.navin{height:72px;display:flex;align-items:center;justify-content:space-between;gap:16px}.brand{display:flex;align-items:center;gap:11px;color:white;text-decoration:none}.brand img{width:43px;height:43px;border-radius:50%;object-fit:cover;border:2px solid var(--gold)}.brand strong{font-size:17px;letter-spacing:.7px}.brand strong span{color:var(--gold)}.brand small{display:block;color:#d9cfae;font-size:10px;letter-spacing:.4px}.actions{display:flex;gap:8px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;border:0;border-radius:11px;padding:10px 14px;text-decoration:none;font-weight:750;font-size:13px;cursor:pointer}.btn-gold{background:var(--gold);color:var(--ink)}.btn-ghost{border:1px solid rgba(225,168,55,.55);color:var(--gold);background:transparent}.hero{background:var(--ink);color:white;overflow:hidden;position:relative}.hero:before{content:"";position:absolute;width:430px;height:430px;border-radius:50%;background:rgba(225,168,55,.12);right:-120px;top:-180px}.heroIn{position:relative;padding:76px 0 70px;display:grid;grid-template-columns:1.25fr .75fr;gap:45px;align-items:center}.eyebrow{display:inline-flex;gap:7px;align-items:center;padding:7px 11px;border:1px solid rgba(225,168,55,.4);border-radius:99px;color:#f1cf77;background:rgba(225,168,55,.08);font-size:12px;font-weight:750}.hero h1{font-size:clamp(42px,6vw,72px);line-height:1.02;letter-spacing:-2.4px;margin:18px 0}.hero h1 span{color:var(--gold)}.hero p{max-width:650px;color:#d9d5c1;font-size:17px;margin:0 0 25px}.heroBtns{display:flex;gap:10px;flex-wrap:wrap}.heroCard{background:linear-gradient(145deg,rgba(255,255,255,.09),rgba(255,255,255,.04));border:1px solid rgba(255,255,255,.13);border-radius:24px;padding:22px;box-shadow:0 25px 60px rgba(0,0,0,.2)}.heroCard h3{margin:0 0 15px;color:#f5d477}.stat{display:flex;justify-content:space-between;align-items:center;padding:13px 0;border-bottom:1px solid rgba(255,255,255,.09)}.stat:last-child{border:0}.stat b{font-size:21px;color:white}.stat span{font-size:12px;color:#bdb9a7}.main{padding:46px 0 70px}.quick{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:-22px;position:relative;z-index:2}.quick a{background:var(--paper);border:1px solid var(--line);box-shadow:var(--shadow);padding:16px 18px;border-radius:15px;text-decoration:none;color:var(--ink);font-weight:750}.quick a span{display:block;color:var(--muted);font-size:11px;font-weight:500;margin-top:2px}.section{margin-top:50px}.sectionHead{display:flex;justify-content:space-between;align-items:end;gap:15px;margin-bottom:18px}.sectionHead h2{margin:0;font-size:27px;letter-spacing:-.5px}.sectionHead p{margin:4px 0 0;color:var(--muted);font-size:13px}.count{font-size:11px;font-weight:800;color:var(--olive);background:#f5e4b8;border:1px solid #dfc274;border-radius:99px;padding:6px 10px}.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.card{position:relative;background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:19px;text-decoration:none;color:var(--ink);min-height:165px;transition:.2s ease;overflow:hidden}.card:hover{transform:translateY(-5px);box-shadow:var(--shadow);border-color:#d6b65f}.card.disabled{opacity:.66}.ico{width:44px;height:44px;display:grid;place-items:center;border-radius:13px;background:#f8e9c5;font-size:23px}.card h3{font-size:17px;margin:13px 0 5px}.card p{font-size:12px;color:var(--muted);margin:0 0 14px}.tag{position:absolute;bottom:16px;left:19px;font-size:9px;font-weight:850;letter-spacing:.5px;color:var(--olive);text-transform:uppercase}.arrow{position:absolute;right:17px;bottom:13px;font-size:21px;color:#ad8a27}.eng{background:linear-gradient(145deg,#fffdf8,#fff6df)}.footer{background:#2f2f0c;color:#d7d1b8;padding:30px 0;font-size:12px}.foot{display:flex;justify-content:space-between;gap:20px;align-items:center}.foot b{color:var(--gold)}body.dark{--cream:#08111d;--paper:#0f1b29;--ink:#edf2f7;--muted:#9baabc;--line:#26394d;--shadow:0 15px 38px rgba(0,0,0,.25)}body.dark .hero,body.dark .nav{background:#030a13}body.dark .card.eng{background:linear-gradient(145deg,#0f1b29,#151d25)}body.dark .ico{background:#2a2917}body.dark .count{background:#272515;border-color:#65582a;color:#e8c45d}body.dark .quick a{background:var(--paper)}
+@media(max-width:850px){.heroIn{grid-template-columns:1fr}.heroCard{display:none}.grid{grid-template-columns:repeat(2,1fr)}.heroIn{padding:58px 0 60px}.quick{grid-template-columns:1fr 1fr 1fr}}
+@media(max-width:560px){.wrap{width:min(100% - 22px,1120px)}.navin{height:64px}.brand small{display:none}.brand img{width:38px;height:38px}.actions .about{display:none}.btn{padding:9px 10px}.hero h1{font-size:43px;letter-spacing:-1.5px}.hero p{font-size:14px}.heroIn{padding:47px 0 52px}.quick{grid-template-columns:1fr;margin-top:-16px}.grid{grid-template-columns:1fr 1fr;gap:10px}.card{padding:15px;min-height:160px}.tag{left:15px}.section{margin-top:38px}.sectionHead h2{font-size:23px}.sectionHead{align-items:center}.foot{display:block}.foot div+div{margin-top:8px}}
 </style></head><body>
-<header><div><div class="topbar">
-<div class="brand-wrap">
-<img class="brand-logo" src="assets/sunnyrise-profile.jpg" alt="Sunny Rise logo">
-<div class="brand-text"><span class="brand-name">SUNNY <b>RISE</b></span><span class="brand-sub">Your Knowledge Partner</span></div>
-</div>
-<div class="top-actions">
-<button class="theme-btn" id="themeToggle" type="button" aria-label="Toggle dark and light mode"><span id="themeIcon">🌙</span> <span class="theme-label" id="themeLabel">Dark</span></button>
-<a class="about-btn" href="search/index.html">🔎 Search</a>
-<a class="about-btn" href="about/index.html">👤 About</a>
-</div></div><h1>Study Smarter. <span>Revise Faster.</span></h1><p>Free GS notes and SSC English practice resources.</p></div></header>
-<main>
-<section class="section"><div class="section-head"><div><h2>📚 GS</h2><p>General Studies — subject-wise notes</p></div></div><div class="grid">
-<a class="card" href="physics/index.html"><div class="icon">⚛️</div><h2>Physics</h2><p>Physics notes and formulas.</p><span class="tag">8 NOTES LIVE</span></a>
-<a class="card" href="economics/index.html"><div class="icon">📈</div><h2>Economics</h2><p>Complete topic-wise Economics library.</p><span class="tag">11 NOTES LIVE</span></a>
-<a class="card" href="polity/index.html"><div class="icon">🏛️</div><h2>Polity</h2><p>Indian Polity & Constitution notes.</p><span class="tag">2 NOTES LIVE</span></a>
-<div class="card"><div class="icon">📜</div><h2>History</h2><p>Coming soon</p></div>
-<div class="card"><div class="icon">🌍</div><h2>Geography</h2><p>Coming soon</p></div>
-<div class="card"><div class="icon">🧪</div><h2>Chemistry</h2><p>Coming soon</p></div>
-<a class="card" href="biology/index.html"><div class="icon">🧬</div><h2>Biology</h2><p>Complete topic-wise Biology notes.</p><span class="tag">11 NOTES LIVE</span></a>
-<div class="card"><div class="icon">🎯</div><h2>Static GK</h2><p>Coming soon</p></div>
-</div></section>
-<section class="section"><div class="section-head"><div><h2>🔤 English</h2><p>SSC English PYQ & practice resources</p></div></div><div class="grid">
-<a class="card english-card" href="english/ssc-cgl-2025/index.html"><div class="icon">📝</div><h2>SSC CGL 2025</h2><p>10 SSC CGL 2025 English PYQ practice collections.</p><span class="tag">10 SETS LIVE</span></a>
-<a class="card english-card" href="english/vocabulary/index.html"><div class="icon">📚</div><h2>Vocabulary</h2><p>Phrasal Verbs and SSC vocabulary resources.</p><span class="tag">2 PAGES LIVE</span></a>
-</div></section>
-</main>
-<script>
-(function(){
- const body=document.body, btn=document.getElementById('themeToggle'),
- icon=document.getElementById('themeIcon'), label=document.getElementById('themeLabel');
- function apply(mode){
-   const dark=mode==='dark';
-   body.classList.toggle('dark',dark);
-   icon.textContent=dark?'☀️':'🌙';
-   label.textContent=dark?'Light':'Dark';
-   localStorage.setItem('sunnyrise-theme',mode);
- }
- const saved=localStorage.getItem('sunnyrise-theme');
- apply(saved || (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'));
- btn.addEventListener('click',()=>apply(body.classList.contains('dark')?'light':'dark'));
-})();
-</script>
-</body></html>
+<nav class="nav"><div class="wrap navin"><a class="brand" href="index.html"><img src="assets/sunnyrise-profile.jpg" alt="Sunny Rise"><div><strong>SUNNY <span>RISE</span></strong><small>YOUR KNOWLEDGE PARTNER</small></div></a><div class="actions"><button class="btn btn-ghost" id="theme">🌙 <span>Dark</span></button><a class="btn btn-ghost" href="search/index.html">🔎 Search</a><a class="btn btn-gold about" href="about/index.html">About</a></div></div></nav>
+<header class="hero"><div class="wrap heroIn"><div><div class="eyebrow">🎯 Built for SSC & competitive exams</div><h1>Study Smarter.<br><span>Revise Faster.</span></h1><p>Clean, exam-focused General Studies notes and English practice resources — organized topic by topic so you spend less time searching and more time learning.</p><div class="heroBtns"><a class="btn btn-gold" href="#subjects">Explore Notes →</a><a class="btn btn-ghost" href="english/index.html">Practice English</a></div></div><aside class="heroCard"><h3>📚 Learning Library</h3><div class="stat"><span>General Studies subjects</span><b>7+</b></div><div class="stat"><span>Live GS notes</span><b>32+</b></div><div class="stat"><span>English practice sets</span><b>12+</b></div><div class="stat"><span>Access</span><b>FREE</b></div></aside></div></header>
+<main class="main"><div class="wrap"><div class="quick"><a href="search/index.html">🔎 Find a topic<span>Search across Sunny Rise notes</span></a><a href="english/ssc-cgl-2025/index.html">📝 SSC CGL PYQ<span>Practice English 2025 collections</span></a><a href="english/vocabulary/index.html">🧠 Build vocabulary<span>Phrasal verbs, homonyms & more</span></a></div>
+<section class="section" id="subjects"><div class="sectionHead"><div><h2>📚 General Studies</h2><p>Choose a subject and start revising.</p></div><span class="count">32+ NOTES LIVE</span></div><div class="grid">
+<a class="card" href="physics/index.html"><div class="ico">⚛️</div><h3>Physics</h3><p>Concepts, formulas and exam-ready notes.</p><span class="tag">8 notes live</span><span class="arrow">›</span></a>
+<a class="card" href="economics/index.html"><div class="ico">📈</div><h3>Economics</h3><p>Topic-wise economics from basics to exams.</p><span class="tag">11 notes live</span><span class="arrow">›</span></a>
+<a class="card" href="polity/index.html"><div class="ico">🏛️</div><h3>Polity</h3><p>Indian Constitution and polity concepts.</p><span class="tag">2 notes live</span><span class="arrow">›</span></a>
+<a class="card" href="biology/index.html"><div class="ico">🧬</div><h3>Biology</h3><p>Complete topic-wise biology revision.</p><span class="tag">11 notes live</span><span class="arrow">›</span></a>
+<div class="card disabled"><div class="ico">📜</div><h3>History</h3><p>Structured history notes are being prepared.</p><span class="tag">coming soon</span></div>
+<div class="card disabled"><div class="ico">🌍</div><h3>Geography</h3><p>Physical and Indian geography resources.</p><span class="tag">coming soon</span></div>
+<div class="card disabled"><div class="ico">🧪</div><h3>Chemistry</h3><p>Core chemistry concepts for competitive exams.</p><span class="tag">coming soon</span></div>
+<div class="card disabled"><div class="ico">🎯</div><h3>Static GK</h3><p>High-yield static GK revision library.</p><span class="tag">coming soon</span></div></div></section>
+<section class="section"><div class="sectionHead"><div><h2>🔤 English Practice</h2><p>PYQs and vocabulary designed for SSC preparation.</p></div><span class="count">12+ RESOURCES</span></div><div class="grid">
+<a class="card eng" href="english/ssc-cgl-2025/index.html"><div class="ico">📝</div><h3>SSC CGL 2025</h3><p>Cloze tests, idioms, errors, spellings and more.</p><span class="tag">10 sets live</span><span class="arrow">›</span></a>
+<a class="card eng" href="english/vocabulary/index.html"><div class="ico">📖</div><h3>Vocabulary</h3><p>Phrasal verbs, homonyms and word mastery.</p><span class="tag">2 pages live</span><span class="arrow">›</span></a></div></section></div></main>
+<footer class="footer"><div class="wrap foot"><div><b>SUNNY RISE</b> · Your Knowledge Partner</div><div>Made for focused, distraction-free learning.</div></div></footer>
+<script>(function(){const b=document.body,t=document.getElementById('theme'),s=t.querySelector('span');function set(m){const d=m==='dark';b.classList.toggle('dark',d);t.firstChild.nodeValue=d?'☀️ ':'🌙 ';s.textContent=d?'Light':'Dark';localStorage.setItem('sunnyrise-theme',m)}set(localStorage.getItem('sunnyrise-theme')||'light');t.onclick=()=>set(b.classList.contains('dark')?'light':'dark')})();</script></body></html>
