@@ -1,5 +1,34 @@
-<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Rise Notes</title><style>*{box-sizing:border-box}body{margin:0;background:#faeed9;color:#38370d;font-family:Arial,sans-serif}header{background:#38370d;color:white;padding:35px 18px}header div,main{max-width:950px;margin:auto}h1{font-size:clamp(34px,9vw,58px);margin:20px 0 4px}h1 span{color:#e1a837}header p{color:#c9b87a}.brand{color:#e1a837;font-weight:bold}.topbar{display:flex;align-items:center;justify-content:space-between;gap:15px}.about-btn{color:#38370d;background:#e1a837;border-radius:10px;padding:9px 14px;font-size:13px;font-weight:bold;text-decoration:none;white-space:nowrap}main{padding:27px 16px}.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.card{background:white;border:2px solid #f5d98a;border-radius:16px;padding:17px;text-decoration:none;color:inherit;min-height:125px}.icon{font-size:28px}.card h2{font-size:16px;margin:8px 0 4px}.card p{font-size:12px;color:#6c6742}.tag{display:inline-block;font-size:10px;font-weight:bold;background:#fdf6e8;border:1px solid #f5d98a;padding:4px 8px;border-radius:20px;margin-top:8px}@media(min-width:700px){.grid{grid-template-columns:repeat(4,1fr)}}.section{margin:28px 0}.section-head{display:flex;align-items:end;justify-content:space-between;gap:12px;margin-bottom:12px}.section-head h2{margin:0}.section-head p{margin:0;color:#77704c;font-size:12px}.english-card{border-color:#d8b45b;background:#fffaf0}</style></head><body>
-<header><div><div class="topbar"><span class="brand">📚 Rise Notes</span><div><a class="about-btn" href="search/index.html">🔎 Search</a> <a class="about-btn" href="about/index.html">👤 About</a></div></div><h1>Study Smarter. <span>Revise Faster.</span></h1><p>Free GS notes and SSC English practice resources.</p></div></header>
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Rise Notes</title><style>*{box-sizing:border-box}body{margin:0;background:#faeed9;color:#38370d;font-family:Arial,sans-serif}header{background:#38370d;color:white;padding:35px 18px}header div,main{max-width:950px;margin:auto}h1{font-size:clamp(34px,9vw,58px);margin:20px 0 4px}h1 span{color:#e1a837}header p{color:#c9b87a}.brand{color:#e1a837;font-weight:bold}.topbar{display:flex;align-items:center;justify-content:space-between;gap:15px}.about-btn{color:#38370d;background:#e1a837;border-radius:10px;padding:9px 14px;font-size:13px;font-weight:bold;text-decoration:none;white-space:nowrap}main{padding:27px 16px}.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.card{background:white;border:2px solid #f5d98a;border-radius:16px;padding:17px;text-decoration:none;color:inherit;min-height:125px}.icon{font-size:28px}.card h2{font-size:16px;margin:8px 0 4px}.card p{font-size:12px;color:#6c6742}.tag{display:inline-block;font-size:10px;font-weight:bold;background:#fdf6e8;border:1px solid #f5d98a;padding:4px 8px;border-radius:20px;margin-top:8px}@media(min-width:700px){.grid{grid-template-columns:repeat(4,1fr)}}.section{margin:28px 0}.section-head{display:flex;align-items:end;justify-content:space-between;gap:12px;margin-bottom:12px}.section-head h2{margin:0}.section-head p{margin:0;color:#77704c;font-size:12px}.english-card{border-color:#d8b45b;background:#fffaf0}
+:root{--bg:#faeed9;--text:#38370d;--header:#38370d;--headerText:#fff;--muted:#6c6742;--card:#fff;--border:#f5d98a;--accent:#e1a837;--soft:#fdf6e8}
+body{background:var(--bg);color:var(--text);transition:background .25s,color .25s}
+header{background:var(--header);color:var(--headerText);transition:background .25s,color .25s}
+.card{background:var(--card);border-color:var(--border);color:var(--text);transition:background .25s,color .25s,border-color .25s,transform .2s}
+.card:hover{transform:translateY(-2px)}
+.card p,.section-head p{color:var(--muted)}
+.tag{background:var(--soft);border-color:var(--border)}
+.brand-wrap{display:flex;align-items:center;gap:10px}
+.brand-logo{width:46px;height:46px;border-radius:50%;object-fit:cover;border:2px solid var(--accent);box-shadow:0 0 0 2px rgba(225,168,55,.12)}
+.brand-text{display:flex;flex-direction:column;line-height:1.05}
+.brand-name{font-weight:900;font-size:18px;letter-spacing:.5px;color:#fff}
+.brand-name b{color:var(--accent)}
+.brand-sub{font-size:9px;color:#c9b87a;margin-top:4px}
+.top-actions{display:flex;gap:7px;align-items:center}
+.theme-btn{border:1px solid var(--accent);background:transparent;color:var(--accent);border-radius:10px;padding:9px 11px;font-weight:800;cursor:pointer}
+body.dark{--bg:#07111f;--text:#eaf0f8;--header:#030914;--headerText:#fff;--muted:#9aabc0;--card:#0d1928;--border:#263a53;--soft:#132338}
+body.dark .english-card{background:#101b2b;border-color:#6b5522}
+body.dark .about-btn{color:#07111f}
+@media(max-width:560px){.brand-logo{width:40px;height:40px}.brand-name{font-size:15px}.brand-sub{display:none}.about-btn{padding:8px 9px}.theme-label{display:none}.topbar{gap:8px}.top-actions{gap:5px}}
+</style></head><body>
+<header><div><div class="topbar">
+<div class="brand-wrap">
+<img class="brand-logo" src="assets/sunnyrise-profile.jpg" alt="Sunny Rise logo">
+<div class="brand-text"><span class="brand-name">SUNNY <b>RISE</b></span><span class="brand-sub">Your Knowledge Partner</span></div>
+</div>
+<div class="top-actions">
+<button class="theme-btn" id="themeToggle" type="button" aria-label="Toggle dark and light mode"><span id="themeIcon">🌙</span> <span class="theme-label" id="themeLabel">Dark</span></button>
+<a class="about-btn" href="search/index.html">🔎 Search</a>
+<a class="about-btn" href="about/index.html">👤 About</a>
+</div></div><h1>Study Smarter. <span>Revise Faster.</span></h1><p>Free GS notes and SSC English practice resources.</p></div></header>
 <main>
 <section class="section"><div class="section-head"><div><h2>📚 GS</h2><p>General Studies — subject-wise notes</p></div></div><div class="grid">
 <a class="card" href="physics/index.html"><div class="icon">⚛️</div><h2>Physics</h2><p>Physics notes and formulas.</p><span class="tag">8 NOTES LIVE</span></a>
@@ -14,4 +43,21 @@
 <section class="section"><div class="section-head"><div><h2>🔤 English</h2><p>SSC English PYQ & practice resources</p></div></div><div class="grid">
 <a class="card english-card" href="english/ssc-cgl-2025/index.html"><div class="icon">📝</div><h2>SSC CGL 2025</h2><p>10 SSC CGL 2025 English PYQ practice collections.</p><span class="tag">10 SETS LIVE</span></a>
 </div></section>
-</main></body></html>
+</main>
+<script>
+(function(){
+ const body=document.body, btn=document.getElementById('themeToggle'),
+ icon=document.getElementById('themeIcon'), label=document.getElementById('themeLabel');
+ function apply(mode){
+   const dark=mode==='dark';
+   body.classList.toggle('dark',dark);
+   icon.textContent=dark?'☀️':'🌙';
+   label.textContent=dark?'Light':'Dark';
+   localStorage.setItem('sunnyrise-theme',mode);
+ }
+ const saved=localStorage.getItem('sunnyrise-theme');
+ apply(saved || (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'));
+ btn.addEventListener('click',()=>apply(body.classList.contains('dark')?'light':'dark'));
+})();
+</script>
+</body></html>
