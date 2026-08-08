@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Budget & Taxation – Lecture 5 | Parmar SSC</title>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700;800&family=Hind:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --deep:    #0D1B2A;
+    --navy:    #1A2940;
+    --teal:    #1C5F82;
+    --saffron: #D95F1A;
+    --gold:    #EDB830;
+    --green:   #1A7A42;
+    --red:     #B03A2E;
+    --purple:  #6C3483;
+    --blue:    #1A6EA8;
+    --cyan:    #0E8A74;
+    --amber:   #C87D00;
+    --light:   #F3F7FB;
+    --card:    #FFFFFF;
+    --text:    #1C2833;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Hind', sans-serif; background: #E8EFF7; color: var(--text); line-height: 1.78; }
+
+  header {
+    background: linear-gradient(135deg, #0D1B2A 0%, #1A2940 55%, #1C5F82 100%);
+    padding: 46px 20px; text-align: center; position: relative; overflow: hidden;
+  }
+  header::before { content: '₹'; position: absolute; font-size: 340px; opacity: 0.04; right: -20px; top: -60px; font-family: 'Baloo 2'; color: #EDB830; }
+  header h1 { font-family: 'Baloo 2', cursive; font-size: 2.5rem; font-weight: 800; color: var(--gold); }
+  header p  { color: #85A9C8; margin-top: 6px; font-size: 0.97rem; }
+  .badge { display: inline-block; background: var(--saffron); color: white; font-size: 0.73rem; font-weight: 700; padding: 4px 16px; border-radius: 20px; margin-top: 10px; letter-spacing: 1px; text-transform: uppercase; }
+
+  .container { max-width: 920px; margin: 0 auto; padding: 30px 16px 70px; }
+
+  .section-title { font-family: 'Baloo 2', cursive; font-size: 1.4rem; font-weight: 800; color: white; background: linear-gradient(135deg, var(--teal), var(--navy)); padding: 13px 24px; border-radius: 12px 12px 0 0; border-left: 6px solid var(--gold); margin-top: 38px; }
+  .section-body { background: var(--card); border-radius: 0 0 12px 12px; padding: 22px 26px; box-shadow: 0 4px 22px rgba(0,0,0,0.07); border: 1px solid #CCDAEB; border-top: none; }
+
+  .card { background: var(--light); border-radius: 10px; padding: 16px 18px; margin: 12px 0; border-left: 4px solid var(--blue); }
+  .card.green  { border-left-color: var(--green); }
+  .card.orange { border-left-color: var(--saffron); }
+  .card.purple { border-left-color: var(--purple); }
+  .card.red    { border-left-color: var(--red); }
+  .card.gold   { border-left-color: var(--gold); }
+  .card.cyan   { border-left-color: var(--cyan); }
+  .card.teal   { border-left-color: var(--teal); }
+  .card-title  { font-family: 'Baloo 2', cursive; font-weight: 700; font-size: 1.05rem; color: var(--teal); margin-bottom: 6px; }
+
+  .example { background: linear-gradient(135deg,#fff9e6,#fff3cd); border: 1px solid #ffc107; border-radius: 8px; padding: 10px 14px; margin-top: 10px; font-size: 0.9rem; }
+  .example::before { content: '💡 Real Life Example: '; font-weight: 700; color: #c47d00; }
+  .exam-tip { background: linear-gradient(135deg,#ffecd2,#fcb69f); border-radius: 8px; padding: 10px 16px; margin-top: 10px; font-size: 0.88rem; font-weight: 600; color: #7d2a00; }
+  .exam-tip::before { content: '🎯 Exam Tip: '; }
+  .key { background: #E4F0FB; border-radius: 8px; padding: 10px 14px; margin: 8px 0; font-size: 0.92rem; border-left: 3px solid var(--blue); }
+  .key b { color: var(--teal); }
+  .alert { background: linear-gradient(135deg,#fdecea,#fad7d7); border: 1px solid #e74c3c; border-radius: 8px; padding: 10px 14px; margin: 8px 0; font-size: 0.9rem; font-weight: 600; color: #922b21; }
+  .alert::before { content: '⚠️ Important: '; }
+
+  table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 0.88rem; }
+  th { background: linear-gradient(135deg, var(--teal), var(--navy)); color: white; padding: 10px 12px; text-align: left; font-family: 'Baloo 2', cursive; }
+  td { padding: 9px 12px; border-bottom: 1px solid #D8E4F0; vertical-align: top; }
+  tr:nth-child(even) td { background: #EEF4FB; }
+  tr:hover td { background: #DFF0FA; }
+
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 14px 0; }
+  .grid3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin: 14px 0; }
+
+  .box { border-radius: 12px; padding: 16px; color: white; font-size: 0.88rem; }
+  .box .btitle { font-family: 'Baloo 2'; font-size: 1rem; font-weight: 700; margin-bottom: 6px; }
+  .box.blue   { background: linear-gradient(135deg,#1A6EA8,#155E90); }
+  .box.green  { background: linear-gradient(135deg,#1A7A42,#166835); }
+  .box.purple { background: linear-gradient(135deg,#6C3483,#5B2C6F); }
+  .box.orange { background: linear-gradient(135deg,#D95F1A,#BA5217); }
+  .box.red    { background: linear-gradient(135deg,#B03A2E,#962D22); }
+  .box.teal   { background: linear-gradient(135deg,#0E8A74,#0B7560); }
+  .box.gold   { background: linear-gradient(135deg,#C87D00,#A96A00); }
+  .box.dark   { background: linear-gradient(135deg,#1A2940,#0D1B2A); }
+  .box.cyan   { background: linear-gradient(135deg,#1C5F82,#165070); }
+  .box.amber  { background: linear-gradient(135deg,#D4900A,#B77B09); }
+
+  .formula { background: linear-gradient(135deg,#0D1B2A,#1A2940); color: #EDB830; font-family: 'Baloo 2', cursive; font-size: 1rem; font-weight: 700; text-align: center; padding: 13px; border-radius: 10px; margin: 10px 0; }
+  .formula.green-f { background: linear-gradient(135deg,#1A7A42,#166835); color: #A9DFBF; }
+  .formula.red-f   { background: linear-gradient(135deg,#B03A2E,#962D22); color: #FADBD8; }
+
+  /* Budget type cards */
+  .budget-type { border-radius: 10px; padding: 14px 18px; margin: 8px 0; color: white; }
+  .bt-balanced  { background: linear-gradient(135deg,#1A7A42,#166835); }
+  .bt-surplus   { background: linear-gradient(135deg,#1A6EA8,#155E90); }
+  .bt-deficit   { background: linear-gradient(135deg,#B03A2E,#962D22); }
+  .budget-type .bttitle { font-family: 'Baloo 2'; font-size: 1.05rem; font-weight: 700; margin-bottom: 5px; }
+
+  /* Deficit cards */
+  .deficit-card { border-radius: 10px; padding: 14px 18px; margin: 9px 0; background: white; border-left: 5px solid; box-shadow: 0 2px 10px rgba(0,0,0,0.06); }
+  .deficit-card .dtitle { font-family: 'Baloo 2'; font-weight: 800; font-size: 1rem; margin-bottom: 4px; }
+  .d1 { border-color: #1A6EA8; } .d1 .dtitle { color: #1A6EA8; }
+  .d2 { border-color: #D95F1A; } .d2 .dtitle { color: #D95F1A; }
+  .d3 { border-color: #B03A2E; } .d3 .dtitle { color: #B03A2E; }
+  .d4 { border-color: #6C3483; } .d4 .dtitle { color: #6C3483; }
+  .d5 { border-color: #0E8A74; } .d5 .dtitle { color: #0E8A74; }
+
+  /* Tax comparison */
+  .tax-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 14px 0; }
+  .tax-card { border-radius: 12px; padding: 18px; }
+  .tax-direct { background: linear-gradient(135deg,#EBF5EA,#D5EFCF); border: 2px solid #1A7A42; }
+  .tax-indirect { background: linear-gradient(135deg,#EAF2FB,#D0E8F8); border: 2px solid #1A6EA8; }
+  .tax-card .ttitle { font-family: 'Baloo 2'; font-weight: 800; font-size: 1.1rem; margin-bottom: 8px; }
+  .tax-direct .ttitle { color: #1A7A42; }
+  .tax-indirect .ttitle { color: #1A6EA8; }
+
+  /* Revenue vs Capital table-style */
+  .rev-cap { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; margin: 14px 0; border: 2px solid var(--teal); border-radius: 12px; overflow: hidden; }
+  .rc-header { background: var(--teal); color: white; padding: 11px 16px; font-family: 'Baloo 2'; font-weight: 700; font-size: 1rem; }
+  .rc-cell { background: var(--light); padding: 10px 14px; font-size: 0.88rem; }
+  .rc-cell.sub { background: #E8F4FB; font-weight: 600; border-top: 1px solid #cde; }
+  .rc-cell.items { background: white; padding: 8px 14px; font-size: 0.86rem; }
+
+  /* Rupee flow */
+  .rupee-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 14px 0; }
+  .rupee-box { border-radius: 12px; padding: 16px; }
+  .rupee-in  { background: linear-gradient(135deg,#EAF2FB,#D0E8F8); border: 2px solid #1A6EA8; }
+  .rupee-out { background: linear-gradient(135deg,#FEF9E7,#FDF0D0); border: 2px solid #EDB830; }
+  .rupee-box .rtitle { font-family: 'Baloo 2'; font-weight: 800; font-size: 1.05rem; margin-bottom: 10px; }
+  .rupee-in  .rtitle { color: #1A6EA8; }
+  .rupee-out .rtitle { color: #B77B09; }
+  .rupee-item { display: flex; justify-content: space-between; align-items: center; padding: 5px 0; border-bottom: 1px solid rgba(0,0,0,0.07); font-size: 0.87rem; }
+  .rupee-item:last-child { border-bottom: none; }
+  .rupee-pct { font-family: 'Baloo 2'; font-weight: 700; font-size: 0.95rem; }
+
+  /* Finance commission table */
+  .fc-table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 0.86rem; }
+  .fc-table th { background: linear-gradient(135deg,#6C3483,#5B2C6F); color: white; padding: 9px 12px; font-family: 'Baloo 2'; text-align: left; }
+  .fc-table td { padding: 8px 12px; border-bottom: 1px solid #E5D8F0; vertical-align: top; }
+  .fc-table tr:nth-child(even) td { background: #F5EEF8; }
+
+  .highlight { background: linear-gradient(120deg,#ffeaa7,#fdcb6e); padding: 2px 6px; border-radius: 4px; font-weight: 700; }
+  p  { margin: 8px 0; font-size: 0.93rem; }
+  ul { padding-left: 20px; margin: 6px 0; }
+  li { margin: 5px 0; font-size: 0.92rem; }
+
+  footer { text-align: center; padding: 30px; background: var(--deep); color: #85A9C8; font-size: 0.85rem; }
+</style>
+<style id="sr-system">:root{--sr-cream:#FAEED9;--sr-gold:#E1A837;--sr-olive:#8D7A02;--sr-ink:#38370D;--sr-paper:#fffdf8;--sr-muted:#756f55;--sr-line:#ead9ad;--sr-shadow:0 14px 35px rgba(56,55,13,.10)}.srbar{position:sticky!important;top:0!important;z-index:99999!important;background:rgba(56,55,13,.96)!important;backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.08)!important;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Arial,sans-serif!important}.srbar *{box-sizing:border-box}.srbarin{width:min(1120px,calc(100% - 28px));height:64px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:12px}.srbrand{display:flex;align-items:center;gap:10px;color:#fff!important;text-decoration:none!important}.srbrand img{width:38px!important;height:38px!important;border-radius:50%!important;object-fit:cover!important;border:2px solid var(--sr-gold)!important;margin:0!important}.srbrand b{font-size:15px!important;letter-spacing:.6px!important;color:#fff!important}.srbrand b span{color:var(--sr-gold)!important}.sractions{display:flex;gap:7px}.srbtn{border:1px solid rgba(225,168,55,.55)!important;background:transparent!important;color:var(--sr-gold)!important;border-radius:10px!important;padding:8px 10px!important;text-decoration:none!important;font:700 12px/1 Inter,system-ui,sans-serif!important;cursor:pointer}.srbtn.primary{background:var(--sr-gold)!important;color:var(--sr-ink)!important}@media(max-width:520px){.srbarin{height:58px}.srbrand img{width:34px!important;height:34px!important}.srbrand b{font-size:13px!important}.srbtn{padding:8px!important}.srhide{display:none!important}}body.sr-dark{filter:none}body.sr-dark .srbar{background:#030a13!important}</style></head>
+<body><div class="srbar"><div class="srbarin"><a class="srbrand" href="../index.html"><img src="../assets/sunnyrise-profile.jpg" alt="Sunny Rise"><b>SUNNY <span>RISE</span></b></a><div class="sractions"><a class="srbtn srhide" href="../search/index.html">🔎 Search</a><button class="srbtn" onclick="document.body.classList.toggle('sr-dark');localStorage.setItem('sunnyrise-leaf-dark',document.body.classList.contains('sr-dark')?'1':'0')">◐ Theme</button><a class="srbtn primary" href="../index.html">⌂ Home</a></div></div></div>
+
+<header>
+  <h1>📋 Budget & Taxation</h1>
+  <p>Complete Detailed Notes — Lecture 5 | Sunny Rise</p>
+  <span class="badge">SSC Exam Preparation</span>
+</header>
+
+<div class="container">
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!--  1. WHAT IS BUDGET                         -->
+  <!-- ═══════════════════════════════════════════ -->
+  <div class="section-title">📄 1. Union Budget — Fundamentals & Constitutional Framework</div>
+  <div class="section-body">
+    <div class="card">
+      <div class="card-title">📌 Definition</div>
+      <p>Budget = एक <strong>specific period (Financial Year: April 1 – March 31)</strong> में government की <strong>expected Revenue (Receipts) और Expenditure का अनुमान</strong>।</p>
+    </div>
+
+    <div class="card gold">
+      <div class="card-title">⚖️ Constitutional Reference — Article 112</div>
+      <ul>
+        <li>Constitution में <strong>"Budget" शब्द कहीं नहीं है</strong> — यह Article 112 में <span class="highlight">"Annual Financial Statement (AFS)"</span> कहलाता है।</li>
+        <li><strong>Mandate:</strong> President shall cause the AFS to be laid before <strong>both Houses of Parliament</strong>।</li>
+        <li><strong>Presentation:</strong> President के नाम से laid होता है — लेकिन present करते हैं <strong>Finance Minister</strong>।</li>
+        <li><strong>Prepared By:</strong> Department of Economic Affairs — <strong>Ministry of Finance</strong>।</li>
+      </ul>
+    </div>
+
+    <div class="card cyan">
+      <div class="card-title">🍬 Halwa Ceremony (हलवा समारोह)</div>
+      <p>Budget documents की printing शुरू होने से पहले एक customary ritual। Budget printing में involved सभी officials को <strong>"quarantine" (isolation)</strong> में रखा जाता है — secrecy बनाए रखने के लिए — जब तक Budget Parliament में present न हो जाए।</p>
+    </div>
+
+    <div class="example">
+      जैसे आप महीने की शुरुआत में plan करते हैं — "इस महीने ₹30,000 income होगी, ₹20,000 खर्च होगी" — यही Budget है। India का Union Budget पूरे देश के लिए ऐसा ही annual plan है।
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!--  2. HISTORICAL TRIVIA                      -->
+  <!-- ═══════════════════════════════════════════ -->
+  <div class="section-title">📜 2. Budget — Historical Facts & Trivia</div>
+  <div class="section-body">
+    <table>
+      <tr><th>Category</th><th>Details</th></tr>
+      <tr><td><strong>🥇 First Budget</strong></td><td>Presented by <strong>R.K. Shanmukham Chetty</strong> — First Finance Minister of Independent India</td></tr>
+      <tr><td><strong>🥈 Second Budget</strong></td><td>Presented by <strong>John Mathai</strong> — who was also the first Railway Minister</td></tr>
+      <tr><td><strong>📊 Maximum Budgets</strong></td><td><strong>Morarji Desai</strong> — record holder with <strong>10 Budgets</strong> (as Finance Minister)</td></tr>
+      <tr><td><strong>Notable FMs</strong></td><td><strong>P. Chidambaram</strong> — 9 times। <strong>Pranab Mukherjee</strong> — 8 times</td></tr>
+      <tr><td><strong>Current FM</strong></td><td><strong>Nirmala Sitharaman</strong> — 9 times (consecutive), equaling Chidambaram's record। First full-time female Finance Minister। (Note: Indira Gandhi held it temporarily as PM)</td></tr>
+      <tr><td><strong>Gender Budget</strong></td><td>Introduced in <strong>2005-06</strong>। Women/female welfare के लिए separate fund allocation</td></tr>
+      <tr><td><strong>Presentation Date Change</strong></td><td><strong>2017 से</strong> Feb end से <strong>February 1st</strong> पर shift किया — ताकि Financial Year (April 1) शुरू होने तक funds available हों</td></tr>
+      <tr><td><strong>🗓️ Budget on Sunday</strong></td><td>First time in India's history — Union Budget presented on a <strong>Sunday, 1 February 2026</strong></td></tr>
+    </table>
+
+    <div class="exam-tip">Morarji Desai = Maximum 10 budgets। Nirmala Sitharaman = First full-time female FM। First Budget = R.K. Shanmukham Chetty। ये तीनों बहुत आते हैं exam में।</div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!--  3. RAILWAY BUDGET + VOTE ON ACCOUNT       -->
+  <!-- ═══════════════════════════════════════════ -->
+  <div class="section-title">🚂 3. Railway Budget Evolution + Vote on Account + Economic Survey</div>
+  <div class="section-body">
+
+    <div class="card blue">
+      <div class="card-title">🚂 Evolution of Railway Budget</div>
+      <ul>
+        <li><strong>Separation (1921):</strong> Railway Budget को General Budget से अलग किया — <span class="highlight">Acworth Committee</span> की recommendations पर।</li>
+        <li><strong>Merger (2016):</strong> Railway Budget को General Budget में वापस merge किया — <span class="highlight">Bibek Debroy Committee</span> की recommendations पर।</li>
+        <li><strong>First Merged Budget:</strong> FY 2017-18 के लिए present किया गया।</li>
+      </ul>
+    </div>
+
+    <div class="card orange">
+      <div class="card-title">🗳️ Vote on Account — Article 116</div>
+      <p>यह एक <strong>advance grant</strong> है जो Government को full Budget pass होने से पहले <strong>Consolidated Fund of India</strong> से essential expenses (salaries, pensions) withdraw करने की permission देता है।</p>
+      <ul>
+        <li><strong>Duration:</strong> Usually <strong>2 months</strong> (1/6th of the annual budget)।</li>
+        <li><strong>Scope:</strong> Expenditure cover करता है only। Taxes alter नहीं कर सकता, new schemes introduce नहीं कर सकता।</li>
+        <li><strong>Relevance:</strong> 2017 से (जब Budget Feb 1 हो गया)।</li>
+      </ul>
+    </div>
+
+    <div class="card green">
+      <div class="card-title">📊 Economic Survey (आर्थिक सर्वेक्षण)</div>
+      <p>India की <strong>economic performance का "Report Card"</strong> — पिछले financial year का analysis और future trends।</p>
+      <ul>
+        <li><strong>Timing:</strong> Union Budget से <strong>1-2 days पहले</strong> Parliament में present होता है।</li>
+        <li><strong>Prepared By:</strong> Department of Economic Affairs — <strong>Chief Economic Advisor (CEA)</strong> की guidance में।</li>
+        <li><strong>Current CEA:</strong> V. Anantha Nageswaran।</li>
+      </ul>
+    </div>
+
+    <div class="exam-tip">Acworth Committee = Railway Budget separation 1921। Bibek Debroy Committee = Railway Budget merger 2016। Vote on Account = Article 116।</div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!--  4. FUNCTIONS OF BUDGET                    -->
+  <!-- ═══════════════════════════════════════════ -->
+  <div class="section-title">⚙️ 4. Functions of Budget (बजट के कार्य)</div>
+  <div class="section-body">
+    <div class="grid3">
+      <div class="box blue">
+        <div class="btitle">📦 Allocation Function</div>
+        Resources को <strong>public goods और private goods</strong> के बीच divide करना।<br><br>
+        Decide करना — कौन से social services और infrastructure projects fund होंगे।<br>
+        <em>Example: Hospitals, Roads, Schools के लिए budget allocate करना।</em>
+      </div>
+      <div class="box green">
+        <div class="btitle">⚖️ Redistribution Function</div>
+        <strong>Income inequality कम</strong> करना।<br><br>
+        Method: Progressive taxation (ज़्यादा income → ज़्यादा tax) + Social welfare programs (unemployment benefits, scholarships)।<br>
+        <em>Example: Rich पर higher income tax + Poor को free ration।</em>
+      </div>
+      <div class="box orange">
+        <div class="btitle">📈 Stabilisation Function</div>
+        <strong>Economic stability बनाए रखना</strong>।<br><br>
+        Recession में: Spending बढ़ाओ → economy boost करो।<br>
+        Inflation में: Spending घटाओ → economy cool down करो।<br>
+        <em>Example: COVID में stimulus package।</em>
+      </div>
+    </div>
+    <div class="example">
+      2020-21 COVID Budget — Government ने health, food, और rural schemes पर spending बढ़ाई (Stabilisation + Redistribution function)। PMGKAY — गरीबों को free ration — Redistribution function।
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!--  5. ASSET, LIABILITY, REVENUE, CAPITAL     -->
+  <!-- ═══════════════════════════════════════════ -->
+  <div class="section-title">🏦 5. Asset, Liability, Revenue & Capital — Concepts</div>
+  <div class="section-body">
+
+    <div class="grid2">
+      <div class="box teal">
+        <div class="btitle">🏆 Asset (संपत्ति)</div>
+        Economic value वाला resource जो individual/company/country <strong>own या control</strong> करता है — future benefit की expectation से।<br>
+        <em>Examples: Gold, Property, Land, Factory machinery</em>
+      </div>
+      <div class="box red">
+        <div class="btitle">💳 Liability (देनदारी)</div>
+        किसी दूसरी party को debt या duty <strong>fulfill करने का obligation</strong>।<br>
+        <em>Examples: Bank loan repayment, Bond payments, EMI</em>
+      </div>
+    </div>
+
+    <p style="font-weight:700; color:var(--teal); margin-top:16px;">Budget को 2 parts में divide करते हैं:</p>
+
+    <div class="grid2">
+      <div class="card green">
+        <div class="card-title">💰 Revenue — Regular Recurring Items</div>
+        <strong>Revenue Receipt:</strong> Regular income जो assets-liabilities change नहीं करती।<br>
+        Examples: Salary, Interest मिला, Tuition fees, Bonus<br><br>
+        <strong>Revenue Expenditure:</strong> Regular खर्च जो assets-liabilities change नहीं करता।<br>
+        Examples: Groceries, Gym fee, Interest/EMI दिया
+      </div>
+      <div class="card blue">
+        <div class="card-title">🏗️ Capital — One-time/Long-term Items</div>
+        <strong>Capital Receipt:</strong> Asset कम करे या Liability बढ़ाए।<br>
+        Examples: Property बेचना (Asset↓), Loan लेना (Liability↑), Vehicle बेचना<br><br>
+        <strong>Capital Expenditure:</strong> Asset बढ़ाए या Liability कम करे।<br>
+        Examples: Gold/Property खरीदना (Asset↑), Loan चुकाना (Liability↓), Gift देना
+      </div>
+    </div>
+
+    <div class="exam-tip">Revenue = Regular, Routine, Recurring। Capital = One-time, Long-term, creates/reduces assets/liabilities। यह distinction exam में बहुत आता है।</div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!--  6. GOVERNMENT BUDGET STRUCTURE            -->
+  <!-- ═══════════════════════════════════════════ -->
+  <div class="section-title">🏛️ 6. Government Budget Structure — Receipts & Expenditure</div>
+  <div class="section-body">
+
+    <p style="font-weight:700; color:var(--teal);">Government Budget के 4 Main Components:</p>
+
+    <div class="grid2">
+      <div class="card green">
+        <div class="card-title">💚 Revenue Receipts (Revenue Budget)</div>
+        <strong>Asset × | Liability ×</strong> (न asset बनता, न liability)<br><br>
+        <strong>1. Tax Revenue:</strong><br>
+        → Direct Tax: Income Tax, Corporate Tax<br>
+        → Indirect Tax: GST, Excise Duty, Customs<br><br>
+        <strong>2. Non-Tax Revenue:</strong><br>
+        → Interest (loans दिए पर), Dividend (PSU से), Fees/Fines
+      </div>
+      <div class="card blue">
+        <div class="card-title">💙 Capital Receipts (Capital Budget)</div>
+        <strong>Asset ↓ | Liability ↑</strong> (asset कम होता या liability बढ़ती)<br><br>
+        → <strong>Loan (Borrowing):</strong> Market से funds उधार लेना → Liability↑<br>
+        → <strong>Disinvestment:</strong> Govt. PSU shares बेचना → Asset↓<br><br>
+        <em>Examples: Market borrowings, Small savings, RBI borrowing</em>
+      </div>
+    </div>
+
+    <div class="grid2">
+      <div class="card orange">
+        <div class="card-title">🟠 Revenue Expenditure (Revenue Budget)</div>
+        <strong>Asset × | Liability ×</strong><br><br>
+        Regular day-to-day government expenses।<br>
+        → <strong>Salary</strong> (govt. employees की)<br>
+        → <strong>Pension</strong><br>
+        → <strong>Interest payments</strong> (loans पर)<br>
+        → <strong>Grants</strong> (States को, other governments को)<br>
+        → Subsidies, Welfare schemes running costs
+      </div>
+      <div class="card purple">
+        <div class="card-title">💜 Capital Expenditure (Capital Budget)</div>
+        <strong>Asset ↑ | Liability ↓</strong><br><br>
+        Long-term asset creation या liability reduction।<br>
+        → <strong>Development:</strong> Hospitals, Schools, Highways<br>
+        → <strong>Loan Given:</strong> States, Govt. companies को<br>
+        → <strong>Loan Repayment:</strong> Earlier borrowings चुकाना
+      </div>
+    </div>
+
+    <div class="card red">
+      <div class="card-title">🔢 Order of Expenditure in Government Budget (Largest to Smallest)</div>
+      <p style="font-size:1.05rem; text-align:center; font-family:'Baloo 2'; color:var(--red); font-weight:800; margin:10px 0;">
+        Interest Payment > Central Sector Schemes > Subsidies > Pension
+      </p>
+      <div class="example">
+        2026-27 Budget में: Interest Payment ~20% → Central Sector Schemes ~17% → Subsidies ~6% → Pension ~2% of expenditure।
+      </div>
+    </div>
+
+    <p style="font-weight:700; color:var(--teal); margin-top:14px;">💰 "Rupee Comes From" (Revenue Sources 2026-27):</p>
+    <div class="rupee-grid">
+      <div class="rupee-box rupee-in">
+        <div class="rtitle">₹ Rupee कहाँ से आता है</div>
+        <div class="rupee-item"><span>Borrowings & Liabilities</span><span class="rupee-pct" style="color:#1A6EA8;">24%</span></div>
+        <div class="rupee-item"><span>Income Tax</span><span class="rupee-pct" style="color:#1A7A42;">21%</span></div>
+        <div class="rupee-item"><span>Corporation Tax</span><span class="rupee-pct" style="color:#6C3483;">18%</span></div>
+        <div class="rupee-item"><span>GST & other taxes</span><span class="rupee-pct" style="color:#D95F1A;">15%</span></div>
+        <div class="rupee-item"><span>Non-Tax Revenues</span><span class="rupee-pct" style="color:#0E8A74;">10%</span></div>
+        <div class="rupee-item"><span>Union Excise Duties</span><span class="rupee-pct" style="color:#B03A2E;">6%</span></div>
+        <div class="rupee-item"><span>Customs</span><span class="rupee-pct" style="color:#C87D00;">4%</span></div>
+        <div class="rupee-item"><span>Non-Debt Capital</span><span class="rupee-pct" style="color:#888;">2%</span></div>
+      </div>
+      <div class="rupee-box rupee-out">
+        <div class="rtitle">₹ Rupee कहाँ जाता है</div>
+        <div class="rupee-item"><span>Revenue Expenditure</span><span class="rupee-pct" style="color:#B77B09;">41%</span></div>
+        <div class="rupee-item"><span>Interest Payment</span><span class="rupee-pct" style="color:#B03A2E;">20%</span></div>
+        <div class="rupee-item"><span>States Share of Taxes</span><span class="rupee-pct" style="color:#1A7A42;">22%</span></div>
+        <div class="rupee-item"><span>Central Sector Scheme</span><span class="rupee-pct" style="color:#1A6EA8;">17%</span></div>
+        <div class="rupee-item"><span>Defence</span><span class="rupee-pct" style="color:#B03A2E;">11%</span></div>
+        <div class="rupee-item"><span>Centrally Sponsored</span><span class="rupee-pct" style="color:#6C3483;">8%</span></div>
+        <div class="rupee-item"><span>Finance Commission</span><span class="rupee-pct" style="color:#0E8A74;">7%</span></div>
+        <div class="rupee-item"><span>Major Subsidies</span><span class="rupee-pct" style="color:#D95F1A;">6%</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!--  7. TAXATION SYSTEM                        -->
+  <!-- ═══════════════════════════════════════════ -->
+  <div class="section-title">💸 7. Taxation System in India (Direct vs Indirect Taxes)</div>
+  <div class="section-body">
+
+    <div class="tax-grid">
+      <div class="tax-card tax-direct">
+        <div class="ttitle">✅ Direct Taxes (प्रत्यक्ष कर)</div>
+        <ul>
+          <li>Government को <strong>directly pay</strong> किए जाते हैं।</li>
+          <li>दूसरे person को <strong>transfer नहीं</strong> हो सकते।</li>
+          <li>Nature: <strong>Progressive</strong> — Income बढ़ने पर tax rate बढ़ता है।</li>
+        </ul>
+        <p style="margin-top:8px;"><strong>Examples:</strong></p>
+        <ul>
+          <li>Income Tax</li>
+          <li>Corporate Tax (Companies पर)</li>
+          <li>Capital Gains Tax</li>
+          <li>Wealth Tax (abolished)</li>
+          <li>Gift Tax</li>
+        </ul>
+      </div>
+      <div class="tax-card tax-indirect">
+        <div class="ttitle">🔄 Indirect Taxes (अप्रत्यक्ष कर)</div>
+        <ul>
+          <li>Government को <strong>indirectly pay</strong> होते हैं (seller के through)।</li>
+          <li>दूसरे person को <strong>transfer हो सकते</strong> हैं।</li>
+          <li>Nature: <strong>Regressive/Proportional</strong> — income के हिसाब से नहीं बदलता।</li>
+        </ul>
+        <p style="margin-top:8px;"><strong>Examples:</strong></p>
+        <ul>
+          <li>GST</li>
+          <li>Excise Duty</li>
+          <li>Customs Duty</li>
+          <li>Tax on petrol, diesel, aviation turbine fuel</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="alert">
+      <strong>Petrol/Diesel outside GST:</strong> Centre levies Central Excise। States levy VAT/Sales Tax।<br>
+      <strong>Alcohol (human consumption) outside GST:</strong> No Central Excise। States levy State Excise + VAT/Sales Tax + Licence fees।
+    </div>
+
+    <div class="example">
+      Income Tax = Direct Tax — आप directly IT Department को pay करते हैं। GST = Indirect Tax — आप shopkeeper को ₹118 pay करते हैं, shopkeeper government को ₹18 जमा करता है। आप directly नहीं दे रहे।
+    </div>
+    <div class="exam-tip">Direct Tax = Progressive + Non-transferable। Indirect Tax = Regressive + Transferable। यह distinction exam में fixed है।</div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!--  8. GST                                    -->
+  <!-- ═══════════════════════════════════════════ -->
+  <div class="section-title">🛒 8. Goods and Services Tax (GST) — Complete Notes</div>
+  <div class="section-body">
+
+    <div class="card gold">
+      <div class="card-title">📌 GST क्या है?</div>
+      <p>GST एक <strong>Destination-based Consumption Tax</strong> है — जहाँ goods/services consume होती है वहाँ tax लगता है।</p>
+      <p><strong>Cascading Effect को हटाया:</strong> पहले "Tax on Tax" लगता था हर production stage पर — GST ने यह समाप्त किया।</p>
+    </div>
+
+    <div class="card green">
+      <div class="card-title">📋 Key Facts about GST</div>
+      <ul>
+        <li>Introduced through: <span class="highlight">101st Constitutional Amendment Act</span></li>
+        <li>Came into force: <span class="highlight">1 July 2017</span></li>
+        <li>First State to ratify GST Bill: <span class="highlight">Assam</span></li>
+        <li>Constitutional body: <strong>GST Council — Article 279A</strong></li>
+        <li>GST Council Members: <strong>33 members (2 from Centre + 31 from States)</strong></li>
+        <li>Chairperson: <strong>Union Finance Minister</strong></li>
+      </ul>
+    </div>
+
+    <div class="card blue">
+      <div class="card-title">🌊 Cascading Effect (कर पर कर) — GST ने इसे खत्म किया</div>
+      <p>पहले हर production stage पर previous stage के tax के ऊपर भी tax लगता था = "Tax on Tax" = Cascading Effect।</p>
+      <div class="example">
+        GST से पहले: Cotton पर tax लगा → Yarn बनाई, Yarn पर tax + पहले वाला tax → Cloth बनी, फिर tax on tax on tax। GST के बाद: Input Tax Credit — पिछले stage का tax claim हो जाता है। Overall price कम।
+      </div>
+    </div>
+
+    <div class="exam-tip">101st Amendment = GST। 1 July 2017 = GST launch। Assam = First to ratify। Article 279A = GST Council। FM = Chairperson। ये सब exam में आते हैं।</div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!--  9. OTHER TAXES                            -->
+  <!-- ═══════════════════════════════════════════ -->
+  <div class="section-title">🔖 9. Other Important Taxes (Surcharge, Cess, Pigouvian, Paper Tax)</div>
+  <div class="section-body">
+
+    <div class="grid2">
+      <div class="card orange">
+        <div class="card-title">📌 Surcharge (अधिभार)</div>
+        <p>एक <strong>additional tax</strong> — specified income limit से ऊपर की income वाले लोगों पर।</p>
+        <p>यह Article 271 के under levied है और <strong>States के साथ share नहीं होता</strong>।</p>
+        <div class="example">Income ₹1 crore से ज़्यादा होने पर extra 15% surcharge — यह extra tax है normal income tax के ऊपर।</div>
+      </div>
+      <div class="card cyan">
+        <div class="card-title">🎯 Cess (उपकर)</div>
+        <p>एक <strong>specific purpose के लिए</strong> levy किया गया tax।</p>
+        <p>Central Government collect करती है — <strong>States के साथ share नहीं होता</strong>।</p>
+        <div class="example">Education Cess (education के लिए), Swachh Bharat Cess, Health & Education Cess — ये सब Cess हैं।</div>
+      </div>
+    </div>
+
+    <div class="card purple">
+      <div class="card-title">🌿 Pigouvian Tax (पिगोवियन कर)</div>
+      <p>उन activities पर tax जो <strong>negative externalities</strong> (harmful effects on society) create करती हैं — harmful effects को reduce करने के लिए।</p>
+      <div class="example">
+        Pollution फैलाने वाली factories पर tax। Cigarettes/alcohol पर sin tax। Carbon tax। — ये सब Pigouvian taxes हैं।
+      </div>
+    </div>
+
+    <div class="card red">
+      <div class="card-title">📄 Paper Taxes (Nominal/Symbolic Tax)</div>
+      <p>वो taxes जो <strong>सिर्फ paper पर exist</strong> करते हैं — revenue collection में significant contribution नहीं।</p>
+      <p><strong>Other names:</strong> Nominal Tax, Symbolic Tax</p>
+      <p><strong>Examples:</strong> Wealth Tax, Gift Tax, Estate Duty (अब abolished)।</p>
+    </div>
+
+    <div class="exam-tip">Surcharge = Additional tax on high income, not shared with states। Cess = Specific purpose tax, not shared with states। Pigouvian = Negative externalities पर tax।</div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!--  10. TYPES OF BUDGET + DEFICITS            -->
+  <!-- ═══════════════════════════════════════════ -->
+  <div class="section-title">📊 10. Types of Budget (3 Types)</div>
+  <div class="section-body">
+    <div class="grid3">
+      <div class="budget-type bt-balanced">
+        <div class="bttitle">⚖️ 1. Balanced Budget</div>
+        Total Revenue = Total Expenditure<br>
+        <em>Income = Spending</em><br>
+        Ideal in theory, rare in practice
+      </div>
+      <div class="budget-type bt-surplus">
+        <div class="bttitle">📈 2. Surplus Budget</div>
+        Total Revenue > Total Expenditure<br>
+        <em>Income > Spending</em><br>
+        Government के पास extra पैसा है
+      </div>
+      <div class="budget-type bt-deficit">
+        <div class="bttitle">📉 3. Deficit Budget</div>
+        Total Expenditure > Total Revenue<br>
+        <em>Spending > Income</em><br>
+        India का हर budget typically यही है
+      </div>
+    </div>
+
+    <div class="example">
+      India almost हर साल Deficit Budget present करता है — Government ज़्यादा खर्च करती है development के लिए। इस gap को borrowings से fill किया जाता है।
+    </div>
+    <div class="exam-tip">India mostly Deficit Budget — Developing economies की यह common feature है।</div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!--  11. TYPES OF DEFICIT                      -->
+  <!-- ═══════════════════════════════════════════ -->
+  <div class="section-title">📉 11. Types of Deficit (5 प्रकार) — सबसे Important Topic</div>
+  <div class="section-body">
+
+    <div class="deficit-card d1">
+      <div class="dtitle">1. Budget Deficit (बजट घाटा)</div>
+      <p>Total Expenditure और Total Receipts (सभी receipts) का फर्क।</p>
+      <div class="formula">Budget Deficit = Total Expenditure − Total Receipts</div>
+    </div>
+
+    <div class="deficit-card d2">
+      <div class="dtitle">2. Revenue Deficit (राजस्व घाटा)</div>
+      <p>Government की Revenue Expenditure Revenue Receipts से ज़्यादा है। यह दिखाता है कि government अपने regular खर्च के लिए भी पर्याप्त revenue नहीं generate कर रही।</p>
+      <div class="formula">Revenue Deficit = Revenue Expenditure − Revenue Receipts</div>
+      <div class="example">Govt. की salary, pension, interest payments = ₹40 lakh crore। Tax + non-tax income = ₹35 lakh crore → Revenue Deficit = ₹5 lakh crore।</div>
+    </div>
+
+    <div class="deficit-card d3">
+      <div class="dtitle">3. Fiscal Deficit (राजकोषीय घाटा) — Most Important!</div>
+      <p>Total expenditure और Total receipts <strong>excluding borrowings</strong> का फर्क। यह बताता है कि Government को <strong>कितना borrowing करना पड़ेगा</strong>।</p>
+      <p>Fiscal Deficit = Government की borrowing requirement।</p>
+      <div class="formula">Fiscal Deficit = Total Expenditure − (Total Receipts excluding Borrowings)</div>
+      <div class="example">India का Fiscal Deficit target 2026-27 में 4.3% of GDP। यह government की biggest concern है।</div>
+    </div>
+
+    <div class="deficit-card d4">
+      <div class="dtitle">4. Primary Deficit (प्राथमिक घाटा)</div>
+      <p>Fiscal Deficit में से <strong>Interest Payments घटाने</strong> के बाद बचता है। यह दिखाता है कि interest payments छोड़कर government actually कितने deficit में है।</p>
+      <div class="formula">Primary Deficit = Fiscal Deficit − Interest Payments</div>
+      <div class="key"><b>अगर Primary Deficit = 0:</b> Government current expenses के लिए बorrow नहीं कर रही — सिर्फ पुराने loans का interest चुका रही है।</div>
+    </div>
+
+    <div class="deficit-card d5">
+      <div class="dtitle">5. Effective Revenue Deficit (प्रभावी राजस्व घाटा)</div>
+      <p>Revenue Deficit में से <strong>Capital Assets बनाने के लिए दिए गए Grants</strong> घटाना। यह truly non-productive revenue spending दिखाता है।</p>
+      <div class="formula">Effective Revenue Deficit = Revenue Deficit − Grants for creation of capital assets</div>
+    </div>
+
+    <div class="exam-tip">Fiscal Deficit सबसे important है — exam में सबसे ज़्यादा आता है। Primary Deficit = Fiscal Deficit − Interest Payments। India FY26-27 Fiscal Deficit target = 4.3% of GDP।</div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!--  12. DEFICIT FINANCING                     -->
+  <!-- ═══════════════════════════════════════════ -->
+  <div class="section-title">💳 12. Deficit Financing (घाटे का वित्तपोषण)</div>
+  <div class="section-body">
+    <div class="card gold">
+      <div class="card-title">📌 Concept</div>
+      <p>Deficit Financing का concept <strong>John Maynard Keynes</strong> ने popularize किया।</p>
+      <p>जब Government अपने deficit को fill करने के लिए funds raise करती है।</p>
+    </div>
+
+    <div class="grid2">
+      <div class="box blue">
+        <div class="btitle">1. 💰 Debt Financing</div>
+        Method: <strong>Borrowing</strong> से पैसा raise करना।<br>
+        Impact: <strong>Liability ↑</strong> (Liability बढ़ती है)<br><br>
+        Examples: Market borrowings, Loans from RBI, Government bonds, Small savings schemes
+      </div>
+      <div class="box green">
+        <div class="btitle">2. 📈 Equity Financing</div>
+        Method: <strong>Ownership (Shares) बेचकर</strong> पैसा raise करना।<br>
+        Impact: <strong>Asset ↓</strong> (Asset घटता है)<br><br>
+        Examples: Disinvestment of PSUs (जैसे Air India sell, LIC IPO)
+      </div>
+    </div>
+
+    <div class="example">
+      India ने Air India को Tata को बेचा = Equity Financing (Asset↓)। Government ने ₹15 lakh crore bonds issue किए = Debt Financing (Liability↑)।
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!--  13. LAFFER CURVE                          -->
+  <!-- ═══════════════════════════════════════════ -->
+  <div class="section-title">📈 13. Laffer Curve (लाफर वक्र)</div>
+  <div class="section-body">
+    <div class="card">
+      <div class="card-title">📌 Concept</div>
+      <p>Laffer Curve एक graph है जो <strong>Tax Rate और Government Revenue के बीच relationship</strong> दिखाता है।</p>
+      <p><strong>Key Insight:</strong> एक certain point के बाद, tax rate बढ़ाने से government revenue <strong>actually घट सकती है</strong>।</p>
+    </div>
+
+    <div class="grid3">
+      <div class="box green">
+        <div class="btitle">Tax Rate = 0%</div>
+        Revenue = ₹0<br>
+        (कोई tax नहीं = कोई revenue नहीं)
+      </div>
+      <div class="box amber">
+        <div class="btitle">Tax Rate = t* (Optimal)</div>
+        Revenue = Maximum<br>
+        (Sweet spot — सबसे ज़्यादा revenue)
+      </div>
+      <div class="box red">
+        <div class="btitle">Tax Rate = 100%</div>
+        Revenue = ₹0<br>
+        (कोई work नहीं करेगा → कोई income नहीं)
+      </div>
+    </div>
+
+    <div class="card orange">
+      <div class="card-title">⚠️ High Tax Rates के Side Effects</div>
+      <ul>
+        <li>High tax → Investment discourage होती है।</li>
+        <li>High tax → Consumption कम होती है।</li>
+        <li>Workers effort कम करते हैं (extra income anyway heavily taxed होगी)।</li>
+        <li>Tax evasion बढ़ती है — लोग hide करने लगते हैं।</li>
+      </ul>
+    </div>
+
+    <div class="example">
+      1970s में India में 97.5% peak income tax था। लोग income छुपाते थे, black money बढ़ी। इसीलिए Rajiv Gandhi सरकार ने taxes घटाए — revenue actually बढ़ी। यही Laffer Curve principle था।
+    </div>
+    <div class="exam-tip">Laffer Curve = Tax Rate vs Revenue। Optimum point t* = Maximum revenue। 100% tax = 0 revenue। यह important concept है।</div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!--  14. FRBM ACT 2003                         -->
+  <!-- ═══════════════════════════════════════════ -->
+  <div class="section-title">📋 14. FRBM Act, 2003 — Fiscal Responsibility & Budget Management</div>
+  <div class="section-body">
+    <div class="card">
+      <div class="card-title">📌 Overview</div>
+      <ul>
+        <li><strong>Full form:</strong> Fiscal Responsibility and Budget Management Act, 2003</li>
+        <li><strong>Purpose:</strong> Fiscal discipline improve करना, public funds का better management, fiscal deficit reduce करना।</li>
+      </ul>
+    </div>
+
+    <div class="card green">
+      <div class="card-title">📄 Under FRBM Act — Government को Budget के साथ ये 3 Documents present करने होते हैं:</div>
+      <table>
+        <tr><th>Document</th><th>Purpose</th></tr>
+        <tr><td><strong>1. Medium-Term Fiscal Policy Statement</strong></td><td>आगले <strong>3 years के fiscal targets</strong> set करना</td></tr>
+        <tr><td><strong>2. Fiscal Policy Strategy Statement</strong></td><td>Financial objectives और strategies outline करना</td></tr>
+        <tr><td><strong>3. Macroeconomic Framework Statement</strong></td><td>Economic conditions assess करना (GDP growth etc.)</td></tr>
+      </table>
+    </div>
+
+    <div class="card blue">
+      <div class="card-title">📊 16th Finance Commission — Key Points</div>
+      <ul>
+        <li>Vertical share of devolution: <strong>41%</strong> retain करने की recommendation accept की गई।</li>
+        <li>States को FY 2027 के लिए Finance Commission Grants: <strong>₹1.4 lakh crore</strong> (Rural और Urban Local Body grants + Disaster Management grants)।</li>
+      </ul>
+    </div>
+
+    <div class="card purple">
+      <div class="card-title">📊 Fiscal Consolidation Targets</div>
+      <ul>
+        <li>Central Government target: Debt-to-GDP ratio <strong>50±1% by 2030</strong>।</li>
+        <li>FY 2026-27 Debt-to-GDP: <strong>55.6%</strong> estimated।</li>
+        <li>FY 2025-26 Fiscal Deficit: <strong>4.4% of GDP</strong> (Revised Estimate)।</li>
+        <li>FY 2026-27 Fiscal Deficit target: <strong>4.3% of GDP</strong> (Budget Estimate)।</li>
+      </ul>
+    </div>
+
+    <div class="exam-tip">FRBM Act 2003 = Fiscal discipline। 3 mandatory documents: Medium-Term Fiscal Policy, Fiscal Policy Strategy, Macroeconomic Framework।</div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!--  15. 16TH FINANCE COMMISSION DEVOLUTION    -->
+  <!-- ═══════════════════════════════════════════ -->
+  <div class="section-title">🏛️ 15. Finance Commission — Devolution Factors</div>
+  <div class="section-body">
+    <div class="card">
+      <div class="card-title">📌 Tax Devolution — Criteria (16th Finance Commission)</div>
+      <p>States को Central taxes का share कैसे distribute होता है — यह factors determine करते हैं:</p>
+    </div>
+    <table class="fc-table">
+      <tr><th>Factor</th><th>Weight</th><th>Meaning</th></tr>
+      <tr><td><strong>Income Distance</strong></td><td><strong>45%</strong> — Highest</td><td>Poorer states को ज़्यादा share — gap from richest state</td></tr>
+      <tr><td><strong>Population (2011)</strong></td><td>15%</td><td>ज़्यादा population वाले states को ज़्यादा funds</td></tr>
+      <tr><td><strong>Area</strong></td><td>15%</td><td>Bigger states को ज़्यादा resources</td></tr>
+      <tr><td><strong>Forest & Ecology</strong></td><td>10%</td><td>Forests preserve करने वाले states को reward</td></tr>
+      <tr><td><strong>Demographic Performance</strong></td><td>12.5%</td><td>Population growth control करने वाले states को incentive</td></tr>
+      <tr><td><strong>Tax Effort</strong></td><td>2.5%</td><td>Tax efficiently collect करने वाले states को reward</td></tr>
+    </table>
+    <div class="exam-tip">Income Distance = Highest weight (45%)। यह ensure करता है कि Bihar, UP जैसे poor states को ज़्यादा share मिले।</div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════ -->
+  <!--  QUICK REVISION TABLE                      -->
+  <!-- ═══════════════════════════════════════════ -->
+  <div class="section-title">⚡ Quick Revision — सभी Key Facts एक नज़र में</div>
+  <div class="section-body">
+    <table>
+      <tr><th>Topic</th><th>Key Fact</th></tr>
+      <tr><td>Budget Constitutional name</td><td>Annual Financial Statement — Article 112</td></tr>
+      <tr><td>Budget Prepared By</td><td>Department of Economic Affairs — Ministry of Finance</td></tr>
+      <tr><td>First Budget of India</td><td>R.K. Shanmukham Chetty</td></tr>
+      <tr><td>Maximum Budgets</td><td>Morarji Desai — 10 Budgets</td></tr>
+      <tr><td>First full-time Female FM</td><td>Nirmala Sitharaman</td></tr>
+      <tr><td>Nirmala Sitharaman Budgets</td><td>9 consecutive (= P. Chidambaram's record)</td></tr>
+      <tr><td>Gender Budget Introduced</td><td>2005-06</td></tr>
+      <tr><td>Budget Date Change</td><td>2017 से February 1st</td></tr>
+      <tr><td>Budget on Sunday</td><td>1 February 2026 — First time in India</td></tr>
+      <tr><td>Railway Budget Separated</td><td>1921 — Acworth Committee</td></tr>
+      <tr><td>Railway Budget Merged</td><td>2016 — Bibek Debroy Committee</td></tr>
+      <tr><td>First Merged Budget</td><td>FY 2017-18</td></tr>
+      <tr><td>Vote on Account Article</td><td>Article 116 — 2 months / 1/6th of year</td></tr>
+      <tr><td>Economic Survey Prepared By</td><td>CEA (V. Anantha Nageswaran) — Dept. of Economic Affairs</td></tr>
+      <tr><td>Budget Functions (3)</td><td>Allocation + Redistribution + Stabilisation</td></tr>
+      <tr><td>Direct Tax — Nature</td><td>Progressive — income बढ़ने पर rate बढ़ता है</td></tr>
+      <tr><td>Indirect Tax — Nature</td><td>Regressive/Proportional — transferable</td></tr>
+      <tr><td>GST Amendment</td><td>101st Constitutional Amendment Act</td></tr>
+      <tr><td>GST Launch Date</td><td>1 July 2017</td></tr>
+      <tr><td>First State — GST Ratify</td><td>Assam</td></tr>
+      <tr><td>GST Council Article</td><td>Article 279A — Constitutional body</td></tr>
+      <tr><td>GST Council Members</td><td>33 (2 Centre + 31 States)</td></tr>
+      <tr><td>GST Council Chairperson</td><td>Union Finance Minister</td></tr>
+      <tr><td>Cascading Effect</td><td>Tax on Tax — GST ने हटाया</td></tr>
+      <tr><td>Petrol/Alcohol in GST?</td><td>❌ Outside GST</td></tr>
+      <tr><td>Surcharge — shared with states?</td><td>❌ Not shared (Article 271)</td></tr>
+      <tr><td>Cess — shared with states?</td><td>❌ Not shared</td></tr>
+      <tr><td>Pigouvian Tax</td><td>Negative externalities पर tax</td></tr>
+      <tr><td>Paper Tax examples</td><td>Wealth Tax, Gift Tax, Estate Duty (abolished)</td></tr>
+      <tr><td>Govt. Budget Largest Expenditure</td><td>Interest Payment (20%)</td></tr>
+      <tr><td>Expenditure Order</td><td>Interest > Central Schemes > Subsidies > Pension</td></tr>
+      <tr><td>Budget Deficit Formula</td><td>Total Expenditure − Total Receipts</td></tr>
+      <tr><td>Revenue Deficit Formula</td><td>Revenue Expenditure − Revenue Receipts</td></tr>
+      <tr><td>Fiscal Deficit Formula</td><td>Total Expenditure − (Receipts excluding Borrowings)</td></tr>
+      <tr><td>Primary Deficit Formula</td><td>Fiscal Deficit − Interest Payments</td></tr>
+      <tr><td>Effective Revenue Deficit</td><td>Revenue Deficit − Grants for capital assets</td></tr>
+      <tr><td>India FY26-27 Fiscal Deficit</td><td>4.3% of GDP</td></tr>
+      <tr><td>Deficit Financing Popularized by</td><td>John Maynard Keynes</td></tr>
+      <tr><td>Laffer Curve</td><td>Tax Rate vs Revenue — beyond t* revenue falls</td></tr>
+      <tr><td>FRBM Act</td><td>2003 — Fiscal Responsibility & Budget Management</td></tr>
+      <tr><td>Income Distance Weight (FC)</td><td>45% — Highest in devolution criteria</td></tr>
+      <tr><td>Capital Receipts — Impact</td><td>Asset ↓ OR Liability ↑</td></tr>
+      <tr><td>Capital Expenditure — Impact</td><td>Asset ↑ OR Liability ↓</td></tr>
+      <tr><td>Revenue — Impact</td><td>Asset × Liability × (unchanged)</td></tr>
+    </table>
+  </div>
+
+</div>
+
+<footer>
+  📚 Based on Parmar SSC — Budget & Taxation, Lecture 5 | Prepared for SSC Exam Preparation
+</footer>
+
+<script>if(localStorage.getItem('sunnyrise-leaf-dark')==='1')document.body.classList.add('sr-dark');</script></body>
+</html>

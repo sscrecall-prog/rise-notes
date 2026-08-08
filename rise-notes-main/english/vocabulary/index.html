@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#38370D">
+<title>Sunny Rise AI Vocabulary Lab — Free Competitive Exam Vocabulary</title>
+<style>
+:root{--cream:#FAEED9;--gold:#E1A837;--olive:#8D7A02;--ink:#38370D;--paper:#fffdf8;--muted:#756f55;--line:#ead9ad;--good:#2f7d32;--bad:#b23a2f;--shadow:0 14px 35px rgba(56,55,13,.10)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;background:var(--cream);color:var(--ink);line-height:1.5}
+.wrap{width:min(1160px,calc(100% - 30px));margin:auto}.nav{position:sticky;top:0;z-index:30;background:rgba(56,55,13,.96);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.08)}
+.navin{min-height:68px;display:flex;align-items:center;justify-content:space-between;gap:14px}.brand{color:#fff;text-decoration:none;font-weight:900;letter-spacing:.6px}.brand span{color:var(--gold)}.navBtns{display:flex;gap:8px;align-items:center}
+.btn{border:0;border-radius:11px;padding:10px 13px;font-weight:800;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:6px}.gold{background:var(--gold);color:#38370D}.ghost{border:1px solid rgba(225,168,55,.55);background:transparent;color:var(--gold)}
+.hero{background:var(--ink);color:white;padding:54px 0 48px;position:relative;overflow:hidden}.hero:after{content:"ABC";position:absolute;right:-15px;bottom:-85px;font-size:240px;font-weight:950;color:rgba(225,168,55,.07);letter-spacing:-25px}
+.heroGrid{position:relative;z-index:1;display:grid;grid-template-columns:1.25fr .75fr;gap:35px;align-items:center}.eyebrow{display:inline-flex;border:1px solid rgba(225,168,55,.45);background:rgba(225,168,55,.08);color:#f4cf6d;padding:7px 11px;border-radius:99px;font-size:12px;font-weight:800}
+h1{font-size:clamp(39px,6vw,68px);line-height:1.02;letter-spacing:-2px;margin:15px 0}.hero h1 span{color:var(--gold)}.hero p{color:#d9d5c1;max-width:700px;font-size:16px}.search{display:flex;background:#fff;border-radius:14px;padding:5px;max-width:650px;margin-top:22px}.search input{flex:1;border:0;outline:0;padding:12px;font-size:15px;border-radius:10px}.search button{min-width:110px}
+.stats{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:22px;padding:19px}.stats h3{color:#f4cf6d;margin:0 0 10px}.stat{display:flex;justify-content:space-between;padding:11px 0;border-bottom:1px solid rgba(255,255,255,.09)}.stat:last-child{border:0}.stat b{font-size:20px}.stat span{color:#bbb8a8;font-size:12px}
+.main{padding:30px 0 70px}.dashboard{display:grid;grid-template-columns:repeat(4,1fr);gap:11px;margin-top:0;position:relative;z-index:3}.dash{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:16px;box-shadow:var(--shadow)}.dash small{display:block;color:var(--muted)}.dash b{font-size:24px}
+.section{margin-top:40px}.sectionHead{display:flex;align-items:end;justify-content:space-between;gap:15px;margin-bottom:14px}.sectionHead h2{margin:0;font-size:27px}.sectionHead p{margin:3px 0 0;color:var(--muted);font-size:13px}
+.alpha{display:flex;gap:7px;flex-wrap:wrap}.alpha button{width:38px;height:38px;border-radius:10px;border:1px solid var(--line);background:var(--paper);color:var(--ink);font-weight:850;cursor:pointer}.alpha button.active{background:var(--ink);color:var(--gold);border-color:var(--ink)}
+.toolbar{display:flex;gap:8px;flex-wrap:wrap;margin:17px 0}.pill{border:1px solid var(--line);background:var(--paper);color:var(--ink);border-radius:99px;padding:8px 11px;font-weight:750;font-size:12px;cursor:pointer}.pill.active{background:var(--gold);border-color:var(--gold);color:#38370D}
+.words{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.word{background:var(--paper);border:1px solid var(--line);border-radius:19px;padding:19px;box-shadow:0 5px 20px rgba(56,55,13,.04)}.wordTop{display:flex;justify-content:space-between;gap:12px}.word h3{font-size:23px;margin:0}.phon{color:var(--muted);font-size:12px}.badge{display:inline-block;background:#f5e4b8;color:#6f5d00;border-radius:99px;padding:4px 8px;font-size:10px;font-weight:850;margin-top:6px}.meaning{margin:14px 0 7px}.hindi{font-weight:850;color:var(--olive)}.meta{font-size:12px;color:var(--muted);margin:6px 0}.example{background:rgba(225,168,55,.11);border-left:3px solid var(--gold);padding:10px 12px;border-radius:8px;margin:12px 0;font-size:13px}.trick{font-size:13px;margin:8px 0}.actions{display:flex;gap:7px;flex-wrap:wrap;margin-top:14px}.mini{border:1px solid var(--line);background:transparent;color:var(--ink);border-radius:9px;padding:7px 9px;font-weight:750;cursor:pointer}.mini.saved,.mini.learned{background:var(--gold);color:#38370D;border-color:var(--gold)}
+.quiz{background:var(--ink);color:white;border-radius:22px;padding:23px}.quiz h3{margin:0 0 4px;color:var(--gold)}.quiz p{color:#d5d1bd}.options{display:grid;grid-template-columns:1fr 1fr;gap:8px}.option{padding:11px;border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.06);color:white;border-radius:11px;cursor:pointer;text-align:left}.option.correct{background:#285d2b}.option.wrong{background:#7b2c27}.feedback{min-height:26px;margin-top:10px;font-weight:750}
+.empty{grid-column:1/-1;text-align:center;padding:40px;background:var(--paper);border:1px solid var(--line);border-radius:16px;color:var(--muted)}
+.footer{background:#2f2f0c;color:#d7d1b8;padding:28px 0;font-size:12px}.foot{display:flex;justify-content:space-between}.foot b{color:var(--gold)}
+body.dark{--cream:#08111d;--paper:#0f1b29;--ink:#edf2f7;--muted:#9baabc;--line:#26394d;--shadow:0 15px 38px rgba(0,0,0,.25);--olive:#e0bd55}body.dark .hero,body.dark .nav{background:#030a13}body.dark .badge{background:#292617;color:#e8c45d}body.dark .alpha button.active{background:var(--gold);color:#101010}
+
+
+.libraryToggle{font:inherit;text-align:left;cursor:pointer;width:100%}
+.azPanel{display:none}
+.azPanel.open{display:block}.azDashboard{margin-bottom:28px}
+
+.libraryGrid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.libraryCard{position:relative;display:block;background:var(--paper);border:1px solid var(--line);border-radius:17px;padding:17px;text-decoration:none;color:var(--ink);min-height:142px;transition:.2s ease}
+.libraryCard:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:#d6b65f}
+.libraryIcon{width:42px;height:42px;display:grid;place-items:center;border-radius:12px;background:rgba(225,168,55,.17);font-size:21px}
+.libraryCard h3{margin:11px 0 4px;font-size:16px}.libraryCard p{margin:0;color:var(--muted);font-size:12px}
+.libraryTag{position:absolute;left:17px;bottom:13px;font-size:9px;font-weight:900;letter-spacing:.45px;color:var(--olive);text-transform:uppercase}
+.libraryCard.coming{opacity:.62;cursor:default}
+@media(max-width:850px){.libraryGrid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.libraryGrid{grid-template-columns:1fr 1fr;gap:9px}.libraryCard{padding:14px;min-height:145px}.libraryTag{left:14px}}
+
+@media(max-width:850px){.heroGrid{grid-template-columns:1fr}.stats{display:none}.dashboard{grid-template-columns:1fr 1fr}.words{grid-template-columns:1fr}}
+@media(max-width:560px){.wrap{width:min(100% - 20px,1160px)}.hero{padding:40px 0 55px}.hero h1{font-size:42px}.search{display:grid;background:transparent;padding:0;gap:7px}.search input{padding:14px}.dashboard{gap:8px}.dash{padding:12px}.dash b{font-size:20px}.alpha button{width:35px;height:35px}.sectionHead{align-items:start;flex-direction:column}.options{grid-template-columns:1fr}.navBtns .home{display:none}}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="wrap navin"><a class="brand" href="../../index.html">SUNNY <span>RISE</span></a><div class="navBtns"><a class="btn ghost home" href="../../index.html">← Home</a><button class="btn ghost" id="theme">🌙 <span>Dark</span></button></div></div></nav>
+
+<header class="hero"><div class="wrap heroGrid"><div><span class="eyebrow">🧠 FREE • SSC • BANKING • RAILWAY • DEFENCE</span><h1>Vocabulary that you <span>actually remember.</span></h1><p>Learn high-value competitive-exam words with Hindi meanings, pronunciation, examples, memory tricks, active recall and browser-based progress tracking — no paid AI API required.</p><div class="search"><input id="search" placeholder="Search a word, meaning or synonym…"><button class="btn gold" onclick="runSearch()">Search</button></div></div><aside class="stats"><h3>🎯 Learning System</h3><div class="stat"><span>Vocabulary access</span><b>FREE</b></div><div class="stat"><span>Current library</span><b id="libraryCount">30</b></div><div class="stat"><span>Active letters</span><b>A–C</b></div><div class="stat"><span>Progress storage</span><b>LOCAL</b></div></aside></div></header>
+
+<main class="main"><div class="wrap">
+
+
+
+<section class="section" id="library">
+  <div class="sectionHead">
+    <div><h2>📚 Vocabulary Library</h2><p>Choose a learning module. Your existing Sunny Rise resources stay connected here.</p></div>
+  </div>
+  <div class="libraryGrid">
+    <button class="libraryCard libraryToggle" id="azToggle" type="button" onclick="toggleAZ()">
+      <div class="libraryIcon">🔤</div><h3>A–Z Word Mastery</h3><p>Meanings, Hindi, synonyms, examples, memory tricks and recall.</p><span class="libraryTag">OPEN A–Z EXPLORER ↓</span>
+    </button>
+    <a class="libraryCard" href="phrasal-verb/">
+      <div class="libraryIcon">🚀</div><h3>Phrasal Verbs</h3><p>Practice the existing Sunny Rise phrasal verb collection.</p><span class="libraryTag">OPEN RESOURCE →</span>
+    </a>
+    <a class="libraryCard" href="homonyms/">
+      <div class="libraryIcon">🔡</div><h3>Homonyms</h3><p>Master commonly confused same-sounding or same-form words.</p><span class="libraryTag">OPEN RESOURCE →</span>
+    </a>
+    <div class="libraryCard coming"><div class="libraryIcon">↔️</div><h3>Synonyms & Antonyms</h3><p>Exam-focused word relationships and rapid practice.</p><span class="libraryTag">COMING SOON</span></div>
+    <div class="libraryCard coming"><div class="libraryIcon">1️⃣</div><h3>One Word Substitution</h3><p>High-yield substitutions for competitive examinations.</p><span class="libraryTag">COMING SOON</span></div>
+    <div class="libraryCard coming"><div class="libraryIcon">💬</div><h3>Idioms & Phrases</h3><p>Meaning, usage and exam-oriented recall practice.</p><span class="libraryTag">COMING SOON</span></div>
+    <div class="libraryCard coming"><div class="libraryIcon">⚠️</div><h3>Confusing Words</h3><p>Learn differences between commonly mixed-up English words.</p><span class="libraryTag">COMING SOON</span></div>
+    <div class="libraryCard coming"><div class="libraryIcon">🧩</div><h3>Root Words</h3><p>Build multiple vocabulary words from common roots.</p><span class="libraryTag">COMING SOON</span></div>
+  </div>
+</section>
+
+<section class="section azPanel" id="az">
+<section class="dashboard azDashboard"><div class="dash"><small>📚 Learned</small><b id="learnedCount">0</b></div><div class="dash"><small>❤️ Saved</small><b id="savedCount">0</b></div><div class="dash"><small>🏆 Mastered</small><b id="masteredCount">0</b></div><div class="dash"><small>🔥 Streak</small><b id="streakCount">1 day</b></div></section>
+<div class="sectionHead"><div><h2>🔤 A–Z Vocabulary Explorer</h2><p>Start with A, B and C. D–Z are ready for future data expansion.</p></div></div><div class="alpha" id="alpha"></div><div class="toolbar"><button class="pill active" data-filter="all">All Words</button><button class="pill" data-filter="saved">❤️ Saved</button><button class="pill" data-filter="learned">🧠 Learned</button><button class="pill" data-filter="weak">⚠️ Weak</button></div><div class="words" id="words"></div>
+<section class="section"><div class="sectionHead"><div><h2>⚡ Quick Recall</h2><p>A random question from the words currently available.</p></div></div><div class="quiz"><h3 id="qWord">Loading…</h3><p id="qText">Choose the correct meaning.</p><div class="options" id="options"></div><div class="feedback" id="feedback"></div><button class="btn gold" onclick="newQuiz()">Next Question →</button></div></section>
+</section>
+
+
+</div></main>
+
+<footer class="footer"><div class="wrap foot"><div><b>SUNNY RISE</b> · AI Vocabulary Lab</div><div>Learn → Recall → Revise → Master</div></div></footer>
+
+<script>
+const DATA=[
+{w:"Abandon",p:"/əˈbændən/",pos:"Verb",hi:"त्याग देना, छोड़ देना",m:"To leave completely or give up.",syn:"Desert, Forsake, Relinquish",ant:"Retain, Continue",ex:"The soldiers were ordered to abandon the post.",tr:"A band ON छोड़ दिया → abandon = leave."},
+{w:"Abate",p:"/əˈbeɪt/",pos:"Verb",hi:"कम होना / कम करना",m:"To become less intense or widespread.",syn:"Subside, Diminish, Lessen",ant:"Intensify, Increase",ex:"The storm began to abate by evening.",tr:"A-BATE: intensity की rate कम हुई."},
+{w:"Abhor",p:"/əbˈhɔːr/",pos:"Verb",hi:"घृणा करना",m:"To hate something intensely.",syn:"Detest, Loathe, Despise",ant:"Admire, Love",ex:"Most people abhor cruelty.",tr:"HOR sounds like horror → something you strongly hate."},
+{w:"Abundant",p:"/əˈbʌndənt/",pos:"Adjective",hi:"प्रचुर, भरपूर",m:"Existing in large quantities; plentiful.",syn:"Plentiful, Ample, Copious",ant:"Scarce, Meagre",ex:"The region has abundant natural resources.",tr:"A bundle full = abundant."},
+{w:"Accolade",p:"/ˈækəleɪd/",pos:"Noun",hi:"सम्मान, प्रशंसा",m:"An award or expression of praise.",syn:"Honor, Award, Praise",ant:"Criticism, Disgrace",ex:"She received an accolade for her research.",tr:"Award + praise = accolade."},
+{w:"Acumen",p:"/ˈækjəmən/",pos:"Noun",hi:"तीक्ष्ण बुद्धि, सूझ-बूझ",m:"The ability to make quick and good judgments.",syn:"Insight, Shrewdness, Astuteness",ant:"Stupidity, Ineptitude",ex:"His business acumen helped the company grow.",tr:"ACU = acute/sharp → sharp judgment."},
+{w:"Adept",p:"/əˈdept/",pos:"Adjective",hi:"कुशल, निपुण",m:"Very skilled or proficient at something.",syn:"Skilled, Expert, Proficient",ant:"Inept, Unskilled",ex:"She is adept at solving complex problems.",tr:"Adept = expert."},
+{w:"Adversity",p:"/ədˈvɜːrsəti/",pos:"Noun",hi:"विपत्ति, कठिनाई",m:"A difficult or unpleasant situation.",syn:"Hardship, Misfortune, Distress",ant:"Prosperity, Fortune",ex:"Adversity often reveals character.",tr:"Adverse situation = adversity."},
+{w:"Ambiguous",p:"/æmˈbɪɡjuəs/",pos:"Adjective",hi:"अस्पष्ट, द्विअर्थी",m:"Open to more than one interpretation.",syn:"Unclear, Vague, Equivocal",ant:"Clear, Definite",ex:"The wording of the question was ambiguous.",tr:"Ambi = both → more than one meaning."},
+{w:"Amiable",p:"/ˈeɪmiəbəl/",pos:"Adjective",hi:"मिलनसार, सौम्य",m:"Friendly and pleasant in manner.",syn:"Friendly, Affable, Genial",ant:"Hostile, Unfriendly",ex:"He has an amiable personality.",tr:"Amiable person is easy to make a 'mate' with."},
+{w:"Baffle",p:"/ˈbæfəl/",pos:"Verb",hi:"उलझन में डालना",m:"To confuse or puzzle completely.",syn:"Confuse, Perplex, Bewilder",ant:"Clarify, Explain",ex:"The strange result baffled the researchers.",tr:"Baffle = brain feels puzzled."},
+{w:"Banish",p:"/ˈbænɪʃ/",pos:"Verb",hi:"निर्वासित करना, दूर करना",m:"To send someone away or get rid of something.",syn:"Exile, Expel, Oust",ant:"Welcome, Admit",ex:"The ruler banished his opponent.",tr:"Ban + ish → banned and sent away."},
+{w:"Barren",p:"/ˈbærən/",pos:"Adjective",hi:"बंजर, निष्फल",m:"Unable to produce plants or fruit; unproductive.",syn:"Sterile, Unproductive, Arid",ant:"Fertile, Productive",ex:"Very little grows on the barren land.",tr:"Barren land bears nothing."},
+{w:"Belligerent",p:"/bəˈlɪdʒərənt/",pos:"Adjective",hi:"झगड़ालू, युद्धप्रिय",m:"Hostile and aggressive.",syn:"Aggressive, Hostile, Combative",ant:"Peaceful, Friendly",ex:"His belligerent tone worsened the dispute.",tr:"Belligerent = ready for battle."},
+{w:"Benevolent",p:"/bəˈnevələnt/",pos:"Adjective",hi:"परोपकारी, दयालु",m:"Kind, generous and helpful.",syn:"Kind, Charitable, Generous",ant:"Malevolent, Cruel",ex:"The benevolent donor funded the school.",tr:"Bene = good → wishing good for others."},
+{w:"Benign",p:"/bɪˈnaɪn/",pos:"Adjective",hi:"सौम्य, हानिरहित",m:"Gentle and not harmful.",syn:"Harmless, Gentle, Mild",ant:"Harmful, Malignant",ex:"The remark was completely benign.",tr:"Benign begins with bene = good/harmless."},
+{w:"Bereft",p:"/bɪˈreft/",pos:"Adjective",hi:"वंचित, शोकाकुल",m:"Deprived of or lacking something.",syn:"Deprived, Destitute, Forlorn",ant:"Provided, Endowed",ex:"The village was bereft of basic facilities.",tr:"Bereft = left without."},
+{w:"Blatant",p:"/ˈbleɪtənt/",pos:"Adjective",hi:"स्पष्ट और निर्लज्ज",m:"Very obvious and offensive.",syn:"Obvious, Glaring, Flagrant",ant:"Subtle, Concealed",ex:"It was a blatant violation of the rules.",tr:"Blatant = boldly obvious."},
+{w:"Brevity",p:"/ˈbrevəti/",pos:"Noun",hi:"संक्षिप्तता",m:"Concise use of words; shortness.",syn:"Conciseness, Shortness, Terseness",ant:"Lengthiness, Verbosity",ex:"The brevity of his speech was appreciated.",tr:"Brief → brevity."},
+{w:"Brisk",p:"/brɪsk/",pos:"Adjective",hi:"तेज़, फुर्तीला",m:"Quick, energetic and active.",syn:"Lively, Quick, Energetic",ant:"Sluggish, Slow",ex:"We took a brisk walk in the morning.",tr:"Brisk = quick and energetic."},
+{w:"Candid",p:"/ˈkændɪd/",pos:"Adjective",hi:"स्पष्टवादी, निष्कपट",m:"Truthful and straightforward.",syn:"Frank, Honest, Forthright",ant:"Deceitful, Guarded",ex:"She gave a candid answer.",tr:"Candid camera shows things as they are."},
+{w:"Capricious",p:"/kəˈprɪʃəs/",pos:"Adjective",hi:"मनमौजी, अस्थिर",m:"Changing suddenly and unpredictably.",syn:"Fickle, Unpredictable, Whimsical",ant:"Stable, Consistent",ex:"The capricious weather ruined our plans.",tr:"Capricious = changes on a whim."},
+{w:"Censure",p:"/ˈsenʃər/",pos:"Verb/Noun",hi:"कड़ी निंदा करना / निंदा",m:"To express severe disapproval.",syn:"Condemn, Reprimand, Rebuke",ant:"Praise, Commend",ex:"The committee censured the official.",tr:"Censure = severe criticism."},
+{w:"Coerce",p:"/koʊˈɜːrs/",pos:"Verb",hi:"जबरदस्ती करना",m:"To force someone to do something.",syn:"Compel, Force, Pressure",ant:"Persuade, Allow",ex:"No one should be coerced into signing.",tr:"Coerce = compel by force."},
+{w:"Complacent",p:"/kəmˈpleɪsənt/",pos:"Adjective",hi:"आत्मसंतुष्ट",m:"Too satisfied with oneself to notice danger or faults.",syn:"Smug, Self-satisfied",ant:"Vigilant, Concerned",ex:"Success made the team complacent.",tr:"Complacent = too comfortable with current success."},
+{w:"Concur",p:"/kənˈkɜːr/",pos:"Verb",hi:"सहमत होना",m:"To agree with an opinion or decision.",syn:"Agree, Assent, Coincide",ant:"Disagree, Differ",ex:"I concur with the committee's conclusion.",tr:"Con + cur = come together in opinion."},
+{w:"Conspicuous",p:"/kənˈspɪkjuəs/",pos:"Adjective",hi:"सुस्पष्ट, आसानी से दिखाई देने वाला",m:"Clearly visible or attracting attention.",syn:"Noticeable, Prominent, Obvious",ant:"Inconspicuous, Hidden",ex:"He was conspicuous in his bright jacket.",tr:"Conspicuous = cannot escape your sight."},
+{w:"Credible",p:"/ˈkredəbəl/",pos:"Adjective",hi:"विश्वसनीय",m:"Able to be believed; convincing.",syn:"Believable, Reliable, Plausible",ant:"Incredible, Unreliable",ex:"The witness gave a credible account.",tr:"Cred = believe → credible."},
+{w:"Curb",p:"/kɜːrb/",pos:"Verb",hi:"नियंत्रित करना, रोकना",m:"To control or limit something.",syn:"Restrain, Check, Control",ant:"Encourage, Allow",ex:"New measures aim to curb inflation.",tr:"Curb = put a limit on."},
+{w:"Cynical",p:"/ˈsɪnɪkəl/",pos:"Adjective",hi:"निंदक, दूसरों की नीयत पर संदेह करने वाला",m:"Believing people are mainly motivated by self-interest.",syn:"Distrustful, Skeptical, Pessimistic",ant:"Trusting, Optimistic",ex:"He was cynical about the politician's promise.",tr:"Cynical = suspicious of people's motives."}
+];
+
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+let letter="A", filter="all";
+const getSet=k=>new Set(JSON.parse(localStorage.getItem("sr-"+k)||"[]"));
+const putSet=(k,s)=>localStorage.setItem("sr-"+k,JSON.stringify([...s]));
+function esc(s){return String(s).replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m]))}
+function state(){return {saved:getSet("saved"),learned:getSet("learned"),mastered:getSet("mastered"),weak:getSet("weak")}}
+function updateStats(){const s=state();$("#savedCount").textContent=s.saved.size;$("#learnedCount").textContent=s.learned.size;$("#masteredCount").textContent=s.mastered.size;$("#libraryCount").textContent=DATA.length;const today=new Date().toDateString(),last=localStorage.getItem("sr-last"),n=+(localStorage.getItem("sr-streak")||0);let streak=n||1;if(last!==today){if(last && (new Date(today)-new Date(last))<=86400000*1.5)streak=n+1;else streak=1;localStorage.setItem("sr-streak",streak);localStorage.setItem("sr-last",today)}$("#streakCount").textContent=streak+" day"+(streak>1?"s":"")}
+function speak(w){speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(w);u.lang="en-US";speechSynthesis.speak(u)}
+function toggle(kind,w){const s=getSet(kind);s.has(w)?s.delete(w):s.add(w);putSet(kind,s);updateStats();render()}
+function render(){
+ const s=state(), q=$("#search").value.trim().toLowerCase();
+ let arr=DATA.filter(x=>x.w[0].toUpperCase()===letter);
+ if(q) arr=DATA.filter(x=>[x.w,x.m,x.hi,x.syn,x.ant].join(" ").toLowerCase().includes(q));
+ if(filter!=="all") arr=arr.filter(x=>s[filter].has(x.w));
+ $("#words").innerHTML=arr.length?arr.map(x=>`<article class="word"><div class="wordTop"><div><h3>${esc(x.w)}</h3><div class="phon">${esc(x.p)} • ${esc(x.pos)}</div><span class="badge">COMPETITIVE EXAM WORD</span></div><button class="mini" onclick="speak('${x.w}')">🔊</button></div><div class="meaning"><b>${esc(x.m)}</b></div><div class="hindi">हिंदी: ${esc(x.hi)}</div><div class="meta"><b>Synonyms:</b> ${esc(x.syn)}</div><div class="meta"><b>Antonyms:</b> ${esc(x.ant)}</div><div class="example">💬 ${esc(x.ex)}</div><div class="trick">🧠 <b>Memory:</b> ${esc(x.tr)}</div><div class="actions"><button class="mini ${s.saved.has(x.w)?"saved":""}" onclick="toggle('saved','${x.w}')">❤️ Save</button><button class="mini ${s.learned.has(x.w)?"learned":""}" onclick="toggle('learned','${x.w}')">🧠 Learned</button><button class="mini ${s.weak.has(x.w)?"saved":""}" onclick="toggle('weak','${x.w}')">⚠️ Weak</button><button class="mini ${s.mastered.has(x.w)?"learned":""}" onclick="toggle('mastered','${x.w}')">🏆 Mastered</button></div></article>`).join(""):`<div class="empty">No words found here yet. A–C are active in this first build.</div>`;
+}
+function runSearch(){render()}
+$("#search").addEventListener("input",render);
+const alpha=$("#alpha");"ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("").forEach(L=>{const b=document.createElement("button");b.textContent=L;b.className=L==="A"?"active":"";b.onclick=()=>{letter=L;$("#search").value="";$$(".alpha button").forEach(x=>x.classList.toggle("active",x.textContent===L));render();newQuiz()};alpha.appendChild(b)});
+$$(".pill").forEach(b=>b.onclick=()=>{$$(".pill").forEach(x=>x.classList.remove("active"));b.classList.add("active");filter=b.dataset.filter;render()});
+function shuffle(a){return [...a].sort(()=>Math.random()-.5)}
+function newQuiz(){const pool=DATA.filter(x=>"ABC".includes(x.w[0].toUpperCase()));const correct=pool[Math.floor(Math.random()*pool.length)];const wrong=shuffle(pool.filter(x=>x.w!==correct.w)).slice(0,3);$("#qWord").textContent=correct.w;$("#qText").textContent="Choose the correct meaning of “"+correct.w+"”.";$("#feedback").textContent="";$("#options").innerHTML=shuffle([correct,...wrong]).map(x=>`<button class="option" data-right="${x.w===correct.w}">${esc(x.m)}</button>`).join("");$$(".option").forEach(b=>b.onclick=()=>{if($$(".option.correct,.option.wrong").length)return;const ok=b.dataset.right==="true";b.classList.add(ok?"correct":"wrong");if(!ok){$$(".option").find(x=>x.dataset.right==="true").classList.add("correct");const weak=getSet("weak");weak.add(correct.w);putSet("weak",weak);$("#feedback").textContent="❌ Correct answer highlighted. Added to Weak Words."}else{$("#feedback").textContent="✅ Correct — "+correct.hi;const learned=getSet("learned");learned.add(correct.w);putSet("learned",learned)}updateStats()})}
+(function theme(){const b=document.body,t=$("#theme"),s=t.querySelector("span");function set(m){const d=m==="dark";b.classList.toggle("dark",d);t.firstChild.nodeValue=d?"☀️ ":"🌙 ";s.textContent=d?"Light":"Dark";localStorage.setItem("sunnyrise-theme",m)}set(localStorage.getItem("sunnyrise-theme")||"light");t.onclick=()=>set(b.classList.contains("dark")?"light":"dark")})();
+function toggleAZ(){
+ const panel=document.getElementById("az"), btn=document.getElementById("azToggle");
+ const opening=!panel.classList.contains("open");
+ panel.classList.toggle("open",opening);
+ const tag=btn.querySelector(".libraryTag");
+ tag.textContent=opening?"CLOSE A–Z EXPLORER ↑":"OPEN A–Z EXPLORER ↓";
+ if(opening){setTimeout(()=>panel.scrollIntoView({behavior:"smooth",block:"start"}),60)}
+}
+updateStats();render();newQuiz();
+</script>
+</body></html>

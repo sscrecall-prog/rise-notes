@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SUNNY RISE – Top 250 Phrasal Verbs for SSC Exams</title>
+<style>
+  :root{
+    --cream:#FAEED9;
+    --gold:#E1A837;
+    --olive:#8D7A02;
+    --dark:#38370D;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    font-family:'Segoe UI', 'Noto Sans Devanagari', Arial, sans-serif;
+    background:var(--cream);
+    color:var(--dark);
+    line-height:1.6;
+  }
+  /* HEADER */
+  .hero{
+    background:linear-gradient(135deg, var(--dark), var(--olive));
+    color:var(--cream);
+    padding:40px 20px 30px;
+    text-align:center;
+    border-bottom:6px solid var(--gold);
+  }
+  .hero h1{
+    margin:0 0 8px;
+    font-size:2.4em;
+    letter-spacing:1px;
+    color:var(--gold);
+    text-shadow:1px 1px 2px rgba(0,0,0,.4);
+  }
+  .hero p{margin:4px 0;font-size:1.05em;color:var(--cream);opacity:.9;}
+  .hero .badge{
+    display:inline-block;
+    background:var(--gold);
+    color:var(--dark);
+    padding:6px 18px;
+    border-radius:20px;
+    font-weight:700;
+    margin-top:10px;
+    font-size:.95em;
+  }
+
+  /* LAYOUT */
+  .wrap{display:flex;max-width:1400px;margin:0 auto;align-items:flex-start;}
+  .sidebar{
+    width:280px;
+    flex-shrink:0;
+    background:#fff8ec;
+    border-right:3px solid var(--gold);
+    padding:18px 12px;
+    position:sticky;
+    top:0;
+    height:100vh;
+    overflow-y:auto;
+  }
+  .sidebar h2{
+    color:var(--olive);
+    font-size:1.15em;
+    border-bottom:2px solid var(--gold);
+    padding-bottom:8px;
+    margin-top:0;
+    text-align:center;
+  }
+  .toc-search{
+    width:100%;
+    padding:8px 10px;
+    border:2px solid var(--gold);
+    border-radius:8px;
+    margin-bottom:10px;
+    font-size:.9em;
+    background:var(--cream);
+    color:var(--dark);
+  }
+  .toc-list{list-style:none;padding:0;margin:0;}
+  .toc-list li{margin-bottom:4px;}
+  .toc-list a{
+    display:block;
+    text-decoration:none;
+    color:var(--dark);
+    background:var(--cream);
+    padding:7px 10px;
+    border-radius:8px;
+    font-size:.88em;
+    font-weight:600;
+    border:1px solid transparent;
+    transition:.2s;
+  }
+  .toc-list a:hover, .toc-list a.active{
+    background:var(--gold);
+    color:#fff;
+    border-color:var(--olive);
+    transform:translateX(3px);
+  }
+  .toc-list .num{
+    display:inline-block;
+    background:var(--olive);
+    color:#fff;
+    width:20px;height:20px;
+    line-height:20px;
+    text-align:center;
+    border-radius:50%;
+    font-size:.75em;
+    margin-right:6px;
+  }
+
+  .content{flex:1;padding:24px 30px 80px;min-width:0;}
+
+  /* INTRO BOX */
+  .intro-box{
+    background:#fff;
+    border:2px solid var(--gold);
+    border-left:8px solid var(--olive);
+    border-radius:12px;
+    padding:18px 20px;
+    margin-bottom:26px;
+    box-shadow:0 3px 8px rgba(141,122,2,.15);
+  }
+  .intro-box h3{margin-top:0;color:var(--olive);}
+
+  /* VERB CARD */
+  .verb-card{
+    background:#fff;
+    border-radius:16px;
+    border:2px solid var(--gold);
+    margin-bottom:28px;
+    overflow:hidden;
+    box-shadow:0 4px 12px rgba(56,55,13,.12);
+    scroll-margin-top:15px;
+  }
+  .verb-head{
+    background:linear-gradient(90deg, var(--olive), var(--gold));
+    color:#fff;
+    padding:14px 20px;
+    display:flex;
+    align-items:center;
+    gap:12px;
+  }
+  .verb-head .vnum{
+    background:#fff;
+    color:var(--olive);
+    font-weight:800;
+    width:38px;height:38px;
+    border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    font-size:1.1em;
+    flex-shrink:0;
+  }
+  .verb-head h2{margin:0;font-size:1.4em;letter-spacing:.5px;}
+  .verb-body{padding:18px 22px;}
+
+  .phrase-item{
+    border-left:4px solid var(--gold);
+    background:var(--cream);
+    border-radius:0 10px 10px 0;
+    padding:12px 16px;
+    margin-bottom:14px;
+  }
+  .phrase-item .ptitle{
+    font-weight:800;
+    color:var(--dark);
+    font-size:1.08em;
+  }
+  .phrase-item .hindi{
+    color:var(--olive);
+    font-weight:700;
+  }
+  .phrase-item .eng{
+    color:var(--dark);
+    font-style:italic;
+  }
+  .phrase-item .example{
+    margin-top:6px;
+    padding:8px 12px;
+    background:#fff;
+    border-radius:8px;
+    border:1px dashed var(--gold);
+    font-size:.95em;
+  }
+  .phrase-item .example b{color:var(--olive);}
+  .phrase-item .note{
+    margin-top:6px;
+    font-size:.88em;
+    color:#7a5c00;
+    background:#fff3d6;
+    padding:6px 10px;
+    border-radius:6px;
+  }
+
+  .summary-box{
+    background:var(--dark);
+    color:var(--cream);
+    border-radius:10px;
+    padding:12px 18px;
+    margin-top:10px;
+    font-size:.92em;
+  }
+  .summary-box b{color:var(--gold);}
+  .summary-box .stitle{
+    color:var(--gold);
+    font-weight:800;
+    margin-bottom:6px;
+    display:block;
+  }
+  .summary-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(200px,1fr));
+    gap:6px 16px;
+  }
+
+  /* SPECIAL TABLES */
+  .special-table-wrap{
+    background:#fff;
+    border:2px solid var(--gold);
+    border-radius:14px;
+    padding:18px 20px;
+    margin:20px 0 34px;
+    box-shadow:0 4px 10px rgba(56,55,13,.1);
+  }
+  .special-table-wrap h3{
+    color:var(--olive);
+    margin-top:0;
+    border-bottom:2px dashed var(--gold);
+    padding-bottom:8px;
+  }
+  table{width:100%;border-collapse:collapse;margin-top:8px;}
+  table th{
+    background:var(--olive);
+    color:#fff;
+    padding:10px;
+    text-align:left;
+    font-size:.92em;
+  }
+  table td{
+    padding:9px 10px;
+    border-bottom:1px solid var(--gold);
+    font-size:.92em;
+  }
+  table tr:nth-child(even) td{background:var(--cream);}
+
+  /* FINAL REVISION SECTION */
+  .final-section{
+    background:#fff;
+    border:2px solid var(--gold);
+    border-radius:16px;
+    padding:20px 24px;
+    margin-top:10px;
+  }
+  .final-section h2{color:var(--olive);text-align:center;}
+  .revision-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill, minmax(280px,1fr));
+    gap:10px;
+  }
+  .rev-item{
+    background:var(--cream);
+    border-left:4px solid var(--gold);
+    border-radius:0 8px 8px 0;
+    padding:8px 12px;
+    font-size:.85em;
+  }
+  .rev-item b{color:var(--olive);}
+
+  .closing{
+    text-align:center;
+    background:linear-gradient(135deg, var(--olive), var(--dark));
+    color:var(--cream);
+    padding:30px 20px;
+    border-radius:16px;
+    margin-top:30px;
+  }
+  .closing p{font-size:1.1em;margin:6px 0;}
+  .closing a{color:var(--gold);font-weight:700;text-decoration:none;}
+  .closing a:hover{text-decoration:underline;}
+
+  /* SCROLL TO TOP */
+  #scrollTopBtn{
+    position:fixed;
+    bottom:24px;
+    right:24px;
+    background:var(--gold);
+    color:#fff;
+    border:none;
+    width:50px;height:50px;
+    border-radius:50%;
+    font-size:1.4em;
+    cursor:pointer;
+    box-shadow:0 4px 10px rgba(0,0,0,.3);
+    display:none;
+    z-index:999;
+  }
+  #scrollTopBtn:hover{background:var(--olive);}
+
+  /* MOBILE TOGGLE */
+  .sidebar-toggle{
+    display:none;
+    position:fixed;
+    top:12px;left:12px;
+    z-index:1001;
+    background:var(--olive);
+    color:#fff;
+    border:none;
+    padding:10px 14px;
+    border-radius:8px;
+    font-size:1em;
+    cursor:pointer;
+  }
+
+  @media(max-width:900px){
+    .wrap{flex-direction:column;}
+    .sidebar{
+      position:fixed;
+      left:-300px;
+      top:0;
+      width:260px;
+      height:100vh;
+      z-index:1000;
+      transition:.3s;
+      box-shadow:4px 0 15px rgba(0,0,0,.3);
+    }
+    .sidebar.open{left:0;}
+    .sidebar-toggle{display:block;}
+    .content{padding:70px 14px 60px;}
+  }
+
+  /* DARK / LIGHT MODE */
+  .theme-toggle{
+    position:fixed;
+    top:16px;
+    right:18px;
+    z-index:1200;
+    border:2px solid var(--gold);
+    background:#fff8ec;
+    color:#38370D;
+    padding:9px 14px;
+    border-radius:999px;
+    font-weight:800;
+    cursor:pointer;
+    box-shadow:0 4px 14px rgba(0,0,0,.18);
+  }
+  body.dark-mode{
+    --cream:#17170d;
+    --gold:#E1A837;
+    --olive:#b7a629;
+    --dark:#f6edda;
+    background:#11110a;
+    color:#f6edda;
+  }
+  body.dark-mode .sidebar,
+  body.dark-mode .intro-box,
+  body.dark-mode .verb-card,
+  body.dark-mode .special-table-wrap,
+  body.dark-mode .final-section{
+    background:#1d1d12;
+    color:#f6edda;
+  }
+  body.dark-mode .toc-search,
+  body.dark-mode .toc-list a,
+  body.dark-mode .phrase-item,
+  body.dark-mode .rev-item{
+    background:#292817;
+    color:#f6edda;
+  }
+  body.dark-mode .phrase-item .ptitle,
+  body.dark-mode .phrase-item .eng{
+    color:#f6edda;
+  }
+  body.dark-mode .phrase-item .example{
+    background:#202014;
+    color:#f6edda;
+  }
+  body.dark-mode .phrase-item .note{
+    background:#332c12;
+    color:#f5d978;
+  }
+  body.dark-mode table tr:nth-child(even) td{background:#292817;}
+  body.dark-mode table td{color:#f6edda;}
+  body.dark-mode .summary-box{background:#090906;color:#f6edda;}
+  body.dark-mode .theme-toggle{background:#292817;color:#f6edda;}
+  @media(max-width:900px){
+    .theme-toggle{top:12px;right:12px;padding:8px 11px;}
+  }
+
+</style>
+<style id="sr-system">:root{--sr-cream:#FAEED9;--sr-gold:#E1A837;--sr-olive:#8D7A02;--sr-ink:#38370D;--sr-paper:#fffdf8;--sr-muted:#756f55;--sr-line:#ead9ad;--sr-shadow:0 14px 35px rgba(56,55,13,.10)}.srbar{position:sticky!important;top:0!important;z-index:99999!important;background:rgba(56,55,13,.96)!important;backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.08)!important;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Arial,sans-serif!important}.srbar *{box-sizing:border-box}.srbarin{width:min(1120px,calc(100% - 28px));height:64px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:12px}.srbrand{display:flex;align-items:center;gap:10px;color:#fff!important;text-decoration:none!important}.srbrand img{width:38px!important;height:38px!important;border-radius:50%!important;object-fit:cover!important;border:2px solid var(--sr-gold)!important;margin:0!important}.srbrand b{font-size:15px!important;letter-spacing:.6px!important;color:#fff!important}.srbrand b span{color:var(--sr-gold)!important}.sractions{display:flex;gap:7px}.srbtn{border:1px solid rgba(225,168,55,.55)!important;background:transparent!important;color:var(--sr-gold)!important;border-radius:10px!important;padding:8px 10px!important;text-decoration:none!important;font:700 12px/1 Inter,system-ui,sans-serif!important;cursor:pointer}.srbtn.primary{background:var(--sr-gold)!important;color:var(--sr-ink)!important}@media(max-width:520px){.srbarin{height:58px}.srbrand img{width:34px!important;height:34px!important}.srbrand b{font-size:13px!important}.srbtn{padding:8px!important}.srhide{display:none!important}}body.sr-dark{filter:none}body.sr-dark .srbar{background:#030a13!important}</style></head>
+<body><div class="srbar"><div class="srbarin"><a class="srbrand" href="../../../index.html"><img src="../../../assets/sunnyrise-profile.jpg" alt="Sunny Rise"><b>SUNNY <span>RISE</span></b></a><div class="sractions"><a class="srbtn srhide" href="../../../search/index.html">🔎 Search</a><button class="srbtn" onclick="document.body.classList.toggle('sr-dark');localStorage.setItem('sunnyrise-leaf-dark',document.body.classList.contains('sr-dark')?'1':'0')">◐ Theme</button><a class="srbtn primary" href="../../../index.html">⌂ Home</a></div></div></div>
+<button id="themeToggle" class="theme-toggle" type="button" aria-label="Toggle dark and light mode">🌙 Dark</button>
+
+
+<button class="sidebar-toggle" onclick="document.getElementById('sidebar').classList.toggle('open')">☰ Topics</button>
+
+<div class="hero">
+  <h1>SUNNY RISE</h1>
+  <p><b>BEST 250 PHRASAL VERBS</b> for SSC Exams</p>
+  <p>Hindi Meaning + English Meaning + Examples (Printable → Interactive Version)</p>
+  <span class="badge">📘 SSC CGL | CHSL | Complete Revision Notes</span>
+</div>
+
+<div class="wrap">
+  <!-- SIDEBAR -->
+  <div class="sidebar" id="sidebar">
+    <h2>📑 Topics at a Glance</h2>
+    <input class="toc-search" type="text" id="tocSearch" placeholder="🔍 Verb khojo... (e.g. Break)">
+    <ul class="toc-list" id="tocList">
+      <!-- filled by JS -->
+    </ul>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <div class="content">
+
+    <div class="intro-box">
+      <h3>👋 Kaise use karein ye notes?</h3>
+      <p>Left side (ya mobile par ☰ button dabakar) mein <b>"Topics at a Glance"</b> list hai — jis bhi verb par click karoge, page seedha usi section par pahunch jayega. Har phrasal verb ke saath <b>Hindi meaning, English meaning, real example sentence</b>, aur zaroori <b>grammar tips</b> diye gaye hain. Har verb group ke end mein ek <b>quick summary box</b> hai jo revision ke liye best hai.</p>
+    </div>
+
+    <!-- VERB SECTIONS -->
+    <div id="verbSections"></div>
+
+    <div class="special-table-wrap" id="sec-quad">
+      <h3>🎯 Special Table: "The Distribution Quad" (सामान बांटने वाली Verbs)</h3>
+      <p>Ye 4 verbs "to distribute / बाँटना" jaisa meaning dete hain, par har ek ka use alag context mein hota hai:</p>
+      <table>
+        <tr><th>Phrasal Verb</th><th>Context (Kab Use Karein)</th></tr>
+        <tr><td><b>Give out</b></td><td>General distribution — leaflets, news bantna</td></tr>
+        <tr><td><b>Hand out</b></td><td>Group ko cheezein dena — test papers, snacks</td></tr>
+        <tr><td><b>Deal out</b></td><td>Shares ya punishments dena (zyada formal)</td></tr>
+        <tr><td><b>Hand down</b></td><td>Purani generation se nayi generation ko info/wealth pass karna</td></tr>
+      </table>
+    </div>
+
+    <div class="special-table-wrap" id="sec-ending">
+      <h3>🎯 Special Table: Verbs of "Ending" or "Stopping" (Cloze Test mein confuse hote hain)</h3>
+      <table>
+        <tr><th>Verb</th><th>Nuance (Fark)</th></tr>
+        <tr><td><b>Leave off</b></td><td>Kisi activity ko rokna (often temporary)</td></tr>
+        <tr><td><b>Give up</b></td><td>Habit chhodna ya hope kho dena (permanent)</td></tr>
+        <tr><td><b>Close down</b></td><td>Business ko permanently band karna</td></tr>
+        <tr><td><b>Put out</b></td><td>Aag ko bujhana</td></tr>
+        <tr><td><b>Go out</b></td><td>Jab light/fire khud-ba-khud band ho jaye</td></tr>
+      </table>
+    </div>
+
+    <div class="special-table-wrap">
+      <h3>🎯 Common Confusions (Quick Tips)</h3>
+      <table>
+        <tr><th>Verb Phrase</th><th>Common Confusion</th><th>Quick Tip</th></tr>
+        <tr><td><b>Agree with</b> vs <b>Agree to</b></td><td>Person vs Proposal</td><td>Use <b>with</b> for people/opinions; <b>to</b> for plans.</td></tr>
+        <tr><td><b>Call at</b> vs <b>Call on</b></td><td>Place vs Person</td><td>Use <b>at</b> for locations; <b>on</b> for individuals.</td></tr>
+        <tr><td><b>Back off</b> vs <b>Back down</b></td><td>Distance vs Argument</td><td><b>Off</b> is moving away; <b>Down</b> is giving up a fight.</td></tr>
+      </table>
+    </div>
+
+    <!-- FINAL REVISION -->
+    <div class="final-section" id="sec-revision">
+      <h2>⚡ SUMMARY — All 50 Verbs (Quick Revision)</h2>
+      <div class="revision-grid" id="revisionGrid"></div>
+    </div>
+
+    <div class="closing">
+      <p>💡 <b>Ye phrasal verbs high-frequency aur highly testable hain — inhe smartly revise karo.</b></p>
+      <p>Ek sahi choice hi selection aur cut-off miss karne ke beech ka fark ban sakta hai!</p>
+      <p>📢 Ye PDF/Notes sabhi SSC aspirants ke saath SHARE karein</p>
+      <p>📩 Telegram: <a href="https://t.me/sunnyrise1" target="_blank">@sunnyrise1</a> &nbsp; | &nbsp; ▶️ YouTube: <a href="https://www.youtube.com/@sunnyrise1" target="_blank">@sunnyrise1</a></p>
+      <p style="margin-top:14px;font-size:1.3em;color:#fff;">🙏 THANK YOU 🙏</p>
+    </div>
+
+  </div>
+</div>
+
+<button id="scrollTopBtn" onclick="jumpTo('top')">↑</button>
+
+<script>
+/* ================= DATA ================= */
+const verbs = [
+{n:1,name:"ADD",items:[
+ {p:"Add up",h:"जोड़ होना / कुल निकालना",e:"To calculate a total",ex:"Before submitting the answer sheet, the candidate carefully <b>added up</b> all his marks to ensure there was no calculation error."},
+ {p:"Add up (2nd meaning)",h:"समझ में आना / तार्किक होना",e:"To seem logical or reasonable",ex:"His explanation about passing the exam without any preparation does not <b>add up</b> when his past performance is considered."},
+ {p:"Add up to",h:"कुल मिलाकर बराबर होना",e:"To amount to a total or result in a sum",ex:"All the monthly expenses <b>add up to</b> more than his salary, which makes saving money difficult."},
+ {p:"Add on",h:"अतिरिक्त रूप से जोड़ना",e:"To include something extra or additional",ex:"The hotel <b>added on</b> extra charges for room service, increasing the final bill."},
+ {p:"Add to",h:"बढ़ा देना / इजाफा करना",e:"To increase or contribute to something",ex:"His irresponsible comments <b>added to</b> the tension already present in the meeting."}
+],summary:"Add up → calculate total / make sense • Add up to → amount to a total • Add on → include extra • Add to → increase / contribute"},
+
+{n:2,name:"AGREE",items:[
+ {p:"Agree with",h:"सहमत होना",e:"To have the same opinion as someone",ex:"Most students <b>agree with</b> the teacher that regular revision is essential for success in competitive exams."},
+ {p:"Agree with (2nd meaning)",h:"अनुकूल होना / सूट करना",e:"To be suitable for someone (food, climate, medicine)",ex:"Spicy food does not <b>agree with</b> him, so he avoids eating it before examinations."},
+ {p:"Agree on",h:"किसी बात पर सहमति बनना",e:"To reach a mutual decision or settlement",ex:"After long discussion, the committee finally <b>agreed on</b> the new examination schedule."},
+ {p:"Agree to",h:"किसी प्रस्ताव या शर्त को स्वीकार करना",e:"To accept a proposal, plan, or condition",ex:"She <b>agreed to</b> the terms and conditions before submitting the online application form.",note:"Ye usually kisi doosre ne suggest ki hui cheez ko accept karne ka matlab deta hai."}
+],summary:"Agree with → person / opinion / suitability • Agree on → topic / plan / decision • Agree to → proposal / offer / condition"},
+
+{n:3,name:"ALLOW",items:[
+ {p:"Allow for",h:"ध्यान में रखना / संभावना मानकर चलना",e:"To take something into consideration",ex:"While preparing the exam timetable, the authorities <b>allowed for</b> possible delays due to bad weather."},
+ {p:"Allow for (2nd meaning)",h:"गुंजाइश छोड़ना",e:"To make room or provision for something",ex:"The budget was planned carefully to <b>allow for</b> unexpected expenses during the year."},
+ {p:"Allow of",h:"संभव बनाना / अनुमति देना (औपचारिक/सीमित प्रयोग)",e:"To permit or make something possible",ex:"The rules do not <b>allow of</b> any relaxation in the age limit for this examination.",note:"Ye almost hamesha negative mein use hota hai ('Does not allow of') jiska matlab hai 'leaves no room for'."}
+],summary:"Allow for → consideration / adjustment / possibility • Allow of → formal use, often seen in rules, laws, or official language"},
+
+{n:4,name:"ASK",items:[
+ {p:"Ask for",h:"मांगना / अनुरोध करना",e:"To request or demand something",ex:"The candidate <b>asked for</b> an extra sheet when he ran out of space while writing the answers."},
+ {p:"Ask about",h:"किसी विषय में पूछताछ करना",e:"To inquire about something",ex:"Many students <b>asked about</b> the exam pattern before filling out the application form."},
+ {p:"Ask after",h:"किसी की कुशलक्षेम पूछना",e:"To inquire about someone's health or well-being",ex:"The teacher <b>asked after</b> the student who had been absent due to illness."}
+],summary:"Ask for → thing / help / permission • Ask about → information / topic • Ask after → person's health or condition (formal, often asked)"},
+
+{n:5,name:"BACK",items:[
+ {p:"Back out",h:"पीछे हट जाना / वादा तोड़ देना",e:"To withdraw from an agreement or promise",ex:"He initially agreed to invest in the project but later <b>backed out</b> at the last moment, causing serious financial trouble for his partner."},
+ {p:"Back up",h:"i) समर्थन करना",e:"To support someone or something",ex:"The employee <b>backed up</b> his argument with official documents during the inquiry."},
+ {p:"Back up (2nd meaning)",h:"ii) सबूत देना / पुष्टि करना",e:"To confirm or prove something",ex:"The witness <b>backed up</b> her statement with clear video evidence."},
+ {p:"Back off",h:"पीछे हट जाना / दखल देना बंद करना",e:"To withdraw or stop interfering",ex:"When the situation became tense, the police asked the crowd to <b>back off</b> immediately."},
+ {p:"Back down",h:"दबाव में झुक जाना",e:"To withdraw a claim or position after resistance",ex:"The management finally <b>backed down</b> after continuous protests by the workers.",note:"Isका matlab aksar hota hai apni galti maanna ya opposition ki wajah se apni opinion defend karna band karna."}
+],summary:"Back out → agreement / promise • Back up → support / evidence • Back off → warning / confrontation • Back down → pressure / opposition"},
+
+{n:6,name:"BEAR",items:[
+ {p:"Bear with",h:"धैर्य रखना / थोड़ी देर सहन करना",e:"To be patient with someone",ex:"Please <b>bear with</b> me for a few minutes while I arrange the required documents for verification."},
+ {p:"Bear out",h:"सही साबित करना / पुष्टि करना",e:"To confirm or prove something to be true",ex:"The data collected from the survey <b>bears out</b> the claim that unemployment has increased."},
+ {p:"Bear up",h:"हिम्मत बनाए रखना",e:"To remain strong or cheerful in difficult circumstances",ex:"Despite repeated failures, he <b>bore up</b> well and continued his preparation with determination."}
+],summary:"Bear with → patience • Bear out → proof / evidence • Bear up → emotional strength during hardship"},
+
+{n:7,name:"BREAK",items:[
+ {p:"Break down",h:"i) खराब हो जाना",e:"To stop functioning (machine, system)",ex:"The bus <b>broke down</b> on the highway, causing the candidates to reach the exam centre late."},
+ {p:"Break down (2nd meaning)",h:"ii) भावनात्मक रूप से टूट जाना",e:"To lose emotional control",ex:"After hearing the result, he <b>broke down</b> and could not control his tears."},
+ {p:"Break out",h:"i) अचानक शुरू होना",e:"To begin suddenly (fire, war, disease, violence)",ex:"A fire <b>broke out</b> in the examination hall due to a short circuit."},
+ {p:"Break out (2nd meaning)",h:"ii) भाग निकलना",e:"To escape from prison",ex:"Three dangerous prisoners <b>broke out</b> of the high-security jail last night."},
+ {p:"Break into",h:"i) जबरदस्ती प्रवेश करना",e:"To enter forcibly",ex:"Thieves <b>broke into</b> the office at night and stole important files."},
+ {p:"Break into (2nd meaning)",h:"ii) अचानक शुरू करना",e:"To suddenly begin (song, laughter, activity)",ex:"The audience <b>broke into</b> applause when the results were announced."},
+ {p:"Break up",h:"i) टुकड़ों में टूट जाना / समाप्त हो जाना",e:"To separate or come to an end",ex:"The meeting <b>broke up</b> early due to continuous power cuts."},
+ {p:"Break up (2nd meaning)",h:"ii) आवाज़ का कटना",e:"When a phone signal is weak",ex:"I can't hear you clearly; your voice is <b>breaking up</b>."}
+],summary:"Break down → machine / emotions • Break out → sudden start • Break into → force entry / sudden action • Break up → separation / end"},
+
+{n:8,name:"BRING",items:[
+ {p:"Bring about",h:"उत्पन्न करना / कारण बनना",e:"To cause something to happen",ex:"The new education policy is expected to <b>bring about</b> major reforms in the examination system."},
+ {p:"Bring up",h:"i) मुद्दा उठाना",e:"To mention or introduce a topic",ex:"She <b>brought up</b> the issue of syllabus reduction during the meeting."},
+ {p:"Bring up (2nd meaning)",h:"ii) पालन-पोषण करना",e:"To raise a child",ex:"He was <b>brought up</b> in a disciplined environment, which shaped his work ethic."},
+ {p:"Bring in",h:"i) लागू करना / शुरू करना",e:"To introduce something new (law, rule, system)",ex:"The government <b>brought in</b> a new reservation policy for government jobs."},
+ {p:"Bring in (2nd meaning)",h:"ii) आय लाना",e:"To generate income or profit",ex:"The advertisement campaign <b>brought in</b> a large number of applications."},
+ {p:"Bring out",h:"i) प्रकाशित करना / सामने लाना",e:"To publish or reveal",ex:"The coaching institute <b>brought out</b> a new book for SSC aspirants."},
+ {p:"Bring out (2nd meaning)",h:"ii) उभारना",e:"To highlight or make something noticeable",ex:"This example clearly <b>brings out</b> the importance of time management."},
+ {p:"Bring down",h:"गिराना / कम करना",e:"To reduce or topple a government",ex:"The opposition tried to <b>bring down</b> the government by highlighting the paper leak scandal."},
+ {p:"Bring off",h:"कठिन कार्य सफलतापूर्वक पूरा करना",e:"To succeed in doing something difficult",ex:"It was a tough target, but the team <b>brought it off</b> through collective effort."}
+],summary:"Bring about → cause • Bring up → mention / upbringing • Bring in → introduce / income • Bring out → publish / highlight"},
+
+{n:9,name:"CALL",items:[
+ {p:"Call off",h:"रद्द करना",e:"To cancel something planned",ex:"Due to heavy rain, the authorities <b>called off</b> the examination at the last moment."},
+ {p:"Call on",h:"i) किसी से बोलने या कार्य करने को कहना",e:"To request or invite someone formally",ex:"The teacher <b>called on</b> the student to answer the question in front of the class."},
+ {p:"Call on (2nd meaning)",h:"ii) मुलाकात करना (व्यक्ति से)",e:"To visit a person (usually for a short time)",ex:"I <b>called on</b> an old friend on my way back from the library."},
+ {p:"Call at",h:"किसी स्थान पर रुकना",e:"To stop or visit a place briefly",ex:"This train will <b>call at</b> Kanpur before reaching Delhi.",note:"Memory Tip: Call <b>on</b> a person; Call <b>at</b> a place."},
+ {p:"Call for",h:"आवश्यकता होना / मांग करना",e:"To require or demand something",ex:"The current situation <b>calls for</b> immediate action by the authorities."},
+ {p:"Call upon",h:"औपचारिक रूप से आग्रह करना",e:"To formally appeal or request",ex:"The chairman <b>called upon</b> all members to maintain discipline during the meeting."}
+],summary:"Call off → cancel • Call on → ask someone to speak/act • Call at → place • Call for → need / demand • Call upon → formal appeal"},
+
+{n:10,name:"CARRY",items:[
+ {p:"Carry out",h:"पूरा करना / अमल में लाना",e:"To perform or execute a task, order, or duty",ex:"The officials were instructed to <b>carry out</b> the orders strictly without any delay."},
+ {p:"Carry on",h:"जारी रखना",e:"To continue doing something",ex:"Despite repeated failures, he <b>carried on</b> with his exam preparation without losing hope."},
+ {p:"Carry off",h:"सफलतापूर्वक हासिल करना / जीत लेना",e:"To win or achieve something successfully",ex:"She <b>carried off</b> the first prize due to her consistent hard work."},
+ {p:"Carry off (2nd meaning)",h:"कठिन स्थिति को सफलतापूर्वक संभालना",e:"To handle a difficult situation successfully",ex:"It was a difficult speech, but he <b>carried it off</b> with great confidence."},
+ {p:"Carry away",h:"बहक जाना / भावनाओं में बह जाना",e:"To lose control due to strong feelings",ex:"He was <b>carried away</b> by excitement after seeing his name in the merit list."},
+ {p:"Carry forward",h:"आगे बढ़ाना / स्थानांतरित करना",e:"To transfer or continue to the next stage or period",ex:"The unused balance will be <b>carried forward</b> to the next financial year."}
+],summary:"Carry out → duty / order • Carry on → continue • Carry off → win • Carry away → emotions • Carry forward → future transfer"},
+
+{n:11,name:"CHECK",items:[
+ {p:"Check in",h:"रिपोर्ट करना / पंजीकरण कराना",e:"To register or report arrival (hotel, airport, office)",ex:"All candidates were asked to <b>check in</b> at the examination centre at least thirty minutes before the reporting time."},
+ {p:"Check out",h:"i) जाँच करना",e:"To examine or verify something",ex:"You should <b>check out</b> the instructions carefully before attempting the question paper."},
+ {p:"Check out (2nd meaning)",h:"ii) होटल से निकलना",e:"To leave a hotel after settling the bill",ex:"The candidates had to <b>check out</b> of the hotel early to reach the exam centre on time."},
+ {p:"Check up on",h:"खैरियत पूछना / प्रगति देखना",e:"To inquire about someone's condition or progress",ex:"The teacher <b>checked up on</b> the students who were feeling anxious before the examination."},
+ {p:"Check off",h:"सूची में टिक लगाना / पुष्टि करना",e:"To mark items as completed",ex:"The invigilator <b>checked off</b> the names of all candidates present in the examination hall."}
+],summary:"Check in → arrival / registration • Check out → examine / leave hotel • Check up on → person's condition • Check off → list / attendance"},
+
+{n:12,name:"CLEAR",items:[
+ {p:"Clear up",h:"i) स्पष्ट करना / भ्रम दूर करना",e:"To remove confusion or misunderstanding",ex:"The teacher <b>cleared up</b> all doubts related to the new exam pattern before the mock test."},
+ {p:"Clear up (2nd meaning)",h:"ii) साफ हो जाना",e:"To become fine (weather, illness)",ex:"By the afternoon, the fog <b>cleared up</b> and flights resumed normally."},
+ {p:"Clear out",h:"खाली करना / निकल जाना",e:"To leave a place or remove everything from it",ex:"The authorities ordered the vendors to <b>clear out</b> the area around the examination centre."},
+ {p:"Clear off",h:"तुरंत चले जाना",e:"To go away immediately (often informal or rude)",ex:"The guard asked the crowd to <b>clear off</b> from the restricted zone."},
+ {p:"Clear away",h:"हटा देना / साफ करना",e:"To remove things and make a place tidy",ex:"After the meeting, the staff <b>cleared away</b> the chairs and tables."},
+ {p:"Clear through",h:"सफलतापूर्वक पास होना",e:"To pass an exam or stage completely",ex:"She <b>cleared through</b> the written examination on her first attempt."}
+],summary:"Clear up → confusion / weather • Clear out → leave a place • Clear off → go away (command) • Clear away → remove things • Clear through → pass an exam"},
+
+{n:13,name:"CLOSE",items:[
+ {p:"Close down",h:"स्थायी रूप से बंद करना",e:"To shut permanently (business, institution, service)",ex:"The coaching centre was forced to <b>close down</b> due to a lack of students and rising operational costs."},
+ {p:"Close off",h:"अलग कर देना / प्रवेश रोक देना",e:"To block or isolate access to a place",ex:"The police <b>closed off</b> the road near the examination centre to avoid traffic congestion."},
+ {p:"Close in on",h:"धीरे-धीरे पास आना / घेर लेना",e:"To move closer and surround",ex:"As the deadline approached, pressure began to <b>close in on</b> the candidates."},
+ {p:"Close up",h:"i) पूरी तरह बंद करना",e:"To shut completely (shop, office, gap)",ex:"All shops near the exam centre were asked to <b>close up</b> during examination hours."},
+ {p:"Close up (2nd meaning)",h:"ii) पास आ जाना",e:"To move nearer or reduce distance",ex:"The photographer asked the students to <b>close up</b> for a group photo."},
+ {p:"Close with",h:"किसी बात पर समाप्त करना",e:"To end by mentioning something",ex:"The chairman <b>closed with</b> a reminder about discipline in future."}
+],summary:"Close down → permanent closure • Close off → block access • Close in on → pressure / approach • Close up → shut fully / move nearer • Close with → end a speech or discussion"},
+
+{n:14,name:"COME",items:[
+ {p:"Come across",h:"अचानक मिल जाना / संयोग से सामना होना",e:"To meet or find unexpectedly",ex:"While revising old notes, she <b>came across</b> an important shortcut.",note:"Grammar Note: 'with' ya 'suddenly' kabhi bhi Come across ke saath use mat karo. Galat: I suddenly came across with him. Sahi: I came across him."},
+ {p:"Come up with",h:"विचार या समाधान लाना",e:"To produce an idea, plan, or solution",ex:"After much discussion, the team finally <b>came up with</b> an effective strategy for time management."},
+ {p:"Come out",h:"परिणाम आना / प्रकाशित होना",e:"To be revealed, announced, or published",ex:"The result of the examination will <b>come out</b> next week on the official website."},
+ {p:"Come over",h:"i) मिलने आना",e:"To visit someone",ex:"He asked his friend to <b>come over</b> after the mock test for discussion."},
+ {p:"Come over (2nd meaning)",h:"ii) अचानक भावना आना",e:"To be affected by a sudden feeling",ex:"A sense of fear <b>came over</b> him just before entering the examination hall."},
+ {p:"Come up",h:"सामने आना / उत्पन्न होना",e:"To arise or be mentioned",ex:"Several doubts <b>came up</b> during the discussion on the new syllabus."},
+ {p:"Come down",h:"कम होना / घट जाना",e:"To decrease or reduce (Specifically for prices, temperatures)",ex:"The cut-off marks <b>came down</b> this year due to the difficult paper."},
+ {p:"Come down with",h:"बीमार पड़ना",e:"To suffer from an illness",ex:"He <b>came down with</b> a fever just before the finals."}
+],summary:"Come across → unexpected meeting/finding • Come up with → idea/solution • Come out → result/publication • Come over → visit/feeling • Come up → arise • Come down → to decrease • Come down with → suffer from illness"},
+
+{n:15,name:"CUT",items:[
+ {p:"Cut down",h:"कम करना",e:"To reduce the amount, size, or number of something",ex:"To improve concentration during preparation, he decided to <b>cut down</b> his use of social media."},
+ {p:"Cut down on",h:"खपत कम करना",e:"To reduce consumption of something",ex:"Doctors advise candidates to <b>cut down on</b> junk food during study hours."},
+ {p:"Cut off",h:"अलग कर देना / संपर्क तोड़ देना",e:"To disconnect or isolate",ex:"Due to heavy snowfall, the village was <b>cut off</b> from the rest of the city."},
+ {p:"Cut out",h:"पूरी तरह छोड़ देना / हटाना",e:"To stop doing something completely",ex:"He <b>cut out</b> unnecessary distractions to focus fully on exam preparation."},
+ {p:"Cut through",h:"सीधे रास्ता बनाना / जल्दी निपटाना",e:"To move through or deal with something efficiently",ex:"She <b>cut through</b> the long explanation and pointed out the main error."},
+ {p:"Cut back",h:"खर्च या गतिविधि घटाना",e:"To reduce spending or activity",ex:"The institute <b>cut back</b> on expenses to keep the course affordable."}
+],summary:"Cut down / cut down on → reduce • Cut off → disconnect • Cut out → stop completely • Cut through → deal directly • Cut back → reduce spending/activity"},
+
+{n:16,name:"DEAL",items:[
+ {p:"Deal with",h:"निपटना / सामना करना",e:"To handle or manage a problem, situation, or person",ex:"A serious aspirant must learn how to <b>deal with</b> pressure during the final days before the exam."},
+ {p:"Deal in",h:"व्यापार करना / लेन-देन करना",e:"To buy or sell a particular kind of goods",ex:"This shop <b>deals in</b> competitive exam books and study material."},
+ {p:"Deal out",h:"बाँटना / वितरित करना",e:"To distribute cards, punishment, or treatment",ex:"Strict punishment was <b>dealt out</b> to candidates who were caught cheating."},
+ {p:"Deal with (people/behaviour sense)",h:"व्यवहार करना",e:"To behave towards someone in a particular way",ex:"Teachers should <b>deal with</b> weak students patiently and sensitively."}
+],summary:"Deal with → handle / manage / face • Deal in → business or trade • Deal out → distribute (cards, punishment, treatment)"},
+
+{n:17,name:"DO",items:[
+ {p:"Do away with",h:"समाप्त कर देना / खत्म करना",e:"To abolish or remove something completely",ex:"The government decided to <b>do away with</b> the outdated recruitment rule to simplify the selection process."},
+ {p:"Do up",h:"मरम्मत करना / सजाना",e:"To repair, decorate, or renovate",ex:"They decided to <b>do up</b> the old classroom before the new academic session began."},
+ {p:"Do without",h:"बिना किसी चीज़ के काम चलाना",e:"To manage in the absence of something",ex:"Due to financial constraints, many students had to <b>do without</b> expensive coaching."},
+ {p:"Do over",h:"फिर से करना",e:"To do something again, usually to correct mistakes",ex:"He had to <b>do over</b> the application form because of several spelling errors."},
+ {p:"Do out of",h:"वंचित कर देना",e:"To deprive someone of something",ex:"His carelessness <b>did him out of</b> a good opportunity in the interview."}
+],summary:"Do away with → abolish • Do up → repair/decorate • Do without → manage without • Do over → repeat • Do out of → deprive"},
+
+{n:18,name:"DRAW",items:[
+ {p:"Draw up",h:"तैयार करना / मसौदा बनाना",e:"To prepare or write formally (plan, list, agreement)",ex:"The committee <b>drew up</b> a detailed plan to conduct the examination smoothly."},
+ {p:"Draw out",h:"i) लंबा खींचना",e:"To prolong or make something last longer",ex:"Unnecessary arguments <b>drew out</b> the meeting and delayed the final decision."},
+ {p:"Draw out (2nd meaning)",h:"ii) किसी से बात निकलवाना",e:"To encourage someone to speak",ex:"The interviewer asked simple questions to <b>draw out</b> the candidate's opinions."},
+ {p:"Draw in",h:"i) पास आना / कम होना (दिन, समय)",e:"To become shorter or closer",ex:"As winter <b>drew in</b>, the days became shorter and colder."},
+ {p:"Draw in (2nd meaning)",h:"ii) आकर्षित करना",e:"To attract people",ex:"The new mock test series <b>drew in</b> a large number of SSC aspirants.",note:"Ye 'Draw into' bhi banta hai — kisi ko kisi situation mein involve karna (often against their will). Example: Don't draw me into your personal arguments."},
+ {p:"Draw off",h:"हटा लेना / अलग ले जाना",e:"To remove or pull away (liquid, forces)",ex:"Extra water was <b>drawn off</b> from the tank to prevent overflow."},
+ {p:"Draw on",h:"सहारा लेना / उपयोग करना",e:"To use experience, knowledge, or resources",ex:"While writing the answer, she <b>drew on</b> her previous knowledge of history."}
+],summary:"Draw up → prepare formally • Draw out → prolong / make speak • Draw in → attract / approach • Draw off → remove • Draw on → use experience/resources"},
+
+{n:19,name:"DROP",items:[
+ {p:"Drop out",h:"बीच में छोड़ देना",e:"To quit before completion",ex:"Due to financial pressure, he had to <b>drop out</b> of college and start working."},
+ {p:"Drop off",h:"i) कम हो जाना",e:"To decrease gradually",ex:"Attendance in online classes <b>dropped off</b> after the initial enthusiasm faded."},
+ {p:"Drop off (2nd meaning)",h:"ii) किसी को छोड़ आना",e:"To leave someone at a place",ex:"His father <b>dropped him off</b> at the examination centre early in the morning."},
+ {p:"Drop off (3rd meaning)",h:"iii) सो जाना",e:"To fall asleep (often unintentionally)",ex:"He was so tired that he <b>dropped off</b> while reading the textbook."},
+ {p:"Drop in",h:"अचानक मिलने आ जाना",e:"To visit unexpectedly",ex:"The supervisor <b>dropped in</b> during the mock test to check discipline."},
+ {p:"Drop away",h:"धीरे-धीरे कम हो जाना",e:"To fade or disappear gradually",ex:"As confidence increased, his fear of the exam slowly <b>dropped away</b>."},
+ {p:"Drop back",h:"पीछे रह जाना",e:"To fall behind",ex:"He <b>dropped back</b> in the race because of poor time management."}
+],summary:"Drop out → quit completely • Drop off → decrease / leave someone • Drop in → unexpected visit • Drop away → fade gradually • Drop back → fall behind"},
+
+{n:20,name:"FALL",items:[
+ {p:"Fall apart",h:"बिखर जाना / पूरी तरह विफल हो जाना",e:"To break down emotionally or logically",ex:"Under strict questioning, his argument <b>fell apart</b> and he could not justify his claim."},
+ {p:"Fall back on",h:"सहारे के रूप में उपयोग करना",e:"To rely on something when other options fail",ex:"When his main plan failed, he <b>fell back on</b> his savings to continue his preparation."},
+ {p:"Fall behind",h:"पीछे रह जाना",e:"To fail to keep pace or progress",ex:"Due to illness, she <b>fell behind</b> in her studies and had to work extra hard later."},
+ {p:"Fall out",h:"झगड़ा हो जाना",e:"To quarrel or lose friendship",ex:"They <b>fell out</b> over a minor misunderstanding before the examination.",note:"Preposition Tip: Use 'with' for the person and 'over' for the reason. Example: He fell out with his roommate over the electricity bill."},
+ {p:"Fall through",h:"असफल हो जाना",e:"To fail to happen or be completed",ex:"The plan to conduct the exam in two shifts <b>fell through</b> due to technical issues."}
+],summary:"Fall apart → collapse (logic/emotion) • Fall back on → rely as backup • Fall behind → lag • Fall out → quarrel • Fall through → plan fails"},
+
+{n:21,name:"FILL",items:[
+ {p:"Fill in",h:"i) भरना / जानकारी दर्ज करना",e:"To complete a form or supply required information",ex:"Candidates were instructed to <b>fill in</b> all personal details carefully on the application form."},
+ {p:"Fill in (2nd meaning)",h:"ii) किसी की जगह काम करना",e:"To temporarily replace someone",ex:"Since the regular teacher was absent, another faculty member <b>filled in</b> for her."},
+ {p:"Fill out",h:"पूरी तरह भरना",e:"To complete a form fully and correctly",ex:"He <b>filled out</b> the online registration form before submitting the fee.",note:"Fill in vs Fill out: Modern English mein forms ke liye ye often interchangeable hain. British English (Indian exams mein common) mein — Fill in choti spaces/blanks ke liye, Fill out complete document ke liye preferred hai. 'Fill someone in' ka matlab hai kisi ko missing information dena — 'I missed the meeting; can you fill me in on what happened?'"},
+ {p:"Fill up",h:"i) पूरी तरह भर जाना",e:"To become completely full",ex:"The examination hall quickly <b>filled up</b> as candidates arrived."},
+ {p:"Fill up (2nd meaning)",h:"ii) ईंधन भरना",e:"To put fuel in a vehicle",ex:"They <b>filled up</b> the car before leaving for the exam centre."},
+ {p:"Fill in for",h:"किसी के स्थान पर काम करना",e:"To act as a substitute",ex:"A senior officer <b>filled in for</b> the supervisor during the inspection."},
+ {p:"Fill with",h:"भर जाना (भावनाओं से)",e:"To be overwhelmed with a feeling",ex:"He was <b>filled with</b> confidence after performing well in the mock test."}
+],summary:"Fill in / fill out → forms (SSC favourite trap) • Fill up → become full / fuel • Fill in for → substitute • Fill with → emotions"},
+
+{n:22,name:"FIND",items:[
+ {p:"Find out",h:"पता लगाना / जानकारी प्राप्त करना",e:"To discover or learn information",ex:"She tried to <b>find out</b> the exact cut-off marks before planning her next attempt."},
+ {p:"Find out about",h:"किसी विषय की जानकारी जुटाना",e:"To get information about something specific",ex:"Candidates should <b>find out about</b> the revised syllabus from the official notification."},
+ {p:"Find fault with",h:"कमियाँ निकालना / दोष ढूँढना",e:"To criticize unnecessarily",ex:"He always <b>finds fault with</b> the exam pattern instead of improving his preparation."},
+ {p:"Find oneself",h:"खुद को किसी स्थिति में पाना",e:"To realize oneself in a particular situation",ex:"After clearing the prelims, she <b>found herself</b> more confident and focused."},
+ {p:"Find one's way",h:"रास्ता ढूँढ लेना / प्रगति करना",e:"To manage or succeed gradually",ex:"With consistent effort, he slowly <b>found his way</b> in competitive exam preparation."}
+],summary:"Find out → discover information • Find fault with → criticize • Find oneself → realization • Find one's way → gradual progress"},
+
+{n:23,name:"GET",items:[
+ {p:"Get over",h:"उबर जाना / पार पा लेना",e:"To recover from a problem, illness, or shock",ex:"It took him several weeks to <b>get over</b> the disappointment of failing the exam."},
+ {p:"Get through",h:"i) किसी कठिन स्थिति से गुजर जाना / सफलतापूर्वक पूरा करना",e:"To manage or complete something difficult",ex:"She <b>got through</b> the mains examination with disciplined revision and time management."},
+ {p:"Get through (2nd meaning)",h:"ii) संपर्क हो जाना",e:"To reach someone by phone",ex:"I finally <b>got through</b> to the helpline after trying several times."},
+ {p:"Get through with",h:"—",e:"To finish a task",ex:"I want to <b>get through with</b> this syllabus by Sunday."},
+ {p:"Get along with",h:"अच्छे संबंध रखना",e:"To have a friendly relationship",ex:"It is important to <b>get along with</b> colleagues in a competitive work environment."},
+ {p:"Get rid of",h:"छुटकारा पाना",e:"To remove something unwanted",ex:"He decided to <b>get rid of</b> negative thoughts before the final exam."},
+ {p:"Get by",h:"किसी तरह काम चलाना",e:"To manage with difficulty, especially with limited resources",ex:"My English isn't great, but I can <b>get by</b>."},
+ {p:"Get into",h:"शामिल होना / प्रवेश करना",e:"To enter or become involved in something",ex:"She <b>got into</b> a reputed government college through hard work and persistence."},
+ {p:"Get out of",h:"बच निकलना / टाल देना",e:"To avoid or escape something",ex:"He tried to <b>get out of</b> attending unnecessary meetings during revision time."},
+ {p:"Get away with",h:"सजा से बच निकलना",e:"To escape punishment for a wrong act",ex:"He thought he could <b>get away with</b> cheating in the exam, but the invigilator caught him."}
+],summary:"Get over → recovery • Get through → complete / contact • Get along with → relationship • Get rid of → remove • Get by → manage somehow • Get into / get out of → enter / escape"},
+
+{n:24,name:"GIVE",items:[
+ {p:"Give up",h:"i) छोड़ देना / त्याग देना",e:"To stop doing something permanently",ex:"He <b>gave up</b> watching movies during the exam season to focus completely on his studies."},
+ {p:"Give in",h:"हार मान लेना / दबाव में झुक जाना",e:"To surrender or accept unwillingly",ex:"After hours of discussion, the authorities finally <b>gave in</b> to the students' demands."},
+ {p:"Give away",h:"i) मुफ्त में दे देना",e:"To give something without expecting payment",ex:"He <b>gave away</b> his old books to juniors preparing for the same exam."},
+ {p:"Give away (2nd meaning)",h:"ii) राज़ खोल देना",e:"To reveal a secret unintentionally",ex:"His nervous expression <b>gave away</b> the fact that he had not prepared well."},
+ {p:"Give off",h:"उत्सर्जित करना (गंध, गर्मी, रोशनी)",e:"To emit or produce something",ex:"The generator <b>gives off</b> a lot of heat, making the room uncomfortable."},
+ {p:"Give out",h:"i) खत्म हो जाना",e:"To be exhausted or used up",ex:"His energy <b>gave out</b> before he could complete the last section of the paper."},
+ {p:"Give out (2nd meaning)",h:"ii) बाँटना",e:"To distribute",ex:"Admit cards were <b>given out</b> to all candidates before entering the hall."},
+ {p:"Give back",h:"लौटा देना",e:"To return something",ex:"He <b>gave back</b> the borrowed notes after the examination."}
+],summary:"Give up → quit • Give in → surrender • Give away → donate / reveal • Give off → emit • Give out → exhaust / distribute • Give back → return"},
+
+{n:25,name:"GO",items:[
+ {p:"Go through",h:"i) अनुभव करना / झेलना",e:"To experience something difficult",ex:"Every serious aspirant <b>goes through</b> intense pressure during the last month before the exam."},
+ {p:"Go through (2nd meaning)",h:"ii) ध्यान से जाँच करना",e:"To examine carefully",ex:"You should <b>go through</b> the instructions carefully before attempting the question paper."},
+ {p:"Go over",h:"दोहराना / समीक्षा करना",e:"To review or revise carefully",ex:"She <b>went over</b> all the formulas once again before entering the examination hall."},
+ {p:"Go out",h:"i) बाहर जाना",e:"To leave home for social purposes",ex:"He stopped <b>going out</b> with friends during the final phase of preparation."},
+ {p:"Go out (2nd meaning)",h:"ii) बुझ जाना / बंद हो जाना",e:"To stop burning or functioning",ex:"The lights <b>went out</b> due to a power cut during the mock test."},
+ {p:"Go off",h:"i) अचानक होना / बज उठना",e:"To suddenly make a noise (alarm, bomb)",ex:"The alarm <b>went off</b> just as the exam was about to begin."},
+ {p:"Go off (2nd meaning)",h:"ii) खराब हो जाना",e:"To become spoiled (food)",ex:"Milk <b>goes off</b> quickly in hot weather."},
+ {p:"Go off (3rd meaning)",h:"iii) अरुचि होना",e:"To stop liking something",ex:"I've <b>gone off</b> tea recently; I prefer coffee now."},
+ {p:"Go after",h:"पीछा करना / पाने की कोशिश करना",e:"To chase or pursue a goal",ex:"He decided to <b>go after</b> his dream of securing a top government post."},
+ {p:"Go ahead",h:"आगे बढ़ना / अनुमति देना",e:"To proceed or allow someone to continue",ex:"The invigilator allowed the candidate to <b>go ahead</b> and start writing."},
+ {p:"Go by",h:"बीते जाना / अनुसरण करना",e:"To pass (time) or follow rules",ex:"As the years <b>went by</b>, competition in exams increased sharply."}
+],summary:"Go through → experience / examine • Go over → revise • Go out → leave home / stop working • Go off → alarm / spoil • Go after → pursue • Go ahead → proceed • Go by → time passing / follow rules"},
+
+{n:26,name:"HAND",items:[
+ {p:"Hand over",h:"सौंप देना / जिम्मेदारी देना",e:"To give control, responsibility, or possession to someone",ex:"After completing the investigation, the officer <b>handed over</b> the case files to the senior authority."},
+ {p:"Hand in",h:"जमा करना",e:"To submit officially",ex:"Candidates were instructed to <b>hand in</b> their answer sheets before leaving the examination hall."},
+ {p:"Hand out",h:"बाँटना / वितरित करना",e:"To distribute something to people",ex:"Admit cards were <b>handed out</b> to all students before the mock test began."},
+ {p:"Hand down",h:"औपचारिक रूप से देना / सौंपना (फैसला, सजा, परंपरा)",e:"To pass on officially",ex:"The court <b>handed down</b> a strict judgment against the offenders."},
+ {p:"Hand back",h:"लौटा देना",e:"To return something to the owner",ex:"He <b>handed back</b> the library books after the examination was over."}
+],summary:"Hand over → transfer responsibility • Hand in → submit • Hand out → distribute • Hand down → official decision / tradition • Hand back → return"},
+
+{n:27,name:"HOLD",items:[
+ {p:"Hold on",h:"प्रतीक्षा करना / पकड़े रहना",e:"To wait for a short time or keep a firm grip",ex:"The invigilator asked the candidates to <b>hold on</b> until the answer sheets were distributed."},
+ {p:"Hold back",h:"रोकना / दबाना (भावनाएँ, प्रतिक्रिया)",e:"To restrain or control",ex:"She tried hard to <b>hold back</b> her tears after seeing the unexpected result."},
+ {p:"Hold up",h:"i) देरी करना / रोक देना",e:"To delay or obstruct progress",ex:"Heavy traffic <b>held up</b> many candidates on their way to the exam centre."},
+ {p:"Hold up (2nd meaning)",h:"ii) लूटपाट करना",e:"To rob using a weapon",ex:"Masked men tried to <b>hold up</b> the bank yesterday."},
+ {p:"Hold out",h:"टिके रहना / हार न मानना",e:"To continue despite difficulty",ex:"Despite repeated failures, he <b>held out</b> and finally cleared the examination.",note:"Ye 'offer' karna bhi mean karta hai (jaise ki koi hath badhana). He held out his hand to greet the interviewer."},
+ {p:"Hold off",h:"टालना / कुछ समय के लिए रोकना",e:"To delay or postpone",ex:"The authorities decided to <b>hold off</b> the announcement until verification was completed."},
+ {p:"Hold on to",h:"किसी चीज़ को बनाए रखना",e:"To keep possession of something",ex:"She <b>held on to</b> her admit card carefully till the end of the examination."}
+],summary:"Hold on → wait • Hold back → restrain • Hold up → delay • Hold out → endure • Hold off → postpone • Hold on to → keep/retain"},
+
+{n:28,name:"JOIN",items:[
+ {p:"Join in",h:"शामिल होना / भाग लेना",e:"To participate in an activity",ex:"All candidates were encouraged to <b>join in</b> the discussion on exam strategy after the mock test."},
+ {p:"Join up",h:"सदस्य बनना / शामिल होना (संगठन, सेना आदि में)",e:"To become a member of an organization",ex:"After completing his graduation, he decided to <b>join up</b> with the armed forces."},
+ {p:"Join together",h:"एकजुट होना / मिलकर काम करना",e:"To unite or combine efforts",ex:"Students <b>joined together</b> to demand transparency in the evaluation process."},
+ {p:"Join hands (with)",h:"सहयोग करना / मिलकर काम करना",e:"To cooperate with someone",ex:"Several coaching institutes <b>joined hands</b> to provide free guidance to underprivileged students."}
+],summary:"Join in → participation • Join up → become a member • Join together / join hands → cooperation, unity"},
+
+{n:29,name:"KEEP",items:[
+ {p:"Keep up with",h:"बराबरी बनाए रखना / गति के साथ चलना",e:"To stay at the same level or pace",ex:"It is difficult for many students to <b>keep up with</b> the rapidly changing exam pattern."},
+ {p:"Keep on",h:"लगातार जारी रखना",e:"To continue doing something repeatedly",ex:"He <b>kept on</b> revising the same topic until he felt confident about it."},
+ {p:"Keep off",h:"दूर रहना / छूने से बचना",e:"To avoid entering or touching something",ex:"Candidates were warned to <b>keep off</b> restricted areas of the examination centre."},
+ {p:"Keep out",h:"बाहर रखना / प्रवेश न करने देना",e:"To prevent someone from entering",ex:"Security guards ensured that unauthorized persons were <b>kept out</b> of the exam hall."},
+ {p:"Keep away (from)",h:"दूर रखना / दूर रहना",e:"To stay away or avoid contact",ex:"Students were advised to <b>keep away from</b> negative discussion before exam."},
+ {p:"Keep back",h:"रोक लेना / पीछे रखना",e:"To delay or withhold",ex:"The teacher <b>kept back</b> a few students to clarify their doubts after class."},
+ {p:"Keep in mind",h:"ध्यान में रखना",e:"To remember or consider important",ex:"While attempting reasoning questions, <b>keep in mind</b> the time limit."},
+ {p:"Keep abreast of",h:"ताज़ा जानकारी से अवगत रहना",e:"To stay up to date with the latest news/trends",ex:"An aspirant must <b>keep abreast of</b> current affairs for the interview round."}
+],summary:"Keep up with → pace / level • Keep on → continue • Keep off / keep out → restriction • Keep away → avoid • Keep back → delay / hold • Keep in mind → remember"},
+
+{n:30,name:"LAY",items:[
+ {p:"Lay off",h:"i) नौकरी से निकालना (आर्थिक कारणों से)",e:"To dismiss employees temporarily or permanently",ex:"Due to financial losses, the company <b>laid off</b> several employees last year."},
+ {p:"Lay off (2nd meaning)",h:"ii) किसी को परेशान करना बंद करना",e:"To stop troubling or criticizing someone",ex:"The teacher told the students to <b>lay off</b> unnecessary arguments and focus on studies."},
+ {p:"Lay down",h:"नियम या शर्त तय करना",e:"To establish rules, laws, or principles",ex:"The examination authority <b>laid down</b> strict guidelines for the conduct of the exam.",note:"'Surrendering' ke liye bhi use hota hai (jaise, 'The rebels laid down their arms')."},
+ {p:"Lay out",h:"योजना बनाकर प्रस्तुत करना",e:"To arrange or explain clearly",ex:"The officer <b>laid out</b> the entire recruitment process in a detailed presentation."},
+ {p:"Lay aside",h:"अलग रख देना / बचाकर रखना",e:"To save for future use",ex:"She <b>laid aside</b> some money every month to pay the examination fees."},
+ {p:"Lay hands on",h:"प्राप्त कर लेना / हासिल कर लेना",e:"To obtain or get possession of something",ex:"He tried hard to <b>lay hands on</b> previous year question papers for practice."}
+],summary:"Lay off → job / stop troubling • Lay down → rules • Lay out → explain clearly • Lay aside → save • Lay hands on → obtain"},
+
+{n:31,name:"LEAVE",items:[
+ {p:"Leave out",h:"छोड़ देना / शामिल न करना",e:"To omit or exclude someone or something",ex:"He accidentally <b>left out</b> one important topic while revising the syllabus."},
+ {p:"Leave behind",h:"i) पीछे छोड़ देना",e:"To fail to take someone or something along",ex:"In the rush to reach the exam centre, he <b>left behind</b> his calculator at home."},
+ {p:"Leave behind (2nd meaning)",h:"ii) पीछे छोड़ जाना (उपलब्धि/स्मृति)",e:"To leave something as a legacy",ex:"Great teachers <b>leave behind</b> a lasting impact on their students."},
+ {p:"Leave off",h:"रोक देना / बंद कर देना",e:"To stop doing something",ex:"She decided to <b>leave off</b> watching television during the exam month."},
+ {p:"Leave for",h:"किसी स्थान के लिए निकलना",e:"To depart for a place",ex:"They <b>left for</b> the examination centre early to avoid traffic."},
+ {p:"Leave alone",h:"अकेला छोड़ देना / हस्तक्षेप न करना",e:"To not disturb or interfere",ex:"The invigilator warned others to <b>leave</b> the candidate <b>alone</b> while he wrote the exam."}
+],summary:"Leave out → omit • Leave behind → forget / legacy • Leave off → stop • Leave for → depart • Leave alone → do not disturb"},
+
+{n:32,name:"LOOK",items:[
+ {p:"Look after",h:"देखभाल करना",e:"To take care of someone or something",ex:"During the examination days, parents closely <b>look after</b> their children's health and routine."},
+ {p:"Look into",h:"जाँच करना / पड़ताल करना",e:"To investigate or examine carefully",ex:"The authorities promised to <b>look into</b> the complaints regarding discrepancies in the result."},
+ {p:"Look for",h:"खोजना",e:"To try to find something or someone",ex:"He is <b>looking for</b> a reliable source of mock tests for SSC preparation."},
+ {p:"Look forward to",h:"उत्सुकता से प्रतीक्षा करना",e:"To await something with pleasure or expectation",ex:"Students <b>look forward to</b> the release of the final answer key after the exam.",note:"Grammar Trap (Most Asked SSC Exam Rule): Iske baad hamesha Noun ya Gerund (V1+ing) use karo, kabhi plain V1 nahi. Galat: I look forward to meet you. Sahi: I look forward to meeting you."},
+ {p:"Look down upon",h:"तुच्छ समझना / नीचा समझना",e:"To consider someone inferior",ex:"One should never <b>look down upon</b> others because of their background or failures."},
+ {p:"Look up to",h:"सम्मान करना / आदर्श मानना",e:"To admire or respect someone",ex:"Many aspirants <b>look up to</b> successful candidates for guidance and motivation."},
+ {p:"Look out (for)",h:"सावधान रहना / ध्यान रखना",e:"To be alert or watchful",ex:"Candidates should <b>look out for</b> misleading information circulating on social media."},
+ {p:"Look up",h:"i) जानकारी खोजना (किताब/इंटरनेट में)",e:"To search for information in a reference book or database",ex:"If you don't know the meaning of a word, <b>look it up</b> in the dictionary."},
+ {p:"Look up (2nd meaning)",h:"ii) स्थिति में सुधार होना",e:"To improve",ex:"After a long recession, the economy is finally <b>looking up</b>."}
+],summary:"Look after → care • Look into → investigate • Look for → search • Look forward to → eagerly wait • Look down upon → despise • Look up to → admire • Look out for → be alert"},
+
+{n:33,name:"MAKE",items:[
+ {p:"Make up for",h:"भरपाई करना / कमी पूरी करना",e:"To compensate for a loss or deficiency",ex:"Consistent practice can <b>make up for</b> a lack of natural ability in quantitative aptitude."},
+ {p:"Make out",h:"समझ पाना / पहचान पाना",e:"To understand or see/hear something with difficulty",ex:"Because of poor handwriting, the examiner could not <b>make out</b> some of the answers clearly."},
+ {p:"Make off",h:"भाग जाना (अचानक)",e:"To escape quickly, often after doing something wrong",ex:"The thief <b>made off</b> with important documents from the office late at night."},
+ {p:"Make over",h:"पूरी तरह बदल देना / हस्तांतरित करना",e:"To change the appearance or ownership",ex:"The old classroom was <b>made over</b> into a modern digital learning space."},
+ {p:"Make up",h:"i) बना लेना / गढ़ लेना",e:"To invent a story or excuse",ex:"He <b>made up</b> an excuse for missing the mock test."},
+ {p:"Make up (2nd meaning)",h:"ii) सुलह कर लेना",e:"To end a quarrel and become friendly again",ex:"After a brief argument, the two friends <b>made up</b> and resumed their studies together."},
+ {p:"Make up (3rd meaning)",h:"iii) कमी पूरी करना",e:"To complete a required amount/number",ex:"We need one more student to <b>make up</b> the required number for the batch."},
+ {p:"Make for",h:"योगदान देना / बढ़ावा देना",e:"To help cause or lead to something",ex:"Proper planning <b>makes for</b> better performance in competitive exams."}
+],summary:"Make up for → compensate • Make out → understand • Make off → escape • Make over → transform • Make up → invent / reconcile • Make for → contribute to"},
+
+{n:34,name:"MOVE",items:[
+ {p:"Move on",h:"आगे बढ़ना / पुराने विषय को छोड़ना",e:"To progress or stop focusing on the past",ex:"After analyzing his mistakes in the mock test, he decided to <b>move on</b> and focus on improvement instead of regret."},
+ {p:"Move out",h:"स्थान छोड़ना / घर खाली करना",e:"To leave a place permanently",ex:"He <b>moved out</b> of the hostel after completing his final examination."},
+ {p:"Move in",h:"नए स्थान में रहना शुरू करना",e:"To start living in a new place",ex:"She <b>moved in</b> near the coaching centre to save travel time."},
+ {p:"Move up",h:"पद या स्तर में ऊपर जाना",e:"To advance or get promoted",ex:"With consistent performance, he <b>moved up</b> the merit list after the final results."},
+ {p:"Move aside",h:"एक तरफ हो जाना",e:"To step aside and make space",ex:"The guard asked the candidates to <b>move aside</b> so that the entry process could continue smoothly."},
+ {p:"Move towards",h:"की ओर बढ़ना",e:"To make progress toward a goal or direction",ex:"With disciplined study, she steadily <b>moved towards</b> her goal of clearing SSC CGL."}
+],summary:"Move on → progress • Move out / move in → change residence • Move up → advancement • Move aside → make space • Move towards → approach a goal"},
+
+{n:35,name:"OPEN",items:[
+ {p:"Open up",h:"i) खुल जाना / शुरू होना",e:"To begin operations or become available",ex:"The examination portal will <b>open up</b> for online registration from next Monday."},
+ {p:"Open up (2nd meaning)",h:"ii) मन की बात बताना",e:"To share thoughts or feelings freely",ex:"During counselling, students were encouraged to <b>open up</b> about their exam stress."},
+ {p:"Open out",h:"फैल जाना / विस्तार पाना",e:"To spread out or become wider",ex:"After the narrow lane, the road suddenly <b>opened out</b> into a large ground near the exam centre."},
+ {p:"Open onto",h:"की ओर खुलना",e:"To lead to or face another place",ex:"The classroom <b>opens onto</b> a quiet courtyard, providing a calm study environment."},
+ {p:"Open with",h:"से शुरुआत करना",e:"To begin with something (speech, event, discussion)",ex:"The seminar <b>opened with</b> a detailed discussion on exam strategy and time management."},
+ {p:"Open out into",h:"अंततः बन जाना / फैल जाना",e:"To gradually develop into something larger",ex:"A small discussion group <b>opened out into</b> a full-fledged mentoring program for aspirants."}
+],summary:"Open up → begin / share feelings • Open out → spread or widen • Open onto → lead to a place • Open with → start with • Open out into → develop gradually"},
+
+{n:36,name:"PASS",items:[
+ {p:"Pass away",h:"निधन होना",e:"To die (polite or indirect expression)",ex:"The entire village mourned when the retired teacher <b>passed away</b> after a long illness."},
+ {p:"Pass out",h:"i) बेहोश हो जाना",e:"To lose consciousness",ex:"Due to extreme heat and stress, one candidate <b>passed out</b> near the examination centre."},
+ {p:"Pass out (2nd meaning)",h:"ii) डिग्री/प्रशिक्षण पूरा करना",e:"To graduate or complete training",ex:"She <b>passed out</b> of the academy as a top performer and joined government service."},
+ {p:"Pass through",h:"से होकर गुजरना",e:"To go through a place or experience",ex:"Every serious aspirant <b>passes through</b> a phase of self-doubt during preparation."},
+ {p:"Pass on",h:"i) आगे बढ़ा देना / सौंप देना",e:"To give something to another person",ex:"Please <b>pass on</b> this information to other candidates in your batch."},
+ {p:"Pass on (2nd meaning)",h:"ii) अस्वीकार करना",e:"To decline an offer or opportunity",ex:"He <b>passed on</b> the job offer to continue preparing for a better post."},
+ {p:"Pass off",h:"किसी चीज़ को कुछ और बताकर पेश करना",e:"To present falsely as something else",ex:"The shopkeeper tried to <b>pass off</b> old books as new ones.",note:"Structure: 'Pass off [something] AS [something else]'. Example: He tried to pass himself off as a senior officer."}
+],summary:"Pass away → death (formal) • Pass out → faint / graduate • Pass through → experience • Pass on → forward / decline • Pass off → deceive"},
+
+{n:37,name:"PICK",items:[
+ {p:"Pick up",h:"i) उठा लेना",e:"To lift or collect something",ex:"He <b>picked up</b> his admit card from the desk before leaving for the exam centre."},
+ {p:"Pick up (2nd meaning)",h:"ii) सुधार होना / बढ़ना",e:"To improve or increase",ex:"After regular practice, his speed in mathematics <b>picked up</b> significantly."},
+ {p:"Pick up (3rd meaning)",h:"iii) सीख लेना",e:"To learn something informally",ex:"She <b>picked up</b> several shortcut methods while solving previous year papers."},
+ {p:"Pick up (4th meaning)",h:"iv) किसी को गाड़ी से लेना",e:"To collect someone in a vehicle",ex:"I will <b>pick you up</b> from the station at 5 PM."},
+ {p:"Pick out",h:"चुन लेना / पहचान लेना",e:"To select or recognize from a group",ex:"The examiner <b>picked out</b> the most accurate answers from the sheets."},
+ {p:"Pick on",h:"जानबूझकर परेशान करना",e:"To bully or target unfairly",ex:"The senior students should not <b>pick on</b> juniors during exam days."},
+ {p:"Pick at",h:"थोड़ा-थोड़ा खाना / बेवजह आलोचना करना",e:"To eat very little or criticize constantly",ex:"Due to stress, he just <b>picked at</b> his food instead of eating properly."},
+ {p:"Pick over",h:"ध्यान से छाँटना / जाँच करना",e:"To examine carefully and select",ex:"She <b>picked over</b> the mock test questions to focus only on high-weightage topics."}
+],summary:"Pick up → lift / improve / learn • Pick out → choose / identify • Pick on → bully • Pick at → eat little / criticize • Pick over → examine carefully"},
+
+{n:38,name:"POINT",items:[
+ {p:"Point out",h:"ध्यान दिलाना / इंगित करना",e:"To draw attention to something important",ex:"The teacher <b>pointed out</b> the common mistakes students usually make in error-spotting questions."},
+ {p:"Point to",h:"की ओर संकेत करना / इंगित करना",e:"To indicate or suggest something",ex:"All the evidence <b>points to</b> a calculation error rather than a conceptual mistake."},
+ {p:"Point at",h:"उंगली से दिखाना",e:"To indicate physically with a finger",ex:"The invigilator <b>pointed at</b> the empty seat and asked the candidate to sit there."},
+ {p:"Point up",h:"जोर देकर दिखाना",e:"To emphasize or highlight",ex:"The data clearly <b>points up</b> the importance of regular mock-test analysis."},
+ {p:"Point towards",h:"की दिशा में संकेत करना",e:"To suggest a likely direction or outcome",ex:"Recent trends <b>point towards</b> a higher cut-off in this year's examination."}
+],summary:"Point out → highlight a mistake/fact • Point to / point towards → suggest evidence or result • Point at → physical direction • Point up → emphasize"},
+
+{n:39,name:"PUT",items:[
+ {p:"Put off",h:"टालना / स्थगित करना",e:"To postpone something",ex:"The authorities decided to <b>put off</b> the examination due to unavoidable technical issues."},
+ {p:"Put off (2nd meaning)",h:"अरुचि पैदा करना",e:"To make someone dislike something",ex:"The smell of the hospital <b>put him off</b> his food."},
+ {p:"Put up with",h:"सहन करना / बर्दाश्त करना",e:"To tolerate something unpleasant",ex:"During preparation, students often have to <b>put up with</b> stress and long study hours."},
+ {p:"Put on",h:"i) पहनना",e:"To wear clothes",ex:"He <b>put on</b> his identity badge before entering the examination hall."},
+ {p:"Put on (2nd meaning)",h:"ii) आयोजन करना",e:"To organize or present (show, event)",ex:"The institute <b>put on</b> a special revision session before the mains exam."},
+ {p:"Put out",h:"i) बुझाना",e:"To extinguish (fire, light)",ex:"The staff quickly <b>put out</b> the fire caused by an electrical fault.",note:"Ye fire aur cigarettes ke liye hai, par electric lights ke liye hum usually 'Switch off' ya 'Turn off' kehte hain."},
+ {p:"Put out (2nd meaning)",h:"ii) असुविधा में डालना",e:"To inconvenience or disturb",ex:"I hope my request does not <b>put you out</b> during your busy schedule."},
+ {p:"Put up",h:"i) ठहराना / रहने देना",e:"To provide accommodation",ex:"His friend <b>put him up</b> near the exam centre for two days."},
+ {p:"Put up (2nd meaning)",h:"ii) प्रदर्शित करना",e:"To display or show",ex:"Notices were <b>put up</b> outside the hall regarding exam instructions."},
+ {p:"Put forward",h:"प्रस्ताव रखना",e:"To propose an idea or plan",ex:"The committee <b>put forward</b> a new evaluation method for discussion."}
+],summary:"Put off → postpone • Put up with → tolerate • Put on → wear / organize • Put out → extinguish / disturb • Put up → accommodate / display • Put forward → propose"},
+
+{n:40,name:"RUN",items:[
+ {p:"Run into",h:"अचानक मिल जाना / सामना होना",e:"To meet someone unexpectedly",ex:"While revising at the library, he <b>ran into</b> his old teacher after many years."},
+ {p:"Run into (2nd meaning)",h:"समस्या में फँसना",e:"To experience difficulties",ex:"The project <b>ran into</b> financial trouble halfway through."},
+ {p:"Run out (of)",h:"समाप्त हो जाना",e:"To have no more of something left",ex:"Many candidates <b>ran out of</b> time before attempting the last section of the paper."},
+ {p:"Run over",h:"i) दोहरा लेना / जल्दी से देख लेना",e:"To review quickly",ex:"Before submitting the answer sheet, she <b>ran over</b> all the questions once again."},
+ {p:"Run over (2nd meaning)",h:"ii) कुचल देना",e:"To hit and injure with a vehicle",ex:"The cyclist was almost <b>run over</b> by a speeding car near the centre."},
+ {p:"Run after",h:"पीछा करना / पाने की कोशिश करना",e:"To chase or pursue someone or something",ex:"Instead of <b>running after</b> shortcuts, he focused on building strong concepts."},
+ {p:"Run away",h:"भाग जाना",e:"To escape from a place or situation",ex:"He did not <b>run away</b> from failure but analysed his mistakes calmly."},
+ {p:"Run through",h:"तेजी से समझाना / अभ्यास करना",e:"To practise or explain quickly",ex:"The teacher <b>ran through</b> the important questions just before the exam."}
+],summary:"Run into → unexpected meeting • Run out (of) → finish • Run over → review / knock down • Run after → chase • Run away → escape • Run through → quick practice"},
+
+{n:41,name:"SEE",items:[
+ {p:"See off",h:"विदा करना / छोड़ने जाना",e:"To accompany someone when they leave",ex:"His parents went to the railway station to <b>see him off</b> before the examination in another city."},
+ {p:"See through",h:"i) भेद समझ लेना",e:"To understand the truth behind deception",ex:"The interviewer easily <b>saw through</b> his false claims about work experience."},
+ {p:"See through (2nd meaning)",h:"ii) अंत तक निभाना",e:"To complete something despite difficulty",ex:"She was determined to see the preparation <b>through</b> till the final result."},
+ {p:"See to",h:"ध्यान रखना / व्यवस्था करना",e:"To take responsibility for something",ex:"The centre superintendent <b>saw to</b> all arrangements before the exam began."},
+ {p:"See about",h:"व्यवस्था करना / पता करना",e:"To arrange or investigate",ex:"The officer promised to <b>see about</b> the complaints regarding seating issues."},
+ {p:"See off (danger/problem sense)",h:"टाल देना / बच निकलना",e:"To get rid of a threat or problem",ex:"Careful planning helped him <b>see off</b> the risk of failing the exam."}
+],summary:"See off → bid farewell / remove danger • See through → detect lie / complete task • See to → take care of • See about → arrange / inquire"},
+
+{n:42,name:"SET",items:[
+ {p:"Set up",h:"स्थापित करना / व्यवस्था करना",e:"To establish or arrange something",ex:"The government <b>set up</b> special examination centres to manage the large number of candidates."},
+ {p:"Set aside",h:"अलग रखना / बचाकर रखना",e:"To reserve for a particular purpose",ex:"She <b>set aside</b> two hours every day exclusively for revision."},
+ {p:"Set off",h:"i) रवाना होना",e:"To begin a journey",ex:"The candidates <b>set off</b> early in the morning to avoid traffic on the way to the exam centre."},
+ {p:"Set off (2nd meaning)",h:"ii) प्रेरित करना / शुरू कर देना",e:"To trigger a reaction",ex:"His careless remark <b>set off</b> a heated argument among the students."},
+ {p:"Set in",h:"शुरू हो जाना (नकारात्मक स्थिति)",e:"To begin and seem likely to continue",ex:"Panic <b>set in</b> when the question paper appeared tougher than expected."},
+ {p:"Set out",h:"यात्रा शुरू करना / उद्देश्य बताना",e:"To begin a journey or explain intentions",ex:"He <b>set out</b> with a clear goal of clearing the exam in his first attempt."},
+ {p:"Set back",h:"पीछे कर देना / नुकसान पहुँचाना",e:"To delay progress or cause a setback",ex:"Illness <b>set back</b> his preparation by several weeks."}
+],summary:"Set up → establish • Set aside → reserve • Set off → start journey / trigger • Set in → negative beginning • Set out → begin / explain aim • Set back → delay progress"},
+
+{n:43,name:"SHOW",items:[
+ {p:"Show up",h:"आ जाना / उपस्थित होना",e:"To appear or arrive, often unexpectedly",ex:"Only half of the registered candidates <b>showed up</b> for the mock test due to bad weather."},
+ {p:"Show off",h:"दिखावा करना",e:"To display something proudly in order to impress others",ex:"Instead of <b>showing off</b> his success, he quietly focused on helping juniors."},
+ {p:"Show around",h:"घुमा-फिराकर दिखाना",e:"To guide someone around a place",ex:"The staff <b>showed</b> the candidates <b>around</b> the examination centre before reporting time."},
+ {p:"Show through",h:"स्पष्ट दिखाई देना",e:"To be clearly visible despite attempts to hide",ex:"His nervousness <b>showed through</b> even though he tried to appear confident."},
+ {p:"Show up as",h:"के रूप में प्रकट होना",e:"To be revealed in a particular way",ex:"The candidate <b>showed up as</b> one of the top scorers in the final merit list."}
+],summary:"Show up → arrive / be present • Show off → boast • Show around → guide • Show through → be visible • Show up as → be revealed as"},
+
+{n:44,name:"STAND",items:[
+ {p:"Stand for",h:"i) प्रतिनिधित्व करना / संकेत करना",e:"To represent or mean something",ex:"The abbreviation \"SSC\" <b>stands for</b> Staff Selection Commission."},
+ {p:"Stand for (2nd meaning)",h:"ii) चुनाव में खड़ा होना",e:"To contest an election",ex:"He decided to <b>stand for</b> the post of class representative."},
+ {p:"Stand by",h:"i) समर्थन करना",e:"To support or remain loyal to someone",ex:"His parents <b>stood by</b> him even after repeated exam failures."},
+ {p:"Stand by (2nd meaning)",h:"ii) तैयार रहना",e:"To be ready for action",ex:"All invigilators were asked to <b>stand by</b> until further instructions were given."},
+ {p:"Stand out",h:"सबसे अलग या प्रमुख दिखना",e:"To be clearly noticeable or exceptional",ex:"Her consistent performance made her <b>stand out</b> among thousands of candidates."},
+ {p:"Stand up for",h:"पक्ष में खड़ा होना",e:"To defend or support a person or principle",ex:"He <b>stood up for</b> his friend when false allegations were made."},
+ {p:"Stand in for",h:"किसी की जगह काम करना",e:"To substitute for someone",ex:"A senior teacher <b>stood in for</b> the absent invigilator during the exam."}
+],summary:"Stand for → represent / contest • Stand by → support / be ready • Stand out → be noticeable • Stand up for → defend • Stand in for → substitute"},
+
+{n:45,name:"TAKE",items:[
+ {p:"Take up",h:"i) शुरू करना / अपनाना",e:"To begin an activity, job, or habit",ex:"He <b>took up</b> daily mock tests to improve his speed and accuracy."},
+ {p:"Take up (2nd meaning)",h:"ii) समय या स्थान लेना",e:"To occupy time or space",ex:"Lengthy instructions <b>took up</b> most of the examination time."},
+ {p:"Take up (3rd meaning)",h:"iii) सम्बोधित करना / चर्चा करना",e:"To discuss a matter",ex:"The committee will <b>take up</b> the issue of age relaxation in the next meeting."},
+ {p:"Take off",h:"i) उड़ान भरना",e:"To leave the ground (aircraft)",ex:"The flight <b>took off</b> on time, allowing the candidate to reach the exam city safely."},
+ {p:"Take off (2nd meaning)",h:"ii) अचानक सफल होना",e:"To become successful quickly",ex:"Her YouTube channel <b>took off</b> after she started sharing exam strategies."},
+ {p:"Take in",h:"i) धोखा देना",e:"To deceive someone",ex:"Many students are <b>taken in</b> by fake websites promising guaranteed selection."},
+ {p:"Take in (2nd meaning)",h:"ii) समझना / ग्रहण करना",e:"To understand or absorb information",ex:"It was difficult to <b>take in</b> so many new rules at once."},
+ {p:"Take over",h:"नियंत्रण संभालना",e:"To assume control or responsibility",ex:"The senior officer <b>took over</b> the supervision of the examination process."},
+ {p:"Take after",h:"समान होना",e:"To resemble a family member",ex:"She <b>takes after</b> her mother in discipline and dedication."},
+ {p:"Take down",h:"लिख लेना / नीचे उतारना",e:"To write something or remove from a higher place",ex:"The invigilator asked students to <b>take down</b> the roll number written on the board."}
+],summary:"Take up → begin / occupy • Take off → fly / become popular • Take in → deceive / understand • Take over → control • Take after → resemble"},
+
+{n:46,name:"THROW",items:[
+ {p:"Throw away",h:"फेंक देना / बर्बाद करना",e:"To discard or waste something valuable",ex:"He realised later that skipping revision had <b>thrown away</b> a golden opportunity to score better."},
+ {p:"Throw out",h:"बाहर निकाल देना / निकालकर फेंक देना",e:"To remove or expel forcibly",ex:"Candidates creating disturbance were <b>thrown out</b> of the examination hall."},
+ {p:"Throw up",h:"i) उल्टी करना",e:"To vomit",ex:"Due to anxiety and heat, the student felt sick and almost <b>threw up</b> before the exam."},
+ {p:"Throw up (2nd meaning)",h:"ii) अचानक सामने आना",e:"To produce or present unexpectedly",ex:"The investigation <b>threw up</b> several irregularities in the evaluation process."},
+ {p:"Throw off",h:"भ्रमित करना / संतुलन बिगाड़ना",e:"To confuse or disturb",ex:"A sudden change in the exam pattern <b>threw off</b> many candidates."},
+ {p:"Throw on",h:"जल्दी से पहन लेना",e:"To put on clothes quickly",ex:"He <b>threw on</b> a jacket and rushed to the exam centre."}
+],summary:"Throw away → waste • Throw out → expel • Throw up → vomit / reveal • Throw off → confuse • Throw on → wear quickly"},
+
+{n:47,name:"TURN",items:[
+ {p:"Turn down",h:"अस्वीकार करना / ठुकरा देना",e:"To refuse an offer or request",ex:"He <b>turned down</b> the job offer because he wanted to focus entirely on government exam preparation."},
+ {p:"Turn up",h:"आ जाना / प्रकट होना",e:"To arrive or appear, often unexpectedly",ex:"Only a few candidates <b>turned up</b> for the extra doubt-clearing session."},
+ {p:"Turn out",h:"i) परिणाम निकलना / साबित होना",e:"To result in a particular way",ex:"The paper <b>turned out</b> to be more difficult than most students had expected."},
+ {p:"Turn out (2nd meaning)",h:"ii) बड़ी संख्या में उपस्थित होना",e:"To attend an event in large numbers",ex:"Thousands of aspirants <b>turned out</b> for the protest against the delay in results."},
+ {p:"Turn over",h:"पलटना / उलटना",e:"To flip or change position",ex:"The invigilator asked the candidates to <b>turn over</b> the question paper after the bell rang."},
+ {p:"Turn into",h:"में बदल जाना",e:"To transform into something else",ex:"With consistent effort, his weak performance gradually <b>turned into</b> a strong scoring area."}
+],summary:"Turn down → refuse • Turn up → appear • Turn out → result • Turn over → flip • Turn into → transform"},
+
+{n:48,name:"WEAR",items:[
+ {p:"Wear out",h:"i) घिस जाना / बेकार हो जाना",e:"To become unusable due to overuse",ex:"After months of daily practice, his old notebook was completely <b>worn out</b>."},
+ {p:"Wear out (2nd meaning)",h:"ii) थका देना",e:"To exhaust someone physically or mentally",ex:"Continuous mock tests without proper rest <b>wore him out</b> before the final exams."},
+ {p:"Wear off",h:"प्रभाव खत्म हो जाना",e:"To gradually disappear or lose effect",ex:"The nervousness <b>wore off</b> once he started solving the questions calmly."},
+ {p:"Wear away",h:"धीरे-धीरे कम होना / घिस जाना",e:"To reduce gradually over time",ex:"Constant stress can <b>wear away</b> a student's confidence if not managed properly."},
+ {p:"Wear down",h:"कमज़ोर कर देना / हिम्मत तोड़ देना",e:"To weaken through continuous pressure",ex:"Repeated failures initially <b>wore him down</b>, but later made him mentally stronger."}
+],summary:"Wear out → become useless / exhaust • Wear off → effect fades • Wear away → gradual reduction • Wear down → weaken mentally or physically"},
+
+{n:49,name:"WIND",items:[
+ {p:"Wind up",h:"i) समाप्त करना / समेटना",e:"To bring something to an end",ex:"After addressing all queries, the invigilator decided to <b>wind up</b> the briefing session."},
+ {p:"Wind up (2nd meaning)",h:"ii) चिढ़ाना / परेशान करना",e:"To tease or irritate someone",ex:"His friends were just <b>winding him up</b> by joking about the exam results."},
+ {p:"Wind down",h:"धीरे-धीरे शांत होना / कम करना",e:"To relax or reduce activity gradually",ex:"After the exam was over, students tried to <b>wind down</b> and release the built-up stress."},
+ {p:"Wind on",h:"आगे बढ़ना / समय का बीतना",e:"To move forward (time, story)",ex:"As the year <b>wound on</b>, competition for government jobs became tougher."},
+ {p:"Wind through",h:"घुमावदार रास्ते से जाना",e:"To move in a twisting or indirect path",ex:"The narrow road <b>winds through</b> several villages before reaching the exam centre."}
+],summary:"Wind up → end / tease • Wind down → relax gradually • Wind on → time moves forward • Wind through → move in curves"},
+
+{n:50,name:"WORK",items:[
+ {p:"Work out",h:"i) समाधान निकलना / सफल होना",e:"To find a solution or end successfully",ex:"With patience and consistent effort, everything <b>worked out</b> well in the end."},
+ {p:"Work out (2nd meaning)",h:"ii) व्यायाम करना",e:"To exercise physically",ex:"He <b>works out</b> every morning to keep his body and mind fit during preparation."},
+ {p:"Work out (3rd meaning)",h:"iii) हिसाब लगाना",e:"To calculate a total",ex:"Can you <b>work out</b> how much the total registration fee will be?"},
+ {p:"Work on",h:"काम करना / सुधार करना",e:"To spend time improving or developing something",ex:"She is <b>working on</b> her weak areas in reasoning to improve her score."},
+ {p:"Work up",h:"धीरे-धीरे विकसित करना",e:"To gradually develop a feeling or condition",ex:"He <b>worked up</b> the courage to attempt the toughest section first."},
+ {p:"Work off",h:"खर्च करना / कम करना",e:"To reduce something through effort",ex:"He jogs daily to <b>work off</b> the stress caused by continuous mock tests."},
+ {p:"Work through",h:"धैर्यपूर्वक निपटना",e:"To deal with something carefully step by step",ex:"She <b>worked through</b> all previous year questions to strengthen her concepts."}
+],summary:"Work out → solution / exercise • Work on → improve • Work up → develop gradually • Work off → reduce • Work through → handle step-by-step"}
+];
+
+/* ================= RENDER VERB SECTIONS ================= */
+const verbSectionsEl = document.getElementById('verbSections');
+const tocListEl = document.getElementById('tocList');
+const revisionGridEl = document.getElementById('revisionGrid');
+
+verbs.forEach(v=>{
+  // TOC entry
+  const li = document.createElement('li');
+  li.innerHTML = `<a href="#sec-${v.n}" onclick="jumpTo('sec-${v.n}');return false;"><span class="num">${v.n}</span>${v.name}</a>`;
+  tocListEl.appendChild(li);
+
+  // Card
+  const card = document.createElement('div');
+  card.className = 'verb-card';
+  card.id = 'sec-'+v.n;
+
+  let itemsHtml = '';
+  v.items.forEach(it=>{
+    itemsHtml += `
+      <div class="phrase-item">
+        <span class="ptitle">${it.p}</span> — <span class="hindi">${it.h}</span><br>
+        <span class="eng">${it.e}</span>
+        <div class="example"><b>Example:</b> ${it.ex}</div>
+        ${it.note ? `<div class="note">💡 ${it.note}</div>` : ''}
+      </div>`;
+  });
+
+  card.innerHTML = `
+    <div class="verb-head">
+      <div class="vnum">${v.n}</div>
+      <h2>VERB: ${v.name}</h2>
+    </div>
+    <div class="verb-body">
+      ${itemsHtml}
+      <div class="summary-box">
+        <span class="stitle">📌 Quick Summary</span>
+        ${v.summary}
+      </div>
+    </div>`;
+  verbSectionsEl.appendChild(card);
+
+  // Revision grid
+  const rev = document.createElement('div');
+  rev.className = 'rev-item';
+  rev.innerHTML = `<b>${v.n}) ${v.name}</b> — ${v.summary}`;
+  revisionGridEl.appendChild(rev);
+});
+
+/* Add special table jump links to TOC */
+const specialLi1 = document.createElement('li');
+specialLi1.innerHTML = `<a href="#sec-quad" onclick="jumpTo('sec-quad');return false;"><span class="num">★</span>Distribution Quad</a>`;
+tocListEl.appendChild(specialLi1);
+const specialLi2 = document.createElement('li');
+specialLi2.innerHTML = `<a href="#sec-ending" onclick="jumpTo('sec-ending');return false;"><span class="num">★</span>Ending/Stopping Verbs</a>`;
+tocListEl.appendChild(specialLi2);
+const specialLi3 = document.createElement('li');
+specialLi3.innerHTML = `<a href="#sec-revision" onclick="jumpTo('sec-revision');return false;"><span class="num">★</span>Full Revision Table</a>`;
+tocListEl.appendChild(specialLi3);
+
+/* ================= SCROLL / NAV FUNCTIONS ================= */
+function jumpTo(id){
+  if(id==='top'){
+    window.scrollTo({top:0, behavior:'smooth'});
+    return;
+  }
+  const el = document.getElementById(id);
+  if(el){
+    el.scrollIntoView({behavior:'smooth', block:'start'});
+  }
+  // close mobile sidebar after click
+  document.getElementById('sidebar').classList.remove('open');
+}
+
+/* Scroll to top button visibility */
+window.addEventListener('scroll', ()=>{
+  const btn = document.getElementById('scrollTopBtn');
+  btn.style.display = window.scrollY > 400 ? 'block' : 'none';
+});
+
+/* TOC live search */
+document.getElementById('tocSearch').addEventListener('input', function(){
+  const q = this.value.toLowerCase();
+  document.querySelectorAll('#tocList li').forEach(li=>{
+    const txt = li.textContent.toLowerCase();
+    li.style.display = txt.includes(q) ? '' : 'none';
+  });
+});
+</script>
+
+<script>
+(function(){
+  const btn = document.getElementById('themeToggle');
+  const saved = localStorage.getItem('sunnyRiseTheme');
+  if(saved === 'dark'){
+    document.body.classList.add('dark-mode');
+  }
+  function syncButton(){
+    const dark = document.body.classList.contains('dark-mode');
+    btn.textContent = dark ? '☀️ Light' : '🌙 Dark';
+    btn.setAttribute('aria-pressed', dark ? 'true' : 'false');
+  }
+  btn.addEventListener('click', function(){
+    document.body.classList.toggle('dark-mode');
+    localStorage.setItem('sunnyRiseTheme',
+      document.body.classList.contains('dark-mode') ? 'dark' : 'light');
+    syncButton();
+  });
+  syncButton();
+})();
+</script>
+
+<script>if(localStorage.getItem('sunnyrise-leaf-dark')==='1')document.body.classList.add('sr-dark');</script></body>
+</html>

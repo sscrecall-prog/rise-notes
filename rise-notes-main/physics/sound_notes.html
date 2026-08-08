@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sound – Sunny Rise</title>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root { --cream:#FAEED9; --gold:#E1A837; --olive:#8D7A02; --dark:#38370D; --lgold:#F5D98A; --pale:#FDF6E8; }
+  * { margin:0; padding:0; box-sizing:border-box; scroll-behavior:smooth; }
+  body { background:var(--cream); color:var(--dark); font-family:'Nunito',sans-serif; font-size:15px; line-height:1.7; }
+
+  header { background:var(--dark); padding:28px 20px 20px; text-align:center; position:relative; overflow:hidden; }
+  header::before { content:''; position:absolute; inset:0; background:repeating-linear-gradient(45deg,transparent,transparent 18px,rgba(225,168,55,.08) 18px,rgba(225,168,55,.08) 36px); }
+  .badge { display:inline-block; background:var(--gold); color:var(--dark); font-family:'Baloo 2',sans-serif; font-weight:800; font-size:12px; letter-spacing:2px; padding:4px 14px; border-radius:20px; margin-bottom:10px; text-transform:uppercase; position:relative; }
+  header h1 { font-family:'Baloo 2',sans-serif; font-size:clamp(1.8rem,5vw,3rem); font-weight:800; color:var(--cream); position:relative; text-shadow:0 2px 12px rgba(0,0,0,.3); }
+  header h1 span { color:var(--gold); }
+  header p { color:#c9b87a; font-size:13px; margin-top:6px; position:relative; }
+
+  .toc-wrap { background:var(--dark); padding:0 0 28px; }
+  .toc-inner { max-width:880px; margin:0 auto; padding:0 20px; }
+  .toc-title { background:var(--gold); color:var(--dark); font-family:'Baloo 2',sans-serif; font-weight:800; font-size:1rem; padding:10px 20px; border-radius:0 0 14px 14px; display:inline-block; margin-bottom:18px; text-transform:uppercase; }
+  .toc-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:10px; }
+  .toc-grid a { display:flex; align-items:center; gap:10px; background:rgba(255,255,255,.06); border:1px solid rgba(225,168,55,.25); border-radius:10px; padding:10px 14px; color:var(--cream); text-decoration:none; font-weight:600; font-size:13.5px; transition:background .2s,border-color .2s,transform .15s; }
+  .toc-grid a:hover { background:rgba(225,168,55,.2); border-color:var(--gold); transform:translateY(-2px); }
+  .toc-grid a .num { background:var(--gold); color:var(--dark); font-family:'Baloo 2',sans-serif; font-weight:800; font-size:12px; width:24px; height:24px; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+
+  main { max-width:880px; margin:0 auto; padding:36px 20px 60px; display:flex; flex-direction:column; gap:44px; }
+  .section { scroll-margin-top:20px; }
+  .section-header { display:flex; align-items:center; gap:14px; margin-bottom:20px; }
+  .section-icon { width:46px; height:46px; background:var(--dark); border-radius:14px; display:flex; align-items:center; justify-content:center; font-size:22px; flex-shrink:0; box-shadow:0 4px 14px rgba(56,55,13,.18); }
+  .section-title { font-family:'Baloo 2',sans-serif; font-weight:800; font-size:1.45rem; color:var(--dark); line-height:1.2; }
+  .section-title span { display:block; font-size:11px; font-weight:600; letter-spacing:2px; color:var(--olive); text-transform:uppercase; font-family:'Nunito',sans-serif; margin-bottom:2px; }
+  .divider { height:3px; background:linear-gradient(90deg,transparent,var(--gold),transparent); border-radius:4px; margin:6px 0 20px; }
+
+  .card { background:#fff; border:2px solid var(--lgold); border-radius:16px; padding:20px 22px; margin-bottom:16px; box-shadow:0 2px 12px rgba(56,55,13,.07); transition:transform .15s,box-shadow .15s; }
+  .card:hover { transform:translateY(-2px); box-shadow:0 6px 22px rgba(56,55,13,.12); }
+  .card-title { font-family:'Baloo 2',sans-serif; font-weight:700; font-size:1rem; color:var(--olive); margin-bottom:8px; display:flex; align-items:center; gap:8px; }
+  .card-title::before { content:''; width:4px; height:18px; background:var(--gold); border-radius:4px; display:inline-block; }
+  p.body-text { color:#3a3800; margin-bottom:10px; }
+
+  .highlight { background:linear-gradient(135deg,var(--gold),#c9910a); color:var(--dark); border-radius:14px; padding:16px 20px; font-weight:700; font-size:.95rem; display:flex; align-items:flex-start; gap:12px; margin:14px 0; }
+  .highlight .hi { font-size:22px; flex-shrink:0; margin-top:1px; }
+  .highlight.dark { background:linear-gradient(135deg,var(--dark),#5a5800); color:var(--cream); }
+  .highlight.dark .hi { color:var(--gold); }
+  .highlight.olive { background:linear-gradient(135deg,var(--olive),#6b5c01); color:#fff; }
+
+  .key-point { background:rgba(225,168,55,.15); border:1.5px solid var(--gold); border-radius:12px; padding:12px 16px; margin:10px 0; font-size:13.5px; display:flex; gap:10px; align-items:flex-start; }
+  .key-point .kp { font-size:18px; flex-shrink:0; margin-top:1px; }
+
+  .compare { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin:14px 0; }
+  .compare-col { background:var(--pale); border:2px solid var(--lgold); border-radius:14px; overflow:hidden; }
+  .compare-col .col-head { background:var(--dark); color:var(--gold); font-family:'Baloo 2',sans-serif; font-weight:700; font-size:.9rem; padding:10px 16px; text-align:center; }
+  .compare-col .col-body { padding:14px 16px; font-size:13.5px; }
+  .compare-col .col-body li { list-style:none; padding:5px 0; border-bottom:1px dashed #e0d4b0; display:flex; gap:8px; }
+  .compare-col .col-body li:last-child { border-bottom:none; }
+  .compare-col .col-body li::before { content:'→'; color:var(--gold); font-weight:700; }
+
+  .formula-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(180px,1fr)); gap:12px; margin:14px 0; }
+  .formula-box { background:var(--dark); color:var(--cream); border-radius:12px; padding:14px 16px; text-align:center; font-family:'Baloo 2',sans-serif; font-size:1.05rem; font-weight:700; border:2px solid var(--olive); }
+  .formula-box small { display:block; font-family:'Nunito',sans-serif; font-size:11px; color:var(--gold); margin-top:5px; font-weight:600; }
+
+  .legend { background:var(--pale); border-left:4px solid var(--gold); border-radius:0 12px 12px 0; padding:14px 18px; margin:12px 0; font-size:13.5px; }
+  .legend li { list-style:none; padding:3px 0; }
+  .legend li strong { color:var(--olive); }
+
+  /* Wave type boxes */
+  .wave-compare { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin:14px 0; }
+  .wave-box { border-radius:14px; overflow:hidden; border:2px solid var(--lgold); }
+  .wave-box .wbh { padding:12px 16px; font-family:'Baloo 2',sans-serif; font-weight:700; font-size:13px; text-align:center; }
+  .wave-box.trans .wbh { background:#2d5a7a; color:#fff; }
+  .wave-box.longi .wbh { background:#7a3a00; color:#fff; }
+  .wave-box .wbb { background:#fff; padding:14px 16px; font-size:13px; }
+
+  /* Medium speed */
+  .medium-grid { display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px; margin:14px 0; }
+  .medium-box { border-radius:14px; overflow:hidden; border:2px solid var(--lgold); text-align:center; }
+  .medium-box .mbh { padding:10px; font-family:'Baloo 2',sans-serif; font-weight:700; font-size:13px; }
+  .medium-box.solid .mbh { background:var(--dark); color:var(--gold); }
+  .medium-box.liquid .mbh { background:#1a5a8a; color:#fff; }
+  .medium-box.gas .mbh { background:var(--olive); color:#fff; }
+  .medium-box .mbb { background:#fff; padding:10px; font-size:12px; }
+
+  /* Sound speed table */
+  .speed-table { width:100%; border-collapse:collapse; font-size:13px; margin:14px 0; border-radius:12px; overflow:hidden; }
+  .speed-table th { background:var(--dark); color:var(--gold); padding:10px 14px; text-align:left; font-family:'Baloo 2',sans-serif; }
+  .speed-table td { padding:8px 14px; border-bottom:1px solid var(--lgold); }
+  .speed-table tr:nth-child(even) td { background:var(--pale); }
+  .speed-table .state-row td { background:rgba(225,168,55,.15); font-weight:700; color:var(--olive); font-family:'Baloo 2',sans-serif; }
+
+  /* Frequency range */
+  .freq-range { display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px; margin:14px 0; }
+  .freq-box { border-radius:14px; overflow:hidden; border:2px solid var(--lgold); text-align:center; }
+  .freq-box .fh { padding:10px 14px; font-family:'Baloo 2',sans-serif; font-weight:700; font-size:12px; }
+  .freq-box.infra .fh { background:#4a1a6a; color:#fff; }
+  .freq-box.audible .fh { background:#1a6a2a; color:#fff; }
+  .freq-box.ultra .fh { background:#6a1a1a; color:#fff; }
+  .freq-box .fb { background:#fff; padding:12px; font-size:12.5px; }
+
+  /* Mach number */
+  .mach-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:10px; margin:14px 0; }
+  .mach-box { background:var(--pale); border:2px solid var(--lgold); border-radius:12px; padding:12px 16px; display:flex; align-items:center; gap:12px; }
+  .mach-box .mi { font-size:24px; flex-shrink:0; }
+  .mach-box .mn { font-family:'Baloo 2',sans-serif; font-weight:700; font-size:13px; color:var(--dark); }
+  .mach-box .mv { font-size:12px; color:var(--olive); }
+
+  /* Reflection phenomena */
+  .reflex-grid { display:grid; grid-template-columns:1fr; gap:12px; margin:14px 0; }
+  .reflex-box { background:#fff; border-left:5px solid var(--gold); border-radius:0 14px 14px 0; padding:14px 18px; box-shadow:0 2px 8px rgba(56,55,13,.07); }
+  .reflex-box.echo { border-color:#c9910a; }
+  .reflex-box.reverb { border-color:var(--olive); }
+  .reflex-box.diff { border-color:var(--dark); }
+  .reflex-box .rb-title { font-family:'Baloo 2',sans-serif; font-weight:700; font-size:1rem; color:var(--dark); margin-bottom:6px; }
+  .reflex-box .rb-body { font-size:13.5px; color:#3a3800; }
+
+  footer { background:var(--dark); color:#c9b87a; text-align:center; padding:20px; font-size:12px; margin-top:20px; }
+  footer strong { color:var(--gold); }
+
+  @media(max-width:600px) {
+    .compare,.wave-compare,.medium-grid,.freq-range,.mach-grid { grid-template-columns:1fr; }
+    .formula-grid { grid-template-columns:1fr 1fr; }
+    .toc-grid { grid-template-columns:1fr 1fr; }
+  }
+  @media(max-width:380px) { .toc-grid,.formula-grid { grid-template-columns:1fr; } }
+</style>
+<style id="sr-system">:root{--sr-cream:#FAEED9;--sr-gold:#E1A837;--sr-olive:#8D7A02;--sr-ink:#38370D;--sr-paper:#fffdf8;--sr-muted:#756f55;--sr-line:#ead9ad;--sr-shadow:0 14px 35px rgba(56,55,13,.10)}.srbar{position:sticky!important;top:0!important;z-index:99999!important;background:rgba(56,55,13,.96)!important;backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.08)!important;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Arial,sans-serif!important}.srbar *{box-sizing:border-box}.srbarin{width:min(1120px,calc(100% - 28px));height:64px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:12px}.srbrand{display:flex;align-items:center;gap:10px;color:#fff!important;text-decoration:none!important}.srbrand img{width:38px!important;height:38px!important;border-radius:50%!important;object-fit:cover!important;border:2px solid var(--sr-gold)!important;margin:0!important}.srbrand b{font-size:15px!important;letter-spacing:.6px!important;color:#fff!important}.srbrand b span{color:var(--sr-gold)!important}.sractions{display:flex;gap:7px}.srbtn{border:1px solid rgba(225,168,55,.55)!important;background:transparent!important;color:var(--sr-gold)!important;border-radius:10px!important;padding:8px 10px!important;text-decoration:none!important;font:700 12px/1 Inter,system-ui,sans-serif!important;cursor:pointer}.srbtn.primary{background:var(--sr-gold)!important;color:var(--sr-ink)!important}@media(max-width:520px){.srbarin{height:58px}.srbrand img{width:34px!important;height:34px!important}.srbrand b{font-size:13px!important}.srbtn{padding:8px!important}.srhide{display:none!important}}body.sr-dark{filter:none}body.sr-dark .srbar{background:#030a13!important}</style></head>
+<body><div class="srbar"><div class="srbarin"><a class="srbrand" href="../index.html"><img src="../assets/sunnyrise-profile.jpg" alt="Sunny Rise"><b>SUNNY <span>RISE</span></b></a><div class="sractions"><a class="srbtn srhide" href="../search/index.html">🔎 Search</a><button class="srbtn" onclick="document.body.classList.toggle('sr-dark');localStorage.setItem('sunnyrise-leaf-dark',document.body.classList.contains('sr-dark')?'1':'0')">◐ Theme</button><a class="srbtn primary" href="../index.html">⌂ Home</a></div></div></div>
+
+<header>
+  <div class="badge">📚 Sunny Rise — Lecture 4</div>
+  <h1>🔊 <span>SOUND</span></h1>
+  <p>Physics Notes · Simple Language · Complete Coverage</p>
+</header>
+
+<div class="toc-wrap">
+  <div class="toc-inner">
+    <div class="toc-title">🗂️ Topics at a Glance</div>
+    <div class="toc-grid">
+      <a href="#sound-intro"><span class="num">1</span>What is Sound?</a>
+      <a href="#sound-media"><span class="num">2</span>Sound in Different Media</a>
+      <a href="#speed-sound"><span class="num">3</span>Speed of Sound</a>
+      <a href="#sound-waves"><span class="num">4</span>Sound Waves & Types</a>
+      <a href="#wave-types"><span class="num">5</span>Transverse & Longitudinal Waves</a>
+      <a href="#characteristics"><span class="num">6</span>Characteristics of Sound Waves</a>
+      <a href="#audible"><span class="num">7</span>Audible Range & Ultrasonic</a>
+      <a href="#mach"><span class="num">8</span>Mach Number</a>
+      <a href="#reflection"><span class="num">9</span>Reflection of Sound</a>
+      <a href="#echo"><span class="num">10</span>Echo, Reverberation & Diffraction</a>
+      <a href="#sonar"><span class="num">11</span>SONAR</a>
+      <a href="#doppler"><span class="num">12</span>Doppler Effect</a>
+    </div>
+  </div>
+</div>
+
+<main>
+
+  <!-- 1. SOUND INTRO -->
+  <section class="section" id="sound-intro">
+    <div class="section-header">
+      <div class="section-icon">🔊</div>
+      <div class="section-title"><span>Topic 1</span>What is Sound?</div>
+    </div>
+    <div class="divider"></div>
+    <div class="card">
+      <p class="body-text">Sound = energy का एक form — एक vibration जो medium (air, water, solids) में mechanical wave की तरह travel करती है और हमारे ear से audible sensation की तरह perceive होती है।</p>
+      <div class="highlight">
+        <span class="hi">🎵</span>
+        <span>Sound तब produce होती है जब कोई object <strong>vibrate</strong> करता है — pressure wave बनती है → surrounding medium के particles vibrate करते हैं।</span>
+      </div>
+      <div class="compare" style="margin-top:14px">
+        <div class="compare-col">
+          <div class="col-head">📈 Compression (संपीडन)</div>
+          <div class="col-body">
+            <ul>
+              <li>High pressure का region</li>
+              <li>Particles एक-दूसरे के closest होते हैं</li>
+              <li>Object आगे vibrate करे → Compression</li>
+            </ul>
+          </div>
+        </div>
+        <div class="compare-col">
+          <div class="col-head">📉 Rarefaction (विरलन)</div>
+          <div class="col-body">
+            <ul>
+              <li>Low pressure का region</li>
+              <li>Particles spread out होते हैं</li>
+              <li>Object पीछे vibrate करे → Rarefaction</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="key-point">
+        <span class="kp">🚫</span>
+        <span>Sound <strong>vacuum में travel नहीं कर सकती</strong> — medium (air/water/solid) ज़रूरी है।</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. SOUND IN MEDIA -->
+  <section class="section" id="sound-media">
+    <div class="section-header">
+      <div class="section-icon">🌊</div>
+      <div class="section-title"><span>Topic 2</span>Sound in Different Media</div>
+    </div>
+    <div class="divider"></div>
+    <div class="medium-grid">
+      <div class="medium-box gas">
+        <div class="mbh">💨 Air (Gas)</div>
+        <div class="mbb">Sound = <strong>Longitudinal waves</strong>। Vibrations wave propagation के parallel होती हैं।</div>
+      </div>
+      <div class="medium-box liquid">
+        <div class="mbh">💧 Water (Liquid)</div>
+        <div class="mbb">Sound = <strong>Longitudinal waves</strong>। Water में भी same type की waves।</div>
+      </div>
+      <div class="medium-box solid">
+        <div class="mbh">🪨 Solids</div>
+        <div class="mbb">Sound = <strong>Both Longitudinal AND Transverse waves</strong> — दोनों types possible!</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. SPEED OF SOUND -->
+  <section class="section" id="speed-sound">
+    <div class="section-header">
+      <div class="section-icon">⚡</div>
+      <div class="section-title"><span>Topic 3</span>Speed of Sound</div>
+    </div>
+    <div class="divider"></div>
+    <div class="card">
+      <div class="highlight dark">
+        <span class="hi">🏆</span>
+        <span>Speed of Sound: <strong>Solids &gt; Liquids &gt; Gases</strong> — Solids में सबसे तेज़, Gases में सबसे धीमी!</span>
+      </div>
+      <div class="key-point">
+        <span class="kp">💡</span>
+        <span>Solids में particles tightly packed होते हैं → energy जल्दी transfer होती है → speed ज़्यादा।</span>
+      </div>
+      <div class="formula-grid" style="margin-top:12px">
+        <div class="formula-box">343 m/s<small>Speed of Sound in Air</small></div>
+        <div class="formula-box">3 × 10⁸ m/s<small>Speed of Light</small></div>
+      </div>
+      <div class="key-point" style="margin-top:8px">
+        <span class="kp">🌡️</span>
+        <span>Temperature बढ़ने पर sound की speed <strong>बढ़ती है</strong>। Moist air में speed, dry air से ज़्यादा होती है।</span>
+      </div>
+
+      <div class="card-title" style="margin-top:16px">📊 Speed of Sound in Various Substances</div>
+      <table class="speed-table">
+        <tr><th>State</th><th>Substance</th><th>Speed (m/s)</th></tr>
+        <tr class="state-row"><td colspan="3">🪨 Solids</td></tr>
+        <tr><td></td><td>Aluminium</td><td><strong>6420</strong></td></tr>
+        <tr><td></td><td>Nickel</td><td>6040</td></tr>
+        <tr><td></td><td>Steel</td><td>5960</td></tr>
+        <tr><td></td><td>Iron</td><td>5950</td></tr>
+        <tr><td></td><td>Brass</td><td>4700</td></tr>
+        <tr><td></td><td>Glass (flint)</td><td>3980</td></tr>
+        <tr class="state-row"><td colspan="3">💧 Liquids</td></tr>
+        <tr><td></td><td>Water (sea)</td><td><strong>1531</strong></td></tr>
+        <tr><td></td><td>Water (distilled)</td><td>1498</td></tr>
+        <tr><td></td><td>Ethanol</td><td>1207</td></tr>
+        <tr><td></td><td>Methanol</td><td>1103</td></tr>
+        <tr class="state-row"><td colspan="3">💨 Gases</td></tr>
+        <tr><td></td><td>Hydrogen</td><td>1284</td></tr>
+        <tr><td></td><td>Helium</td><td>965</td></tr>
+        <tr><td></td><td>Air</td><td><strong>346</strong></td></tr>
+        <tr><td></td><td>Oxygen</td><td>316</td></tr>
+        <tr><td></td><td>Sulphur dioxide</td><td>213</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <!-- 4. SOUND WAVES -->
+  <section class="section" id="sound-waves">
+    <div class="section-header">
+      <div class="section-icon">〰️</div>
+      <div class="section-title"><span>Topic 4</span>Sound Waves & Types</div>
+    </div>
+    <div class="divider"></div>
+    <div class="card">
+      <p class="body-text">Sound waves = vibrations की वजह से medium में travel करने वाले disturbances।</p>
+      <div class="compare">
+        <div class="compare-col">
+          <div class="col-head">🔧 Mechanical Waves</div>
+          <div class="col-body">
+            <ul>
+              <li>Propagate के लिए <strong>medium ज़रूरी</strong></li>
+              <li>Vacuum में travel नहीं होतीं</li>
+              <li>Example: Sound waves</li>
+            </ul>
+          </div>
+        </div>
+        <div class="compare-col">
+          <div class="col-head">✨ Non-Mechanical Waves</div>
+          <div class="col-body">
+            <ul>
+              <li>Propagate के लिए <strong>medium ज़रूरी नहीं</strong></li>
+              <li>Vacuum में travel कर सकती हैं</li>
+              <li>Example: Light waves (EM waves)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. WAVE TYPES -->
+  <section class="section" id="wave-types">
+    <div class="section-header">
+      <div class="section-icon">📡</div>
+      <div class="section-title"><span>Topic 5</span>Transverse & Longitudinal Waves</div>
+    </div>
+    <div class="divider"></div>
+    <div class="wave-compare">
+      <div class="wave-box trans">
+        <div class="wbh">↕️ Transverse Waves (अनुप्रस्थ तरंगें)</div>
+        <div class="wbb">
+          <p style="margin-bottom:8px">Particles, wave की propagation direction के <strong>perpendicular</strong> (90°) vibrate करते हैं।</p>
+          <ul class="legend" style="margin:0;background:transparent;border:none;padding:0">
+            <li>🔸 Crest (ऊपरी point) और Trough (निचला point) होते हैं</li>
+            <li>🔸 Example: <strong>Light waves</strong>, Electromagnetic waves</li>
+            <li>🔸 Solids में भी transverse waves travel करती हैं</li>
+          </ul>
+        </div>
+      </div>
+      <div class="wave-box longi">
+        <div class="wbh">↔️ Longitudinal Waves (अनुदैर्ध्य तरंगें)</div>
+        <div class="wbb">
+          <p style="margin-bottom:8px">Particles, wave की propagation direction के <strong>parallel</strong> vibrate करते हैं।</p>
+          <ul class="legend" style="margin:0;background:transparent;border:none;padding:0">
+            <li>🔸 Compression और Rarefaction बनते हैं</li>
+            <li>🔸 Example: <strong>Sound waves</strong>, Pressure waves</li>
+            <li>🔸 Air, Water और Solids तीनों में travel होती हैं</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. CHARACTERISTICS -->
+  <section class="section" id="characteristics">
+    <div class="section-header">
+      <div class="section-icon">📏</div>
+      <div class="section-title"><span>Topic 6</span>Characteristics of Sound Waves</div>
+    </div>
+    <div class="divider"></div>
+
+    <div class="card">
+      <div class="card-title">〰️ Wavelength (तरंगदैर्घ्य)</div>
+      <p class="body-text">दो successive crests या troughs के बीच की physical distance = Wavelength (λ)।</p>
+      <ul class="legend">
+        <li>🔸 Longitudinal wave में: दो successive compressions या rarefactions के बीच की distance</li>
+        <li>🔸 S.I. Unit = <strong>Meter (m)</strong></li>
+        <li>🔸 Symbol = <strong>λ (lambda)</strong></li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="card-title">🔁 Frequency (आवृत्ति)</div>
+      <p class="body-text">Sound wave एक second में कितने cycles complete करे = Frequency। यही sound की pitch determine करती है।</p>
+      <div class="formula-grid">
+        <div class="formula-box">ν = 1/T<small>Frequency = 1/Time Period</small></div>
+        <div class="formula-box">f ∝ 1/λ<small>Frequency ∝ 1/Wavelength</small></div>
+      </div>
+      <div class="key-point">
+        <span class="kp">🎤</span>
+        <span>S.I. Unit = <strong>s⁻¹ या Hertz (Hz)</strong> &nbsp;|&nbsp; Girls की voice high-pitched होती है क्योंकि vocal cords तेज़ vibrate करते हैं।</span>
+      </div>
+      <div class="compare" style="margin-top:12px">
+        <div class="compare-col">
+          <div class="col-head">🔊 High Pitch Sound</div>
+          <div class="col-body">
+            <ul>
+              <li>Faster vibrations</li>
+              <li>Higher frequency</li>
+              <li>Smaller wavelength</li>
+            </ul>
+          </div>
+        </div>
+        <div class="compare-col">
+          <div class="col-head">🔉 Low Pitch Sound</div>
+          <div class="col-body">
+            <ul>
+              <li>Slower vibrations</li>
+              <li>Lower frequency</li>
+              <li>Larger wavelength</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">📢 Amplitude (आयाम)</div>
+      <p class="body-text">Vibrating particles का mean position से maximum displacement = Amplitude। यह sound की loudness represent करती है।</p>
+      <div class="highlight">
+        <span class="hi">🔊</span>
+        <span>Greater Amplitude = Louder Sound &nbsp;|&nbsp; S.I. Unit = Metre (m)</span>
+      </div>
+      <ul class="legend">
+        <li>🔸 Sound intensity का unit = <strong>Decibel (dB)</strong></li>
+        <li>🔸 Human ear perceive कर सकता है: <strong>0 to 130 dB</strong></li>
+        <li>🔸 130 dB से ऊपर = Noise (हानिकारक)</li>
+        <li>🔸 Table को हल्के से hit करें → कम amplitude → soft sound</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="card-title">🎨 Timbre (Tone Quality / Tone Color)</div>
+      <p class="body-text">Timbre = sound की वो quality जो same pitch और loudness वाली दूसरी sounds से अलग बनाती है।</p>
+      <div class="key-point">
+        <span class="kp">🎵</span>
+        <span><strong>Note</strong> = एक single frequency नहीं बल्कि कई frequencies का mixture (fundamental + overtones) से बनता है।</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. AUDIBLE RANGE -->
+  <section class="section" id="audible">
+    <div class="section-header">
+      <div class="section-icon">👂</div>
+      <div class="section-title"><span>Topic 7</span>Audible Range & Ultrasonic</div>
+    </div>
+    <div class="divider"></div>
+    <div class="freq-range">
+      <div class="freq-box infra">
+        <div class="fh">👻 Infrasonic (&lt; 20 Hz)</div>
+        <div class="fb">
+          Humans सुन नहीं सकते।<br>
+          <strong>Animals</strong> सुन सकते हैं।<br>
+          Example: Earthquakes की sound।
+        </div>
+      </div>
+      <div class="freq-box audible">
+        <div class="fh">👂 Audible Range (20 Hz – 20,000 Hz)</div>
+        <div class="fb">
+          Human ear इस range को सुन सकता है।<br>
+          <strong>20 Hz to 20 kHz</strong><br>
+          Normal human hearing range।
+        </div>
+      </div>
+      <div class="freq-box ultra">
+        <div class="fh">🦇 Ultrasonic (&gt; 20,000 Hz)</div>
+        <div class="fb">
+          Humans सुन नहीं सकते।<br>
+          <strong>Bats & Dolphins</strong> produce करते हैं।<br>
+          Medical में use होती है।
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">🏥 Applications of Ultrasonic Sounds</div>
+      <ul class="legend">
+        <li>🔸 Bats और Dolphins produce करते हैं (echolocation)</li>
+        <li>🔸 <strong>Ultrasound in gender determination — banned</strong> in India</li>
+        <li>🔸 Foetus की growth और development monitor करने के लिए</li>
+        <li>🔸 Kidney stones identify और <strong>break</strong> करने के लिए</li>
+        <li>🔸 Internal organs की conditions identify करने के लिए</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 8. MACH NUMBER -->
+  <section class="section" id="mach">
+    <div class="section-header">
+      <div class="section-icon">✈️</div>
+      <div class="section-title"><span>Topic 8</span>Mach Number</div>
+    </div>
+    <div class="divider"></div>
+    <div class="card">
+      <p class="body-text">Mach Number = किसी object की speed का उसके surrounding medium में sound की speed से ratio।</p>
+      <div class="formula-grid">
+        <div class="formula-box" style="grid-column:1/-1">Mach No. = Speed of Body / Speed of Sound in that Medium<small>Dimensionless number</small></div>
+      </div>
+      <div class="mach-grid" style="margin-top:14px">
+        <div class="mach-box"><span class="mi">🐢</span><div><div class="mn">Subsonic</div><div class="mv">Mach &lt; 1 (sound से धीमा)</div></div></div>
+        <div class="mach-box"><span class="mi">≈</span><div><div class="mn">Transonic</div><div class="mv">Mach ≈ 1 (sound के बराबर)</div></div></div>
+        <div class="mach-box"><span class="mi">🚀</span><div><div class="mn">Supersonic</div><div class="mv">Mach 1 to 5 (sound से तेज़)</div></div></div>
+        <div class="mach-box"><span class="mi">⚡</span><div><div class="mn">Hypersonic</div><div class="mv">Mach &gt; 5 (बहुत तेज़)</div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. REFLECTION -->
+  <section class="section" id="reflection">
+    <div class="section-header">
+      <div class="section-icon">🔄</div>
+      <div class="section-title"><span>Topic 9</span>Reflection of Sound</div>
+    </div>
+    <div class="divider"></div>
+    <div class="card">
+      <p class="body-text">Sound waves जब किसी surface से टकराकर वापस bounce करती हैं — उसे Reflection of Sound कहते हैं।</p>
+      <div class="highlight">
+        <span class="hi">💡</span>
+        <span>Sound, light की तरह <strong>same laws of reflection</strong> follow करती है। Medium: solid या liquid हो सकता है।</span>
+      </div>
+      <div class="key-point">
+        <span class="kp">📌</span>
+        <span>Reflection से: <strong>Echo, Reverberation और Diffraction</strong> जैसी phenomena होती हैं।</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10. ECHO, REVERBERATION, DIFFRACTION -->
+  <section class="section" id="echo">
+    <div class="section-header">
+      <div class="section-icon">📣</div>
+      <div class="section-title"><span>Topic 10</span>Echo, Reverberation & Diffraction</div>
+    </div>
+    <div class="divider"></div>
+    <div class="reflex-grid">
+      <div class="reflex-box echo">
+        <div class="rb-title">🏔️ Echo (प्रतिध्वनि)</div>
+        <div class="rb-body">
+          <p style="margin-bottom:8px">जब sound किसी surface से reflect होकर listener तक वापस आए — तो वो sound दोबारा सुनाई दे = Echo।</p>
+          <div class="highlight" style="margin:8px 0">
+            <span class="hi">📏</span>
+            <span>Distinct Echo सुनने के लिए obstacle की minimum distance = <strong>17.2 meters</strong></span>
+          </div>
+          <ul class="legend" style="margin-top:8px">
+            <li>🔸 Formula: 2D = v × t → D = v×t/2</li>
+            <li>🔸 v (air में) = 344 m/s, minimum time = 0.1 s</li>
+            <li>🔸 2D = 344 × 0.1 = 34.4 → D = 17.2 m</li>
+          </ul>
+        </div>
+      </div>
+      <div class="reflex-box reverb">
+        <div class="rb-title">🏛️ Reverberation (अनुगूंज)</div>
+        <div class="rb-body">
+          <p>Original sound source बंद होने के बाद भी enclosed space में sound का बने रहना = Reverberation।</p>
+          <div class="key-point" style="margin-top:8px">
+            <span class="kp">🏠</span>
+            <span>Walls, ceiling, furniture से repeated reflections → sound धीरे-धीरे fade होती है। Example: Concert halls, caves में।</span>
+          </div>
+        </div>
+      </div>
+      <div class="reflex-box diff">
+        <div class="rb-title">🌀 Diffraction (विवर्तन)</div>
+        <div class="rb-body">
+          <p>Sound waves का obstacles के around या small openings के through bend होना = Diffraction।</p>
+          <div class="key-point" style="margin-top:8px">
+            <span class="kp">🚪</span>
+            <span>इसीलिए corner के पीछे से भी sound सुनाई देती है — source दिखाई न दे तब भी!</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 11. SONAR -->
+  <section class="section" id="sonar">
+    <div class="section-header">
+      <div class="section-icon">🛸</div>
+      <div class="section-title"><span>Topic 11</span>SONAR</div>
+    </div>
+    <div class="divider"></div>
+    <div class="card">
+      <div class="highlight dark">
+        <span class="hi">🌊</span>
+        <span><strong>SONAR = Sound Navigation And Ranging</strong> — Underwater objects detect और locate करने की technology।</span>
+      </div>
+      <ul class="legend" style="margin-top:12px">
+        <li>🔸 <strong>Ultrasonic sound waves</strong> emit करता है</li>
+        <li>🔸 Waves objects से reflect होकर echo बनाती हैं</li>
+        <li>🔸 Echo analyze करके distance calculate होती है</li>
+        <li>🔸 Uses: Navigation, Communication, Mapping (ocean floor)</li>
+        <li>🔸 Submarines में use होता है</li>
+      </ul>
+      <div class="key-point" style="margin-top:8px">
+        <span class="kp">🦇</span>
+        <span>Bats का echolocation system भी SONAR जैसा ही principle follow करता है!</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 12. DOPPLER EFFECT -->
+  <section class="section" id="doppler">
+    <div class="section-header">
+      <div class="section-icon">🚑</div>
+      <div class="section-title"><span>Topic 12</span>Doppler Effect</div>
+    </div>
+    <div class="divider"></div>
+    <div class="card">
+      <div class="highlight">
+        <span class="hi">📡</span>
+        <span><strong>Doppler Effect:</strong> जब observer, wave source के relative move कर रहा हो — तो wave की perceived frequency या wavelength change हो जाती है।</span>
+      </div>
+      <div class="formula-grid" style="margin-top:14px">
+        <div class="formula-box" style="grid-column:1/-1;font-size:.9rem">f₀ = [(v + v₀) / (v + vₛ)] × fₛ<small>Doppler Effect Formula</small></div>
+      </div>
+      <ul class="legend" style="margin-top:12px">
+        <li>🔸 <strong>f₀</strong> = Observer को सुनाई देने वाली frequency</li>
+        <li>🔸 <strong>v</strong> = Sound wave की speed</li>
+        <li>🔸 <strong>v₀</strong> = Observer की velocity</li>
+        <li>🔸 <strong>vₛ</strong> = Source की velocity</li>
+        <li>🔸 <strong>fₛ</strong> = Source frequency (actual frequency)</li>
+      </ul>
+      <div class="compare" style="margin-top:14px">
+        <div class="compare-col">
+          <div class="col-head">🔴 Red Shift (Source दूर जाए)</div>
+          <div class="col-body">
+            <ul>
+              <li>Frequency कम हो जाती है</li>
+              <li>Wavelength बढ़ जाती है</li>
+              <li>Sound की pitch कम सुनाई देती है</li>
+              <li>Example: Ambulance दूर जाए</li>
+            </ul>
+          </div>
+        </div>
+        <div class="compare-col">
+          <div class="col-head">🔵 Blue Shift (Source पास आए)</div>
+          <div class="col-body">
+            <ul>
+              <li>Frequency ज़्यादा हो जाती है</li>
+              <li>Wavelength कम हो जाती है</li>
+              <li>Sound की pitch ज़्यादा सुनाई देती है</li>
+              <li>Example: Ambulance पास आए</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUICK REVISION -->
+  <section class="section">
+    <div class="section-header">
+      <div class="section-icon">🎯</div>
+      <div class="section-title"><span>Quick Revision</span>All Key Facts & Formulas</div>
+    </div>
+    <div class="divider"></div>
+    <div class="card">
+      <div class="formula-grid">
+        <div class="formula-box">ν = 1/T<small>Frequency</small></div>
+        <div class="formula-box">f ∝ 1/λ<small>Freq. ∝ 1/Wavelength</small></div>
+        <div class="formula-box">343 m/s<small>Sound in Air</small></div>
+        <div class="formula-box">3×10⁸ m/s<small>Speed of Light</small></div>
+        <div class="formula-box">17.2 m<small>Min. Echo Distance</small></div>
+        <div class="formula-box">0–130 dB<small>Human Hearing Range</small></div>
+        <div class="formula-box">&lt;20 Hz<small>Infrasonic</small></div>
+        <div class="formula-box">20–20k Hz<small>Audible Range</small></div>
+        <div class="formula-box">&gt;20,000 Hz<small>Ultrasonic</small></div>
+      </div>
+      <div class="highlight" style="margin-top:16px">
+        <span class="hi">🧠</span>
+        <span><strong>Speed याद करो:</strong> Solid &gt; Liquid &gt; Gas &nbsp;|&nbsp; <strong>Mach याद करो:</strong> Sub &lt;1 · Trans ≈1 · Super 1-5 · Hyper &gt;5</span>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>📚 <strong>Sunny Rise</strong> · Sound – Lecture 4</footer>
+<script>if(localStorage.getItem('sunnyrise-leaf-dark')==='1')document.body.classList.add('sr-dark');</script></body>
+</html>

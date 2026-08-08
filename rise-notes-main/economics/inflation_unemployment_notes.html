@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Inflation & Unemployment – Lecture 3 | Sunny Rise</title>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700;800&family=Hind:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --deep:    #0D1B2A;
+    --navy:    #1B2A41;
+    --teal:    #1A5276;
+    --saffron: #E8561A;
+    --gold:    #F0B429;
+    --green:   #1E8449;
+    --red:     #C0392B;
+    --purple:  #7D3C98;
+    --blue:    #1A6FA8;
+    --cyan:    #148F77;
+    --light:   #F4F7FA;
+    --card:    #FFFFFF;
+    --text:    #1C2833;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Hind', sans-serif;
+    background: #EAF0F6;
+    color: var(--text);
+    line-height: 1.78;
+  }
+
+  /* ── HEADER ── */
+  header {
+    background: linear-gradient(135deg, #0D1B2A 0%, #1B2A41 60%, #1A5276 100%);
+    padding: 46px 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  header::before {
+    content: '₹';
+    position: absolute;
+    font-size: 340px;
+    opacity: 0.04;
+    right: -20px; top: -60px;
+    font-family: 'Baloo 2'; color: #F0B429;
+  }
+  header h1 {
+    font-family: 'Baloo 2', cursive;
+    font-size: 2.5rem; font-weight: 800;
+    color: var(--gold);
+  }
+  header p { color: #8DAEC4; margin-top: 6px; font-size: 0.97rem; }
+  .badge {
+    display: inline-block;
+    background: var(--saffron); color: white;
+    font-size: 0.73rem; font-weight: 700;
+    padding: 4px 16px; border-radius: 20px;
+    margin-top: 10px; letter-spacing: 1px; text-transform: uppercase;
+  }
+
+  /* ── LAYOUT ── */
+  .container { max-width: 920px; margin: 0 auto; padding: 30px 16px 70px; }
+
+  /* ── SECTION TITLE ── */
+  .section-title {
+    font-family: 'Baloo 2', cursive;
+    font-size: 1.4rem; font-weight: 800;
+    color: white;
+    background: linear-gradient(135deg, var(--teal), var(--navy));
+    padding: 13px 24px;
+    border-radius: 12px 12px 0 0;
+    border-left: 6px solid var(--gold);
+    margin-top: 38px;
+  }
+  .section-body {
+    background: var(--card);
+    border-radius: 0 0 12px 12px;
+    padding: 22px 26px;
+    box-shadow: 0 4px 22px rgba(0,0,0,0.07);
+    border: 1px solid #D5E0EC; border-top: none;
+  }
+
+  /* ── CARDS ── */
+  .card {
+    background: var(--light); border-radius: 10px;
+    padding: 16px 18px; margin: 12px 0;
+    border-left: 4px solid var(--blue);
+  }
+  .card.green  { border-left-color: var(--green); }
+  .card.orange { border-left-color: var(--saffron); }
+  .card.purple { border-left-color: var(--purple); }
+  .card.red    { border-left-color: var(--red); }
+  .card.gold   { border-left-color: var(--gold); }
+  .card.cyan   { border-left-color: var(--cyan); }
+  .card.teal   { border-left-color: var(--teal); }
+
+  .card-title {
+    font-family: 'Baloo 2', cursive;
+    font-weight: 700; font-size: 1.05rem;
+    color: var(--teal); margin-bottom: 6px;
+  }
+
+  /* ── EXAMPLE ── */
+  .example {
+    background: linear-gradient(135deg, #fff9e6, #fff3cd);
+    border: 1px solid #ffc107; border-radius: 8px;
+    padding: 10px 14px; margin-top: 10px; font-size: 0.9rem;
+  }
+  .example::before { content: '💡 Real Life Example: '; font-weight: 700; color: #c47d00; }
+
+  /* ── EXAM TIP ── */
+  .exam-tip {
+    background: linear-gradient(135deg, #ffecd2, #fcb69f);
+    border-radius: 8px; padding: 10px 16px;
+    margin-top: 10px; font-size: 0.88rem; font-weight: 600; color: #7d2a00;
+  }
+  .exam-tip::before { content: '🎯 Exam Tip: '; }
+
+  /* ── KEY NOTE ── */
+  .key {
+    background: #E8F4FD; border-radius: 8px;
+    padding: 10px 14px; margin: 8px 0; font-size: 0.92rem;
+    border-left: 3px solid var(--blue);
+  }
+  .key b { color: var(--teal); }
+
+  /* ── TABLE ── */
+  table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 0.88rem; }
+  th {
+    background: linear-gradient(135deg, var(--teal), var(--navy));
+    color: white; padding: 10px 12px; text-align: left;
+    font-family: 'Baloo 2', cursive;
+  }
+  td { padding: 9px 12px; border-bottom: 1px solid #dde6f0; vertical-align: top; }
+  tr:nth-child(even) td { background: #F0F5FA; }
+  tr:hover td { background: #E3EEF9; }
+
+  /* ── GRIDS ── */
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 14px 0; }
+  .grid3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin: 14px 0; }
+
+  /* ── COLORED BOXES ── */
+  .box { border-radius: 12px; padding: 16px; color: white; font-size: 0.88rem; }
+  .box .btitle { font-family: 'Baloo 2'; font-size: 1rem; font-weight: 700; margin-bottom: 6px; }
+  .box.blue   { background: linear-gradient(135deg, #1A6FA8, #15608F); }
+  .box.green  { background: linear-gradient(135deg, #1E8449, #196F3D); }
+  .box.purple { background: linear-gradient(135deg, #7D3C98, #6C3483); }
+  .box.orange { background: linear-gradient(135deg, #E8561A, #C94B15); }
+  .box.red    { background: linear-gradient(135deg, #C0392B, #A93226); }
+  .box.teal   { background: linear-gradient(135deg, #148F77, #117A65); }
+  .box.gold   { background: linear-gradient(135deg, #D4A017, #B7860B); }
+  .box.dark   { background: linear-gradient(135deg, #1C2833, #0D1B2A); }
+  .box.navy   { background: linear-gradient(135deg, #1B2A41, #0D1B2A); }
+
+  /* ── FORMULA ── */
+  .formula {
+    background: linear-gradient(135deg, #0D1B2A, #1B2A41);
+    color: #F0B429; font-family: 'Baloo 2', cursive;
+    font-size: 1.1rem; font-weight: 700;
+    text-align: center; padding: 14px; border-radius: 10px;
+    margin: 14px 0; letter-spacing: 0.5px;
+  }
+
+  /* ── INFLATION TYPE CARDS ── */
+  .inf-card {
+    border-radius: 10px; padding: 14px 18px; margin: 8px 0;
+    color: white; position: relative; overflow: hidden;
+  }
+  .inf-card::after {
+    content: attr(data-pct);
+    position: absolute; right: 16px; top: 50%;
+    transform: translateY(-50%);
+    font-family: 'Baloo 2'; font-size: 1.4rem; font-weight: 800;
+    opacity: 0.35;
+  }
+  .inf-card .ititle { font-family: 'Baloo 2'; font-size: 1rem; font-weight: 700; }
+  .inf-1 { background: linear-gradient(135deg, #27AE60, #1E8449); }
+  .inf-2 { background: linear-gradient(135deg, #F0B429, #D4941F); color: #1C2833; }
+  .inf-3 { background: linear-gradient(135deg, #E8561A, #C94B15); }
+  .inf-4 { background: linear-gradient(135deg, #C0392B, #A93226); }
+  .inf-5 { background: linear-gradient(135deg, #1B2A41, #0D1B2A); }
+
+  /* ── UNEMPLOYMENT TYPE CARDS ── */
+  .unemp-card {
+    border-radius: 10px; padding: 15px 18px; margin: 10px 0;
+    border-left: 5px solid; background: white;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+  }
+  .unemp-card .utitle { font-family: 'Baloo 2'; font-weight: 800; font-size: 1.05rem; margin-bottom: 5px; }
+  .u1 { border-color: #1A6FA8; } .u1 .utitle { color: #1A6FA8; }
+  .u2 { border-color: #7D3C98; } .u2 .utitle { color: #7D3C98; }
+  .u3 { border-color: #148F77; } .u3 .utitle { color: #148F77; }
+  .u4 { border-color: #E8561A; } .u4 .utitle { color: #E8561A; }
+  .u5 { border-color: #C0392B; } .u5 .utitle { color: #C0392B; }
+  .u6 { border-color: #1E8449; } .u6 .utitle { color: #1E8449; }
+  .u7 { border-color: #F0B429; } .u7 .utitle { color: #B7860B; }
+  .u8 { border-color: #1B2A41; } .u8 .utitle { color: #1B2A41; }
+
+  /* ── MISC ── */
+  .highlight { background: linear-gradient(120deg,#ffeaa7,#fdcb6e); padding: 2px 6px; border-radius: 4px; font-weight: 700; }
+  p { margin: 8px 0; font-size: 0.93rem; }
+  ul { padding-left: 20px; margin: 6px 0; }
+  li { margin: 5px 0; font-size: 0.92rem; }
+
+  /* ── PHILLIPS VISUAL ── */
+  .phillips-box {
+    background: linear-gradient(135deg, #E8F4FD, #D6EAF8);
+    border: 2px solid #AED6F1; border-radius: 12px;
+    padding: 18px; margin: 14px 0;
+  }
+  .phillips-row {
+    display: flex; gap: 20px; justify-content: center;
+    flex-wrap: wrap; margin-top: 12px;
+  }
+  .ph-item {
+    background: white; border-radius: 10px; padding: 12px 20px;
+    text-align: center; font-weight: 600; font-size: 0.88rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08); flex: 1; min-width: 140px;
+  }
+  .ph-item span { display: block; font-family: 'Baloo 2'; font-size: 1.6rem; }
+  .ph-item.red-item span { color: var(--red); }
+  .ph-item.green-item span { color: var(--green); }
+
+  /* ── CORE INDUSTRY RANKING ── */
+  .core-list { counter-reset: core; margin: 10px 0; }
+  .core-item {
+    counter-increment: core;
+    display: flex; align-items: center; gap: 12px;
+    padding: 8px 14px; margin: 5px 0;
+    background: var(--light); border-radius: 8px;
+    font-size: 0.9rem; font-weight: 600;
+  }
+  .core-item::before {
+    content: counter(core);
+    background: var(--teal); color: white;
+    font-family: 'Baloo 2'; font-size: 0.9rem; font-weight: 700;
+    width: 28px; height: 28px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .core-item:first-child { background: #FEF9E7; border: 1px solid #F9E79F; }
+  .core-item:first-child::before { background: var(--gold); color: #333; }
+
+  footer {
+    text-align: center; padding: 30px;
+    background: var(--deep); color: #8DAEC4; font-size: 0.85rem;
+  }
+</style>
+<style id="sr-system">:root{--sr-cream:#FAEED9;--sr-gold:#E1A837;--sr-olive:#8D7A02;--sr-ink:#38370D;--sr-paper:#fffdf8;--sr-muted:#756f55;--sr-line:#ead9ad;--sr-shadow:0 14px 35px rgba(56,55,13,.10)}.srbar{position:sticky!important;top:0!important;z-index:99999!important;background:rgba(56,55,13,.96)!important;backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.08)!important;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Arial,sans-serif!important}.srbar *{box-sizing:border-box}.srbarin{width:min(1120px,calc(100% - 28px));height:64px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:12px}.srbrand{display:flex;align-items:center;gap:10px;color:#fff!important;text-decoration:none!important}.srbrand img{width:38px!important;height:38px!important;border-radius:50%!important;object-fit:cover!important;border:2px solid var(--sr-gold)!important;margin:0!important}.srbrand b{font-size:15px!important;letter-spacing:.6px!important;color:#fff!important}.srbrand b span{color:var(--sr-gold)!important}.sractions{display:flex;gap:7px}.srbtn{border:1px solid rgba(225,168,55,.55)!important;background:transparent!important;color:var(--sr-gold)!important;border-radius:10px!important;padding:8px 10px!important;text-decoration:none!important;font:700 12px/1 Inter,system-ui,sans-serif!important;cursor:pointer}.srbtn.primary{background:var(--sr-gold)!important;color:var(--sr-ink)!important}@media(max-width:520px){.srbarin{height:58px}.srbrand img{width:34px!important;height:34px!important}.srbrand b{font-size:13px!important}.srbtn{padding:8px!important}.srhide{display:none!important}}body.sr-dark{filter:none}body.sr-dark .srbar{background:#030a13!important}</style></head>
+<body><div class="srbar"><div class="srbarin"><a class="srbrand" href="../index.html"><img src="../assets/sunnyrise-profile.jpg" alt="Sunny Rise"><b>SUNNY <span>RISE</span></b></a><div class="sractions"><a class="srbtn srhide" href="../search/index.html">🔎 Search</a><button class="srbtn" onclick="document.body.classList.toggle('sr-dark');localStorage.setItem('sunnyrise-leaf-dark',document.body.classList.contains('sr-dark')?'1':'0')">◐ Theme</button><a class="srbtn primary" href="../index.html">⌂ Home</a></div></div></div>
+
+<header>
+  <h1>📈 Inflation & Unemployment</h1>
+  <p>Complete Detailed Notes — Lecture 3 | Sunny Rise</p>
+  <span class="badge">SSC Exam Preparation</span>
+</header>
+
+<div class="container">
+
+  <!-- ══════════════════════════════════════════════════════ -->
+  <!--  PART 1 — INFLATION                                   -->
+  <!-- ══════════════════════════════════════════════════════ -->
+
+  <div class="section-title">🔥 1. Inflation क्या है? (Fundamentals)</div>
+  <div class="section-body">
+    <div class="card">
+      <div class="card-title">📌 Definition</div>
+      <p><strong>Inflation</strong> = किसी economy में goods और services के <strong>general price level में sustained (लगातार) increase</strong>।</p>
+      <ul>
+        <li><strong>Purchasing Power:</strong> Prices बढ़ने से पैसे की purchasing power <strong>घटती</strong> है — यानी same पैसे से पहले से कम चीज़ें मिलती हैं।</li>
+        <li><strong>Value of Money:</strong> Inflation पैसे की real value को <strong>erode (कमज़ोर)</strong> करती है।</li>
+      </ul>
+    </div>
+
+    <div class="grid2">
+      <div class="card red">
+        <div class="card-title">😢 Creditors (Lenders) — नुकसान</div>
+        जो पैसा उन्होंने दिया था, वही पैसा वापस मिलता है — लेकिन अब उस पैसे से कम चीज़ें खरीद सकते हैं।<br>
+        <strong>Remedy:</strong> Lenders को Real Interest Rate charge करनी चाहिए।
+      </div>
+      <div class="card green">
+        <div class="card-title">😊 Debtors (Borrowers) — फायदा</div>
+        Loan कम value के पैसों से चुकाते हैं — effectively कम burden। इसलिए inflation borrowers के लिए फायदेमंद है।
+      </div>
+    </div>
+
+    <div class="formula">Real Interest Rate = Nominal Interest Rate − Inflation Rate</div>
+
+    <div class="example">
+      आपने ₹10,000 loan लिया। एक साल बाद inflation बहुत high है। आपने ₹10,000 वापस किए — लेकिन अब उन ₹10,000 से bank उतना नहीं खरीद सकता जितना पहले खरीद सकता था। Borrower को फायदा, Lender को नुकसान।
+    </div>
+    <div class="exam-tip">Real Interest Rate formula exam में बहुत important है। Nominal Rate = 10%, Inflation = 6% → Real Rate = 4% only।</div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════ -->
+  <div class="section-title">💸 2. Fisher's Quantity Theory of Money</div>
+  <div class="section-body">
+    <div class="card">
+      <div class="card-title">👨‍🔬 Irving Fisher</div>
+      <p>Irving Fisher ने <strong>Money Illusion</strong> concept दिया — लोग nominal (कागज़ी) value देखते हैं, real value नहीं।</p>
+    </div>
+
+    <div class="formula">MV = PT</div>
+
+    <div class="grid2">
+      <div>
+        <div class="card">
+          <div class="card-title">Variables का मतलब</div>
+          <ul>
+            <li><strong>M</strong> = Money Supply (पैसे की मात्रा)</li>
+            <li><strong>V</strong> = Velocity of Money (पैसा कितनी बार हाथ बदलता है)</li>
+            <li><strong>P</strong> = Price Level (कीमत का स्तर)</li>
+            <li><strong>T</strong> = Transactions (लेन-देन की संख्या)</li>
+          </ul>
+        </div>
+      </div>
+      <div>
+        <div class="card orange">
+          <div class="card-title">Theory का निष्कर्ष</div>
+          अगर V और T constant रहें, तो <strong>M (money supply) बढ़ाने से directly P (price level) बढ़ता है</strong> — यानी <strong>inflation बढ़ती है</strong>।<br><br>
+          इसीलिए Government बेरोकटोक पैसा नहीं छाप सकती!
+        </div>
+      </div>
+    </div>
+
+    <div class="card gold">
+      <div class="card-title">🖨️ Seigniorage (Inflation Tax)</div>
+      <p><strong>Definition:</strong> Government द्वारा currency print करने से होने वाला profit = <strong>Seigniorage</strong>।</p>
+      <p><strong>Why "Tax"?</strong> जब government ज़्यादा पैसा छापती है → Inflation बढ़ती है → आपकी जेब के पैसों की value घटती है। आपने directly tax नहीं दिया, लेकिन आपकी purchasing power कम हुई — यही Inflation Tax है।</p>
+      <p><strong>Deficit Financing:</strong> Government अपने loans चुकाने के लिए पैसा print कर सकती है — लेकिन ज़्यादा करने से Venezuela जैसी hyperinflation हो जाती है।</p>
+    </div>
+
+    <div class="example">
+      COVID के दौरान कई देशों ने बड़ी मात्रा में पैसा print किया (stimulus packages)। बाद में 2022-23 में दुनियाभर में inflation spike हुई — यही Fisher's Theory को prove करता है।
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════ -->
+  <div class="section-title">📊 3. Types of Inflation (Intensity के आधार पर)</div>
+  <div class="section-body">
+
+    <div class="inf-card inf-1" data-pct="3-4%">
+      <div class="ititle">1. Creeping Inflation (रेंगती महंगाई)</div>
+      Rate: 3–4% | Economy के लिए <strong>healthy</strong> — खाने में नमक जैसा, थोड़ा ज़रूरी है। Growth को stimulate करती है।
+    </div>
+    <div class="inf-card inf-2" data-pct="4-10%">
+      <div class="ititle">2. Walking Inflation (चलती महंगाई)</div>
+      Rate: 4–10% | Government के लिए <strong>Warning Signal</strong> — अब control करना ज़रूरी है।
+    </div>
+    <div class="inf-card inf-3" data-pct="10-20%">
+      <div class="ititle">3. Running Inflation (दौड़ती महंगाई)</div>
+      Rate: 10–20% | <strong>Strong monetary intervention</strong> की ज़रूरत। Economy पर serious असर।
+    </div>
+    <div class="inf-card inf-4" data-pct="20-100%">
+      <div class="ititle">4. Galloping Inflation (सरपट महंगाई)</div>
+      Rate: 20–100% | Currency की value rapidly drop होती है। Economy unstable हो जाती है।
+    </div>
+    <div class="inf-card inf-5" data-pct=">100%">
+      <div class="ititle">5. Hyper Inflation (अति महंगाई)</div>
+      Rate: >100% | Prices uncontrollably skyrocket। Currency practically worthless। Examples: Venezuela, Zimbabwe।
+    </div>
+
+    <div class="example">
+      Zimbabwe में 2008 में Hyperinflation इतनी थी कि लोग grocery के लिए wheelbarrow भर notes ले जाते थे। India में 2022-23 में CPI ~7% था — Walking Inflation zone।
+    </div>
+    <div class="exam-tip">Creeping = Healthy (3-4%), Walking = Warning (4-10%), Running = Dangerous (10-20%), Galloping = Very Dangerous (20-100%), Hyper = Economy Collapse (>100%)। यह sequence याद रखें।</div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════ -->
+  <div class="section-title">⚙️ 4. Causes of Inflation (Demand Pull vs Cost Push)</div>
+  <div class="section-body">
+    <table>
+      <tr><th>Feature</th><th>Demand Pull Inflation</th><th>Cost Push Inflation</th></tr>
+      <tr><td>Cause</td><td>Demand बढ़ने से (Demand side)</td><td>Production cost बढ़ने से (Supply side)</td></tr>
+      <tr><td>Key Phrase</td><td>"Too much money chasing too few goods"</td><td>Factors of Production की cost बढ़ना</td></tr>
+      <tr><td>Triggered by</td><td>Strong economic growth, Govt. spending, Exports बढ़ना</td><td>Wages बढ़ना, Raw material महंगा होना, Indirect taxes</td></tr>
+      <tr><td>Duration</td><td>Short-term हो सकती है</td><td>Long-term हो सकती है</td></tr>
+    </table>
+
+    <div class="card orange">
+      <div class="card-title">🛢️ Imported Inflation (आयातित महंगाई)</div>
+      <p>जब कोई देश essential goods (जैसे Oil) import करता है और global prices बढ़ जाती हैं, तो domestic prices भी बढ़ती हैं।</p>
+      <p><strong>India का Example Chain:</strong> Global Crude Oil prices बढ़े → India में Petrol/Diesel महंगा → Transport cost बढ़ी → Vegetables, Milk, हर चीज़ महंगी।</p>
+    </div>
+
+    <div class="example">
+      2022 में Russia-Ukraine war की वजह से global crude oil prices spike हुई → India में petrol ₹110/litre पहुंचा → सब्जियों और दूध की कीमतें भी बढ़ीं — यही Imported Inflation है।
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════ -->
+  <div class="section-title">📏 5. Measurement of Inflation — WPI, CPI, PPI</div>
+  <div class="section-body">
+
+    <div class="formula">
+      Inflation Rate = [(Current Year Index − Previous Year Index) ÷ Previous Year Index] × 100
+    </div>
+    <div class="formula">
+      Price Index = (Cost of Market Basket in Current Year ÷ Cost in Base Year) × 100
+    </div>
+
+    <!-- WPI -->
+    <div class="card blue">
+      <div class="card-title">🏭 Wholesale Price Index (WPI) — थोक मूल्य सूचकांक</div>
+      <p>Goods के <strong>wholesale level</strong> (consumer तक पहुँचने से पहले) पर average price change measure करता है।</p>
+      <ul>
+        <li><strong>Focus:</strong> Corporations के बीच bulk trading की prices।</li>
+        <li><strong>Services:</strong> ❌ WPI में शामिल नहीं — only goods।</li>
+        <li><strong>Publishing Body:</strong> Office of Economic Adviser (OEA) — Ministry of Commerce & Industry।</li>
+        <li><strong>Base Year:</strong> 2011-12 (Upcoming: 2022-23)।</li>
+        <li><strong>Frequency:</strong> Monthly।</li>
+      </ul>
+    </div>
+
+    <p style="font-weight:700; color:var(--teal); margin-top:12px;">WPI Basket Weightage:</p>
+    <div class="grid3">
+      <div class="box orange"><div class="btitle">Manufactured Goods</div>64.2% — Highest weight</div>
+      <div class="box teal"><div class="btitle">Primary Articles</div>22.6%</div>
+      <div class="box dark"><div class="btitle">Fuel & Power</div>13.5%</div>
+    </div>
+
+    <!-- CPI -->
+    <div class="card green" style="margin-top:18px;">
+      <div class="card-title">🛒 Consumer Price Index (CPI) — उपभोक्ता मूल्य सूचकांक</div>
+      <p>Retail/consumer level पर goods और services की average price change measure करता है। <strong>Common man की cost of living</strong> reflect करता है।</p>
+      <ul>
+        <li><strong>Focus:</strong> Final consumer जो price pay करता है।</li>
+        <li><strong>Services:</strong> ✅ शामिल हैं — Education, Medical, Transport।</li>
+        <li><strong>Publishing Body:</strong> National Statistical Office (NSO) — Ministry of Statistics & Programme Implementation (MoSPI)।</li>
+        <li><strong>Base Year:</strong> 2012 (Upcoming: 2024)।</li>
+        <li><strong>Used By:</strong> <strong>RBI uses CPI (Combined)</strong> for inflation targeting and monetary policy।</li>
+      </ul>
+    </div>
+
+    <p style="font-weight:700; color:var(--teal); margin-top:12px;">CPI Basket Weightage:</p>
+    <div class="grid3">
+      <div class="box green"><div class="btitle">Food & Beverages</div>45.8% — Highest (सबसे ज़्यादा)</div>
+      <div class="box blue"><div class="btitle">Housing</div>10%</div>
+      <div class="box dark"><div class="btitle">Fuel & Power</div>6.8%</div>
+    </div>
+
+    <p style="font-weight:700; color:var(--teal); margin-top:16px;">Four Types of CPI:</p>
+    <table>
+      <tr><th>CPI Type</th><th>Target Group</th><th>Published By</th><th>Base Year</th></tr>
+      <tr><td><strong>CPI-IW</strong></td><td>Industrial Workers</td><td>Labour Bureau (Min. of Labour)</td><td>2016</td></tr>
+      <tr><td><strong>CPI-AL</strong></td><td>Agricultural Labourers</td><td>Labour Bureau (Min. of Labour)</td><td>1986-87 (2019)</td></tr>
+      <tr><td><strong>CPI-RL</strong></td><td>Rural Labourers</td><td>Labour Bureau (Min. of Labour)</td><td>1986-87 (2019)</td></tr>
+      <tr><td><strong>CPI (Combined)</strong></td><td>Rural + Urban (General)</td><td>NSO (MoSPI)</td><td>2012 (2024)</td></tr>
+    </table>
+
+    <!-- PPI -->
+    <div class="card purple" style="margin-top:16px;">
+      <div class="card-title">🏭 Producer Price Index (PPI) — उत्पादक मूल्य सूचकांक</div>
+      <p>Domestic producers को उनके output के लिए मिलने वाली <strong>selling prices में average change</strong> measure करता है।</p>
+      <ul>
+        <li><strong>Perspective:</strong> CPI = buyer's perspective। PPI = <strong>seller's (producer's) perspective</strong>।</li>
+        <li><strong>Significance:</strong> "Factory gate" पर price change capture करता है — taxes और distribution costs add होने से पहले।</li>
+        <li><strong>Leading Indicator:</strong> यहाँ cost बढ़ती है → बाद में consumers पर pass होती है। इसलिए future inflation का indicator है।</li>
+        <li><strong>Stages Tracked:</strong> Raw materials → Intermediate goods → Finished products।</li>
+      </ul>
+    </div>
+
+    <div class="example">
+      Wheat (WPI) → Flour mill (WPI) → Atta packet at Kirana store (CPI)। WPI factory/wholesale level, CPI आपकी रसोई तक। अगर wheat expensive हुई (WPI बढ़ी) → कुछ महीनों बाद रोटी भी महंगी होगी (CPI बढ़ेगी)।
+    </div>
+    <div class="exam-tip">RBI inflation targeting के लिए CPI (Combined) use करती है — WPI नहीं। यह question exam में बहुत आता है।</div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════ -->
+  <div class="section-title">📰 6. Headline Inflation vs Core Inflation</div>
+  <div class="section-body">
+    <div class="grid2">
+      <div class="box red">
+        <div class="btitle">📰 Headline Inflation</div>
+        CPI पर based <strong>raw inflation figure</strong>।<br>
+        Scope: Basket की <strong>सभी items</strong> — Food, Energy सब included।<br>
+        यह common consumer की daily life को directly affect करती है।<br>
+        <em>News में "Inflation X% है" = Headline Inflation।</em>
+      </div>
+      <div class="box blue">
+        <div class="btitle">🔩 Core Inflation</div>
+        Headline से <strong>volatile items (Food + Fuel) हटाकर</strong> बचती है।<br>
+        Scope: Stable, structural price trends।<br>
+        Policymakers इसे देखते हैं क्योंकि यह long-term trend बताती है।<br>
+        <em>Food और fuel seasonal/external shocks से बढ़ते हैं।</em>
+      </div>
+    </div>
+
+    <div class="formula">Core Inflation = Headline Inflation − Volatile Inflation (Food + Fuel)</div>
+
+    <div class="example">
+      2023 में India की Headline Inflation ~6.5% थी — जिसमें tomatoes की price में 300% spike major reason थी। लेकिन Core Inflation ~5% थी। RBI Core को ज़्यादा seriously लेता है क्योंकि tomato prices seasonal हैं।
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════ -->
+  <div class="section-title">🏭 7. Index of Industrial Production (IIP)</div>
+  <div class="section-body">
+    <div class="card">
+      <div class="card-title">📌 Definition</div>
+      <p>IIP एक statistical indicator है जो किसी country में एक specific period में <strong>industrial production की growth</strong> measure करता है।</p>
+      <ul>
+        <li><strong>Key Difference:</strong> CPI/WPI = Prices measure करते हैं। IIP = <strong>Production का volume/growth</strong> measure करता है।</li>
+        <li><strong>Publishing Body:</strong> National Statistical Organisation (NSO) — MoSPI।</li>
+        <li><strong>Base Year:</strong> 2011-12 (Upcoming: 2022-23)।</li>
+        <li><strong>Significance:</strong> Manufacturing, Mining और Electricity sector की health gauge करता है।</li>
+      </ul>
+    </div>
+
+    <div class="card gold">
+      <div class="card-title">⭐ Eight Core Industries (8 प्रमुख उद्योग)</div>
+      <p>ये industries IIP के total weight का <strong>~40.27%</strong> account करती हैं। Highest से Lowest weightage के order में:</p>
+      <div class="core-list">
+        <div class="core-item">🛢️ Refinery Products — Highest Weightage (imported crude oil पर depend)</div>
+        <div class="core-item">⚡ Electricity</div>
+        <div class="core-item">🔩 Steel</div>
+        <div class="core-item">⚫ Coal</div>
+        <div class="core-item">🛢️ Crude Oil</div>
+        <div class="core-item">💨 Natural Gas</div>
+        <div class="core-item">🏗️ Cement</div>
+        <div class="core-item">🌱 Fertilizers — Lowest Weightage</div>
+      </div>
+    </div>
+    <div class="exam-tip">8 Core Industries की order याद करें: "Refinery, Electricity, Steel, Coal, Crude Oil, Natural Gas, Cement, Fertilizers" — Trick: RESCC NGCf</div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════ -->
+  <div class="section-title">🌀 8. Special Types & Dynamics of Inflation</div>
+  <div class="section-body">
+
+    <div class="card blue">
+      <div class="card-title">1️⃣ Disinflation (अपस्फीति दर में कमी)</div>
+      <p>Inflation की <strong>rate घटती है — लेकिन prices अभी भी बढ़ रही हैं</strong>, बस slowly।</p>
+      <p>Example: Year 1 = 10% → Year 2 = 8% → Year 3 = 5% — prices बढ़ रही हैं, लेकिन speed कम है।</p>
+      <div class="example">RBI ने 2022-23 में Repo Rate बढ़ाई → Credit महंगा हुआ → Money supply slow हुई → Inflation 7% से घटकर 5% पर आई — यही Disinflation है।</div>
+    </div>
+
+    <div class="card red">
+      <div class="card-title">2️⃣ Deflation (अपस्फीति) — "Negative Inflation"</div>
+      <p>Goods और services की prices <strong>सामान्यतः कम होती हैं</strong>। Purchasing power बढ़ती है।</p>
+      <p><strong>Why is it BAD?</strong> — Low prices sound good, लेकिन deflation = shrinking economy।</p>
+      <p><strong>Deflation का Dangerous Cycle:</strong> Prices गिरती हैं → Consumers wait करते हैं (और सस्ता होगा) → Demand और घटती है → Production कम होती है → Job losses → और demand कम…</p>
+      <div class="example">Japan 1990s में "Lost Decade" — Deflation की वजह से economy shrink हुई। लोग खर्च नहीं करते थे।</div>
+    </div>
+
+    <!-- PHILLIPS CURVE -->
+    <div class="phillips-box">
+      <p style="font-weight:700; text-align:center; color:var(--teal); font-family:'Baloo 2'; font-size:1.1rem;">📉 Phillips Curve</p>
+      <p style="text-align:center; font-size:0.9rem; margin-top:6px;">Unemployment और Inflation के बीच <strong>Inverse Relationship</strong> दिखाती है।</p>
+      <div class="phillips-row">
+        <div class="ph-item red-item"><span>📈</span>High Inflation<br><strong>= Low Unemployment</strong></div>
+        <div class="ph-item green-item"><span>📉</span>Low Inflation<br><strong>= High Unemployment</strong></div>
+      </div>
+    </div>
+
+    <div class="card orange">
+      <div class="card-title">3️⃣ Stagflation (ठहराव + महंगाई) = Stagnation + Inflation</div>
+      <p><strong>Paradox:</strong> High Inflation + Low Economic Growth (Stagnation) + High Unemployment — तीनों एक साथ।</p>
+      <p><strong>Why Unique?</strong> यह Phillips Curve को defy करता है — normally high inflation = low unemployment। लेकिन Stagflation में economy stagnant होने पर भी prices बढ़ती हैं।</p>
+      <p><strong>Cause:</strong> Goods और services का production slow हो जाना।</p>
+      <div class="example">1970s Oil Crisis — OPEC ने oil supply cut की → Production costs बढ़े → Prices बढ़ीं + Economy slow हुई + Unemployment बढ़ी = Classic Stagflation।</div>
+    </div>
+
+    <div class="card cyan">
+      <div class="card-title">4️⃣ Shrinkflation (सिकुड़न महंगाई)</div>
+      <p>Companies product की <strong>price same रखती हैं लेकिन quantity/size कम कर देती हैं</strong>। यह hidden price hike है।</p>
+      <p><strong>Purpose:</strong> Customers को visible price hike से डराए बिना rising production costs छुपाना।</p>
+      <div class="example">Lays chips का packet — same price ₹20, लेकिन अंदर chips कम और air ज़्यादा। Pepsi का bottle 320ml से 250ml — price same। आप same पैसे में कम पाते हैं।</div>
+    </div>
+
+    <div class="card purple">
+      <div class="card-title">5️⃣ Bottleneck Inflation / Structural Inflation</div>
+      <p>Supply chain में <strong>"choke points"</strong> की वजह से supply demand के साथ नहीं चल पाती।</p>
+      <p><strong>Cause:</strong> Labor shortage, raw material scarcity, या shipping delays।</p>
+      <p><strong>Analogy:</strong> Economic traffic jam — सब खर्च करने को तैयार हैं, लेकिन एक "narrow road" पूरी supply को slow कर देती है।</p>
+      <div class="example">COVID-19 के बाद 2021 में semiconductor chip shortage — Automotive industry को chips नहीं मिलीं → Cars की supply कम → Car prices spike → Bottleneck Inflation।</div>
+    </div>
+
+    <div class="card teal">
+      <div class="card-title">6️⃣ Skewflation (असमान महंगाई)</div>
+      <p>Overall economy में prices stable हों, लेकिp <strong>एक या दो specific sectors में sharp price increase</strong>।</p>
+      <p><strong>Problem:</strong> Overall inflation number misleadingly low दिखता है — लेकिन consumers daily essentials में "pinch" feel करते हैं।</p>
+      <div class="example">India में 2023 में overall CPI ~5% था, लेकिन tomato prices ने 400% की छलांग लगाई। Vegetable buyers बहुत affect हुए — rest of economy ठीक था। यही Skewflation है।</div>
+    </div>
+
+    <div class="card green">
+      <div class="card-title">7️⃣ Reflation (पुनः स्फीति)</div>
+      <p>Government का deliberate fiscal या monetary policy — recession या deflation के बाद <strong>economy को stimulate करना</strong>।</p>
+      <p><strong>Goal:</strong> Price levels को "re-inflate" करना, demand boost करना।</p>
+      <p><strong>Method:</strong> Interest rates घटाना या Government spending बढ़ाना।</p>
+      <p><strong>Challenge:</strong> सही समय पर रोकना ज़रूरी है — वरना uncontrolled inflation हो जाती है।</p>
+      <div class="example">COVID के बाद India सरकार ने ₹20 lakh crore का stimulus package दिया → Economy को reflate करने की कोशिश।</div>
+    </div>
+
+    <div class="card red">
+      <div class="card-title">8️⃣ Inflationary Gap (स्फीतिक अंतराल)</div>
+      <p>जब economy की total demand (Aggregate Demand) उसकी full employment पर produce करने की maximum capacity (Aggregate Supply) से <strong>ज़्यादा हो जाती है।</strong></p>
+      <p><strong>Result:</strong> Factories और labor already full capacity पर हैं — extra demand more production नहीं बना सकती, सिर्फ prices push करती है। Economy "Overheating" होती है।</p>
+      <p><strong>Solution:</strong> Taxes बढ़ाना या Government spending घटाना — market को "cool down" करना।</p>
+    </div>
+
+    <div class="card gold">
+      <div class="card-title">9️⃣ Inflation Targeting (भारत में)</div>
+      <p>Central bank एक specific inflation rate को primary goal set करती है। Repo Rate adjust करके इसे maintain रखती है।</p>
+      <p><strong>India में RBI का Target:</strong> <span class="highlight">4% ± 2%</span> — यानी 2% से 6% के बीच। Lower band = 2%, Upper band = 6%।</p>
+      <p><strong>Benefit:</strong> Transparency — businesses और consumers better financial planning कर सकते हैं।</p>
+    </div>
+    <div class="exam-tip">RBI Inflation Target = 4% (±2%), यानी range 2%–6%। यह Flexible Inflation Targeting कहलाता है। CPI Combined से measure होता है।</div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════ -->
+  <!--  PART 2 — GREAT DEPRESSION & RECESSION                -->
+  <!-- ══════════════════════════════════════════════════════ -->
+
+  <div class="section-title">🌍 9. Great Depression vs Great Recession</div>
+  <div class="section-body">
+    <div class="grid2">
+      <div class="box dark">
+        <div class="btitle">😰 Great Depression (1929–1939)</div>
+        Cause: Stock Market Crash (USA, 1929)।<br>
+        एक severe global economic downturn।<br>
+        Features: High unemployment, extreme poverty, drastic reduction in industrial production और trade।<br>
+        <em>Keynes की Macroeconomics theory इसी की प्रतिक्रिया में आई।</em>
+      </div>
+      <div class="box navy">
+        <div class="btitle">📉 Great Recession (2007–2009)</div>
+        Cause: US Sub-prime mortgage crisis + widespread banking failures।<br>
+        Global market decline।<br>
+        Features: Financial system collapse, mass layoffs, credit freeze।<br>
+        <em>India relatively कम affect हुआ अपने strong banking regulation की वजह से।</em>
+      </div>
+    </div>
+    <div class="example">
+      Great Depression में USA में unemployment 25% पहुँची। Great Recession में Lehman Brothers जैसे banks collapse हुए और India की IT companies के orders cancel हुए।
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════ -->
+  <!--  PART 3 — UNEMPLOYMENT                               -->
+  <!-- ══════════════════════════════════════════════════════ -->
+
+  <div class="section-title">💼 10. Unemployment (बेरोज़गारी) — Fundamentals</div>
+  <div class="section-body">
+    <div class="card">
+      <div class="card-title">📌 Definition</div>
+      <p><strong>Unemployment</strong> = वह situation जहाँ एक person <strong>actively काम ढूंढता है लेकिन employment नहीं मिलती।</strong></p>
+      <p>India में unemployment data <strong>National Sample Survey Office (NSSO)</strong> collect करता है।</p>
+    </div>
+
+    <div class="card green">
+      <div class="card-title">📐 NSSO के 3 Measurement Approaches</div>
+      <table>
+        <tr><th>Approach</th><th>Reference Period</th><th>Explanation</th></tr>
+        <tr><td><strong>Usual Status Approach</strong></td><td>365 days (1 Year)</td><td>पूरे साल के आधार पर employment status।</td></tr>
+        <tr><td><strong>Current Weekly Status (CWS)</strong></td><td>1 Week</td><td>पिछले 1 हफ्ते में किया काम।</td></tr>
+        <tr><td><strong>Current Daily Status (CDS)</strong></td><td>Each day of week</td><td>हर रोज़ के activity status पर based — <strong>most comprehensive</strong>।</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════ -->
+  <div class="section-title">🗂️ 11. Types of Unemployment (बेरोज़गारी के प्रकार)</div>
+  <div class="section-body">
+
+    <div class="unemp-card u1">
+      <div class="utitle">1. Structural Unemployment (संरचनात्मक बेरोज़गारी)</div>
+      <p><strong>Definition:</strong> Workers के skills और available jobs के required skills के बीच <strong>mismatch</strong> की वजह से होती है।</p>
+      <p><strong>Cause:</strong> Technological advancements — AI, robots manual labor replace करते हैं, या नई skills demand हो जाती हैं जो workers के पास नहीं हैं।</p>
+      <p><strong>Key:</strong> Jobs exist करती हैं — बस worker उनके लिए qualified नहीं है।</p>
+      <div class="example">Tally accountant जिसे GST software नहीं आता, या truck driver जब self-driving trucks आ जाएँ। Job है — but skill nahi।</div>
+    </div>
+
+    <div class="unemp-card u2">
+      <div class="utitle">2. Educated Unemployment (शिक्षित बेरोज़गारी)</div>
+      <p><strong>Definition:</strong> Graduates या Post-graduates जो suitable employment नहीं पा सकते।</p>
+      <p><strong>Prevalence:</strong> India के <strong>urban areas</strong> में primarily।</p>
+      <div class="example">Engineering graduate जिसके पास degree तो है लेकिन practical, industry-relevant skills नहीं — वो job-ready नहीं। India में लाखों ऐसे graduates हर साल।</div>
+    </div>
+
+    <div class="unemp-card u3">
+      <div class="utitle">3. Frictional Unemployment (घर्षण बेरोज़गारी)</div>
+      <p><strong>Definition:</strong> एक job से दूसरी job में move करते समय short-term unemployment।</p>
+      <p><strong>Also Known As:</strong> Search Unemployment, Voluntary Unemployment।</p>
+      <p><strong>Nature:</strong> यह <strong>unavoidable और normal</strong> है — economy में हमेशा रहेगी।</p>
+      <div class="example">आपने CGL की तैयारी के लिए private job छोड़ी — search period में आप frictionally unemployed हैं। या Infosys छोड़कर TCS join करने के बीच का time।</div>
+    </div>
+
+    <div class="unemp-card u4">
+      <div class="utitle">4. Disguised Unemployment (प्रच्छन्न बेरोज़गारी)</div>
+      <p><strong>Definition:</strong> जितने workers की ज़रूरत है उससे <strong>ज़्यादा लोग काम पर लगे हैं</strong>। Extra workers की Marginal Productivity = Zero।</p>
+      <p><strong>Key Concept:</strong> इन extra workers को हटाने से total output में कोई कमी नहीं आएगी — वे effectively unemployed हैं।</p>
+      <p><strong>Prevalence:</strong> India के <strong>rural agricultural sector</strong> में सबसे ज़्यादा।</p>
+      <div class="example">5 लोगों का परिवार 1 एकड़ खेत पर काम करता है जिसके लिए सिर्फ 3 काफी हैं। बाकी 2 काम पर दिखते हैं लेकिन actually unemployed हैं।</div>
+    </div>
+
+    <div class="unemp-card u5">
+      <div class="utitle">5. Cyclical / Economic Unemployment (चक्रीय बेरोज़गारी)</div>
+      <p><strong>Definition:</strong> Economic fluctuations और business cycles (recession/boom) की वजह से होती है।</p>
+      <p><strong>Mechanism:</strong> Recession → demand falls → companies layoff करती हैं। Economy revive होने पर jobs वापस आती हैं।</p>
+      <p><strong>Prevalence:</strong> Capitalist और urban sectors में।</p>
+      <div class="example">COVID-19 lockdown — Hotels, Aviation, Retail बंद हुए → Mass layoffs। Economy खुली → Jobs वापस। यही Cyclical Unemployment है।</div>
+    </div>
+
+    <div class="unemp-card u6">
+      <div class="utitle">6. Seasonal Unemployment (मौसमी बेरोज़गारी)</div>
+      <p><strong>Definition:</strong> साल के specific seasons/times पर होती है — बाकी time काम है।</p>
+      <div class="example">Farmers: सिर्फ sowing और harvesting season में काम → बाकी time unemployed। Diwali पर fireworks बेचने वाले, Holi पर रंग बेचने वाले — season खत्म, काम खत्म।</div>
+    </div>
+
+    <div class="unemp-card u7">
+      <div class="utitle">7. Classical / Real Wage Unemployment</div>
+      <p><strong>Definition:</strong> Real wages market clearing level से <strong>ऊपर set होने पर</strong> job seekers बढ़ते हैं लेकिन openings कम होती हैं।</p>
+      <p><strong>Cause:</strong> Labour unions या minimum wage laws wages इतनी high set करें कि companies कम workers hire करें।</p>
+      <div class="example">Minimum wage ₹500/day set हो, लेकिन छोटी factories ₹350 से ज़्यादा afford नहीं कर सकतीं → वे कम workers hire करती हैं या automation पर जाती हैं।</div>
+    </div>
+
+    <div class="unemp-card u8">
+      <div class="utitle">8. Natural Unemployment (प्राकृतिक बेरोज़गारी)</div>
+      <p><strong>Definition:</strong> एक healthy economy में <strong>lowest sustainable level of unemployment</strong> जो बिना inflation बढ़ाए exist कर सकता है।</p>
+      <p><strong>Concept:</strong> Even in a booming economy, Frictional और Structural unemployment हमेशा रहती है — क्योंकि लोग jobs switch करते रहते हैं और skills update होती रहती हैं। यह "natural" है।</p>
+    </div>
+
+    <div class="exam-tip">India में Disguised Unemployment सबसे ज़्यादा है (Rural Agriculture में)। Frictional unemployment सबसे "normal" और unavoidable है। Natural Unemployment = Frictional + Structural।</div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════ -->
+  <div class="section-title">👷 12. Marginal Worker vs Main Worker</div>
+  <div class="section-body">
+    <table>
+      <tr><th>Feature</th><th>Marginal Worker</th><th>Main Worker</th></tr>
+      <tr><td>Employment Duration</td><td><strong>183 days से कम</strong> (6 महीने से कम)</td><td><strong>183 days से ज़्यादा</strong> (6 महीने से ज़्यादा)</td></tr>
+      <tr><td>Job Security</td><td>Low / Irregular</td><td>Relatively Stable</td></tr>
+      <tr><td>Examples</td><td>Landless agricultural laborers, low-wage casual workers</td><td>Construction workers (seasonal लेकिन long-term projects), independent contractors</td></tr>
+    </table>
+    <div class="example">
+      NREGA worker जो साल में 4 महीने काम करता है = Marginal Worker। Road construction project पर 8 महीने काम करने वाला laborer = Main Worker।
+    </div>
+    <div class="exam-tip">183 days = Cut-off। कम = Marginal। ज़्यादा = Main। यह Census classification में use होता है।</div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════ -->
+  <div class="section-title">⚡ Quick Revision Table — सभी Key Facts</div>
+  <div class="section-body">
+    <table>
+      <tr><th>Topic</th><th>Key Fact</th></tr>
+      <tr><td>Inflation Definition</td><td>Sustained increase in general price level</td></tr>
+      <tr><td>Inflation → Beneficiary</td><td>Debtors (Borrowers) को फायदा</td></tr>
+      <tr><td>Inflation → Loser</td><td>Creditors (Lenders) को नुकसान</td></tr>
+      <tr><td>Real Interest Rate Formula</td><td>Nominal Rate − Inflation Rate</td></tr>
+      <tr><td>Fisher's Equation</td><td>MV = PT</td></tr>
+      <tr><td>Money Illusion</td><td>Irving Fisher का concept</td></tr>
+      <tr><td>Seigniorage</td><td>Govt. का currency print करने से profit = Inflation Tax</td></tr>
+      <tr><td>Creeping Inflation</td><td>3-4% — Healthy</td></tr>
+      <tr><td>Walking Inflation</td><td>4-10% — Warning Signal</td></tr>
+      <tr><td>Running Inflation</td><td>10-20% — Dangerous</td></tr>
+      <tr><td>Galloping Inflation</td><td>20-100% — Very Dangerous</td></tr>
+      <tr><td>Hyper Inflation</td><td>>100% — Economy Collapse</td></tr>
+      <tr><td>WPI Published By</td><td>OEA — Ministry of Commerce & Industry</td></tr>
+      <tr><td>WPI Base Year</td><td>2011-12</td></tr>
+      <tr><td>WPI Includes Services?</td><td>❌ No</td></tr>
+      <tr><td>CPI Published By</td><td>NSO (MoSPI)</td></tr>
+      <tr><td>CPI Base Year</td><td>2012</td></tr>
+      <tr><td>CPI Includes Services?</td><td>✅ Yes</td></tr>
+      <tr><td>RBI uses for Inflation Targeting</td><td>CPI (Combined)</td></tr>
+      <tr><td>CPI Food & Beverages Weight</td><td>45.8% — Highest in CPI</td></tr>
+      <tr><td>WPI Manufactured Goods Weight</td><td>64.2% — Highest in WPI</td></tr>
+      <tr><td>Core Inflation Formula</td><td>Headline − (Food + Fuel)</td></tr>
+      <tr><td>IIP Published By</td><td>NSO (MoSPI)</td></tr>
+      <tr><td>IIP Base Year</td><td>2011-12</td></tr>
+      <tr><td>8 Core Industries Weight in IIP</td><td>~40.27%</td></tr>
+      <tr><td>Highest Weight Core Industry</td><td>Refinery Products</td></tr>
+      <tr><td>Shrinkflation</td><td>Same price, less quantity</td></tr>
+      <tr><td>Stagflation</td><td>Inflation + Stagnation + High Unemployment</td></tr>
+      <tr><td>Phillips Curve</td><td>Inflation ↑ = Unemployment ↓ (Inverse relationship)</td></tr>
+      <tr><td>RBI Inflation Target</td><td>4% ±2% (Range: 2%–6%)</td></tr>
+      <tr><td>Great Depression</td><td>1929–1939, Stock Market Crash</td></tr>
+      <tr><td>Great Recession</td><td>2007–2009, US Sub-prime Crisis</td></tr>
+      <tr><td>Unemployment Data</td><td>NSSO collect करता है</td></tr>
+      <tr><td>Disguised Unemployment</td><td>Marginal Productivity = Zero, Rural Agriculture</td></tr>
+      <tr><td>Frictional Unemployment</td><td>Job transition के दौरान = Voluntary</td></tr>
+      <tr><td>Marginal Worker</td><td>< 183 days employed</td></tr>
+      <tr><td>Main Worker</td><td>> 183 days employed</td></tr>
+      <tr><td>Deficit Financing</td><td>Loans चुकाने के लिए पैसा print करना</td></tr>
+    </table>
+  </div>
+
+</div>
+
+<footer>
+  📚 Based on Sunny Rise — Inflation & Unemployment, Lecture 3 | Prepared for SSC Exam Preparation
+</footer>
+
+<script>if(localStorage.getItem('sunnyrise-leaf-dark')==='1')document.body.classList.add('sr-dark');</script></body>
+</html>

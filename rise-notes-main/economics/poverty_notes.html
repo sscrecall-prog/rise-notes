@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Poverty – Complete Notes | Sunny Rise Lecture 10</title>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700;800&family=Hind:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --saffron: #E65C00;
+    --deep: #B84400;
+    --navy: #0A1628;
+    --gold: #F5A623;
+    --light-gold: #FFF8EC;
+    --green: #1B6B3A;
+    --light-green: #E8F5EE;
+    --teal: #00695C;
+    --light-teal: #E0F2F1;
+    --blue: #1A4FAD;
+    --light-blue: #E8EFFF;
+    --red: #B71C1C;
+    --light-red: #FFEBEE;
+    --purple: #5E1B8B;
+    --light-purple: #F3E5F5;
+    --bg: #F7F7F2;
+    --card: #FFFFFF;
+    --text: #18181F;
+    --muted: #5C5C78;
+    --border: #DDE0EF;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Hind', sans-serif; background: var(--bg); color: var(--text); line-height: 1.72; font-size: 15px; }
+
+  /* HERO */
+  .hero {
+    background: linear-gradient(135deg, #1B0A2E 0%, #2C1654 50%, #0A1628 100%);
+    padding: 46px 20px 38px; text-align: center; position: relative; overflow: hidden; color: white;
+  }
+  .hero::before {
+    content: ''; position: absolute; inset: 0;
+    background: repeating-linear-gradient(-45deg, transparent, transparent 28px, rgba(230,92,0,0.05) 28px, rgba(230,92,0,0.05) 56px);
+  }
+  .hero-badge {
+    display: inline-block; background: var(--saffron); color: white;
+    font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 11px;
+    letter-spacing: 2px; padding: 4px 16px; border-radius: 20px;
+    margin-bottom: 14px; text-transform: uppercase;
+  }
+  .hero h1 { font-family: 'Baloo 2', sans-serif; font-size: clamp(26px,5vw,44px); font-weight: 800; line-height: 1.15; margin-bottom: 10px; }
+  .hero h1 span { color: var(--gold); }
+  .hero p { color: rgba(255,255,255,0.72); font-size: 14px; max-width: 580px; margin: 0 auto; }
+  .hero-pills { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-top: 18px; }
+  .hero-pills span { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); padding: 5px 16px; border-radius: 20px; font-size: 12.5px; color: rgba(255,255,255,0.88); }
+
+  /* CONTAINER */
+  .container { max-width: 960px; margin: 0 auto; padding: 32px 16px; }
+
+  /* TOC */
+  .toc { background: white; border: 2px solid var(--border); border-radius: 16px; padding: 18px 20px; margin-bottom: 32px; }
+  .toc-title { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 15px; color: var(--navy); margin-bottom: 12px; }
+  .toc-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px,1fr)); gap: 7px; }
+  .toc-link { display: block; padding: 7px 12px; background: var(--light-gold); border-radius: 8px; color: #7A4200; font-size: 13px; font-weight: 600; text-decoration: none; transition: background 0.2s, color 0.2s; }
+  .toc-link:hover { background: var(--saffron); color: white; }
+
+  /* SECTION HEADER */
+  .sec-head { display: flex; align-items: center; gap: 12px; margin-bottom: 18px; margin-top: 38px; }
+  .sec-head:first-of-type { margin-top: 0; }
+  .sec-num { width: 38px; height: 38px; background: var(--saffron); color: white; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 18px; flex-shrink: 0; }
+  .sec-head h2 { font-family: 'Baloo 2', sans-serif; font-size: clamp(17px,3vw,22px); font-weight: 800; color: var(--navy); }
+  .sec-divider { height: 3px; background: linear-gradient(90deg, var(--saffron), var(--gold), transparent); border-radius: 2px; margin-bottom: 20px; }
+
+  /* CARDS */
+  .card { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 20px 22px; margin-bottom: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+  .card-title { font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 17px; color: var(--navy); margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
+  .card-title .dot { width: 10px; height: 10px; border-radius: 50%; background: var(--saffron); flex-shrink: 0; }
+
+  /* COLORED BANDS */
+  .band { border-left: 5px solid; border-radius: 10px; padding: 14px 18px; margin-bottom: 12px; }
+  .band.orange { background: var(--light-gold); border-color: var(--saffron); }
+  .band.green { background: var(--light-green); border-color: var(--green); }
+  .band.blue { background: var(--light-blue); border-color: var(--blue); }
+  .band.red { background: var(--light-red); border-color: var(--red); }
+  .band.purple { background: var(--light-purple); border-color: var(--purple); }
+  .band.teal { background: var(--light-teal); border-color: var(--teal); }
+  .band-title { font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 15.5px; margin-bottom: 5px; }
+  .band.orange .band-title { color: #8B4200; }
+  .band.green .band-title { color: var(--green); }
+  .band.blue .band-title { color: var(--blue); }
+  .band.red .band-title { color: var(--red); }
+  .band.purple .band-title { color: var(--purple); }
+  .band.teal .band-title { color: var(--teal); }
+
+  /* EXAMPLE BOX */
+  .eg { background: linear-gradient(135deg, #fffbf0, #fff3d4); border: 2px dashed #e8a020; border-radius: 10px; padding: 12px 16px; margin-top: 10px; }
+  .eg-label { font-weight: 700; color: var(--deep); font-size: 11.5px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px; display: flex; align-items: center; gap: 6px; }
+  .eg p { font-size: 13.5px; color: #4A3000; }
+
+  /* HIGHLIGHT */
+  .hl { background: linear-gradient(135deg, var(--navy), #1e2d60); color: white; border-radius: 14px; padding: 18px 22px; margin-bottom: 18px; }
+  .hl strong { color: var(--gold); }
+  .hl p { font-size: 14.5px; color: rgba(255,255,255,0.85); }
+
+  /* FACT BOX */
+  .fact { background: linear-gradient(135deg, #fff5f0, #ffe8e0); border: 2px solid var(--saffron); border-radius: 12px; padding: 14px 18px; margin-bottom: 14px; font-size: 14px; }
+  .fact strong { color: var(--deep); }
+
+  /* TWO COL */
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 14px; }
+  @media(max-width:580px){ .two-col { grid-template-columns: 1fr; } }
+  .three-col { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 14px; }
+  @media(max-width:640px){ .three-col { grid-template-columns: 1fr; } }
+
+  /* COMPARE */
+  .cmp { border-radius: 12px; padding: 16px; border: 2px solid; }
+  .cmp.g { background: #E8F5E9; border-color: #43A047; }
+  .cmp.r { background: #FFEBEE; border-color: #E53935; }
+  .cmp h4 { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 14.5px; margin-bottom: 8px; }
+  .cmp.g h4 { color: #2E7D32; }
+  .cmp.r h4 { color: #C62828; }
+
+  /* TABLE */
+  .tbl { overflow-x: auto; margin-bottom: 18px; }
+  table { width: 100%; border-collapse: collapse; border-radius: 12px; overflow: hidden; }
+  thead { background: var(--navy); color: white; }
+  thead th { padding: 11px 14px; text-align: left; font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 13px; }
+  tbody tr:nth-child(even) { background: #f6f6ff; }
+  tbody tr:nth-child(odd) { background: white; }
+  td { padding: 10px 14px; font-size: 13.5px; border-bottom: 1px solid #eee; vertical-align: top; }
+  td:first-child { font-weight: 600; color: var(--navy); }
+
+  /* TIMELINE */
+  .timeline { position: relative; padding-left: 30px; }
+  .timeline::before { content: ''; position: absolute; left: 10px; top: 0; bottom: 0; width: 2px; background: linear-gradient(to bottom, var(--saffron), var(--gold)); }
+  .tl-item { position: relative; margin-bottom: 18px; }
+  .tl-item::before { content: ''; position: absolute; left: -24px; top: 7px; width: 11px; height: 11px; border-radius: 50%; background: var(--saffron); border: 2px solid white; box-shadow: 0 0 0 2px var(--saffron); }
+  .tl-year { font-family: 'Baloo 2', sans-serif; font-weight: 800; color: var(--saffron); font-size: 14px; }
+  .tl-who { font-weight: 700; color: var(--navy); font-size: 14px; }
+  .tl-text { font-size: 13.5px; }
+
+  /* PILLS */
+  .pill { display: inline-block; padding: 2px 10px; border-radius: 20px; font-size: 12px; font-weight: 600; }
+  .pill.o { background: #FFF3E0; color: var(--deep); }
+  .pill.g { background: var(--light-green); color: var(--green); }
+  .pill.r { background: var(--light-red); color: var(--red); }
+  .pill.b { background: var(--light-blue); color: var(--blue); }
+  .pill.p { background: var(--light-purple); color: var(--purple); }
+
+  /* POINTS */
+  ul.pts { list-style: none; padding: 0; }
+  ul.pts li { padding: 4px 0 4px 22px; position: relative; font-size: 14.5px; }
+  ul.pts li::before { content: '→'; position: absolute; left: 0; color: var(--saffron); font-weight: 700; }
+
+  /* BIG STAT BOXES */
+  .stat-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 12px; margin-bottom: 16px; }
+  .stat-box { background: white; border: 2px solid var(--border); border-radius: 12px; padding: 16px 12px; text-align: center; }
+  .stat-box .num { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 22px; color: var(--saffron); }
+  .stat-box .lbl { font-size: 12px; color: var(--muted); margin-top: 2px; }
+  .stat-box.hi { border-color: var(--red); }
+  .stat-box.hi .num { color: var(--red); }
+  .stat-box.lo { border-color: var(--green); }
+  .stat-box.lo .num { color: var(--green); }
+
+  /* FORMULA BOX */
+  .formula { background: linear-gradient(135deg, #1e2d60, #0A1628); color: white; border-radius: 12px; padding: 16px 20px; margin: 12px 0; text-align: center; }
+  .formula .f-label { font-size: 12px; letter-spacing: 1.5px; color: rgba(255,255,255,0.6); text-transform: uppercase; margin-bottom: 6px; }
+  .formula .f-eq { font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 18px; color: var(--gold); }
+  .formula .f-desc { font-size: 12.5px; color: rgba(255,255,255,0.7); margin-top: 6px; }
+
+  /* SDG GRID */
+  .sdg-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(130px,1fr)); gap: 8px; margin-bottom: 14px; }
+  .sdg-item { border-radius: 10px; padding: 10px; text-align: center; font-size: 12px; font-weight: 600; color: white; }
+
+  /* RANKING */
+  .rank-list { list-style: none; }
+  .rank-list li { display: flex; align-items: center; gap: 12px; padding: 9px 14px; background: white; border: 1px solid var(--border); border-radius: 8px; margin-bottom: 7px; font-size: 14px; }
+  .rn { width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 13px; flex-shrink: 0; color: white; }
+  .rn.hi { background: var(--red); }
+  .rn.lo { background: var(--green); }
+  .rn.n { background: var(--saffron); }
+
+  /* QUICK REVISION */
+  .qr { background: linear-gradient(135deg, var(--navy), #1a2755); border-radius: 18px; padding: 24px; margin-top: 38px; color: white; }
+  .qr-title { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 20px; color: var(--gold); margin-bottom: 18px; text-align: center; }
+  .qr-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 12px; }
+  .qr-box { background: rgba(255,255,255,0.08); border-radius: 10px; padding: 14px; }
+  .qr-box .qr-t { color: var(--gold); font-weight: 700; margin-bottom: 6px; }
+  .qr-box ul.pts li { font-size: 12.5px; color: rgba(255,255,255,0.82); }
+
+  /* FOOTER */
+  .footer { text-align: center; padding: 26px; background: var(--navy); color: rgba(255,255,255,0.6); font-size: 13px; margin-top: 40px; }
+  .footer strong { color: var(--gold); }
+
+  p { font-size: 14.5px; }
+  strong { color: var(--navy); }
+</style>
+<style id="sr-system">:root{--sr-cream:#FAEED9;--sr-gold:#E1A837;--sr-olive:#8D7A02;--sr-ink:#38370D;--sr-paper:#fffdf8;--sr-muted:#756f55;--sr-line:#ead9ad;--sr-shadow:0 14px 35px rgba(56,55,13,.10)}.srbar{position:sticky!important;top:0!important;z-index:99999!important;background:rgba(56,55,13,.96)!important;backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.08)!important;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Arial,sans-serif!important}.srbar *{box-sizing:border-box}.srbarin{width:min(1120px,calc(100% - 28px));height:64px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:12px}.srbrand{display:flex;align-items:center;gap:10px;color:#fff!important;text-decoration:none!important}.srbrand img{width:38px!important;height:38px!important;border-radius:50%!important;object-fit:cover!important;border:2px solid var(--sr-gold)!important;margin:0!important}.srbrand b{font-size:15px!important;letter-spacing:.6px!important;color:#fff!important}.srbrand b span{color:var(--sr-gold)!important}.sractions{display:flex;gap:7px}.srbtn{border:1px solid rgba(225,168,55,.55)!important;background:transparent!important;color:var(--sr-gold)!important;border-radius:10px!important;padding:8px 10px!important;text-decoration:none!important;font:700 12px/1 Inter,system-ui,sans-serif!important;cursor:pointer}.srbtn.primary{background:var(--sr-gold)!important;color:var(--sr-ink)!important}@media(max-width:520px){.srbarin{height:58px}.srbrand img{width:34px!important;height:34px!important}.srbrand b{font-size:13px!important}.srbtn{padding:8px!important}.srhide{display:none!important}}body.sr-dark{filter:none}body.sr-dark .srbar{background:#030a13!important}</style></head>
+<body><div class="srbar"><div class="srbarin"><a class="srbrand" href="../index.html"><img src="../assets/sunnyrise-profile.jpg" alt="Sunny Rise"><b>SUNNY <span>RISE</span></b></a><div class="sractions"><a class="srbtn srhide" href="../search/index.html">🔎 Search</a><button class="srbtn" onclick="document.body.classList.toggle('sr-dark');localStorage.setItem('sunnyrise-leaf-dark',document.body.classList.contains('sr-dark')?'1':'0')">◐ Theme</button><a class="srbtn primary" href="../index.html">⌂ Home</a></div></div></div>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-badge">📘 Sunny Rise · Lecture 10</div>
+  <h1><span>Poverty</span> – Complete Notes</h1>
+  <p>Har ek concept, real life examples ke saath • Committees, Indexes, SEZ sab kuch cover</p>
+  <div class="hero-pills">
+    <span>🎯 SSC Exam Ready</span>
+    <span>💡 Real Examples</span>
+    <span>📊 All Committees</span>
+    <span>📈 Indexes Covered</span>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- TOC -->
+  <div class="toc">
+    <div class="toc-title">📋 Contents – Kya Kya Padhoge?</div>
+    <div class="toc-grid">
+      <a class="toc-link" href="#basics">1. Poverty kya hai?</a>
+      <a class="toc-link" href="#types">2. Types of Poverty</a>
+      <a class="toc-link" href="#estimation">3. Poverty Estimation</a>
+      <a class="toc-link" href="#preindep">4. Pre-Independence</a>
+      <a class="toc-link" href="#postindep">5. Post-Independence</a>
+      <a class="toc-link" href="#trends">6. Trends & State-wise</a>
+      <a class="toc-link" href="#mpi">7. MPI & HDI</a>
+      <a class="toc-link" href="#indices">8. HCR, EPI, MVI</a>
+      <a class="toc-link" href="#sdgs">9. SDGs</a>
+      <a class="toc-link" href="#mpc">10. MPC & Multiplier</a>
+      <a class="toc-link" href="#sez">11. SEZ</a>
+      <a class="toc-link" href="#lorenz">12. Lorenz & Gini</a>
+    </div>
+  </div>
+
+  <!-- SECTION 1: BASICS -->
+  <div id="basics">
+    <div class="sec-head"><div class="sec-num">1</div><h2>Poverty – Fundamentals</h2></div>
+    <div class="sec-divider"></div>
+    <div class="card">
+      <div class="card-title"><div class="dot"></div>Poverty Kya Hota Hai?</div>
+      <p><strong>Definition:</strong> Poverty ek aisi condition hai jisme koi individual ke paas basic standard of living ke liye zaruri <strong>financial resources aur essentials nahi hote.</strong></p>
+      <p style="margin-top:8px;">Ye sirf paison ki baat nahi — environmental, legal, social, economic, aur political causes bhi hote hain.</p>
+      <div class="eg">
+        <div class="eg-label">🏠 Real Life Example</div>
+        <p><strong>Ramesh ek kisan hai Bihar me:</strong> Uske paas na khana hai din mein ek baar, na saaf paani, na doctor ke paas jaane ke paise, na bachon ki school fees. Ye hai <strong>poverty — sirf "paisa nahi hai" nahi, balkia ek complete deprivation</strong> ki state hai.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 2: TYPES -->
+  <div id="types">
+    <div class="sec-head"><div class="sec-num">2</div><h2>Types of Poverty</h2></div>
+    <div class="sec-divider"></div>
+
+    <div class="band orange">
+      <div class="band-title">① Absolute Poverty (Nirpeksh Garibi) 🍚</div>
+      <p>Jab log basic necessities se <strong>bilkul mahroom</strong> hote hain — khana, saaf paani, ghar, kapde, healthcare, education.</p>
+      <div class="eg">
+        <div class="eg-label">💡 Example</div>
+        <p>Sub-Saharan Africa ke bahut se log jo din me ek waqt ka khana bhi nahi khaa paate — ye hai <strong>Absolute Poverty</strong>. India mein bhi 1990s tak kaafi log iss category mein the. Ye internationally fixed threshold hai ($2.15/day World Bank ke hisaab se).</p>
+      </div>
+    </div>
+
+    <div class="band green">
+      <div class="band-title">② Relative Poverty (Sapekhsh Garibi) ⚖️</div>
+      <p>Jab kisi ka income ya resources uski <strong>society ke average se significantly kam</strong> ho. Ye comparative hai.</p>
+      <div class="eg">
+        <div class="eg-label">💡 Example</div>
+        <p>Delhi mein ek autowala ₹20,000 mahine kamaata hai — khana, ghar sab hai. Lekin uske neighbourhood ke logon ki average income ₹80,000 hai. Compare karke wo <strong>relatively garib</strong> hai. USA mein bhi relative poverty exist karta hai even though absolute poverty rare hai.</p>
+      </div>
+    </div>
+
+    <div class="band blue">
+      <div class="band-title">③ Subjective Poverty (Vyaktigat Garibi) 🧠</div>
+      <p>Personal perception pe based — log <strong>feel karte hain ki poor hain,</strong> chahe unki actual income thik ho. Society comparison, expectations, psychology sab matter karta hai.</p>
+      <div class="eg">
+        <div class="eg-label">💡 Example</div>
+        <p>Priya ek software engineer hai ₹70,000/month income ke saath. Lekin uske friends IIT grads hain jo ₹3L kamaate hain. Social media pe unka lifestyle dekhke Priya <strong>subjectively poor feel karti hai</strong> — even though wo actually poor nahi hai. Ye psychological poverty hai!</p>
+      </div>
+    </div>
+
+    <!-- Types of poor (from diagram) -->
+    <div class="three-col" style="margin-top:4px;">
+      <div style="background:#FFEBEE; border:2px solid #E53935; border-radius:12px; padding:16px; text-align:center;">
+        <div style="font-size:26px; margin-bottom:6px;">😔</div>
+        <div style="font-family:'Baloo 2',sans-serif; font-weight:800; color:#C62828; font-size:15px;">Usually Poor</div>
+        <p style="font-size:13px; margin-top:4px;">Hamesha poverty line ke neeche. Chronic poverty. Example: Daily wage laborers jo kaam na mile toh bhookhe rehte hain.</p>
+      </div>
+      <div style="background:#FFF3E0; border:2px solid #FF6F00; border-radius:12px; padding:16px; text-align:center;">
+        <div style="font-size:26px; margin-bottom:6px;">🔄</div>
+        <div style="font-family:'Baloo 2',sans-serif; font-weight:800; color:#E65100; font-size:15px;">Churning Poor</div>
+        <p style="font-size:13px; margin-top:4px;">Poverty line ke upar-neeche aate jaate hain. Example: Seasonal workers — fasal ke time paise hain, baaki time nahi.</p>
+      </div>
+      <div style="background:#E8F5E9; border:2px solid #43A047; border-radius:12px; padding:16px; text-align:center;">
+        <div style="font-size:26px; margin-bottom:6px;">🤞</div>
+        <div style="font-family:'Baloo 2',sans-serif; font-weight:800; color:#2E7D32; font-size:15px;">Occasionally Poor</div>
+        <p style="font-size:13px; margin-top:4px;">Mostly line ke upar, kabhi kabhi neeche gir jaate hain. Example: Small shopkeeper jiska ek saal mein business fail ho jaata hai.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 3: ESTIMATION -->
+  <div id="estimation">
+    <div class="sec-head"><div class="sec-num">3</div><h2>Poverty Estimation in India</h2></div>
+    <div class="sec-divider"></div>
+
+    <div class="hl">
+      <p><strong>Method:</strong> India me poverty measure karte hain kisi ke <strong>income ya consumption level</strong> dekhke. Agar ye set minimum se kam hai → wo <strong>Below Poverty Line (BPL)</strong> hai.</p>
+      <p style="margin-top:8px;"><strong>Who does it:</strong> NITI Aayog ka task force → data NSSO (National Sample Survey Office) se liya jaata hai → MoSPI ke under.</p>
+    </div>
+
+    <div class="eg">
+      <div class="eg-label">🛒 BPL Ka Matlab Kya?</div>
+      <p>Agar government ne decide kiya ki ek insaan ko minimum ₹1,000/month chahiye survive karne ke liye — aur Suresh ₹800 mein guzaara karta hai — toh Suresh <strong>BPL (Below Poverty Line)</strong> hai. Usse government schemes ka fayda milega (ration card, PM Awas Yojana, etc.)</p>
+    </div>
+  </div>
+
+  <!-- SECTION 4: PRE-INDEPENDENCE -->
+  <div id="preindep">
+    <div class="sec-head"><div class="sec-num">4</div><h2>Pre-Independence Estimation</h2></div>
+    <div class="sec-divider"></div>
+
+    <div class="band orange">
+      <div class="band-title">📚 Dadabhai Naoroji – "Poverty and Un-British Rule in India"</div>
+      <ul class="pts">
+        <li>India mein <strong>poverty line ki sabse pehli estimation</strong> Dadabhai Naoroji ne ki.</li>
+        <li>Estimated: <strong>₹16 to ₹35 per capita per year</strong></li>
+        <li>India ke <strong>National Income ka bhi pehla estimation</strong> inhi ne diya.</li>
+        <li>Used concept of <strong>"Prisoner's Menu"</strong> — jail me jo basic khana milta hai (flour, rice, dal) — usi ki cost se subsistence calculate kiya.</li>
+      </ul>
+      <div class="eg">
+        <div class="eg-label">🧠 Prisoner's Menu Trick</div>
+        <p>Sochte the: "Ek insaan ko survive karne ke liye <strong>at least jail jaisa khana</strong> chahiye. Jail mein jo khana milta hai uski cost = minimum poverty line." Kitna brilliant aur practical approach tha!</p>
+      </div>
+    </div>
+
+    <div class="band green">
+      <div class="band-title">🏛️ National Planning Committee (1938)</div>
+      <ul class="pts">
+        <li>Set up by <strong>Subhash Chandra Bose</strong> under chairmanship of <strong>JL Nehru</strong>.</li>
+        <li>Poverty line estimated: <strong>₹15 to ₹20 per capita per month</strong></li>
+        <li>Based on minimum standard of living with nutritional requirements included.</li>
+      </ul>
+    </div>
+
+    <div class="band blue">
+      <div class="band-title">🏙️ The Bombay Plan (1944)</div>
+      <ul class="pts">
+        <li>Set of proposals by <strong>influential business leaders of Bombay</strong> for India's development.</li>
+        <li>Suggested poverty line: <strong>₹75 per capita per year</strong></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- SECTION 5: POST-INDEPENDENCE COMMITTEES -->
+  <div id="postindep">
+    <div class="sec-head"><div class="sec-num">5</div><h2>Post-Independence – Poverty Committees</h2></div>
+    <div class="sec-divider"></div>
+
+    <div class="timeline">
+
+      <div class="tl-item">
+        <div class="tl-year">1971</div>
+        <div class="tl-who">VM Dandekar & N Rath</div>
+        <ul class="pts">
+          <li><strong>Pehla systematic assessment</strong> of poverty in India (NSSO data based).</li>
+          <li>Expenditure-based poverty line.</li>
+          <li>2250 calories per day — rural aur urban dono ke liye.</li>
+        </ul>
+        <div class="eg">
+          <div class="eg-label">🍽️ Example</div>
+          <p>Unhone socha: "Ek insaan ko din mein minimum <strong>2250 calories chahiye</strong> survive karne ke liye. Kitne mein wo calories milti hain — wohi poverty line." Simple aur direct approach!</p>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-year">1979</div>
+        <div class="tl-who">Alagh Committee (Chairman: YK Alagh)</div>
+        <ul class="pts">
+          <li>Rural aur urban ke liye <strong>alag alag calorie requirements</strong> define kiye.</li>
+          <li><span class="pill o">Rural: 2400 calories → ₹49.09/month</span></li>
+          <li><span class="pill b">Urban: 2100 calories → ₹56.64/month</span></li>
+        </ul>
+        <div class="eg">
+          <div class="eg-label">🌾 Why Rural = More Calories?</div>
+          <p>Gaon me log physically zyada kaam karte hain — khet me jotna, bhoj uthana. Isliye <strong>rural workers ko zyada calories chahiye</strong> (2400 vs 2100 urban). Bahut logical!</p>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-year">1993</div>
+        <div class="tl-who">Lakdawala Committee</div>
+        <ul class="pts">
+          <li>Poverty line defined on basis of <strong>household per capita consumption expenditure.</strong></li>
+          <li>Used <strong>CPI-IW</strong> (Consumer Price Index – Industrial Workers) and <strong>CPI-AL</strong> (for Agricultural Labourers).</li>
+          <li>Suggested: <strong>State specific poverty lines</strong> banayein (ek size fit all nahi).</li>
+          <li>Calorie-based calculation continue kiya.</li>
+        </ul>
+        <div class="eg">
+          <div class="eg-label">💡 State-Specific Lines Kyun?</div>
+          <p>Mumbai me ₹1,000 mein sirf ek week ka ration aata hai. Lekin Chhattisgarh ke ek gaon mein ₹1,000 se poora mahina nikal sakta hai. Isliye <strong>ek hi poverty line sab jagah apply nahi hoti!</strong></p>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-year">2005 (report 2009)</div>
+        <div class="tl-who">Tendulkar Committee ⭐ (Most Important)</div>
+        <ul class="pts">
+          <li>Set up to address shortcomings of previous methods.</li>
+          <li>Poverty line based on <strong>Purchasing Power Parity = ₹33 per day</strong></li>
+          <li>Shifted away from <strong>calorie-only model</strong> — broader approach.</li>
+          <li>Added <strong>private expenditure on health & education</strong>.</li>
+          <li>Replaced URP (Uniform Reference Period) with <strong>MRP (Mixed Reference Period)</strong>:</li>
+        </ul>
+        <div class="two-col" style="margin-top:10px;">
+          <div class="band orange"><div class="band-title">30 Days Recall</div><p>Food aur frequent items ke liye (doodh, sabzi, etc.)</p></div>
+          <div class="band blue"><div class="band-title">365 Days Recall</div><p>Infrequent non-food items ke liye (kapde, footwear, durables)</p></div>
+        </div>
+        <div class="fact">
+          <strong>Poverty Line (2011-12):</strong><br>
+          🌾 Rural: <strong>₹816 per capita per month</strong><br>
+          🏙️ Urban: <strong>₹1,000 per capita per month</strong><br>
+          📊 Overall poverty: <strong>21.9%</strong> | Rural: 25.7% | Urban: 13.7%
+        </div>
+        <div class="eg">
+          <div class="eg-label">⚠️ ₹33/Day Controversy</div>
+          <p>Tendulkar Committee ne ₹33/day urban poverty line set ki. Log bolne lage: "Delhi mein ₹33 mein kya hoga? Ek chai bhi ₹20 ki hai!" Bahut criticism aayi ki ye line <strong>bahut neechi</strong> hai. Isliye Rangarajan Committee bani.</p>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-year">2012 (report 2014)</div>
+        <div class="tl-who">Rangarajan Committee</div>
+        <ul class="pts">
+          <li>Poverty basket mein <strong>3 components:</strong> food items + essential non-food + behaviorally determined non-food items.</li>
+          <li>Calories ke saath <strong>protein aur fat bhi include</strong> kiya.</li>
+          <li>Introduced <strong>MMRP (Modified Mixed Reference Period)</strong> — weekly, monthly, yearly basis pe compute kiya.</li>
+        </ul>
+        <div class="fact">
+          <strong>Poverty Line (Recommended):</strong><br>
+          🌾 Rural: <strong>₹972 per capita per month</strong><br>
+          🏙️ Urban: <strong>₹1,407 per capita per month</strong>
+        </div>
+        <div class="eg">
+          <div class="eg-label">📦 "Behaviorally Determined" Kya Hota Hai?</div>
+          <p>Kuch cheezein technically zaruri nahi hain par society mein rehne ke liye practically important hain — jaise mobile recharge, school uniform, bus fare. Rangarajan ne kaha: <strong>inhe bhi poverty basket mein shamil karo!</strong></p>
+        </div>
+      </div>
+
+    </div><!-- /timeline -->
+
+    <!-- Committees Summary Table -->
+    <div class="tbl">
+      <table>
+        <thead>
+          <tr><th>Committee / Person</th><th>Year</th><th>Key Feature</th><th>Rural Line</th><th>Urban Line</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Dadabhai Naoroji</td><td>Pre-1947</td><td>Earliest estimate; Prisoner's Menu</td><td colspan="2">₹16–35/year</td></tr>
+          <tr><td>NPC (Nehru)</td><td>1938</td><td>Nutrition-based minimum living</td><td colspan="2">₹15–20/month</td></tr>
+          <tr><td>Bombay Plan</td><td>1944</td><td>Business leaders' proposal</td><td colspan="2">₹75/year</td></tr>
+          <tr><td>Dandekar & Rath</td><td>1971</td><td>First systematic, NSSO-based, 2250 cal</td><td colspan="2">—</td></tr>
+          <tr><td>Alagh Committee</td><td>1979</td><td>Rural 2400 cal, Urban 2100 cal</td><td>₹49.09/mo</td><td>₹56.64/mo</td></tr>
+          <tr><td>Lakdawala Committee</td><td>1993</td><td>CPI-IW & CPI-AL; state-specific lines</td><td colspan="2">—</td></tr>
+          <tr><td>Tendulkar Committee ⭐</td><td>2005/2009</td><td>PPP basis; health & education added; MRP</td><td>₹816/mo</td><td>₹1,000/mo</td></tr>
+          <tr><td>Rangarajan Committee</td><td>2012/2014</td><td>Protein+fat+behavioural; MMRP</td><td>₹972/mo</td><td>₹1,407/mo</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- SECTION 6: TRENDS & STATE-WISE -->
+  <div id="trends">
+    <div class="sec-head"><div class="sec-num">6</div><h2>Trends in Poverty Reduction & State-wise Data</h2></div>
+    <div class="sec-divider"></div>
+
+    <div class="stat-grid">
+      <div class="stat-box"><div class="num">407M</div><div class="lbl">Poor in 2004-05 (37.2% BPL)</div></div>
+      <div class="stat-box"><div class="num">270M</div><div class="lbl">Poor in 2011-12</div></div>
+      <div class="stat-box"><div class="num">0.74%</div><div class="lbl">Yearly decline 1993–2005</div></div>
+      <div class="stat-box"><div class="num">2.4%</div><div class="lbl">Yearly decline 2005–2012</div></div>
+    </div>
+
+    <div class="eg">
+      <div class="eg-label">📈 Poverty Reduction Accelerated!</div>
+      <p>2004-2012 me poverty decline ki speed <strong>3x ho gayi</strong> (0.74% → 2.4% per year). Is period me <strong>MNREGA (2005), Right to Food, PM Gram Sadak Yojana</strong> jaise programs launch hue the — inhi ka asar tha!</p>
+    </div>
+
+    <div class="two-col" style="margin-top:16px;">
+      <div>
+        <div style="font-family:'Baloo 2',sans-serif;font-weight:800;color:var(--red);margin-bottom:10px;font-size:15px;">🔴 Highest Poverty States (2011-12)</div>
+        <ul class="rank-list">
+          <li><div class="rn hi">1</div> Chhattisgarh – <strong>39.9%</strong></li>
+          <li><div class="rn hi">2</div> Jharkhand – <strong>37%</strong></li>
+          <li><div class="rn hi">3</div> Bihar – <strong>33.7%</strong></li>
+        </ul>
+      </div>
+      <div>
+        <div style="font-family:'Baloo 2',sans-serif;font-weight:800;color:var(--green);margin-bottom:10px;font-size:15px;">🟢 Lowest Poverty States (2011-12)</div>
+        <ul class="rank-list">
+          <li><div class="rn lo">1</div> Goa – <strong>5.09%</strong></li>
+          <li><div class="rn lo">2</div> Kerala – <strong>7.1%</strong></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="eg">
+      <div class="eg-label">🤔 Kerala Itna Accha Kyun?</div>
+      <p>Kerala mein <strong>literacy, healthcare, women empowerment</strong> — sab indicators top pe hain. High remittances (Gulf countries se). Strong social safety net. Isliye despite low industrial growth, poverty bhi low hai. <strong>"Kerala Model of Development"</strong> globally famous hai!</p>
+    </div>
+  </div>
+
+  <!-- SECTION 7: MPI & HDI -->
+  <div id="mpi">
+    <div class="sec-head"><div class="sec-num">7</div><h2>MPI – Multidimensional Poverty Index & HDI</h2></div>
+    <div class="sec-divider"></div>
+
+    <div class="card">
+      <div class="card-title"><div class="dot"></div>Global MPI – Kya Hai?</div>
+      <ul class="pts">
+        <li>Introduced <strong>2010</strong> by <strong>UNDP + OPHI</strong> (Oxford Poverty & Human Development Initiative).</li>
+        <li>Uses <strong>10 indicators</strong> across <strong>3 dimensions</strong>: Health, Education, Standard of Living.</li>
+      </ul>
+    </div>
+
+    <div class="three-col">
+      <div class="band orange">
+        <div class="band-title">🏥 Health (2 indicators)</div>
+        <ul class="pts">
+          <li>Nutrition</li>
+          <li>Child Mortality</li>
+        </ul>
+      </div>
+      <div class="band blue">
+        <div class="band-title">📚 Education (2 indicators)</div>
+        <ul class="pts">
+          <li>Years in schooling</li>
+          <li>School attendance</li>
+        </ul>
+      </div>
+      <div class="band green">
+        <div class="band-title">🏠 Standard of Living (6)</div>
+        <ul class="pts">
+          <li>Cooking fuel, Sanitation</li>
+          <li>Drinking water, Electricity</li>
+          <li>Housing, Assets</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="eg">
+      <div class="eg-label">💡 MPI vs Income Poverty</div>
+      <p>Ek gaon mein sab log ₹2,000/month kamate hain (above income poverty line). Lekin unke ghar mein na bijli hai, na toilet, na clean water. <strong>Income ke hisaab se poor nahi — lekin MPI ke hisaab se definitely multidimensionally poor hain!</strong> MPI zyada comprehensive hai.</p>
+    </div>
+
+    <div class="card" style="margin-top:14px;">
+      <div class="card-title"><div class="dot"></div>National MPI (India) – NITI Aayog</div>
+      <ul class="pts">
+        <li>Launched <strong>November 2021</strong> by NITI Aayog.</li>
+        <li>Uses <strong>12 indicators</strong> (vs 10 in global MPI).</li>
+        <li>Data source: <strong>NFHS (National Family Health Survey)</strong></li>
+        <li>Multidimensional poverty declined since 2005-06.</li>
+        <li><strong>24.82 crore</strong> people escaped multidimensional poverty in last 9 years.</li>
+        <li><strong>Uttar Pradesh:</strong> Largest number lifted out of poverty (absolute numbers).</li>
+      </ul>
+      <div class="two-col" style="margin-top:12px;">
+        <div class="band red"><div class="band-title">Highest MPI (Most Poor)</div><p>🔴 <strong>Bihar</strong></p></div>
+        <div class="band green"><div class="band-title">Lowest MPI (Least Poor)</div><p>🟢 <strong>Kerala</strong></p></div>
+      </div>
+    </div>
+
+    <!-- HDI -->
+    <div class="card" style="margin-top:14px;">
+      <div class="card-title"><div class="dot"></div>Human Development Index (HDI)</div>
+      <ul class="pts">
+        <li>Created in <strong>1990</strong> by <strong>Mahbub ul Haq</strong> (Pakistani Economist) + <strong>Amartya Sen</strong> (Indian Economist).</li>
+        <li><strong>Amartya Sen:</strong> First Indian economist to win Nobel Prize in Economics (1998).</li>
+      </ul>
+      <div class="three-col" style="margin-top:12px;">
+        <div class="band orange">
+          <div class="band-title">💊 Health</div>
+          <p>Indicator: <strong>Life expectancy at birth</strong></p>
+        </div>
+        <div class="band blue">
+          <div class="band-title">📖 Knowledge</div>
+          <p>Indicators: Expected years + Mean years of schooling</p>
+        </div>
+        <div class="band green">
+          <div class="band-title">💰 Standard of Living</div>
+          <p>Indicator: <strong>GNI per capita (PPP $)</strong></p>
+        </div>
+      </div>
+      <div class="eg">
+        <div class="eg-label">🌟 HDI Why Important?</div>
+        <p>Pehle countries ki progress sirf <strong>GDP se napta tha</strong>. Mahbub ul Haq aur Amartya Sen ne kaha: "GDP se sirf income pata chalti hai — logon ki life quality nahi!" Isliye HDI banaya — ek <strong>holistic measure</strong> jo health + education + income sab dekhta hai. Ab UNDP har saal <strong>Human Development Report</strong> publish karta hai.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 8: HCR, EPI, MVI -->
+  <div id="indices">
+    <div class="sec-head"><div class="sec-num">8</div><h2>HCR, EPI & MVI</h2></div>
+    <div class="sec-divider"></div>
+
+    <div class="band orange">
+      <div class="band-title">📊 Head Count Ratio (HCR)</div>
+      <p>Also known as: <strong>Poverty Headcount Index</strong></p>
+      <p style="margin-top:4px;">Population ka wo percentage jo BPL mein jeeta hai.</p>
+      <div class="formula">
+        <div class="f-label">Formula</div>
+        <div class="f-eq">HCR = (No. of Multidimensionally Poor People) ÷ (Total Population)</div>
+        <div class="f-desc">Example: Agar 100 mein se 22 log BPL hain → HCR = 22%</div>
+      </div>
+      <div class="eg">
+        <div class="eg-label">🧮 Simple Example</div>
+        <p>Ek village mein 500 log hain. 110 BPL hain. HCR = 110/500 = <strong>22%</strong>. Matlab us village mein har 5 mein se 1 se zyada garib hai.</p>
+      </div>
+    </div>
+
+    <div class="band blue" style="margin-top:12px;">
+      <div class="band-title">🚢 Export Preparedness Index (EPI)</div>
+      <ul class="pts">
+        <li><strong>Publisher:</strong> NITI Aayog</li>
+        <li><strong>Structure:</strong> 4 Pillars — Policy (20%), Business Ecosystem (40%), Export Ecosystem (20%), Export Performance (20%)</li>
+        <li>Measures states' readiness to export goods.</li>
+      </ul>
+    </div>
+
+    <div class="band purple" style="margin-top:12px;">
+      <div class="band-title">🌍 Multidimensional Vulnerability Index (MVI)</div>
+      <ul class="pts">
+        <li><strong>Publisher:</strong> UNGA (United Nations General Assembly)</li>
+        <li>Measures <strong>structural vulnerability</strong> and lack of resilience across 3 dimensions:</li>
+        <li><span class="pill o">Economic</span> <span class="pill r">Environmental</span> <span class="pill b">Social</span></li>
+        <li>Focus: Specially for <strong>Small Island Developing States (SIDS)</strong> aur vulnerable nations.</li>
+      </ul>
+      <div class="eg">
+        <div class="eg-label">🌏 MVI ka Use</div>
+        <p>Bangladesh floods se vulnerable hai. Maldives sea level rise se. Aise deshon ki vulnerability naapne ke liye MVI banaya gaya. India jaisa bada desh kam vulnerable — chota island nation zyada.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 9: SDGs -->
+  <div id="sdgs">
+    <div class="sec-head"><div class="sec-num">9</div><h2>Sustainable Development Goals (SDGs)</h2></div>
+    <div class="sec-divider"></div>
+
+    <div class="hl">
+      <p>SDGs se pehle: <strong>MDGs (Millennium Development Goals)</strong> — target 2015.</p>
+      <p style="margin-top:6px;">2015 mein <strong>United Nations ne New York mein SDGs adopt kiye.</strong></p>
+      <p style="margin-top:6px;"><strong>Effective from:</strong> 1 January 2016 &nbsp;|&nbsp; <strong>Target Year:</strong> 2030 &nbsp;|&nbsp; <strong>17 Goals, 169 Targets</strong></p>
+    </div>
+
+    <div class="sdg-grid">
+      <div class="sdg-item" style="background:#E5243B;">🚫 No Poverty</div>
+      <div class="sdg-item" style="background:#DDA63A;">🌾 Zero Hunger</div>
+      <div class="sdg-item" style="background:#4C9F38;">💊 Good Health</div>
+      <div class="sdg-item" style="background:#C5192D;">📖 Quality Education</div>
+      <div class="sdg-item" style="background:#FF3A21;">♀️ Gender Equality</div>
+      <div class="sdg-item" style="background:#26BDE2;">💧 Clean Water</div>
+      <div class="sdg-item" style="background:#FCC30B;">⚡ Clean Energy</div>
+      <div class="sdg-item" style="background:#A21942;">💼 Decent Work</div>
+      <div class="sdg-item" style="background:#FD6925;">🏗️ Industry & Innovation</div>
+      <div class="sdg-item" style="background:#DD1367;">⚖️ Reduced Inequality</div>
+      <div class="sdg-item" style="background:#FD9D24;">🏙️ Sustainable Cities</div>
+      <div class="sdg-item" style="background:#BF8B2E;">♻️ Responsible Consumption</div>
+      <div class="sdg-item" style="background:#3F7E44;">🌍 Climate Action</div>
+      <div class="sdg-item" style="background:#0A97D9;">🐟 Life Below Water</div>
+      <div class="sdg-item" style="background:#56C02B;">🌳 Life on Land</div>
+      <div class="sdg-item" style="background:#00689D;">🕊️ Peace & Justice</div>
+      <div class="sdg-item" style="background:#19486A;">🤝 Partnerships</div>
+    </div>
+
+    <div class="eg">
+      <div class="eg-label">🌟 SDG #1 – No Poverty</div>
+      <p>SDG ka Goal #1 hai <strong>"No Poverty by 2030."</strong> India ke liye yeh bahut important hai. PM Modi ne kaha India SDG goals achieve karne mein world leader banega. <strong>PM Garib Kalyan Anna Yojana, PM Awas Yojana, Ujjwala Yojana</strong> — ye sab SDGs se linked hain!</p>
+    </div>
+  </div>
+
+  <!-- SECTION 10: MPC & MULTIPLIER -->
+  <div id="mpc">
+    <div class="sec-head"><div class="sec-num">10</div><h2>MPC – Marginal Propensity to Consume & Multiplier</h2></div>
+    <div class="sec-divider"></div>
+
+    <div class="card">
+      <div class="card-title"><div class="dot"></div>MPC Kya Hota Hai?</div>
+      <p><strong>Definition:</strong> Jab kisi ki income badhti hai toh usme se jo additional income ka <strong>consumption pe kharch hota hai</strong> — uska proportion MPC hai.</p>
+      <div class="formula">
+        <div class="f-label">Formula</div>
+        <div class="f-eq">MPC = ΔC / ΔY</div>
+        <div class="f-desc">ΔC = Change in Consumption &nbsp;|&nbsp; ΔY = Change in Income &nbsp;|&nbsp; MPC value: 0 to 1</div>
+      </div>
+      <div class="fact">
+        <strong>Example:</strong> Income ₹10,000 badhi → Spending ₹1,000 badha → MPC = 1000/10000 = <strong>0.1</strong><br>
+        Matlab: Har extra ₹1 mein se sirf 10 paise kharch kiye, 90 paise bachaye.
+      </div>
+      <div class="eg">
+        <div class="eg-label">👨‍💼 Real Life MPC Example</div>
+        <p>
+          <strong>Ramu (poor labourer):</strong> ₹1,000 bonus mila → poore ₹1,000 kharch kar diye! MPC = 1.0 (near to 1)<br>
+          <strong>Shyam (rich businessman):</strong> ₹1,00,000 bonus mila → sirf ₹10,000 kharch kiye, baaki invest kiya. MPC = 0.1<br><br>
+          <strong>Conclusion: Garib logon ka MPC zyada hota hai</strong> (unhe survive karne ke liye sab kharchna padta hai). Isliye <strong>poor logon ko paisa dena economy mein zyada circulation laata hai!</strong>
+        </p>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:14px;">
+      <div class="card-title"><div class="dot"></div>Autonomous Expenditure & Multiplier</div>
+      <ul class="pts">
+        <li><strong>Autonomous Expenditure:</strong> Wo spending jo income level ke chahe kuch bhi ho — hoti rehti hai (income pe dependent nahi).</li>
+        <li>Example: Government infrastructure spending — recession mein bhi hogi.</li>
+      </ul>
+      <div style="background:#f0f4ff; border-radius:12px; padding:16px; margin-top:12px; font-family:monospace; font-size:14px; line-height:2;">
+        <strong>C = A + cY</strong><br>
+        A = Autonomous (income-independent) consumption<br>
+        cY = Income-dependent consumption<br>
+        c = MPC &nbsp;|&nbsp; Y = Income level<br>
+        <strong>Savings = 1 − c</strong><br>
+        <strong>Multiplier = 1 / (1 − c)</strong>
+      </div>
+      <div class="eg" style="margin-top:12px;">
+        <div class="eg-label">📐 Multiplier Example</div>
+        <p>Agar MPC = 0.8, toh Multiplier = 1/(1-0.8) = 1/0.2 = <strong>5</strong><br>
+        Matlab: Government ₹100 crore invest kare roads pe → economy mein <strong>₹500 crore ka effect</strong> hoga! (Logon ko wages mile → wo kharchein → dukan wale kamayein → wo kharchein...) Yahi hai multiplier effect ka jadoo!</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 11: SEZ -->
+  <div id="sez">
+    <div class="sec-head"><div class="sec-num">11</div><h2>Special Economic Zones (SEZ)</h2></div>
+    <div class="sec-divider"></div>
+
+    <div class="hl">
+      <strong>SEZ ke 4 Goals:</strong>
+      <p style="margin-top:6px;">① Exports promote karna &nbsp;|&nbsp; ② Foreign investment attract karna &nbsp;|&nbsp; ③ Employment generate karna &nbsp;|&nbsp; ④ Foreign exchange earn karna</p>
+    </div>
+
+    <div class="band orange">
+      <div class="band-title">📅 Key Dates</div>
+      <ul class="pts">
+        <li>SEZ <strong>Policy Announced: 2000</strong></li>
+        <li>SEZ <strong>Act Enacted: 2005</strong></li>
+        <li>Asia's first <strong>Export Processing Zone (EPZ): Kandla, Gujarat (1965)</strong></li>
+      </ul>
+      <div class="eg">
+        <div class="eg-label">🏭 SEZ Kya Hota Hai?</div>
+        <p>Ek specially designated area jahan <strong>different rules apply hote hain</strong> — tax benefits, customs duty waiver, easier regulations. Example: <strong>Noida SEZ</strong> mein garment factories ko export pe custom duty nahi lagta. Companies yahan aa ke produce karti hain, duniya mein bechti hain. Win-win!</p>
+      </div>
+    </div>
+
+    <div class="two-col" style="margin-top:4px;">
+      <div class="band red">
+        <div class="band-title">⚠️ Challenge 1: MAT</div>
+        <p><strong>Minimum Alternate Tax</strong> — SEZ developers pe bhi lagaaya gaya, unka attraction kam hua.</p>
+        <div class="eg" style="margin-top:8px;">
+          <div class="eg-label">💸 Impact</div>
+          <p>Companies bolne lagi: "Pehle tax-free tha, ab MAT bhi lag raha hai — toh SEZ mein kyun aayein?"</p>
+        </div>
+      </div>
+      <div class="band purple">
+        <div class="band-title">⚠️ Challenge 2: Sunset Clause</div>
+        <p>Tax holidays (Section 10AA) sirf un units ko jo <strong>before April 1, 2020</strong> shuru hue. Baad wali units ko direct tax benefit nahi.</p>
+        <div class="eg" style="margin-top:8px;">
+          <div class="eg-label">🌅 Sunset Clause Kya?</div>
+          <p>Jaise "sun set ho gaya" — ek time baad benefits khatam ho jaate hain. 2020 ke baad SEZ setup karne wali companies ko tax holiday nahi mila.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title"><div class="dot"></div>National Infrastructure Pipeline (NIP)</div>
+      <ul class="pts">
+        <li>Government initiative for world-class infrastructure + quality of life improvement.</li>
+        <li><strong>Duration:</strong> 2020–2025 (5-year plan)</li>
+        <li><strong>Total Investment:</strong> ₹111 Lakh Crore (₹111 Trillion!)</li>
+        <li>Funding: Centre 39% + States 39% + Private 22%</li>
+        <li>Top sectors: Energy (₹25L Cr), Roads (₹20L Cr), Irrigation/Rural (₹16L Cr)</li>
+      </ul>
+      <div class="eg">
+        <div class="eg-label">🏗️ NIP ka Poverty Connection</div>
+        <p>Acchi roads → goods easily milein → prices kam → garibon ko faida. Bijli → industries → jobs. Clean water projects → health improve. <strong>Infrastructure development = Direct poverty reduction ka tool!</strong></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 12: LORENZ CURVE & GINI -->
+  <div id="lorenz">
+    <div class="sec-head"><div class="sec-num">12</div><h2>Inequality Measurement – Lorenz Curve & Gini Coefficient</h2></div>
+    <div class="sec-divider"></div>
+
+    <div class="card">
+      <div class="card-title"><div class="dot"></div>Lorenz Curve 📈</div>
+      <ul class="pts">
+        <li>Ek <strong>graphical representation</strong> hai income inequality ya wealth distribution ka.</li>
+        <li><strong>Line of Equality (45° diagonal):</strong> Perfect equality — har insaan ki equal income.</li>
+        <li>Lorenz Curve is line ke <strong>neeche</strong> hoti hai.</li>
+        <li>Curve jitni zyada line se dur hogi — <strong>inequality utni zyada</strong> hogi.</li>
+      </ul>
+      <!-- SVG Lorenz Curve -->
+      <div style="background:#f8f8ff; border-radius:12px; padding:16px; margin-top:14px; text-align:center;">
+        <svg viewBox="0 0 320 280" width="100%" style="max-width:320px;">
+          <!-- Axes -->
+          <line x1="40" y1="240" x2="280" y2="240" stroke="#333" stroke-width="2"/>
+          <line x1="40" y1="240" x2="40" y2="20" stroke="#333" stroke-width="2"/>
+          <!-- Line of Equality (45 degree) -->
+          <line x1="40" y1="240" x2="280" y2="20" stroke="#2196F3" stroke-width="2.5" stroke-dasharray="8,4"/>
+          <!-- Lorenz Curve -->
+          <path d="M40,240 Q180,235 280,20" fill="none" stroke="#E65C00" stroke-width="3"/>
+          <!-- Area labels -->
+          <text x="145" y="105" font-size="18" font-weight="bold" fill="#2196F3" font-family="sans-serif">A</text>
+          <text x="200" y="200" font-size="18" font-weight="bold" fill="#E65C00" font-family="sans-serif">B</text>
+          <!-- Labels -->
+          <text x="30" y="16" font-size="10" fill="#555" font-family="sans-serif">100%</text>
+          <text x="260" y="255" font-size="10" fill="#555" font-family="sans-serif">100%</text>
+          <text x="40" y="268" font-size="9" fill="#555" font-family="sans-serif">Cumulative share of people (low → high income)</text>
+          <text x="5" y="180" font-size="9" fill="#555" font-family="sans-serif" writing-mode="vertical-rl">Income Share</text>
+          <!-- Legend -->
+          <line x1="50" y1="30" x2="70" y2="30" stroke="#2196F3" stroke-width="2" stroke-dasharray="5,3"/>
+          <text x="74" y="34" font-size="9" fill="#2196F3" font-family="sans-serif">Line of Equality</text>
+          <line x1="50" y1="44" x2="70" y2="44" stroke="#E65C00" stroke-width="2"/>
+          <text x="74" y="48" font-size="9" fill="#E65C00" font-family="sans-serif">Lorenz Curve</text>
+        </svg>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:14px;">
+      <div class="card-title"><div class="dot"></div>Gini Coefficient 🔢</div>
+      <ul class="pts">
+        <li>Lorenz Curve se derived — inequality ko ek <strong>number</strong> deta hai.</li>
+      </ul>
+      <div class="formula">
+        <div class="f-label">Formula</div>
+        <div class="f-eq">Gini = A / (A + B)</div>
+        <div class="f-desc">A = Area between Line of Equality and Lorenz Curve &nbsp;|&nbsp; B = Area below Lorenz Curve</div>
+      </div>
+      <div class="two-col" style="margin-top:12px;">
+        <div class="cmp g">
+          <h4>Gini = 0 ✅</h4>
+          <p>Perfect Equality — har insaan ki same income. Theoretical ideal. Koi bhi country achieve nahi karti.</p>
+        </div>
+        <div class="cmp r">
+          <h4>Gini = 1 ❌</h4>
+          <p>Perfect Inequality — ek insaan ke paas sab kuch, baaki sab ke paas kuch nahi. Extreme case.</p>
+        </div>
+      </div>
+      <div class="eg">
+        <div class="eg-label">🌍 Real Life Gini Coefficients</div>
+        <p>
+          🇳🇴 Norway: ~0.25 (bahut equal) — strong social welfare<br>
+          🇮🇳 India: ~0.35 (moderate inequality)<br>
+          🇧🇷 Brazil: ~0.53 (bahut unequal) — historic inequality<br>
+          🇿🇦 South Africa: ~0.63 (world's most unequal!) — apartheid ka asar<br><br>
+          <strong>Gini jitna zyada → inequality utni zyada → garib aur garib, amir aur amir!</strong>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- QUICK REVISION -->
+  <div class="qr">
+    <div class="qr-title">⚡ Quick Revision – Exam ke liye Key Points</div>
+    <div class="qr-grid">
+      <div class="qr-box">
+        <div class="qr-t">📊 Poverty Types</div>
+        <ul class="pts">
+          <li>Absolute = basic needs nahi</li>
+          <li>Relative = society se kam</li>
+          <li>Subjective = feel karna</li>
+        </ul>
+      </div>
+      <div class="qr-box">
+        <div class="qr-t">👴 Pre-Independence</div>
+        <ul class="pts">
+          <li>Naoroji → Prisoner's Menu</li>
+          <li>NPC 1938 → Nehru (by Bose)</li>
+          <li>Bombay Plan 1944 → ₹75/yr</li>
+        </ul>
+      </div>
+      <div class="qr-box">
+        <div class="qr-t">🏛️ Key Committees</div>
+        <ul class="pts">
+          <li>Dandekar-Rath 1971 → 2250 cal</li>
+          <li>Alagh 1979 → R:2400 U:2100 cal</li>
+          <li>Tendulkar ⭐ → ₹33/day PPP</li>
+          <li>Rangarajan → ₹972/₹1407</li>
+        </ul>
+      </div>
+      <div class="qr-box">
+        <div class="qr-t">📈 Trends</div>
+        <ul class="pts">
+          <li>2004-05: 407M poor (37.2%)</li>
+          <li>2011-12: 270M poor</li>
+          <li>Highest: Chhattisgarh 39.9%</li>
+          <li>Lowest: Goa 5.09%</li>
+        </ul>
+      </div>
+      <div class="qr-box">
+        <div class="qr-t">🌐 MPI & HDI</div>
+        <ul class="pts">
+          <li>MPI 2010 → UNDP + OPHI</li>
+          <li>3 dim: Health, Edu, Std of Living</li>
+          <li>HDI 1990 → Mahbub + Amartya Sen</li>
+          <li>Bihar = Highest MPI, Kerala = Lowest</li>
+        </ul>
+      </div>
+      <div class="qr-box">
+        <div class="qr-t">🏭 SEZ & NIP</div>
+        <ul class="pts">
+          <li>SEZ Policy: 2000, Act: 2005</li>
+          <li>Asia's 1st EPZ: Kandla 1965</li>
+          <li>NIP: 2020-25, ₹111 Lakh Cr</li>
+        </ul>
+      </div>
+      <div class="qr-box">
+        <div class="qr-t">📐 MPC & Multiplier</div>
+        <ul class="pts">
+          <li>MPC = ΔC/ΔY (range: 0–1)</li>
+          <li>Poor ka MPC zyada hota hai</li>
+          <li>Multiplier = 1/(1–c)</li>
+        </ul>
+      </div>
+      <div class="qr-box">
+        <div class="qr-t">📊 Gini & SDG</div>
+        <ul class="pts">
+          <li>Gini 0 = perfect equality</li>
+          <li>Gini 1 = perfect inequality</li>
+          <li>SDGs: 2015, 17 Goals, 169 Targets</li>
+          <li>Target: 2030</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /container -->
+
+<div class="footer">
+  <strong>Sunny Rise</strong> · Poverty Notes · Lecture 10<br>
+  @Parmarssc | parmar_academy | 7068824945
+</div>
+
+<script>if(localStorage.getItem('sunnyrise-leaf-dark')==='1')document.body.classList.add('sr-dark');</script></body>
+</html>

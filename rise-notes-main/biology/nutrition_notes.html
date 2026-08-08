@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nutrition Notes – SUNNY RISE</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Hind:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--cream:#FAEED9;--gold:#E1A837;--olive:#8D7A02;--dark:#38370D;--light:#FDF7EE;--shadow:rgba(56,55,13,0.15);}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:var(--cream);font-family:'Hind',sans-serif;color:var(--dark);}
+
+  header{background:var(--dark);padding:36px 40px 28px;text-align:center;position:relative;overflow:hidden;}
+  header::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(-45deg,transparent,transparent 18px,rgba(225,168,55,.06) 18px,rgba(225,168,55,.06) 19px);}
+  .badge{display:inline-block;background:var(--gold);color:var(--dark);font-weight:700;font-size:11px;letter-spacing:3px;text-transform:uppercase;padding:5px 18px;border-radius:2px;margin-bottom:14px;position:relative;}
+  header h1{font-family:'Playfair Display',serif;font-size:clamp(34px,6vw,64px);color:var(--cream);line-height:1.1;position:relative;}
+  header h1 span{color:var(--gold);}
+  header .sub{margin-top:10px;color:rgba(250,238,217,.6);font-size:14px;letter-spacing:1px;position:relative;}
+  .gold-line{width:80px;height:3px;background:var(--gold);margin:18px auto 0;border-radius:2px;}
+
+  .container{max-width:980px;margin:0 auto;padding:40px 24px 60px;}
+
+  .sec-title{display:flex;align-items:center;gap:14px;margin:48px 0 20px;}
+  .sec-title .num{width:44px;height:44px;background:var(--dark);color:var(--gold);border-radius:50%;display:grid;place-items:center;font-family:'Playfair Display',serif;font-size:18px;font-weight:900;flex-shrink:0;}
+  .sec-title h2{font-family:'Playfair Display',serif;font-size:clamp(20px,4vw,27px);color:var(--dark);}
+  .sec-title h2 span{color:var(--olive);}
+  .sec-title .line{flex:1;height:2px;background:linear-gradient(to right,var(--gold),transparent);}
+
+  .card{background:var(--light);border-left:5px solid var(--gold);border-radius:0 12px 12px 0;padding:20px 24px;margin-bottom:18px;box-shadow:3px 4px 14px var(--shadow);}
+  .card.dk{background:var(--dark);border-left-color:var(--gold);}
+  .card.dk h3{color:var(--gold);}
+  .card.dk p,.card.dk li{color:rgba(250,238,217,.9);}
+  .card.ol{background:var(--olive);border-left-color:var(--gold);}
+  .card.ol h3{color:var(--gold);}
+  .card.ol p,.card.ol li{color:rgba(250,238,217,.92);}
+  .card.gd{background:var(--gold);border-left-color:var(--dark);}
+  .card.gd h3{color:var(--dark);}
+  .card.gd p,.card.gd li{color:var(--dark);}
+  .card h3{font-family:'Playfair Display',serif;font-size:17px;color:var(--olive);margin-bottom:10px;display:flex;align-items:center;gap:8px;}
+  .card p,.card li{font-size:14.5px;line-height:1.75;color:#3a380e;margin-bottom:5px;}
+  .card ul{padding-left:20px;}
+  .card li::marker{color:var(--gold);}
+
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:18px;}
+  .grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-bottom:18px;}
+  .grid4{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:12px;margin-bottom:18px;}
+  @media(max-width:700px){.grid2,.grid3,.grid4{grid-template-columns:1fr;}}
+  @media(max-width:900px){.grid4{grid-template-columns:1fr 1fr;}}
+
+  .tbl{width:100%;border-collapse:collapse;margin:14px 0 20px;font-size:13.5px;border-radius:10px;overflow:hidden;box-shadow:2px 4px 12px var(--shadow);}
+  .tbl thead tr{background:var(--dark);color:var(--gold);font-family:'Playfair Display',serif;}
+  .tbl th,.tbl td{padding:11px 15px;text-align:left;border-bottom:1px solid #e8d9b8;}
+  .tbl tbody tr:nth-child(even){background:#f5e8cc;}
+  .tbl tbody tr:nth-child(odd){background:var(--light);}
+  .tbl tbody tr:hover{background:#f0d89a;}
+
+  .highlight{background:linear-gradient(135deg,#f5e3b8,#fdf7ee);border:2px solid var(--gold);border-radius:12px;padding:16px 20px;margin:16px 0;font-size:14px;line-height:1.7;}
+  .highlight strong{color:var(--olive);}
+
+  .fact{background:var(--gold);color:var(--dark);border-radius:10px;padding:13px 18px;font-weight:600;font-size:14px;margin:10px 0;display:flex;gap:10px;align-items:flex-start;}
+  .fact .em{font-size:20px;flex-shrink:0;}
+
+  .section-banner{background:var(--dark);color:var(--gold);font-family:'Playfair Display',serif;font-size:20px;font-weight:700;text-align:center;padding:14px 20px;border-radius:10px;margin:32px 0 18px;letter-spacing:1px;}
+
+  .mini-box{background:var(--olive);color:var(--cream);border-radius:10px;padding:14px 18px;font-size:13.5px;line-height:1.7;margin:12px 0;}
+  .mini-box strong{color:var(--gold);}
+
+  .pill{display:inline-block;background:var(--gold);color:var(--dark);font-weight:700;font-size:11px;padding:3px 11px;border-radius:20px;margin:2px 2px 2px 0;}
+  .pill.d{background:var(--dark);color:var(--gold);}
+  .pill.o{background:var(--olive);color:var(--cream);}
+
+  /* ENERGY BADGE */
+  .energy-row{display:flex;gap:14px;flex-wrap:wrap;margin:14px 0;}
+  .en-box{flex:1;min-width:160px;border-radius:12px;padding:18px 16px;text-align:center;}
+  .en-box h4{font-family:'Playfair Display',serif;font-size:18px;margin-bottom:6px;}
+  .en-box .cal{font-size:32px;font-weight:900;line-height:1;}
+  .en-box small{font-size:11px;opacity:.8;}
+
+  /* NUTRIENT TYPE BOX */
+  .ntype{border-radius:12px;padding:16px 18px;margin-bottom:14px;}
+
+  .sep{height:2px;background:linear-gradient(to right,transparent,var(--gold),transparent);margin:36px 0;}
+
+  /* VITAMIN CARD */
+  .vit-card{border-radius:10px;padding:14px 16px;margin-bottom:10px;border-left:4px solid var(--gold);}
+  .vit-card h5{font-family:'Playfair Display',serif;font-size:15px;margin-bottom:6px;}
+
+  /* PHOTOSYNTHESIS BOX */
+  .photo-eq{background:var(--dark);color:var(--gold);font-family:'Playfair Display',serif;font-size:16px;text-align:center;padding:18px 24px;border-radius:12px;margin:16px 0;letter-spacing:.5px;}
+  .photo-eq span{color:var(--cream);}
+
+  footer{background:var(--dark);text-align:center;padding:22px;color:rgba(250,238,217,.5);font-size:12.5px;letter-spacing:1px;}
+  footer span{color:var(--gold);}
+</style>
+<style id="sr-system">:root{--sr-cream:#FAEED9;--sr-gold:#E1A837;--sr-olive:#8D7A02;--sr-ink:#38370D;--sr-paper:#fffdf8;--sr-muted:#756f55;--sr-line:#ead9ad;--sr-shadow:0 14px 35px rgba(56,55,13,.10)}.srbar{position:sticky!important;top:0!important;z-index:99999!important;background:rgba(56,55,13,.96)!important;backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.08)!important;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Arial,sans-serif!important}.srbar *{box-sizing:border-box}.srbarin{width:min(1120px,calc(100% - 28px));height:64px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:12px}.srbrand{display:flex;align-items:center;gap:10px;color:#fff!important;text-decoration:none!important}.srbrand img{width:38px!important;height:38px!important;border-radius:50%!important;object-fit:cover!important;border:2px solid var(--sr-gold)!important;margin:0!important}.srbrand b{font-size:15px!important;letter-spacing:.6px!important;color:#fff!important}.srbrand b span{color:var(--sr-gold)!important}.sractions{display:flex;gap:7px}.srbtn{border:1px solid rgba(225,168,55,.55)!important;background:transparent!important;color:var(--sr-gold)!important;border-radius:10px!important;padding:8px 10px!important;text-decoration:none!important;font:700 12px/1 Inter,system-ui,sans-serif!important;cursor:pointer}.srbtn.primary{background:var(--sr-gold)!important;color:var(--sr-ink)!important}@media(max-width:520px){.srbarin{height:58px}.srbrand img{width:34px!important;height:34px!important}.srbrand b{font-size:13px!important}.srbtn{padding:8px!important}.srhide{display:none!important}}body.sr-dark{filter:none}body.sr-dark .srbar{background:#030a13!important}</style></head>
+<body><div class="srbar"><div class="srbarin"><a class="srbrand" href="../index.html"><img src="../assets/sunnyrise-profile.jpg" alt="Sunny Rise"><b>SUNNY <span>RISE</span></b></a><div class="sractions"><a class="srbtn srhide" href="../search/index.html">🔎 Search</a><button class="srbtn" onclick="document.body.classList.toggle('sr-dark');localStorage.setItem('sunnyrise-leaf-dark',document.body.classList.contains('sr-dark')?'1':'0')">◐ Theme</button><a class="srbtn primary" href="../index.html">⌂ Home</a></div></div></div>
+
+<header>
+  <div class="badge">SUNNY RISE · Biology Notes</div>
+  <h1><span>Nutrition</span></h1>
+  <p class="sub">Complete Notes · Simple Language · No SVG</p>
+  <div class="gold-line"></div>
+</header>
+
+<div class="container">
+
+<!-- ══ INTRO ══ -->
+<div class="card dk" style="margin-top:8px;">
+  <h3>🍽️ Nutrition क्या है?</h3>
+  <p>Nutrition वह process है जिसमें हमारा शरीर food से <strong style="color:var(--gold)">Energy, Growth और Repair</strong> के लिए जरूरी पदार्थ लेता है। Nutrients दो categories में बँटे होते हैं — <strong style="color:var(--gold)">Macronutrients</strong> (large amounts में) और <strong style="color:var(--gold)">Micronutrients</strong> (small amounts में)।</p>
+</div>
+
+<!-- MACRO vs MICRO -->
+<div class="grid2">
+  <div class="card ol">
+    <h3>💪 Macronutrients</h3>
+    <p>Body को <strong>बड़ी मात्रा</strong> में चाहिए होते हैं।</p>
+    <div style="margin-top:10px;">
+      <span class="pill">Carbohydrates</span>
+      <span class="pill">Fats</span>
+      <span class="pill">Proteins</span>
+    </div>
+  </div>
+  <div class="card gd">
+    <h3>🔬 Micronutrients</h3>
+    <p>Body को <strong>थोड़ी मात्रा</strong> में चाहिए होते हैं।</p>
+    <div style="margin-top:10px;">
+      <span class="pill d">Vitamins</span>
+      <span class="pill d">Minerals</span>
+    </div>
+  </div>
+</div>
+
+<!-- ══ SECTION 1: CARBOHYDRATES ══ -->
+<div class="sec-title"><div class="num">1</div><h2><span>Carbohydrates</span> — Quick Energy</h2><div class="line"></div></div>
+
+<div class="card">
+  <h3>🍚 Carbohydrates क्या हैं?</h3>
+  <ul>
+    <li>Carbon, Hydrogen और Oxygen से बने biomolecules</li>
+    <li>Body के लिए <strong>Quick Energy source</strong></li>
+    <li><strong>1 gm Carbohydrate = 4 Calories</strong></li>
+    <li>Potato में <strong>Starch</strong> भरपूर मात्रा में होता है</li>
+  </ul>
+</div>
+
+<div class="card">
+  <h3>🔗 Types of Carbohydrates</h3>
+  <table class="tbl" style="margin-top:10px;">
+    <thead><tr><th>Type</th><th>Structure</th><th>Examples</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Monosaccharides</strong> (Simple)</td><td>1 sugar unit — सबसे छोटा form</td><td>Glucose, Fructose, Galactose</td></tr>
+      <tr><td><strong>Disaccharides</strong> (Simple)</td><td>2 monosaccharide units जुड़े</td><td>Sucrose, Lactose (milk sugar), Maltose (grain sugar)</td></tr>
+      <tr><td><strong>Polysaccharides</strong> (Complex)</td><td>कई sugar units जुड़े</td><td>Glycogen, Starch, Cellulose</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ══ SECTION 2: FATS ══ -->
+<div class="sec-title"><div class="num">2</div><h2><span>Fats</span> — Energy Store</h2><div class="line"></div></div>
+
+<div class="card">
+  <h3>🧈 Fats के बारे में</h3>
+  <ul>
+    <li><strong>1 gm Fat = 9 Calories</strong> — सबसे ज्यादा energy</li>
+    <li>Energy, cell structure building, और body functions के लिए जरूरी</li>
+    <li>Body में fat <strong>Adipose tissue</strong> में <strong>Triglycerides</strong> के रूप में store होता है</li>
+  </ul>
+</div>
+
+<div class="grid2">
+  <div class="card dk">
+    <h3>❌ Saturated Fat</h3>
+    <ul>
+      <li>Molecules tightly packed → easily digest नहीं होते</li>
+      <li>Higher melting point</li>
+      <li><strong>Found in:</strong> Red meat, pork</li>
+      <li>Excess में <strong>LDL (Bad Cholesterol)</strong> बढ़ाता है — harmful!</li>
+    </ul>
+  </div>
+  <div class="card ol">
+    <h3>✅ Unsaturated Fat</h3>
+    <ul>
+      <li>Easily digest होते हैं — healthier!</li>
+      <li><strong>Found in:</strong> Vegetable oil, nuts, seeds</li>
+      <li><strong>HDL (Good Cholesterol)</strong> promote करते हैं</li>
+    </ul>
+  </div>
+</div>
+
+<div class="fact"><span class="em">⚠️</span><span><strong>Trans Fat</strong> = सबसे हानिकारक! यह तब बनता है जब Unsaturated fats को Hydrogenation process से Saturated fats में convert किया जाता है — जैसे Fast Food में।</span></div>
+
+<div class="mini-box"><strong>🐟 Omega-3 Sources:</strong> Flax seeds, Chia seeds, Walnuts, Fatty fish, Eggs — Heart के लिए बहुत फायदेमंद!</div>
+
+<!-- ENERGY COMPARISON -->
+<div class="energy-row">
+  <div class="en-box" style="background:var(--dark);color:var(--cream);">
+    <h4>🍚 Carbs</h4>
+    <div class="cal" style="color:var(--gold);">4</div>
+    <small>Calories per gram</small>
+  </div>
+  <div class="en-box" style="background:var(--olive);color:var(--cream);">
+    <h4>💪 Protein</h4>
+    <div class="cal" style="color:var(--gold);">4</div>
+    <small>Calories per gram</small>
+  </div>
+  <div class="en-box" style="background:var(--gold);color:var(--dark);">
+    <h4>🧈 Fat</h4>
+    <div class="cal">9</div>
+    <small>Calories per gram</small>
+  </div>
+</div>
+
+<!-- ══ SECTION 3: PROTEINS ══ -->
+<div class="sec-title"><div class="num">3</div><h2><span>Proteins</span> — Body Builder</h2><div class="line"></div></div>
+
+<div class="card">
+  <h3>🥚 Proteins क्या हैं?</h3>
+  <ul>
+    <li>Proteins छोटे units <strong>Amino Acids</strong> से बने होते हैं</li>
+    <li><strong>Requirement:</strong> 0.8 gm/kg body weight per day</li>
+    <li><strong>Sources:</strong> Egg, yolk, soybeans, pulses, chicken, fish</li>
+    <li>Egg white cook होने पर सफेद हो जाता है — <strong>Protein Denaturation</strong> के कारण!</li>
+  </ul>
+</div>
+
+<div class="card">
+  <h3>🔗 Protein Sources — कहाँ कौनसा Protein?</h3>
+  <table class="tbl" style="margin-top:10px;">
+    <thead><tr><th>Source</th><th>Protein Name</th></tr></thead>
+    <tbody>
+      <tr><td>🥛 Milk</td><td>Casein</td></tr>
+      <tr><td>💇 Hair / Nail</td><td>Keratin</td></tr>
+      <tr><td>🍚 Rice</td><td>Glutelin, Albumin</td></tr>
+      <tr><td>🌾 Grains</td><td>Gluten</td></tr>
+      <tr><td>🥚 Egg White</td><td>Albumin</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="card">
+  <h3>🧬 Amino Acids — Proteins की Building Blocks</h3>
+  <ul>
+    <li>Total <strong>20 Amino Acids</strong> होते हैं</li>
+    <li><strong>9 Essential</strong> — Body खुद नहीं बना सकती, diet से लेनी पड़ती हैं</li>
+    <li><strong>11 Non-Essential</strong> — Body खुद बना सकती है</li>
+  </ul>
+</div>
+
+<div class="grid2">
+  <div class="card ol">
+    <h3>✅ Non-Essential Amino Acids (11)</h3>
+    <p style="font-size:13px;">Glycine, Serine, Proline, Glutamic acid, Alanine, Aspartic acid, Cystine, Tyrosine, Asparagine, Glutamine</p>
+  </div>
+  <div class="card dk">
+    <h3>⭐ Essential Amino Acids (9)</h3>
+    <div style="display:flex;flex-wrap:wrap;gap:5px;margin-top:6px;">
+      <span class="pill">Histidine</span>
+      <span class="pill">Isoleucine</span>
+      <span class="pill">Leucine</span>
+      <span class="pill">Lysine</span>
+      <span class="pill">Methionine</span>
+      <span class="pill">Phenylalanine</span>
+      <span class="pill">Threonine</span>
+      <span class="pill">Tryptophan</span>
+      <span class="pill">Valine</span>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <h3>📋 Essential Amino Acids — Functions</h3>
+  <table class="tbl" style="margin-top:10px;">
+    <thead><tr><th>Amino Acid</th><th>Function</th></tr></thead>
+    <tbody>
+      <tr><td>Histidine</td><td>Growth, tissue repair, histamine production (immune response)</td></tr>
+      <tr><td>Isoleucine</td><td>Muscle metabolism, energy regulation</td></tr>
+      <tr><td>Leucine</td><td>Protein synthesis, muscle repair, blood sugar regulate करता है</td></tr>
+      <tr><td>Lysine</td><td>Calcium absorption, collagen formation, immune function</td></tr>
+      <tr><td>Methionine</td><td>Metabolism और detoxification</td></tr>
+      <tr><td>Phenylalanine</td><td>Neurotransmitters (Dopamine, Epinephrine) — mood & alertness</td></tr>
+      <tr><td>Threonine</td><td>Protein balance, tooth enamel, fat metabolism</td></tr>
+      <tr><td>Tryptophan</td><td>Serotonin और Melatonin का precursor — mood & sleep</td></tr>
+      <tr><td>Valine</td><td>Muscle growth, tissue repair, energy</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- Protein Deficiency -->
+<div class="grid2">
+  <div class="card dk">
+    <h3>😢 Kwashiorkor</h3>
+    <ul>
+      <li>Severe <strong>protein deficiency</strong> से</li>
+      <li>Fluid retention → पेट फूल जाता है</li>
+      <li>Mainly children affected (developing countries)</li>
+    </ul>
+  </div>
+  <div class="card ol">
+    <h3>😢 Marasmus</h3>
+    <ul>
+      <li>Calories <strong>और</strong> protein दोनों की कमी</li>
+      <li>Muscle mass और fat loss → body wasting</li>
+      <li>बच्चों में poverty और food scarcity से</li>
+    </ul>
+  </div>
+</div>
+
+<div class="highlight">
+  <strong>🦴 Collagen</strong> — हमारे body का सबसे <strong>abundant protein</strong> है। यह skin, bone joints जैसे extracellular spaces में मिलता है। Triple helical structure discover किया: <strong>G.N. Ramachandran</strong> ने। Collagen synthesis के लिए <strong>Vitamin C</strong> जरूरी है।
+</div>
+
+<!-- ══ SECTION 4: VITAMINS ══ -->
+<div class="sec-title"><div class="num">4</div><h2><span>Vitamins</span> — Micronutrients</h2><div class="line"></div></div>
+
+<div class="card">
+  <h3>💊 Vitamins क्या हैं?</h3>
+  <ul>
+    <li>Essential organic substances जो foods में मिलती हैं</li>
+    <li>Small amounts में लेकिन growth, metabolism, और nervous system के लिए जरूरी</li>
+    <li><strong>1912:</strong> Casimir Funk ने "Vitamin" शब्द coin किया</li>
+  </ul>
+</div>
+
+<div class="grid2">
+  <div class="card dk">
+    <h3>💧 Water Soluble Vitamins</h3>
+    <ul>
+      <li>पानी में घुलते हैं</li>
+      <li>Body में <strong>store नहीं</strong> होते</li>
+      <li>रोज लेने पड़ते हैं</li>
+      <li><strong>Vitamins:</strong> B (सभी) और C</li>
+    </ul>
+  </div>
+  <div class="card ol">
+    <h3>🧈 Fat Soluble Vitamins</h3>
+    <ul>
+      <li>Fat में घुलते हैं</li>
+      <li>Body के fatty tissues और liver में <strong>store</strong> होते हैं</li>
+      <li><strong>Vitamins:</strong> A, D, E, K</li>
+      <li>याद करें: <strong>"ADEK"</strong></li>
+    </ul>
+  </div>
+</div>
+
+<!-- Complete Vitamin Table -->
+<div class="card">
+  <h3>📋 Complete Vitamin Chart — Scientific Name + Deficiency + Sources</h3>
+  <table class="tbl" style="margin-top:10px;">
+    <thead><tr><th>Vitamin</th><th>Scientific Name</th><th>Deficiency/Disease</th><th>Sources</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Vitamin A</strong></td><td>Retinol</td><td>Night Blindness (रात को दिखना बंद)</td><td>Spinach, Carrots, Sweet potatoes</td></tr>
+      <tr><td><strong>Vitamin B1</strong></td><td>Thiamine</td><td>Beriberi</td><td>Meat, eggs, legumes</td></tr>
+      <tr><td><strong>Vitamin B2</strong></td><td>Riboflavin</td><td>RBC में कमी</td><td>Dairy, eggs, green vegetables</td></tr>
+      <tr><td><strong>Vitamin B3</strong></td><td>Niacin</td><td>Pellagra (3D Disease)</td><td>Meat, seafood, eggs</td></tr>
+      <tr><td><strong>Vitamin B5</strong></td><td>Pantothenic Acid</td><td>Fatigue, numbness, muscle cramps</td><td>Meat, poultry, legumes</td></tr>
+      <tr><td><strong>Vitamin B6</strong></td><td>Pyridoxine</td><td>Anaemia</td><td>Poultry, fish, potatoes</td></tr>
+      <tr><td><strong>Vitamin B7</strong></td><td>Biotin</td><td>Hair loss, brittle nails, skin rashes</td><td>Eggs, nuts, seeds</td></tr>
+      <tr><td><strong>Vitamin B9</strong></td><td>Folic Acid</td><td>Fatigue, Neural tube defects in babies</td><td>Legumes, leafy vegetables</td></tr>
+      <tr><td><strong>Vitamin B12</strong></td><td>Cyanocobalamin</td><td>Pernicious Anaemia, Memory loss</td><td>Meat, seafood, dairy</td></tr>
+      <tr><td><strong>Vitamin C</strong></td><td>Ascorbic Acid</td><td>Scurvy (मसूड़ों से खून)</td><td>Lemon, oranges, amla, strawberries</td></tr>
+      <tr><td><strong>Vitamin D</strong></td><td>Calciferol</td><td>Osteomalacia, Rickets</td><td>Cod liver oil, salmon, egg yolk, Sunlight</td></tr>
+      <tr><td><strong>Vitamin E</strong></td><td>Tocopherol</td><td>Anti-sterility, vision problems</td><td>Kale, spinach, lettuce, parsley</td></tr>
+      <tr><td><strong>Vitamin K</strong></td><td>Phylloquinone</td><td>Excessive bleeding, poor clotting</td><td>Soya bean, coriander, peas</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- Vitamin D Special -->
+<div class="card dk">
+  <h3>☀️ Vitamin D — Sunshine Vitamin</h3>
+  <ul>
+    <li>"<strong>Sunshine Vitamin</strong>" और <strong>Hormone</strong> दोनों माना जाता है</li>
+    <li>Sunlight से skin में produce होता है</li>
+    <li>Liver और Kidneys इसे <strong>Calcitriol</strong> (active form) में convert करते हैं</li>
+    <li>Blood के through bones को calcium absorb करने में help करता है</li>
+    <li><strong>Vitamin D2 (Ergocalciferol):</strong> Calcium absorption में help</li>
+    <li><strong>Vitamin D3 (Cholecalciferol):</strong> Blood में Vit D levels ज्यादा effectively बढ़ाता है</li>
+  </ul>
+</div>
+
+<!-- Vitamin D Deficiency -->
+<div class="grid3">
+  <div class="card ol">
+    <h3>🦴 Osteoporosis</h3>
+    <p>Bone mineral density और bone mass कम हो जाती है → हड्डियाँ कमजोर</p>
+  </div>
+  <div class="card ol">
+    <h3>🦴 Osteomalacia</h3>
+    <p>"Soft Bones" — metabolic bone disease, fracture का risk बढ़ता है</p>
+  </div>
+  <div class="card ol">
+    <h3>👦 Rickets</h3>
+    <p>बच्चों में होता है — bones soft और bent हो जाती हैं</p>
+  </div>
+</div>
+
+<div class="fact"><span class="em">⚠️</span><span><strong>Pellagra = 3D Disease</strong> — Vitamin B3 (Niacin) की कमी से। 3D मतलब: <strong>Dementia + Dermatitis + Diarrhoea</strong></span></div>
+
+<!-- ══ SECTION 5: MINERALS ══ -->
+<div class="sec-title"><div class="num">5</div><h2><span>Minerals</span> — Inorganic Nutrients</h2><div class="line"></div></div>
+
+<div class="card">
+  <h3>⚗️ Minerals क्या हैं?</h3>
+  <ul>
+    <li>Naturally occurring, <strong>inorganic</strong> chemical elements</li>
+    <li>Small amounts में लेकिन development और functioning के लिए जरूरी</li>
+    <li><strong>Millets</strong> जैसे Jowar, Bajra, Ragi में minerals भरपूर होते हैं</li>
+  </ul>
+</div>
+
+<div class="grid3">
+  <div class="card dk">
+    <h3>🦴 Magnesium (Mg)</h3>
+    <ul>
+      <li>Metabolism में involved</li>
+      <li>Bone health support करता है</li>
+      <li>Adult body में ~<strong>25g</strong> magnesium होता है</li>
+    </ul>
+  </div>
+  <div class="card dk">
+    <h3>🔧 Zinc (Zn)</h3>
+    <ul>
+      <li>Wound healing के लिए जरूरी</li>
+      <li>Protein synthesis में role</li>
+      <li>Cell growth में help करता है</li>
+    </ul>
+  </div>
+  <div class="card dk">
+    <h3>🫀 Iodine (I)</h3>
+    <ul>
+      <li>Thyroid hormone का essential component</li>
+      <li>Metabolism, growth, development regulate करता है</li>
+      <li>Brain function और cognitive development</li>
+    </ul>
+  </div>
+</div>
+
+<div class="fact"><span class="em">💧</span><span>पानी में <strong>Excess Fluoride</strong> होने से <strong>Fluorosis</strong> बीमारी होती है — दाँत और हड्डियाँ damage होती हैं।</span></div>
+
+<!-- ══ SECTION 6: NUTRITION IN PLANTS ══ -->
+<div class="section-banner">🌱 NUTRITION IN PLANTS</div>
+
+<div class="sec-title"><div class="num">6</div><h2>Modes of <span>Nutrition</span></h2><div class="line"></div></div>
+
+<div class="grid2">
+  <div class="card gd">
+    <h3>🌿 Autotrophic Nutrition</h3>
+    <ul>
+      <li>Organism <strong>खुद अपना food</strong> बनाता है</li>
+      <li>Light, water, CO₂ और other chemicals use करता है</li>
+      <li><strong>Examples:</strong> Green plants, Blue-green algae, Phytoplanktons</li>
+    </ul>
+  </div>
+  <div class="card dk">
+    <h3>🐛 Heterotrophic Nutrition</h3>
+    <ul>
+      <li>Organism <strong>दूसरों से nutrition</strong> लेता है</li>
+      <li>Plant या animal matter खाता है</li>
+      <li><strong>Examples:</strong> Fungi, Amoeba, Man</li>
+    </ul>
+  </div>
+</div>
+
+<div class="card">
+  <h3>🔀 Heterotrophic के तीन प्रकार</h3>
+  <table class="tbl" style="margin-top:10px;">
+    <thead><tr><th>Type</th><th>क्या करता है</th><th>Examples</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Saprophytic</strong></td><td>Dead organic matter से nutrients लेता है</td><td>Fungi, Yeast</td></tr>
+      <tr><td><strong>Parasitic</strong></td><td>दूसरे living plant/animal (host) से nutrition लेता है</td><td>Cuscula, Plasmodium, Nematodes</td></tr>
+      <tr><td><strong>Holozoic</strong></td><td>Solid/liquid food खाता है और internally digest करता है</td><td>Man, Dog, Amoeba</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="mini-box">
+  🪴 <strong>Carnivorous/Insectivorous Plants:</strong> Venus Flytrap, Pitcher Plant, Sundew, Bladderwort — ये insects खाकर nutrients लेते हैं!
+</div>
+
+<!-- ══ SECTION 7: PHOTOSYNTHESIS ══ -->
+<div class="sec-title"><div class="num">7</div><h2><span>Photosynthesis</span> — Food Making Process</h2><div class="line"></div></div>
+
+<div class="card">
+  <h3>☀️ Photosynthesis क्या है?</h3>
+  <ul>
+    <li>Green plants sunlight, CO₂ और water से <strong>अपना food बनाते हैं</strong></li>
+    <li>Leaves में, chlorophyll वाले cells में होता है</li>
+    <li>Sunlight पानी को Hydrogen और Oxygen में split करती है</li>
+    <li>CO₂ + Hydrogen → <strong>Glucose</strong> बनता है</li>
+    <li>Oxygen byproduct के रूप में <strong>release</strong> होती है</li>
+    <li><strong>Mesophyll cells</strong> = Photosynthesis का primary site</li>
+    <li><strong>Guard cells</strong> = Stomata के opening/closing को regulate करती हैं</li>
+  </ul>
+</div>
+
+<div class="photo-eq">
+  6CO₂ + 6H₂O <span style="color:var(--gold)"> →(Sunlight + Chlorophyll)→ </span> C₆H₁₂O₆ + 6O₂<br>
+  <small style="font-size:12px;color:rgba(250,238,217,.7);font-family:'Hind',sans-serif;">Carbon dioxide + Water → Glucose + Oxygen</small>
+</div>
+
+<!-- ══ SECTION 8: CHLOROPLAST ══ -->
+<div class="sec-title"><div class="num">8</div><h2><span>Chloroplast</span> — Photosynthesis की Factory</h2><div class="line"></div></div>
+
+<div class="card">
+  <h3>🍃 Chloroplast क्या है?</h3>
+  <ul>
+    <li>Plant cells और algae में organelle जो sunlight को chemical energy में convert करता है</li>
+    <li>Chlorophyll plant को <strong>Green</strong> बनाता है क्योंकि यह Red और Blue light absorb करता है, <strong>Green reflect</strong> करता है</li>
+  </ul>
+</div>
+
+<div class="card">
+  <h3>🏗️ Structure of Chloroplast</h3>
+  <table class="tbl" style="margin-top:10px;">
+    <thead><tr><th>Part</th><th>Function</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Outer Membrane</strong></td><td>Protective layer — small molecules pass करने देती है</td></tr>
+      <tr><td><strong>Inner Membrane</strong></td><td>Materials के movement को control करती है</td></tr>
+      <tr><td><strong>Stroma</strong></td><td>Fluid-filled space जहाँ Calvin Cycle (Dark Reaction) होती है</td></tr>
+      <tr><td><strong>Thylakoids</strong></td><td>Disc-shaped sacs जिनमें chlorophyll होता है</td></tr>
+      <tr><td><strong>Grana (Granum)</strong></td><td>Thylakoids के stacks — यहाँ Light Reaction होती है</td></tr>
+      <tr><td><strong>Lamella</strong></td><td>Grana को connect करने वाले membranous bridges</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="grid2">
+  <div class="card gd">
+    <h3>💡 Light Dependent Reaction</h3>
+    <ul>
+      <li>Location: <strong>Thylakoid membranes</strong></li>
+      <li>Light पानी को H और O में split करती है</li>
+      <li>Output: <strong>ATP और NADPH</strong> बनते हैं</li>
+    </ul>
+  </div>
+  <div class="card dk">
+    <h3>🌙 Light Independent Reaction (Calvin Cycle)</h3>
+    <ul>
+      <li>Location: <strong>Stroma</strong></li>
+      <li>ATP और NADPH use होते हैं</li>
+      <li>CO₂ → <strong>Glucose</strong> में convert होता है</li>
+    </ul>
+  </div>
+</div>
+
+<!-- Chlorophyll a vs b -->
+<div class="card">
+  <h3>🍃 Chlorophyll a vs Chlorophyll b</h3>
+  <table class="tbl" style="margin-top:10px;">
+    <thead><tr><th>Feature</th><th>Chlorophyll a</th><th>Chlorophyll b</th></tr></thead>
+    <tbody>
+      <tr><td>Role</td><td>Primary Pigment</td><td>Accessory Pigment</td></tr>
+      <tr><td>Function</td><td>Light → Chemical Energy convert करता है</td><td>Energy Chlorophyll a को transfer करता है</td></tr>
+      <tr><td>Color</td><td>Blue-green</td><td>Yellow-green</td></tr>
+      <tr><td>Present in</td><td>Reaction Center</td><td>Light-harvesting Complex</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- Plant Pigments -->
+<div class="card">
+  <h3>🎨 Plant Pigments — Color कहाँ से आता है?</h3>
+  <div class="grid3" style="margin-top:12px;">
+    <div style="background:linear-gradient(135deg,#f5c842,#e8a800);border-radius:10px;padding:14px;text-align:center;">
+      <div style="font-size:24px">🟡🟠</div>
+      <strong style="font-size:13px;color:#38370D">Carotenoids</strong>
+      <p style="font-size:12px;color:#38370D;margin-top:5px">Yellow & Orange color — Carrot, Papaya, Autumn leaves</p>
+    </div>
+    <div style="background:linear-gradient(135deg,#c0392b,#8e44ad);border-radius:10px;padding:14px;text-align:center;">
+      <div style="font-size:24px">🔴🟣</div>
+      <strong style="font-size:13px;color:#FAEED9">Anthocyanins</strong>
+      <p style="font-size:12px;color:#FAEED9;margin-top:5px">Red, Purple, Blue — Red cabbage, Berries, Apple</p>
+    </div>
+    <div style="background:linear-gradient(135deg,#27ae60,#1a7a40);border-radius:10px;padding:14px;text-align:center;">
+      <div style="font-size:24px">🟢🌿</div>
+      <strong style="font-size:13px;color:#FAEED9">Chlorophyll</strong>
+      <p style="font-size:12px;color:#FAEED9;margin-top:5px">Green color — Photosynthesis में most important role</p>
+    </div>
+  </div>
+</div>
+
+<!-- ══ SECTION 9: PLANT NUTRIENTS ══ -->
+<div class="sec-title"><div class="num">9</div><h2>Plant के <span>Macronutrients & Micronutrients</span></h2><div class="line"></div></div>
+
+<div class="grid2">
+  <div class="card dk">
+    <h3>💪 Macronutrients (Plants)</h3>
+    <p style="font-size:12.5px;margin-bottom:8px;opacity:.7;">Soil से मिलते हैं</p>
+    <div style="display:flex;flex-wrap:wrap;gap:4px;">
+      <span class="pill">N - Nitrogen</span>
+      <span class="pill">P - Phosphorus</span>
+      <span class="pill">K - Potassium</span>
+      <span class="pill">S - Sulphur</span>
+      <span class="pill">Ca - Calcium</span>
+      <span class="pill">Mg - Magnesium</span>
+    </div>
+    <p style="font-size:12px;margin-top:8px;opacity:.7;">Air & Water से: C (Carbon), H (Hydrogen), O (Oxygen)</p>
+  </div>
+  <div class="card ol">
+    <h3>🔬 Micronutrients (Plants)</h3>
+    <div style="display:flex;flex-wrap:wrap;gap:4px;">
+      <span class="pill d">Fe - Iron</span>
+      <span class="pill d">Mn - Manganese</span>
+      <span class="pill d">Cu - Copper</span>
+      <span class="pill d">Zn - Zinc</span>
+      <span class="pill d">B - Boron</span>
+      <span class="pill d">Cl - Chlorine</span>
+      <span class="pill d">Mo - Molybdenum</span>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <h3>🌱 Major Macronutrients — Functions in Plants</h3>
+  <table class="tbl" style="margin-top:10px;">
+    <thead><tr><th>Nutrient</th><th>Symbol</th><th>Main Function</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Nitrogen</strong></td><td>N</td><td>Green, leafy growth promote करता है। Chlorophyll का core building block — plant food बनाने के लिए जरूरी</td></tr>
+      <tr><td><strong>Phosphorus</strong></td><td>P</td><td>Root development, flowers और seeds के लिए। Roots से Leaves तक energy transfer system</td></tr>
+      <tr><td><strong>Potassium</strong></td><td>K</td><td>Overall immunity boost और water balance regulate। Stomata control से disease fight और drought survive</td></tr>
+      <tr><td><strong>Calcium</strong></td><td>Ca</td><td>Structural support — "cement" की तरह cell walls को hold करता है</td></tr>
+      <tr><td><strong>Magnesium</strong></td><td>Mg</td><td>Photosynthesis drive करता है। Chlorophyll molecule का central atom — इसके बिना leaves yellow हो जाती हैं</td></tr>
+      <tr><td><strong>Sulphur</strong></td><td>S</td><td>Amino acids बनाने के लिए essential — proteins, enzymes और vitamins के लिए जरूरी</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="mini-box">
+  🌿 <strong>Nitrogen Fixation:</strong> Legumes (lentils etc.) को fertilisers की जरूरत नहीं — इनकी roots में <strong>Rhizobium</strong> और <strong>Azotobacter</strong> bacteria होते हैं जो atmospheric Nitrogen को fixed Nitrogen में convert करते हैं।<br><br>
+  🧪 <strong>Urea (CH₄N₂O):</strong> Nitrogen-containing fertilizer — 1828 में <strong>Friedrich Wöhler</strong> ने synthesise किया।
+</div>
+
+<!-- ══ SECTION 10: SPECIAL PLANT TERMS ══ -->
+<div class="sec-title"><div class="num">10</div><h2>Important <span>Plant Terms</span></h2><div class="line"></div></div>
+
+<div class="grid2">
+  <div class="card gd">
+    <h3>🏜️ Xerophytes</h3>
+    <p>Dry या arid environments में survive करने वाले plants। Limited water में adapt। E.g. Cactus</p>
+  </div>
+  <div class="card gd">
+    <h3>☀️ Heliophytes</h3>
+    <p>"Sun-loving plants" — full sun exposure में best grow करते हैं।</p>
+  </div>
+  <div class="card gd">
+    <h3>🌍 Neophytes</h3>
+    <p>Non-native plant species जो किसी geographical region में recently introduce हुई हों।</p>
+  </div>
+  <div class="card gd">
+    <h3>🔬 Protophytes</h3>
+    <p>Primitive, simple, microscopic plants — plant life का earliest form। E.g. Algae</p>
+  </div>
+</div>
+
+<!-- ══ QUICK REVISION ══ -->
+<div class="sep"></div>
+
+<div class="sec-title"><div class="num">✓</div><h2>Quick <span>Revision — Exam Ready!</span></h2><div class="line"></div></div>
+
+<table class="tbl">
+  <thead><tr><th>Topic</th><th>Key Fact</th></tr></thead>
+  <tbody>
+    <tr><td>Carbohydrates energy</td><td>4 Cal/gm | Fat = 9 Cal/gm | Protein = 4 Cal/gm</td></tr>
+    <tr><td>Fat storage</td><td>Adipose tissue में Triglycerides के रूप में</td></tr>
+    <tr><td>Bad Cholesterol</td><td>LDL (Saturated fat से) | Good = HDL (Unsaturated fat से)</td></tr>
+    <tr><td>Trans Fat</td><td>सबसे harmful — Hydrogenation process से बनता है</td></tr>
+    <tr><td>Protein requirement</td><td>0.8 gm/kg body weight per day</td></tr>
+    <tr><td>Amino Acids</td><td>Total 20 | 9 Essential | 11 Non-Essential</td></tr>
+    <tr><td>Tryptophan</td><td>Serotonin & Melatonin का precursor</td></tr>
+    <tr><td>Vitamin term coined</td><td>Casimir Funk — 1912</td></tr>
+    <tr><td>Water Soluble Vitamins</td><td>B and C | Fat Soluble = A, D, E, K (ADEK)</td></tr>
+    <tr><td>Vitamin A deficiency</td><td>Night Blindness | Scientific name: Retinol</td></tr>
+    <tr><td>Vitamin B1 deficiency</td><td>Beriberi | Thiamine</td></tr>
+    <tr><td>Vitamin B3 deficiency</td><td>Pellagra (3D Disease) | Niacin</td></tr>
+    <tr><td>Vitamin B12 deficiency</td><td>Pernicious Anaemia | Cyanocobalamin</td></tr>
+    <tr><td>Vitamin C deficiency</td><td>Scurvy (bleeding gums) | Ascorbic Acid</td></tr>
+    <tr><td>Vitamin D</td><td>Sunshine Vitamin + Hormone | Calciferol | Rickets, Osteomalacia</td></tr>
+    <tr><td>Vitamin K deficiency</td><td>Excessive bleeding | Phylloquinone</td></tr>
+    <tr><td>Collagen</td><td>Body का most abundant protein | Vit C से synthesis | G.N. Ramachandran</td></tr>
+    <tr><td>Protein deficiency</td><td>Kwashiorkor (only protein) | Marasmus (protein + calories)</td></tr>
+    <tr><td>Milk protein</td><td>Casein | Hair/Nail = Keratin | Egg white = Albumin</td></tr>
+    <tr><td>Iodine</td><td>Thyroid hormone component | Brain function</td></tr>
+    <tr><td>Magnesium in body</td><td>~25g | Metabolism + Bone health</td></tr>
+    <tr><td>Photosynthesis equation</td><td>6CO₂ + 6H₂O → C₆H₁₂O₆ + 6O₂</td></tr>
+    <tr><td>Light Reaction location</td><td>Thylakoid membranes | Dark reaction = Stroma (Calvin Cycle)</td></tr>
+    <tr><td>Chlorophyll color</td><td>Green light reflect, Red+Blue absorb</td></tr>
+    <tr><td>Carotenoids</td><td>Yellow & Orange pigments | Anthocyanins = Red, Purple, Blue</td></tr>
+    <tr><td>Nitrogen fixing bacteria</td><td>Rhizobium, Azotobacter (Legumes की roots में)</td></tr>
+    <tr><td>Urea discovery</td><td>Friedrich Wöhler — 1828</td></tr>
+    <tr><td>Fluorosis</td><td>Excess fluoride in water से</td></tr>
+    <tr><td>Autotrophic</td><td>Green plants, Blue-green algae, Phytoplanktons</td></tr>
+    <tr><td>Saprophytic</td><td>Fungi — dead matter से nutrients</td></tr>
+    <tr><td>Mesophyll cells</td><td>Primary site of Photosynthesis</td></tr>
+    <tr><td>Guard cells</td><td>Stomata के opening/closing regulate</td></tr>
+  </tbody>
+</table>
+
+</div>
+
+<footer>
+  SUNNY RISE · Nutrition &nbsp;|&nbsp; <span>SUNNY RISE</span> &nbsp;|&nbsp; Complete Notes
+</footer>
+
+<script>if(localStorage.getItem('sunnyrise-leaf-dark')==='1')document.body.classList.add('sr-dark');</script></body>
+</html>
