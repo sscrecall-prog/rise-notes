@@ -1,37 +1,451 @@
-<!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#38370D"><title>Sunny Rise — Free SSC Study Notes</title>
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SUNNY RISE - Study Smarter. Revise Faster.</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-fixed": "#211b00",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-fixed-dim": "#f8bd4a",
+                        "on-tertiary": "#ffffff",
+                        "text-muted": "#6B6B4E",
+                        "surface-tint": "#596240",
+                        "error": "#ba1a1a",
+                        "secondary": "#7d5800",
+                        "outline": "#77786d",
+                        "surface-dim": "#e4d9c4",
+                        "surface": "#fff8f1",
+                        "deep-forest": "#38370D",
+                        "on-tertiary-fixed-variant": "#524600",
+                        "secondary-fixed": "#ffdea9",
+                        "paper-white": "#FFFDF8",
+                        "primary-container": "#2c3416",
+                        "outline-variant": "#c7c7bb",
+                        "on-primary-fixed-variant": "#424a2a",
+                        "on-primary": "#ffffff",
+                        "on-primary-fixed": "#171e04",
+                        "primary-fixed-dim": "#c1cba1",
+                        "on-secondary": "#ffffff",
+                        "on-surface": "#201b0e",
+                        "secondary-container": "#fec24f",
+                        "primary-fixed": "#dde7bb",
+                        "inverse-surface": "#363022",
+                        "background": "#fff8f1",
+                        "surface-container-low": "#fef2dd",
+                        "inverse-primary": "#c1cba1",
+                        "tertiary-fixed-dim": "#dec654",
+                        "on-secondary-fixed-variant": "#5e4100",
+                        "on-error-container": "#93000a",
+                        "on-error": "#ffffff",
+                        "on-background": "#201b0e",
+                        "on-secondary-container": "#725000",
+                        "surface-container-high": "#f3e7d2",
+                        "tertiary-container": "#c1ab3b",
+                        "primary": "#171f04",
+                        "surface-container-highest": "#ede1cd",
+                        "on-secondary-fixed": "#271900",
+                        "tertiary": "#6d5e00",
+                        "surface-variant": "#ede1cd",
+                        "on-primary-container": "#949d76",
+                        "on-tertiary-container": "#4a3f00",
+                        "surface-bright": "#fff8f1",
+                        "error-container": "#ffdad6",
+                        "on-surface-variant": "#46483e",
+                        "tertiary-fixed": "#fbe36c",
+                        "inverse-on-surface": "#fbefda",
+                        "surface-container": "#f8edd8"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "card-padding": "24px",
+                        "base": "8px",
+                        "gutter": "24px",
+                        "section-padding": "80px",
+                        "container-max": "1280px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "headline-display": ["Inter"],
+                        "label-bold": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "label-sm": ["12px", { "lineHeight": "1.2", "fontWeight": "500" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "headline-display": ["56px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+                        "label-bold": ["14px", { "lineHeight": "1.2", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
 <style>
-:root{--cream:#FAEED9;--gold:#E1A837;--olive:#8D7A02;--ink:#38370D;--paper:#fffdf8;--muted:#756f55;--line:#ead9ad;--shadow:0 14px 35px rgba(56,55,13,.10)}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;background:var(--cream);color:var(--ink);line-height:1.5}.wrap{width:min(1120px,calc(100% - 32px));margin:auto}.nav{position:sticky;top:0;z-index:20;background:rgba(56,55,13,.94);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.08)}.navin{height:72px;display:flex;align-items:center;justify-content:space-between;gap:16px}.brand{display:flex;align-items:center;gap:11px;color:white;text-decoration:none}.brand img{width:43px;height:43px;border-radius:50%;object-fit:cover;border:2px solid var(--gold)}.brand strong{font-size:17px;letter-spacing:.7px}.brand strong span{color:var(--gold)}.brand small{display:block;color:#d9cfae;font-size:10px;letter-spacing:.4px}.actions{display:flex;gap:8px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;border:0;border-radius:11px;padding:10px 14px;text-decoration:none;font-weight:750;font-size:13px;cursor:pointer}.btn-gold{background:var(--gold);color:var(--ink)}.btn-ghost{border:1px solid rgba(225,168,55,.55);color:var(--gold);background:transparent}.hero{background:var(--ink);color:white;overflow:hidden;position:relative}.hero:before{content:"";position:absolute;width:430px;height:430px;border-radius:50%;background:rgba(225,168,55,.12);right:-120px;top:-180px}.heroIn{position:relative;padding:76px 0 70px;display:grid;grid-template-columns:1.25fr .75fr;gap:45px;align-items:center}.eyebrow{display:inline-flex;gap:7px;align-items:center;padding:7px 11px;border:1px solid rgba(225,168,55,.4);border-radius:99px;color:#f1cf77;background:rgba(225,168,55,.08);font-size:12px;font-weight:750}.hero h1{font-size:clamp(42px,6vw,72px);line-height:1.02;letter-spacing:-2.4px;margin:18px 0}.hero h1 span{color:var(--gold)}.hero p{max-width:650px;color:#d9d5c1;font-size:17px;margin:0 0 25px}.heroBtns{display:flex;gap:10px;flex-wrap:wrap}.heroCard{background:linear-gradient(145deg,rgba(255,255,255,.09),rgba(255,255,255,.04));border:1px solid rgba(255,255,255,.13);border-radius:24px;padding:22px;box-shadow:0 25px 60px rgba(0,0,0,.2)}.heroCard h3{margin:0 0 15px;color:#f5d477}.stat{display:flex;justify-content:space-between;align-items:center;padding:13px 0;border-bottom:1px solid rgba(255,255,255,.09)}.stat:last-child{border:0}.stat b{font-size:21px;color:white}.stat span{font-size:12px;color:#bdb9a7}.main{padding:46px 0 70px}.quick{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:-22px;position:relative;z-index:2}.quick a{background:var(--paper);border:1px solid var(--line);box-shadow:var(--shadow);padding:16px 18px;border-radius:15px;text-decoration:none;color:var(--ink);font-weight:750}.quick a span{display:block;color:var(--muted);font-size:11px;font-weight:500;margin-top:2px}.section{margin-top:50px}.sectionHead{display:flex;justify-content:space-between;align-items:end;gap:15px;margin-bottom:18px}.sectionHead h2{margin:0;font-size:27px;letter-spacing:-.5px}.sectionHead p{margin:4px 0 0;color:var(--muted);font-size:13px}.count{font-size:11px;font-weight:800;color:var(--olive);background:#f5e4b8;border:1px solid #dfc274;border-radius:99px;padding:6px 10px}.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.card{position:relative;background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:19px;text-decoration:none;color:var(--ink);min-height:165px;transition:.2s ease;overflow:hidden}.card:hover{transform:translateY(-5px);box-shadow:var(--shadow);border-color:#d6b65f}.card.disabled{opacity:.66}.ico{width:44px;height:44px;display:grid;place-items:center;border-radius:13px;background:#f8e9c5;font-size:23px}.card h3{font-size:17px;margin:13px 0 5px}.card p{font-size:12px;color:var(--muted);margin:0 0 14px}.tag{position:absolute;bottom:16px;left:19px;font-size:9px;font-weight:850;letter-spacing:.5px;color:var(--olive);text-transform:uppercase}.arrow{position:absolute;right:17px;bottom:13px;font-size:21px;color:#ad8a27}.eng{background:linear-gradient(145deg,#fffdf8,#fff6df)}.footer{background:#2f2f0c;color:#d7d1b8;padding:30px 0;font-size:12px}.foot{display:flex;justify-content:space-between;gap:20px;align-items:center}.foot b{color:var(--gold)}body.dark{--cream:#08111d;--paper:#0f1b29;--ink:#edf2f7;--muted:#9baabc;--line:#26394d;--shadow:0 15px 38px rgba(0,0,0,.25)}body.dark .hero,body.dark .nav{background:#030a13}body.dark .card.eng{background:linear-gradient(145deg,#0f1b29,#151d25)}body.dark .ico{background:#2a2917}body.dark .count{background:#272515;border-color:#65582a;color:#e8c45d}body.dark .quick a{background:var(--paper)}
-@media(max-width:850px){.heroIn{grid-template-columns:1fr}.heroCard{display:none}.grid{grid-template-columns:repeat(2,1fr)}.heroIn{padding:58px 0 60px}.quick{grid-template-columns:1fr 1fr 1fr}}
-@media(max-width:560px){.wrap{width:min(100% - 22px,1120px)}.navin{height:64px}.brand small{display:none}.brand img{width:38px;height:38px}.actions .about{display:none}.btn{padding:9px 10px}.hero h1{font-size:43px;letter-spacing:-1.5px}.hero p{font-size:14px}.heroIn{padding:47px 0 52px}.quick{grid-template-columns:1fr;margin-top:-16px}.grid{grid-template-columns:1fr 1fr;gap:10px}.card{padding:15px;min-height:160px}.tag{left:15px}.section{margin-top:38px}.sectionHead h2{font-size:23px}.sectionHead{align-items:center}.foot{display:block}.foot div+div{margin-top:8px}}
-</style>
-<link rel="stylesheet" href="assets/css/apple-ui.css">
-<link rel="stylesheet" href="assets/css/phase2.css">
-<link rel="stylesheet" href="assets/css/phase3.css">
-<link rel="stylesheet" href="assets/css/phase4.css">
-<link rel="stylesheet" href="assets/css/phase5.css">
-</head><body>
-<nav class="nav"><div class="wrap navin"><a class="brand" href="index.html"><img src="assets/sunnyrise-profile.jpg" alt="Sunny Rise"><div><strong>SUNNY <span>RISE</span></strong><small>YOUR KNOWLEDGE PARTNER</small></div></a><div class="actions"><button class="btn btn-ghost" id="theme">🌙 <span>Dark</span></button><a class="btn btn-ghost" href="search/index.html">🔎 Search</a><a class="btn btn-gold about" href="about/index.html">About</a></div></div></nav>
-<header class="hero"><div class="wrap heroIn"><div><div class="eyebrow">🎯 Built for SSC & competitive exams</div><h1>Study Smarter.<br><span>Revise Faster.</span></h1><p>Clean, exam-focused General Studies notes and English practice resources — organized topic by topic so you spend less time searching and more time learning.</p><div class="heroBtns"><a class="btn btn-gold" href="#subjects">Explore Notes →</a><a class="btn btn-ghost" href="english/index.html">Practice English</a></div></div><aside class="heroCard"><h3>📚 Learning Library</h3><div class="stat"><span>General Studies subjects</span><b>7+</b></div><div class="stat"><span>Live GS notes</span><b>32+</b></div><div class="stat"><span>English practice sets</span><b>12+</b></div><div class="stat"><span>Access</span><b>FREE</b></div></aside></div></header>
-<main class="main"><div class="wrap"><div class="quick"><a href="search/index.html">🔎 Find a topic<span>Search across Sunny Rise notes</span></a><a href="english/ssc-cgl-2025/index.html">📝 SSC CGL PYQ<span>Practice English 2025 collections</span></a><a href="english/vocabulary/index.html">🧠 Build vocabulary<span>Phrasal verbs, homonyms & more</span></a></div>
-<section class="section" id="subjects"><div class="sectionHead"><div><h2>📚 General Studies</h2><p>Choose a subject and start revising.</p></div><span class="count">32+ NOTES LIVE</span></div><div class="grid">
-<a class="card" href="physics/index.html"><div class="ico">⚛️</div><h3>Physics</h3><p>Concepts, formulas and exam-ready notes.</p><span class="tag">8 notes live</span><span class="arrow">›</span></a>
-<a class="card" href="economics/index.html"><div class="ico">📈</div><h3>Economics</h3><p>Topic-wise economics from basics to exams.</p><span class="tag">11 notes live</span><span class="arrow">›</span></a>
-<a class="card" href="polity/index.html"><div class="ico">🏛️</div><h3>Polity</h3><p>Indian Constitution and polity concepts.</p><span class="tag">2 notes live</span><span class="arrow">›</span></a>
-<a class="card" href="biology/index.html"><div class="ico">🧬</div><h3>Biology</h3><p>Complete topic-wise biology revision.</p><span class="tag">11 notes live</span><span class="arrow">›</span></a>
-<a class="card" href="history/index.html"><div class="ico">📜</div><h3>History</h3><p>Ancient, Medieval and Modern History chapters.</p><span class="tag">27 chapters</span><span class="arrow">›</span></a>
-<a class="card" href="geography/index.html"><div class="ico">🌍</div><h3>Geography</h3><p>Physical, Indian and human geography chapters.</p><span class="tag">26 chapters</span><span class="arrow">›</span></a>
-<a class="card" href="chemistry/index.html"><div class="ico">🧪</div><h3>Chemistry</h3><p>Core chemistry chapters for competitive exams.</p><span class="tag">8 chapters</span><span class="arrow">›</span></a>
-<a class="card" href="static-gk/index.html"><div class="ico">🎯</div><h3>Static GK</h3><p>High-yield static GK chapters.</p><span class="tag">11 chapters</span><span class="arrow">›</span></a></div></section>
-<section class="section"><div class="sectionHead"><div><h2>🔤 English Practice</h2><p>PYQs and vocabulary designed for SSC preparation.</p></div><span class="count">12+ RESOURCES</span></div><div class="grid">
-<a class="card eng" href="english/ssc-cgl-2025/index.html"><div class="ico">📝</div><h3>SSC CGL 2025</h3><p>Cloze tests, idioms, errors, spellings and more.</p><span class="tag">10 sets live</span><span class="arrow">›</span></a>
-<a class="card eng" href="english/vocabulary/index.html"><div class="ico">📖</div><h3>Vocabulary</h3><p>Phrasal verbs, homonyms and word mastery.</p><span class="tag">2 pages live</span><span class="arrow">›</span></a></div></section></div></main>
-<footer class="footer"><div class="wrap foot"><div><b>SUNNY RISE</b> · Your Knowledge Partner</div><div>Made for focused, distraction-free learning.</div></div></footer>
-<script>(function(){const b=document.body,t=document.getElementById('theme'),s=t.querySelector('span');function set(m){const d=m==='dark';b.classList.toggle('dark',d);t.firstChild.nodeValue=d?'☀️ ':'🌙 ';s.textContent=d?'Light':'Dark';localStorage.setItem('sunnyrise-theme',m)}set(localStorage.getItem('sunnyrise-theme')||'light');t.onclick=()=>set(b.classList.contains('dark')?'light':'dark')})();</script><nav class="bottom-nav"><a href="/">🏠</a><a href="/search/">🔍</a><a href="/about/">👤</a></nav>
-<script src="assets/js/apple-ui.js"></script>
-<script src="assets/js/phase2.js"></script>
-<script src="assets/js/phase3.js"></script>
-<script src="assets/js/phase4.js"></script>
-<script src="assets/js/phase5.js"></script>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .icon-fill {
+            font-variation-settings: 'FILL' 1;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased selection:bg-secondary-fixed selection:text-on-secondary-fixed">
+<!-- TopAppBar -->
+<header class="bg-primary dark:bg-primary-container text-on-primary dark:text-on-primary-container docked full-width top-0 z-50">
+<div class="flex justify-between items-center w-full px-gutter max-w-container-max mx-auto h-20">
+<div class="flex items-center gap-4 cursor-pointer hover:opacity-90 transition-opacity">
+<img alt="SUNNY RISE Logo" class="w-10 h-10 rounded-full border-2 border-secondary-fixed object-cover" src="https://lh3.googleusercontent.com/aida/AP1WRLsZTREBd1MLJXxsNyp_eUgGarUMEmWsGcQXynrU76myNwznSFPr0MQlOPFjuPJPeWQ5V9JrlxFLAf0yAkbEvb03ngqQJA8px0j5PzguExZHwitN-nDPNGphk381ZaDbXxlpa0i7LuRseQI5EA3EZ7C1AFG2OhCZKS6K5cUgidhtVrlzn2uA0TjzuZHI3OKbuwNYUhqLa174O1qg9ihUvwgZAX5stVIGvQNc8zRlFdN_KL5DjZcGqKGVDQ"/>
+<div>
+<h1 class="text-headline-md font-headline-md font-extrabold text-secondary-fixed dark:text-secondary-fixed-dim">SUNNY RISE</h1>
+<p class="text-label-sm font-label-sm text-on-primary/80 uppercase tracking-widest">Your Knowledge Partner</p>
+</div>
+</div>
+<!-- Web Navigation Cluster -->
+<nav class="hidden md:flex items-center gap-8">
+<!-- Navigation Links are suppressed on landing page as per 'Intent Fallback' / 'Task-Focused' logic, but we include them in DOM for semantic completeness, hidden visually or structurally replaced by primary actions for the landing context. Wait, the prompt says "Navigation with 'About', 'Search', and Theme toggle." -->
+<button class="flex items-center gap-2 px-4 py-2 rounded-full border border-outline hover:border-secondary-fixed text-on-primary transition-colors text-label-bold font-label-bold group">
+<span class="material-symbols-outlined text-[18px] group-hover:text-secondary-fixed transition-colors">dark_mode</span>
+<span class="group-hover:text-secondary-fixed transition-colors">Dark</span>
+</button>
+<button class="flex items-center gap-2 px-4 py-2 rounded-full border border-outline hover:border-secondary-fixed text-on-primary transition-colors text-label-bold font-label-bold group">
+<span class="material-symbols-outlined text-[18px] group-hover:text-secondary-fixed transition-colors">search</span>
+<span class="group-hover:text-secondary-fixed transition-colors">Search</span>
+</button>
+<button class="bg-secondary-fixed text-on-secondary-fixed px-6 py-2 rounded-full text-label-bold font-label-bold hover:bg-secondary-fixed-dim transition-colors shadow-sm">
+                    About
+                </button>
+</nav>
+</div>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="bg-primary-container text-on-primary w-full pt-16 pb-24 px-gutter relative overflow-hidden">
+<!-- Decorative Background Element -->
+<div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-bl from-secondary-fixed/5 to-transparent pointer-events-none rounded-bl-full"></div>
+<div class="max-w-container-max mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10">
+<!-- Hero Content -->
+<div class="flex flex-col gap-6">
+<div class="inline-flex items-center gap-2 bg-surface-tint/20 text-secondary-fixed border border-secondary-fixed/30 rounded-full px-4 py-1.5 w-fit">
+<span class="material-symbols-outlined text-[16px] icon-fill text-error">stars</span>
+<span class="text-label-sm font-label-bold">Built for SSC &amp; competitive exams</span>
+</div>
+<h1 class="text-headline-display font-headline-display text-paper-white leading-[1.1]">
+                        Study Smarter. <br/>
+<span class="text-secondary-fixed">Revise Faster.</span>
+</h1>
+<p class="text-body-lg font-body-lg text-primary-fixed-dim max-w-xl">
+                        Clean, exam-focused General Studies notes and English practice resources — organized topic by topic so you spend less time searching and more time learning.
+                    </p>
+<div class="flex flex-wrap gap-4 mt-4">
+<button class="bg-secondary-fixed text-on-secondary-fixed px-8 py-3 rounded-lg text-label-bold font-label-bold hover:bg-secondary-fixed-dim transition-all shadow-md hover:shadow-lg flex items-center gap-2 group">
+                            Explore Notes
+                            <span class="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+<button class="bg-transparent border-2 border-outline-variant text-on-primary hover:border-secondary-fixed hover:text-secondary-fixed px-8 py-3 rounded-lg text-label-bold font-label-bold transition-colors">
+                            Practice English
+                        </button>
+</div>
+</div>
+<!-- Hero Metric Card -->
+<div class="bg-surface-tint/20 backdrop-blur-sm border border-outline-variant/30 rounded-xl p-8 shadow-2xl relative">
+<div class="absolute -top-4 -left-4 w-24 h-24 bg-secondary-fixed/10 rounded-full blur-xl pointer-events-none"></div>
+<div class="flex items-center gap-3 mb-8">
+<span class="material-symbols-outlined text-3xl text-secondary-fixed">local_library</span>
+<h3 class="text-headline-md font-headline-md text-paper-white">Learning Library</h3>
+</div>
+<div class="space-y-6">
+<div class="flex justify-between items-end border-b border-outline-variant/20 pb-4">
+<span class="text-body-md font-body-md text-primary-fixed-dim">General Studies subjects</span>
+<span class="text-headline-md font-headline-md text-paper-white">7+</span>
+</div>
+<div class="flex justify-between items-end border-b border-outline-variant/20 pb-4">
+<span class="text-body-md font-body-md text-primary-fixed-dim">Live GS notes</span>
+<span class="text-headline-md font-headline-md text-paper-white">32+</span>
+</div>
+<div class="flex justify-between items-end border-b border-outline-variant/20 pb-4">
+<span class="text-body-md font-body-md text-primary-fixed-dim">English practice sets</span>
+<span class="text-headline-md font-headline-md text-paper-white">12+</span>
+</div>
+<div class="flex justify-between items-end pt-2">
+<span class="text-body-md font-body-md text-primary-fixed-dim">Access</span>
+<span class="text-headline-md font-headline-md text-paper-white font-extrabold tracking-wide">FREE</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Quick Access Row -->
+<section class="bg-surface py-12 px-gutter -mt-12 relative z-20">
+<div class="max-w-container-max mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Quick Card 1 -->
+<div class="bg-paper-white p-6 rounded-xl shadow-[0px_4px_20px_rgba(0,0,0,0.04)] hover:shadow-[0px_8px_30px_rgba(0,0,0,0.08)] transition-all cursor-pointer border border-transparent hover:border-secondary-fixed/50 group flex items-start gap-4">
+<div class="bg-surface-container-low p-3 rounded-lg text-on-surface group-hover:bg-secondary-fixed/20 group-hover:text-secondary transition-colors">
+<span class="material-symbols-outlined icon-fill">search</span>
+</div>
+<div>
+<h4 class="text-body-lg font-headline-md text-on-surface mb-1 group-hover:text-secondary transition-colors">Find a topic</h4>
+<p class="text-label-sm font-body-md text-on-surface-variant">Search across Sunny Rise notes</p>
+</div>
+</div>
+<!-- Quick Card 2 -->
+<div class="bg-paper-white p-6 rounded-xl shadow-[0px_4px_20px_rgba(0,0,0,0.04)] hover:shadow-[0px_8px_30px_rgba(0,0,0,0.08)] transition-all cursor-pointer border border-transparent hover:border-secondary-fixed/50 group flex items-start gap-4">
+<div class="bg-surface-container-low p-3 rounded-lg text-on-surface group-hover:bg-secondary-fixed/20 group-hover:text-secondary transition-colors">
+<span class="material-symbols-outlined icon-fill text-blue-500">assignment</span>
+</div>
+<div>
+<h4 class="text-body-lg font-headline-md text-on-surface mb-1 group-hover:text-secondary transition-colors">SSC CGL PYQ</h4>
+<p class="text-label-sm font-body-md text-on-surface-variant">Practice English 2025 collections</p>
+</div>
+</div>
+<!-- Quick Card 3 -->
+<div class="bg-paper-white p-6 rounded-xl shadow-[0px_4px_20px_rgba(0,0,0,0.04)] hover:shadow-[0px_8px_30px_rgba(0,0,0,0.08)] transition-all cursor-pointer border border-transparent hover:border-secondary-fixed/50 group flex items-start gap-4">
+<div class="bg-surface-container-low p-3 rounded-lg text-on-surface group-hover:bg-secondary-fixed/20 group-hover:text-secondary transition-colors">
+<span class="material-symbols-outlined icon-fill text-rose-500">psychology</span>
+</div>
+<div>
+<h4 class="text-body-lg font-headline-md text-on-surface mb-1 group-hover:text-secondary transition-colors">Build vocabulary</h4>
+<p class="text-label-sm font-body-md text-on-surface-variant">Phrasal verbs, homonyms &amp; more</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Primary Content Grid: General Studies -->
+<section class="bg-surface py-section-padding px-gutter">
+<div class="max-w-container-max mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-baseline mb-10 gap-4">
+<div>
+<div class="flex items-center gap-3 mb-2">
+<span class="material-symbols-outlined text-4xl text-error">menu_book</span>
+<h2 class="text-headline-lg font-headline-lg text-on-surface">General Studies</h2>
+</div>
+<p class="text-body-md font-body-md text-on-surface-variant">Choose a subject and start revising.</p>
+</div>
+<div class="bg-surface-container-high text-on-surface-variant px-4 py-2 rounded-full text-label-bold font-label-bold border border-outline-variant">
+                        32+ NOTES LIVE
+                    </div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Subject Card 1 -->
+<div class="bg-paper-white p-card-padding rounded-xl shadow-[0px_4px_20px_rgba(0,0,0,0.04)] hover:shadow-[0px_8px_30px_rgba(0,0,0,0.08)] border border-transparent hover:border-secondary-fixed/50 transition-all cursor-pointer flex flex-col justify-between group h-full min-h-[220px]">
+<div>
+<div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-purple-600 icon-fill text-2xl">science</span>
+</div>
+<h3 class="text-headline-md font-headline-md text-on-surface mb-2">Physics</h3>
+<p class="text-body-sm font-body-md text-on-surface-variant">Concepts, formulas and exam-ready notes.</p>
+</div>
+<div class="mt-8 flex items-center justify-between border-t border-outline-variant/30 pt-4">
+<span class="text-label-sm font-label-bold text-secondary uppercase tracking-wider">8 NOTES LIVE</span>
+<span class="material-symbols-outlined text-outline group-hover:text-secondary transition-colors">chevron_right</span>
+</div>
+</div>
+<!-- Subject Card 2 -->
+<div class="bg-paper-white p-card-padding rounded-xl shadow-[0px_4px_20px_rgba(0,0,0,0.04)] hover:shadow-[0px_8px_30px_rgba(0,0,0,0.08)] border border-transparent hover:border-secondary-fixed/50 transition-all cursor-pointer flex flex-col justify-between group h-full min-h-[220px]">
+<div>
+<div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-red-600 icon-fill text-2xl">monitoring</span>
+</div>
+<h3 class="text-headline-md font-headline-md text-on-surface mb-2">Economics</h3>
+<p class="text-body-sm font-body-md text-on-surface-variant">Topic-wise economics from basics to exams.</p>
+</div>
+<div class="mt-8 flex items-center justify-between border-t border-outline-variant/30 pt-4">
+<span class="text-label-sm font-label-bold text-secondary uppercase tracking-wider">11 NOTES LIVE</span>
+<span class="material-symbols-outlined text-outline group-hover:text-secondary transition-colors">chevron_right</span>
+</div>
+</div>
+<!-- Subject Card 3 -->
+<div class="bg-paper-white p-card-padding rounded-xl shadow-[0px_4px_20px_rgba(0,0,0,0.04)] hover:shadow-[0px_8px_30px_rgba(0,0,0,0.08)] border border-transparent hover:border-secondary-fixed/50 transition-all cursor-pointer flex flex-col justify-between group h-full min-h-[220px]">
+<div>
+<div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-blue-600 icon-fill text-2xl">account_balance</span>
+</div>
+<h3 class="text-headline-md font-headline-md text-on-surface mb-2">Polity</h3>
+<p class="text-body-sm font-body-md text-on-surface-variant">Indian Constitution and polity concepts.</p>
+</div>
+<div class="mt-8 flex items-center justify-between border-t border-outline-variant/30 pt-4">
+<span class="text-label-sm font-label-bold text-secondary uppercase tracking-wider">2 NOTES LIVE</span>
+<span class="material-symbols-outlined text-outline group-hover:text-secondary transition-colors">chevron_right</span>
+</div>
+</div>
+<!-- Subject Card 4 -->
+<div class="bg-paper-white p-card-padding rounded-xl shadow-[0px_4px_20px_rgba(0,0,0,0.04)] hover:shadow-[0px_8px_30px_rgba(0,0,0,0.08)] border border-transparent hover:border-secondary-fixed/50 transition-all cursor-pointer flex flex-col justify-between group h-full min-h-[220px]">
+<div>
+<div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-green-600 icon-fill text-2xl">biotech</span>
+</div>
+<h3 class="text-headline-md font-headline-md text-on-surface mb-2">Biology</h3>
+<p class="text-body-sm font-body-md text-on-surface-variant">Complete topic-wise biology revision.</p>
+</div>
+<div class="mt-8 flex items-center justify-between border-t border-outline-variant/30 pt-4">
+<span class="text-label-sm font-label-bold text-secondary uppercase tracking-wider">11 NOTES LIVE</span>
+<span class="material-symbols-outlined text-outline group-hover:text-secondary transition-colors">chevron_right</span>
+</div>
+</div>
+<!-- Subject Card 5 -->
+<div class="bg-paper-white p-card-padding rounded-xl shadow-[0px_4px_20px_rgba(0,0,0,0.04)] hover:shadow-[0px_8px_30px_rgba(0,0,0,0.08)] border border-transparent hover:border-secondary-fixed/50 transition-all cursor-pointer flex flex-col justify-between group h-full min-h-[220px]">
+<div>
+<div class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-orange-600 icon-fill text-2xl">history_edu</span>
+</div>
+<h3 class="text-headline-md font-headline-md text-on-surface mb-2">History</h3>
+<p class="text-body-sm font-body-md text-on-surface-variant">Ancient, Medieval and Modern History chapters.</p>
+</div>
+<div class="mt-8 flex items-center justify-between border-t border-outline-variant/30 pt-4">
+<span class="text-label-sm font-label-bold text-secondary uppercase tracking-wider">27 CHAPTERS</span>
+<span class="material-symbols-outlined text-outline group-hover:text-secondary transition-colors">chevron_right</span>
+</div>
+</div>
+<!-- Subject Card 6 -->
+<div class="bg-paper-white p-card-padding rounded-xl shadow-[0px_4px_20px_rgba(0,0,0,0.04)] hover:shadow-[0px_8px_30px_rgba(0,0,0,0.08)] border border-transparent hover:border-secondary-fixed/50 transition-all cursor-pointer flex flex-col justify-between group h-full min-h-[220px]">
+<div>
+<div class="w-12 h-12 bg-cyan-100 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-cyan-600 icon-fill text-2xl">public</span>
+</div>
+<h3 class="text-headline-md font-headline-md text-on-surface mb-2">Geography</h3>
+<p class="text-body-sm font-body-md text-on-surface-variant">Physical, Indian and human geography chapters.</p>
+</div>
+<div class="mt-8 flex items-center justify-between border-t border-outline-variant/30 pt-4">
+<span class="text-label-sm font-label-bold text-secondary uppercase tracking-wider">26 CHAPTERS</span>
+<span class="material-symbols-outlined text-outline group-hover:text-secondary transition-colors">chevron_right</span>
+</div>
+</div>
+<!-- Subject Card 7 -->
+<div class="bg-paper-white p-card-padding rounded-xl shadow-[0px_4px_20px_rgba(0,0,0,0.04)] hover:shadow-[0px_8px_30px_rgba(0,0,0,0.08)] border border-transparent hover:border-secondary-fixed/50 transition-all cursor-pointer flex flex-col justify-between group h-full min-h-[220px]">
+<div>
+<div class="w-12 h-12 bg-emerald-100 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-emerald-600 icon-fill text-2xl">experiment</span>
+</div>
+<h3 class="text-headline-md font-headline-md text-on-surface mb-2">Chemistry</h3>
+<p class="text-body-sm font-body-md text-on-surface-variant">Core chemistry chapters for competitive exams.</p>
+</div>
+<div class="mt-8 flex items-center justify-between border-t border-outline-variant/30 pt-4">
+<span class="text-label-sm font-label-bold text-secondary uppercase tracking-wider">8 CHAPTERS</span>
+<span class="material-symbols-outlined text-outline group-hover:text-secondary transition-colors">chevron_right</span>
+</div>
+</div>
+<!-- Subject Card 8 -->
+<div class="bg-paper-white p-card-padding rounded-xl shadow-[0px_4px_20px_rgba(0,0,0,0.04)] hover:shadow-[0px_8px_30px_rgba(0,0,0,0.08)] border border-transparent hover:border-secondary-fixed/50 transition-all cursor-pointer flex flex-col justify-between group h-full min-h-[220px]">
+<div>
+<div class="w-12 h-12 bg-rose-100 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-rose-600 icon-fill text-2xl">track_changes</span>
+</div>
+<h3 class="text-headline-md font-headline-md text-on-surface mb-2">Static GK</h3>
+<p class="text-body-sm font-body-md text-on-surface-variant">High-yield static GK chapters.</p>
+</div>
+<div class="mt-8 flex items-center justify-between border-t border-outline-variant/30 pt-4">
+<span class="text-label-sm font-label-bold text-secondary uppercase tracking-wider">11 CHAPTERS</span>
+<span class="material-symbols-outlined text-outline group-hover:text-secondary transition-colors">chevron_right</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Primary Content Grid: English Practice -->
+<section class="bg-surface pb-section-padding px-gutter">
+<div class="max-w-container-max mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-baseline mb-10 gap-4 pt-12 border-t border-outline-variant/30">
+<div>
+<div class="flex items-center gap-3 mb-2">
+<span class="material-symbols-outlined text-4xl text-blue-500">sort_by_alpha</span>
+<h2 class="text-headline-lg font-headline-lg text-on-surface">English Practice</h2>
+</div>
+<p class="text-body-md font-body-md text-on-surface-variant">PYQs and vocabulary designed for SSC preparation.</p>
+</div>
+<div class="bg-surface-container-high text-on-surface-variant px-4 py-2 rounded-full text-label-bold font-label-bold border border-outline-variant">
+                        12+ RESOURCES
+                    </div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Subject Card 1 -->
+<div class="bg-paper-white p-card-padding rounded-xl shadow-[0px_4px_20px_rgba(0,0,0,0.04)] hover:shadow-[0px_8px_30px_rgba(0,0,0,0.08)] border border-transparent hover:border-secondary-fixed/50 transition-all cursor-pointer flex flex-col justify-between group h-full min-h-[220px]">
+<div>
+<div class="w-12 h-12 bg-amber-100 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-amber-600 icon-fill text-2xl">edit_note</span>
+</div>
+<h3 class="text-headline-md font-headline-md text-on-surface mb-2">SSC CGL 2025</h3>
+<p class="text-body-sm font-body-md text-on-surface-variant">Cloze tests, idioms, errors, spellings and more.</p>
+</div>
+<div class="mt-8 flex items-center justify-between border-t border-outline-variant/30 pt-4">
+<span class="text-label-sm font-label-bold text-secondary uppercase tracking-wider">10 SETS LIVE</span>
+<span class="material-symbols-outlined text-outline group-hover:text-secondary transition-colors">chevron_right</span>
+</div>
+</div>
+<!-- Subject Card 2 -->
+<div class="bg-paper-white p-card-padding rounded-xl shadow-[0px_4px_20px_rgba(0,0,0,0.04)] hover:shadow-[0px_8px_30px_rgba(0,0,0,0.08)] border border-transparent hover:border-secondary-fixed/50 transition-all cursor-pointer flex flex-col justify-between group h-full min-h-[220px]">
+<div>
+<div class="w-12 h-12 bg-teal-100 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-teal-600 icon-fill text-2xl">import_contacts</span>
+</div>
+<h3 class="text-headline-md font-headline-md text-on-surface mb-2">Vocabulary</h3>
+<p class="text-body-sm font-body-md text-on-surface-variant">Phrasal verbs, homonyms and word mastery.</p>
+</div>
+<div class="mt-8 flex items-center justify-between border-t border-outline-variant/30 pt-4">
+<span class="text-label-sm font-label-bold text-secondary uppercase tracking-wider">2 PAGES LIVE</span>
+<span class="material-symbols-outlined text-outline group-hover:text-secondary transition-colors">chevron_right</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-deep-forest dark:bg-primary-container text-paper-white dark:text-primary-fixed full-width bottom flat no shadows">
+<div class="w-full py-12 px-gutter max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center gap-4 border-t border-outline-variant/10">
+<div class="text-label-bold font-label-bold text-secondary-fixed">
+                © 2024 SUNNY RISE · Your Knowledge Partner
+            </div>
+<div class="text-body-md font-body-md text-outline-variant">
+                Made for focused, distraction-free learning.
+            </div>
+<div class="flex gap-6">
+<a class="text-outline-variant hover:text-secondary-fixed transition-colors text-label-sm font-label-sm" href="#">Privacy Policy</a>
+<a class="text-outline-variant hover:text-secondary-fixed transition-colors text-label-sm font-label-sm" href="#">Terms of Service</a>
+<a class="text-outline-variant hover:text-secondary-fixed transition-colors text-label-sm font-label-sm" href="#">Contact Us</a>
+</div>
+</div>
+</footer>
+<!-- BottomNavBar (Mobile Only - Supressed on Landing Page based on Shared Components Logic, but included in structure as per JSON) -->
+<!-- The mandate states "Automatic Suppression: You MUST exclude the navigation shell if the page intent is: Linear/Transactional". A landing page might be considered top-level destination, but typically we don't show bottom navs on marketing landing pages. However, since the JSON provided it and didn't explicitly ban it for "Landing", I'll include it but hidden on desktop. -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center py-3 bg-surface dark:bg-surface-dim border-t border-outline-variant shadow-lg">
+<a class="flex flex-col items-center justify-center text-secondary font-bold hover:bg-surface-container-low p-2 rounded-lg transition-all scale-90" href="#">
+<span class="material-symbols-outlined text-2xl icon-fill">home</span>
+<span class="text-label-sm font-label-sm mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-low p-2 rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined text-2xl">search</span>
+<span class="text-label-sm font-label-sm mt-1">Search</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-low p-2 rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined text-2xl">menu_book</span>
+<span class="text-label-sm font-label-sm mt-1">Notes</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-low p-2 rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined text-2xl">person</span>
+<span class="text-label-sm font-label-sm mt-1">Profile</span>
+</a>
+</nav>
 </body></html>
-<!-- fresh-pages-deploy -->
