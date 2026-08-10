@@ -1,56 +1,355 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#38370D"><title>Sunny Rise — Static GK</title><style>
-:root{--cream:#FAEED9;--gold:#E1A837;--olive:#8D7A02;--ink:#38370D;--paper:#fffdf8;--muted:#756f55;--line:#ead9ad;--shadow:0 14px 35px rgba(56,55,13,.10)}
-*{box-sizing:border-box}html{scroll-behavior:smooth}
-body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;background:var(--cream);color:var(--ink);line-height:1.5}
-.wrap{width:min(1120px,calc(100% - 32px));margin:auto}
-.nav{position:sticky;top:0;z-index:20;background:rgba(56,55,13,.94);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.08)}
-.navin{height:72px;display:flex;align-items:center;justify-content:space-between;gap:16px}
-.brand{display:flex;align-items:center;gap:11px;color:white;text-decoration:none}.brand strong{font-size:17px;letter-spacing:.7px}.brand strong span{color:var(--gold)}
-.back{color:var(--gold);text-decoration:none;font-size:13px;font-weight:750;border:1px solid rgba(225,168,55,.55);padding:9px 12px;border-radius:11px}
-.hero{background:var(--ink);color:white}.heroIn{padding:52px 0 45px}
-.eyebrow{display:inline-flex;gap:7px;align-items:center;padding:7px 11px;border:1px solid rgba(225,168,55,.4);border-radius:99px;color:#f1cf77;background:rgba(225,168,55,.08);font-size:12px;font-weight:750}
-h1{font-size:clamp(38px,6vw,60px);line-height:1.05;letter-spacing:-1.8px;margin:17px 0 9px}h1 span{color:var(--gold)}
-.hero p{max-width:700px;color:#d9d5c1;margin:0;font-size:15px}.stats{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}
-.stat{padding:8px 12px;border:1px solid rgba(255,255,255,.12);border-radius:99px;color:#ddd8c7;font-size:11px}
-.main{padding:34px 0 70px}.section{margin-top:34px}.sectionHead{display:flex;justify-content:space-between;align-items:end;gap:15px;margin-bottom:15px}
-.sectionHead h2{margin:0;font-size:27px;letter-spacing:-.5px}.sectionHead p{margin:4px 0 0;color:var(--muted);font-size:13px}
-.count{font-size:11px;font-weight:800;color:var(--olive);background:#f5e4b8;border:1px solid #dfc274;border-radius:99px;padding:6px 10px;white-space:nowrap}
-.chapters{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.chapter{display:flex;gap:13px;align-items:center;background:var(--paper);border:1px solid var(--line);border-radius:15px;padding:15px;min-height:84px;box-shadow:var(--shadow)}
-.num{width:36px;height:36px;flex:0 0 36px;border-radius:10px;background:#f8e9c5;display:grid;place-items:center;font-size:11px;font-weight:850;color:var(--olive)}
-.chapter h3{font-size:14px;margin:0 0 4px;line-height:1.3}.tag{font-size:9px;font-weight:850;letter-spacing:.5px;color:var(--olive)}
-.footer{background:#2f2f0c;color:#d7d1b8;padding:30px 0;font-size:12px}.foot{display:flex;justify-content:space-between;gap:20px;align-items:center}.foot b{color:var(--gold)}
-body.dark{--cream:#08111d;--paper:#0f1b29;--ink:#edf2f7;--muted:#9baabc;--line:#26394d;--shadow:0 15px 38px rgba(0,0,0,.25)}
-body.dark .hero,body.dark .nav{background:#030a13}body.dark .num{background:#2a2917}body.dark .count{background:#272515;border-color:#65582a;color:#e8c45d}
-@media(max-width:850px){.chapters{grid-template-columns:repeat(2,1fr)}}@media(max-width:560px){.wrap{width:min(100% - 22px,1120px)}.navin{height:64px}.heroIn{padding:42px 0 38px}h1{font-size:42px}.chapters{grid-template-columns:1fr 1fr;gap:9px}.chapter{padding:12px;min-height:94px}.chapter h3{font-size:12px}.sectionHead h2{font-size:22px}.foot{display:block}.foot div+div{margin-top:8px}}
-#themeToggle{font-family:inherit;background:transparent;cursor:pointer}
-body.dark #themeToggle{color:#e8c45d;border-color:#806f32}
-</style></head>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#17320c">
+<title>Static GK | Sunny Rise</title>
+<style>
+
+:root{
+  --bg:#f8f6ef;--surface:#fffefa;--surface-2:#fbfaf5;--ink:#12150f;
+  --green:#1e3b0e;--muted:#666a61;--line:#e5e2d7;--shadow:0 7px 24px rgba(30,42,20,.06);
+  --shadow-hover:0 14px 34px rgba(30,42,20,.11);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;line-height:1.45}
+button,input,select{font:inherit} a{color:inherit}
+.shell{width:min(1504px,calc(100% - 32px));margin:5px auto 20px;background:var(--surface-2);border:1px solid #dedbcf;border-radius:15px;box-shadow:0 8px 30px rgba(40,48,28,.07);overflow:hidden}
+.topbar{height:73px;display:flex;align-items:center;gap:28px;padding:0 34px;border-bottom:1px solid var(--line);background:rgba(255,255,251,.92);backdrop-filter:blur(12px);position:sticky;top:0;z-index:50}
+.brand{display:flex;align-items:center;gap:10px;min-width:315px;text-decoration:none;color:var(--green);font-weight:800;font-size:19px}
+.brand img{width:39px;height:39px;border-radius:50%;object-fit:cover}
+.navlinks{display:flex;align-items:center;justify-content:center;gap:36px;flex:1}
+.navlink{text-decoration:none;display:inline-flex;align-items:center;gap:8px;font-size:17px;color:#22251f;white-space:nowrap}
+.navlink:hover{color:var(--green)} .navicon{font-size:21px;line-height:1}
+.nav-tools{display:flex;align-items:center;gap:16px}
+.nav-search{width:245px;height:42px;border:1px solid var(--line);border-radius:11px;background:#fff;padding:0 14px;outline:none;color:var(--ink)}
+.nav-search:focus,.chapter-search:focus{border-color:#9baa82;box-shadow:0 0 0 3px rgba(88,117,49,.10)}
+.theme-toggle{width:62px;height:34px;border:0;border-radius:999px;background:var(--green);position:relative;cursor:pointer}
+.theme-toggle .knob{width:27px;height:27px;background:#fff;border-radius:50%;position:absolute;top:3.5px;right:4px;transition:.22s;box-shadow:0 2px 6px rgba(0,0,0,.2)}
+.theme-toggle .moon{position:absolute;left:9px;top:7px;color:#fff;font-size:14px}
+.page-head{display:grid;grid-template-columns:1fr 445px;align-items:center;gap:40px;padding:32px 46px 25px;border-bottom:1px solid var(--line)}
+.subject-title{display:flex;align-items:center;gap:24px}
+.subject-icon{width:88px;height:88px;border-radius:50%;background:var(--green);display:grid;place-items:center;color:#fff;font-size:44px}
+.subject-title h1{margin:0;color:#19380d;font-size:50px;line-height:1.05;letter-spacing:-1.8px}
+.subject-title p{margin:8px 0 0;color:#4f524d;font-size:18px}
+.progress-card{background:#fffef9;border:1px solid var(--line);border-radius:13px;padding:17px 20px;box-shadow:0 4px 14px rgba(30,42,20,.03)}
+.progress-top{display:flex;align-items:center;justify-content:space-between;gap:15px}
+.progress-title{font-weight:800;color:#254414;font-size:16px}.progress-pct{font-weight:800;color:#14210e;font-size:17px}
+.progress-track{height:9px;border-radius:99px;background:#e8e8df;margin:10px 0 8px;overflow:hidden}
+.progress-fill{height:100%;width:0;background:#173d08;border-radius:99px;transition:width .25s ease}
+.progress-sub{font-size:13px;color:#60635c}
+.controls{display:grid;grid-template-columns:minmax(320px,1fr) auto auto 45px;gap:14px;align-items:center;padding:19px 46px 22px}
+.chapter-search{height:43px;width:100%;border:1px solid var(--line);border-radius:10px;background:#fff;padding:0 16px;outline:none;color:var(--ink)}
+.select{height:43px;min-width:225px;border:1px solid var(--line);border-radius:9px;background:#fff;padding:0 14px;color:#23251f;outline:none}
+.filter-btn{width:45px;height:43px;border:1px solid var(--line);border-radius:9px;background:#fff;cursor:pointer;font-size:20px;color:#3e4538}
+.filter-btn.active{background:#edf3e5;border-color:#a8b990;color:var(--green)}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;padding:0 36px 42px}
+.chapter-card{background:#fff;border:1px solid #e2e1db;border-radius:13px;overflow:hidden;box-shadow:var(--shadow);transition:transform .18s ease,box-shadow .18s ease,border-color .18s ease}
+.chapter-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-hover)}
+.chapter-card.is-completed{border-color:#9daf79}
+.chapter-link{display:block;text-decoration:none}
+.image-wrap{height:268px;background:#f2f1ea;position:relative;overflow:hidden}
+.image-wrap img{width:100%;height:100%;object-fit:cover;display:block}
+.chapter-number{position:absolute;left:18px;top:18px;min-width:39px;height:39px;padding:0 8px;border-radius:12px;background:#edf0df;color:#2e4816;display:grid;place-items:center;font-weight:850;font-size:15px}
+.image-bookmark{position:absolute;right:18px;top:18px;font-size:31px;line-height:1;color:#3f5a20;text-shadow:0 1px 2px rgba(255,255,255,.8)}
+.chapter-body{padding:13px 21px 8px}.chapter-label{font-size:16px;color:#171a15;margin-bottom:5px}
+.chapter-body h2{margin:0;font-size:23px;line-height:1.22;letter-spacing:-.35px}.chapter-body p{margin:8px 0 2px;color:#777a73;font-size:12px;min-height:17px}
+.card-actions{margin:0 21px;border-top:1px solid #e8e7e1;min-height:55px;display:flex;align-items:center;justify-content:space-between}
+.bookmark-action,.complete-action{border:0;background:transparent;cursor:pointer;color:#31352e;display:inline-flex;align-items:center;gap:8px;font-size:14px;padding:8px 0}
+.bookmark-action:hover,.complete-action:hover{color:var(--green)}
+.bookmark-icon{font-size:21px;color:#4a6724;line-height:1}
+.check-box{width:22px;height:22px;border:1.5px solid #b9bdb5;border-radius:4px;display:inline-block;background:#fff}
+.complete-action.completed .check-box{background:var(--green);border-color:var(--green);position:relative}
+.complete-action.completed .check-box:after{content:"✓";position:absolute;inset:0;display:grid;place-items:center;color:#fff;font-size:14px;font-weight:800}
+.bookmark-action.bookmarked .bookmark-icon{color:#315b16}
+.empty{display:none;padding:50px 20px 70px;text-align:center;color:var(--muted);grid-column:1/-1}
+.footer{padding:20px 36px 26px;color:#777a72;font-size:12px;border-top:1px solid var(--line)}.footer b{color:var(--green)}
+body.dark{--bg:#0b1108;--surface:#11170e;--surface-2:#0f150c;--ink:#eef2e8;--green:#c9dfaa;--muted:#aab2a3;--line:#2a3424;--shadow:0 8px 25px rgba(0,0,0,.25)}
+body.dark .topbar,body.dark .progress-card,body.dark .chapter-card,body.dark .nav-search,body.dark .chapter-search,body.dark .select,body.dark .filter-btn{background:#121a0f;color:var(--ink)}
+body.dark .navlink,body.dark .chapter-label{color:#e9eee3}.dark .subject-title h1,.dark .progress-title{color:#d7e8bf}
+body.dark .subject-title h1,body.dark .progress-title{color:#d7e8bf}.dark .subject-title p{color:#aeb7a6}
+body.dark .subject-title p,body.dark .progress-sub{color:#aeb7a6}.dark .chapter-body h2{color:#f0f3ec}
+body.dark .chapter-body h2{color:#f0f3ec}.dark .card-actions{border-color:#2b3427}
+body.dark .bookmark-action,body.dark .complete-action{color:#d9e0d3}.dark .chapter-number{background:#27331e;color:#d6e9b7}
+body.dark .chapter-number{background:#27331e;color:#d6e9b7}.dark .progress-track{background:#273126}
+body.dark .progress-track{background:#273126}.dark .progress-fill{background:#bcd996}
+body.dark .progress-fill{background:#bcd996}.dark .theme-toggle{background:#d5e7bd}
+body.dark .theme-toggle{background:#d5e7bd}.dark .theme-toggle .knob{right:31px}
+body.dark .theme-toggle .knob{right:31px}.dark .theme-toggle .moon{color:#1a2b0e}
+body.dark .theme-toggle .moon{color:#1a2b0e}
+@media(max-width:1150px){
+  .brand{min-width:230px}.navlinks{gap:20px}.navlink{font-size:15px}.nav-search{width:190px}
+  .page-head{grid-template-columns:1fr 360px}.image-wrap{height:235px}
+}
+@media(max-width:900px){
+  .topbar{padding:0 20px;gap:14px}.navlinks{display:none}.brand{min-width:auto;flex:1}
+  .page-head{grid-template-columns:1fr;padding:28px 24px 22px}.controls{grid-template-columns:1fr 1fr;padding:17px 24px}
+  .chapter-search{grid-column:1/-1}.select{min-width:0;width:100%}.grid{grid-template-columns:repeat(2,minmax(0,1fr));padding:0 24px 35px}
+}
+@media(max-width:620px){
+  .shell{width:calc(100% - 12px);margin:3px auto 10px;border-radius:12px}.topbar{height:62px;padding:0 13px}
+  .brand{font-size:16px}.brand img{width:34px;height:34px}.nav-tools{gap:8px}.nav-search{display:none}
+  .theme-toggle{width:54px;height:31px}.theme-toggle .knob{width:24px;height:24px}
+  .page-head{padding:22px 17px 18px}.subject-title{gap:14px}.subject-icon{width:64px;height:64px;font-size:31px}
+  .subject-title h1{font-size:34px}.subject-title p{font-size:13px;margin-top:4px}.progress-card{padding:14px}
+  .controls{grid-template-columns:1fr;padding:14px 17px 18px;gap:9px}.select{display:none}
+  .grid{grid-template-columns:1fr;padding:0 12px 28px;gap:12px}.image-wrap{height:230px}
+  .chapter-body{padding:12px 15px 7px}.chapter-body h2{font-size:20px}.card-actions{margin:0 15px}.footer{padding:18px 15px}
+}
+
+
+/* Biology chapter visual treatment — same layout system as Polity */
+.static-gk-cover{display:grid;place-items:center;background:linear-gradient(135deg,#eef3e9,#f8f6ef)}
+.static-gk-emoji{font-size:92px;line-height:1;filter:drop-shadow(0 8px 10px rgba(30,59,14,.10))}
+body.dark .static-gk-cover{background:linear-gradient(135deg,#172416,#11170e)}
+body.dark .static-gk-emoji{filter:drop-shadow(0 8px 10px rgba(0,0,0,.35))}
+@media(max-width:650px){.static-gk-emoji{font-size:76px}}
+
+/* Static GK chapter asset images — follows the existing card design */
+.static-gk-chapter-image,
+img[src*="assets/static-gk/"] {
+  max-width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+</style>
+</head>
 <body>
-<nav class="nav"><div class="wrap navin"><a class="brand" href="../index.html"><strong>SUNNY <span>RISE</span></strong></a><div style="display:flex;gap:8px;align-items:center">
-<a class="back" href="../index.html">⌂ Home</a>
-<button id="themeToggle" class="back" type="button" aria-label="Toggle dark mode">◐ Dark</button>
-</div></div></nav>
-<header class="hero"><div class="wrap heroIn"><div class="eyebrow">🎯 STATIC GK</div><h1>Static GK <span>Chapters</span></h1><p>High-yield static GK chapters for competitive exams.</p>
-<div class="stats"><span class="stat">11 Chapters</span><span class="stat">Notes coming soon</span></div></div></header>
-<main class="main"><div class="wrap"><section class="section"><div class="sectionHead"><div><h2>Static GK Chapters</h2><p>11 chapters</p></div><span class="count">11 CHAPTERS</span></div><div class="chapters"><div class="chapter"><div class="num">01</div><div><h3>MUSIC AND PAINTINGS</h3><span class="tag">NOTES COMING SOON</span></div></div><div class="chapter"><div class="num">02</div><div><h3>CLASSICAL DANCE</h3><span class="tag">NOTES COMING SOON</span></div></div><div class="chapter"><div class="num">03</div><div><h3>FOLK DANCES OF INDIA</h3><span class="tag">NOTES COMING SOON</span></div></div><div class="chapter"><div class="num">04</div><div><h3>FESTIVALS OF INDIA</h3><span class="tag">NOTES COMING SOON</span></div></div><div class="chapter"><div class="num">05</div><div><h3>CENSUS</h3><span class="tag">NOTES COMING SOON</span></div></div><div class="chapter"><div class="num">06</div><div><h3>IMPORTANT DAYS</h3><span class="tag">NOTES COMING SOON</span></div></div><div class="chapter"><div class="num">07</div><div><h3>BOOKS AND AUTHORS</h3><span class="tag">NOTES COMING SOON</span></div></div><div class="chapter"><div class="num">08</div><div><h3>SPORTS</h3><span class="tag">NOTES COMING SOON</span></div></div><div class="chapter"><div class="num">09</div><div><h3>INTERNATIONAL ORGANISATIONS</h3><span class="tag">NOTES COMING SOON</span></div></div><div class="chapter"><div class="num">10</div><div><h3>NATIONAL ORGANISATIONS</h3><span class="tag">NOTES COMING SOON</span></div></div><div class="chapter"><div class="num">11</div><div><h3>AWARDS AND HONOURS</h3><span class="tag">NOTES COMING SOON</span></div></div></div></section></div></main>
-<footer class="footer"><div class="wrap foot"><div><b>SUNNY RISE</b> · Your Knowledge Partner</div><div>Chapter structure added · Notes will be added later.</div></div></footer>
+<div class="shell">
+  <nav class="topbar">
+    <a class="brand" href="../index.html"><img src="assets/static-gk/01-index.png" alt="Chapter 01" loading="lazy" onerror="this.style.display='none'"><img src="../assets/sunnyrise-profile.jpg" alt="Sunny Rise"><span>SUNNY RISE</span></a>
+    <div class="navlinks">
+      <a class="navlink" href="../index.html"><span class="navicon">⌂</span>Home</a>
+      <a class="navlink" href="../index.html"><span class="navicon">▤</span>Notes</a>
+      <a class="navlink" id="bookmarkedNav" href="#bookmarked"><span class="navicon">♡</span>Bookmarks</a>
+      <a class="navlink" href="#progress"><span class="navicon">⌁</span>Progress</a>
+      <a class="navlink" href="../about/index.html"><img src="assets/static-gk/02-index.png" alt="Chapter 02" loading="lazy" onerror="this.style.display='none'"><span class="navicon">ⓘ</span>About</a>
+    </div>
+    <div class="nav-tools">
+      <input id="navSearch" class="nav-search" type="search" placeholder="Search chapters..." aria-label="Search chapters">
+      <button id="theme" class="theme-toggle" type="button" aria-label="Toggle dark mode"><span class="moon">☾</span><span class="knob"></span></button>
+    </div>
+  </nav>
+
+  <header class="page-head" id="progress">
+    <div class="subject-title">
+      <div class="subject-icon">🎯</div>
+      <div><h1>Static GK</h1><p>High-yield Static GK chapters for competitive exams.</p></div>
+    </div>
+    <div class="progress-card">
+      <div class="progress-top"><span class="progress-title">Overall Progress</span><span class="progress-pct" id="progressPercent">0%</span></div>
+      <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+      <div class="progress-sub" id="progressSub">0 of 11 chapters completed</div>
+    </div>
+  </header>
+
+  <section class="controls">
+    <input id="q" class="chapter-search" type="search" placeholder="Search chapters..." aria-label="Search chapters">
+    <select id="chapterFilter" class="select" aria-label="Chapter filter">
+      <option value="all">All Chapters</option>
+      <option value="completed">Completed</option>
+      <option value="bookmarked">Bookmarked</option>
+    </select>
+    <select id="sortSelect" class="select" aria-label="Sort chapters">
+      <option value="order">Sort: Chapter Order</option>
+      <option value="az">Sort: A–Z</option>
+      <option value="za">Sort: Z–A</option>
+    </select>
+    <button id="bookmarkFilter" class="filter-btn" type="button" title="Show bookmarked chapters" aria-pressed="false">☷</button>
+  </section>
+
+  <main class="grid" id="grid">
+<article class="chapter-card" data-complete-key="static-gk-complete-01-music-and-paintings" data-title="music and paintings">
+  <div class="chapter-link">
+    <div class="image-wrap static-gk-cover"><div class="static-gk-emoji" aria-hidden="true">🎵</div><span class="chapter-number">01</span><span class="image-bookmark" aria-hidden="true">♡</span></div>
+    <div class="chapter-body"><div class="chapter-label">Chapter 01</div><h2>MUSIC AND PAINTINGS</h2><p>Notes coming soon</p></div>
+  </div>
+  <div class="card-actions"><button class="bookmark-action" type="button" aria-pressed="false"><span class="bookmark-icon">♡</span><span>Bookmark</span></button><button class="complete-action" type="button" aria-pressed="false"><span class="check-box"></span><span>Mark Complete</span></button></div>
+</article>
+<article class="chapter-card" data-complete-key="static-gk-complete-02-classical-dance" data-title="classical dance">
+  <div class="chapter-link">
+    <div class="image-wrap static-gk-cover"><div class="static-gk-emoji" aria-hidden="true">💃</div><span class="chapter-number">02</span><span class="image-bookmark" aria-hidden="true">♡</span></div>
+    <div class="chapter-body"><div class="chapter-label">Chapter 02</div><h2>CLASSICAL DANCE</h2><p>Notes coming soon</p></div>
+  </div>
+  <div class="card-actions"><button class="bookmark-action" type="button" aria-pressed="false"><span class="bookmark-icon">♡</span><span>Bookmark</span></button><button class="complete-action" type="button" aria-pressed="false"><span class="check-box"></span><span>Mark Complete</span></button></div>
+</article>
+<article class="chapter-card" data-complete-key="static-gk-complete-03-folk-dances-of-india" data-title="folk dances of india">
+  <div class="chapter-link">
+    <div class="image-wrap static-gk-cover"><div class="static-gk-emoji" aria-hidden="true">🕺</div><span class="chapter-number">03</span><span class="image-bookmark" aria-hidden="true">♡</span></div>
+    <div class="chapter-body"><div class="chapter-label">Chapter 03</div><h2>FOLK DANCES OF INDIA</h2><p>Notes coming soon</p></div>
+  </div>
+  <div class="card-actions"><button class="bookmark-action" type="button" aria-pressed="false"><span class="bookmark-icon">♡</span><span>Bookmark</span></button><button class="complete-action" type="button" aria-pressed="false"><span class="check-box"></span><span>Mark Complete</span></button></div>
+</article>
+<article class="chapter-card" data-complete-key="static-gk-complete-04-festivals-of-india" data-title="festivals of india">
+  <div class="chapter-link">
+    <div class="image-wrap static-gk-cover"><div class="static-gk-emoji" aria-hidden="true">🎉</div><span class="chapter-number">04</span><span class="image-bookmark" aria-hidden="true">♡</span></div>
+    <div class="chapter-body"><div class="chapter-label">Chapter 04</div><h2>FESTIVALS OF INDIA</h2><p>Notes coming soon</p></div>
+  </div>
+  <div class="card-actions"><button class="bookmark-action" type="button" aria-pressed="false"><span class="bookmark-icon">♡</span><span>Bookmark</span></button><button class="complete-action" type="button" aria-pressed="false"><span class="check-box"></span><span>Mark Complete</span></button></div>
+</article>
+<article class="chapter-card" data-complete-key="static-gk-complete-05-census" data-title="census">
+  <div class="chapter-link">
+    <div class="image-wrap static-gk-cover"><div class="static-gk-emoji" aria-hidden="true">📊</div><span class="chapter-number">05</span><span class="image-bookmark" aria-hidden="true">♡</span></div>
+    <div class="chapter-body"><div class="chapter-label">Chapter 05</div><h2>CENSUS</h2><p>Notes coming soon</p></div>
+  </div>
+  <div class="card-actions"><button class="bookmark-action" type="button" aria-pressed="false"><span class="bookmark-icon">♡</span><span>Bookmark</span></button><button class="complete-action" type="button" aria-pressed="false"><span class="check-box"></span><span>Mark Complete</span></button></div>
+</article>
+<article class="chapter-card" data-complete-key="static-gk-complete-06-important-days" data-title="important days">
+  <div class="chapter-link">
+    <div class="image-wrap static-gk-cover"><div class="static-gk-emoji" aria-hidden="true">📅</div><span class="chapter-number">06</span><span class="image-bookmark" aria-hidden="true">♡</span></div>
+    <div class="chapter-body"><div class="chapter-label">Chapter 06</div><h2>IMPORTANT DAYS</h2><p>Notes coming soon</p></div>
+  </div>
+  <div class="card-actions"><button class="bookmark-action" type="button" aria-pressed="false"><span class="bookmark-icon">♡</span><span>Bookmark</span></button><button class="complete-action" type="button" aria-pressed="false"><span class="check-box"></span><span>Mark Complete</span></button></div>
+</article>
+<article class="chapter-card" data-complete-key="static-gk-complete-07-books-and-authors" data-title="books and authors">
+  <div class="chapter-link">
+    <div class="image-wrap static-gk-cover"><div class="static-gk-emoji" aria-hidden="true">📚</div><span class="chapter-number">07</span><span class="image-bookmark" aria-hidden="true">♡</span></div>
+    <div class="chapter-body"><div class="chapter-label">Chapter 07</div><h2>BOOKS AND AUTHORS</h2><p>Notes coming soon</p></div>
+  </div>
+  <div class="card-actions"><button class="bookmark-action" type="button" aria-pressed="false"><span class="bookmark-icon">♡</span><span>Bookmark</span></button><button class="complete-action" type="button" aria-pressed="false"><span class="check-box"></span><span>Mark Complete</span></button></div>
+</article>
+<article class="chapter-card" data-complete-key="static-gk-complete-08-sports" data-title="sports">
+  <div class="chapter-link">
+    <div class="image-wrap static-gk-cover"><div class="static-gk-emoji" aria-hidden="true">🏆</div><span class="chapter-number">08</span><span class="image-bookmark" aria-hidden="true">♡</span></div>
+    <div class="chapter-body"><div class="chapter-label">Chapter 08</div><h2>SPORTS</h2><p>Notes coming soon</p></div>
+  </div>
+  <div class="card-actions"><button class="bookmark-action" type="button" aria-pressed="false"><span class="bookmark-icon">♡</span><span>Bookmark</span></button><button class="complete-action" type="button" aria-pressed="false"><span class="check-box"></span><span>Mark Complete</span></button></div>
+</article>
+<article class="chapter-card" data-complete-key="static-gk-complete-09-international-organisations" data-title="international organisations">
+  <div class="chapter-link">
+    <div class="image-wrap static-gk-cover"><div class="static-gk-emoji" aria-hidden="true">🌐</div><span class="chapter-number">09</span><span class="image-bookmark" aria-hidden="true">♡</span></div>
+    <div class="chapter-body"><div class="chapter-label">Chapter 09</div><h2>INTERNATIONAL ORGANISATIONS</h2><p>Notes coming soon</p></div>
+  </div>
+  <div class="card-actions"><button class="bookmark-action" type="button" aria-pressed="false"><span class="bookmark-icon">♡</span><span>Bookmark</span></button><button class="complete-action" type="button" aria-pressed="false"><span class="check-box"></span><span>Mark Complete</span></button></div>
+</article>
+<article class="chapter-card" data-complete-key="static-gk-complete-10-national-organisations" data-title="national organisations">
+  <div class="chapter-link">
+    <div class="image-wrap static-gk-cover"><div class="static-gk-emoji" aria-hidden="true">🇮🇳</div><span class="chapter-number">10</span><span class="image-bookmark" aria-hidden="true">♡</span></div>
+    <div class="chapter-body"><div class="chapter-label">Chapter 10</div><h2>NATIONAL ORGANISATIONS</h2><p>Notes coming soon</p></div>
+  </div>
+  <div class="card-actions"><button class="bookmark-action" type="button" aria-pressed="false"><span class="bookmark-icon">♡</span><span>Bookmark</span></button><button class="complete-action" type="button" aria-pressed="false"><span class="check-box"></span><span>Mark Complete</span></button></div>
+</article>
+<article class="chapter-card" data-complete-key="static-gk-complete-11-awards-and-honours" data-title="awards and honours">
+  <div class="chapter-link">
+    <div class="image-wrap static-gk-cover"><div class="static-gk-emoji" aria-hidden="true">🏅</div><span class="chapter-number">11</span><span class="image-bookmark" aria-hidden="true">♡</span></div>
+    <div class="chapter-body"><div class="chapter-label">Chapter 11</div><h2>AWARDS AND HONOURS</h2><p>Notes coming soon</p></div>
+  </div>
+  <div class="card-actions"><button class="bookmark-action" type="button" aria-pressed="false"><span class="bookmark-icon">♡</span><span>Bookmark</span></button><button class="complete-action" type="button" aria-pressed="false"><span class="check-box"></span><span>Mark Complete</span></button></div>
+</article>
+<div class="empty" id="empty">No chapters match your search/filter.</div>
+</main>
+
+  <footer class="footer"><b>SUNNY RISE</b> · Static GK · Study Smarter. Revise Faster.</footer>
+</div>
 <script>
-(function(){
-  const key='sunnyrise-theme';
-  const btn=document.getElementById('themeToggle');
-  if(localStorage.getItem(key)==='dark') document.body.classList.add('dark');
-  function update(){
-    if(!btn)return;
-    btn.textContent=document.body.classList.contains('dark')?'☀ Light':'◐ Dark';
-  }
-  update();
-  if(btn) btn.addEventListener('click',function(){
-    document.body.classList.toggle('dark');
-    localStorage.setItem(key,document.body.classList.contains('dark')?'dark':'light');
-    update();
+
+const grid=document.getElementById('grid');
+const q=document.getElementById('q');
+const navSearch=document.getElementById('navSearch');
+const chapterFilter=document.getElementById('chapterFilter');
+const sortSelect=document.getElementById('sortSelect');
+const bookmarkFilter=document.getElementById('bookmarkFilter');
+const cards=[...document.querySelectorAll('.chapter-card')];
+
+function bookmarkKey(card){return 'static-gk-bookmark-'+card.dataset.completeKey.replace('static-gk-complete-','');}
+function isCompleted(card){return localStorage.getItem(card.dataset.completeKey)==='1';}
+function isBookmarked(card){return localStorage.getItem(bookmarkKey(card))==='1';}
+
+function renderCard(card){
+  const b=card.querySelector('.bookmark-action');
+  const c=card.querySelector('.complete-action');
+  const bookmarked=isBookmarked(card), completed=isCompleted(card);
+  b.classList.toggle('bookmarked',bookmarked);
+  b.setAttribute('aria-pressed',bookmarked?'true':'false');
+  b.querySelector('.bookmark-icon').textContent=bookmarked?'♥':'♡';
+  c.classList.toggle('completed',completed);
+  c.setAttribute('aria-pressed',completed?'true':'false');
+  c.querySelector('span:last-child').textContent=completed?'Completed':'Mark Complete';
+  card.classList.toggle('is-completed',completed);
+}
+
+function updateProgress(){
+  const total=cards.length, completed=cards.filter(isCompleted).length;
+  const pct=total?Math.round(completed/total*100):0;
+  document.getElementById('progressFill').style.width=pct+'%';
+  document.getElementById('progressPercent').textContent=pct+'%';
+  document.getElementById('progressSub').textContent=completed+' of '+total+' chapters completed';
+}
+
+function apply(){
+  const term=q.value.trim().toLowerCase(), mode=chapterFilter.value;
+  const onlyBookmarked=bookmarkFilter.classList.contains('active');
+  cards.forEach(renderCard);
+  const filtered=cards.filter(card=>{
+    const matchesText=!term||card.dataset.title.includes(term);
+    const matchesMode=mode==='all'||(mode==='completed'&&isCompleted(card))||(mode==='bookmarked'&&isBookmarked(card));
+    const matchesBookmark=!onlyBookmarked||isBookmarked(card);
+    return matchesText&&matchesMode&&matchesBookmark;
   });
-})();
+  cards.forEach(card=>card.style.display='none');
+  filtered.forEach(card=>card.style.display='');
+  document.getElementById('empty').style.display=filtered.length?'none':'block';
+  updateProgress();
+}
+
+function syncSearch(value){q.value=value;navSearch.value=value;apply();}
+q.addEventListener('input',e=>syncSearch(e.target.value));
+navSearch.addEventListener('input',e=>syncSearch(e.target.value));
+chapterFilter.addEventListener('change',apply);
+
+sortSelect.addEventListener('change',()=>{
+  const sorted=[...cards].sort((a,b)=>{
+    if(sortSelect.value==='az') return a.dataset.title.localeCompare(b.dataset.title);
+    if(sortSelect.value==='za') return b.dataset.title.localeCompare(a.dataset.title);
+    return Number(a.querySelector('.chapter-number').textContent)-Number(b.querySelector('.chapter-number').textContent);
+  });
+  sorted.forEach(card=>grid.appendChild(card));
+  grid.appendChild(document.getElementById('empty'));
+  apply();
+});
+
+bookmarkFilter.addEventListener('click',()=>{
+  bookmarkFilter.classList.toggle('active');
+  bookmarkFilter.setAttribute('aria-pressed',bookmarkFilter.classList.contains('active')?'true':'false');
+  apply();
+});
+
+cards.forEach(card=>{
+  const b=card.querySelector('.bookmark-action'), c=card.querySelector('.complete-action');
+  b.addEventListener('click',e=>{
+    e.preventDefault();e.stopPropagation();
+    const key=bookmarkKey(card);
+    localStorage.setItem(key,isBookmarked(card)?'0':'1');apply();
+  });
+  c.addEventListener('click',e=>{
+    e.preventDefault();e.stopPropagation();
+    localStorage.setItem(card.dataset.completeKey,isCompleted(card)?'0':'1');apply();
+  });
+  renderCard(card);
+});
+
+const theme=document.getElementById('theme');
+function setTheme(dark){
+  document.body.classList.toggle('dark',dark);
+  localStorage.setItem('sunnyrise-theme',dark?'dark':'light');
+}
+setTheme(localStorage.getItem('sunnyrise-theme')==='dark');
+theme.addEventListener('click',()=>setTheme(!document.body.classList.contains('dark')));
+
+document.getElementById('bookmarkedNav').addEventListener('click',e=>{
+  e.preventDefault();
+  bookmarkFilter.classList.add('active');
+  chapterFilter.value='bookmarked';
+  apply();
+  document.getElementById('grid').scrollIntoView({behavior:'smooth',block:'start'});
+});
+
+apply();
+
 </script>
-</body></html>
+</body>
+</html>
