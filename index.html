@@ -1,451 +1,129 @@
 <!DOCTYPE html>
-
-<html lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>SUNNY RISE - Study Smarter. Revise Faster.</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    "colors": {
-                        "on-tertiary-fixed": "#211b00",
-                        "surface-container-lowest": "#ffffff",
-                        "secondary-fixed-dim": "#f8bd4a",
-                        "on-tertiary": "#ffffff",
-                        "text-muted": "#6B6B4E",
-                        "surface-tint": "#596240",
-                        "error": "#ba1a1a",
-                        "secondary": "#7d5800",
-                        "outline": "#77786d",
-                        "surface-dim": "#e4d9c4",
-                        "surface": "#fff8f1",
-                        "deep-forest": "#38370D",
-                        "on-tertiary-fixed-variant": "#524600",
-                        "secondary-fixed": "#ffdea9",
-                        "paper-white": "#FFFDF8",
-                        "primary-container": "#2c3416",
-                        "outline-variant": "#c7c7bb",
-                        "on-primary-fixed-variant": "#424a2a",
-                        "on-primary": "#ffffff",
-                        "on-primary-fixed": "#171e04",
-                        "primary-fixed-dim": "#c1cba1",
-                        "on-secondary": "#ffffff",
-                        "on-surface": "#201b0e",
-                        "secondary-container": "#fec24f",
-                        "primary-fixed": "#dde7bb",
-                        "inverse-surface": "#363022",
-                        "background": "#fff8f1",
-                        "surface-container-low": "#fef2dd",
-                        "inverse-primary": "#c1cba1",
-                        "tertiary-fixed-dim": "#dec654",
-                        "on-secondary-fixed-variant": "#5e4100",
-                        "on-error-container": "#93000a",
-                        "on-error": "#ffffff",
-                        "on-background": "#201b0e",
-                        "on-secondary-container": "#725000",
-                        "surface-container-high": "#f3e7d2",
-                        "tertiary-container": "#c1ab3b",
-                        "primary": "#171f04",
-                        "surface-container-highest": "#ede1cd",
-                        "on-secondary-fixed": "#271900",
-                        "tertiary": "#6d5e00",
-                        "surface-variant": "#ede1cd",
-                        "on-primary-container": "#949d76",
-                        "on-tertiary-container": "#4a3f00",
-                        "surface-bright": "#fff8f1",
-                        "error-container": "#ffdad6",
-                        "on-surface-variant": "#46483e",
-                        "tertiary-fixed": "#fbe36c",
-                        "inverse-on-surface": "#fbefda",
-                        "surface-container": "#f8edd8"
-                    },
-                    "borderRadius": {
-                        "DEFAULT": "0.25rem",
-                        "lg": "0.5rem",
-                        "xl": "0.75rem",
-                        "full": "9999px"
-                    },
-                    "spacing": {
-                        "card-padding": "24px",
-                        "base": "8px",
-                        "gutter": "24px",
-                        "section-padding": "80px",
-                        "container-max": "1280px"
-                    },
-                    "fontFamily": {
-                        "body-md": ["Inter"],
-                        "headline-md": ["Inter"],
-                        "headline-lg": ["Inter"],
-                        "label-sm": ["Inter"],
-                        "body-lg": ["Inter"],
-                        "headline-lg-mobile": ["Inter"],
-                        "headline-display": ["Inter"],
-                        "label-bold": ["Inter"]
-                    },
-                    "fontSize": {
-                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
-                        "headline-md": ["24px", { "lineHeight": "1.3", "fontWeight": "600" }],
-                        "headline-lg": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700" }],
-                        "label-sm": ["12px", { "lineHeight": "1.2", "fontWeight": "500" }],
-                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
-                        "headline-lg-mobile": ["28px", { "lineHeight": "1.2", "fontWeight": "700" }],
-                        "headline-display": ["56px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800" }],
-                        "label-bold": ["14px", { "lineHeight": "1.2", "fontWeight": "700" }]
-                    }
-                }
-            }
-        }
-    </script>
+<html class="light" lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0A192F">
+<title>RISE NOTES — Your Knowledge Partner</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script>
+ tailwind.config={darkMode:'class',theme:{extend:{colors:{'navy-dark':'#0A192F','gold-accent':'#D69E2E','bg-subtle':'#F7FAFC','border-light':'#E2E8F0'},fontFamily:{headline:['Hanken Grotesk'],body:['Inter']}}}};
+</script>
 <style>
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-        }
-        .icon-fill {
-            font-variation-settings: 'FILL' 1;
-        }
-    </style>
+:root{--navy:#0A192F;--navy2:#102747;--gold:#D69E2E;--gold2:#F1C75B;--surface:#FAFAFC;--card:#fff;--text:#162033;--muted:#667085;--line:#E2E8F0;--shadow:0 12px 35px rgba(10,25,47,.07)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--surface);color:var(--text);font-family:Inter,system-ui,sans-serif;line-height:1.55;transition:background .25s,color .25s}.material-symbols-outlined{font-variation-settings:'FILL' 0,'wght' 500,'GRAD' 0,'opsz' 24}.wrap{width:min(1200px,calc(100% - 32px));margin:auto}
+.topbar{position:sticky;top:0;z-index:100;background:rgba(250,250,252,.94);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}.navin{height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--navy)}.brandMark{width:43px;height:43px;border-radius:50%;object-fit:cover;border:2px solid var(--gold)}.brandText{font:800 18px 'Hanken Grotesk';letter-spacing:.4px}.brandText span{color:var(--gold)}.brandSub{display:block;font:600 9px Inter;letter-spacing:1.1px;color:#7B8494;margin-top:1px}.navlinks{display:flex;align-items:center;gap:25px}.navlinks a{color:#4B5565;text-decoration:none;font-size:13px;font-weight:600}.navlinks a.active{color:var(--navy);border-bottom:2px solid var(--navy);padding-bottom:5px}.navlinks a:hover{color:var(--gold)}.navactions{display:flex;align-items:center;gap:8px}.iconBtn,.menuBtn{border:0;background:transparent;color:#566070;cursor:pointer;display:grid;place-items:center}.iconBtn{width:38px;height:38px;border-radius:10px}.iconBtn:hover{background:#eef2f6;color:var(--navy)}.startBtn{background:var(--navy);color:#fff;text-decoration:none;padding:10px 18px;border-radius:9px;font-size:13px;font-weight:700}.startBtn:hover{background:#102747}.menuBtn{display:none}
+.hero{position:relative;overflow:hidden;background:var(--navy);color:#fff}.heroIn{position:relative;z-index:2;padding:84px 0 125px;display:grid;grid-template-columns:1.02fr .98fr;align-items:center;gap:70px}.eyebrow{display:inline-flex;align-items:center;gap:8px;color:var(--gold2);font-size:12px;font-weight:800;letter-spacing:1.7px;text-transform:uppercase}.hero h1{font:800 clamp(42px,5.5vw,68px)/1.05 'Hanken Grotesk';letter-spacing:-2.3px;margin:17px 0 19px}.hero h1 span{color:var(--gold2)}.hero p{max-width:610px;color:#D6DFEC;font-size:17px;line-height:1.7;margin:0 0 28px}.heroBtns{display:flex;gap:11px;flex-wrap:wrap}.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:9px;padding:12px 20px;text-decoration:none;font-size:13px;font-weight:700;transition:.2s}.btnGold{background:var(--gold);color:#111827}.btnGold:hover{background:var(--gold2);transform:translateY(-1px)}.btnOutline{border:1px solid rgba(255,255,255,.55);color:#fff;background:transparent}.btnOutline:hover{background:#fff;color:var(--navy)}
+.heroVisual{min-height:390px;position:relative;display:grid;place-items:center}.orbit{position:absolute;width:380px;height:380px;border:1px solid rgba(214,158,46,.22);border-radius:50%}.orbit:before,.orbit:after{content:'';position:absolute;border-radius:50%;background:rgba(214,158,46,.18)}.orbit:before{width:90px;height:90px;top:30px;right:35px}.orbit:after{width:55px;height:55px;bottom:55px;left:15px}.heroPanel{position:relative;width:min(430px,100%);background:linear-gradient(145deg,rgba(255,255,255,.12),rgba(255,255,255,.055));border:1px solid rgba(255,255,255,.16);border-radius:25px;padding:25px;box-shadow:0 25px 70px rgba(0,0,0,.28);backdrop-filter:blur(10px)}.panelTop{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}.panelTop strong{font:700 22px 'Hanken Grotesk';color:#fff}.panelBadge{font-size:10px;font-weight:800;letter-spacing:1px;color:var(--gold2);border:1px solid rgba(214,158,46,.45);padding:6px 9px;border-radius:99px}.stat{display:flex;justify-content:space-between;align-items:center;padding:15px 0;border-bottom:1px solid rgba(255,255,255,.09)}.stat:last-child{border-bottom:0}.stat span{color:#B7C2D1;font-size:12px}.stat b{color:#fff;font:800 22px 'Hanken Grotesk'}.panelProgress{margin-top:20px;padding:14px;background:rgba(0,0,0,.16);border-radius:14px}.progressLine{height:7px;background:rgba(255,255,255,.12);border-radius:99px;overflow:hidden;margin-top:9px}.progressLine i{display:block;width:76%;height:100%;background:var(--gold);border-radius:99px}.heroGlow{position:absolute;width:450px;height:450px;border-radius:50%;background:rgba(214,158,46,.11);right:-170px;top:-220px}.curve{position:absolute;left:0;bottom:-1px;width:100%;height:78px;z-index:3}.curve svg{width:100%;height:100%;display:block}.curve path{fill:var(--surface)}
+.section{padding:92px 0}.sectionHeader{text-align:center;margin-bottom:43px}.sectionHeader .kicker{font-size:11px;font-weight:800;letter-spacing:1.6px;color:var(--gold);text-transform:uppercase}.sectionHeader h2{font:700 32px/1.2 'Hanken Grotesk';color:var(--navy);margin:8px 0}.sectionHeader p{color:var(--muted);font-size:14px;margin:0 auto;max-width:650px}.values{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.valueCard{background:var(--card);border:1px solid var(--line);border-radius:17px;padding:30px 27px;text-align:center;box-shadow:var(--shadow);transition:.25s}.valueCard:hover{transform:translateY(-5px);box-shadow:0 18px 45px rgba(10,25,47,.11)}.valueIcon{width:88px;height:88px;margin:0 auto 20px;border-radius:24px;background:#FFF5DA;display:grid;place-items:center;color:var(--navy);font-size:42px}.valueCard h3{font:700 21px 'Hanken Grotesk';text-transform:uppercase;color:var(--navy);margin:0 0 10px}.valueCard p{font-size:14px;color:var(--muted);margin:0}
+.latest{background:#F4F7FA;border-top:1px solid var(--line)}.postGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.post{background:var(--card);border:1px solid var(--line);border-radius:17px;overflow:hidden;box-shadow:var(--shadow);transition:.25s}.post:hover{transform:translateY(-5px);box-shadow:0 18px 45px rgba(10,25,47,.11)}.postVisual{height:175px;background:linear-gradient(135deg,#0A192F,#1A365D);display:grid;place-items:center;position:relative;overflow:hidden}.postVisual:after{content:'';position:absolute;width:190px;height:190px;border:1px solid rgba(214,158,46,.3);border-radius:50%;right:-35px;top:-55px}.postVisual .bigIcon{font-size:62px;color:#F1C75B;position:relative;z-index:1}.postBody{padding:22px}.postMeta{font-size:10px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--gold);margin-bottom:8px}.post h3{font:700 21px/1.25 'Hanken Grotesk';color:var(--navy);margin:0 0 9px}.post p{font-size:13px;color:var(--muted);margin:0}.postLink{display:inline-flex;align-items:center;gap:5px;margin-top:17px;color:var(--navy);font-size:12px;font-weight:800;text-decoration:none}.postLink:hover{color:var(--gold)}
+.subjects{padding-top:0}.subjectHead{display:flex;justify-content:space-between;align-items:end;gap:15px;margin-bottom:24px}.subjectHead h2{font:700 31px 'Hanken Grotesk';color:var(--navy);margin:0}.subjectHead p{font-size:13px;color:var(--muted);margin:5px 0 0}.count{font-size:10px;font-weight:800;letter-spacing:.8px;color:#7A5B05;background:#FFF2CF;border:1px solid #E8CF8C;padding:7px 11px;border-radius:99px;white-space:nowrap}.subjectGrid{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}.subject{background:var(--card);border:1px solid var(--line);border-radius:15px;padding:20px;text-decoration:none;color:var(--text);position:relative;min-height:160px;transition:.2s}.subject:hover{transform:translateY(-4px);border-color:#D7B65E;box-shadow:var(--shadow)}.subjectIcon{width:45px;height:45px;border-radius:13px;background:#FFF5DA;display:grid;place-items:center;font-size:23px}.subject h3{font:700 18px 'Hanken Grotesk';color:var(--navy);margin:12px 0 4px}.subject p{font-size:11px;color:var(--muted);margin:0 0 15px}.subject small{position:absolute;left:20px;bottom:15px;font-size:9px;font-weight:800;letter-spacing:.6px;text-transform:uppercase;color:#7A5B05}.subject .arrow{position:absolute;right:16px;bottom:11px;color:#B08721;font-size:22px}
+.footer{background:#071322;color:#B7C2D1}.footerIn{display:grid;grid-template-columns:1.4fr .8fr .8fr;gap:45px;padding:58px 0 38px}.footer h3,.footer h4{font-family:'Hanken Grotesk';color:#fff;margin:0 0 13px}.footer h3{font-size:22px}.footer h3 span{color:var(--gold2)}.footer h4{font-size:15px}.footer p,.footer a{font-size:12px;color:#9EABBB;line-height:1.7}.footer a{text-decoration:none;display:block;margin:6px 0}.footer a:hover{color:var(--gold2)}.copyright{border-top:1px solid rgba(255,255,255,.1);padding:18px 0;text-align:center;font-size:11px;color:#8592A4}
+.mobileBottom{display:none}
+body.dark{--surface:#07111D;--card:#0E1B2A;--text:#EDF2F7;--muted:#9CAABC;--line:#26394D}body.dark .topbar{background:rgba(7,17,29,.94);border-color:#26394D}body.dark .brand{color:#fff}body.dark .navlinks a{color:#AAB6C7}body.dark .navlinks a.active{color:#fff;border-color:#F1C75B}body.dark .iconBtn{color:#AAB6C7}body.dark .iconBtn:hover{background:#142337}body.dark .startBtn{background:#F1C75B;color:#111827}body.dark .sectionHeader h2,body.dark .subjectHead h2,body.dark .subject h3,body.dark .post h3,body.dark .valueCard h3{color:#fff}body.dark .latest{background:#0A1624;border-color:#26394D}body.dark .valueIcon,body.dark .subjectIcon{background:#2A2819}body.dark .count{background:#292719;border-color:#65582A;color:#F1D16A}
+@media(max-width:950px){.navlinks{display:none}.menuBtn{display:grid}.heroIn{grid-template-columns:1fr;gap:35px;padding:65px 0 110px}.heroVisual{min-height:330px}.values{grid-template-columns:1fr}.subjectGrid{grid-template-columns:repeat(2,1fr)}.postGrid{grid-template-columns:1fr 1fr}.footerIn{grid-template-columns:1fr 1fr}}
+@media(max-width:620px){.wrap{width:min(100% - 22px,1200px)}.navin{height:66px}.brandMark{width:37px;height:37px}.brandText{font-size:16px}.brandSub{display:none}.navactions .iconBtn:first-child{display:none}.startBtn{padding:9px 12px;font-size:12px}.heroIn{padding:48px 0 100px}.hero h1{font-size:43px;letter-spacing:-1.4px}.hero p{font-size:14px;line-height:1.65}.heroVisual{min-height:285px}.orbit{width:285px;height:285px}.heroPanel{padding:19px;border-radius:19px}.panelTop strong{font-size:19px}.stat{padding:11px 0}.stat b{font-size:19px}.curve{height:55px}.section{padding:68px 0}.sectionHeader h2{font-size:28px}.postGrid{grid-template-columns:1fr}.subjectHead{align-items:center}.subjectHead h2{font-size:26px}.count{display:none}.subjectGrid{grid-template-columns:1fr 1fr;gap:10px}.subject{padding:15px;min-height:150px}.subject small{left:15px}.footerIn{grid-template-columns:1fr;padding:45px 0 30px}.mobileBottom{position:fixed;display:flex;left:10px;right:10px;bottom:10px;z-index:90;background:rgba(7,19,34,.95);border:1px solid rgba(255,255,255,.1);backdrop-filter:blur(12px);border-radius:15px;padding:8px;justify-content:space-around}.mobileBottom a{color:#fff;text-decoration:none;font-size:20px;padding:7px 18px;border-radius:10px}.mobileBottom a:hover{background:rgba(255,255,255,.08)}}
+</style>
 </head>
-<body class="bg-background text-on-background font-body-md antialiased selection:bg-secondary-fixed selection:text-on-secondary-fixed">
-<!-- TopAppBar -->
-<header class="bg-primary dark:bg-primary-container text-on-primary dark:text-on-primary-container docked full-width top-0 z-50">
-<div class="flex justify-between items-center w-full px-gutter max-w-container-max mx-auto h-20">
-<div class="flex items-center gap-4 cursor-pointer hover:opacity-90 transition-opacity">
-<img alt="SUNNY RISE Logo" class="w-10 h-10 rounded-full border-2 border-secondary-fixed object-cover" src="https://lh3.googleusercontent.com/aida/AP1WRLsZTREBd1MLJXxsNyp_eUgGarUMEmWsGcQXynrU76myNwznSFPr0MQlOPFjuPJPeWQ5V9JrlxFLAf0yAkbEvb03ngqQJA8px0j5PzguExZHwitN-nDPNGphk381ZaDbXxlpa0i7LuRseQI5EA3EZ7C1AFG2OhCZKS6K5cUgidhtVrlzn2uA0TjzuZHI3OKbuwNYUhqLa174O1qg9ihUvwgZAX5stVIGvQNc8zRlFdN_KL5DjZcGqKGVDQ"/>
-<div>
-<h1 class="text-headline-md font-headline-md font-extrabold text-secondary-fixed dark:text-secondary-fixed-dim">SUNNY RISE</h1>
-<p class="text-label-sm font-label-sm text-on-primary/80 uppercase tracking-widest">Your Knowledge Partner</p>
-</div>
-</div>
-<!-- Web Navigation Cluster -->
-<nav class="hidden md:flex items-center gap-8">
-<!-- Navigation Links are suppressed on landing page as per 'Intent Fallback' / 'Task-Focused' logic, but we include them in DOM for semantic completeness, hidden visually or structurally replaced by primary actions for the landing context. Wait, the prompt says "Navigation with 'About', 'Search', and Theme toggle." -->
-<button class="flex items-center gap-2 px-4 py-2 rounded-full border border-outline hover:border-secondary-fixed text-on-primary transition-colors text-label-bold font-label-bold group">
-<span class="material-symbols-outlined text-[18px] group-hover:text-secondary-fixed transition-colors">dark_mode</span>
-<span class="group-hover:text-secondary-fixed transition-colors">Dark</span>
-</button>
-<button class="flex items-center gap-2 px-4 py-2 rounded-full border border-outline hover:border-secondary-fixed text-on-primary transition-colors text-label-bold font-label-bold group">
-<span class="material-symbols-outlined text-[18px] group-hover:text-secondary-fixed transition-colors">search</span>
-<span class="group-hover:text-secondary-fixed transition-colors">Search</span>
-</button>
-<button class="bg-secondary-fixed text-on-secondary-fixed px-6 py-2 rounded-full text-label-bold font-label-bold hover:bg-secondary-fixed-dim transition-colors shadow-sm">
-                    About
-                </button>
-</nav>
-</div>
+<body>
+<header class="topbar">
+ <div class="wrap navin">
+  <a class="brand" href="index.html"><img class="brandMark" src="assets/sunnyrise-profile.jpg" alt="Sunny Rise"><div><div class="brandText">SUNNY <span>RISE</span></div><small class="brandSub">YOUR KNOWLEDGE PARTNER</small></div></a>
+  <nav class="navlinks" aria-label="Main navigation">
+   <a class="active" href="index.html">GS</a><a href="english/index.html">ENGLISH</a><a href="polity/index.html">POLITY</a><a href="history/index.html">HISTORY</a><a href="geography/index.html">GEOGRAPHY</a><a href="about/index.html">ABOUT</a>
+  </nav>
+  <div class="navactions">
+   <button class="iconBtn" id="theme" aria-label="Toggle dark mode"><span class="material-symbols-outlined">dark_mode</span></button>
+   <a class="startBtn" href="#subjects">Get Started</a>
+   <button class="menuBtn" id="menu" aria-label="Open menu"><span class="material-symbols-outlined">menu</span></button>
+  </div>
+ </div>
 </header>
+
 <main>
-<!-- Hero Section -->
-<section class="bg-primary-container text-on-primary w-full pt-16 pb-24 px-gutter relative overflow-hidden">
-<!-- Decorative Background Element -->
-<div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-bl from-secondary-fixed/5 to-transparent pointer-events-none rounded-bl-full"></div>
-<div class="max-w-container-max mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative z-10">
-<!-- Hero Content -->
-<div class="flex flex-col gap-6">
-<div class="inline-flex items-center gap-2 bg-surface-tint/20 text-secondary-fixed border border-secondary-fixed/30 rounded-full px-4 py-1.5 w-fit">
-<span class="material-symbols-outlined text-[16px] icon-fill text-error">stars</span>
-<span class="text-label-sm font-label-bold">Built for SSC &amp; competitive exams</span>
-</div>
-<h1 class="text-headline-display font-headline-display text-paper-white leading-[1.1]">
-                        Study Smarter. <br/>
-<span class="text-secondary-fixed">Revise Faster.</span>
-</h1>
-<p class="text-body-lg font-body-lg text-primary-fixed-dim max-w-xl">
-                        Clean, exam-focused General Studies notes and English practice resources — organized topic by topic so you spend less time searching and more time learning.
-                    </p>
-<div class="flex flex-wrap gap-4 mt-4">
-<button class="bg-secondary-fixed text-on-secondary-fixed px-8 py-3 rounded-lg text-label-bold font-label-bold hover:bg-secondary-fixed-dim transition-all shadow-md hover:shadow-lg flex items-center gap-2 group">
-                            Explore Notes
-                            <span class="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
-</button>
-<button class="bg-transparent border-2 border-outline-variant text-on-primary hover:border-secondary-fixed hover:text-secondary-fixed px-8 py-3 rounded-lg text-label-bold font-label-bold transition-colors">
-                            Practice English
-                        </button>
-</div>
-</div>
-<!-- Hero Metric Card -->
-<div class="bg-surface-tint/20 backdrop-blur-sm border border-outline-variant/30 rounded-xl p-8 shadow-2xl relative">
-<div class="absolute -top-4 -left-4 w-24 h-24 bg-secondary-fixed/10 rounded-full blur-xl pointer-events-none"></div>
-<div class="flex items-center gap-3 mb-8">
-<span class="material-symbols-outlined text-3xl text-secondary-fixed">local_library</span>
-<h3 class="text-headline-md font-headline-md text-paper-white">Learning Library</h3>
-</div>
-<div class="space-y-6">
-<div class="flex justify-between items-end border-b border-outline-variant/20 pb-4">
-<span class="text-body-md font-body-md text-primary-fixed-dim">General Studies subjects</span>
-<span class="text-headline-md font-headline-md text-paper-white">7+</span>
-</div>
-<div class="flex justify-between items-end border-b border-outline-variant/20 pb-4">
-<span class="text-body-md font-body-md text-primary-fixed-dim">Live GS notes</span>
-<span class="text-headline-md font-headline-md text-paper-white">32+</span>
-</div>
-<div class="flex justify-between items-end border-b border-outline-variant/20 pb-4">
-<span class="text-body-md font-body-md text-primary-fixed-dim">English practice sets</span>
-<span class="text-headline-md font-headline-md text-paper-white">12+</span>
-</div>
-<div class="flex justify-between items-end pt-2">
-<span class="text-body-md font-body-md text-primary-fixed-dim">Access</span>
-<span class="text-headline-md font-headline-md text-paper-white font-extrabold tracking-wide">FREE</span>
-</div>
-</div>
-</div>
-</div>
+<section class="hero">
+ <div class="heroGlow"></div>
+ <div class="wrap heroIn">
+  <div>
+   <span class="eyebrow">Remember · Learn · Revise</span>
+   <h1>Study Smarter.<br><span>Revise Faster.</span></h1>
+   <p>Exam-focused notes for SSC and other competitive exams — organized subject by subject so you spend less time searching and more time learning, revising and testing yourself.</p>
+   <div class="heroBtns"><a class="btn btnGold" href="#subjects">Explore Notes <span class="material-symbols-outlined" style="font-size:17px">arrow_forward</span></a><a class="btn btnOutline" href="english/index.html">Practice English</a></div>
+  </div>
+  <div class="heroVisual">
+   <div class="orbit"></div>
+   <div class="heroPanel">
+    <div class="panelTop"><strong>📚 Learning Library</strong><span class="panelBadge">FREE ACCESS</span></div>
+    <div class="stat"><span>General Studies subjects</span><b>8+</b></div>
+    <div class="stat"><span>Topic-wise notes</span><b>80+</b></div>
+    <div class="stat"><span>English practice resources</span><b>12+</b></div>
+    <div class="stat"><span>Learning mode</span><b>FOCUS</b></div>
+    <div class="panelProgress"><span style="font-size:11px;color:#B7C2D1">Your study library is ready</span><div class="progressLine"><i></i></div></div>
+   </div>
+  </div>
+ </div>
+ <div class="curve"><svg preserveAspectRatio="none" viewBox="0 0 1200 120"><path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"></path></svg></div>
 </section>
-<!-- Quick Access Row -->
-<section class="bg-surface py-12 px-gutter -mt-12 relative z-20">
-<div class="max-w-container-max mx-auto">
-<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-<!-- Quick Card 1 -->
-<div class="bg-paper-white p-6 rounded-xl shadow-[0px_4px_20px_rgba(0,0,0,0.04)] hover:shadow-[0px_8px_30px_rgba(0,0,0,0.08)] transition-all cursor-pointer border border-transparent hover:border-secondary-fixed/50 group flex items-start gap-4">
-<div class="bg-surface-container-low p-3 rounded-lg text-on-surface group-hover:bg-secondary-fixed/20 group-hover:text-secondary transition-colors">
-<span class="material-symbols-outlined icon-fill">search</span>
-</div>
-<div>
-<h4 class="text-body-lg font-headline-md text-on-surface mb-1 group-hover:text-secondary transition-colors">Find a topic</h4>
-<p class="text-label-sm font-body-md text-on-surface-variant">Search across Sunny Rise notes</p>
-</div>
-</div>
-<!-- Quick Card 2 -->
-<div class="bg-paper-white p-6 rounded-xl shadow-[0px_4px_20px_rgba(0,0,0,0.04)] hover:shadow-[0px_8px_30px_rgba(0,0,0,0.08)] transition-all cursor-pointer border border-transparent hover:border-secondary-fixed/50 group flex items-start gap-4">
-<div class="bg-surface-container-low p-3 rounded-lg text-on-surface group-hover:bg-secondary-fixed/20 group-hover:text-secondary transition-colors">
-<span class="material-symbols-outlined icon-fill text-blue-500">assignment</span>
-</div>
-<div>
-<h4 class="text-body-lg font-headline-md text-on-surface mb-1 group-hover:text-secondary transition-colors">SSC CGL PYQ</h4>
-<p class="text-label-sm font-body-md text-on-surface-variant">Practice English 2025 collections</p>
-</div>
-</div>
-<!-- Quick Card 3 -->
-<div class="bg-paper-white p-6 rounded-xl shadow-[0px_4px_20px_rgba(0,0,0,0.04)] hover:shadow-[0px_8px_30px_rgba(0,0,0,0.08)] transition-all cursor-pointer border border-transparent hover:border-secondary-fixed/50 group flex items-start gap-4">
-<div class="bg-surface-container-low p-3 rounded-lg text-on-surface group-hover:bg-secondary-fixed/20 group-hover:text-secondary transition-colors">
-<span class="material-symbols-outlined icon-fill text-rose-500">psychology</span>
-</div>
-<div>
-<h4 class="text-body-lg font-headline-md text-on-surface mb-1 group-hover:text-secondary transition-colors">Build vocabulary</h4>
-<p class="text-label-sm font-body-md text-on-surface-variant">Phrasal verbs, homonyms &amp; more</p>
-</div>
-</div>
-</div>
-</div>
+
+<section class="section">
+ <div class="wrap">
+  <div class="sectionHeader"><span class="kicker">A better way to prepare</span><h2>Built for focused learning</h2><p>Simple navigation, exam-oriented content and quick access to the resources that matter.</p></div>
+  <div class="values">
+   <article class="valueCard"><div class="valueIcon"><span class="material-symbols-outlined" style="font-size:42px">calendar_month</span></div><h3>Get Started</h3><p>Choose a subject, follow the chapters and build a consistent study routine without wasting time searching for material.</p></article>
+   <article class="valueCard"><div class="valueIcon"><span class="material-symbols-outlined" style="font-size:42px">psychology</span></div><h3>Learn Smart</h3><p>Study concise, structured notes designed for competitive exams, then return for quick revision when you need it.</p></article>
+   <article class="valueCard"><div class="valueIcon"><span class="material-symbols-outlined" style="font-size:42px">emoji_events</span></div><h3>Stay Consistent</h3><p>Keep your preparation organized across GS, English and vocabulary so progress comes from repetition, not random study.</p></article>
+  </div>
+ </div>
 </section>
-<!-- Primary Content Grid: General Studies -->
-<section class="bg-surface py-section-padding px-gutter">
-<div class="max-w-container-max mx-auto">
-<div class="flex flex-col md:flex-row justify-between items-baseline mb-10 gap-4">
-<div>
-<div class="flex items-center gap-3 mb-2">
-<span class="material-symbols-outlined text-4xl text-error">menu_book</span>
-<h2 class="text-headline-lg font-headline-lg text-on-surface">General Studies</h2>
-</div>
-<p class="text-body-md font-body-md text-on-surface-variant">Choose a subject and start revising.</p>
-</div>
-<div class="bg-surface-container-high text-on-surface-variant px-4 py-2 rounded-full text-label-bold font-label-bold border border-outline-variant">
-                        32+ NOTES LIVE
-                    </div>
-</div>
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-<!-- Subject Card 1 -->
-<div class="bg-paper-white p-card-padding rounded-xl shadow-[0px_4px_20px_rgba(0,0,0,0.04)] hover:shadow-[0px_8px_30px_rgba(0,0,0,0.08)] border border-transparent hover:border-secondary-fixed/50 transition-all cursor-pointer flex flex-col justify-between group h-full min-h-[220px]">
-<div>
-<div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-<span class="material-symbols-outlined text-purple-600 icon-fill text-2xl">science</span>
-</div>
-<h3 class="text-headline-md font-headline-md text-on-surface mb-2">Physics</h3>
-<p class="text-body-sm font-body-md text-on-surface-variant">Concepts, formulas and exam-ready notes.</p>
-</div>
-<div class="mt-8 flex items-center justify-between border-t border-outline-variant/30 pt-4">
-<span class="text-label-sm font-label-bold text-secondary uppercase tracking-wider">8 NOTES LIVE</span>
-<span class="material-symbols-outlined text-outline group-hover:text-secondary transition-colors">chevron_right</span>
-</div>
-</div>
-<!-- Subject Card 2 -->
-<div class="bg-paper-white p-card-padding rounded-xl shadow-[0px_4px_20px_rgba(0,0,0,0.04)] hover:shadow-[0px_8px_30px_rgba(0,0,0,0.08)] border border-transparent hover:border-secondary-fixed/50 transition-all cursor-pointer flex flex-col justify-between group h-full min-h-[220px]">
-<div>
-<div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-<span class="material-symbols-outlined text-red-600 icon-fill text-2xl">monitoring</span>
-</div>
-<h3 class="text-headline-md font-headline-md text-on-surface mb-2">Economics</h3>
-<p class="text-body-sm font-body-md text-on-surface-variant">Topic-wise economics from basics to exams.</p>
-</div>
-<div class="mt-8 flex items-center justify-between border-t border-outline-variant/30 pt-4">
-<span class="text-label-sm font-label-bold text-secondary uppercase tracking-wider">11 NOTES LIVE</span>
-<span class="material-symbols-outlined text-outline group-hover:text-secondary transition-colors">chevron_right</span>
-</div>
-</div>
-<!-- Subject Card 3 -->
-<div class="bg-paper-white p-card-padding rounded-xl shadow-[0px_4px_20px_rgba(0,0,0,0.04)] hover:shadow-[0px_8px_30px_rgba(0,0,0,0.08)] border border-transparent hover:border-secondary-fixed/50 transition-all cursor-pointer flex flex-col justify-between group h-full min-h-[220px]">
-<div>
-<div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-<span class="material-symbols-outlined text-blue-600 icon-fill text-2xl">account_balance</span>
-</div>
-<h3 class="text-headline-md font-headline-md text-on-surface mb-2">Polity</h3>
-<p class="text-body-sm font-body-md text-on-surface-variant">Indian Constitution and polity concepts.</p>
-</div>
-<div class="mt-8 flex items-center justify-between border-t border-outline-variant/30 pt-4">
-<span class="text-label-sm font-label-bold text-secondary uppercase tracking-wider">2 NOTES LIVE</span>
-<span class="material-symbols-outlined text-outline group-hover:text-secondary transition-colors">chevron_right</span>
-</div>
-</div>
-<!-- Subject Card 4 -->
-<div class="bg-paper-white p-card-padding rounded-xl shadow-[0px_4px_20px_rgba(0,0,0,0.04)] hover:shadow-[0px_8px_30px_rgba(0,0,0,0.08)] border border-transparent hover:border-secondary-fixed/50 transition-all cursor-pointer flex flex-col justify-between group h-full min-h-[220px]">
-<div>
-<div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-<span class="material-symbols-outlined text-green-600 icon-fill text-2xl">biotech</span>
-</div>
-<h3 class="text-headline-md font-headline-md text-on-surface mb-2">Biology</h3>
-<p class="text-body-sm font-body-md text-on-surface-variant">Complete topic-wise biology revision.</p>
-</div>
-<div class="mt-8 flex items-center justify-between border-t border-outline-variant/30 pt-4">
-<span class="text-label-sm font-label-bold text-secondary uppercase tracking-wider">11 NOTES LIVE</span>
-<span class="material-symbols-outlined text-outline group-hover:text-secondary transition-colors">chevron_right</span>
-</div>
-</div>
-<!-- Subject Card 5 -->
-<div class="bg-paper-white p-card-padding rounded-xl shadow-[0px_4px_20px_rgba(0,0,0,0.04)] hover:shadow-[0px_8px_30px_rgba(0,0,0,0.08)] border border-transparent hover:border-secondary-fixed/50 transition-all cursor-pointer flex flex-col justify-between group h-full min-h-[220px]">
-<div>
-<div class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-<span class="material-symbols-outlined text-orange-600 icon-fill text-2xl">history_edu</span>
-</div>
-<h3 class="text-headline-md font-headline-md text-on-surface mb-2">History</h3>
-<p class="text-body-sm font-body-md text-on-surface-variant">Ancient, Medieval and Modern History chapters.</p>
-</div>
-<div class="mt-8 flex items-center justify-between border-t border-outline-variant/30 pt-4">
-<span class="text-label-sm font-label-bold text-secondary uppercase tracking-wider">27 CHAPTERS</span>
-<span class="material-symbols-outlined text-outline group-hover:text-secondary transition-colors">chevron_right</span>
-</div>
-</div>
-<!-- Subject Card 6 -->
-<div class="bg-paper-white p-card-padding rounded-xl shadow-[0px_4px_20px_rgba(0,0,0,0.04)] hover:shadow-[0px_8px_30px_rgba(0,0,0,0.08)] border border-transparent hover:border-secondary-fixed/50 transition-all cursor-pointer flex flex-col justify-between group h-full min-h-[220px]">
-<div>
-<div class="w-12 h-12 bg-cyan-100 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-<span class="material-symbols-outlined text-cyan-600 icon-fill text-2xl">public</span>
-</div>
-<h3 class="text-headline-md font-headline-md text-on-surface mb-2">Geography</h3>
-<p class="text-body-sm font-body-md text-on-surface-variant">Physical, Indian and human geography chapters.</p>
-</div>
-<div class="mt-8 flex items-center justify-between border-t border-outline-variant/30 pt-4">
-<span class="text-label-sm font-label-bold text-secondary uppercase tracking-wider">26 CHAPTERS</span>
-<span class="material-symbols-outlined text-outline group-hover:text-secondary transition-colors">chevron_right</span>
-</div>
-</div>
-<!-- Subject Card 7 -->
-<div class="bg-paper-white p-card-padding rounded-xl shadow-[0px_4px_20px_rgba(0,0,0,0.04)] hover:shadow-[0px_8px_30px_rgba(0,0,0,0.08)] border border-transparent hover:border-secondary-fixed/50 transition-all cursor-pointer flex flex-col justify-between group h-full min-h-[220px]">
-<div>
-<div class="w-12 h-12 bg-emerald-100 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-<span class="material-symbols-outlined text-emerald-600 icon-fill text-2xl">experiment</span>
-</div>
-<h3 class="text-headline-md font-headline-md text-on-surface mb-2">Chemistry</h3>
-<p class="text-body-sm font-body-md text-on-surface-variant">Core chemistry chapters for competitive exams.</p>
-</div>
-<div class="mt-8 flex items-center justify-between border-t border-outline-variant/30 pt-4">
-<span class="text-label-sm font-label-bold text-secondary uppercase tracking-wider">8 CHAPTERS</span>
-<span class="material-symbols-outlined text-outline group-hover:text-secondary transition-colors">chevron_right</span>
-</div>
-</div>
-<!-- Subject Card 8 -->
-<div class="bg-paper-white p-card-padding rounded-xl shadow-[0px_4px_20px_rgba(0,0,0,0.04)] hover:shadow-[0px_8px_30px_rgba(0,0,0,0.08)] border border-transparent hover:border-secondary-fixed/50 transition-all cursor-pointer flex flex-col justify-between group h-full min-h-[220px]">
-<div>
-<div class="w-12 h-12 bg-rose-100 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-<span class="material-symbols-outlined text-rose-600 icon-fill text-2xl">track_changes</span>
-</div>
-<h3 class="text-headline-md font-headline-md text-on-surface mb-2">Static GK</h3>
-<p class="text-body-sm font-body-md text-on-surface-variant">High-yield static GK chapters.</p>
-</div>
-<div class="mt-8 flex items-center justify-between border-t border-outline-variant/30 pt-4">
-<span class="text-label-sm font-label-bold text-secondary uppercase tracking-wider">11 CHAPTERS</span>
-<span class="material-symbols-outlined text-outline group-hover:text-secondary transition-colors">chevron_right</span>
-</div>
-</div>
-</div>
-</div>
+
+<section class="section subjects" id="subjects">
+ <div class="wrap">
+  <div class="subjectHead"><div><h2>📚 General Studies</h2><p>Choose a subject and start revising.</p></div><span class="count">LIVE NOTES & CHAPTERS</span></div>
+  <div class="subjectGrid">
+   <a class="subject" href="physics/index.html"><div class="subjectIcon">⚛️</div><h3>Physics</h3><p>Concepts, formulas and exam-ready notes.</p><small>8 notes live</small><span class="arrow">›</span></a>
+   <a class="subject" href="economics/index.html"><div class="subjectIcon">📈</div><h3>Economics</h3><p>Topic-wise economics from basics to exams.</p><small>11 notes live</small><span class="arrow">›</span></a>
+   <a class="subject" href="polity/index.html"><div class="subjectIcon">🏛️</div><h3>Polity</h3><p>Indian Constitution and polity concepts.</p><small>16 chapters</small><span class="arrow">›</span></a>
+   <a class="subject" href="biology/index.html"><div class="subjectIcon">🧬</div><h3>Biology</h3><p>Complete topic-wise biology revision.</p><small>11 notes live</small><span class="arrow">›</span></a>
+   <a class="subject" href="history/index.html"><div class="subjectIcon">📜</div><h3>History</h3><p>Ancient, Medieval and Modern History chapters.</p><small>Chapters live</small><span class="arrow">›</span></a>
+   <a class="subject" href="geography/index.html"><div class="subjectIcon">🌍</div><h3>Geography</h3><p>Physical, Indian and human geography chapters.</p><small>Chapters live</small><span class="arrow">›</span></a>
+   <a class="subject" href="chemistry/index.html"><div class="subjectIcon">🧪</div><h3>Chemistry</h3><p>Core chemistry chapters for competitive exams.</p><small>8 chapters</small><span class="arrow">›</span></a>
+   <a class="subject" href="static-gk/index.html"><div class="subjectIcon">🎯</div><h3>Static GK</h3><p>High-yield static GK chapters.</p><small>11 chapters</small><span class="arrow">›</span></a>
+  </div>
+ </div>
 </section>
-<!-- Primary Content Grid: English Practice -->
-<section class="bg-surface pb-section-padding px-gutter">
-<div class="max-w-container-max mx-auto">
-<div class="flex flex-col md:flex-row justify-between items-baseline mb-10 gap-4 pt-12 border-t border-outline-variant/30">
-<div>
-<div class="flex items-center gap-3 mb-2">
-<span class="material-symbols-outlined text-4xl text-blue-500">sort_by_alpha</span>
-<h2 class="text-headline-lg font-headline-lg text-on-surface">English Practice</h2>
-</div>
-<p class="text-body-md font-body-md text-on-surface-variant">PYQs and vocabulary designed for SSC preparation.</p>
-</div>
-<div class="bg-surface-container-high text-on-surface-variant px-4 py-2 rounded-full text-label-bold font-label-bold border border-outline-variant">
-                        12+ RESOURCES
-                    </div>
-</div>
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-<!-- Subject Card 1 -->
-<div class="bg-paper-white p-card-padding rounded-xl shadow-[0px_4px_20px_rgba(0,0,0,0.04)] hover:shadow-[0px_8px_30px_rgba(0,0,0,0.08)] border border-transparent hover:border-secondary-fixed/50 transition-all cursor-pointer flex flex-col justify-between group h-full min-h-[220px]">
-<div>
-<div class="w-12 h-12 bg-amber-100 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-<span class="material-symbols-outlined text-amber-600 icon-fill text-2xl">edit_note</span>
-</div>
-<h3 class="text-headline-md font-headline-md text-on-surface mb-2">SSC CGL 2025</h3>
-<p class="text-body-sm font-body-md text-on-surface-variant">Cloze tests, idioms, errors, spellings and more.</p>
-</div>
-<div class="mt-8 flex items-center justify-between border-t border-outline-variant/30 pt-4">
-<span class="text-label-sm font-label-bold text-secondary uppercase tracking-wider">10 SETS LIVE</span>
-<span class="material-symbols-outlined text-outline group-hover:text-secondary transition-colors">chevron_right</span>
-</div>
-</div>
-<!-- Subject Card 2 -->
-<div class="bg-paper-white p-card-padding rounded-xl shadow-[0px_4px_20px_rgba(0,0,0,0.04)] hover:shadow-[0px_8px_30px_rgba(0,0,0,0.08)] border border-transparent hover:border-secondary-fixed/50 transition-all cursor-pointer flex flex-col justify-between group h-full min-h-[220px]">
-<div>
-<div class="w-12 h-12 bg-teal-100 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-<span class="material-symbols-outlined text-teal-600 icon-fill text-2xl">import_contacts</span>
-</div>
-<h3 class="text-headline-md font-headline-md text-on-surface mb-2">Vocabulary</h3>
-<p class="text-body-sm font-body-md text-on-surface-variant">Phrasal verbs, homonyms and word mastery.</p>
-</div>
-<div class="mt-8 flex items-center justify-between border-t border-outline-variant/30 pt-4">
-<span class="text-label-sm font-label-bold text-secondary uppercase tracking-wider">2 PAGES LIVE</span>
-<span class="material-symbols-outlined text-outline group-hover:text-secondary transition-colors">chevron_right</span>
-</div>
-</div>
-</div>
-</div>
+
+<section class="section latest">
+ <div class="wrap">
+  <div class="sectionHeader"><span class="kicker">Featured resources</span><h2>Latest study picks</h2><p>Jump directly into high-value topics instead of browsing through endless menus.</p></div>
+  <div class="postGrid">
+   <article class="post"><div class="postVisual"><span class="bigIcon">🏛️</span></div><div class="postBody"><div class="postMeta">Polity · Chapter 01</div><h3>Making of Indian Constitution</h3><p>Constituent Assembly, committees, important dates and the process behind the Constitution.</p><a class="postLink" href="polity/01-making-of-indian-constitution.html">Read notes <span class="material-symbols-outlined" style="font-size:15px">arrow_forward</span></a></div></article>
+   <article class="post"><div class="postVisual"><span class="bigIcon">📈</span></div><div class="postBody"><div class="postMeta">Economics · Core Concepts</div><h3>Economics Notes</h3><p>Build your fundamentals with structured notes covering important competitive-exam concepts.</p><a class="postLink" href="economics/index.html">Explore economics <span class="material-symbols-outlined" style="font-size:15px">arrow_forward</span></a></div></article>
+   <article class="post"><div class="postVisual"><span class="bigIcon">🔤</span></div><div class="postBody"><div class="postMeta">English · Practice</div><h3>SSC English Practice</h3><p>Cloze tests, idioms, spellings, error detection, parajumbles and other SSC resources.</p><a class="postLink" href="english/ssc-cgl-2025/index.html">Start practice <span class="material-symbols-outlined" style="font-size:15px">arrow_forward</span></a></div></article>
+  </div>
+ </div>
 </section>
 </main>
-<!-- Footer -->
-<footer class="bg-deep-forest dark:bg-primary-container text-paper-white dark:text-primary-fixed full-width bottom flat no shadows">
-<div class="w-full py-12 px-gutter max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center gap-4 border-t border-outline-variant/10">
-<div class="text-label-bold font-label-bold text-secondary-fixed">
-                © 2024 SUNNY RISE · Your Knowledge Partner
-            </div>
-<div class="text-body-md font-body-md text-outline-variant">
-                Made for focused, distraction-free learning.
-            </div>
-<div class="flex gap-6">
-<a class="text-outline-variant hover:text-secondary-fixed transition-colors text-label-sm font-label-sm" href="#">Privacy Policy</a>
-<a class="text-outline-variant hover:text-secondary-fixed transition-colors text-label-sm font-label-sm" href="#">Terms of Service</a>
-<a class="text-outline-variant hover:text-secondary-fixed transition-colors text-label-sm font-label-sm" href="#">Contact Us</a>
-</div>
-</div>
+
+<footer class="footer">
+ <div class="wrap footerIn">
+  <div><h3>SUNNY <span>RISE</span></h3><p>Your knowledge partner for focused SSC and competitive-exam preparation. Structured notes, practice resources and quick revision — all in one place.</p></div>
+  <div><h4>Navigation</h4><a href="index.html">Home</a><a href="english/index.html">English</a><a href="polity/index.html">Polity</a><a href="history/index.html">History</a><a href="about/index.html">About</a></div>
+  <div><h4>Study Library</h4><a href="search/index.html">Search notes</a><a href="english/vocabulary/index.html">Vocabulary</a><a href="static-gk/index.html">Static GK</a><a href="physics/index.html">Physics</a><a href="biology/index.html">Biology</a></div>
+ </div>
+ <div class="copyright">Copyright © 2026 • SUNNY RISE · Your Knowledge Partner</div>
 </footer>
-<!-- BottomNavBar (Mobile Only - Supressed on Landing Page based on Shared Components Logic, but included in structure as per JSON) -->
-<!-- The mandate states "Automatic Suppression: You MUST exclude the navigation shell if the page intent is: Linear/Transactional". A landing page might be considered top-level destination, but typically we don't show bottom navs on marketing landing pages. However, since the JSON provided it and didn't explicitly ban it for "Landing", I'll include it but hidden on desktop. -->
-<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center py-3 bg-surface dark:bg-surface-dim border-t border-outline-variant shadow-lg">
-<a class="flex flex-col items-center justify-center text-secondary font-bold hover:bg-surface-container-low p-2 rounded-lg transition-all scale-90" href="#">
-<span class="material-symbols-outlined text-2xl icon-fill">home</span>
-<span class="text-label-sm font-label-sm mt-1">Home</span>
-</a>
-<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-low p-2 rounded-lg transition-all" href="#">
-<span class="material-symbols-outlined text-2xl">search</span>
-<span class="text-label-sm font-label-sm mt-1">Search</span>
-</a>
-<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-low p-2 rounded-lg transition-all" href="#">
-<span class="material-symbols-outlined text-2xl">menu_book</span>
-<span class="text-label-sm font-label-sm mt-1">Notes</span>
-</a>
-<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container-low p-2 rounded-lg transition-all" href="#">
-<span class="material-symbols-outlined text-2xl">person</span>
-<span class="text-label-sm font-label-sm mt-1">Profile</span>
-</a>
-</nav>
-</body></html>
+
+<nav class="mobileBottom" aria-label="Mobile navigation"><a href="index.html" aria-label="Home">🏠</a><a href="search/index.html" aria-label="Search">🔍</a><a href="about/index.html" aria-label="About">👤</a></nav>
+<script>
+(function(){
+ const body=document.body,btn=document.getElementById('theme');
+ const saved=localStorage.getItem('sunnyrise-theme')||'light';
+ function apply(mode){body.classList.toggle('dark',mode==='dark');btn.innerHTML='<span class="material-symbols-outlined">'+(mode==='dark'?'light_mode':'dark_mode')+'</span>';localStorage.setItem('sunnyrise-theme',mode)}
+ apply(saved);btn.addEventListener('click',()=>apply(body.classList.contains('dark')?'light':'dark'));
+ const menu=document.getElementById('menu');menu.addEventListener('click',()=>{document.querySelector('.navlinks').style.display=document.querySelector('.navlinks').style.display==='flex'?'none':'flex';document.querySelector('.navlinks').style.position='absolute';document.querySelector('.navlinks').style.top='66px';document.querySelector('.navlinks').style.left='11px';document.querySelector('.navlinks').style.right='11px';document.querySelector('.navlinks').style.padding='15px';document.querySelector('.navlinks').style.background=getComputedStyle(document.body).getPropertyValue('--card');document.querySelector('.navlinks').style.border='1px solid var(--line)';document.querySelector('.navlinks').style.borderRadius='14px';document.querySelector('.navlinks').style.flexDirection='column';document.querySelector('.navlinks').style.alignItems='stretch'});
+})();
+</script>
+</body>
+</html>
