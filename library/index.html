@@ -1,0 +1,28 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>My Library · RISE NOTES</title><link rel="stylesheet" href="../assets/css/study-core.css"><style>
+*{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;background:#f7f3e8;color:#24230d}.wrap{width:min(1100px,calc(100% - 28px));margin:0 auto;padding:28px 0 70px}.hero{background:#38370D;color:#fff;padding:26px;border-radius:20px;box-shadow:0 14px 35px rgba(0,0,0,.12)}.hero h1{margin:0 0 6px;font-size:28px}.hero p{margin:0;color:#ead9ad}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:16px 0}.stat{background:#fff;border:1px solid #ead9ad;border-radius:16px;padding:18px}.stat b{display:block;font-size:28px;color:#38370D}.section{margin-top:18px;background:#fff;border:1px solid #ead9ad;border-radius:18px;padding:20px}.section h2{margin:0 0 14px;font-size:18px}.item{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:13px 0;border-bottom:1px solid #eee6d4}.item:last-child{border-bottom:0}.meta{font-size:12px;color:#756f55;text-transform:capitalize}.item a{color:#38370D;text-decoration:none;font-weight:750}.empty{color:#756f55;padding:8px 0}@media(max-width:700px){.stats{grid-template-columns:1fr}.hero h1{font-size:23px}}
+</style></head><body><main class="wrap"><section class="hero"><h1>📚 My Study Library</h1><p>Your bookmarks and completed chapters are stored on this device.</p></section><section class="stats"><div class="stat"><span>🔖 Bookmarked</span><b id="bookCount">0</b></div><div class="stat"><span>✅ Completed</span><b id="completeCount">0</b></div><div class="stat"><span>📖 Saved Topics</span><b id="totalCount">0</b></div></section><section class="section"><h2>🔖 Bookmarks</h2><div id="bookmarks"></div></section><section class="section"><h2>✅ Completed</h2><div id="completed"></div></section></main><script>
+(function(){
+ const states={bookmark:[],complete:[]}, pages={};
+ for(let i=0;i<localStorage.length;i++){
+   const k=localStorage.key(i), v=localStorage.getItem(k);
+   if(!k) continue;
+   if(k.startsWith('rise-page:')){try{pages[k.slice(10)]=JSON.parse(v)}catch(e){}}
+   if(k.startsWith('rise-bookmark:')&&v==='1')states.bookmark.push(k.slice(14));
+   if(k.startsWith('rise-complete:')&&v==='1')states.complete.push(k.slice(14));
+ }
+ document.getElementById('bookCount').textContent=states.bookmark.length;
+ document.getElementById('completeCount').textContent=states.complete.length;
+ document.getElementById('totalCount').textContent=Object.keys(pages).length;
+ function render(type,id){
+   const el=document.getElementById(id); el.innerHTML='';
+   if(!states[type].length){el.innerHTML='<div class="empty">Nothing here yet. Open a chapter and use the button.</div>';return}
+   states[type].forEach(key=>{
+     const pg=pages[key]||{}; const row=document.createElement('div'); row.className='item';
+     const title=pg.title||key.replace(/-/g,' '), subject=pg.subject||'notes';
+     row.innerHTML='<div><a href="'+(pg.url||'#')+'">'+String(title).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]))+'</a><div class="meta">'+String(subject).replace(/[&<>]/g,'')+'</div></div><span>'+(type==='bookmark'?'🔖':'✓')+'</span>';
+     el.appendChild(row);
+   });
+ }
+ render('bookmark','bookmarks'); render('complete','completed');
+})();
+</script></body></html>
