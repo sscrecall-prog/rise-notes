@@ -107,6 +107,11 @@ body.dark .biology-cover{background:linear-gradient(135deg,#172416,#11170e)}
 body.dark .biology-emoji{filter:drop-shadow(0 8px 10px rgba(0,0,0,.35))}
 @media(max-width:650px){.biology-emoji{font-size:76px}}
 </style>
+<style>
+/* Biology chapter image system — follows the Polity asset architecture. */
+.biology-cover > img { width:100%; height:100%; object-fit:cover; display:block; }
+.biology-cover > .biology-emoji { align-items:center; justify-content:center; width:100%; height:100%; font-size:clamp(3rem,7vw,5rem); }
+</style>
 </head>
 <body>
 <div class="shell">
@@ -156,8 +161,9 @@ body.dark .biology-emoji{filter:drop-shadow(0 8px 10px rgba(0,0,0,.35))}
 <article class="chapter-card" data-complete-key="biology-complete-01-cell" data-title="cell">
   <a class="chapter-link" href="cell_notes.html" aria-label="Open Chapter 01: Cell">
     <div class="image-wrap biology-cover">
-      <div class="biology-emoji" aria-hidden="true">🔬</div>
-      <span class="chapter-number">01</span>
+<img src="assets/biology/01-cell.png" alt="Chapter 01" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+<div class="biology-emoji" aria-hidden="true" style="display:none">🔬</div>
+<span class="chapter-number">01</span>
       <span class="image-bookmark" aria-hidden="true">♡</span>
     </div>
     <div class="chapter-body">
@@ -174,8 +180,9 @@ body.dark .biology-emoji{filter:drop-shadow(0 8px 10px rgba(0,0,0,.35))}
 <article class="chapter-card" data-complete-key="biology-complete-02-plant-tissue" data-title="plant tissue">
   <a class="chapter-link" href="plant_tissue_notes.html" aria-label="Open Chapter 02: Plant Tissue">
     <div class="image-wrap biology-cover">
-      <div class="biology-emoji" aria-hidden="true">🌱</div>
-      <span class="chapter-number">02</span>
+<img src="assets/biology/02-plant-tissue.png" alt="Chapter 02" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+<div class="biology-emoji" aria-hidden="true" style="display:none">🌱</div>
+<span class="chapter-number">02</span>
       <span class="image-bookmark" aria-hidden="true">♡</span>
     </div>
     <div class="chapter-body">
@@ -192,8 +199,9 @@ body.dark .biology-emoji{filter:drop-shadow(0 8px 10px rgba(0,0,0,.35))}
 <article class="chapter-card" data-complete-key="biology-complete-03-animal-tissue" data-title="animal tissue">
   <a class="chapter-link" href="animal_tissue_notes.html" aria-label="Open Chapter 03: Animal Tissue">
     <div class="image-wrap biology-cover">
-      <div class="biology-emoji" aria-hidden="true">🐾</div>
-      <span class="chapter-number">03</span>
+<img src="assets/biology/03-animal-tissue.png" alt="Chapter 03" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+<div class="biology-emoji" aria-hidden="true" style="display:none">🐾</div>
+<span class="chapter-number">03</span>
       <span class="image-bookmark" aria-hidden="true">♡</span>
     </div>
     <div class="chapter-body">
@@ -210,8 +218,9 @@ body.dark .biology-emoji{filter:drop-shadow(0 8px 10px rgba(0,0,0,.35))}
 <article class="chapter-card" data-complete-key="biology-complete-04-plant-animal-tissue" data-title="plant &amp; animal tissue">
   <a class="chapter-link" href="plant_animal_tissue.html" aria-label="Open Chapter 04: Plant &amp; Animal Tissue">
     <div class="image-wrap biology-cover">
-      <div class="biology-emoji" aria-hidden="true">🧫</div>
-      <span class="chapter-number">04</span>
+<img src="assets/biology/04-plant-animal-tissue.png" alt="Chapter 04" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+<div class="biology-emoji" aria-hidden="true" style="display:none">🧫</div>
+<span class="chapter-number">04</span>
       <span class="image-bookmark" aria-hidden="true">♡</span>
     </div>
     <div class="chapter-body">
@@ -228,8 +237,9 @@ body.dark .biology-emoji{filter:drop-shadow(0 8px 10px rgba(0,0,0,.35))}
 <article class="chapter-card" data-complete-key="biology-complete-05-plant-animal-kingdom" data-title="plant &amp; animal kingdom">
   <a class="chapter-link" href="plant_animal_kingdom.html" aria-label="Open Chapter 05: Plant &amp; Animal Kingdom">
     <div class="image-wrap biology-cover">
-      <div class="biology-emoji" aria-hidden="true">🌿</div>
-      <span class="chapter-number">05</span>
+<img src="assets/biology/05-plant-animal-kingdom.png" alt="Chapter 05" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+<div class="biology-emoji" aria-hidden="true" style="display:none">🌿</div>
+<span class="chapter-number">05</span>
       <span class="image-bookmark" aria-hidden="true">♡</span>
     </div>
     <div class="chapter-body">
@@ -246,8 +256,9 @@ body.dark .biology-emoji{filter:drop-shadow(0 8px 10px rgba(0,0,0,.35))}
 <article class="chapter-card" data-complete-key="biology-complete-06-plant-kingdom" data-title="plant kingdom">
   <a class="chapter-link" href="plant_kingdom_notes.html" aria-label="Open Chapter 06: Plant Kingdom">
     <div class="image-wrap biology-cover">
-      <div class="biology-emoji" aria-hidden="true">🌳</div>
-      <span class="chapter-number">06</span>
+<img src="assets/biology/06-plant-kingdom.png" alt="Chapter 06" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+<div class="biology-emoji" aria-hidden="true" style="display:none">🌳</div>
+<span class="chapter-number">06</span>
       <span class="image-bookmark" aria-hidden="true">♡</span>
     </div>
     <div class="chapter-body">
@@ -264,8 +275,9 @@ body.dark .biology-emoji{filter:drop-shadow(0 8px 10px rgba(0,0,0,.35))}
 <article class="chapter-card" data-complete-key="biology-complete-07-animal-kingdom" data-title="animal kingdom">
   <a class="chapter-link" href="animal_kingdom_notes.html" aria-label="Open Chapter 07: Animal Kingdom">
     <div class="image-wrap biology-cover">
-      <div class="biology-emoji" aria-hidden="true">🦁</div>
-      <span class="chapter-number">07</span>
+<img src="assets/biology/07-animal-kingdom.png" alt="Chapter 07" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+<div class="biology-emoji" aria-hidden="true" style="display:none">🦁</div>
+<span class="chapter-number">07</span>
       <span class="image-bookmark" aria-hidden="true">♡</span>
     </div>
     <div class="chapter-body">
@@ -282,8 +294,9 @@ body.dark .biology-emoji{filter:drop-shadow(0 8px 10px rgba(0,0,0,.35))}
 <article class="chapter-card" data-complete-key="biology-complete-08-nervous-system" data-title="nervous system">
   <a class="chapter-link" href="nervous_system_notes.html" aria-label="Open Chapter 08: Nervous System">
     <div class="image-wrap biology-cover">
-      <div class="biology-emoji" aria-hidden="true">🧠</div>
-      <span class="chapter-number">08</span>
+<img src="assets/biology/08-nervous-system.png" alt="Chapter 08" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+<div class="biology-emoji" aria-hidden="true" style="display:none">🧠</div>
+<span class="chapter-number">08</span>
       <span class="image-bookmark" aria-hidden="true">♡</span>
     </div>
     <div class="chapter-body">
@@ -300,8 +313,9 @@ body.dark .biology-emoji{filter:drop-shadow(0 8px 10px rgba(0,0,0,.35))}
 <article class="chapter-card" data-complete-key="biology-complete-09-hormones-plant-movements" data-title="hormones &amp; plant movements">
   <a class="chapter-link" href="hormones_plant_movements_notes.html" aria-label="Open Chapter 09: Hormones &amp; Plant Movements">
     <div class="image-wrap biology-cover">
-      <div class="biology-emoji" aria-hidden="true">🌻</div>
-      <span class="chapter-number">09</span>
+<img src="assets/biology/09-hormones-plant-movements.png" alt="Chapter 09" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+<div class="biology-emoji" aria-hidden="true" style="display:none">🌻</div>
+<span class="chapter-number">09</span>
       <span class="image-bookmark" aria-hidden="true">♡</span>
     </div>
     <div class="chapter-body">
@@ -318,8 +332,9 @@ body.dark .biology-emoji{filter:drop-shadow(0 8px 10px rgba(0,0,0,.35))}
 <article class="chapter-card" data-complete-key="biology-complete-10-reproduction" data-title="reproduction">
   <a class="chapter-link" href="reproduction_notes.html" aria-label="Open Chapter 10: Reproduction">
     <div class="image-wrap biology-cover">
-      <div class="biology-emoji" aria-hidden="true">🧬</div>
-      <span class="chapter-number">10</span>
+<img src="assets/biology/10-reproduction.png" alt="Chapter 10" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+<div class="biology-emoji" aria-hidden="true" style="display:none">🧬</div>
+<span class="chapter-number">10</span>
       <span class="image-bookmark" aria-hidden="true">♡</span>
     </div>
     <div class="chapter-body">
@@ -336,8 +351,9 @@ body.dark .biology-emoji{filter:drop-shadow(0 8px 10px rgba(0,0,0,.35))}
 <article class="chapter-card" data-complete-key="biology-complete-11-digestion-respiration" data-title="digestion &amp; respiration">
   <a class="chapter-link" href="digestion_respiration_notes.html" aria-label="Open Chapter 11: Digestion &amp; Respiration">
     <div class="image-wrap biology-cover">
-      <div class="biology-emoji" aria-hidden="true">🫁</div>
-      <span class="chapter-number">11</span>
+<img src="assets/biology/11-digestion-respiration.png" alt="Chapter 11" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+<div class="biology-emoji" aria-hidden="true" style="display:none">🫁</div>
+<span class="chapter-number">11</span>
       <span class="image-bookmark" aria-hidden="true">♡</span>
     </div>
     <div class="chapter-body">
@@ -354,8 +370,9 @@ body.dark .biology-emoji{filter:drop-shadow(0 8px 10px rgba(0,0,0,.35))}
 <article class="chapter-card" data-complete-key="biology-complete-12-circulatory-excretory-system" data-title="circulatory &amp; excretory system">
   <a class="chapter-link" href="circulatory_excretory_system.html" aria-label="Open Chapter 12: Circulatory &amp; Excretory System">
     <div class="image-wrap biology-cover">
-      <div class="biology-emoji" aria-hidden="true">❤️</div>
-      <span class="chapter-number">12</span>
+<img src="assets/biology/12-circulatory-excretory-system.png" alt="Chapter 12" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+<div class="biology-emoji" aria-hidden="true" style="display:none">❤️</div>
+<span class="chapter-number">12</span>
       <span class="image-bookmark" aria-hidden="true">♡</span>
     </div>
     <div class="chapter-body">
@@ -372,8 +389,9 @@ body.dark .biology-emoji{filter:drop-shadow(0 8px 10px rgba(0,0,0,.35))}
 <article class="chapter-card" data-complete-key="biology-complete-13-diseases" data-title="diseases">
   <a class="chapter-link" href="diseases_notes.html" aria-label="Open Chapter 13: Diseases">
     <div class="image-wrap biology-cover">
-      <div class="biology-emoji" aria-hidden="true">🦠</div>
-      <span class="chapter-number">13</span>
+<img src="assets/biology/13-diseases.png" alt="Chapter 13" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+<div class="biology-emoji" aria-hidden="true" style="display:none">🦠</div>
+<span class="chapter-number">13</span>
       <span class="image-bookmark" aria-hidden="true">♡</span>
     </div>
     <div class="chapter-body">
@@ -390,8 +408,9 @@ body.dark .biology-emoji{filter:drop-shadow(0 8px 10px rgba(0,0,0,.35))}
 <article class="chapter-card" data-complete-key="biology-complete-14-nutrients-nutrition" data-title="nutrients &amp; nutrition">
   <a class="chapter-link" href="nutrition_notes.html" aria-label="Open Chapter 14: Nutrients &amp; Nutrition">
     <div class="image-wrap biology-cover">
-      <div class="biology-emoji" aria-hidden="true">🥗</div>
-      <span class="chapter-number">14</span>
+<img src="assets/biology/14-nutrients-nutrition.png" alt="Chapter 14" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+<div class="biology-emoji" aria-hidden="true" style="display:none">🥗</div>
+<span class="chapter-number">14</span>
       <span class="image-bookmark" aria-hidden="true">♡</span>
     </div>
     <div class="chapter-body">
@@ -408,8 +427,9 @@ body.dark .biology-emoji{filter:drop-shadow(0 8px 10px rgba(0,0,0,.35))}
 <article class="chapter-card" data-complete-key="biology-complete-15-genetics-skeletal-system" data-title="genetics &amp; skeletal system">
   <a class="chapter-link" href="genetics_skeletal_notes.html" aria-label="Open Chapter 15: Genetics &amp; Skeletal System">
     <div class="image-wrap biology-cover">
-      <div class="biology-emoji" aria-hidden="true">🧬</div>
-      <span class="chapter-number">15</span>
+<img src="assets/biology/15-genetics-skeletal-system.png" alt="Chapter 15" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+<div class="biology-emoji" aria-hidden="true" style="display:none">🧬</div>
+<span class="chapter-number">15</span>
       <span class="image-bookmark" aria-hidden="true">♡</span>
     </div>
     <div class="chapter-body">
