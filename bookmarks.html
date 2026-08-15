@@ -1,29 +1,49 @@
 <!doctype html>
-<html lang="en"><head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>RISE NOTES — Saved Notes</title>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>RISE NOTES — My Study Library</title>
 <link rel="stylesheet" href="assets/css/rise-unified.css">
 <link rel="stylesheet" href="assets/css/rise-navigation.css">
-<link rel="stylesheet" href="assets/css/rise-bookmarks.css">
-<link rel="stylesheet" href="assets/css/rise-analytics.css">
-<link rel="stylesheet" href="assets/css/rise-timer.css">
-<link rel="stylesheet" href="assets/css/rise-planner.css">
-<link rel="stylesheet" href="assets/css/rise-revision.css">
-</head><body>
-<main class="container" style="max-width:1000px;margin:auto;padding:28px 18px">
-<h1>Saved Notes</h1>
-<p>Your personal study library. Save chapters while studying and return to them here.</p>
-<section class="rise-saved-library" data-rise-library>
-  <div class="rise-library-tools">
-    <select class="rise-library-filter" data-library-filter><option value="">All subjects</option></select>
-  </div>
-  <div class="rise-library-list" data-library-list></div>
-</section>
+<link rel="stylesheet" href="assets/css/rise-library.css">
+</head>
+<body>
+<main class="rise-library-page" data-rise-library>
+  <section class="rise-library-hero">
+    <div>
+      <div class="rise-library-eyebrow">Personal Study Space</div>
+      <h1>My Study Library</h1>
+      <p class="rise-library-sub">Your saved chapters, revision topics and important notes — organized in one place.</p>
+    </div>
+  </section>
+
+  <section class="rise-library-stats">
+    <div class="rise-library-stat"><strong data-library-count>0</strong><span>Saved Chapters</span></div>
+    <div class="rise-library-stat"><strong data-library-subject-count>0</strong><span>Subjects</span></div>
+    <div class="rise-library-stat"><strong data-library-due>0</strong><span>Due for Revision</span></div>
+  </section>
+
+  <section class="rise-library-panel">
+    <div class="rise-library-panel-head">
+      <div>
+        <h2>Saved Chapters</h2>
+        <div class="rise-library-muted">Quick access to the material you saved.</div>
+      </div>
+    </div>
+    <input class="rise-library-search" data-library-search type="search" placeholder="Search your library…" autocomplete="off" aria-label="Search your saved library">
+    <div class="rise-library-filters" data-library-filters></div>
+  </section>
+
+  <section class="rise-library-panel">
+    <div class="rise-library-grid" data-library-grid></div>
+    <div class="rise-library-empty" data-library-empty style="display:none">
+      <strong>Your library is empty</strong>
+      Open a chapter and press <b>☆ Save</b> to add it here.
+    </div>
+  </section>
 </main>
 <script src="assets/js/rise-navigation.js"></script>
-<script src="assets/js/rise-bookmarks.js"></script>
-<script src="assets/js/rise-analytics.js"></script>
-<script src="assets/js/rise-timer.js"></script>
-<script src="assets/js/rise-planner.js"></script>
-<script src="assets/js/rise-revision.js"></script>
-</body></html>
+<script src="assets/js/rise-library.js"></script>
+</body>
+</html>
