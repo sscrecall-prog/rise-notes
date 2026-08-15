@@ -1,6 +1,32 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>My Library · RISE NOTES</title><link rel="stylesheet" href="../assets/css/study-core.css"><style>
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1.0" name="viewport"/><title>My Library · RISE NOTES</title><link href="../assets/css/study-core.css" rel="stylesheet"/><style>
 *{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;background:#f7f3e8;color:#24230d}.wrap{width:min(1100px,calc(100% - 28px));margin:0 auto;padding:28px 0 70px}.hero{background:#38370D;color:#fff;padding:26px;border-radius:20px;box-shadow:0 14px 35px rgba(0,0,0,.12)}.hero h1{margin:0 0 6px;font-size:28px}.hero p{margin:0;color:#ead9ad}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:16px 0}.stat{background:#fff;border:1px solid #ead9ad;border-radius:16px;padding:18px}.stat b{display:block;font-size:28px;color:#38370D}.section{margin-top:18px;background:#fff;border:1px solid #ead9ad;border-radius:18px;padding:20px}.section h2{margin:0 0 14px;font-size:18px}.item{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:13px 0;border-bottom:1px solid #eee6d4}.item:last-child{border-bottom:0}.meta{font-size:12px;color:#756f55;text-transform:capitalize}.item a{color:#38370D;text-decoration:none;font-weight:750}.empty{color:#756f55;padding:8px 0}@media(max-width:700px){.stats{grid-template-columns:1fr}.hero h1{font-size:23px}}
-</style></head><body><main class="wrap"><section class="hero"><h1>📚 My Study Library</h1><p>Your bookmarks and completed chapters are stored on this device.</p></section><section class="stats"><div class="stat"><span>🔖 Bookmarked</span><b id="bookCount">0</b></div><div class="stat"><span>✅ Completed</span><b id="completeCount">0</b></div><div class="stat"><span>📖 Saved Topics</span><b id="totalCount">0</b></div></section><section class="section"><h2>🔖 Bookmarks</h2><div id="bookmarks"></div></section><section class="section"><h2>✅ Completed</h2><div id="completed"></div></section></main><script>
+</style><link href="../assets/css/rise-unified.css" rel="stylesheet"/><link rel="stylesheet" href="../assets/css/rise-progress.css">
+<link rel="stylesheet" href="../assets/css/rise-navigation.css">
+<link rel="stylesheet" href="../assets/css/rise-search.css">
+<link rel="stylesheet" href="../assets/css/rise-bookmarks.css">
+<link rel="stylesheet" href="../assets/css/rise-analytics.css">
+<link rel="stylesheet" href="../assets/css/rise-timer.css">
+<link rel="stylesheet" href="../assets/css/rise-planner.css">
+<link rel="stylesheet" href="../assets/css/rise-revision.css">
+</head><body><main class="wrap"><section class="hero"><h1>📚 My Study Library</h1>
+
+<section class="rise-timer" data-rise-timer aria-label="Study timer">
+  <div class="rise-timer-head">
+    <div>
+      <div class="rise-timer-title">Study Timer</div>
+      <div class="rise-timer-status" data-timer-status>Session paused</div>
+    </div>
+    <div class="rise-timer-clock" data-timer-clock>00:00:00</div>
+  </div>
+  <div class="rise-timer-controls">
+    <button class="rise-timer-btn primary" data-timer-start>Start</button>
+    <button class="rise-timer-btn" data-timer-pause>Pause</button>
+    <button class="rise-timer-btn" data-timer-finish>Finish & Save</button>
+    <button class="rise-timer-btn" data-timer-reset>Reset</button>
+  </div>
+</section>
+<p>Your bookmarks and completed chapters are stored on this device.</p></section><section class="stats"><div class="stat"><span>🔖 Bookmarked</span><b id="bookCount">0</b></div><div class="stat"><span>✅ Completed</span><b id="completeCount">0</b></div><div class="stat"><span>📖 Saved Topics</span><b id="totalCount">0</b></div></section><section class="section"><h2>🔖 Bookmarks</h2><div id="bookmarks"></div></section><section class="section"><h2>✅ Completed</h2><div id="completed"></div></section></main><script>
 (function(){
  const states={bookmark:[],complete:[]}, pages={};
  for(let i=0;i<localStorage.length;i++){
@@ -25,4 +51,13 @@
  }
  render('bookmark','bookmarks'); render('complete','completed');
 })();
-</script></body></html>
+</script><script src="../assets/js/rise-progress.js"></script>
+<script src="../assets/js/rise-navigation.js"></script>
+<script src="../assets/js/rise-search-index.js"></script>
+<script src="../assets/js/rise-search.js"></script>
+<script src="../assets/js/rise-bookmarks.js"></script>
+<script src="../assets/js/rise-analytics.js"></script>
+<script src="../assets/js/rise-timer.js"></script>
+<script src="../assets/js/rise-planner.js"></script>
+<script src="../assets/js/rise-revision.js"></script>
+</body></html>

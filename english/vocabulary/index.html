@@ -1,9 +1,10 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#38370D">
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="#38370D" name="theme-color"/>
 <title>Sunny Rise AI Vocabulary Lab — Free Competitive Exam Vocabulary</title>
 <style>
 :root{--cream:#FAEED9;--gold:#E1A837;--olive:#8D7A02;--ink:#38370D;--paper:#fffdf8;--muted:#756f55;--line:#ead9ad;--good:#2f7d32;--bad:#b23a2f;--shadow:0 14px 35px rgba(56,55,13,.10)}
@@ -43,49 +44,64 @@ body.dark{--cream:#08111d;--paper:#0f1b29;--ink:#edf2f7;--muted:#9baabc;--line:#
 @media(max-width:850px){.heroGrid{grid-template-columns:1fr}.stats{display:none}.dashboard{grid-template-columns:1fr 1fr}.words{grid-template-columns:1fr}}
 @media(max-width:560px){.wrap{width:min(100% - 20px,1160px)}.hero{padding:40px 0 55px}.hero h1{font-size:42px}.search{display:grid;background:transparent;padding:0;gap:7px}.search input{padding:14px}.dashboard{gap:8px}.dash{padding:12px}.dash b{font-size:20px}.alpha button{width:35px;height:35px}.sectionHead{align-items:start;flex-direction:column}.options{grid-template-columns:1fr}.navBtns .home{display:none}}
 </style>
+<link href="../../assets/css/rise-unified.css" rel="stylesheet"/><link rel="stylesheet" href="../../assets/css/rise-progress.css">
+<link rel="stylesheet" href="../../assets/css/rise-navigation.css">
+<link rel="stylesheet" href="../../assets/css/rise-search.css">
+<link rel="stylesheet" href="../../assets/css/rise-bookmarks.css">
+<link rel="stylesheet" href="../../assets/css/rise-analytics.css">
+<link rel="stylesheet" href="../../assets/css/rise-timer.css">
+<link rel="stylesheet" href="../../assets/css/rise-planner.css">
+<link rel="stylesheet" href="../../assets/css/rise-revision.css">
 </head>
 <body>
 <nav class="nav"><div class="wrap navin"><a class="brand" href="../../index.html">SUNNY <span>RISE</span></a><div class="navBtns"><a class="btn ghost home" href="../../index.html">← Home</a><button class="btn ghost" id="theme">🌙 <span>Dark</span></button></div></div></nav>
+<header class="hero"><div class="wrap heroGrid"><div><span class="eyebrow">🧠 FREE • SSC • BANKING • RAILWAY • DEFENCE</span><h1>Vocabulary that you <span>actually remember.</span></h1>
 
-<header class="hero"><div class="wrap heroGrid"><div><span class="eyebrow">🧠 FREE • SSC • BANKING • RAILWAY • DEFENCE</span><h1>Vocabulary that you <span>actually remember.</span></h1><p>Learn high-value competitive-exam words with Hindi meanings, pronunciation, examples, memory tricks, active recall and browser-based progress tracking — no paid AI API required.</p><div class="search"><input id="search" placeholder="Search a word, meaning or synonym…"><button class="btn gold" onclick="runSearch()">Search</button></div></div><aside class="stats"><h3>🎯 Learning System</h3><div class="stat"><span>Vocabulary access</span><b>FREE</b></div><div class="stat"><span>Current library</span><b id="libraryCount">30</b></div><div class="stat"><span>Active letters</span><b>A–C</b></div><div class="stat"><span>Progress storage</span><b>LOCAL</b></div></aside></div></header>
-
-<main class="main"><div class="wrap">
-
-
-
-<section class="section" id="library">
-  <div class="sectionHead">
-    <div><h2>📚 Vocabulary Library</h2><p>Choose a learning module. Your existing Sunny Rise resources stay connected here.</p></div>
+<section class="rise-timer" data-rise-timer aria-label="Study timer">
+  <div class="rise-timer-head">
+    <div>
+      <div class="rise-timer-title">Study Timer</div>
+      <div class="rise-timer-status" data-timer-status>Session paused</div>
+    </div>
+    <div class="rise-timer-clock" data-timer-clock>00:00:00</div>
   </div>
-  <div class="libraryGrid">
-    <button class="libraryCard libraryToggle" id="azToggle" type="button" onclick="toggleAZ()">
-      <div class="libraryIcon">🔤</div><h3>A–Z Word Mastery</h3><p>Meanings, Hindi, synonyms, examples, memory tricks and recall.</p><span class="libraryTag">OPEN A–Z EXPLORER ↓</span>
-    </button>
-    <a class="libraryCard" href="phrasal-verb/">
-      <div class="libraryIcon">🚀</div><h3>Phrasal Verbs</h3><p>Practice the existing Sunny Rise phrasal verb collection.</p><span class="libraryTag">OPEN RESOURCE →</span>
-    </a>
-    <a class="libraryCard" href="homonyms/">
-      <div class="libraryIcon">🔡</div><h3>Homonyms</h3><p>Master commonly confused same-sounding or same-form words.</p><span class="libraryTag">OPEN RESOURCE →</span>
-    </a>
-    <div class="libraryCard coming"><div class="libraryIcon">↔️</div><h3>Synonyms & Antonyms</h3><p>Exam-focused word relationships and rapid practice.</p><span class="libraryTag">COMING SOON</span></div>
-    <div class="libraryCard coming"><div class="libraryIcon">1️⃣</div><h3>One Word Substitution</h3><p>High-yield substitutions for competitive examinations.</p><span class="libraryTag">COMING SOON</span></div>
-    <div class="libraryCard coming"><div class="libraryIcon">💬</div><h3>Idioms & Phrases</h3><p>Meaning, usage and exam-oriented recall practice.</p><span class="libraryTag">COMING SOON</span></div>
-    <div class="libraryCard coming"><div class="libraryIcon">⚠️</div><h3>Confusing Words</h3><p>Learn differences between commonly mixed-up English words.</p><span class="libraryTag">COMING SOON</span></div>
-    <div class="libraryCard coming"><div class="libraryIcon">🧩</div><h3>Root Words</h3><p>Build multiple vocabulary words from common roots.</p><span class="libraryTag">COMING SOON</span></div>
+  <div class="rise-timer-controls">
+    <button class="rise-timer-btn primary" data-timer-start>Start</button>
+    <button class="rise-timer-btn" data-timer-pause>Pause</button>
+    <button class="rise-timer-btn" data-timer-finish>Finish & Save</button>
+    <button class="rise-timer-btn" data-timer-reset>Reset</button>
   </div>
 </section>
-
+<p>Learn high-value competitive-exam words with Hindi meanings, pronunciation, examples, memory tricks, active recall and browser-based progress tracking — no paid AI API required.</p><div class="search"><input id="search" placeholder="Search a word, meaning or synonym…"/><button class="btn gold" onclick="runSearch()">Search</button></div></div><aside class="stats"><h3>🎯 Learning System</h3><div class="stat"><span>Vocabulary access</span><b>FREE</b></div><div class="stat"><span>Current library</span><b id="libraryCount">30</b></div><div class="stat"><span>Active letters</span><b>A–C</b></div><div class="stat"><span>Progress storage</span><b>LOCAL</b></div></aside></div></header>
+<main class="main"><div class="wrap">
+<section class="section" id="library">
+<div class="sectionHead">
+<div><h2>📚 Vocabulary Library</h2><p>Choose a learning module. Your existing Sunny Rise resources stay connected here.</p></div>
+</div>
+<div class="libraryGrid">
+<button class="libraryCard libraryToggle" id="azToggle" onclick="toggleAZ()" type="button">
+<div class="libraryIcon">🔤</div><h3>A–Z Word Mastery</h3><p>Meanings, Hindi, synonyms, examples, memory tricks and recall.</p><span class="libraryTag">OPEN A–Z EXPLORER ↓</span>
+</button>
+<a class="libraryCard" href="phrasal-verb/">
+<div class="libraryIcon">🚀</div><h3>Phrasal Verbs</h3><p>Practice the existing Sunny Rise phrasal verb collection.</p><span class="libraryTag">OPEN RESOURCE →</span>
+</a>
+<a class="libraryCard" href="homonyms/">
+<div class="libraryIcon">🔡</div><h3>Homonyms</h3><p>Master commonly confused same-sounding or same-form words.</p><span class="libraryTag">OPEN RESOURCE →</span>
+</a>
+<div class="libraryCard coming"><div class="libraryIcon">↔️</div><h3>Synonyms &amp; Antonyms</h3><p>Exam-focused word relationships and rapid practice.</p><span class="libraryTag">COMING SOON</span></div>
+<div class="libraryCard coming"><div class="libraryIcon">1️⃣</div><h3>One Word Substitution</h3><p>High-yield substitutions for competitive examinations.</p><span class="libraryTag">COMING SOON</span></div>
+<div class="libraryCard coming"><div class="libraryIcon">💬</div><h3>Idioms &amp; Phrases</h3><p>Meaning, usage and exam-oriented recall practice.</p><span class="libraryTag">COMING SOON</span></div>
+<div class="libraryCard coming"><div class="libraryIcon">⚠️</div><h3>Confusing Words</h3><p>Learn differences between commonly mixed-up English words.</p><span class="libraryTag">COMING SOON</span></div>
+<div class="libraryCard coming"><div class="libraryIcon">🧩</div><h3>Root Words</h3><p>Build multiple vocabulary words from common roots.</p><span class="libraryTag">COMING SOON</span></div>
+</div>
+</section>
 <section class="section azPanel" id="az">
 <section class="dashboard azDashboard"><div class="dash"><small>📚 Learned</small><b id="learnedCount">0</b></div><div class="dash"><small>❤️ Saved</small><b id="savedCount">0</b></div><div class="dash"><small>🏆 Mastered</small><b id="masteredCount">0</b></div><div class="dash"><small>🔥 Streak</small><b id="streakCount">1 day</b></div></section>
 <div class="sectionHead"><div><h2>🔤 A–Z Vocabulary Explorer</h2><p>Start with A, B and C. D–Z are ready for future data expansion.</p></div></div><div class="alpha" id="alpha"></div><div class="toolbar"><button class="pill active" data-filter="all">All Words</button><button class="pill" data-filter="saved">❤️ Saved</button><button class="pill" data-filter="learned">🧠 Learned</button><button class="pill" data-filter="weak">⚠️ Weak</button></div><div class="words" id="words"></div>
 <section class="section"><div class="sectionHead"><div><h2>⚡ Quick Recall</h2><p>A random question from the words currently available.</p></div></div><div class="quiz"><h3 id="qWord">Loading…</h3><p id="qText">Choose the correct meaning.</p><div class="options" id="options"></div><div class="feedback" id="feedback"></div><button class="btn gold" onclick="newQuiz()">Next Question →</button></div></section>
 </section>
-
-
 </div></main>
-
 <footer class="footer"><div class="wrap foot"><div><b>SUNNY RISE</b> · AI Vocabulary Lab</div><div>Learn → Recall → Revise → Master</div></div></footer>
-
 <script>
 const DATA=[
 {w:"Abandon",p:"/əˈbændən/",pos:"Verb",hi:"त्याग देना, छोड़ देना",m:"To leave completely or give up.",syn:"Desert, Forsake, Relinquish",ant:"Retain, Continue",ex:"The soldiers were ordered to abandon the post.",tr:"A band ON छोड़ दिया → abandon = leave."},
@@ -153,4 +169,13 @@ function toggleAZ(){
 }
 updateStats();render();newQuiz();
 </script>
+<script src="../../assets/js/rise-progress.js"></script>
+<script src="../../assets/js/rise-navigation.js"></script>
+<script src="../../assets/js/rise-search-index.js"></script>
+<script src="../../assets/js/rise-search.js"></script>
+<script src="../../assets/js/rise-bookmarks.js"></script>
+<script src="../../assets/js/rise-analytics.js"></script>
+<script src="../../assets/js/rise-timer.js"></script>
+<script src="../../assets/js/rise-planner.js"></script>
+<script src="../../assets/js/rise-revision.js"></script>
 </body></html>

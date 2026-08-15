@@ -1,319 +1,35 @@
-<!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#38370D"><title>Sunny Rise — History</title><style>
-:root{--cream:#FAEED9;--gold:#E1A837;--olive:#8D7A02;--ink:#38370D;--paper:#fffdf8;--muted:#756f55;--line:#ead9ad;--shadow:0 14px 35px rgba(56,55,13,.10)}
-*{box-sizing:border-box}html{scroll-behavior:smooth}
-body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;background:var(--cream);color:var(--ink);line-height:1.5}
-.wrap{width:min(1120px,calc(100% - 32px));margin:auto}
-.nav{position:sticky;top:0;z-index:20;background:rgba(56,55,13,.94);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.08)}
-.navin{height:72px;display:flex;align-items:center;justify-content:space-between;gap:16px}
-.brand{display:flex;align-items:center;gap:11px;color:white;text-decoration:none}.brand strong{font-size:17px;letter-spacing:.7px}.brand strong span{color:var(--gold)}
-.back{color:var(--gold);text-decoration:none;font-size:13px;font-weight:750;border:1px solid rgba(225,168,55,.55);padding:9px 12px;border-radius:11px}
-.hero{background:var(--ink);color:white}.heroIn{padding:52px 0 45px}
-.eyebrow{display:inline-flex;gap:7px;align-items:center;padding:7px 11px;border:1px solid rgba(225,168,55,.4);border-radius:99px;color:#f1cf77;background:rgba(225,168,55,.08);font-size:12px;font-weight:750}
-h1{font-size:clamp(38px,6vw,60px);line-height:1.05;letter-spacing:-1.8px;margin:17px 0 9px}h1 span{color:var(--gold)}
-.hero p{max-width:700px;color:#d9d5c1;margin:0;font-size:15px}.stats{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}
-.stat{padding:8px 12px;border:1px solid rgba(255,255,255,.12);border-radius:99px;color:#ddd8c7;font-size:11px}
-.main{padding:34px 0 70px}.section{margin-top:34px}.sectionHead{display:flex;justify-content:space-between;align-items:end;gap:15px;margin-bottom:15px}
-.sectionHead h2{margin:0;font-size:27px;letter-spacing:-.5px}.sectionHead p{margin:4px 0 0;color:var(--muted);font-size:13px}
-.count{font-size:11px;font-weight:800;color:var(--olive);background:#f5e4b8;border:1px solid #dfc274;border-radius:99px;padding:6px 10px;white-space:nowrap}
-.chapters{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.chapter{display:flex;gap:13px;align-items:center;background:var(--paper);border:1px solid var(--line);border-radius:15px;padding:15px;min-height:84px;box-shadow:var(--shadow)}
-.num{width:36px;height:36px;flex:0 0 36px;border-radius:10px;background:#f8e9c5;display:grid;place-items:center;font-size:11px;font-weight:850;color:var(--olive)}
-.chapter h3{font-size:14px;margin:0 0 4px;line-height:1.3}.tag{font-size:9px;font-weight:850;letter-spacing:.5px;color:var(--olive)}
-.footer{background:#2f2f0c;color:#d7d1b8;padding:30px 0;font-size:12px}.foot{display:flex;justify-content:space-between;gap:20px;align-items:center}.foot b{color:var(--gold)}
-body.dark{--cream:#08111d;--paper:#0f1b29;--ink:#edf2f7;--muted:#9baabc;--line:#26394d;--shadow:0 15px 38px rgba(0,0,0,.25)}
-body.dark .hero,body.dark .nav{background:#030a13}body.dark .num{background:#2a2917}body.dark .count{background:#272515;border-color:#65582a;color:#e8c45d}
-@media(max-width:850px){.chapters{grid-template-columns:repeat(2,1fr)}}@media(max-width:560px){.wrap{width:min(100% - 22px,1120px)}.navin{height:64px}.heroIn{padding:42px 0 38px}h1{font-size:42px}.chapters{grid-template-columns:1fr 1fr;gap:9px}.chapter{padding:12px;min-height:94px}.chapter h3{font-size:12px}.sectionHead h2{font-size:22px}.foot{display:block}.foot div+div{margin-top:8px}}
-#themeToggle{font-family:inherit;background:transparent;cursor:pointer}
-body.dark #themeToggle{color:#e8c45d;border-color:#806f32}
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#17320c"><title>History Study Dashboard | Sunny Rise</title><link rel="stylesheet" href="../assets/css/study-subject.css"><link rel="stylesheet" href="../assets/css/rise-unified.css"><link rel="stylesheet" href="../assets/css/rise-progress.css">
+<link rel="stylesheet" href="../assets/css/rise-navigation.css">
+<link rel="stylesheet" href="../assets/css/rise-search.css">
+<link rel="stylesheet" href="../assets/css/rise-bookmarks.css">
+<link rel="stylesheet" href="../assets/css/rise-analytics.css">
+<link rel="stylesheet" href="../assets/css/rise-timer.css">
+<link rel="stylesheet" href="../assets/css/rise-planner.css">
+<link rel="stylesheet" href="../assets/css/rise-revision.css">
+</head><body><div class="study-shell"><nav class="topbar"><a class="brand" href="../index.html"><img src="../assets/sunnyrise-profile.jpg" alt="Sunny Rise"><span>SUNNY RISE</span></a><div class="navlinks"><a href="../index.html">⌂ Home</a><a href="../search/index.html">⌕ Search</a><a href="../library/index.html">▣ Library</a></div><button id="theme" class="theme">☾</button></nav><header class="hero"><div><a class="back" href="../index.html">← All Subjects</a><div class="subject-row"><div class="subject-icon">📜</div><div><div class="kicker">STUDY DASHBOARD</div><h1>History</h1>
 
-.tools{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(250px,1fr);gap:12px}
-.toolrow{display:flex;gap:8px}.search{width:100%;border:1px solid rgba(255,255,255,.18);border-radius:12px;padding:12px 14px;background:rgba(255,255,255,.08);color:#fff;outline:none;font:inherit}.search::placeholder{color:#bcb8a8}
-.toolbtn{border:1px solid rgba(255,255,255,.18);border-radius:12px;padding:0 14px;background:rgba(255,255,255,.08);color:#fff;cursor:pointer;font-weight:700}
-.progressBox{border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:11px 13px;background:rgba(255,255,255,.06);color:#eee}.progressBox>div:first-child{display:flex;justify-content:space-between;font-size:12px}.progressBox small{color:#bbb7a8}.progressTrack{height:7px;background:rgba(255,255,255,.12);border-radius:99px;overflow:hidden;margin:8px 0 5px}.progressTrack span{display:block;height:100%;width:0;background:var(--gold);border-radius:99px;transition:width .25s}
-.chapterBody{min-width:0;flex:1}.chapterActions{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}.action{border:1px solid var(--line);background:transparent;color:var(--olive);border-radius:8px;padding:5px 8px;font-size:10px;font-weight:800;cursor:pointer}.action:hover{background:#f7ebca}.chapter.completed{border-color:#9b8627;background:#fffaf0}.chapter.completed .completeBtn{background:#eee2b9}.chapter.bookmarked .bookmarkBtn{background:#f5e4b8}
-.noResults{grid-column:1/-1;padding:24px;text-align:center;color:var(--muted);border:1px dashed var(--line);border-radius:15px;background:var(--paper)}
-body.dark .search,body.dark .toolbtn{background:#0f1b29;border-color:#31465b;color:#edf2f7}body.dark .search::placeholder{color:#8795a4}body.dark .progressBox{background:#0f1b29;border-color:#26394d}.dark .action,body.dark .action{color:#e8c45d}.dark .chapter.completed,body.dark .chapter.completed{background:#171b1b}.dark .action:hover,body.dark .action:hover{background:#292817}.dark .chapter.bookmarked,body.dark .chapter.bookmarked{background:#1c1b14}
-@media(max-width:760px){.tools{grid-template-columns:1fr}.toolrow{width:100%}}
-@media(max-width:560px){.chapterActions{display:grid;grid-template-columns:1fr 1fr}.action{font-size:9px;padding:6px 4px}}
-
-.chapterActions{display:flex;gap:7px;flex-wrap:wrap;margin-top:9px}
-.notesLink,.action{display:inline-flex;align-items:center;border:1px solid var(--line);background:transparent;color:var(--olive);border-radius:8px;padding:6px 9px;font-size:10px;font-weight:800;text-decoration:none;cursor:pointer}
-.notesLink:hover,.action:hover{background:#f7ebca}
-body.dark .notesLink,body.dark .action{color:#e8c45d}
-</style></head>
-<body>
-<nav class="nav"><div class="wrap navin"><a class="brand" href="../index.html"><strong>SUNNY <span>RISE</span></strong></a><div style="display:flex;gap:8px;align-items:center">
-<a class="back" href="../index.html">⌂ Home</a>
-<button id="themeToggle" class="back" type="button" aria-label="Toggle dark mode">◐ Dark</button>
-</div></div></nav>
-<header class="hero"><div class="wrap heroIn"><div class="eyebrow">📜 HISTORY</div><h1>History <span>Chapters</span></h1><p>History chapters organized into Ancient, Medieval and Modern History.</p>
-<div class="stats"><span class="stat">27 Chapters</span><span class="stat">Notes coming soon</span></div><div class="tools wrap" style="margin-top:22px">
-<div class="toolrow">
-<input id="subjectSearch" class="search" type="search" placeholder="Search chapters..." aria-label="Search chapters">
-<button id="clearSearch" class="toolbtn" type="button">Clear</button>
-</div>
-<div class="progressBox">
-<div><strong>My Progress</strong><span id="progressText">0%</span></div>
-<div class="progressTrack"><span id="progressBar"></span></div>
-<small><span id="completedCount">0</span> completed · <span id="bookmarkCount">0</span> bookmarks</small>
-</div>
-</div></div></header>
-<main class="main"><div class="wrap"><section class="section"><div class="sectionHead"><div><h2>Ancient History</h2><p>12 chapters</p></div><span class="count">12 CHAPTERS</span></div><div class="chapters"><article class="chapter" data-chapter-key="history-1" data-title="STONE AGE">
-<div class="num">01</div>
-<div class="chapterBody"><h3>STONE AGE</h3><span class="tag">NOTES AVAILABLE</span>
-<div class="chapterActions">
-<button class="action completeBtn" type="button">✓ Mark Complete</button>
-<button class="action bookmarkBtn" type="button">☆ Bookmark</button>
-<a class="action notesLink" href="notes/history/1/notes.html">📖 View Notes</a>
-</div></div></article><article class="chapter" data-chapter-key="history-2" data-title="INDUS VALLEY CIVILIZATION">
-<div class="num">02</div>
-<div class="chapterBody"><h3>INDUS VALLEY CIVILIZATION</h3><span class="tag">NOTES COMING SOON</span>
-<div class="chapterActions">
-<button class="action completeBtn" type="button">✓ Mark Complete</button>
-<button class="action bookmarkBtn" type="button">☆ Bookmark</button>
-</div></div></article><article class="chapter" data-chapter-key="history-3" data-title="VEDIC AGE">
-<div class="num">03</div>
-<div class="chapterBody"><h3>VEDIC AGE</h3><span class="tag">NOTES COMING SOON</span>
-<div class="chapterActions">
-<button class="action completeBtn" type="button">✓ Mark Complete</button>
-<button class="action bookmarkBtn" type="button">☆ Bookmark</button>
-</div></div></article><article class="chapter" data-chapter-key="history-4" data-title="BUDDHISM">
-<div class="num">04</div>
-<div class="chapterBody"><h3>BUDDHISM</h3><span class="tag">NOTES COMING SOON</span>
-<div class="chapterActions">
-<button class="action completeBtn" type="button">✓ Mark Complete</button>
-<button class="action bookmarkBtn" type="button">☆ Bookmark</button>
-</div></div></article><article class="chapter" data-chapter-key="history-5" data-title="JAINISM">
-<div class="num">05</div>
-<div class="chapterBody"><h3>JAINISM</h3><span class="tag">NOTES COMING SOON</span>
-<div class="chapterActions">
-<button class="action completeBtn" type="button">✓ Mark Complete</button>
-<button class="action bookmarkBtn" type="button">☆ Bookmark</button>
-</div></div></article><article class="chapter" data-chapter-key="history-6" data-title="MAHAJANPADAS AND MAGADHA">
-<div class="num">06</div>
-<div class="chapterBody"><h3>MAHAJANPADAS AND MAGADHA</h3><span class="tag">NOTES COMING SOON</span>
-<div class="chapterActions">
-<button class="action completeBtn" type="button">✓ Mark Complete</button>
-<button class="action bookmarkBtn" type="button">☆ Bookmark</button>
-</div></div></article><article class="chapter" data-chapter-key="history-7" data-title="MAURYAN EMPIRE">
-<div class="num">07</div>
-<div class="chapterBody"><h3>MAURYAN EMPIRE</h3><span class="tag">NOTES COMING SOON</span>
-<div class="chapterActions">
-<button class="action completeBtn" type="button">✓ Mark Complete</button>
-<button class="action bookmarkBtn" type="button">☆ Bookmark</button>
-</div></div></article><article class="chapter" data-chapter-key="history-8" data-title="POST MAURYAN EMPIRE">
-<div class="num">08</div>
-<div class="chapterBody"><h3>POST MAURYAN EMPIRE</h3><span class="tag">NOTES COMING SOON</span>
-<div class="chapterActions">
-<button class="action completeBtn" type="button">✓ Mark Complete</button>
-<button class="action bookmarkBtn" type="button">☆ Bookmark</button>
-</div></div></article><article class="chapter" data-chapter-key="history-9" data-title="SANGAM AGE">
-<div class="num">09</div>
-<div class="chapterBody"><h3>SANGAM AGE</h3><span class="tag">NOTES COMING SOON</span>
-<div class="chapterActions">
-<button class="action completeBtn" type="button">✓ Mark Complete</button>
-<button class="action bookmarkBtn" type="button">☆ Bookmark</button>
-</div></div></article><article class="chapter" data-chapter-key="history-10" data-title="GUPTA ERA">
-<div class="num">10</div>
-<div class="chapterBody"><h3>GUPTA ERA</h3><span class="tag">NOTES COMING SOON</span>
-<div class="chapterActions">
-<button class="action completeBtn" type="button">✓ Mark Complete</button>
-<button class="action bookmarkBtn" type="button">☆ Bookmark</button>
-</div></div></article><article class="chapter" data-chapter-key="history-11" data-title="POST GUPTA ERA">
-<div class="num">11</div>
-<div class="chapterBody"><h3>POST GUPTA ERA</h3><span class="tag">NOTES COMING SOON</span>
-<div class="chapterActions">
-<button class="action completeBtn" type="button">✓ Mark Complete</button>
-<button class="action bookmarkBtn" type="button">☆ Bookmark</button>
-</div></div></article><article class="chapter" data-chapter-key="history-12" data-title="CHOLA AND TRIPARTITE STRUGGLE">
-<div class="num">12</div>
-<div class="chapterBody"><h3>CHOLA AND TRIPARTITE STRUGGLE</h3><span class="tag">NOTES COMING SOON</span>
-<div class="chapterActions">
-<button class="action completeBtn" type="button">✓ Mark Complete</button>
-<button class="action bookmarkBtn" type="button">☆ Bookmark</button>
-</div></div></article></div></section><section class="section"><div class="sectionHead"><div><h2>Medieval History</h2><p>6 chapters</p></div><span class="count">6 CHAPTERS</span></div><div class="chapters"><article class="chapter" data-chapter-key="history-1" data-title="INVASION OF ISLAM">
-<div class="num">01</div>
-<div class="chapterBody"><h3>INVASION OF ISLAM</h3><span class="tag">NOTES COMING SOON</span>
-<div class="chapterActions">
-<button class="action completeBtn" type="button">✓ Mark Complete</button>
-<button class="action bookmarkBtn" type="button">☆ Bookmark</button>
-</div></div></article><article class="chapter" data-chapter-key="history-2" data-title="DELHI SULTANATE">
-<div class="num">02</div>
-<div class="chapterBody"><h3>DELHI SULTANATE</h3><span class="tag">NOTES COMING SOON</span>
-<div class="chapterActions">
-<button class="action completeBtn" type="button">✓ Mark Complete</button>
-<button class="action bookmarkBtn" type="button">☆ Bookmark</button>
-</div></div></article><article class="chapter" data-chapter-key="history-3" data-title="VIJAYANAGAR EMPIRE &amp; BAHMANI KINGDOM">
-<div class="num">03</div>
-<div class="chapterBody"><h3>VIJAYANAGAR EMPIRE &amp; BAHMANI KINGDOM</h3><span class="tag">NOTES COMING SOON</span>
-<div class="chapterActions">
-<button class="action completeBtn" type="button">✓ Mark Complete</button>
-<button class="action bookmarkBtn" type="button">☆ Bookmark</button>
-</div></div></article><article class="chapter" data-chapter-key="history-4" data-title="MUGHAL EMPIRE">
-<div class="num">04</div>
-<div class="chapterBody"><h3>MUGHAL EMPIRE</h3><span class="tag">NOTES COMING SOON</span>
-<div class="chapterActions">
-<button class="action completeBtn" type="button">✓ Mark Complete</button>
-<button class="action bookmarkBtn" type="button">☆ Bookmark</button>
-</div></div></article><article class="chapter" data-chapter-key="history-5" data-title="MARATHAS">
-<div class="num">05</div>
-<div class="chapterBody"><h3>MARATHAS</h3><span class="tag">NOTES COMING SOON</span>
-<div class="chapterActions">
-<button class="action completeBtn" type="button">✓ Mark Complete</button>
-<button class="action bookmarkBtn" type="button">☆ Bookmark</button>
-</div></div></article><article class="chapter" data-chapter-key="history-6" data-title="BHAKTI &amp; SUFI MOVEMENT">
-<div class="num">06</div>
-<div class="chapterBody"><h3>BHAKTI &amp; SUFI MOVEMENT</h3><span class="tag">NOTES COMING SOON</span>
-<div class="chapterActions">
-<button class="action completeBtn" type="button">✓ Mark Complete</button>
-<button class="action bookmarkBtn" type="button">☆ Bookmark</button>
-</div></div></article></div></section><section class="section"><div class="sectionHead"><div><h2>Modern History</h2><p>9 chapters</p></div><span class="count">9 CHAPTERS</span></div><div class="chapters"><article class="chapter" data-chapter-key="history-1" data-title="ADVENT OF EUROPEANS">
-<div class="num">01</div>
-<div class="chapterBody"><h3>ADVENT OF EUROPEANS</h3><span class="tag">NOTES COMING SOON</span>
-<div class="chapterActions">
-<button class="action completeBtn" type="button">✓ Mark Complete</button>
-<button class="action bookmarkBtn" type="button">☆ Bookmark</button>
-</div></div></article><article class="chapter" data-chapter-key="history-2" data-title="SOCIAL REFORMS">
-<div class="num">02</div>
-<div class="chapterBody"><h3>SOCIAL REFORMS</h3><span class="tag">NOTES COMING SOON</span>
-<div class="chapterActions">
-<button class="action completeBtn" type="button">✓ Mark Complete</button>
-<button class="action bookmarkBtn" type="button">☆ Bookmark</button>
-</div></div></article><article class="chapter" data-chapter-key="history-3" data-title="REVOLT OF 1857">
-<div class="num">03</div>
-<div class="chapterBody"><h3>REVOLT OF 1857</h3><span class="tag">NOTES COMING SOON</span>
-<div class="chapterActions">
-<button class="action completeBtn" type="button">✓ Mark Complete</button>
-<button class="action bookmarkBtn" type="button">☆ Bookmark</button>
-</div></div></article><article class="chapter" data-chapter-key="history-4" data-title="INDIAN NATIONAL CONGRESS">
-<div class="num">04</div>
-<div class="chapterBody"><h3>INDIAN NATIONAL CONGRESS</h3><span class="tag">NOTES COMING SOON</span>
-<div class="chapterActions">
-<button class="action completeBtn" type="button">✓ Mark Complete</button>
-<button class="action bookmarkBtn" type="button">☆ Bookmark</button>
-</div></div></article><article class="chapter" data-chapter-key="history-5" data-title="PARTITION OF BENGAL">
-<div class="num">05</div>
-<div class="chapterBody"><h3>PARTITION OF BENGAL</h3><span class="tag">NOTES COMING SOON</span>
-<div class="chapterActions">
-<button class="action completeBtn" type="button">✓ Mark Complete</button>
-<button class="action bookmarkBtn" type="button">☆ Bookmark</button>
-</div></div></article><article class="chapter" data-chapter-key="history-6" data-title="GANDHIAN ERA">
-<div class="num">06</div>
-<div class="chapterBody"><h3>GANDHIAN ERA</h3><span class="tag">NOTES COMING SOON</span>
-<div class="chapterActions">
-<button class="action completeBtn" type="button">✓ Mark Complete</button>
-<button class="action bookmarkBtn" type="button">☆ Bookmark</button>
-</div></div></article><article class="chapter" data-chapter-key="history-7" data-title="BHAGAT SINGH AND REVOLUTIONARY">
-<div class="num">07</div>
-<div class="chapterBody"><h3>BHAGAT SINGH AND REVOLUTIONARY</h3><span class="tag">NOTES COMING SOON</span>
-<div class="chapterActions">
-<button class="action completeBtn" type="button">✓ Mark Complete</button>
-<button class="action bookmarkBtn" type="button">☆ Bookmark</button>
-</div></div></article><article class="chapter" data-chapter-key="history-8" data-title="CIVIL DISOBEDIENCE">
-<div class="num">08</div>
-<div class="chapterBody"><h3>CIVIL DISOBEDIENCE</h3><span class="tag">NOTES COMING SOON</span>
-<div class="chapterActions">
-<button class="action completeBtn" type="button">✓ Mark Complete</button>
-<button class="action bookmarkBtn" type="button">☆ Bookmark</button>
-</div></div></article><article class="chapter" data-chapter-key="history-9" data-title="QUIT INDIA MOVEMENT">
-<div class="num">09</div>
-<div class="chapterBody"><h3>QUIT INDIA MOVEMENT</h3><span class="tag">NOTES COMING SOON</span>
-<div class="chapterActions">
-<button class="action completeBtn" type="button">✓ Mark Complete</button>
-<button class="action bookmarkBtn" type="button">☆ Bookmark</button>
-</div></div></article></div></section></div></main>
-<footer class="footer"><div class="wrap foot"><div><b>SUNNY RISE</b> · Your Knowledge Partner</div><div>Chapter structure added · Notes will be added later.</div></div></footer>
-<script>
-(function(){
-  const key='sunnyrise-theme';
-  const btn=document.getElementById('themeToggle');
-  if(localStorage.getItem(key)==='dark') document.body.classList.add('dark');
-  function update(){
-    if(!btn)return;
-    btn.textContent=document.body.classList.contains('dark')?'☀ Light':'◐ Dark';
-  }
-  update();
-  if(btn) btn.addEventListener('click',function(){
-    document.body.classList.toggle('dark');
-    localStorage.setItem(key,document.body.classList.contains('dark')?'dark':'light');
-    update();
-  });
-})();
-</script>
-
-<script>
-(function(){
-  const subject = document.title.replace('Sunny Rise — ','').replace(' Chapters','').toLowerCase().replace(/\s+/g,'-');
-  const prefix='sunnyrise-'+subject;
-  const doneKey=prefix+'-completed';
-  const markKey=prefix+'-bookmarks';
-  const get=(k)=>JSON.parse(localStorage.getItem(k)||'[]');
-  const set=(k,v)=>localStorage.setItem(k,JSON.stringify(v));
-  const cards=[...document.querySelectorAll('.chapter')];
-  const search=document.getElementById('subjectSearch');
-  const clear=document.getElementById('clearSearch');
-  const progressText=document.getElementById('progressText');
-  const progressBar=document.getElementById('progressBar');
-  const completedCount=document.getElementById('completedCount');
-  const bookmarkCount=document.getElementById('bookmarkCount');
-  let completed=get(doneKey), bookmarks=get(markKey);
-
-  function refresh(){
-    cards.forEach(card=>{
-      const key=card.dataset.chapterKey;
-      card.classList.toggle('completed',completed.includes(key));
-      card.classList.toggle('bookmarked',bookmarks.includes(key));
-      card.querySelector('.completeBtn').textContent=completed.includes(key)?'✓ Completed':'✓ Mark Complete';
-      card.querySelector('.bookmarkBtn').textContent=bookmarks.includes(key)?'★ Bookmarked':'☆ Bookmark';
-    });
-    const pct=cards.length?Math.round(completed.length/cards.length*100):0;
-    progressText.textContent=pct+'%';
-    progressBar.style.width=pct+'%';
-    completedCount.textContent=completed.length;
-    bookmarkCount.textContent=bookmarks.length;
-  }
-  cards.forEach(card=>{
-    const key=card.dataset.chapterKey;
-    card.querySelector('.completeBtn').addEventListener('click',()=>{
-      completed=completed.includes(key)?completed.filter(x=>x!==key):[...completed,key];
-      set(doneKey,completed); refresh();
-    });
-    card.querySelector('.bookmarkBtn').addEventListener('click',()=>{
-      bookmarks=bookmarks.includes(key)?bookmarks.filter(x=>x!==key):[...bookmarks,key];
-      set(markKey,bookmarks); refresh();
-    });
-  });
-  function filter(){
-    const q=(search.value||'').trim().toLowerCase();
-    let shown=0;
-    cards.forEach(card=>{
-      const match=!q || card.dataset.title.toLowerCase().includes(q);
-      card.style.display=match?'flex':'none';
-      if(match) shown++;
-    });
-    let empty=document.querySelector('.noResults');
-    if(!shown){
-      if(!empty){empty=document.createElement('div');empty.className='noResults';empty.textContent='No chapter found.';document.querySelector('.chapters').appendChild(empty)}
-    }else if(empty) empty.remove();
-  }
-  if(search) search.addEventListener('input',filter);
-  if(clear) clear.addEventListener('click',()=>{search.value='';filter();search.focus()});
-  refresh();
-})();
-</script>
-
-<script>
-(function(){
- document.querySelectorAll('[data-notes-link]').forEach(function(a){
-   var card=a.closest('[data-sr-key],[data-chapter-key]');
-   if(!card)return;
-   var key=card.getAttribute('data-sr-key')||card.getAttribute('data-chapter-key')||'';
-   var subject='history';
-   var prefix=subject+'-';
-   var chapter=key.indexOf(prefix)===0?key.slice(prefix.length):key;
-   a.href='../notes/'+subject+'/'+chapter+'/notes.html';
- });
-})();
-</script>
+<section class="rise-timer" data-rise-timer aria-label="Study timer">
+  <div class="rise-timer-head">
+    <div>
+      <div class="rise-timer-title">Study Timer</div>
+      <div class="rise-timer-status" data-timer-status>Session paused</div>
+    </div>
+    <div class="rise-timer-clock" data-timer-clock>00:00:00</div>
+  </div>
+  <div class="rise-timer-controls">
+    <button class="rise-timer-btn primary" data-timer-start>Start</button>
+    <button class="rise-timer-btn" data-timer-pause>Pause</button>
+    <button class="rise-timer-btn" data-timer-finish>Finish & Save</button>
+    <button class="rise-timer-btn" data-timer-reset>Reset</button>
+  </div>
+</section>
+<p>Move from Ancient to Modern History with structured chapters, revision and progress tracking.</p></div></div></div><div class="hero-progress"><div class="progress-head"><b>Your Progress</b><strong id="pct">0%</strong></div><div class="track"><span id="fill"></span></div><small id="sub">0 of 27 chapters completed</small></div></header><section class="study-tools"><div class="searchbox"><span>⌕</span><input id="q" placeholder="Search chapters and topics..." autocomplete="off"></div><div class="filters"><button class="filter active" data-filter="all">All</button><button class="filter" data-filter="pending">To Study</button><button class="filter" data-filter="completed">Completed</button><button class="filter" data-filter="bookmarked">Bookmarked</button></div></section><main><div class="section-title"><div><div class="kicker">LEARNING PATH</div><h2>History Chapters</h2></div><span class="count" id="visibleCount">27 chapters</span></div><div class="grid" id="grid"><article class="study-card" data-title="stone age" data-key="history-01-stone-age"><a class="study-card-link" href="notes/history/1/notes.html"><div class="card-main"><span class="chapter-num">01</span><div><div class="eyebrow">CHAPTER 01</div><h2>STONE AGE</h2><p>Open study resource · Learn → Revise → Practice</p></div></div><span class="arrow">→</span></a><div class="card-footer"><button class="bookmark" type="button" aria-pressed="false">♡ Bookmark</button><button class="complete" type="button" aria-pressed="false">□ Mark Complete</button></div></article><article class="study-card" data-title="indus valley civilization" data-key="history-02-indus-valley-civilization"><div class="study-card-link disabled"><div class="card-main"><span class="chapter-num">02</span><div><div class="eyebrow">CHAPTER 02</div><h2>INDUS VALLEY CIVILIZATION</h2><p>Notes coming soon · Chapter structure ready</p></div></div><span class="status">SOON</span></div><div class="card-footer"><button class="bookmark" type="button" aria-pressed="false">♡ Bookmark</button><button class="complete" type="button" aria-pressed="false">□ Mark Complete</button></div></article><article class="study-card" data-title="vedic age" data-key="history-03-vedic-age"><div class="study-card-link disabled"><div class="card-main"><span class="chapter-num">03</span><div><div class="eyebrow">CHAPTER 03</div><h2>VEDIC AGE</h2><p>Notes coming soon · Chapter structure ready</p></div></div><span class="status">SOON</span></div><div class="card-footer"><button class="bookmark" type="button" aria-pressed="false">♡ Bookmark</button><button class="complete" type="button" aria-pressed="false">□ Mark Complete</button></div></article><article class="study-card" data-title="buddhism" data-key="history-04-buddhism"><div class="study-card-link disabled"><div class="card-main"><span class="chapter-num">04</span><div><div class="eyebrow">CHAPTER 04</div><h2>BUDDHISM</h2><p>Notes coming soon · Chapter structure ready</p></div></div><span class="status">SOON</span></div><div class="card-footer"><button class="bookmark" type="button" aria-pressed="false">♡ Bookmark</button><button class="complete" type="button" aria-pressed="false">□ Mark Complete</button></div></article><article class="study-card" data-title="jainism" data-key="history-05-jainism"><div class="study-card-link disabled"><div class="card-main"><span class="chapter-num">05</span><div><div class="eyebrow">CHAPTER 05</div><h2>JAINISM</h2><p>Notes coming soon · Chapter structure ready</p></div></div><span class="status">SOON</span></div><div class="card-footer"><button class="bookmark" type="button" aria-pressed="false">♡ Bookmark</button><button class="complete" type="button" aria-pressed="false">□ Mark Complete</button></div></article><article class="study-card" data-title="mahajanpadas and magadha" data-key="history-06-mahajanpadas-and-magadha"><div class="study-card-link disabled"><div class="card-main"><span class="chapter-num">06</span><div><div class="eyebrow">CHAPTER 06</div><h2>MAHAJANPADAS AND MAGADHA</h2><p>Notes coming soon · Chapter structure ready</p></div></div><span class="status">SOON</span></div><div class="card-footer"><button class="bookmark" type="button" aria-pressed="false">♡ Bookmark</button><button class="complete" type="button" aria-pressed="false">□ Mark Complete</button></div></article><article class="study-card" data-title="mauryan empire" data-key="history-07-mauryan-empire"><div class="study-card-link disabled"><div class="card-main"><span class="chapter-num">07</span><div><div class="eyebrow">CHAPTER 07</div><h2>MAURYAN EMPIRE</h2><p>Notes coming soon · Chapter structure ready</p></div></div><span class="status">SOON</span></div><div class="card-footer"><button class="bookmark" type="button" aria-pressed="false">♡ Bookmark</button><button class="complete" type="button" aria-pressed="false">□ Mark Complete</button></div></article><article class="study-card" data-title="post mauryan empire" data-key="history-08-post-mauryan-empire"><div class="study-card-link disabled"><div class="card-main"><span class="chapter-num">08</span><div><div class="eyebrow">CHAPTER 08</div><h2>POST MAURYAN EMPIRE</h2><p>Notes coming soon · Chapter structure ready</p></div></div><span class="status">SOON</span></div><div class="card-footer"><button class="bookmark" type="button" aria-pressed="false">♡ Bookmark</button><button class="complete" type="button" aria-pressed="false">□ Mark Complete</button></div></article><article class="study-card" data-title="sangam age" data-key="history-09-sangam-age"><div class="study-card-link disabled"><div class="card-main"><span class="chapter-num">09</span><div><div class="eyebrow">CHAPTER 09</div><h2>SANGAM AGE</h2><p>Notes coming soon · Chapter structure ready</p></div></div><span class="status">SOON</span></div><div class="card-footer"><button class="bookmark" type="button" aria-pressed="false">♡ Bookmark</button><button class="complete" type="button" aria-pressed="false">□ Mark Complete</button></div></article><article class="study-card" data-title="gupta era" data-key="history-10-gupta-era"><div class="study-card-link disabled"><div class="card-main"><span class="chapter-num">10</span><div><div class="eyebrow">CHAPTER 10</div><h2>GUPTA ERA</h2><p>Notes coming soon · Chapter structure ready</p></div></div><span class="status">SOON</span></div><div class="card-footer"><button class="bookmark" type="button" aria-pressed="false">♡ Bookmark</button><button class="complete" type="button" aria-pressed="false">□ Mark Complete</button></div></article><article class="study-card" data-title="post gupta era" data-key="history-11-post-gupta-era"><div class="study-card-link disabled"><div class="card-main"><span class="chapter-num">11</span><div><div class="eyebrow">CHAPTER 11</div><h2>POST GUPTA ERA</h2><p>Notes coming soon · Chapter structure ready</p></div></div><span class="status">SOON</span></div><div class="card-footer"><button class="bookmark" type="button" aria-pressed="false">♡ Bookmark</button><button class="complete" type="button" aria-pressed="false">□ Mark Complete</button></div></article><article class="study-card" data-title="chola and tripartite struggle" data-key="history-12-chola-and-tripartite-struggle"><div class="study-card-link disabled"><div class="card-main"><span class="chapter-num">12</span><div><div class="eyebrow">CHAPTER 12</div><h2>CHOLA AND TRIPARTITE STRUGGLE</h2><p>Notes coming soon · Chapter structure ready</p></div></div><span class="status">SOON</span></div><div class="card-footer"><button class="bookmark" type="button" aria-pressed="false">♡ Bookmark</button><button class="complete" type="button" aria-pressed="false">□ Mark Complete</button></div></article><article class="study-card" data-title="invasion of islam" data-key="history-01-invasion-of-islam"><div class="study-card-link disabled"><div class="card-main"><span class="chapter-num">01</span><div><div class="eyebrow">CHAPTER 01</div><h2>INVASION OF ISLAM</h2><p>Notes coming soon · Chapter structure ready</p></div></div><span class="status">SOON</span></div><div class="card-footer"><button class="bookmark" type="button" aria-pressed="false">♡ Bookmark</button><button class="complete" type="button" aria-pressed="false">□ Mark Complete</button></div></article><article class="study-card" data-title="delhi sultanate" data-key="history-02-delhi-sultanate"><div class="study-card-link disabled"><div class="card-main"><span class="chapter-num">02</span><div><div class="eyebrow">CHAPTER 02</div><h2>DELHI SULTANATE</h2><p>Notes coming soon · Chapter structure ready</p></div></div><span class="status">SOON</span></div><div class="card-footer"><button class="bookmark" type="button" aria-pressed="false">♡ Bookmark</button><button class="complete" type="button" aria-pressed="false">□ Mark Complete</button></div></article><article class="study-card" data-title="vijayanagar empire &amp; bahmani kingdom" data-key="history-03-vijayanagar-empire-bahmani-kingdom"><div class="study-card-link disabled"><div class="card-main"><span class="chapter-num">03</span><div><div class="eyebrow">CHAPTER 03</div><h2>VIJAYANAGAR EMPIRE &amp; BAHMANI KINGDOM</h2><p>Notes coming soon · Chapter structure ready</p></div></div><span class="status">SOON</span></div><div class="card-footer"><button class="bookmark" type="button" aria-pressed="false">♡ Bookmark</button><button class="complete" type="button" aria-pressed="false">□ Mark Complete</button></div></article><article class="study-card" data-title="mughal empire" data-key="history-04-mughal-empire"><div class="study-card-link disabled"><div class="card-main"><span class="chapter-num">04</span><div><div class="eyebrow">CHAPTER 04</div><h2>MUGHAL EMPIRE</h2><p>Notes coming soon · Chapter structure ready</p></div></div><span class="status">SOON</span></div><div class="card-footer"><button class="bookmark" type="button" aria-pressed="false">♡ Bookmark</button><button class="complete" type="button" aria-pressed="false">□ Mark Complete</button></div></article><article class="study-card" data-title="marathas" data-key="history-05-marathas"><div class="study-card-link disabled"><div class="card-main"><span class="chapter-num">05</span><div><div class="eyebrow">CHAPTER 05</div><h2>MARATHAS</h2><p>Notes coming soon · Chapter structure ready</p></div></div><span class="status">SOON</span></div><div class="card-footer"><button class="bookmark" type="button" aria-pressed="false">♡ Bookmark</button><button class="complete" type="button" aria-pressed="false">□ Mark Complete</button></div></article><article class="study-card" data-title="bhakti &amp; sufi movement" data-key="history-06-bhakti-sufi-movement"><div class="study-card-link disabled"><div class="card-main"><span class="chapter-num">06</span><div><div class="eyebrow">CHAPTER 06</div><h2>BHAKTI &amp; SUFI MOVEMENT</h2><p>Notes coming soon · Chapter structure ready</p></div></div><span class="status">SOON</span></div><div class="card-footer"><button class="bookmark" type="button" aria-pressed="false">♡ Bookmark</button><button class="complete" type="button" aria-pressed="false">□ Mark Complete</button></div></article><article class="study-card" data-title="advent of europeans" data-key="history-01-advent-of-europeans"><div class="study-card-link disabled"><div class="card-main"><span class="chapter-num">01</span><div><div class="eyebrow">CHAPTER 01</div><h2>ADVENT OF EUROPEANS</h2><p>Notes coming soon · Chapter structure ready</p></div></div><span class="status">SOON</span></div><div class="card-footer"><button class="bookmark" type="button" aria-pressed="false">♡ Bookmark</button><button class="complete" type="button" aria-pressed="false">□ Mark Complete</button></div></article><article class="study-card" data-title="social reforms" data-key="history-02-social-reforms"><div class="study-card-link disabled"><div class="card-main"><span class="chapter-num">02</span><div><div class="eyebrow">CHAPTER 02</div><h2>SOCIAL REFORMS</h2><p>Notes coming soon · Chapter structure ready</p></div></div><span class="status">SOON</span></div><div class="card-footer"><button class="bookmark" type="button" aria-pressed="false">♡ Bookmark</button><button class="complete" type="button" aria-pressed="false">□ Mark Complete</button></div></article><article class="study-card" data-title="revolt of 1857" data-key="history-03-revolt-of-1857"><div class="study-card-link disabled"><div class="card-main"><span class="chapter-num">03</span><div><div class="eyebrow">CHAPTER 03</div><h2>REVOLT OF 1857</h2><p>Notes coming soon · Chapter structure ready</p></div></div><span class="status">SOON</span></div><div class="card-footer"><button class="bookmark" type="button" aria-pressed="false">♡ Bookmark</button><button class="complete" type="button" aria-pressed="false">□ Mark Complete</button></div></article><article class="study-card" data-title="indian national congress" data-key="history-04-indian-national-congress"><div class="study-card-link disabled"><div class="card-main"><span class="chapter-num">04</span><div><div class="eyebrow">CHAPTER 04</div><h2>INDIAN NATIONAL CONGRESS</h2><p>Notes coming soon · Chapter structure ready</p></div></div><span class="status">SOON</span></div><div class="card-footer"><button class="bookmark" type="button" aria-pressed="false">♡ Bookmark</button><button class="complete" type="button" aria-pressed="false">□ Mark Complete</button></div></article><article class="study-card" data-title="partition of bengal" data-key="history-05-partition-of-bengal"><div class="study-card-link disabled"><div class="card-main"><span class="chapter-num">05</span><div><div class="eyebrow">CHAPTER 05</div><h2>PARTITION OF BENGAL</h2><p>Notes coming soon · Chapter structure ready</p></div></div><span class="status">SOON</span></div><div class="card-footer"><button class="bookmark" type="button" aria-pressed="false">♡ Bookmark</button><button class="complete" type="button" aria-pressed="false">□ Mark Complete</button></div></article><article class="study-card" data-title="gandhian era" data-key="history-06-gandhian-era"><div class="study-card-link disabled"><div class="card-main"><span class="chapter-num">06</span><div><div class="eyebrow">CHAPTER 06</div><h2>GANDHIAN ERA</h2><p>Notes coming soon · Chapter structure ready</p></div></div><span class="status">SOON</span></div><div class="card-footer"><button class="bookmark" type="button" aria-pressed="false">♡ Bookmark</button><button class="complete" type="button" aria-pressed="false">□ Mark Complete</button></div></article><article class="study-card" data-title="bhagat singh and revolutionary" data-key="history-07-bhagat-singh-and-revolutionary"><div class="study-card-link disabled"><div class="card-main"><span class="chapter-num">07</span><div><div class="eyebrow">CHAPTER 07</div><h2>BHAGAT SINGH AND REVOLUTIONARY</h2><p>Notes coming soon · Chapter structure ready</p></div></div><span class="status">SOON</span></div><div class="card-footer"><button class="bookmark" type="button" aria-pressed="false">♡ Bookmark</button><button class="complete" type="button" aria-pressed="false">□ Mark Complete</button></div></article><article class="study-card" data-title="civil disobedience" data-key="history-08-civil-disobedience"><div class="study-card-link disabled"><div class="card-main"><span class="chapter-num">08</span><div><div class="eyebrow">CHAPTER 08</div><h2>CIVIL DISOBEDIENCE</h2><p>Notes coming soon · Chapter structure ready</p></div></div><span class="status">SOON</span></div><div class="card-footer"><button class="bookmark" type="button" aria-pressed="false">♡ Bookmark</button><button class="complete" type="button" aria-pressed="false">□ Mark Complete</button></div></article><article class="study-card" data-title="quit india movement" data-key="history-09-quit-india-movement"><div class="study-card-link disabled"><div class="card-main"><span class="chapter-num">09</span><div><div class="eyebrow">CHAPTER 09</div><h2>QUIT INDIA MOVEMENT</h2><p>Notes coming soon · Chapter structure ready</p></div></div><span class="status">SOON</span></div><div class="card-footer"><button class="bookmark" type="button" aria-pressed="false">♡ Bookmark</button><button class="complete" type="button" aria-pressed="false">□ Mark Complete</button></div></article></div><div class="empty" id="empty">No chapters match your search.</div></main><footer> <b>SUNNY RISE</b> · Learn smarter · Revise faster · Track progress</footer></div><script>const slug="history", total=27; const cards=[...document.querySelectorAll('.study-card')]; const q=document.getElementById('q'); let mode='all'; const key=k=>`rise:${slug}:${k}`; function state(c){const k=c.dataset.key;return {done:localStorage.getItem(key(k)+':done')==='1',book:localStorage.getItem(key(k)+':book')==='1'}} function paint(){let done=0;cards.forEach(c=>{const s=state(c); if(s.done)done++; c.classList.toggle('is-completed',s.done); const b=c.querySelector('.bookmark'),x=c.querySelector('.complete'); if(b){b.textContent=s.book?'♥ Saved':'♡ Bookmark';b.setAttribute('aria-pressed',s.book)} if(x){x.textContent=s.done?'✓ Completed':'□ Mark Complete';x.setAttribute('aria-pressed',s.done)}}); const pct=total?Math.round(done/total*100):0;document.getElementById('pct').textContent=pct+'%';document.getElementById('fill').style.width=pct+'%';document.getElementById('sub').textContent=`${done} of ${total} chapters completed`; filter()} function filter(){const term=q.value.toLowerCase().trim();let n=0;cards.forEach(c=>{const s=state(c);const match=c.dataset.title.includes(term);const fm=mode==='all'||(mode==='completed'&&s.done)||(mode==='pending'&&!s.done)||(mode==='bookmarked'&&s.book);const show=match&&fm;c.style.display=show?'block':'none';if(show)n++});document.getElementById('visibleCount').textContent=n+' chapters';document.getElementById('empty').style.display=n?'none':'block'} q.addEventListener('input',filter);document.querySelectorAll('.filter').forEach(b=>b.onclick=()=>{document.querySelectorAll('.filter').forEach(x=>x.classList.remove('active'));b.classList.add('active');mode=b.dataset.filter;filter()});cards.forEach(c=>{const k=c.dataset.key;const b=c.querySelector('.bookmark'),x=c.querySelector('.complete');if(b)b.onclick=()=>{const s=state(c);localStorage.setItem(key(k)+':book',s.book?'0':'1');paint()};if(x)x.onclick=()=>{const s=state(c);localStorage.setItem(key(k)+':done',s.done?'0':'1');paint()}});const t=document.getElementById('theme');function theme(d){document.body.classList.toggle('dark',d);localStorage.setItem('sunnyrise-theme',d?'dark':'light')} theme(localStorage.getItem('sunnyrise-theme')==='dark');t.onclick=()=>theme(!document.body.classList.contains('dark'));paint();</script><script src="../assets/js/rise-progress.js"></script>
+<script src="../assets/js/rise-navigation.js"></script>
+<script src="../assets/js/rise-search-index.js"></script>
+<script src="../assets/js/rise-search.js"></script>
+<script src="../assets/js/rise-bookmarks.js"></script>
+<script src="../assets/js/rise-analytics.js"></script>
+<script src="../assets/js/rise-timer.js"></script>
+<script src="../assets/js/rise-planner.js"></script>
+<script src="../assets/js/rise-revision.js"></script>
 </body></html>
