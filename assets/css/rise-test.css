@@ -1,0 +1,25 @@
+
+/* RISE NOTES — STEP 14 TEST MODE */
+.rise-test{max-width:900px;margin:24px auto}
+.rise-test-panel{background:var(--rise-paper,#fffaf0);border:1px solid var(--rise-border,rgba(56,55,13,.15));border-radius:18px;padding:20px;box-shadow:0 8px 22px rgba(56,55,13,.06)}
+.rise-test-setup{display:grid;grid-template-columns:1fr 1fr auto;gap:10px}
+.rise-test-select,.rise-test-btn{border:1px solid var(--rise-border,rgba(56,55,13,.15));border-radius:10px;padding:10px 12px;background:var(--rise-bg,#FAEED9);color:var(--rise-ink,#38370D);font:inherit;font-weight:800}
+.rise-test-btn{background:var(--rise-gold,#E1A837);cursor:pointer}
+.rise-test-top{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:18px}
+.rise-test-timer{font-variant-numeric:tabular-nums;font-weight:900;color:var(--rise-olive,#8D7A02)}
+.rise-test-progress{height:9px;background:rgba(141,122,2,.14);border-radius:999px;overflow:hidden;margin-bottom:18px}
+.rise-test-progress-fill{height:100%;width:0;background:var(--rise-olive,#8D7A02)}
+.rise-question{font-size:1.15rem;line-height:1.55;font-weight:900;color:var(--rise-ink,#38370D)}
+.rise-options{display:grid;gap:9px;margin-top:16px}
+.rise-option{display:flex;gap:10px;align-items:flex-start;padding:12px;border:1px solid var(--rise-border,rgba(56,55,13,.15));border-radius:12px;background:var(--rise-bg,#FAEED9);cursor:pointer}
+.rise-option input{margin-top:3px;accent-color:var(--rise-olive,#8D7A02)}
+.rise-test-actions{display:flex;justify-content:space-between;gap:10px;margin-top:18px}
+.rise-test-result{text-align:center}
+.rise-score{font-size:3rem;font-weight:900;color:var(--rise-olive,#8D7A02)}
+.rise-review{display:grid;gap:10px;margin-top:18px;text-align:left}
+.rise-review-item{padding:14px;border-radius:13px;background:var(--rise-bg,#FAEED9);border:1px solid var(--rise-border,rgba(56,55,13,.15))}
+.rise-review-item.correct{border-left:5px solid var(--rise-olive,#8D7A02)}
+.rise-review-item.wrong{border-left:5px solid var(--rise-gold,#E1A837)}
+.rise-review-answer{margin-top:7px;color:var(--rise-olive,#8D7A02);font-size:.9rem}
+.rise-test-hidden{display:none}
+@media(max-width:700px){.rise-test-setup{grid-template-columns:1fr}.rise-test-top{align-items:flex-start}.rise-test-actions{display:grid;grid-template-columns:1fr 1fr}}

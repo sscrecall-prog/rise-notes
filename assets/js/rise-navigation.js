@@ -27,7 +27,7 @@
         <a class="rise-nav-link" data-nav="home" href="${home}">Dashboard</a>
         <a class="rise-nav-link" data-nav="subjects" href="${home}#subjects">Subjects</a>
         <a class="rise-nav-link" data-nav="progress" href="${progressUrl}">Progress</a>
-        <a class="rise-nav-link" data-nav="bookmarks" href="${home}#bookmarks">Bookmarks</a>
+        <a class="rise-nav-link" data-nav="library" href="${home}bookmarks.html">Library</a>
       </div>
       <button class="rise-menu-btn" type="button" aria-expanded="false" aria-label="Open menu">Menu</button>
     </nav>`;
@@ -35,7 +35,7 @@
     const btn=nav.querySelector(".rise-menu-btn"), links=nav.querySelector(".rise-nav-links");
     btn.addEventListener("click",()=>{const open=links.classList.toggle("is-open");btn.setAttribute("aria-expanded",open)});
     const lower=path.toLowerCase();
-    const active=lower.includes("progress")?"progress":(lower.endsWith("index.html")||lower==="/")?"home":"subjects";
+    const active=lower.includes("progress")?"progress":lower.includes("bookmarks")?"library":(lower.endsWith("index.html")||lower==="/")?"home":"subjects";
     const a=nav.querySelector(`[data-nav="${active}"]`); if(a)a.classList.add("is-active");
 
     const bottom=document.createElement("nav");
@@ -44,7 +44,7 @@
       <a class="rise-bottom-link" href="${home}">⌂<br>Home</a>
       <a class="rise-bottom-link" href="${home}#subjects">▦<br>Subjects</a>
       <a class="rise-bottom-link" href="${progressUrl}">◔<br>Progress</a>
-      <a class="rise-bottom-link" href="${home}#bookmarks">★<br>Saved</a>
+      <a class="rise-bottom-link" href="${home}bookmarks.html">★<br>Library</a>
     </div>`;
     document.body.appendChild(bottom);
   }

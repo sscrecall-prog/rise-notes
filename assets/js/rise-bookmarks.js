@@ -16,7 +16,11 @@
     const meta=currentMeta(), d=chapters(), id=idFor(meta.url);
     const item=d.chapters[id]||{};
     item.title=meta.title; item.subject=meta.subject; item.url=meta.url;
-    item.bookmarked=!item.bookmarked; item.updatedAt=Date.now();
+    item.bookmarked=!item.bookmarked;
+    if(item.bookmarked && item.completed && !item.revision){
+      item.revision={interval:1,nextAt:Date.now()+86400000,lastRevisedAt:null,revisions:0};
+    }
+    item.updatedAt=Date.now();
     d.chapters[id]=item; write(d); updateButtons();
     if(window.RiseProgress) window.RiseProgress.refresh();
     renderLibrary();
