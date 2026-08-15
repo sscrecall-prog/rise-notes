@@ -33,6 +33,11 @@ main{padding-bottom:55px}.section{padding:38px 0}.sectionTitle{display:flex;alig
 <link rel="stylesheet" href="assets/css/rise-revision.css">
 <link rel="stylesheet" href="assets/css/rise-test.css">
 <link rel="stylesheet" href="assets/css/rise-library.css">
+<style id="rise-home-cleanup">
+/* Homepage: Save and Study Timer are intentionally not shown. */
+[data-rise-timer], [data-study-timer], .rise-study-timer, .study-timer, #study-timer,
+[data-bookmark], [data-save], .save-button, .bookmark-button { display:none !important; }
+</style>
 </head>
 <body>
 <header class="topbar"><div class="wrap nav">
@@ -151,12 +156,12 @@ const menu=document.getElementById('menu');menu.addEventListener('click',()=>{co
 <script src="assets/js/rise-navigation.js"></script>
 <script src="assets/js/rise-search-index.js"></script>
 <script src="assets/js/rise-search.js"></script>
-<script src="assets/js/rise-bookmarks.js"></script>
+
 <script src="assets/js/rise-analytics.js"></script>
-<script src="assets/js/rise-timer.js"></script>
+
 <script src="assets/js/rise-planner.js"></script>
 <script src="assets/js/rise-revision.js"></script>
 <script src="assets/js/rise-test-bank.js"></script>
 <script src="assets/js/rise-test.js"></script>
-<script src="assets/js/rise-library.js"></script>
+
 </body></html>
