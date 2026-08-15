@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>RISE NOTES — Daily Study Planner</title>
+<link rel="stylesheet" href="assets/css/rise-unified.css">
+<link rel="stylesheet" href="assets/css/rise-navigation.css">
+<link rel="stylesheet" href="assets/css/rise-planner.css">
+<link rel="stylesheet" href="assets/css/rise-revision.css">
+</head><body>
+<main class="container" style="max-width:1050px;margin:auto;padding:28px 18px">
+<h1>Daily Study Planner</h1>
+<p>Set today's study goals, assign target time, and check them off as you finish.</p>
+
+<section class="rise-planner" data-rise-planner aria-label="Daily study planner">
+  <div class="rise-planner-panel">
+    <div class="rise-planner-head">
+      <div class="rise-planner-title">Today's Study Plan</div>
+      <div class="rise-planner-date" data-plan-date></div>
+    </div>
+    <form class="rise-planner-form" data-plan-form>
+      <input class="rise-planner-input" name="title" required placeholder="Chapter or study goal" aria-label="Chapter or study goal">
+      <input class="rise-planner-input" name="subject" placeholder="Subject" aria-label="Subject">
+      <input class="rise-planner-input" name="minutes" type="number" min="5" step="5" value="30" aria-label="Target minutes">
+      <button class="rise-planner-btn" type="submit">Add Goal</button>
+    </form>
+    <div class="rise-planner-presets">
+      <button type="button" class="rise-planner-preset" data-plan-preset="Quick Revision">Quick Revision</button>
+      <button type="button" class="rise-planner-preset" data-plan-preset="Practice Questions">Practice Questions</button>
+      <button type="button" class="rise-planner-preset" data-plan-preset="Chapter Study">Chapter Study</button>
+    </div>
+    <div class="rise-planner-progress"><div class="rise-planner-fill" data-plan-fill></div></div>
+    <div class="rise-planner-summary"><span data-plan-percent>0%</span><span data-plan-summary>0/0 goals · 0/0 min</span></div>
+  </div>
+  <div class="rise-planner-panel">
+    <div class="rise-planner-title">Today's Goals</div>
+    <div class="rise-plan-list" data-plan-list></div>
+  </div>
+</section>
+
+
+<section class="rise-revision" data-rise-revision aria-label="Revision system">
+  <div class="rise-revision-panel">
+    <div class="rise-revision-head">
+      <div>
+        <div class="rise-revision-title">Today's Revision</div>
+        <div class="rise-revision-subtitle">Review completed chapters when they become due.</div>
+      </div>
+    </div>
+    <div class="rise-revision-filters">
+      <button class="rise-revision-filter is-active" type="button" data-revision-filter="due">Due Now</button>
+      <button class="rise-revision-filter" type="button" data-revision-filter="all">All Completed</button>
+    </div>
+    <div class="rise-revision-list" data-rise-revision-list data-revision-list></div>
+  </div>
+</section>
+
+</main>
+<script src="assets/js/rise-navigation.js"></script>
+<script src="assets/js/rise-planner.js"></script>
+<script src="assets/js/rise-revision.js"></script>
+</body></html>

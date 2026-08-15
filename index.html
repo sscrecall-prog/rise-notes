@@ -1,187 +1,155 @@
-<!DOCTYPE html>
-
-<html class="light" lang="en">
+<!doctype html>
+<html lang="en" class="light">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<meta content="#0A192F" name="theme-color"/>
-<title>RISE NOTES — Free SSC &amp; Competitive Exam Study Notes</title>
-<meta content="Free, exam-focused study notes for SSC CGL, CHSL, MTS and other competitive exams — Polity, History, Geography, Economics, Science and English, organized subject by subject for fast revision." name="description"/>
-<meta content="SSC CGL notes, SSC CHSL notes, SSC MTS, competitive exam notes, polity notes, history notes, static gk, english practice, RISE NOTES" name="keywords"/>
-<meta content="index, follow" name="robots"/>
-<meta content="Sunny" name="author"/>
-<link href="https://sunnyrise.example.com/" rel="canonical"/>
-<link href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%230A192F'/%3E%3Ctext x='50' y='68' font-size='58' font-family='Georgia,serif' font-weight='700' fill='%23D69E2E' text-anchor='middle'%3ER%3C/text%3E%3C/svg%3E" rel="icon"/>
-<meta content="website" property="og:type"/>
-<meta content="RISE NOTES — Your Knowledge Partner" property="og:title"/>
-<meta content="Free, exam-focused study notes for SSC and other competitive exams, organized subject by subject." property="og:description"/>
-<meta content="RISE NOTES" property="og:site_name"/>
-<meta content="summary" name="twitter:card"/>
-<meta content="RISE NOTES — Your Knowledge Partner" name="twitter:title"/>
-<meta content="Free, exam-focused study notes for SSC and other competitive exams." name="twitter:description"/>
-<script src="https://cdn.tailwindcss.com"></script>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"EducationalOrganization","name":"RISE NOTES","description":"Free exam-focused study notes for SSC and other competitive exams.","sameAs":[]}
-</script>
-<script>
- tailwind.config={darkMode:'class',theme:{extend:{colors:{'navy-dark':'#0A192F','gold-accent':'#D69E2E','bg-subtle':'#F7FAFC','border-light':'#E2E8F0'},fontFamily:{headline:['Hanken Grotesk'],body:['Inter']}}}};
-</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0A192F">
+<title>RISE NOTES — Study Dashboard</title>
+<meta name="description" content="RISE NOTES study dashboard for SSC and competitive exam preparation. Study subjects, revise chapters, search notes and track your progress.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%230A192F'/%3E%3Ctext x='50' y='68' font-size='58' font-family='Georgia' font-weight='700' fill='%23D69E2E' text-anchor='middle'%3ER%3C/text%3E%3C/svg%3E">
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/rise-unified.css">
 <style>
-:root{--navy:#0A192F;--navy2:#102747;--gold:#D69E2E;--gold2:#F1C75B;--surface:#FAFAFC;--card:#fff;--text:#162033;--muted:#667085;--line:#E2E8F0;--shadow:0 12px 35px rgba(10,25,47,.07)}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--surface);color:var(--text);font-family:Inter,system-ui,sans-serif;line-height:1.55;transition:background .25s,color .25s}.material-symbols-outlined{font-variation-settings:'FILL' 0,'wght' 500,'GRAD' 0,'opsz' 24}.wrap{width:min(1200px,calc(100% - 32px));margin:auto}
-.topbar{position:sticky;top:0;z-index:100;background:rgba(250,250,252,.94);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}.navin{height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--navy)}.brandMark{width:43px;height:43px;border-radius:50%;object-fit:cover;object-position:center;border:2px solid var(--gold)}.brandText{font:800 18px 'Hanken Grotesk';letter-spacing:.4px}.brandText span{color:var(--gold)}.brandSub{display:block;font:600 9px Inter;letter-spacing:1.1px;color:#7B8494;margin-top:1px}.navlinks{display:flex;align-items:center;gap:25px}.navlinks a{color:#4B5565;text-decoration:none;font-size:13px;font-weight:600}.navlinks a.active{color:var(--navy);border-bottom:2px solid var(--navy);padding-bottom:5px}.navlinks a:hover{color:var(--gold)}.navactions{display:flex;align-items:center;gap:8px}.iconBtn,.menuBtn{border:0;background:transparent;color:#566070;cursor:pointer;display:grid;place-items:center}.iconBtn{width:38px;height:38px;border-radius:10px}.iconBtn:hover{background:#eef2f6;color:var(--navy)}.startBtn{background:var(--navy);color:#fff;text-decoration:none;padding:10px 18px;border-radius:9px;font-size:13px;font-weight:700}.startBtn:hover{background:#102747}.menuBtn{display:none}
-.hero{position:relative;overflow:hidden;background:var(--navy);color:#fff}.heroIn{position:relative;z-index:2;padding:84px 0 125px;display:grid;grid-template-columns:1.02fr .98fr;align-items:center;gap:70px}.eyebrow{display:inline-flex;align-items:center;gap:8px;color:var(--gold2);font-size:12px;font-weight:800;letter-spacing:1.7px;text-transform:uppercase}.hero h1{font:800 clamp(42px,5.5vw,68px)/1.05 'Hanken Grotesk';letter-spacing:-2.3px;margin:17px 0 19px}.hero h1 span{color:var(--gold2)}.hero p{max-width:610px;color:#D6DFEC;font-size:17px;line-height:1.7;margin:0 0 28px}.heroBtns{display:flex;gap:11px;flex-wrap:wrap}.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:9px;padding:12px 20px;text-decoration:none;font-size:13px;font-weight:700;transition:.2s}.btnGold{background:var(--gold);color:#111827}.btnGold:hover{background:var(--gold2);transform:translateY(-1px)}.btnOutline{border:1px solid rgba(255,255,255,.55);color:#fff;background:transparent}.btnOutline:hover{background:#fff;color:var(--navy)}
-.heroVisual{min-height:390px;position:relative;display:grid;place-items:center}.orbit{position:absolute;width:380px;height:380px;border:1px solid rgba(214,158,46,.22);border-radius:50%}.orbit:before,.orbit:after{content:'';position:absolute;border-radius:50%;background:rgba(214,158,46,.18)}.orbit:before{width:90px;height:90px;top:30px;right:35px}.orbit:after{width:55px;height:55px;bottom:55px;left:15px}.heroPanel{position:relative;width:min(430px,100%);background:linear-gradient(145deg,rgba(255,255,255,.12),rgba(255,255,255,.055));border:1px solid rgba(255,255,255,.16);border-radius:25px;padding:25px;box-shadow:0 25px 70px rgba(0,0,0,.28);backdrop-filter:blur(10px)}.panelTop{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}.panelTop strong{font:700 22px 'Hanken Grotesk';color:#fff}.panelBadge{font-size:10px;font-weight:800;letter-spacing:1px;color:var(--gold2);border:1px solid rgba(214,158,46,.45);padding:6px 9px;border-radius:99px}.stat{display:flex;justify-content:space-between;align-items:center;padding:15px 0;border-bottom:1px solid rgba(255,255,255,.09)}.stat:last-child{border-bottom:0}.stat span{color:#B7C2D1;font-size:12px}.stat b{color:#fff;font:800 22px 'Hanken Grotesk'}.panelProgress{margin-top:20px;padding:14px;background:rgba(0,0,0,.16);border-radius:14px}.progressLine{height:7px;background:rgba(255,255,255,.12);border-radius:99px;overflow:hidden;margin-top:9px}.progressLine i{display:block;width:76%;height:100%;background:var(--gold);border-radius:99px}.heroGlow{position:absolute;width:450px;height:450px;border-radius:50%;background:rgba(214,158,46,.11);right:-170px;top:-220px}.curve{position:absolute;left:0;bottom:-1px;width:100%;height:78px;z-index:3}.curve svg{width:100%;height:100%;display:block}.curve path{fill:var(--surface)}
-.section{padding:92px 0}.sectionHeader{text-align:center;margin-bottom:43px}.sectionHeader .kicker{font-size:11px;font-weight:800;letter-spacing:1.6px;color:var(--gold);text-transform:uppercase}.sectionHeader h2{font:700 32px/1.2 'Hanken Grotesk';color:var(--navy);margin:8px 0}.sectionHeader p{color:var(--muted);font-size:14px;margin:0 auto;max-width:650px}.values{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.valueCard{background:var(--card);border:1px solid var(--line);border-radius:17px;padding:30px 27px;text-align:center;box-shadow:var(--shadow);transition:.25s}.valueCard:hover{transform:translateY(-5px);box-shadow:0 18px 45px rgba(10,25,47,.11)}.valueIcon{width:88px;height:88px;margin:0 auto 20px;border-radius:24px;background:#FFF5DA;display:grid;place-items:center;color:var(--navy);font-size:42px}.valueCard h3{font:700 21px 'Hanken Grotesk';text-transform:uppercase;color:var(--navy);margin:0 0 10px}.valueCard p{font-size:14px;color:var(--muted);margin:0}
-.latest{background:#F4F7FA;border-top:1px solid var(--line)}.postGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.post{background:var(--card);border:1px solid var(--line);border-radius:17px;overflow:hidden;box-shadow:var(--shadow);transition:.25s}.post:hover{transform:translateY(-5px);box-shadow:0 18px 45px rgba(10,25,47,.11)}.postVisual{height:175px;background:linear-gradient(135deg,#0A192F,#1A365D);display:grid;place-items:center;position:relative;overflow:hidden}.postVisual:after{content:'';position:absolute;width:190px;height:190px;border:1px solid rgba(214,158,46,.3);border-radius:50%;right:-35px;top:-55px}.postVisual .bigIcon{font-size:62px;color:#F1C75B;position:relative;z-index:1}.postBody{padding:22px}.postMeta{font-size:10px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--gold);margin-bottom:8px}.post h3{font:700 21px/1.25 'Hanken Grotesk';color:var(--navy);margin:0 0 9px}.post p{font-size:13px;color:var(--muted);margin:0}.postLink{display:inline-flex;align-items:center;gap:5px;margin-top:17px;color:var(--navy);font-size:12px;font-weight:800;text-decoration:none}.postLink:hover{color:var(--gold)}
-.subjects{padding-top:0}.subjectHead{display:flex;justify-content:space-between;align-items:end;gap:15px;margin-bottom:24px}.subjectHead h2{font:700 31px 'Hanken Grotesk';color:var(--navy);margin:0}.subjectHead p{font-size:13px;color:var(--muted);margin:5px 0 0}.count{font-size:10px;font-weight:800;letter-spacing:.8px;color:#7A5B05;background:#FFF2CF;border:1px solid #E8CF8C;padding:7px 11px;border-radius:99px;white-space:nowrap}.subjectGrid{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}.subject{background:var(--card);border:1px solid var(--line);border-radius:15px;padding:20px;text-decoration:none;color:var(--text);position:relative;min-height:160px;transition:.2s}.subject:hover{transform:translateY(-4px);border-color:#D7B65E;box-shadow:var(--shadow)}.subjectIcon{width:45px;height:45px;border-radius:13px;background:#FFF5DA;display:grid;place-items:center;font-size:23px}.subject h3{font:700 18px 'Hanken Grotesk';color:var(--navy);margin:12px 0 4px}.subject p{font-size:11px;color:var(--muted);margin:0 0 15px}.subject small{position:absolute;left:20px;bottom:15px;font-size:9px;font-weight:800;letter-spacing:.6px;text-transform:uppercase;color:#7A5B05}.subject .arrow{position:absolute;right:16px;bottom:11px;color:#B08721;font-size:22px}
-.footer{background:#071322;color:#B7C2D1}.footerIn{display:grid;grid-template-columns:1.4fr .8fr .8fr;gap:45px;padding:58px 0 38px}.footer h3,.footer h4{font-family:'Hanken Grotesk';color:#fff;margin:0 0 13px}.footer h3{font-size:22px}.footer h3 span{color:var(--gold2)}.footer h4{font-size:15px}.footer p,.footer a{font-size:12px;color:#9EABBB;line-height:1.7}.footer a{text-decoration:none;display:block;margin:6px 0}.footer a:hover{color:var(--gold2)}.copyright{border-top:1px solid rgba(255,255,255,.1);padding:18px 0;text-align:center;font-size:11px;color:#8592A4}
-.mobileBottom{display:none}
-.skipLink{position:absolute;left:-999px;top:auto;background:var(--gold);color:#111827;font-weight:700;padding:12px 18px;border-radius:0 0 10px 0;z-index:200;text-decoration:none;font-size:13px}.skipLink:focus{left:0;top:0}
-a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
-.trustRow{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:24px}.trustItem{display:flex;align-items:center;gap:7px;color:#B7C2D1;font-size:12px;font-weight:600}.trustItem .material-symbols-outlined{font-size:17px;color:var(--gold2)}
-.reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}.reveal.in{opacity:1;transform:translateY(0)}
-.faq{max-width:780px;margin:0 auto}.faqItem{background:var(--card);border:1px solid var(--line);border-radius:14px;margin-bottom:12px;overflow:hidden}.faqItem summary{cursor:pointer;list-style:none;padding:18px 22px;font:700 15px 'Hanken Grotesk';color:var(--navy);display:flex;justify-content:space-between;align-items:center;gap:12px}.faqItem summary::-webkit-details-marker{display:none}.faqItem summary:after{content:'+';font-size:22px;color:var(--gold);font-weight:400;flex-shrink:0}.faqItem[open] summary:after{content:'−'}.faqItem p{margin:0;padding:0 22px 20px;font-size:13.5px;color:var(--muted);line-height:1.7}
-body.dark .faqItem summary{color:#fff}
-.statStrip{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;text-align:center}.statCell b{display:block;font:800 34px 'Hanken Grotesk';color:var(--navy)}.statCell span{font-size:12px;color:var(--muted);font-weight:600}
-body.dark .statCell b{color:#fff}
-.ctaBand{background:linear-gradient(120deg,var(--navy),#123258);color:#fff;border-radius:24px;padding:52px 40px;text-align:center;position:relative;overflow:hidden}.ctaBand:before{content:'';position:absolute;width:320px;height:320px;background:rgba(214,158,46,.13);border-radius:50%;right:-120px;top:-140px}.ctaBand h2{font:700 30px 'Hanken Grotesk';margin:0 0 12px;position:relative}.ctaBand p{color:#C9D3E0;font-size:14px;max-width:520px;margin:0 auto 26px;position:relative}.ctaBand .heroBtns{justify-content:center;position:relative}
-@media(prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}.reveal{opacity:1;transform:none}}
-@media(max-width:620px){.statStrip{grid-template-columns:1fr 1fr}.ctaBand{padding:38px 22px;border-radius:18px}.ctaBand h2{font-size:24px}}
-body.dark{--surface:#07111D;--card:#0E1B2A;--text:#EDF2F7;--muted:#9CAABC;--line:#26394D}body.dark .topbar{background:rgba(7,17,29,.94);border-color:#26394D}body.dark .brand{color:#fff}body.dark .navlinks a{color:#AAB6C7}body.dark .navlinks a.active{color:#fff;border-color:#F1C75B}body.dark .iconBtn{color:#AAB6C7}body.dark .iconBtn:hover{background:#142337}body.dark .startBtn{background:#F1C75B;color:#111827}body.dark .sectionHeader h2,body.dark .subjectHead h2,body.dark .subject h3,body.dark .post h3,body.dark .valueCard h3{color:#fff}body.dark .latest{background:#0A1624;border-color:#26394D}body.dark .valueIcon,body.dark .subjectIcon{background:#2A2819}body.dark .count{background:#292719;border-color:#65582A;color:#F1D16A}
-@media(max-width:950px){.navlinks{display:none}.menuBtn{display:grid}.heroIn{grid-template-columns:1fr;gap:35px;padding:65px 0 110px}.heroVisual{min-height:330px}.values{grid-template-columns:1fr}.subjectGrid{grid-template-columns:repeat(2,1fr)}.postGrid{grid-template-columns:1fr 1fr}.footerIn{grid-template-columns:1fr 1fr}}
-@media(max-width:620px){.wrap{width:min(100% - 22px,1200px)}.navin{height:66px}.brandMark{width:37px;height:37px}.brandText{font-size:16px}.brandSub{display:none}.navactions .iconBtn:first-child{display:none}.startBtn{padding:9px 12px;font-size:12px}.heroIn{padding:48px 0 100px}.hero h1{font-size:43px;letter-spacing:-1.4px}.hero p{font-size:14px;line-height:1.65}.heroVisual{min-height:285px}.orbit{width:285px;height:285px}.heroPanel{padding:19px;border-radius:19px}.panelTop strong{font-size:19px}.stat{padding:11px 0}.stat b{font-size:19px}.curve{height:55px}.section{padding:68px 0}.sectionHeader h2{font-size:28px}.postGrid{grid-template-columns:1fr}.subjectHead{align-items:center}.subjectHead h2{font-size:26px}.count{display:none}.subjectGrid{grid-template-columns:1fr 1fr;gap:10px}.subject{padding:15px;min-height:150px}.subject small{left:15px}.footerIn{grid-template-columns:1fr;padding:45px 0 30px}.mobileBottom{position:fixed;display:flex;left:10px;right:10px;bottom:10px;z-index:90;background:rgba(7,19,34,.95);border:1px solid rgba(255,255,255,.1);backdrop-filter:blur(12px);border-radius:15px;padding:8px;justify-content:space-around}.mobileBottom a{color:#fff;text-decoration:none;font-size:20px;padding:7px 18px;border-radius:10px}.mobileBottom a:hover{background:rgba(255,255,255,.08)}}
+:root{--navy:#0A192F;--navy2:#102747;--gold:#D69E2E;--gold2:#F1C75B;--bg:#F6F8FB;--card:#fff;--text:#162033;--muted:#667085;--line:#E2E8F0;--soft:#F8FAFC;--shadow:0 10px 30px rgba(10,25,47,.07)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,sans-serif;line-height:1.55}.material-symbols-outlined{font-variation-settings:'FILL' 0,'wght' 500,'GRAD' 0,'opsz' 24}.wrap{width:min(1180px,calc(100% - 32px));margin:auto}
+.topbar{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}.nav{height:70px;display:flex;align-items:center;gap:24px}.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--navy);margin-right:auto}.brandMark{width:40px;height:40px;border-radius:50%;object-fit:cover;border:2px solid var(--gold)}.brandText{font:800 18px 'Hanken Grotesk';letter-spacing:.3px}.brandText span{color:var(--gold)}.brandSub{display:block;font-size:8px;letter-spacing:1.2px;color:#7B8494}.navlinks{display:flex;gap:22px;align-items:center}.navlinks a{font-size:13px;font-weight:700;color:#536071;text-decoration:none}.navlinks a:hover,.navlinks a.active{color:var(--navy)}.navAction{display:inline-flex;align-items:center;gap:6px;background:var(--navy);color:white;text-decoration:none;padding:9px 14px;border-radius:9px;font-size:12px;font-weight:800}.theme{border:0;background:transparent;cursor:pointer;color:#596579}.menu{display:none;border:0;background:transparent}
+.studyHero{background:var(--navy);color:white}.heroIn{padding:54px 0 48px;display:grid;grid-template-columns:1.35fr .65fr;gap:35px;align-items:center}.eyebrow{color:var(--gold2);font-size:11px;font-weight:800;letter-spacing:1.7px;text-transform:uppercase}.hero h1{font:800 clamp(34px,5vw,56px)/1.05 'Hanken Grotesk';letter-spacing:-1.8px;margin:12px 0}.hero h1 span{color:var(--gold2)}.hero p{color:#D3DCE8;max-width:680px;font-size:15px;margin:0 0 22px}.search{display:flex;max-width:650px;background:white;border-radius:12px;padding:5px;box-shadow:0 12px 30px rgba(0,0,0,.16)}.search input{flex:1;border:0;outline:0;padding:11px 12px;font-size:14px;min-width:0}.search button{border:0;background:var(--gold);color:#111827;border-radius:9px;padding:0 17px;font-weight:800;cursor:pointer}.heroStats{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.heroStat{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.13);padding:16px;border-radius:14px}.heroStat b{display:block;font:800 27px 'Hanken Grotesk';color:var(--gold2)}.heroStat span{font-size:11px;color:#C2CBD7}
+main{padding-bottom:55px}.section{padding:38px 0}.sectionTitle{display:flex;align-items:end;justify-content:space-between;gap:15px;margin-bottom:18px}.sectionTitle h2{font:800 26px 'Hanken Grotesk';margin:0;color:var(--navy)}.sectionTitle p{margin:3px 0 0;color:var(--muted);font-size:12px}.link{font-size:12px;font-weight:800;color:var(--navy);text-decoration:none}.dashboard{display:grid;grid-template-columns:1.35fr .65fr;gap:18px}.panel{background:var(--card);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow)}.panelPad{padding:20px}.plan{display:grid;gap:10px}.planItem{display:grid;grid-template-columns:36px 1fr auto;align-items:center;gap:12px;padding:12px;border:1px solid var(--line);border-radius:12px;background:var(--soft)}.planIcon{width:36px;height:36px;border-radius:10px;background:#FFF4D7;color:var(--navy);display:grid;place-items:center}.planItem strong{display:block;font-size:13px}.planItem small{color:var(--muted);font-size:11px}.openBtn{border:1px solid var(--line);background:white;border-radius:8px;padding:7px 10px;font-size:11px;font-weight:800;color:var(--navy);text-decoration:none}.progressBox{padding:20px}.ring{width:125px;height:125px;border-radius:50%;margin:5px auto 15px;display:grid;place-items:center;background:conic-gradient(var(--gold) 0 28%,#E8EDF3 28% 100%);position:relative}.ring:after{content:'';position:absolute;inset:10px;background:white;border-radius:50%}.ring b{position:relative;z-index:1;font:800 27px 'Hanken Grotesk';color:var(--navy)}.progressBox h3{text-align:center;font:800 17px 'Hanken Grotesk';margin:0}.progressBox p{text-align:center;color:var(--muted);font-size:11px;margin:4px 0 15px}.progressBtn{display:block;text-align:center;background:var(--navy);color:white;text-decoration:none;border-radius:9px;padding:10px;font-size:12px;font-weight:800}
+.subjectGrid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.subject{background:var(--card);border:1px solid var(--line);border-radius:15px;padding:17px;text-decoration:none;color:inherit;box-shadow:var(--shadow);transition:.2s}.subject:hover{transform:translateY(-3px);border-color:#D5B15C}.subjectTop{display:flex;justify-content:space-between;align-items:center}.subjectIcon{width:40px;height:40px;border-radius:11px;background:#F4F7FA;color:var(--navy);display:grid;place-items:center}.subjectCount{font-size:10px;color:var(--muted);font-weight:700}.subject h3{font:800 17px 'Hanken Grotesk';color:var(--navy);margin:13px 0 3px}.subject p{font-size:11px;color:var(--muted);margin:0}.bar{height:5px;background:#E8EDF3;border-radius:99px;margin-top:14px;overflow:hidden}.bar i{display:block;height:100%;background:var(--gold);width:0}
+.tools{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.tool{padding:20px;background:var(--card);border:1px solid var(--line);border-radius:15px;text-decoration:none;color:inherit}.tool .material-symbols-outlined{font-size:27px;color:var(--gold)}.tool h3{font:800 17px 'Hanken Grotesk';color:var(--navy);margin:12px 0 4px}.tool p{font-size:11px;color:var(--muted);margin:0}.recent{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.recent a{padding:16px;background:var(--card);border:1px solid var(--line);border-radius:14px;text-decoration:none;color:inherit}.recent b{display:block;color:var(--navy);font-size:13px;margin-bottom:5px}.recent span{font-size:10px;color:var(--muted)}footer{background:var(--navy);color:#B9C5D4;padding:35px 0}.footerGrid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:35px}.footer h3{color:white;font:800 20px 'Hanken Grotesk';margin:0}.footer h3 span{color:var(--gold2)}.footer h4{color:white;margin:0 0 10px;font-size:12px}.footer a{display:block;color:#B9C5D4;text-decoration:none;font-size:11px;margin:7px 0}.footer p{font-size:11px;max-width:430px}.copy{border-top:1px solid rgba(255,255,255,.1);margin-top:25px;padding-top:15px;font-size:10px}
+.dark body{background:#0B1422}.dark .topbar{background:rgba(11,20,34,.94);border-color:#243247}.dark .panel,.dark .subject,.dark .tool,.dark .recent a,.dark .planItem{background:#111D2D;border-color:#29384D;color:#E7EDF5}.dark .sectionTitle h2,.dark .subject h3,.dark .tool h3,.dark .planItem strong,.dark .progressBox h3{color:#F4F7FB}.dark .ring:after{background:#111D2D}.dark .bar{background:#2B394C}.dark .openBtn{background:#152235;border-color:#33445C;color:white}
+@media(max-width:900px){.navlinks{display:none}.menu{display:block}.heroIn,.dashboard{grid-template-columns:1fr}.subjectGrid{grid-template-columns:repeat(2,1fr)}.tools,.recent{grid-template-columns:1fr 1fr}.footerGrid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.wrap{width:min(100% - 22px,1180px)}.nav{height:62px}.brandSub{display:none}.navAction{display:none}.heroIn{padding:38px 0}.hero h1{font-size:38px}.search button{padding:0 12px}.section{padding:28px 0}.subjectGrid,.tools,.recent,.footerGrid{grid-template-columns:1fr}.heroStats{grid-template-columns:1fr 1fr}.sectionTitle{align-items:flex-start;flex-direction:column}.planItem{grid-template-columns:34px 1fr}.openBtn{grid-column:2;justify-self:start}.mobileBottom{display:flex!important}}
+.mobileBottom{display:none;position:fixed;bottom:0;left:0;right:0;z-index:60;background:white;border-top:1px solid var(--line);justify-content:space-around;padding:9px}.mobileBottom a{color:var(--navy);text-decoration:none;font-size:18px}
 </style>
+<link rel="stylesheet" href="assets/css/rise-progress.css">
+<link rel="stylesheet" href="assets/css/rise-navigation.css">
+<link rel="stylesheet" href="assets/css/rise-search.css">
+<link rel="stylesheet" href="assets/css/rise-bookmarks.css">
+<link rel="stylesheet" href="assets/css/rise-analytics.css">
+<link rel="stylesheet" href="assets/css/rise-timer.css">
+<link rel="stylesheet" href="assets/css/rise-planner.css">
+<link rel="stylesheet" href="assets/css/rise-revision.css">
 </head>
 <body>
-<a class="skipLink" href="#main">Skip to content</a>
-<header class="topbar">
-<div class="wrap navin">
-<a class="brand" href="index.html"><img alt="Sunny Rise" class="brandMark" src="assets/sunnyrise-logo.jpg"/><div><div class="brandText">SUNNY <span>RISE</span></div><small class="brandSub">YOUR KNOWLEDGE PARTNER</small></div></a>
-<nav aria-label="Main navigation" class="navlinks" id="mainNav">
-<a class="active" href="index.html">HOME</a><a href="english/index.html">ENGLISH</a><a href="polity/index.html">POLITY</a><a href="history/index.html">HISTORY</a><a href="geography/index.html">GEOGRAPHY</a><a href="library/index.html">LIBRARY</a><a href="about/index.html">ABOUT</a>
-</nav>
-<div class="navactions">
-<button aria-label="Toggle dark mode" class="iconBtn" id="theme"><span class="material-symbols-outlined">dark_mode</span></button>
-<a class="startBtn" href="#subjects">Get Started</a>
-<button aria-controls="mainNav" aria-expanded="false" aria-label="Open menu" class="menuBtn" id="menu"><span class="material-symbols-outlined">menu</span></button>
-</div>
-</div>
-</header>
-<main id="main">
-<section class="hero">
-<div class="heroGlow"></div>
-<div class="wrap heroIn">
-<div>
-<span class="eyebrow">Remember · Learn · Revise</span>
-<h1>Study Smarter.<br/><span>Revise Faster.</span></h1>
-<p>Exam-focused notes for SSC and other competitive exams — organized subject by subject so you spend less time searching and more time learning, revising and testing yourself.</p>
-<div class="heroBtns"><a class="btn btnGold" href="#subjects">Explore Notes <span class="material-symbols-outlined" style="font-size:17px">arrow_forward</span></a><a class="btn btnOutline" href="english/index.html">Practice English</a></div>
-<div class="trustRow">
-<span class="trustItem"><span class="material-symbols-outlined">lock_open</span>100% Free</span>
-<span class="trustItem"><span class="material-symbols-outlined">smartphone</span>Mobile Friendly</span>
-<span class="trustItem"><span class="material-symbols-outlined">bolt</span>No Sign-up Needed</span>
-</div>
-</div>
-<div class="heroVisual">
-<div class="orbit"></div>
-<div class="heroPanel">
-<div class="panelTop"><strong>📚 Learning Library</strong><span class="panelBadge">FREE ACCESS</span></div>
-<div class="stat"><span>General Studies subjects</span><b>9+</b></div>
-<div class="stat"><span>Topic-wise notes</span><b>80+</b></div>
-<div class="stat"><span>English practice resources</span><b>12+</b></div>
-<div class="stat"><span>Learning mode</span><b>FOCUS</b></div>
-<div class="panelProgress"><span style="font-size:11px;color:#B7C2D1">Your study library is ready</span><div class="progressLine"><i></i></div></div>
-</div>
-</div>
-</div>
-<div class="curve"><svg preserveaspectratio="none" viewbox="0 0 1200 120"><path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"></path></svg></div>
+<header class="topbar"><div class="wrap nav">
+<a class="brand" href="index.html"><img class="brandMark" src="assets/sunnyrise-profile.jpg" alt="RISE NOTES"><div><div class="brandText">RISE <span>NOTES</span></div><span class="brandSub">YOUR KNOWLEDGE PARTNER</span></div></a>
+<nav class="navlinks"><a class="active" href="index.html">Study</a><a href="library/index.html">Library</a><a href="search/index.html">Search</a><a href="about/index.html">About</a></nav>
+<a class="navAction" href="#subjects"><span class="material-symbols-outlined" style="font-size:17px">play_arrow</span> Start Studying</a><button class="theme" id="theme" aria-label="Toggle theme"><span class="material-symbols-outlined">dark_mode</span></button><button class="menu" id="menu" aria-label="Open menu"><span class="material-symbols-outlined">menu</span></button>
+</div></header>
+<section class="studyHero"><div class="wrap heroIn"><div class="hero"><div class="eyebrow">Study Dashboard · SSC & Competitive Exams</div><h1>Study less randomly.<br><span>Revise more deliberately.</span></h1><p>Choose a subject, open a chapter, revise from structured notes, and keep your preparation organized in one place.</p><form class="search" action="search/index.html" method="get"><input name="q" placeholder="Search chapters, topics, formulas..." aria-label="Search notes"><button type="submit">Search</button></form></div><div class="heroStats"><div class="heroStat"><b>8+</b><span>Core subjects</span></div><div class="heroStat"><b>100+</b><span>Study chapters</span></div><div class="heroStat"><b>24/7</b><span>Free access</span></div><div class="heroStat"><b>1</b><span>Study library</span></div></div></div></section>
+<main>
+
+<section class="rise-search-box" aria-label="Search study notes">
+  <form class="rise-search-form" onsubmit="return false;">
+    <input class="rise-search-input" data-rise-search-input type="search"
+      placeholder="Search subjects, chapters, topics…" autocomplete="off"
+      aria-label="Search subjects, chapters and topics">
+  </form>
+  <p class="rise-search-hint">Try: motion, atoms, constitution, cells, geography…</p>
+  <div class="rise-search-count" data-rise-search-count></div>
+  <div class="rise-search-results" data-rise-search-results>
+    <div class="rise-search-empty">Search chapters, topics, subjects or keywords.</div>
+  </div>
 </section>
-<section class="section">
-<div class="wrap">
-<div class="sectionHeader"><span class="kicker">A better way to prepare</span><h2>Built for focused learning</h2><p>Simple navigation, exam-oriented content and quick access to the resources that matter.</p></div>
-<div class="values reveal">
-<article class="valueCard"><div class="valueIcon"><span class="material-symbols-outlined" style="font-size:42px">calendar_month</span></div><h3>Get Started</h3><p>Choose a subject, follow the chapters and build a consistent study routine without wasting time searching for material.</p></article>
-<article class="valueCard"><div class="valueIcon"><span class="material-symbols-outlined" style="font-size:42px">psychology</span></div><h3>Learn Smart</h3><p>Study concise, structured notes designed for competitive exams, then return for quick revision when you need it.</p></article>
-<article class="valueCard"><div class="valueIcon"><span class="material-symbols-outlined" style="font-size:42px">emoji_events</span></div><h3>Stay Consistent</h3><p>Keep your preparation organized across GS, English and vocabulary so progress comes from repetition, not random study.</p></article>
-</div>
-<div class="statStrip reveal" style="margin-top:56px">
-<div class="statCell"><b>9+</b><span>GS Subjects</span></div>
-<div class="statCell"><b>80+</b><span>Topic-wise Notes</span></div>
-<div class="statCell"><b>12+</b><span>English Resources</span></div>
-<div class="statCell"><b>100%</b><span>Free Access</span></div>
-</div>
-</div>
+
+<section class="rise-continue" data-rise-continue aria-label="Continue studying"></section>
+
+<section class="rise-planner" data-rise-planner aria-label="Daily study planner">
+  <div class="rise-planner-panel">
+    <div class="rise-planner-head">
+      <div class="rise-planner-title">Today's Study Plan</div>
+      <div class="rise-planner-date" data-plan-date></div>
+    </div>
+    <form class="rise-planner-form" data-plan-form>
+      <input class="rise-planner-input" name="title" required placeholder="Chapter or study goal" aria-label="Chapter or study goal">
+      <input class="rise-planner-input" name="subject" placeholder="Subject" aria-label="Subject">
+      <input class="rise-planner-input" name="minutes" type="number" min="5" step="5" value="30" aria-label="Target minutes">
+      <button class="rise-planner-btn" type="submit">Add Goal</button>
+    </form>
+    <div class="rise-planner-presets">
+      <button type="button" class="rise-planner-preset" data-plan-preset="Quick Revision">Quick Revision</button>
+      <button type="button" class="rise-planner-preset" data-plan-preset="Practice Questions">Practice Questions</button>
+      <button type="button" class="rise-planner-preset" data-plan-preset="Chapter Study">Chapter Study</button>
+    </div>
+    <div class="rise-planner-progress"><div class="rise-planner-fill" data-plan-fill></div></div>
+    <div class="rise-planner-summary"><span data-plan-percent>0%</span><span data-plan-summary>0/0 goals · 0/0 min</span></div>
+  </div>
+  <div class="rise-planner-panel">
+    <div class="rise-planner-title">Today's Goals</div>
+    <div class="rise-plan-list" data-plan-list></div>
+  </div>
 </section>
-<section class="section subjects" id="subjects">
-<div class="wrap">
-<div class="subjectHead"><div><h2>📚 General Studies</h2><p>These cards link directly to the subject indexes in your RISE NOTES content.</p></div><span class="count">LIVE NOTES &amp; CHAPTERS</span></div>
-<div class="subjectGrid reveal"><a class="subject" href="geography/index.html"><div class="subjectIcon">🌍</div><h3>Geography</h3><p>Open the Geography section and continue with available chapters.</p><small>Library</small><span class="arrow">›</span></a><a class="subject" href="history/index.html"><div class="subjectIcon">📜</div><h3>History</h3><p>Exam-focused history notes with the current chapter library.</p><small>1 note</small><span class="arrow">›</span></a><a class="subject" href="polity/index.html"><div class="subjectIcon">🏛️</div><h3>Polity</h3><p>Constitution, Fundamental Rights, Parliament, Judiciary, bodies and emergencies.</p><small>16 chapters</small><span class="arrow">›</span></a><a class="subject" href="economics/index.html"><div class="subjectIcon">📈</div><h3>Economics</h3><p>Microeconomics, national income, inflation, banking, budget and more.</p><small>10 notes</small><span class="arrow">›</span></a><a class="subject" href="static-gk/index.html"><div class="subjectIcon">🎯</div><h3>Static GK</h3><p>High-yield static GK resources for quick competitive-exam revision.</p><small>Library</small><span class="arrow">›</span></a><a class="subject" href="physics/index.html"><div class="subjectIcon">⚛️</div><h3>Physics</h3><p>Motion, force, gravitation, sound, light, electricity and magnetism.</p><small>8 notes</small><span class="arrow">›</span></a><a class="subject" href="chemistry/index.html"><div class="subjectIcon">🧪</div><h3>Chemistry</h3><p>Competitive-exam chemistry section, organized from its subject index.</p><small>Library</small><span class="arrow">›</span></a><a class="subject" href="biology/index.html"><div class="subjectIcon">🧬</div><h3>Biology</h3><p>Cell, tissues, systems, nutrition, diseases, genetics and kingdoms.</p><small>15 chapters</small><span class="arrow">›</span></a><a class="subject" href="environment/index.html"><div class="subjectIcon">🌱</div><h3>Environment</h3><p>Ecosystems, biodiversity, pollution, climate change and conservation efforts.</p><small>Library</small><span class="arrow">›</span></a></div>
-</div>
+
+
+<section class="rise-progress-panel" data-rise-dashboard-progress data-total="48" aria-label="Overall study progress">
+  <div class="rise-progress-head">
+    <div class="rise-progress-title">Your Study Progress</div>
+    <div class="rise-progress-percent" data-progress-percent>0%</div>
+  </div>
+  <div class="rise-progress-track" aria-hidden="true">
+    <div class="rise-progress-fill" data-progress-fill></div>
+  </div>
+  <div class="rise-stat-grid">
+    <div class="rise-stat"><strong data-completed-count>0</strong><span>Chapters completed</span></div>
+    <div class="rise-stat"><strong data-bookmark-count>0</strong><span>Bookmarked</span></div>
+    <div class="rise-stat"><strong data-average-score>0%</strong><span>Best practice average</span></div>
+    <div class="rise-stat"><strong data-rise-global-progress>0%</strong><span>Overall progress</span></div>
+  </div>
 </section>
-<section class="section latest">
-<div class="wrap">
-<div class="sectionHeader"><span class="kicker">Featured resources</span><h2>Latest study picks</h2><p>Jump directly into high-value topics instead of browsing through endless menus.</p></div>
-<div class="postGrid reveal"><article class="post"><div class="postVisual"><span class="bigIcon">🏛️</span></div><div class="postBody"><div class="postMeta">Polity · Chapter 01</div><h3>Making of Indian Constitution</h3><p>Start Polity with the Constituent Assembly, committees, important dates and the making process.</p><a class="postLink" href="polity/01-making-of-indian-constitution.html">Read notes<span class="material-symbols-outlined" style="font-size:15px">arrow_forward</span></a></div></article><article class="post"><div class="postVisual"><span class="bigIcon">🧬</span></div><div class="postBody"><div class="postMeta">Biology · Chapter</div><h3>Cell Notes</h3><p>Begin Biology with a focused chapter on the cell and its exam-relevant concepts.</p><a class="postLink" href="biology/cell_notes.html">Read Biology<span class="material-symbols-outlined" style="font-size:15px">arrow_forward</span></a></div></article><article class="post"><div class="postVisual"><span class="bigIcon">⚛️</span></div><div class="postBody"><div class="postMeta">Physics · Chapter</div><h3>Motion Notes</h3><p>Build Physics fundamentals from motion before moving through the rest of the Physics library.</p><a class="postLink" href="physics/motion_notes.html">Read Physics<span class="material-symbols-outlined" style="font-size:15px">arrow_forward</span></a></div></article><article class="post"><div class="postVisual"><span class="bigIcon">📈</span></div><div class="postBody"><div class="postMeta">Economics · Chapter</div><h3>Microeconomics</h3><p>Start Economics with the available microeconomics notes and build the fundamentals.</p><a class="postLink" href="economics/microeconomics_notes.html">Read Economics<span class="material-symbols-outlined" style="font-size:15px">arrow_forward</span></a></div></article><article class="post"><div class="postVisual"><span class="bigIcon">🔤</span></div><div class="postBody"><div class="postMeta">English · Practice</div><h3>SSC English Practice</h3><p>Access cloze tests, fill-in-the-blanks, idioms, spellings, parajumbles, error detection and more.</p><a class="postLink" href="english/ssc-cgl-2025/index.html">Start practice<span class="material-symbols-outlined" style="font-size:15px">arrow_forward</span></a></div></article><article class="post"><div class="postVisual"><span class="bigIcon">📖</span></div><div class="postBody"><div class="postMeta">Vocabulary</div><h3>Vocabulary Library</h3><p>Open the vocabulary section for word-focused learning, phrasal verbs and homonyms.</p><a class="postLink" href="english/vocabulary/index.html">Open vocabulary<span class="material-symbols-outlined" style="font-size:15px">arrow_forward</span></a></div></article></div>
-</div>
+
+<section class="section"><div class="wrap"><div class="sectionTitle"><div><h2>Today's Study Plan</h2><p>Start with a small, focused session instead of opening everything at once.</p></div></div><div class="dashboard"><div class="panel panelPad"><div class="plan">
+<div class="planItem"><div class="planIcon"><span class="material-symbols-outlined">account_balance</span></div><div><strong>Polity — Constitution Basics</strong><small>Read the chapter and mark important articles.</small></div><a class="openBtn" href="polity/02-salient-features-indian-constitution.html">Open</a></div>
+<div class="planItem"><div class="planIcon"><span class="material-symbols-outlined">science</span></div><div><strong>Physics — Motion</strong><small>Revise definitions, equations and examples.</small></div><a class="openBtn" href="physics/motion_notes.html">Open</a></div>
+<div class="planItem"><div class="planIcon"><span class="material-symbols-outlined">menu_book</span></div><div><strong>English — Vocabulary</strong><small>Build a daily revision habit with short sessions.</small></div><a class="openBtn" href="english/vocabulary/index.html">Open</a></div>
+</div></div><div class="panel progressBox"><div class="ring"><b>28%</b></div><h3>Study progress</h3><p>Progress is saved locally on this device.</p><a class="progressBtn" href="library/index.html">Open Study Library</a></div></div></div></section>
+<section class="section" id="subjects"><div class="wrap"><div class="sectionTitle"><div><h2>Choose a Subject</h2><p>Go directly to the area you want to study.</p></div><a class="link" href="library/index.html">View full library →</a></div><div class="subjectGrid">
+<a class="subject" href="polity/index.html"><div class="subjectTop"><div class="subjectIcon"><span class="material-symbols-outlined">account_balance</span></div><span class="subjectCount">16 chapters</span></div><h3>Polity</h3><p>Constitution, Parliament, courts & governance</p><div class="bar"><i style="width:55%"></i></div></a>
+<a class="subject" href="history/index.html"><div class="subjectTop"><div class="subjectIcon"><span class="material-symbols-outlined">history_edu</span></div><span class="subjectCount">Notes</span></div><h3>History</h3><p>Ancient, medieval & modern India</p><div class="bar"><i style="width:35%"></i></div></a>
+<a class="subject" href="geography/index.html"><div class="subjectTop"><div class="subjectIcon"><span class="material-symbols-outlined">public</span></div><span class="subjectCount">Notes</span></div><h3>Geography</h3><p>India, physical geography & resources</p><div class="bar"><i style="width:30%"></i></div></a>
+<a class="subject" href="economics/index.html"><div class="subjectTop"><div class="subjectIcon"><span class="material-symbols-outlined">monitoring</span></div><span class="subjectCount">Notes</span></div><h3>Economics</h3><p>Banking, inflation, budget & national income</p><div class="bar"><i style="width:45%"></i></div></a>
+<a class="subject" href="physics/index.html"><div class="subjectTop"><div class="subjectIcon"><span class="material-symbols-outlined">bolt</span></div><span class="subjectCount">Notes</span></div><h3>Physics</h3><p>Motion, force, electricity, optics & sound</p><div class="bar"><i style="width:60%"></i></div></a>
+<a class="subject" href="chemistry/index.html"><div class="subjectTop"><div class="subjectIcon"><span class="material-symbols-outlined">science</span></div><span class="subjectCount">Notes</span></div><h3>Chemistry</h3><p>Core concepts and competitive-exam revision</p><div class="bar"><i style="width:25%"></i></div></a>
+<a class="subject" href="biology/index.html"><div class="subjectTop"><div class="subjectIcon"><span class="material-symbols-outlined">biotech</span></div><span class="subjectCount">Notes</span></div><h3>Biology</h3><p>Cells, tissues, systems, genetics & health</p><div class="bar"><i style="width:70%"></i></div></a>
+<a class="subject" href="english/index.html"><div class="subjectTop"><div class="subjectIcon"><span class="material-symbols-outlined">translate</span></div><span class="subjectCount">Practice</span></div><h3>English</h3><p>Grammar, vocabulary and exam practice</p><div class="bar"><i style="width:50%"></i></div></a>
+</div></div></section>
+<section class="section"><div class="wrap"><div class="sectionTitle"><div><h2>Study Tools</h2><p>Use these when you need a different way to revise.</p></div></div><div class="tools"><a class="tool" href="search/index.html"><span class="material-symbols-outlined">search</span><h3>Search Notes</h3><p>Find a topic or chapter without browsing every subject.</p></a><a class="tool" href="library/index.html"><span class="material-symbols-outlined">local_library</span><h3>Study Library</h3><p>Browse the complete collection in one place.</p></a><a class="tool" href="static-gk/index.html"><span class="material-symbols-outlined">quiz</span><h3>Static GK</h3><p>Quick facts and revision material for General Awareness.</p></a></div></div></section>
+<section class="section"><div class="wrap"><div class="sectionTitle"><div><h2>Quick Revision</h2><p>High-value starting points for your next session.</p></div></div><div class="recent"><a href="polity/06-fundamental-rights.html"><b>Fundamental Rights</b><span>Polity · Quick revision</span></a><a href="physics/electricity_notes.html"><b>Electricity</b><span>Physics · Concepts & formulas</span></a><a href="biology/cell_notes.html"><b>Cell</b><span>Biology · Core concepts</span></a></div></div></section>
+<p><a href="analytics.html">📊 View Study Analytics</a></p>
+<p><a href="planner.html">📅 Open Daily Study Planner</a></p>
+
+<section class="rise-revision" data-rise-revision aria-label="Revision system">
+  <div class="rise-revision-panel">
+    <div class="rise-revision-head">
+      <div>
+        <div class="rise-revision-title">Today's Revision</div>
+        <div class="rise-revision-subtitle">Review completed chapters when they become due.</div>
+      </div>
+    </div>
+    <div class="rise-revision-filters">
+      <button class="rise-revision-filter is-active" type="button" data-revision-filter="due">Due Now</button>
+      <button class="rise-revision-filter" type="button" data-revision-filter="all">All Completed</button>
+    </div>
+    <div class="rise-revision-list" data-rise-revision-list data-revision-list></div>
+  </div>
 </section>
-<section class="section" id="faq">
-<div class="wrap">
-<div class="sectionHeader"><span class="kicker">Good to know</span><h2>Frequently asked questions</h2><p>Everything you need to know before you start studying with RISE NOTES.</p></div>
-<div class="faq reveal">
-<details class="faqItem"><summary>Is RISE NOTES really free to use?</summary><p>Yes. Every subject, chapter and practice resource on this site is free to access — no sign-up, subscription or hidden paywall.</p></details>
-<details class="faqItem"><summary>Which exams do these notes cover?</summary><p>The content is built primarily for SSC CGL, CHSL and MTS, and works well as general revision material for other competitive exams that share a similar General Studies and English syllabus.</p></details>
-<details class="faqItem"><summary>Can I study on my phone?</summary><p>Yes — the entire site is fully responsive, so notes, quizzes and practice pages work smoothly on mobile, tablet and desktop.</p></details>
-<details class="faqItem"><summary>How often is new content added?</summary><p>New chapters and practice sets are added regularly across subjects. Check back on individual subject pages for the latest additions.</p></details>
-</div>
-</div>
-</section>
-<section class="section">
-<div class="wrap">
-<div class="ctaBand reveal">
-<h2>Ready to start revising?</h2>
-<p>Pick a subject, open a chapter, and study directly from the RISE NOTES content library. Use Search when you already know what you want to revise.</p>
-<div class="heroBtns"><a class="btn btnGold" href="#subjects">Browse Subjects <span class="material-symbols-outlined" style="font-size:17px">arrow_forward</span></a><a class="btn btnOutline" href="search/index.html">Search Notes</a></div>
-</div>
-</div>
-</section>
+
+<p><a href="revision.html">🧠 Open Revision</a></p>
 </main>
-<footer class="footer">
-<div class="wrap footerIn">
-<div><h3>SUNNY <span>RISE</span></h3><p>Your knowledge partner for focused SSC and competitive-exam preparation. Structured notes, practice resources and quick revision — all in one place.</p></div>
-<div><h4>Navigation</h4><a href="index.html">Home</a><a href="english/index.html">English</a><a href="polity/index.html">Polity</a><a href="history/index.html">History</a><a href="about/index.html">About</a><a href="library/index.html">Study Library</a></div>
-<div><h4>Study Library</h4><a href="search/index.html">Search notes</a><a href="english/vocabulary/index.html">Vocabulary</a><a href="static-gk/index.html">Static GK</a><a href="physics/index.html">Physics</a><a href="biology/index.html">Biology</a><a href="environment/index.html">Environment</a></div>
-</div>
-<div class="copyright">Copyright © <span id="year">2026</span> • SUNNY RISE · Your Knowledge Partner</div>
-</footer>
-<nav aria-label="Mobile navigation" class="mobileBottom"><a aria-label="Home" href="index.html">🏠</a><a aria-label="Search" href="search/index.html">🔍</a><a aria-label="About" href="about/index.html">👤</a></nav>
+<footer class="footer"><div class="wrap footerGrid"><div><h3>RISE <span>NOTES</span></h3><p>A structured, free study website for SSC and competitive-exam preparation. Notes first, distractions last.</p></div><div><h4>Study</h4><a href="#subjects">Subjects</a><a href="library/index.html">Study Library</a><a href="search/index.html">Search Notes</a></div><div><h4>Explore</h4><a href="english/index.html">English</a><a href="static-gk/index.html">Static GK</a><a href="about/index.html">About</a></div></div><div class="wrap copy">© <span id="year"></span> RISE NOTES · Your Knowledge Partner</div></footer>
+<nav class="mobileBottom"><a href="index.html" aria-label="Study">📚</a><a href="search/index.html" aria-label="Search">🔎</a><a href="library/index.html" aria-label="Library">🗂️</a><a href="about/index.html" aria-label="About">👤</a></nav>
 <script>
-(function(){
- const yearEl=document.getElementById('year');if(yearEl)yearEl.textContent=new Date().getFullYear();
- const body=document.body,btn=document.getElementById('theme');
- const saved=localStorage.getItem('sunnyrise-theme')||'light';
- function apply(mode){body.classList.toggle('dark',mode==='dark');btn.innerHTML='<span class="material-symbols-outlined">'+(mode==='dark'?'light_mode':'dark_mode')+'</span>';localStorage.setItem('sunnyrise-theme',mode)}
- apply(saved);btn.addEventListener('click',()=>apply(body.classList.contains('dark')?'light':'dark'));
- const menu=document.getElementById('menu'),nav=document.querySelector('.navlinks');
- menu.addEventListener('click',()=>{
-  const openNow=nav.style.display==='flex';
-  nav.style.display=openNow?'none':'flex';
-  nav.style.position='absolute';nav.style.top='66px';nav.style.left='11px';nav.style.right='11px';nav.style.padding='15px';
-  nav.style.background=getComputedStyle(document.body).getPropertyValue('--card');nav.style.border='1px solid var(--line)';nav.style.borderRadius='14px';
-  nav.style.flexDirection='column';nav.style.alignItems='stretch';
-  menu.setAttribute('aria-expanded',String(!openNow));
- });
- if('IntersectionObserver' in window){
-  const io=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.15});
-  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
- }else{
-  document.querySelectorAll('.reveal').forEach(el=>el.classList.add('in'));
- }
-})();
+const body=document.body,theme=document.getElementById('theme');const saved=localStorage.getItem('sunnyrise-theme')||'light';if(saved==='dark')document.documentElement.classList.add('dark');theme.addEventListener('click',()=>{document.documentElement.classList.toggle('dark');localStorage.setItem('sunnyrise-theme',document.documentElement.classList.contains('dark')?'dark':'light')});document.getElementById('year').textContent=new Date().getFullYear();
+const menu=document.getElementById('menu');menu.addEventListener('click',()=>{const n=document.querySelector('.navlinks');n.style.display=n.style.display==='flex'?'none':'flex';n.style.position='absolute';n.style.top='62px';n.style.left='10px';n.style.right='10px';n.style.padding='14px';n.style.background='var(--card)';n.style.border='1px solid var(--line)';n.style.borderRadius='12px';n.style.flexDirection='column';n.style.alignItems='flex-start'});
 </script>
-</body>
-</html>
+<script src="assets/js/rise-progress.js"></script>
+<script src="assets/js/rise-navigation.js"></script>
+<script src="assets/js/rise-search-index.js"></script>
+<script src="assets/js/rise-search.js"></script>
+<script src="assets/js/rise-bookmarks.js"></script>
+<script src="assets/js/rise-analytics.js"></script>
+<script src="assets/js/rise-timer.js"></script>
+<script src="assets/js/rise-planner.js"></script>
+<script src="assets/js/rise-revision.js"></script>
+</body></html>

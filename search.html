@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RISE NOTES — Search</title>
+<link rel="stylesheet" href="assets/css/rise-unified.css">
+<link rel="stylesheet" href="assets/css/rise-navigation.css">
+<link rel="stylesheet" href="assets/css/rise-search.css">
+<link rel="stylesheet" href="assets/css/rise-bookmarks.css">
+<link rel="stylesheet" href="assets/css/rise-analytics.css">
+<link rel="stylesheet" href="assets/css/rise-timer.css">
+<link rel="stylesheet" href="assets/css/rise-planner.css">
+<link rel="stylesheet" href="assets/css/rise-revision.css">
+</head>
+<body>
+<main class="container" style="max-width:1080px;margin:auto;padding:28px 18px;">
+  <h1>Search Study Notes</h1>
+  <p>Find a subject, chapter or topic without manually browsing every page.</p>
+  <section class="rise-search-box">
+    <form class="rise-search-form" onsubmit="return false;">
+      <input class="rise-search-input" data-rise-search-input type="search"
+        placeholder="Search subjects, chapters, topics…" autocomplete="off"
+        aria-label="Search subjects, chapters and topics">
+    </form>
+    <p class="rise-search-hint">Try: motion, atoms, constitution, cells, geography…</p>
+    <div class="rise-search-count" data-rise-search-count></div>
+    <div class="rise-search-results" data-rise-search-results>
+      <div class="rise-search-empty">Search chapters, topics, subjects or keywords.</div>
+    </div>
+  </section>
+</main>
+<script src="assets/js/rise-search-index.js"></script>
+<script src="assets/js/rise-search.js"></script>
+<script src="assets/js/rise-navigation.js"></script>
+<script src="assets/js/rise-bookmarks.js"></script>
+<script src="assets/js/rise-analytics.js"></script>
+<script src="assets/js/rise-timer.js"></script>
+<script src="assets/js/rise-planner.js"></script>
+<script src="assets/js/rise-revision.js"></script>
+</body>
+</html>
