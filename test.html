@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>RISE NOTES — Test Mode</title>
+<link rel="stylesheet" href="assets/css/rise-unified.css">
+<link rel="stylesheet" href="assets/css/rise-navigation.css">
+<link rel="stylesheet" href="assets/css/rise-test.css">
+</head><body>
+<main class="container rise-test" style="padding:28px 18px">
+<h1>Test Mode</h1>
+<p>Take a timed test, submit it, then review every answer and explanation.</p>
+
+<section class="rise-test-panel" data-test-screen id="rise-test-setup">
+  <h2>Set Up Test</h2>
+  <div class="rise-test-setup">
+    <select class="rise-test-select" id="rise-test-subject" aria-label="Select subject"></select>
+    <select class="rise-test-select" id="rise-test-count" aria-label="Number of questions">
+      <option value="5">5 Questions</option><option value="10">10 Questions</option><option value="15">15 Questions</option>
+    </select>
+    <button class="rise-test-btn" id="rise-test-start">Start Test</button>
+  </div>
+  <p style="color:#8D7A02;font-weight:700">Test duration: 10 minutes. Questions are selected from the current curated test bank.</p>
+</section>
+
+<section class="rise-test-panel rise-test-hidden" data-test-screen id="rise-test-run">
+  <div class="rise-test-top"><strong id="rise-test-number"></strong><span class="rise-test-timer" id="rise-test-timer">10:00</span></div>
+  <div class="rise-test-progress"><div class="rise-test-progress-fill" id="rise-test-progress-fill"></div></div>
+  <div class="rise-question" id="rise-test-question"></div>
+  <div class="rise-options" id="rise-test-options"></div>
+  <div class="rise-test-actions">
+    <button class="rise-test-btn" id="rise-test-prev">Previous</button>
+    <button class="rise-test-btn" id="rise-test-next">Next</button>
+  </div>
+</section>
+
+<section class="rise-test-panel rise-test-hidden rise-test-result" data-test-screen id="rise-test-result">
+  <h2>Test Result</h2>
+  <div class="rise-score" id="rise-test-score">0/0</div>
+  <p id="rise-test-message"></p>
+  <div class="rise-review" id="rise-test-review"></div>
+  <div style="margin-top:18px"><button class="rise-test-btn" id="rise-test-retry">Retry Test</button></div>
+</section>
+</main>
+<script src="assets/js/rise-test-bank.js"></script>
+<script src="assets/js/rise-test.js"></script>
+<script src="assets/js/rise-navigation.js"></script>
+</body></html>
