@@ -1,0 +1,267 @@
+/* RISE NOTES — Global Study Palette */
+:root{
+  --primary:#E1A837;
+  --gold:#E1A837;
+  --gold2:#E1A837;
+  --card:#FFF9EE;
+  --card-bg:#FFF9EE;
+  --card2:#F7E8CA;
+  --soft:#F7E8CA;
+  --text:#38370D;
+  --text-main:#38370D;
+  --text-soft:#756D3A;
+  --muted:#756D3A;
+  --border:rgba(141,122,2,.24);
+  --line:rgba(141,122,2,.24);
+}
+
+/* RISE NOTES — Unified Section System
+   First-pass design normalization: sections, cards, headers, tables, callouts, grids.
+   Existing page themes remain in control of base colors. */
+:root{
+  --rise-primary: var(--primary, var(--gold, #D69E2E));
+  --rise-primary-2: var(--gold2, #F1C75B);
+  --rise-surface: var(--card, var(--card-bg, #FFFFFF));
+  --rise-surface-soft: var(--soft, var(--card2, #F7FAFC));
+  --rise-text: var(--text, var(--text-main, #162033));
+  --rise-muted: var(--muted, var(--text-soft, #667085));
+  --rise-border: var(--border, var(--line, rgba(148,163,184,.28)));
+  --rise-shadow: var(--shadow, 0 10px 30px rgba(15,23,42,.08));
+  --rise-radius: 18px;
+  --rise-radius-sm: 13px;
+}
+
+/* ===== SECTION SHELL ===== */
+section.section,
+.section:not(.section-header),
+main > section,
+main section.section{
+  position: relative;
+  margin: 28px 0 !important;
+  padding: clamp(20px, 2.8vw, 32px) !important;
+  background: var(--rise-surface) !important;
+  color: var(--rise-text);
+  border: 1px solid var(--rise-border) !important;
+  border-radius: var(--rise-radius) !important;
+  box-shadow: var(--rise-shadow) !important;
+}
+
+/* Avoid double-card treatment for structural sections. */
+.section-header,
+.sectionHead{
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 14px !important;
+  margin: 0 0 20px !important;
+  padding: 0 0 14px !important;
+  border-bottom: 1px solid var(--rise-border) !important;
+}
+
+.section-header::after,
+.sectionHead::after{
+  content: '';
+  display: block;
+  width: 42px;
+  height: 3px;
+  flex: 0 0 42px;
+  border-radius: 99px;
+  background: var(--rise-primary);
+}
+
+.section-header h2,
+.sectionHead h2,
+.section-title,
+.sec-title{
+  margin: 0 !important;
+  color: var(--rise-primary) !important;
+  font-weight: 800 !important;
+  line-height: 1.2 !important;
+  letter-spacing: -.015em;
+}
+
+.section-icon,
+.section-num{
+  flex: 0 0 auto;
+  width: 38px;
+  height: 38px;
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  border-radius: 11px !important;
+  background: var(--rise-surface-soft) !important;
+  border: 1px solid var(--rise-border) !important;
+  color: var(--rise-primary) !important;
+  font-weight: 800 !important;
+}
+
+.section-body{
+  padding: 0 !important;
+  color: var(--rise-text);
+}
+
+/* ===== CARDS ===== */
+.card,
+.chapter-card,
+.chapter,
+.box,
+.example-box,
+.formula-box,
+.key-point,
+.exam-tip,
+.highlight,
+.tag,
+.fact-pill,
+.compare-col,
+.toc-item{
+  background: var(--rise-surface-soft) !important;
+  border-color: var(--rise-border) !important;
+  color: var(--rise-text) !important;
+  border-radius: var(--rise-radius-sm) !important;
+}
+
+.card,
+.chapter-card,
+.chapter,
+.box,
+.example-box,
+.formula-box,
+.key-point,
+.exam-tip{
+  padding: 17px !important;
+  box-shadow: none;
+  transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease;
+}
+
+.card:hover,
+.chapter-card:hover,
+.chapter:hover{
+  transform: translateY(-2px);
+  border-color: var(--rise-primary) !important;
+  box-shadow: 0 8px 22px rgba(15,23,42,.07);
+}
+
+.card-title,
+.btitle,
+.chapter-body h3,
+.chapter h3{
+  color: var(--rise-primary) !important;
+  font-weight: 800 !important;
+}
+
+/* ===== CONTENT EMPHASIS ===== */
+.formula-box,
+.example-box,
+.key-point,
+.exam-tip,
+.highlight,
+.tag{
+  border-left: 4px solid var(--rise-primary) !important;
+}
+
+.label,
+.ex-label,
+.section-label{
+  color: var(--rise-primary) !important;
+  font-weight: 800 !important;
+}
+
+.muted,
+.subtitle,
+.sectionHead p,
+.section-header p{
+  color: var(--rise-muted) !important;
+}
+
+/* ===== TABLES ===== */
+.table-wrap{
+  overflow-x: auto !important;
+  border: 1px solid var(--rise-border) !important;
+  border-radius: var(--rise-radius-sm) !important;
+}
+
+table{
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--rise-surface) !important;
+  color: var(--rise-text) !important;
+}
+
+th{
+  background: var(--rise-surface-soft) !important;
+  color: var(--rise-primary) !important;
+  font-weight: 800 !important;
+}
+
+th,td{
+  border-color: var(--rise-border) !important;
+  padding: 12px 14px !important;
+  vertical-align: top;
+}
+
+tbody tr:hover{background: var(--rise-surface-soft) !important;}
+
+/* ===== GRID CONSISTENCY ===== */
+.cards,
+.grid,
+.grid2,
+.two-col,
+.formula-grid,
+.chapters{
+  gap: 14px !important;
+}
+
+/* ===== NAV / TOC ITEMS ===== */
+.toc-item,
+.chapter-link,
+.chapter-nav-btn{
+  border: 1px solid var(--rise-border) !important;
+  transition: transform .18s ease, border-color .18s ease, background .18s ease;
+}
+
+.toc-item:hover,
+.chapter-link:hover,
+.chapter-nav-btn:hover{
+  border-color: var(--rise-primary) !important;
+  background: var(--rise-surface-soft) !important;
+}
+
+.toc-num,
+.chapter-number,
+.num{
+  color: var(--rise-primary) !important;
+  font-weight: 800 !important;
+}
+
+/* ===== DIVIDERS ===== */
+.divider,
+.line{
+  background: var(--rise-border) !important;
+  border-color: var(--rise-border) !important;
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 640px){
+  section.section,
+  .section:not(.section-header),
+  main > section,
+  main section.section{
+    margin: 18px 0 !important;
+    padding: 18px !important;
+    border-radius: 15px !important;
+  }
+  .section-header,
+  .sectionHead{
+    align-items: flex-start !important;
+  }
+  .section-header::after,
+  .sectionHead::after{display:none;}
+  .card,
+  .chapter-card,
+  .chapter,
+  .box,
+  .example-box,
+  .formula-box,
+  .key-point,
+  .exam-tip{padding: 14px !important;}
+}

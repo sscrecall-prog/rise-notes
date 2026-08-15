@@ -1,0 +1,17 @@
+
+/* RISE NOTES — STEP 11 STUDY TIMER */
+.rise-timer{
+  background:var(--rise-paper,#fffaf0);border:1px solid var(--rise-border,rgba(56,55,13,.15));
+  border-radius:18px;padding:18px;margin:20px 0;box-shadow:0 8px 22px rgba(56,55,13,.06)
+}
+.rise-timer-head{display:flex;justify-content:space-between;gap:12px;align-items:center}
+.rise-timer-title{font-weight:900;color:var(--rise-ink,#38370D)}
+.rise-timer-clock{font-size:2.1rem;font-variant-numeric:tabular-nums;font-weight:900;color:var(--rise-ink,#38370D);letter-spacing:.04em}
+.rise-timer-controls{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.rise-timer-btn{
+  border:1px solid var(--rise-border,rgba(56,55,13,.15));background:var(--rise-bg,#FAEED9);
+  color:var(--rise-ink,#38370D);border-radius:10px;padding:9px 13px;font:inherit;font-weight:800;cursor:pointer
+}
+.rise-timer-btn.primary{background:var(--rise-gold,#E1A837);border-color:var(--rise-gold,#E1A837)}
+.rise-timer-status{font-size:.82rem;color:var(--rise-olive,#8D7A02);font-weight:700;margin-top:8px}
+@media(max-width:600px){.rise-timer-head{display:block}.rise-timer-clock{margin-top:8px}}

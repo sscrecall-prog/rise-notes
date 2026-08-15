@@ -1,0 +1,35 @@
+
+/* STEP 5 — Practice System */
+.practice-panel{width:min(1120px,92%);margin:28px auto 34px;background:#FFFDF8;border:1px solid rgba(56,55,13,.16);border-radius:20px;box-shadow:0 14px 35px rgba(56,55,13,.10);overflow:hidden}
+.practice-head{padding:20px 22px;background:#38370D;color:#FAEED9;display:flex;justify-content:space-between;gap:16px;align-items:flex-start}
+.practice-kicker{font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:#E1A837;font-weight:900;margin-bottom:4px}
+.practice-head h2{margin:0!important;color:#FAEED9!important;border:0!important;font-size:1.35rem!important}
+.practice-head p{margin:5px 0 0;color:#FAEED9;opacity:.86;font-size:.85rem}
+.practice-score{min-width:110px;text-align:right;font-weight:900;color:#E1A837;font-size:1.05rem}
+.practice-body{padding:18px 20px}
+.practice-q{border:1px solid rgba(141,122,2,.20);border-radius:15px;padding:16px;margin-bottom:14px;background:#FAEED9}
+.practice-q:last-child{margin-bottom:0}
+.practice-q h3{margin:0 0 11px;color:#38370D;font-size:.96rem;line-height:1.45}
+.practice-options{display:grid;gap:8px}
+.practice-option{display:flex;align-items:flex-start;gap:9px;width:100%;text-align:left;border:1px solid rgba(56,55,13,.16);border-radius:11px;padding:10px 12px;background:#FFFDF8;color:#38370D;cursor:pointer;font:650 .84rem/1.45 system-ui,sans-serif;transition:.18s}
+.practice-option:hover{border-color:#E1A837;transform:translateY(-1px)}
+.practice-option.selected{border-color:#8D7A02;background:rgba(225,168,55,.16)}
+.practice-option.correct{border-color:#8D7A02;background:rgba(141,122,2,.15)}
+.practice-option.wrong{border-color:#38370D;background:rgba(56,55,13,.10)}
+.practice-option input{margin-top:3px;accent-color:#8D7A02}
+.practice-feedback{display:none;margin-top:10px;padding:9px 11px;border-radius:9px;font-size:.78rem;font-weight:750;background:rgba(141,122,2,.10);color:#38370D}
+.practice-q.answered .practice-feedback{display:block}
+.practice-actions{display:flex;gap:9px;align-items:center;flex-wrap:wrap;margin-top:16px}
+.practice-btn{border:1px solid #8D7A02;background:#E1A837;color:#38370D;border-radius:10px;padding:10px 14px;font:850 .82rem/1 system-ui,sans-serif;cursor:pointer}
+.practice-btn.secondary{background:#FFFDF8}
+.practice-result{display:none;margin-top:14px;padding:14px;border-radius:13px;background:#38370D;color:#FAEED9}
+.practice-result strong{color:#E1A837}
+.practice-result.show{display:block}
+body.sr-dark .practice-panel{background:#4a4718;border-color:rgba(225,168,55,.22)}
+body.sr-dark .practice-q{background:#38370D;border-color:rgba(225,168,55,.20)}
+body.sr-dark .practice-q h3,body.sr-dark .practice-option{color:#FAEED9}
+body.sr-dark .practice-option{background:#4a4718;border-color:rgba(225,168,55,.22)}
+body.sr-dark .practice-option.selected{background:#5a551d}
+body.sr-dark .practice-option.correct{background:#615c1f}
+body.sr-dark .practice-option.wrong{background:#29280a}
+@media(max-width:620px){.practice-head{flex-direction:column}.practice-score{text-align:left}.practice-body{padding:14px}.practice-q{padding:13px}}

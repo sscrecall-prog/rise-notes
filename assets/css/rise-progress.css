@@ -1,0 +1,89 @@
+
+/* RISE NOTES — STEP 6 PROGRESS SYSTEM */
+:root {
+  --rise-bg: #FAEED9;
+  --rise-gold: #E1A837;
+  --rise-olive: #8D7A02;
+  --rise-ink: #38370D;
+  --rise-paper: #fffaf0;
+  --rise-border: rgba(56,55,13,.16);
+}
+.rise-progress-panel {
+  background: var(--rise-paper);
+  border: 1px solid var(--rise-border);
+  border-radius: 18px;
+  padding: 20px;
+  margin: 22px 0;
+  box-shadow: 0 8px 24px rgba(56,55,13,.07);
+}
+.rise-progress-head {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:16px;
+  margin-bottom:12px;
+}
+.rise-progress-title { font-weight:800; color:var(--rise-ink); }
+.rise-progress-percent { font-weight:900; color:var(--rise-olive); }
+.rise-progress-track {
+  width:100%;
+  height:12px;
+  border-radius:999px;
+  overflow:hidden;
+  background:rgba(141,122,2,.14);
+}
+.rise-progress-fill {
+  height:100%;
+  width:0;
+  background:var(--rise-gold);
+  border-radius:inherit;
+  transition:width .35s ease;
+}
+.rise-stat-grid {
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:12px;
+  margin-top:16px;
+}
+.rise-stat {
+  background:var(--rise-bg);
+  border:1px solid var(--rise-border);
+  border-radius:14px;
+  padding:14px;
+}
+.rise-stat strong { display:block; font-size:1.25rem; color:var(--rise-ink); }
+.rise-stat span { font-size:.84rem; color:var(--rise-olive); }
+.rise-subject-progress {
+  display:grid;
+  gap:12px;
+  margin-top:16px;
+}
+.rise-subject-row {
+  display:grid;
+  grid-template-columns:minmax(100px, .7fr) minmax(140px, 2fr) auto;
+  gap:12px;
+  align-items:center;
+}
+.rise-subject-name { font-weight:700; color:var(--rise-ink); }
+.rise-mini-track {
+  height:9px;
+  background:rgba(141,122,2,.14);
+  border-radius:999px;
+  overflow:hidden;
+}
+.rise-mini-fill {
+  height:100%;
+  width:0;
+  background:var(--rise-olive);
+  transition:width .35s ease;
+}
+.rise-empty {
+  padding:18px;
+  border:1px dashed var(--rise-border);
+  border-radius:14px;
+  color:var(--rise-olive);
+}
+@media (max-width:700px) {
+  .rise-stat-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .rise-subject-row { grid-template-columns:1fr; gap:6px; }
+}

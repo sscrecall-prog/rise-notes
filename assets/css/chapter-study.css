@@ -1,0 +1,49 @@
+:root{
+  --study-cream:#FAEED9;
+  --study-gold:#E1A837;
+  --study-olive:#8D7A02;
+  --study-ink:#38370D;
+  --study-paper:#FFFDF8;
+  --study-line:rgba(56,55,13,.14);
+  --study-shadow:0 14px 35px rgba(56,55,13,.10);
+}
+body.chapter-study-page{background:var(--study-cream)!important;color:var(--study-ink)!important}
+.chapter-study-bar{position:sticky;top:64px;z-index:900;background:rgba(250,238,217,.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--study-line);box-shadow:0 5px 18px rgba(56,55,13,.06)}
+.chapter-study-inner{width:min(1120px,92%);margin:auto;padding:12px 0;display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center}
+.chapter-study-meta{min-width:0}
+.chapter-study-kicker{font-size:.72rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--study-olive);margin-bottom:2px}
+.chapter-study-title{font-size:1rem;font-weight:850;color:var(--study-ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.chapter-study-actions{display:flex;gap:7px;flex-wrap:wrap;justify-content:flex-end}
+.study-action{border:1px solid var(--study-olive);background:var(--study-paper);color:var(--study-ink);border-radius:10px;padding:8px 11px;font:700 .78rem/1 system-ui,sans-serif;cursor:pointer;text-decoration:none;transition:.2s}
+.study-action:hover{transform:translateY(-1px);border-color:var(--study-gold);box-shadow:0 6px 14px rgba(56,55,13,.10)}
+.study-action.primary{background:var(--study-gold);border-color:var(--study-gold);color:var(--study-ink)}
+.study-action.active{background:var(--study-ink);color:var(--study-cream);border-color:var(--study-ink)}
+.chapter-progress{grid-column:1/-1;display:flex;align-items:center;gap:10px;font-size:.74rem;font-weight:750;color:var(--study-olive)}
+.chapter-progress-track{height:7px;flex:1;background:rgba(141,122,2,.16);border-radius:99px;overflow:hidden}
+.chapter-progress-fill{height:100%;width:0;background:linear-gradient(90deg,var(--study-olive),var(--study-gold));border-radius:99px;transition:width .25s ease}
+.study-roadmap{width:min(1120px,92%);margin:22px auto 6px;display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
+.study-roadmap-item{background:rgba(255,253,248,.78);border:1px solid var(--study-line);border-radius:12px;padding:10px 9px;text-align:center;color:var(--study-ink);font-size:.78rem;font-weight:800}
+.study-roadmap-item small{display:block;color:var(--study-olive);font-size:.67rem;font-weight:650;margin-top:2px}
+.study-revision{width:min(1120px,92%);margin:10px auto 20px;background:var(--study-ink);color:var(--study-cream);border-radius:18px;padding:18px 20px;box-shadow:var(--study-shadow)}
+.study-revision h2{margin:0 0 10px!important;color:var(--study-gold)!important;border:0!important;font-size:1.1rem!important}
+.study-revision-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:7px;margin:0;padding:0;list-style:none}
+.study-revision-list a{display:block;padding:8px 10px;border:1px solid rgba(225,168,55,.28);border-radius:9px;color:var(--study-cream)!important;text-decoration:none;font-size:.78rem;font-weight:650}
+.study-revision-list a:hover{border-color:var(--study-gold);color:var(--study-gold)!important}
+.study-practice-note{width:min(1120px,92%);margin:20px auto 30px;background:rgba(225,168,55,.12);border:1px solid rgba(141,122,2,.28);border-left:5px solid var(--study-gold);border-radius:14px;padding:14px 16px;color:var(--study-ink);font-size:.88rem}
+body.sr-dark .chapter-study-bar{background:rgba(56,55,13,.97);border-bottom-color:rgba(225,168,55,.22)}
+body.sr-dark .chapter-study-title{color:var(--study-cream)}
+body.sr-dark .study-action{background:#4a4718;color:var(--study-cream)}
+body.sr-dark .study-roadmap-item{background:#4a4718;color:var(--study-cream)}
+body.sr-dark .study-practice-note{background:#4a4718;color:var(--study-cream)}
+@media(max-width:760px){
+  .chapter-study-bar{top:58px}
+  .chapter-study-inner{grid-template-columns:1fr}
+  .chapter-study-actions{justify-content:flex-start}
+  .study-roadmap{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:480px){
+  .study-roadmap{grid-template-columns:1fr}
+  .study-action{padding:8px 9px;font-size:.72rem}
+}
+/* Keep one consistent study-control surface. Older page-specific controls remain functional through the new bar. */
+#bookmarkBtn,#completeBtn{display:none!important}

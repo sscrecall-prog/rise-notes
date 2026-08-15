@@ -1,0 +1,20 @@
+
+/* RISE NOTES — STEP 10 STUDY ANALYTICS */
+.rise-analytics{display:grid;gap:18px;margin:24px 0}
+.rise-analytics-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.rise-analytics-card{background:var(--rise-paper,#fffaf0);border:1px solid var(--rise-border,rgba(56,55,13,.15));border-radius:16px;padding:16px;box-shadow:0 7px 20px rgba(56,55,13,.05)}
+.rise-analytics-card strong{display:block;font-size:1.55rem;color:var(--rise-ink,#38370D)}
+.rise-analytics-card span{font-size:.82rem;color:var(--rise-olive,#8D7A02);font-weight:700}
+.rise-analytics-panel{background:var(--rise-paper,#fffaf0);border:1px solid var(--rise-border,rgba(56,55,13,.15));border-radius:18px;padding:18px}
+.rise-analytics-panel h2{margin-top:0;color:var(--rise-ink,#38370D)}
+.rise-topic-row{display:grid;grid-template-columns:1fr minmax(120px,2fr) auto;gap:12px;align-items:center;margin:12px 0}
+.rise-topic-name{font-weight:800;color:var(--rise-ink,#38370D)}
+.rise-topic-track{height:9px;border-radius:999px;background:rgba(141,122,2,.14);overflow:hidden}
+.rise-topic-fill{height:100%;background:var(--rise-olive,#8D7A02);width:0}
+.rise-topic-fill.strong{background:var(--rise-gold,#E1A837)}
+.rise-activity{display:grid;gap:9px}
+.rise-activity-item{display:flex;justify-content:space-between;gap:12px;background:var(--rise-bg,#FAEED9);border-radius:12px;padding:11px}
+.rise-activity-item span:last-child{color:var(--rise-olive,#8D7A02);font-size:.82rem;font-weight:700}
+.rise-analytics-empty{padding:16px;border:1px dashed var(--rise-border,rgba(56,55,13,.15));border-radius:12px;color:var(--rise-olive,#8D7A02)}
+@media(max-width:800px){.rise-analytics-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){.rise-analytics-grid{grid-template-columns:1fr 1fr}.rise-topic-row{grid-template-columns:1fr}.rise-activity-item{display:block}.rise-activity-item span:last-child{display:block;margin-top:3px}}

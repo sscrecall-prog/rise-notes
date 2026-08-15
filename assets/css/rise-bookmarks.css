@@ -1,0 +1,30 @@
+
+/* RISE NOTES — STEP 9 SAVED LIBRARY */
+.rise-save-btn{
+  display:inline-flex;align-items:center;gap:7px;cursor:pointer;
+  border:1px solid var(--rise-border,rgba(56,55,13,.15));
+  background:var(--rise-paper,#fffaf0);color:var(--rise-ink,#38370D);
+  border-radius:10px;padding:9px 12px;font:inherit;font-weight:800;
+}
+.rise-save-btn.is-saved{background:var(--rise-gold,#E1A837);border-color:var(--rise-gold,#E1A837)}
+.rise-saved-library{
+  background:var(--rise-paper,#fffaf0);border:1px solid var(--rise-border,rgba(56,55,13,.15));
+  border-radius:20px;padding:20px;margin:22px 0;box-shadow:0 8px 24px rgba(56,55,13,.06)
+}
+.rise-library-tools{display:flex;gap:9px;flex-wrap:wrap;margin:14px 0}
+.rise-library-filter{
+  border:1px solid var(--rise-border,rgba(56,55,13,.15));background:var(--rise-bg,#FAEED9);
+  color:var(--rise-ink,#38370D);border-radius:10px;padding:9px 11px;font:inherit
+}
+.rise-library-list{display:grid;gap:10px}
+.rise-library-item{
+  display:grid;grid-template-columns:1fr auto;gap:14px;align-items:center;
+  background:var(--rise-bg,#FAEED9);border:1px solid var(--rise-border,rgba(56,55,13,.15));
+  border-radius:14px;padding:14px
+}
+.rise-library-item a{color:var(--rise-ink,#38370D);text-decoration:none}
+.rise-library-subject{font-size:.78rem;color:var(--rise-olive,#8D7A02);font-weight:800;text-transform:uppercase}
+.rise-library-title{font-weight:900;margin:3px 0}
+.rise-library-remove{border:0;background:transparent;color:var(--rise-olive,#8D7A02);font-weight:800;cursor:pointer}
+.rise-library-empty{padding:18px;border:1px dashed var(--rise-border,rgba(56,55,13,.15));border-radius:14px;color:var(--rise-olive,#8D7A02)}
+@media(max-width:650px){.rise-library-item{grid-template-columns:1fr}.rise-library-remove{text-align:left}}
