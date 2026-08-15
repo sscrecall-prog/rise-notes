@@ -1,4 +1,5 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#38370D"><title>Profile | Sunny Rise</title><style>
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><meta content="#38370D" name="theme-color"/><title>Profile | Sunny Rise</title><style>
 :root{--cream:#FAEED9;--gold:#E1A837;--olive:#8D7A02;--ink:#38370D;--paper:#fffdf8;--muted:#756f55;--line:#ead9ad;--shadow:0 14px 35px rgba(56,55,13,.12)}
 *{box-sizing:border-box}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;background:var(--cream);color:var(--ink)}
 .wrap{width:min(1080px,calc(100% - 28px));margin:auto}.nav{background:var(--ink);border-bottom:1px solid rgba(255,255,255,.08)}.navin{height:70px;display:flex;align-items:center;justify-content:space-between}.brand{color:#fff;text-decoration:none;font-weight:900;letter-spacing:.6px}.brand span{color:var(--gold)}.home{color:var(--gold);text-decoration:none;font-weight:800;font-size:13px}
@@ -7,7 +8,41 @@
 .btn{width:100%;border:0;border-radius:12px;padding:13px 15px;background:var(--gold);color:#38370D;font-weight:900;cursor:pointer;font-size:14px}.btn:disabled{opacity:.6;cursor:not-allowed}.row{display:flex;justify-content:space-between;gap:12px;align-items:center;margin:14px 0;font-size:12px}.row a,.switch a{color:var(--olive);font-weight:850;text-decoration:none}.switch{text-align:center;margin-top:18px;font-size:13px}.msg{display:none;margin:14px 0 0;padding:11px 12px;border-radius:10px;font-size:12px;font-weight:750}.msg.show{display:block}.msg.ok{background:#e8f4e7;color:#2f6d31}.msg.err{background:#f8e7e4;color:#9c342b}.note{margin-top:16px;padding:11px;border:1px dashed var(--line);border-radius:10px;font-size:11px;color:var(--muted);line-height:1.5}
 .profile{display:grid;gap:12px}.profileBox{padding:14px;background:#fff8e8;border:1px solid var(--line);border-radius:13px}.profileBox small{display:block;color:var(--muted);margin-bottom:4px}.secondary{background:var(--ink);color:var(--gold)}
 @media(max-width:520px){.card{padding:21px;border-radius:19px}h1{font-size:26px}.row{align-items:flex-start;flex-direction:column}}
-</style></head>
+</style><link href="../assets/css/rise-unified.css" rel="stylesheet"/><link rel="stylesheet" href="../assets/css/rise-progress.css">
+<link rel="stylesheet" href="../assets/css/rise-navigation.css">
+<link rel="stylesheet" href="../assets/css/rise-search.css">
+<link rel="stylesheet" href="../assets/css/rise-bookmarks.css">
+<link rel="stylesheet" href="../assets/css/rise-analytics.css">
+<link rel="stylesheet" href="../assets/css/rise-timer.css">
+<link rel="stylesheet" href="../assets/css/rise-planner.css">
+<link rel="stylesheet" href="../assets/css/rise-revision.css">
+</head>
 <body><nav class="nav"><div class="wrap navin"><a class="brand" href="../index.html">SUNNY <span>RISE</span></a><a class="home" href="../index.html">← Home</a></div></nav>
-<main class="shell"><section class="card"><div class="icon">👤</div><h1>Your profile</h1><p>Your authenticated Sunny Rise account.</p><div class="profile"><div class="profileBox"><small>EMAIL</small><strong id="userEmail">Loading…</strong></div><div class="profileBox"><small>USER ID</small><strong id="userId" style="font-size:11px;overflow-wrap:anywhere">Loading…</strong></div><a class="btn" style="text-decoration:none" href="../english/vocabulary/">Open Vocabulary Lab →</a><button class="btn secondary" onclick="logout()">Log Out</button></div><div id="msg" class="msg"></div></section></main>
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="../assets/js/supabase-config.js"></script><script src="../assets/js/auth.js"></script><script>loadProfile()</script></body></html>
+<main class="shell"><section class="card"><div class="icon">👤</div><h1>Your profile</h1>
+
+<section class="rise-timer" data-rise-timer aria-label="Study timer">
+  <div class="rise-timer-head">
+    <div>
+      <div class="rise-timer-title">Study Timer</div>
+      <div class="rise-timer-status" data-timer-status>Session paused</div>
+    </div>
+    <div class="rise-timer-clock" data-timer-clock>00:00:00</div>
+  </div>
+  <div class="rise-timer-controls">
+    <button class="rise-timer-btn primary" data-timer-start>Start</button>
+    <button class="rise-timer-btn" data-timer-pause>Pause</button>
+    <button class="rise-timer-btn" data-timer-finish>Finish & Save</button>
+    <button class="rise-timer-btn" data-timer-reset>Reset</button>
+  </div>
+</section>
+<p>Your authenticated Sunny Rise account.</p><div class="profile"><div class="profileBox"><small>EMAIL</small><strong id="userEmail">Loading…</strong></div><div class="profileBox"><small>USER ID</small><strong id="userId" style="font-size:11px;overflow-wrap:anywhere">Loading…</strong></div><a class="btn" href="../english/vocabulary/" style="text-decoration:none">Open Vocabulary Lab →</a><button class="btn secondary" onclick="logout()">Log Out</button></div><div class="msg" id="msg"></div></section></main>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="../assets/js/supabase-config.js"></script><script src="../assets/js/auth.js"></script><script>loadProfile()</script><script src="../assets/js/rise-progress.js"></script>
+<script src="../assets/js/rise-navigation.js"></script>
+<script src="../assets/js/rise-search-index.js"></script>
+<script src="../assets/js/rise-search.js"></script>
+<script src="../assets/js/rise-bookmarks.js"></script>
+<script src="../assets/js/rise-analytics.js"></script>
+<script src="../assets/js/rise-timer.js"></script>
+<script src="../assets/js/rise-planner.js"></script>
+<script src="../assets/js/rise-revision.js"></script>
+</body></html>
