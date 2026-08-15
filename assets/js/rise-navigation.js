@@ -18,6 +18,7 @@
     const path=location.pathname.replace(/\\/g,"/");
     const rootDepth=(path.split("/").filter(Boolean).length>1)? "../".repeat(path.split("/").filter(Boolean).length-1):"";
     const home=rootDepth+"index.html";
+    const libraryUrl=rootDepth+"library/index.html";
     const progressUrl=rootDepth+"progress.html";
     const nav=document.createElement("div");
     nav.className="rise-topbar";
@@ -27,7 +28,7 @@
         <a class="rise-nav-link" data-nav="home" href="${home}">Dashboard</a>
         <a class="rise-nav-link" data-nav="subjects" href="${home}#subjects">Subjects</a>
         <a class="rise-nav-link" data-nav="progress" href="${progressUrl}">Progress</a>
-        <a class="rise-nav-link" data-nav="library" href="${home}bookmarks.html">Library</a>
+        <a class="rise-nav-link" data-nav="library" href="${libraryUrl}">Library</a>
       </div>
       <button class="rise-menu-btn" type="button" aria-expanded="false" aria-label="Open menu">Menu</button>
     </nav>`;
@@ -44,7 +45,7 @@
       <a class="rise-bottom-link" href="${home}">⌂<br>Home</a>
       <a class="rise-bottom-link" href="${home}#subjects">▦<br>Subjects</a>
       <a class="rise-bottom-link" href="${progressUrl}">◔<br>Progress</a>
-      <a class="rise-bottom-link" href="${home}bookmarks.html">★<br>Library</a>
+      <a class="rise-bottom-link" href="${libraryUrl}">★<br>Library</a>
     </div>`;
     document.body.appendChild(bottom);
   }
