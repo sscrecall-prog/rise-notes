@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="application-name" content="Rise Notes">
+<meta name="subject" content="Geography">
+<meta name="chapter" content="Earth's Interior & Plate Tectonics">
+<meta name="topics" content="Earth Interior, Crust, Mantle, Core, Discontinuities, Earthquakes, Seismic Waves, Seismograph, Richter Scale, Mercalli Scale, Shadow Zone, Earthquake Types, Seismic Zones in India, Tectonic Plates, Plate Boundaries, Convection Current, Ring of Fire">
+<meta name="difficulty" content="Moderate">
+<meta name="estimated-study-time" content="75 minutes">
+<title>Rise Notes — Earth's Interior & Plate Tectonics</title>
+<style>
+:root{
+ --bg:#FAEED9;--surface:#FFFDF7;--surface2:#F5E8C9;--gold:#E1A837;
+ --olive:#8D7A02;--ink:#38370D;--muted:#746D43;--line:#D9C7A0;
+ --sidebar:#24230B;--sidebarText:#F9F1DD;--danger:#9C3D2E;
+ --shadow:0 18px 50px rgba(56,55,13,.08)
+}
+[data-theme="dark"]{
+ --bg:#000;--surface:#0C0C0C;--surface2:#151515;--gold:#E1A837;
+ --olive:#D6C34D;--ink:#F4EEDC;--muted:#AAA48E;--line:#30302B;
+ --sidebar:#080808;--sidebarText:#F4EEDC;--danger:#D46A59;
+ --shadow:0 18px 50px rgba(0,0,0,.55)
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Arial,Helvetica,sans-serif;line-height:1.68}
+h1,h2,h3,h4,button,summary,.badge,.kpi{font-family:Arial,Helvetica,sans-serif}
+h1{font-size:clamp(2.4rem,6vw,5.3rem);line-height:.98;letter-spacing:-.05em;margin:0 0 16px}
+h2{font-size:clamp(1.45rem,3vw,2.15rem);letter-spacing:-.03em;margin:0 0 18px}
+h3{margin-top:22px}
+h4{margin-bottom:7px}
+p{margin-top:8px}
+a{color:var(--olive)}
+body{padding-left:270px}
+.container{max-width:1160px;margin:auto;padding:28px}
+.sidebar{position:fixed;left:0;top:0;bottom:0;width:270px;z-index:50;background:var(--sidebar);color:var(--sidebarText);padding:20px 15px;display:flex;flex-direction:column;overflow:auto;border-right:1px solid #E1A83744}
+.side-brand{display:flex;align-items:center;gap:11px;padding:7px 9px 22px;border-bottom:1px solid #ffffff18}
+.brand-mark{width:42px;height:42px;border-radius:12px;background:var(--gold);color:#24230B;display:grid;place-items:center;font-size:1.45rem;font-weight:900}
+.side-brand b{display:block;font-size:.95rem;letter-spacing:.08em}
+.side-brand span{display:block;font-size:.7rem;color:#aaa48e}
+.side-label{font-size:.67rem;letter-spacing:.16em;color:#aaa48e;font-weight:800;margin:20px 9px 8px}
+.sidebar>a{color:#d7d0bc;text-decoration:none;padding:8px 10px;margin:1px 0;border-radius:9px;font-size:.81rem;font-weight:700}
+.sidebar>a:hover{background:#ffffff0e;color:#fff}
+.sidebar>a.active{background:var(--gold);color:#24230B}
+.side-bottom{margin-top:auto;border-top:1px solid #ffffff18;padding-top:14px}
+button{border:0;border-radius:11px;background:var(--olive);color:#fff;padding:10px 14px;font-weight:800;cursor:pointer}
+button:hover{filter:brightness(.96)}
+.side-bottom button{width:100%;margin-top:8px}
+.side-save{background:var(--gold)!important;color:#24230B!important}
+.side-dark{background:#ffffff0d!important;color:var(--sidebarText)!important;border:1px solid #ffffff18!important}
+.mobile-topbar{display:none}
+.sidebar-overlay{display:none}
+
+.hero{position:relative;overflow:hidden;background:var(--surface);border-bottom:1px solid var(--line);margin:-28px -28px 0;padding:58px max(28px,calc((100vw - 1160px)/2)) 34px}
+.hero:after{content:"";position:absolute;width:370px;height:370px;border-radius:50%;border:1px solid var(--gold);right:-120px;top:-190px;opacity:.28;box-shadow:0 0 0 28px transparent,0 0 0 29px var(--gold)}
+.hero-inner{position:relative;z-index:1;display:grid;grid-template-columns:1fr auto;gap:25px;align-items:end}
+.eyebrow{font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;font-weight:900;color:var(--olive);margin-bottom:12px}
+.subtitle{max-width:780px;color:var(--muted);font-size:1rem}
+.badges{display:flex;gap:7px;flex-wrap:wrap;margin-top:18px}
+.badge{display:inline-flex;padding:6px 10px;border:1px solid var(--line);border-radius:999px;background:var(--surface2);font-size:.72rem;font-weight:900}
+.hero-actions{display:flex;gap:8px}
+.theme-toggle{min-width:46px;height:43px;border:1px solid var(--line);background:var(--surface);color:var(--ink)}
+.meta{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;margin-top:25px;background:var(--line);border:1px solid var(--line);border-radius:17px;overflow:hidden}
+.meta div{background:var(--surface);padding:13px 15px}
+.meta b{font-size:.69rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+main.container{padding-top:28px}
+section{scroll-margin-top:76px;margin:22px 0}
+.card{background:var(--surface);border:1px solid var(--line);border-top:4px solid var(--gold);border-radius:19px;padding:25px;box-shadow:var(--shadow)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));gap:15px}
+.two{grid-template-columns:repeat(auto-fit,minmax(340px,1fr))}
+.mini-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:10px}
+.callout{padding:14px 16px;border-radius:13px;background:var(--surface2);border:1px solid var(--line);margin:12px 0}
+.warn{border-left:4px solid var(--danger)}
+.kpi{font-size:1.55rem;font-weight:900;color:var(--olive)}
+.term{font-weight:900;color:var(--olive)}
+.small{font-size:.86rem;color:var(--muted)}
+.note{font-size:.9rem;color:var(--muted)}
+ul,ol{padding-left:23px}
+li{margin:4px 0}
+table{width:100%;border-collapse:separate;border-spacing:0;overflow:hidden;border:1px solid var(--line);border-radius:13px;background:var(--surface);margin:14px 0}
+th,td{border-bottom:1px solid var(--line);padding:11px 12px;vertical-align:top;text-align:left}
+th{background:var(--surface2);font-weight:900}
+tr:last-child td{border-bottom:0}
+details{background:var(--surface2);border:1px solid var(--line);border-radius:12px;margin:9px 0;padding:10px 13px}
+summary{cursor:pointer;font-weight:900}
+.flow{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:12px 0}
+.flow span{padding:8px 11px;border-radius:999px;background:var(--surface2);border:1px solid var(--line);font-weight:800}
+.arrow{color:var(--gold);font-weight:900}
+.image-placeholder{border:1px dashed var(--line);border-radius:14px;padding:14px;background:var(--surface2);text-align:center;color:var(--muted)}
+.question{border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:14px;padding:15px;margin:13px 0;background:var(--surface2)}
+.option{display:block;padding:6px 8px;border-radius:8px}
+.option:hover{background:var(--surface)}
+.result{font-weight:900;margin-top:12px;color:var(--olive)}
+textarea{width:100%;min-height:125px;border:1px solid var(--line);border-radius:12px;padding:12px;background:var(--surface2);color:var(--ink);resize:vertical;font:inherit}
+.note-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+.timer{display:flex;align-items:center;gap:9px;flex-wrap:wrap}
+#time{font-size:2rem;font-weight:900;min-width:105px}
+.revision-day{background:var(--surface2);border:1px solid var(--line);padding:12px;border-radius:12px}
+.progress{height:10px;background:var(--surface2);border:1px solid var(--line);border-radius:999px;overflow:hidden}
+.progress>span{display:block;height:100%;width:0;background:var(--gold);transition:width .2s}
+footer{padding:20px 0 60px;color:var(--muted)}
+body.dark-mode{background:#000!important}
+body.dark-mode .hero,body.dark-mode .card,body.dark-mode table,body.dark-mode .question,body.dark-mode textarea,body.dark-mode .meta div{background:#0C0C0C!important;color:#F4EEDC!important;border-color:#30302B!important}
+body.dark-mode .callout,body.dark-mode .revision-day,body.dark-mode details,body.dark-mode th,body.dark-mode .flow span{background:#151515!important;color:#F4EEDC!important;border-color:#30302B!important}
+body.dark-mode .small,body.dark-mode .subtitle,body.dark-mode .meta b{color:#AAA48E!important}
+body.dark-mode .sidebar{background:#050505!important}
+@media(max-width:980px){
+ body{padding-left:0}
+ .sidebar{transform:translateX(-100%);transition:transform .22s}
+ .sidebar.open{transform:translateX(0)}
+ .sidebar-overlay{position:fixed;inset:0;background:#0008;z-index:45}
+ .sidebar-overlay.show{display:block}
+ .mobile-topbar{display:flex;position:sticky;top:0;z-index:40;height:56px;align-items:center;justify-content:space-between;padding:0 16px;background:var(--sidebar);color:var(--sidebarText)}
+ .menu-btn,.mobile-theme{background:transparent!important;color:var(--sidebarText)!important}
+ .hero{margin:0;padding:40px 20px 28px}
+ .meta{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:600px){
+ .container{padding:16px}
+ .hero{padding:32px 16px 24px}
+ .meta{grid-template-columns:1fr}
+ .card{padding:19px;border-radius:15px}
+ .two,.note-grid{grid-template-columns:1fr}
+ th,td{padding:9px;font-size:.9rem}
+ h1{font-size:2.7rem}
+}
+</style>
+</head>
+<body>
+
+<div class="mobile-topbar">
+  <button class="menu-btn" onclick="toggleSidebar()">☰</button>
+  <strong>RISE NOTES</strong>
+  <button class="mobile-theme" onclick="toggleTheme()">☾</button>
+</div>
+
+<aside class="sidebar" id="sidebar">
+  <div class="side-brand">
+    <div class="brand-mark">R</div>
+    <div><b>RISE NOTES</b><span>Study Workspace</span></div>
+  </div>
+  <div class="side-label">CHAPTER</div>
+  <a href="#overview">◉ Overview</a>
+  <a href="#core">◆ Core Concepts</a>
+  <a href="#detailed">▣ Detailed Notes</a>
+  <a href="#terms">Aa Important Terms</a>
+  <a href="#facts">✦ Key Facts</a>
+  <a href="#tables">▤ Comparisons</a>
+  <a href="#examples">⌁ Examples</a>
+  <a href="#confusions">⚠ Confusions</a>
+  <a href="#exam">★ Exam Focus</a>
+  <a href="#revision">↻ Revision</a>
+  <a href="#practice">✓ Practice Test</a>
+  <a href="#mynotes">✎ My Notes</a>
+  <a href="#timer">◷ Study Timer</a>
+  <div class="side-bottom">
+    <button class="side-save" onclick="savePage()">☆ Save Chapter</button>
+    <button class="side-dark" onclick="toggleTheme()">☾ Dark Mode</button>
+  </div>
+</aside>
+<div class="sidebar-overlay" id="sidebarOverlay" onclick="closeSidebar()"></div>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="eyebrow">RISE NOTES • GEOGRAPHY</div>
+      <h1>EARTH'S INTERIOR<br>&amp; PLATE TECTONICS</h1>
+      <p class="subtitle">Complete, source-based exam notes covering Earth’s interior, discontinuities, earthquakes, seismic waves, seismic zones in India, tectonic plates, plate boundaries, convection currents and the Ring of Fire.</p>
+      <div class="badges">
+        <span class="badge">GEOGRAPHY</span>
+        <span class="badge">SSC / COMPETITIVE</span>
+        <span class="badge">SOURCE-BASED</span>
+        <span class="badge">10 PAGES ANALYZED</span>
+      </div>
+    </div>
+    <div class="hero-actions">
+      <button class="theme-toggle" onclick="toggleTheme()">☾</button>
+    </div>
+  </div>
+  <div class="meta container">
+    <div><b>Subject</b><br>Geography</div>
+    <div><b>Chapter</b><br>Earth's Interior &amp; Plate Tectonics</div>
+    <div><b>Difficulty</b><br>Moderate</div>
+    <div><b>Estimated Study Time</b><br>75 minutes</div>
+  </div>
+</header>
+
+<main class="container">
+
+<section id="objectives" class="card">
+<h2>Learning Objectives</h2>
+<ul>
+<li>Understand the methods used in the source to study Earth’s interior.</li>
+<li>Differentiate the crust, mantle, core and the major discontinuities.</li>
+<li>Understand the lithosphere and asthenosphere relationship.</li>
+<li>Master earthquake terminology, seismic waves, shadow zones and measurement scales.</li>
+<li>Recall earthquake types, effects and the seismic zones shown for India.</li>
+<li>Identify the seven major tectonic plates and the minor plates listed in the source.</li>
+<li>Differentiate divergent, convergent and transform plate boundaries.</li>
+<li>Understand the source’s explanation of convection current and the Ring of Fire.</li>
+</ul>
+</section>
+
+<section id="overview" class="card">
+<h2>1. Quick Overview</h2>
+<div class="grid">
+<div class="callout"><span class="kpi">3</span><br><b>Major layers</b><br>Crust → Mantle → Core</div>
+<div class="callout"><span class="kpi">2,900 km</span><br><b>Mantle thickness</b><br>As stated in the source</div>
+<div class="callout"><span class="kpi">P + S</span><br><b>Body waves</b><br>Primary and Secondary</div>
+<div class="callout"><span class="kpi">3</span><br><b>Plate boundaries</b><br>Divergent, Convergent, Transform</div>
+</div>
+<div class="callout"><b>Central idea:</b> The source connects Earth’s internal structure with earthquakes and seismic waves, and then connects internal heat/convection with movement of lithospheric plates and plate tectonic phenomena.</div>
+<div class="progress" title="Chapter progress"><span id="progressBar"></span></div>
+<p class="small" id="progressText">Progress: 0%</p>
+</section>
+
+<section id="core">
+<h2>2. Core Concepts</h2>
+<div class="grid two">
+<div class="card">
+<h3>Methods to Know Earth’s Interior</h3>
+<p>The source divides them into:</p>
+<div class="flow"><span>Indirect: Temperature</span><span>Indirect: Meteorites</span><span>Indirect: Earthquake</span><span>Direct: Volcanoes</span><span>Direct: Rocks</span></div>
+<p class="small">Source page 1 presents these five methods visually.</p>
+</div>
+<div class="card">
+<h3>Layers of Earth</h3>
+<div class="flow"><span>Crust</span><span class="arrow">→</span><span>Mantle</span><span class="arrow">→</span><span>Core</span></div>
+<p>The crust is the outermost layer; the mantle lies beneath it; the core is the innermost major layer.</p>
+</div>
+<div class="card">
+<h3>Crust</h3>
+<p>The source divides the crust into <b>Continental Crust</b> and <b>Oceanic Crust</b>.</p>
+<ul>
+<li>Continental: about 30 km thick, lighter, granitic rock, associated with continents and continental shelves.</li>
+<li>Oceanic: about 5 km thick, denser, basaltic rock, beneath oceans.</li>
+</ul>
+</div>
+<div class="card">
+<h3>Mantle &amp; Asthenosphere</h3>
+<ul>
+<li>Mantle: made of Silica and Magnesium (SiMa) in the source.</li>
+<li>Thickness: 2,900 km.</li>
+<li>Divisions: Upper Mantle and Lower Mantle.</li>
+<li>Asthenosphere: semi-solid / semi-molten, mechanically weak and ductile layer of the upper mantle.</li>
+<li>It lies beneath the lithosphere and is described as a source of magma/lava.</li>
+</ul>
+</div>
+<div class="card">
+<h3>Core</h3>
+<ul>
+<li>Composition stated: Nickel + Iron (NiFe).</li>
+<li>Inner Core: solid, about 2,200 km in the source.</li>
+<li>Outer Core: liquid, about 1,300 km in the source; source associates it with magnetic properties.</li>
+</ul>
+</div>
+<div class="card">
+<h3>Lithosphere</h3>
+<p>The source describes the lithosphere as the rigid outermost layer made up of the crust and upper solid mantle, with a thickness of about <b>10–200 km</b>.</p>
+<p><b>Important:</b> The source explicitly states that the asthenosphere is <b>not</b> part of the lithosphere.</p>
+</div>
+</div>
+</section>
+
+<section id="detailed" class="card">
+<h2>3. Detailed Notes</h2>
+
+<h3>3.1 Composition of Earth’s Crust</h3>
+<table>
+<thead><tr><th>Element</th><th>Percentage in source</th></tr></thead>
+<tbody>
+<tr><td>Oxygen</td><td>46.6%</td></tr>
+<tr><td>Silicon</td><td>27.7%</td></tr>
+<tr><td>Aluminum</td><td>8.1%</td></tr>
+<tr><td>Iron</td><td>5%</td></tr>
+<tr><td>Calcium</td><td>3.6%</td></tr>
+<tr><td>Sodium</td><td>2.8%</td></tr>
+<tr><td>Potassium</td><td>2.6%</td></tr>
+<tr><td>Magnesium</td><td>2.1%</td></tr>
+<tr><td>Others</td><td>1.5%</td></tr>
+</tbody>
+</table>
+<div class="callout"><b>Source fact:</b> The most abundant metal found in Earth’s crust is stated as <b>Aluminum</b>.</div>
+
+<h3>3.2 Earth’s Interior: Volume vs Mass</h3>
+<table>
+<thead><tr><th>Layer</th><th>By Volume</th><th>By Mass</th></tr></thead>
+<tbody>
+<tr><td>Crust</td><td>1%</td><td>1%</td></tr>
+<tr><td>Mantle</td><td>84%</td><td>68%</td></tr>
+<tr><td>Core</td><td>15%</td><td>31%</td></tr>
+</tbody>
+</table>
+
+<h3>3.3 Earth’s Discontinuities</h3>
+<p>The source’s page 3 diagram places five discontinuities between successive internal layers. The mnemonic shown is:</p>
+<div class="callout"><b>Trick:</b> “Koi Mujhe Red Gulab LaDo” → Conrad → Moho → Repetti → Guttenberg → Lehmann</div>
+<table>
+<thead><tr><th>Discontinuity</th><th>Layer transition shown in source</th></tr></thead>
+<tbody>
+<tr><td>Conrad Discontinuity</td><td>Upper Crust → Inner Crust</td></tr>
+<tr><td>Moho Discontinuity</td><td>Inner Crust → Upper Mantle</td></tr>
+<tr><td>Repetti Discontinuity</td><td>Upper Mantle → Inner Mantle</td></tr>
+<tr><td>Guttenberg Discontinuity</td><td>Inner Mantle → Upper Core</td></tr>
+<tr><td>Lehmann Discontinuity</td><td>Upper Core → Inner Core</td></tr>
+</tbody>
+</table>
+<p class="note">The table preserves the layer labels and ordering shown in the uploaded diagram rather than adding outside terminology.</p>
+
+<h3>3.4 Forces / Theories Behind Plate Drifting</h3>
+<div class="grid two">
+<div class="callout">
+<h4>Theory of Plate Tectonic</h4>
+<p>The source attributes this theory to <b>McKenzie and Parker (1967)</b>. It states that Earth’s lithosphere is broken into large, rigid plates that move and interact, producing geological phenomena.</p>
+</div>
+<div class="callout">
+<h4>Convection Current Theory</h4>
+<p>The source attributes this theory to <b>Arthur Holmes</b>. It describes convection currents moving through the mantle, analogous to heated air circulating through a room, and reshaping Earth’s surface.</p>
+</div>
+</div>
+
+<h3>3.5 Earthquake</h3>
+<p>An earthquake is described in the source as an intense shaking of Earth’s surface caused by shifting of Earth’s plates. It is a sudden release of energy along fault lines in the form of waves called <b>seismic waves</b>.</p>
+<div class="grid two">
+<div class="card"><h3>Hypocentre / Focus</h3><p>The point within Earth where the earthquake begins.</p></div>
+<div class="card"><h3>Epicentre</h3><p>The point on Earth’s surface directly above the focus/hypocentre.</p></div>
+</div>
+<ul>
+<li>The source states that all natural earthquakes occur in the lithosphere.</li>
+<li>Earthquake-generated seismic waves travel through Earth as body waves and surface waves.</li>
+<li>The source states that shallow-focus earthquakes have more intensity than deeper ones.</li>
+</ul>
+
+<h3>3.6 Body Waves</h3>
+<p>Body waves travel through Earth’s interior. The source identifies two types: <b>P-waves</b> and <b>S-waves</b>.</p>
+<table>
+<thead><tr><th>Feature</th><th>P-Waves</th><th>S-Waves</th></tr></thead>
+<tbody>
+<tr><td>Other name</td><td>Primary Waves</td><td>Secondary Waves</td></tr>
+<tr><td>Relative speed</td><td>Fastest; 7–8 km/s in source</td><td>Slower; 4–6 km/s in source</td></tr>
+<tr><td>Medium</td><td>Solid, liquid and gas</td><td>Only solid</td></tr>
+<tr><td>Motion</td><td>Longitudinal / compression</td><td>Transverse</td></tr>
+<tr><td>Pattern</td><td>Compression and rarefaction</td><td>Crest and trough</td></tr>
+<tr><td>Seismograph order</td><td>First to record</td><td>After P-waves</td></tr>
+</tbody>
+</table>
+
+<h3>3.7 Surface Waves</h3>
+<ul>
+<li>Form when body waves come into contact with surface rocks.</li>
+<li>The source describes them as more destructive in nature.</li>
+<li>Rayleigh waves and Love waves are listed as types of surface waves.</li>
+<li>They are last to record on a seismograph.</li>
+</ul>
+
+<h3>3.8 Seismograph, Richter Scale &amp; Mercalli Scale</h3>
+<table>
+<thead><tr><th>Term</th><th>Source description</th></tr></thead>
+<tbody>
+<tr><td>Seismograph</td><td>Instrument that measures and registers seismic waves travelling through Earth as an outcome of an earthquake.</td></tr>
+<tr><td>Richter Scale</td><td>Source describes it as an instrument/scale for earthquake magnitude, giving a range of 0 to 10 and calling it limitless.</td></tr>
+<tr><td>Mercalli Scale</td><td>Source describes it as an instrument/scale for earthquake intensity, with intensity from 1 to 12.</td></tr>
+</tbody>
+</table>
+<div class="callout warn"><b>Source-accuracy flag:</b> The PDF’s wording around Richter and Mercalli uses “instrument” for the scales. These notes preserve the source framing; verify terminology if your exam material uses a different formulation.</div>
+
+<h3>3.9 Shadow Zone of Seismic Waves</h3>
+<p>The source defines a shadow zone as an area of Earth where certain seismic waves are not detected. It specifically states that the <b>S-wave shadow zone is larger than the P-wave shadow zone</b>.</p>
+<p>The page 6 diagram visually shows P-wave paths bending through Earth and a broad region where direct waves are not detected, along with an S-wave non-detection region.</p>
+
+<h3>3.10 Effects of Earthquake</h3>
+<div class="grid">
+<div class="callout"><b>Tsunami</b><br>Source: Japanese term; “harbour waves”; occurs when an earthquake occurs at the sea floor.</div>
+<div class="callout"><b>Soil Liquefaction</b></div>
+<div class="callout"><b>Landslide</b></div>
+<div class="callout"><b>Avalanche</b></div>
+<div class="callout"><b>Floods</b></div>
+<div class="callout"><b>Fire</b></div>
+<div class="callout"><b>Collapse</b></div>
+</div>
+
+<h3>3.11 Types of Earthquake</h3>
+<table>
+<thead><tr><th>Type</th><th>Definition in source</th></tr></thead>
+<tbody>
+<tr><td>Collapse Earthquake</td><td>Small earthquake occurring when the roof of underground mines or caverns collapses.</td></tr>
+<tr><td>Explosion Earthquake</td><td>Earthquake caused by detonation of a chemical or nuclear device.</td></tr>
+<tr><td>Tectonic Earthquake</td><td>Earthquake caused by movement of Earth’s tectonic plates.</td></tr>
+<tr><td>Reservoir-Induced Earthquake</td><td>Earthquake occurrence associated with construction of large reservoirs; source calls it human-induced.</td></tr>
+<tr><td>Volcanic Earthquake</td><td>Earthquake occurring as a result of volcanic eruption.</td></tr>
+</tbody>
+</table>
+
+<h3>3.12 Seismic Zones in India</h3>
+<p>Page 8 shows a colour-coded map with four seismic zones:</p>
+<table>
+<thead><tr><th>Zone</th><th>Source description</th></tr></thead>
+<tbody>
+<tr><td>Zone 2</td><td>Least active seismic zone</td></tr>
+<tr><td>Zone 3</td><td>Moderate seismic zone</td></tr>
+<tr><td>Zone 4</td><td>High seismic zone</td></tr>
+<tr><td>Zone 5</td><td>Highest seismic zone</td></tr>
+</tbody>
+</table>
+<p class="note">The map is retained conceptually as a four-zone visual classification. The uploaded page does not provide a complete state-by-state textual list, so none is invented here.</p>
+
+<h3>3.13 Animal Behaviour Before Earthquakes — Source Note</h3>
+<p>The source states that dogs, cats, cows, elephants, birds, snakes and toads may show unusual behaviour before earthquakes and attributes this to sensitivity to electromagnetic fields and infrasound.</p>
+<div class="callout warn"><b>Use carefully:</b> This is a claim presented by the source. It is not expanded or independently verified in these notes.</div>
+
+<h3>3.14 Tectonic Plates</h3>
+<p>The source states that the lithosphere forms plates comprising the crust and upper solid part of the mantle, and presents <b>seven major plates plus a few minor plates</b>.</p>
+<h4>Major Tectonic Plates</h4>
+<div class="grid">
+<div class="callout"><b>1.</b> Pacific Plate</div>
+<div class="callout"><b>2.</b> North American Plate</div>
+<div class="callout"><b>3.</b> South American Plate</div>
+<div class="callout"><b>4.</b> African Plate</div>
+<div class="callout"><b>5.</b> Antarctic Plate</div>
+<div class="callout"><b>6.</b> Eurasian Plate</div>
+<div class="callout"><b>7.</b> Australian Plate</div>
+</div>
+<h4>Minor Tectonic Plates Listed</h4>
+<div class="grid">
+<div class="callout"><b>1.</b> Cocos Plate</div>
+<div class="callout"><b>2.</b> Nazca Plate</div>
+<div class="callout"><b>3.</b> Caribbean Plate</div>
+<div class="callout"><b>4.</b> Indian Plate</div>
+<div class="callout"><b>5.</b> Philippine Plate</div>
+</div>
+
+<h3>3.15 Three Types of Plate Boundaries</h3>
+<table>
+<thead><tr><th>Boundary</th><th>Plate movement</th><th>Result stated in source</th></tr></thead>
+<tbody>
+<tr><td>Divergent</td><td>Two plates move away from each other.</td><td>Lava emerges and new crust forms.</td></tr>
+<tr><td>Convergent</td><td>Plates collide.</td><td>One plate may subduct beneath another, forming a subduction zone and potentially destroying crust.</td></tr>
+<tr><td>Transform</td><td>Plates slide past each other horizontally.</td><td>Neither creates nor destroys crust.</td></tr>
+</tbody>
+</table>
+
+<h3>3.16 Convection Current as a Driving Force</h3>
+<p>The source states that convection current in the asthenosphere is the force behind plate movement. Heat from Earth’s interior produces currents of hot rising magma and cooler sinking magma, moving lithospheric plates along with them.</p>
+<div class="flow">
+<span>Earth’s internal heat</span><span class="arrow">→</span>
+<span>Hot material rises</span><span class="arrow">→</span>
+<span>Cooler material sinks</span><span class="arrow">→</span>
+<span>Plate movement</span>
+</div>
+
+<h3>3.17 Ring of Fire</h3>
+<p>The source describes the Ring of Fire as a result of plate tectonics: a <b>horseshoe-shaped region around the Pacific Ocean</b> with high earthquake and volcano activity.</p>
+<p>Page 10’s map visually highlights the Pacific Plate, surrounding plates, converging/spreading boundaries and volcanic arcs around the Pacific.</p>
+</section>
+
+<section id="terms" class="card">
+<h2>4. Important Terms</h2>
+<table>
+<thead><tr><th>Term</th><th>Simple explanation</th></tr></thead>
+<tbody>
+<tr><td>Crust</td><td>Outermost major layer of Earth.</td></tr>
+<tr><td>Lithosphere</td><td>Rigid outer layer consisting of crust and upper solid mantle in the source.</td></tr>
+<tr><td>Asthenosphere</td><td>Weak, ductile, semi-solid/semi-molten upper-mantle layer beneath the lithosphere.</td></tr>
+<tr><td>Mantle</td><td>Layer beneath the crust; source gives 2,900 km thickness.</td></tr>
+<tr><td>Core</td><td>Innermost major layer; source gives NiFe composition.</td></tr>
+<tr><td>Discontinuity</td><td>Boundary between internal layers as shown in the source diagram.</td></tr>
+<tr><td>Hypocentre / Focus</td><td>Point inside Earth where an earthquake begins.</td></tr>
+<tr><td>Epicentre</td><td>Surface point directly above the hypocentre.</td></tr>
+<tr><td>Seismic Waves</td><td>Earthquake-generated waves carrying released energy.</td></tr>
+<tr><td>P-Waves</td><td>Primary, fastest body waves; travel through solid, liquid and gas in the source.</td></tr>
+<tr><td>S-Waves</td><td>Secondary body waves; travel only through solid in the source.</td></tr>
+<tr><td>Surface Waves</td><td>Waves formed at/near the surface and described as more destructive in the source.</td></tr>
+<tr><td>Shadow Zone</td><td>Region where certain seismic waves are not detected.</td></tr>
+<tr><td>Tectonic Plate</td><td>Rigid lithospheric plate that moves and interacts with other plates.</td></tr>
+<tr><td>Subduction</td><td>Process described in the source where one plate goes beneath another at a convergent boundary.</td></tr>
+<tr><td>Ring of Fire</td><td>Horseshoe-shaped, earthquake- and volcano-prone region around the Pacific Ocean.</td></tr>
+</tbody>
+</table>
+</section>
+
+<section id="facts" class="card">
+<h2>5. Key Facts</h2>
+<div class="grid">
+<div class="callout"><span class="kpi">30 km</span><br>Approx. continental crust thickness in source.</div>
+<div class="callout"><span class="kpi">5 km</span><br>Approx. oceanic crust thickness in source.</div>
+<div class="callout"><span class="kpi">2,900 km</span><br>Mantle thickness.</div>
+<div class="callout"><span class="kpi">NiFe</span><br>Core composition stated in source.</div>
+<div class="callout"><span class="kpi">7–8 km/s</span><br>P-wave speed stated in source.</div>
+<div class="callout"><span class="kpi">4–6 km/s</span><br>S-wave speed stated in source.</div>
+<div class="callout"><span class="kpi">0–10</span><br>Richter range stated in source.</div>
+<div class="callout"><span class="kpi">1–12</span><br>Mercalli intensity range stated in source.</div>
+<div class="callout"><span class="kpi">7 + minor</span><br>Major plate structure presented in source.</div>
+<div class="callout"><span class="kpi">3</span><br>Plate boundary types.</div>
+</div>
+</section>
+
+<section id="tables" class="card">
+<h2>7. Tables &amp; Comparisons</h2>
+<h3>Continental vs Oceanic Crust</h3>
+<table>
+<tr><th>Feature</th><th>Continental Crust</th><th>Oceanic Crust</th></tr>
+<tr><td>Thickness</td><td>30 km</td><td>5 km</td></tr>
+<tr><td>Density</td><td>Lighter</td><td>Denser</td></tr>
+<tr><td>Rock stated</td><td>Granitic</td><td>Basaltic</td></tr>
+<tr><td>Location</td><td>Continents &amp; continental shelves</td><td>Beneath oceans</td></tr>
+</table>
+
+<h3>Lithosphere vs Asthenosphere</h3>
+<table>
+<tr><th>Lithosphere</th><th>Asthenosphere</th></tr>
+<tr><td>Rigid outer layer</td><td>Mechanically weak and ductile</td></tr>
+<tr><td>Crust + upper solid mantle</td><td>Upper-mantle layer beneath lithosphere</td></tr>
+<tr><td>10–200 km thickness stated</td><td>Source does not give a separate thickness here</td></tr>
+<tr><td>Forms tectonic plates</td><td>Source associates it with magma/lava and convection</td></tr>
+</table>
+
+<h3>P-Waves vs S-Waves vs Surface Waves</h3>
+<table>
+<tr><th>Feature</th><th>P-Waves</th><th>S-Waves</th><th>Surface Waves</th></tr>
+<tr><td>Category</td><td>Body</td><td>Body</td><td>Surface</td></tr>
+<tr><td>Speed</td><td>Fastest</td><td>Slower than P</td><td>Last to record</td></tr>
+<tr><td>Medium</td><td>Solid/liquid/gas</td><td>Solid only</td><td>Surface rocks</td></tr>
+<tr><td>Motion</td><td>Longitudinal</td><td>Transverse</td><td>Surface movement</td></tr>
+<tr><td>Destructiveness</td><td>—</td><td>—</td><td>More destructive in source</td></tr>
+</table>
+
+<h3>Plate Boundaries</h3>
+<table>
+<tr><th>Boundary</th><th>Direction</th><th>Crustal effect in source</th></tr>
+<tr><td>Divergent</td><td>Away from each other</td><td>New crust formation</td></tr>
+<tr><td>Convergent</td><td>Toward/colliding</td><td>Subduction; crust can be destroyed</td></tr>
+<tr><td>Transform</td><td>Horizontal sliding past</td><td>Neither creates nor destroys crust</td></tr>
+</table>
+</section>
+
+<section id="examples" class="card">
+<h2>8. Examples</h2>
+<ol>
+<li><b>Layer identification:</b> If the question asks for the layer described as liquid and associated with magnetic properties, the source points to the <b>outer core</b>.</li>
+<li><b>Wave identification:</b> A wave travelling through solids, liquids and gases and arriving first is a <b>P-wave</b> according to the source.</li>
+<li><b>Wave medium:</b> A seismic wave that travels only through solids is an <b>S-wave</b> according to the source.</li>
+<li><b>Earthquake location:</b> The underground starting point is the <b>hypocentre/focus</b>; the surface point directly above it is the <b>epicentre</b>.</li>
+<li><b>Plate boundary:</b> Plates moving apart represent a <b>divergent boundary</b>; the source links it with new crust formation.</li>
+<li><b>Plate boundary:</b> Plates sliding horizontally past each other represent a <b>transform boundary</b>.</li>
+<li><b>Ring of Fire:</b> The source associates the horseshoe-shaped Pacific region with high earthquake and volcano activity.</li>
+</ol>
+</section>
+
+<section id="confusions" class="card">
+<h2>9. Common Confusions</h2>
+<details><summary>Lithosphere vs Asthenosphere</summary><p>Lithosphere = rigid outer layer and forms plates. Asthenosphere = weak/ductile upper-mantle layer beneath it; the source explicitly says it is not part of the lithosphere.</p></details>
+<details><summary>Hypocentre vs Epicentre</summary><p>Hypocentre/focus = underground origin. Epicentre = point on the surface directly above it.</p></details>
+<details><summary>P-Wave vs S-Wave</summary><p>P = Primary, fastest, all three media in source. S = Secondary, slower, solid only.</p></details>
+<details><summary>Body Waves vs Surface Waves</summary><p>Body waves travel through Earth’s interior. Surface waves form when body waves interact with surface rocks and are described as more destructive.</p></details>
+<details><summary>Magnitude vs Intensity in the source</summary><p>The source associates Richter with magnitude and Mercalli with intensity. Do not swap these labels.</p></details>
+<details><summary>Divergent vs Convergent vs Transform</summary><p>Divergent = apart; Convergent = collide; Transform = slide past horizontally.</p></details>
+<details><summary>Inner Core vs Outer Core</summary><p>Source: inner core = solid; outer core = liquid and associated with magnetic properties.</p></details>
+<details><summary>Major vs Minor Plates in this PDF</summary><p>The PDF lists seven major plates and five minor plates. Memorize the exact list shown if your study source uses this classification.</p></details>
+</section>
+
+<section id="exam" class="card">
+<h2>10. Exam Focus</h2>
+<ul>
+<li>Methods of studying Earth’s interior: indirect vs direct examples.</li>
+<li>Continental vs oceanic crust: thickness, density and rock type.</li>
+<li>Crustal composition percentages, especially oxygen, silicon and aluminum.</li>
+<li>Mantle thickness, divisions and asthenosphere characteristics.</li>
+<li>Core composition and inner/outer core state.</li>
+<li>Five discontinuities in the exact order shown in the PDF.</li>
+<li>Hypocentre vs epicentre.</li>
+<li>P-wave vs S-wave: speed, medium and motion.</li>
+<li>Surface waves and their destructive nature in the source.</li>
+<li>Seismograph, Richter and Mercalli distinctions as framed by the source.</li>
+<li>Shadow zone concept and the source statement that the S-wave shadow zone is larger.</li>
+<li>Five earthquake types and major effects.</li>
+<li>Four seismic zones in India shown on page 8.</li>
+<li>Seven major and five minor tectonic plates listed on page 9.</li>
+<li>Three plate boundaries and their crustal effects.</li>
+<li>Arthur Holmes, McKenzie &amp; Parker (1967), convection current and Ring of Fire.</li>
+</ul>
+<div class="callout warn"><b>Important:</b> These are high-yield source points, not a claim that they are “frequently asked” in any particular exam.</div>
+</section>
+
+<section id="revision" class="card">
+<h2>11. Quick Revision</h2>
+<h3>5–10 Minute Revision</h3>
+<div class="grid two">
+<div class="callout"><b>Earth interior:</b> Crust → Mantle → Core.</div>
+<div class="callout"><b>Crust:</b> Continental 30 km / lighter / granitic; Oceanic 5 km / denser / basaltic.</div>
+<div class="callout"><b>Mantle:</b> SiMa; 2,900 km; Upper + Lower Mantle.</div>
+<div class="callout"><b>Asthenosphere:</b> weak, ductile, semi-solid/semi-molten; below lithosphere.</div>
+<div class="callout"><b>Core:</b> NiFe; inner solid; outer liquid + magnetic properties in source.</div>
+<div class="callout"><b>Discontinuities:</b> Conrad → Moho → Repetti → Guttenberg → Lehmann.</div>
+<div class="callout"><b>Earthquake:</b> Focus/Hypocentre below; Epicentre above.</div>
+<div class="callout"><b>Waves:</b> P fastest/all media; S solid only; surface more destructive.</div>
+<div class="callout"><b>Plates:</b> Seven major + minor plates listed.</div>
+<div class="callout"><b>Boundaries:</b> Divergent / Convergent / Transform.</div>
+<div class="callout"><b>Driving force:</b> Source attributes plate movement to convection currents in asthenosphere.</div>
+<div class="callout"><b>Ring of Fire:</b> Horseshoe-shaped Pacific region with high earthquake/volcano activity.</div>
+</div>
+
+<h3>Revision Points</h3>
+<div class="mini-grid">
+<div class="revision-day"><b>Day 1</b><br>Read layers, waves and plates.</div>
+<div class="revision-day"><b>Day 3</b><br>Recall discontinuities and wave differences without notes.</div>
+<div class="revision-day"><b>Day 7</b><br>Attempt the 15-MCQ test.</div>
+<div class="revision-day"><b>Day 14</b><br>Revise tables, earthquake types and boundaries.</div>
+<div class="revision-day"><b>Day 30</b><br>Full chapter recall + retest.</div>
+</div>
+
+<h3>12. One-Page Revision Sheet</h3>
+<div class="callout">
+<b>INTERIOR:</b> Crust → Mantle → Core • Mantle 2900 km • Core = NiFe<br>
+<b>CRUST:</b> Continental = 30 km, lighter, granitic • Oceanic = 5 km, denser, basaltic<br>
+<b>ASTHENOSPHERE:</b> Weak + ductile + semi-solid/semi-molten • beneath lithosphere • source of magma/lava in source<br>
+<b>DISCONTINUITIES:</b> Conrad → Moho → Repetti → Guttenberg → Lehmann<br>
+<b>EARTHQUAKE:</b> Hypocentre = origin underground • Epicentre = surface point above it<br>
+<b>WAVES:</b> P = Primary, 7–8 km/s, all media • S = Secondary, 4–6 km/s, solid only • Surface = more destructive in source<br>
+<b>MEASUREMENT:</b> Seismograph records waves • Richter = magnitude in source • Mercalli = intensity in source<br>
+<b>PLATES:</b> Pacific, North American, South American, African, Antarctic, Eurasian, Australian<br>
+<b>BOUNDARIES:</b> Divergent = apart/new crust • Convergent = collision/subduction • Transform = horizontal sliding<br>
+<b>RING OF FIRE:</b> Horseshoe-shaped Pacific region • high earthquake + volcano activity
+</div>
+</section>
+
+<section id="practice" class="card">
+<h2>Practice &amp; Test Mode</h2>
+<p class="small">15 MCQs generated strictly from the uploaded PDF. Select one answer for each question and check your score.</p>
+<div id="quiz"></div>
+<button onclick="checkQuiz()">Check Result</button>
+<button onclick="resetQuiz()" style="background:var(--gold);color:#201d06">Reset</button>
+<div id="score" class="result"></div>
+</section>
+
+<section id="mynotes" class="card">
+<h2>MY NOTES</h2>
+<p class="small">Completely separate from AI-generated notes. Your entries are saved in this browser using localStorage.</p>
+<div class="note-grid">
+<label><b>Personal Notes</b><textarea data-save="personal" placeholder="Write your own notes..."></textarea></label>
+<label><b>Doubts</b><textarea data-save="doubts" placeholder="What is unclear?"></textarea></label>
+<label><b>Shortcuts / Mnemonics</b><textarea data-save="mnemonics" placeholder="Create your own memory tricks..."></textarea></label>
+<label><b>Important Reminder</b><textarea data-save="reminder" placeholder="Add reminders..."></textarea></label>
+<label><b>Mistakes to Avoid</b><textarea data-save="mistakes" placeholder="Record mistakes from practice..."></textarea></label>
+</div>
+</section>
+
+<section id="timer" class="card">
+<h2>Study Timer</h2>
+<div class="timer">
+<span id="time">25:00</span>
+<button onclick="startTimer()">Start</button>
+<button onclick="pauseTimer()" style="background:var(--gold);color:#201d06">Pause</button>
+<button onclick="finishTimer()">Finish &amp; Save</button>
+<button onclick="resetTimer()" style="background:var(--danger)">Reset</button>
+</div>
+<p id="timerMsg" class="small">25-minute default study session. Session data is stored locally when possible.</p>
+</section>
+
+<section id="quality" class="card">
+<h2>NOTE QUALITY CHECK</h2>
+<ul>
+<li><b>Source pages analyzed:</b> 10 / 10</li>
+<li><b>Unreadable pages:</b> None identified; visual diagrams were also reviewed where present.</li>
+<li><b>Major topics covered:</b> Methods of studying Earth’s interior; crust; mantle; core; composition; lithosphere; asthenosphere; discontinuities; plate tectonic theory; convection current theory; earthquakes; seismic waves; scales; shadow zones; earthquake effects/types; seismic zones in India; tectonic plates; plate boundaries; Ring of Fire.</li>
+<li><b>Diagrams/tables detected:</b> Yes — Earth layers and crust diagram (pp. 1–3), seismic-wave diagrams (pp. 5–6), earthquake effects/types (p. 7), India seismic-zone map (p. 8), tectonic plate list and boundary chart (p. 9), Ring of Fire map (p. 10).</li>
+<li><b>Questions generated:</b> 15 MCQs.</li>
+<li><b>Potential ambiguities:</b> Some source statements are simplified or use terminology in a way that may differ from other textbooks. The notes explicitly flag the Richter/Mercalli wording and the animal-behaviour claim instead of silently replacing the source.</li>
+</ul>
+<p class="small"><b>All readable source material was processed.</b> Primary source: uploaded “EARTH'S INTERIOR AND PLATE TECTONICS” PDF.</p>
+</section>
+
+</main>
+
+<footer>
+<div class="container">Rise Notes • Standalone browser-ready HTML • AI-generated notes are based on the uploaded source.</div>
+</footer>
+
+<script>
+function toggleSidebar(){
+  document.getElementById('sidebar').classList.toggle('open');
+  document.getElementById('sidebarOverlay').classList.toggle('show');
+}
+function closeSidebar(){
+  document.getElementById('sidebar').classList.remove('open');
+  document.getElementById('sidebarOverlay').classList.remove('show');
+}
+document.querySelectorAll('.sidebar a').forEach(a=>a.addEventListener('click',closeSidebar));
+
+function applyTheme(theme){
+  document.documentElement.dataset.theme=theme;
+  document.body.classList.toggle('dark-mode',theme==='dark');
+  localStorage.setItem('rise_theme',theme);
+  document.querySelectorAll('.theme-toggle,.mobile-theme').forEach(b=>b.textContent=theme==='dark'?'☀':'☾');
+}
+function toggleTheme(){
+  applyTheme(document.documentElement.dataset.theme==='dark'?'light':'dark');
+}
+applyTheme(localStorage.getItem('rise_theme')||'light');
+
+function savePage(){
+  localStorage.setItem('rise_notes_saved_earth_interior','true');
+  const btn=document.querySelector('.side-save');
+  btn.textContent='★ Saved';
+  setTimeout(()=>btn.textContent='☆ Save Chapter',1400);
+}
+
+const questions=[
+ {q:"Which pair is listed by the source as direct sources for studying Earth's interior?",a:["Temperature and meteorites","Earthquake and temperature","Volcanoes and rocks","Meteorites and earthquakes"],c:2,t:"Earth Interior",d:"Easy"},
+ {q:"According to the source, the approximate thickness of the continental crust is:",a:["5 km","30 km","290 km","2,900 km"],c:1,t:"Crust",d:"Easy"},
+ {q:"The source describes oceanic crust as:",a:["Lighter and granitic","Thicker and granitic","Denser and basaltic","Liquid and metallic"],c:2,t:"Crust",d:"Easy"},
+ {q:"Which layer is stated to have a thickness of about 2,900 km?",a:["Crust","Mantle","Outer core","Inner core"],c:1,t:"Mantle",d:"Easy"},
+ {q:"Which is the correct order of discontinuities shown in the PDF?",a:["Moho, Conrad, Repetti, Lehmann, Guttenberg","Conrad, Moho, Repetti, Guttenberg, Lehmann","Conrad, Repetti, Moho, Guttenberg, Lehmann","Lehmann, Guttenberg, Repetti, Moho, Conrad"],c:1,t:"Discontinuities",d:"Moderate"},
+ {q:"Which seismic wave is described as the fastest and able to travel through solid, liquid and gas?",a:["S-wave","Surface wave","P-wave","Love wave"],c:2,t:"Seismic Waves",d:"Easy"},
+ {q:"According to the source, S-waves can travel through:",a:["Only gases","Only liquids","Only solids","Solids and gases only"],c:2,t:"Seismic Waves",d:"Easy"},
+ {q:"The point within Earth where an earthquake begins is called the:",a:["Epicentre","Hypocentre","Shadow zone","Fault line"],c:1,t:"Earthquake",d:"Easy"},
+ {q:"Which scale is associated with earthquake intensity in the source?",a:["Richter Scale","Mercalli Scale","Seismograph","Conrad Scale"],c:1,t:"Earthquake Measurement",d:"Moderate"},
+ {q:"Which earthquake type is associated in the source with construction of large reservoirs?",a:["Collapse earthquake","Volcanic earthquake","Reservoir-induced earthquake","Tectonic earthquake"],c:2,t:"Earthquake Types",d:"Easy"},
+ {q:"Which zone is shown as the highest seismic zone in the source's India map?",a:["Zone 2","Zone 3","Zone 4","Zone 5"],c:3,t:"Seismic Zones",d:"Easy"},
+ {q:"Which of the following is listed as a major tectonic plate in the PDF?",a:["Nazca Plate","Caribbean Plate","Pacific Plate","Cocos Plate"],c:2,t:"Tectonic Plates",d:"Easy"},
+ {q:"When two tectonic plates move away from each other, the boundary is:",a:["Convergent","Transform","Divergent","Subduction"],c:2,t:"Plate Boundaries",d:"Easy"},
+ {q:"Which boundary is described as plates sliding horizontally past each other without creating or destroying crust?",a:["Divergent","Convergent","Transform","Volcanic"],c:2,t:"Plate Boundaries",d:"Moderate"},
+ {q:"The source describes the Ring of Fire as a horseshoe-shaped region around the:",a:["Atlantic Ocean","Indian Ocean","Pacific Ocean","Arctic Ocean"],c:2,t:"Ring of Fire",d:"Easy"}
+];
+
+function renderQuiz(){
+ const el=document.getElementById('quiz');
+ el.innerHTML=questions.map((x,i)=>{
+   const opts=x.a.map((o,j)=>`<label class="option"><input type="radio" name="q${i}" value="${j}"> ${String.fromCharCode(65+j)}. ${o}</label>`).join('');
+   return `<div class="question"><b>Q${i+1}. ${x.q}</b>${opts}<div class="small">Topic: ${x.t} • Difficulty: ${x.d}</div></div>`;
+ }).join('');
+}
+function checkQuiz(){
+ let score=0;
+ questions.forEach((x,i)=>{
+   const r=document.querySelector(`input[name="q${i}"]:checked`);
+   if(r && Number(r.value)===x.c) score++;
+ });
+ const pct=Math.round(score/questions.length*100);
+ document.getElementById('score').textContent=`Score: ${score}/${questions.length} (${pct}%)`;
+ localStorage.setItem('rise_last_score_earth_interior',JSON.stringify({score,total:questions.length,pct,date:new Date().toISOString()}));
+}
+function resetQuiz(){
+ renderQuiz();
+ document.getElementById('score').textContent='';
+}
+renderQuiz();
+
+document.querySelectorAll('textarea[data-save]').forEach(t=>{
+ const key='rise_notes_earth_'+t.dataset.save;
+ t.value=localStorage.getItem(key)||'';
+ t.addEventListener('input',()=>localStorage.setItem(key,t.value));
+});
+
+let secs=1500,interval=null;
+function updateTimer(){
+ document.getElementById('time').textContent=`${String(Math.floor(secs/60)).padStart(2,'0')}:${String(secs%60).padStart(2,'0')}`;
+}
+function startTimer(){
+ if(interval) return;
+ interval=setInterval(()=>{
+   if(secs>0){secs--;updateTimer();}
+   else{pauseTimer();document.getElementById('timerMsg').textContent='Time completed.';}
+ },1000);
+}
+function pauseTimer(){
+ clearInterval(interval);interval=null;
+}
+function resetTimer(){
+ pauseTimer();secs=1500;updateTimer();
+ document.getElementById('timerMsg').textContent='Timer reset.';
+}
+function finishTimer(){
+ pauseTimer();
+ const used=1500-secs;
+ localStorage.setItem('rise_timer_last_earth_interior',JSON.stringify({
+   chapter:"Earth's Interior & Plate Tectonics",
+   seconds:used,
+   finished:new Date().toISOString()
+ }));
+ document.getElementById('timerMsg').textContent=`Saved session: ${Math.floor(used/60)} min ${used%60} sec.`;
+}
+updateTimer();
+
+const watched=new Set();
+const observer=new IntersectionObserver(entries=>{
+ entries.forEach(e=>{
+   if(e.isIntersecting) watched.add(e.target.id);
+ });
+ const ids=['objectives','overview','core','detailed','terms','facts','tables','examples','confusions','exam','revision','practice','mynotes','timer','quality'];
+ const pct=Math.min(100,Math.round(watched.size/ids.length*100));
+ document.getElementById('progressBar').style.width=pct+'%';
+ document.getElementById('progressText').textContent=`Progress: ${pct}%`;
+},{threshold:.18});
+document.querySelectorAll('section[id]').forEach(s=>observer.observe(s));
+</script>
+</body>
+</html>

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>RISE NOTES — Latitude & Longitude</title>
+<style>
+:root{--bg:#FAEED9;--gold:#E1A837;--olive:#8D7A02;--ink:#38370D;--card:#fffaf0;--soft:#f4e6c4;--line:#d6c59d;--muted:#756f4f}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.62 Arial,sans-serif}
+.mobilebar{display:none}.sidebar{position:fixed;inset:0 auto 0 0;width:265px;background:#24240b;color:#fff8df;padding:18px 14px;overflow:auto;z-index:20}
+.brand{display:flex;gap:9px;align-items:center;border-bottom:1px solid #ffffff22;padding-bottom:15px}.logo{width:38px;height:38px;border-radius:9px;background:var(--gold);color:#252407;display:grid;place-items:center;font-weight:900}
+.brand small{display:block;font-size:9px;opacity:.65}.side-title{font-size:9px;letter-spacing:.2em;opacity:.6;margin:18px 5px 8px}
+.sidebar a{display:block;color:#fff8df;text-decoration:none;padding:6px;font-size:12px;border-radius:6px}.sidebar a:hover{background:#ffffff12}
+.side-btn{width:100%;margin-top:8px;padding:10px;border:0;border-radius:8px;background:var(--gold);font-weight:800}.side-btn.alt{background:#303013;color:#fff8df}
+.overlay{display:none}main{margin-left:265px;padding:0 32px 45px;max-width:1320px}.hero{padding:42px 0 28px}
+.eyebrow{font-size:10px;letter-spacing:.18em;font-weight:900;color:var(--olive)}h1{font-size:clamp(44px,7vw,78px);line-height:.88;letter-spacing:-.06em;margin:12px 0}
+h2{font-size:27px;line-height:1.1;margin:0 0 15px}h3{margin-top:0}.hero p{max-width:950px;color:var(--muted)}
+.badges{display:flex;gap:7px;flex-wrap:wrap;margin:16px 0}.badge{background:var(--soft);border:1px solid var(--line);padding:5px 9px;border-radius:99px;font-size:10px;font-weight:800}
+.meta{display:grid;grid-template-columns:repeat(4,1fr);background:var(--card);border:1px solid var(--line);border-radius:13px;overflow:hidden}.meta>div{padding:13px;border-right:1px solid var(--line)}.meta>div:last-child{border:0}.meta b{font-size:9px;color:var(--muted);letter-spacing:.13em}
+.card{background:var(--card);border:1px solid var(--line);border-top:3px solid var(--gold);border-radius:15px;padding:22px;margin:20px 0}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.two{grid-template-columns:repeat(2,1fr)}.three{grid-template-columns:repeat(3,1fr)}
+.tile{background:var(--soft);border:1px solid var(--line);border-radius:11px;padding:14px}.kpi{font-size:27px;font-weight:900;color:var(--olive)}
+.callout{background:var(--soft);border-left:5px solid var(--gold);border-radius:9px;padding:13px;margin:13px 0}.small{font-size:11px;color:var(--muted)}
+table{width:100%;border-collapse:collapse;margin:13px 0}th,td{border:1px solid var(--line);padding:9px;text-align:left;vertical-align:top}th{background:var(--soft)}
+details{border:1px solid var(--line);border-radius:9px;padding:9px 11px;margin:7px 0}summary{font-weight:800;cursor:pointer}
+.visual{background:var(--soft);border:1px solid var(--line);border-radius:13px;padding:12px;margin:13px 0}.vtitle{font-weight:900;margin-bottom:7px}.visual svg{width:100%;height:auto;display:block}svg text{font-family:Arial,sans-serif;fill:var(--ink)}
+.notes{display:grid;grid-template-columns:1fr 1fr;gap:13px}textarea{width:100%;min-height:105px;padding:10px;border:1px solid var(--line);border-radius:9px;background:var(--card);color:var(--ink)}
+button{cursor:pointer}.btn{border:0;border-radius:8px;padding:9px 12px;background:var(--gold);font-weight:800}.btn.alt{background:var(--soft);color:var(--ink);border:1px solid var(--line)}
+#clock{font-size:32px;font-weight:900;margin-right:10px}.q{border:1px solid var(--line);border-radius:10px;padding:12px;margin:10px 0}.q label{display:block;padding:4px}.result{font-weight:900;margin-top:10px}
+footer{margin-left:265px;padding:18px 32px;border-top:1px solid var(--line);font-size:11px;color:var(--muted)}
+.progress{height:8px;background:var(--soft);border:1px solid var(--line);border-radius:99px;overflow:hidden}.progress span{display:block;height:100%;width:100%;background:var(--gold)}
+@media(max-width:1100px){.mobilebar{display:flex;position:fixed;top:0;left:0;right:0;height:56px;background:#24240b;color:#fff8df;z-index:40;align-items:center;justify-content:space-between;padding:0 14px}.mobilebar button{background:none;border:0;color:#fff8df;font-size:22px;width:40px}.mobilebar .center{font-size:12px;font-weight:900;letter-spacing:.15em}
+.sidebar{top:56px;width:min(310px,85vw);transform:translateX(-105%);transition:.25s}.sidebar.open{transform:translateX(0)}.overlay.show{display:block;position:fixed;inset:56px 0 0;background:#0008;z-index:15}
+main{margin:0;padding:56px 16px 35px}footer{margin:0;padding:17px}.hero{padding-top:30px}}
+@media(max-width:720px){.meta,.grid,.two,.three,.notes{grid-template-columns:1fr 1fr}.meta>div:nth-child(2n){border-right:0}.meta>div{border-bottom:1px solid var(--line)}table{display:block;overflow-x:auto;font-size:12px}.card{padding:17px}h1{font-size:46px}}
+@media(max-width:430px){.meta,.grid,.two,.three,.notes{grid-template-columns:1fr}.meta>div{border-right:0}main{padding-left:10px;padding-right:10px}h1{font-size:40px}}
+body.dark{--bg:#15150c;--card:#202015;--soft:#2b2b19;--ink:#f4efd9;--line:#5b5733;--muted:#c2bc9a}
+</style>
+</head>
+<body>
+<div class="mobilebar"><button onclick="menu()">☰</button><b class="center">RISE NOTES</b><button onclick="theme()">☾</button></div>
+<div id="ov" class="overlay" onclick="closeMenu()"></div>
+<aside class="sidebar" id="side">
+<div class="brand"><div class="logo">R</div><div><b>RISE NOTES</b><small>STUDY WORKSPACE</small></div></div>
+<div class="side-title">CHAPTER</div>
+<a href="#overview">• Overview</a><a href="#visuals">▣ Visual Library</a><a href="#earth">◆ Earth's Shape</a><a href="#motion">◈ Rotation & Revolution</a><a href="#latlong">◇ Latitude & Longitude</a><a href="#time">◷ Time & IST</a><a href="#greatcircle">◎ Great Circle & Hemispheres</a><a href="#seasons">☀ Solstice & Equinox</a><a href="#eclipse">◐ Eclipses & Moon</a><a href="#zones">△ Heat Zones</a><a href="#tides">≈ Tides</a><a href="#energy">⚡ Tidal Energy</a><a href="#terms">Aa Important Terms</a><a href="#facts">◆ Key Facts</a><a href="#tables">▤ Comparisons</a><a href="#confusions">△ Confusions</a><a href="#exam">★ Exam Focus</a><a href="#revision">↻ Revision</a><a href="#practice">✓ Practice</a><a href="#mynotes">☻ My Notes</a><a href="#timer">◷ Timer</a><a href="#quality">✓ Quality Check</a>
+<button class="side-btn" onclick="save()">☆ Save Chapter</button><button class="side-btn alt" onclick="theme()">☾ Dark Mode</button>
+</aside>
+
+<main>
+<header class="hero">
+<div class="eyebrow">RISE NOTES · GEOGRAPHY</div>
+<h1>LATITUDE<br>& LONGITUDE</h1>
+<p>Complete, source-based exam notes covering Earth's shape, rotation and revolution, axial inclination, latitude and longitude, important parallels and meridians, IST, GMT, International Date Line, great circles, hemispheres, seasons, eclipses, heat zones, tides and tidal energy.</p>
+<div class="badges"><span class="badge">GEOGRAPHY</span><span class="badge">SSC / COMPETITIVE</span><span class="badge">SOURCE-BASED</span><span class="badge">9 PAGES</span></div>
+<div class="meta"><div><b>SUBJECT</b><br>Geography</div><div><b>CHAPTER</b><br>Latitude & Longitude</div><div><b>DIFFICULTY</b><br>Moderate</div><div><b>ESTIMATED STUDY TIME</b><br>75 minutes</div></div>
+</header>
+
+<section id="overview" class="card"><h2>1. Quick Overview</h2>
+<div class="grid">
+<div class="tile"><span class="kpi">6371 km</span><br>Mean radius of Earth</div>
+<div class="tile"><span class="kpi">23.5°</span><br>Axial inclination</div>
+<div class="tile"><span class="kpi">181</span><br>Total latitudes in source</div>
+<div class="tile"><span class="kpi">360</span><br>Total longitudes in source</div>
+</div>
+<div class="grid three" style="margin-top:12px"><div class="tile"><b>Rotation</b><br>23 h 56 min 4 sec</div><div class="tile"><b>Revolution</b><br>365 days 6 h 9 min</div><div class="tile"><b>Orbital speed</b><br>29.8 km/sec</div></div>
+<div class="callout"><b>Core chain:</b> Earth's shape → rotation/revolution → axial tilt → latitude/longitude → time → seasons → eclipses → heat zones → tides.</div>
+<div class="progress"><span></span></div><p class="small">Complete source coverage target: 100%</p></section>
+
+<section id="visuals" class="card"><h2>Visual Library</h2><p class="small">Responsive conceptual diagrams reconstructed from the uploaded pages. They are study visuals, not scale maps.</p>
+<div class="visual"><div class="vtitle">① Earth: Geoid / Oblate Spheroid</div>
+<svg viewBox="0 0 900 250"><ellipse cx="450" cy="125" rx="180" ry="105" fill="var(--soft)" stroke="var(--gold)" stroke-width="7"/><ellipse cx="450" cy="125" rx="155" ry="105" fill="none" stroke="var(--olive)" stroke-width="3" stroke-dasharray="8 7"/><line x1="275" y1="125" x2="625" y2="125" stroke="var(--gold)" stroke-width="4"/><line x1="450" y1="20" x2="450" y2="230" stroke="var(--olive)" stroke-width="3" stroke-dasharray="7 7"/><text x="450" y="125" text-anchor="middle" font-size="22" font-weight="900">EQUATOR</text><text x="450" y="28" text-anchor="middle" font-size="15">flattened pole</text><text x="450" y="245" text-anchor="middle" font-size="15">flattened pole</text><text x="650" y="105" font-size="15">bulged at centre</text></svg></div>
+<div class="visual"><div class="vtitle">② Latitude vs Longitude</div>
+<svg viewBox="0 0 900 260"><circle cx="225" cy="130" r="95" fill="var(--card)" stroke="var(--gold)" stroke-width="5"/><path d="M130 130h190M225 35v190M150 70q75 55 150 0M150 190q75-55 150 0" fill="none" stroke="var(--olive)" stroke-width="3"/><text x="225" y="248" text-anchor="middle" font-size="20" font-weight="900">LATITUDE — E–W parallels</text><circle cx="675" cy="130" r="95" fill="var(--card)" stroke="var(--gold)" stroke-width="5"/><path d="M675 35v190M675 35q-70 95 0 190M675 35q70 95 0 190M580 130h190" fill="none" stroke="var(--olive)" stroke-width="3"/><text x="675" y="248" text-anchor="middle" font-size="20" font-weight="900">LONGITUDE — N–S meridians</text></svg></div>
+<div class="visual"><div class="vtitle">③ Important Latitudes</div>
+<svg viewBox="0 0 900 230"><line x1="450" y1="25" x2="450" y2="205" stroke="var(--ink)" stroke-width="3"/><line x1="300" y1="55" x2="600" y2="55" stroke="var(--olive)" stroke-width="6"/><line x1="325" y1="90" x2="575" y2="90" stroke="var(--gold)" stroke-width="5"/><line x1="325" y1="140" x2="575" y2="140" stroke="var(--gold)" stroke-width="5"/><line x1="300" y1="175" x2="600" y2="175" stroke="var(--olive)" stroke-width="6"/><text x="615" y="61" font-size="16">66.5°N Arctic Circle</text><text x="615" y="96" font-size="16">23.5°N Tropic of Cancer</text><text x="615" y="146" font-size="16">23.5°S Tropic of Capricorn</text><text x="615" y="181" font-size="16">66.5°S Antarctic Circle</text><text x="180" y="118" font-size="18" font-weight="900">0° Equator</text></svg></div>
+<div class="visual"><div class="vtitle">④ Rotation vs Revolution</div>
+<svg viewBox="0 0 900 190"><circle cx="220" cy="95" r="45" fill="var(--soft)" stroke="var(--gold)" stroke-width="5"/><path d="M220 42a53 53 0 0 1 50 70" fill="none" stroke="var(--olive)" stroke-width="5"/><text x="220" y="165" text-anchor="middle" font-size="19" font-weight="900">ROTATION</text><text x="220" y="188" text-anchor="middle" font-size="13">day & night</text><circle cx="680" cy="95" r="22" fill="var(--gold)"/><ellipse cx="680" cy="95" rx="150" ry="70" fill="none" stroke="var(--olive)" stroke-width="4"/><circle cx="830" cy="95" r="18" fill="var(--soft)" stroke="var(--gold)" stroke-width="4"/><text x="680" y="165" text-anchor="middle" font-size="19" font-weight="900">REVOLUTION</text><text x="680" y="188" text-anchor="middle" font-size="13">seasons + year</text></svg></div>
+<div class="visual"><div class="vtitle">⑤ Solar vs Lunar Eclipse</div>
+<svg viewBox="0 0 900 220"><circle cx="140" cy="110" r="45" fill="var(--gold)"/><circle cx="450" cy="110" r="25" fill="var(--soft)" stroke="var(--gold)" stroke-width="4"/><circle cx="760" cy="110" r="35" fill="var(--card)" stroke="var(--olive)" stroke-width="4"/><path d="M185 110h240M475 110h250" stroke="var(--ink)" stroke-width="3"/><text x="450" y="35" text-anchor="middle" font-size="18" font-weight="900">SOLAR: Moon between Sun & Earth</text><text x="450" y="205" text-anchor="middle" font-size="18" font-weight="900">LUNAR: Earth between Sun & Moon</text></svg></div>
+<div class="visual"><div class="vtitle">⑥ Tides</div>
+<svg viewBox="0 0 900 200"><circle cx="450" cy="100" r="48" fill="var(--soft)" stroke="var(--gold)" stroke-width="5"/><circle cx="170" cy="100" r="28" fill="var(--gold)"/><circle cx="730" cy="100" r="22" fill="var(--card)" stroke="var(--olive)" stroke-width="4"/><line x1="200" y1="100" x2="420" y2="100" stroke="var(--ink)" stroke-width="3"/><line x1="480" y1="100" x2="705" y2="100" stroke="var(--ink)" stroke-width="3"/><text x="450" y="40" text-anchor="middle" font-size="18" font-weight="900">SPRING TIDE — aligned</text><text x="450" y="175" text-anchor="middle" font-size="16">NEAP TIDE — Sun & Moon perpendicular</text></svg></div>
+</section>
+
+<section id="earth" class="card"><h2>2. Earth's Shape</h2>
+<p>The source describes Earth's shape as <b>Geoid or Oblate Spheroid</b>: slightly flattened at the top and bottom and bulged at the centre/equator.</p>
+<div class="grid three"><div class="tile"><b>Equatorial radius</b><br>6378 km</div><div class="tile"><b>Polar radius</b><br>6357 km</div><div class="tile"><b>Mean radius</b><br>6371 km</div><div class="tile"><b>Polar circumference</b><br>40,007.863 km</div><div class="tile"><b>Equatorial circumference</b><br>40,075 km</div><div class="tile"><b>Mean circumference</b><br>40,040 km</div></div>
+<div class="callout"><b>Reason stated in source:</b> centrifugal force due to Earth's rotation.</div>
+<ul><li>Equatorial radius &gt; polar radius.</li><li>Equatorial circumference &gt; polar circumference.</li><li>Equatorial speed &gt; polar speed.</li></ul>
+<h3>Geodesy</h3><p>Science of accurately measuring and understanding Earth's geometric shape, orientation in space and gravity field.</p>
+<div class="callout"><b>Source note:</b> The difference between polar diameter and equatorial diameter is stated as 42 or 44 km.</div></section>
+
+<section id="motion" class="card"><h2>3. Rotation & Revolution of Earth</h2>
+<div class="grid two"><div class="tile"><h3>Rotation</h3><ul><li>Earth rotates on its axis from west to east (anticlockwise).</li><li>One rotation = 23 h 56 min 4 sec.</li><li>Causes day and night.</li><li>Rotational speed is maximum at equator and minimum at poles.</li></ul></div><div class="tile"><h3>Revolution</h3><ul><li>Earth revolves around the Sun in an elliptical orbit.</li><li>1 revolution = 365 days 6 h 9 min.</li><li>Orbital speed = 29.8 km/sec.</li><li>Seasons result from revolution plus axial tilt.</li><li>Mercury has maximum orbital speed; Neptune minimum, as stated in source.</li></ul></div></div>
+<h3>Earth–Sun and Earth–Moon Distances</h3><table><tr><th>Term</th><th>Meaning</th><th>Source detail</th></tr><tr><td>Perihelion</td><td>Earth is closest to Sun</td><td>January 3; 147 million km</td></tr><tr><td>Aphelion</td><td>Earth is farthest from Sun</td><td>July 4; 152 million km</td></tr><tr><td>Perigee</td><td>Moon closest to Earth</td><td>Moon appears large in sky</td></tr><tr><td>Apogee</td><td>Moon farthest from Earth</td><td>Tide-raising force is smaller; tidal ranges less than average</td></tr></table></section>
+
+<section id="latlong" class="card"><h2>4. Latitude & Longitude</h2>
+<div class="grid two"><div class="tile"><h3>Latitude</h3><ul><li>Imaginary horizontal lines running east–west.</li><li>Angular distance of a place from the Equator.</li><li>Distance between each latitude is same.</li><li>1° latitude ≈ 111 km.</li><li>Total latitudes: 181.</li><li>Latitude circles: 179.</li><li>Parallel circles from equator to poles are called parallels of latitude.</li></ul></div><div class="tile"><h3>Longitude</h3><ul><li>Imaginary vertical lines running north–south.</li><li>Least distance at poles; maximum at equator.</li><li>Maximum equatorial distance stated: 111.32 km.</li><li>Total longitudes: 360.</li><li>Part between two longitudes is called a “Gore” in source.</li></ul></div></div>
+<h3>Important Latitudes</h3><table><tr><th>Latitude</th><th>Value</th></tr><tr><td>Equator</td><td>0° — largest latitude; radius at equator 6378 km</td></tr><tr><td>Tropic of Cancer</td><td>23.5°N</td></tr><tr><td>Tropic of Capricorn</td><td>23.5°S</td></tr><tr><td>Arctic Circle</td><td>66.5°N</td></tr><tr><td>Antarctic Circle</td><td>66.5°S</td></tr><tr><td>Poles</td><td>Smallest latitude</td></tr></table>
+<h3>Important Longitudes</h3><ul><li><b>Prime Meridian:</b> 0° longitude; source also associates it with Greenwich Mean Time.</li><li><b>International Date Line:</b> 180° longitude.</li></ul></section>
+
+<section id="time" class="card"><h2>5. Time, GMT & Indian Standard Time</h2>
+<div class="grid two"><div class="tile"><h3>GMT / Prime Meridian</h3><ul><li>Source says GMT passes through Europe, Africa and Antarctica.</li><li>Also known as Prime Meridian in the source.</li></ul></div><div class="tile"><h3>IST</h3><ul><li>82.5° longitude.</li><li>Source says IST passes through 5 Indian states.</li><li>States listed: Uttar Pradesh, Madhya Pradesh, Chhattisgarh, Odisha and Andhra Pradesh.</li></ul></div></div>
+<table><tr><th>Country / region</th><th>Time zones stated in source</th></tr><tr><td>USA</td><td>6</td></tr><tr><td>India</td><td>1</td></tr><tr><td>China</td><td>1</td></tr><tr><td>Russia</td><td>11</td></tr><tr><td>France</td><td>13 — maximum in source</td></tr></table>
+<div class="callout"><b>Important:</b> These counts are reproduced as stated in the uploaded source.</div></section>
+
+<section id="greatcircle" class="card"><h2>6. Great Circle & Hemispheres</h2>
+<h3>Great Circle</h3><ul><li>Largest possible circle that can be drawn around a sphere.</li><li>Divides Earth into two equal hemispheres.</li><li>All longitudes are considered great circles, while only one latitude is considered a great circle: the Equator (0°).</li><li>Source states it gives the shortest distance between two points.</li></ul>
+<h3>Equal Division of Earth</h3><table><tr><th>Reference</th><th>Division</th></tr><tr><td>Equator</td><td>Northern Hemisphere + Southern Hemisphere</td></tr><tr><td>Prime Meridian</td><td>Eastern Hemisphere + Western Hemisphere</td></tr></table>
+<div class="callout"><b>India:</b> located in the Northern and Eastern Hemispheres, according to the source.</div>
+<h3>International Date Line</h3><ul><li>Imaginary zig-zag line through the Pacific Ocean from where the date changes.</li><li>Source example: crossing eastbound from Japan to USA → date is subtracted by 1 / traveller gains a day; vice versa in the opposite direction.</li></ul></section>
+
+<section id="seasons" class="card"><h2>7. Solstice & Equinox</h2>
+<div class="grid two"><div class="tile"><h3>Axial Inclination</h3><b>23.5°</b><p>Inclination of Earth on its axis.</p></div><div class="tile"><h3>Orbital Inclination</h3><b>66.5°</b><p>Inclination of Earth's orbital plane, as stated in source.</p></div></div>
+<h3>Equinox</h3><p>Time when the Sun's apparent path crosses the equator, making day and night approximately equal in length.</p>
+<table><tr><th>Event</th><th>Date</th><th>Source explanation</th></tr><tr><td>Vernal Equinox</td><td>21 March</td><td>Equinox</td></tr><tr><td>Summer Solstice</td><td>21 June</td><td>Longest day in Northern Hemisphere; vertical rays over Tropic of Cancer; Northern Hemisphere gets more heat; continuous daylight at North Pole for 6 months.</td></tr><tr><td>Autumnal Equinox</td><td>23 September</td><td>Equinox</td></tr><tr><td>Winter Solstice</td><td>22 December</td><td>Shortest day in Northern Hemisphere; vertical rays over Tropic of Capricorn; Southern Hemisphere gets more heat; continuous daylight at South Pole for 6 months.</td></tr></table>
+<div class="callout"><b>Memory:</b> June → Cancer → Northern Hemisphere longest day. December → Capricorn → Northern Hemisphere shortest day.</div></section>
+
+<section id="eclipse" class="card"><h2>8. Eclipses, Moon Phenomena & Syzygy</h2>
+<div class="grid two"><div class="tile"><h3>Solar Eclipse</h3><p>Moon passes between Earth and Sun, casting a shadow on Earth. Source: occurs during a new moon (Amavasya).</p></div><div class="tile"><h3>Lunar Eclipse</h3><p>Earth passes between Moon and Sun, casting a shadow on Moon. Source: occurs during a full moon (Purnima).</p></div><div class="tile"><h3>Red Moon</h3><p>Source explains that when Earth blocks sunlight, blue light scatters more while red light reaches the Moon.</p></div><div class="tile"><h3>Blue Moon</h3><p>Source: occurs when there are two full moons within a single calendar month.</p></div><div class="tile"><h3>Super Moon</h3><p>Moon's orbit is closest to Earth during a full/new moon; Moon appears bigger than normal.</p></div><div class="tile"><h3>Syzygy</h3><p>Sun, Moon and Earth aligned in a straight line. Two types listed: Syzygy Conjunction and Syzygy Opposition.</p></div></div></section>
+
+<section id="zones" class="card"><h2>9. Heat Zones of Earth</h2><div class="grid three"><div class="tile"><h3>Torrid Zone</h3><p>Receives direct overhead rays; hottest zone; located between the Tropics.</p></div><div class="tile"><h3>Temperate Zone</h3><p>Between Tropic of Cancer and Arctic Circle, or Tropic of Capricorn and Antarctic Circle; receives slanting rays.</p></div><div class="tile"><h3>Frigid Zone</h3><p>Coldest region; source states daylight for 6 months and night for 6 months due to Earth's tilt.</p></div></div></section>
+
+<section id="tides" class="card"><h2>10. Tides</h2>
+<p>Tides are periodic rise and fall of ocean water levels caused by gravitational pull of the Moon and Sun on Earth's oceans.</p>
+<div class="grid two"><div class="tile"><h3>Spring Tide</h3><p>Occurs when Earth, Sun and Moon are aligned along a straight line.</p></div><div class="tile"><h3>Neap Tide</h3><p>Occurs when Earth, Sun and Moon are in perpendicular alignment.</p></div></div>
+<h3>Flood & Ebb</h3><ul><li>Low → high tide = <b>flood tide / flow</b>.</li><li>High → low tide = <b>ebb tide</b>.</li></ul>
+<table><tr><th>Type</th><th>Pattern</th><th>Time gap stated in source</th></tr><tr><td>Diurnal</td><td>One high + one low tide per day</td><td>One high to one low: 6 h 12 min</td></tr><tr><td>Semi-diurnal</td><td>Two high + two low tides per day</td><td>Between two high & two low tides: 12 h 25 min</td></tr></table></section>
+
+<section id="energy" class="card"><h2>11. Tidal Energy</h2><div class="grid two"><div class="tile"><b>Where tides are high:</b><br>Where continental shelves are wide.</div><div class="tile"><b>Another favourable feature:</b><br>Funnel-shaped geographical features.</div></div>
+<div class="callout">Tidal energy harnesses the predictable rise and fall of ocean tides, caused by gravitational pull of the Moon and Sun, to generate electricity.</div></section>
+
+<section id="terms" class="card"><h2>12. Important Terms</h2>
+<table><tr><th>Term</th><th>Simple explanation</th></tr><tr><td>Geoid / Oblate spheroid</td><td>Earth's source-described slightly flattened and equatorially bulged shape.</td></tr><tr><td>Geodesy</td><td>Science of measuring Earth's shape, orientation and gravity field.</td></tr><tr><td>Latitude</td><td>Angular distance north or south of the Equator.</td></tr><tr><td>Longitude</td><td>Angular position measured east or west from the Prime Meridian.</td></tr><tr><td>Perihelion</td><td>Earth closest to Sun.</td></tr><tr><td>Aphelion</td><td>Earth farthest from Sun.</td></tr><tr><td>Perigee</td><td>Moon closest to Earth.</td></tr><tr><td>Apogee</td><td>Moon farthest from Earth.</td></tr><tr><td>Great Circle</td><td>Largest circle around a sphere.</td></tr><tr><td>Equinox</td><td>Sun's apparent path crosses equator; day and night approximately equal.</td></tr><tr><td>Solstice</td><td>Astronomical event producing longest/shortest day conditions.</td></tr><tr><td>Syzygy</td><td>Sun–Moon–Earth straight-line alignment.</td></tr><tr><td>Spring Tide</td><td>Tide during straight-line alignment.</td></tr><tr><td>Neap Tide</td><td>Tide during perpendicular alignment.</td></tr></table></section>
+
+<section id="facts" class="card"><h2>13. Key Facts</h2><div class="grid three">
+<div class="tile"><b>6378 km</b><br>Equatorial radius</div><div class="tile"><b>6357 km</b><br>Polar radius</div><div class="tile"><b>23.5°</b><br>Axial inclination</div><div class="tile"><b>0°</b><br>Prime Meridian / Equator reference values</div><div class="tile"><b>23.5°N</b><br>Tropic of Cancer</div><div class="tile"><b>23.5°S</b><br>Tropic of Capricorn</div><div class="tile"><b>66.5°N</b><br>Arctic Circle</div><div class="tile"><b>66.5°S</b><br>Antarctic Circle</div><div class="tile"><b>180°</b><br>International Date Line</div><div class="tile"><b>82.5°</b><br>IST longitude in source</div><div class="tile"><b>29.8 km/s</b><br>Orbital speed</div><div class="tile"><b>12 h 25 min</b><br>Two high/two low tide interval stated</div></div></section>
+
+<section id="tables" class="card"><h2>14. Tables & Comparisons</h2>
+<table><tr><th>Latitude</th><th>Longitude</th></tr><tr><td>Horizontal, E–W</td><td>Vertical, N–S</td></tr><tr><td>Angular distance from Equator</td><td>Position relative to Prime Meridian</td></tr><tr><td>1° ≈ 111 km</td><td>Distance varies; maximum at Equator in source</td></tr><tr><td>181 total in source</td><td>360 total in source</td></tr></table>
+<table><tr><th>Rotation</th><th>Revolution</th></tr><tr><td>West → east</td><td>Around Sun in elliptical orbit</td></tr><tr><td>23 h 56 min 4 sec</td><td>365 days 6 h 9 min</td></tr><tr><td>Day & night</td><td>Seasons with axial tilt</td></tr></table>
+<table><tr><th>Spring Tide</th><th>Neap Tide</th></tr><tr><td>Sun–Earth–Moon aligned</td><td>Sun–Earth–Moon perpendicular</td></tr><tr><td>Stronger tidal range concept in source context</td><td>Smaller tidal range concept in source context</td></tr></table></section>
+
+<section id="confusions" class="card"><h2>15. Common Confusions</h2>
+<details><summary>Perihelion vs Perigee</summary><p><b>Perihelion</b> = Earth–Sun closest. <b>Perigee</b> = Moon–Earth closest.</p></details>
+<details><summary>Aphelion vs Apogee</summary><p><b>Aphelion</b> = Earth farthest from Sun. <b>Apogee</b> = Moon farthest from Earth.</p></details>
+<details><summary>Latitude vs Longitude</summary><p>Latitude runs east–west and measures north/south angular distance from Equator. Longitude runs north–south and is associated with east/west position.</p></details>
+<details><summary>Equinox vs Solstice</summary><p>Equinox → approximately equal day/night. Solstice → longest/shortest day conditions.</p></details>
+<details><summary>Solar vs Lunar Eclipse</summary><p>Solar: Moon between Sun and Earth. Lunar: Earth between Sun and Moon.</p></details>
+<details><summary>Spring vs Neap Tide</summary><p>Spring = straight-line alignment. Neap = perpendicular alignment.</p></details>
+<details><summary>Flood vs Ebb</summary><p>Flood = low to high. Ebb = high to low.</p></details></section>
+
+<section id="exam" class="card"><h2>16. Exam Focus</h2>
+<ul><li>Earth's shape: Geoid / Oblate spheroid.</li><li>Equatorial radius 6378 km; polar radius 6357 km; mean radius 6371 km.</li><li>Rotation: west to east; 23 h 56 min 4 sec; day/night.</li><li>Revolution: 365 days 6 h 9 min; seasons with axial tilt.</li><li>Perihelion January 3; Aphelion July 4 — source.</li><li>Axial inclination 23.5°; orbital inclination 66.5°.</li><li>Equator 0°; Cancer 23.5°N; Capricorn 23.5°S; Arctic 66.5°N; Antarctic 66.5°S.</li><li>Prime Meridian 0°; International Date Line 180°.</li><li>IST longitude: 82.5° in source.</li><li>Great Circle: largest circle; Equator is the only latitude treated as a great circle.</li><li>June 21 Summer Solstice; December 22 Winter Solstice in source.</li><li>Solar eclipse = new moon; lunar eclipse = full moon in source.</li><li>Spring tide = alignment; neap tide = perpendicular alignment.</li><li>Diurnal = one high + one low; semi-diurnal = two high + two low.</li><li>Tidal energy can generate electricity from predictable tidal rise/fall.</li></ul></section>
+
+<section id="revision" class="card"><h2>17. Quick Revision</h2>
+<div class="grid"><div class="tile"><b>Day 1</b><br>Read shape, motion, latitude & longitude.</div><div class="tile"><b>Day 3</b><br>Recall all important latitudes/longitudes.</div><div class="tile"><b>Day 7</b><br>Revise time, great circle, seasons.</div><div class="tile"><b>Day 14</b><br>Eclipses + tides + MCQs.</div><div class="tile"><b>Day 30</b><br>Full recall + retest.</div></div>
+<h3>One-Page Revision Sheet</h3><div class="callout"><b>EARTH:</b> Geoid/oblate spheroid → <b>ROTATION:</b> 23h56m4s → day/night → <b>REVOLUTION:</b> 365d6h9m → seasons + tilt → <b>LATITUDE:</b> E–W → Equator 0° → <b>LONGITUDE:</b> N–S → Prime Meridian 0° → IDL 180° → <b>IST:</b> 82.5° → <b>SOLSTICE:</b> Jun 21 / Dec 22 → <b>EQUINOX:</b> Mar 21 / Sep 23 → <b>ECLIPSE:</b> solar=new moon, lunar=full moon → <b>TIDES:</b> spring=aligned, neap=perpendicular → <b>ENERGY:</b> tides → electricity.</div></section>
+
+<section id="practice" class="card"><h2>18. Interactive Practice Test</h2><p class="small">15 source-based MCQs. No unsupported facts added.</p><div id="quiz"></div><button class="btn" onclick="checkQuiz()">Check Result</button> <button class="btn alt" onclick="resetQuiz()">Reset</button><div id="score" class="result"></div></section>
+
+<section id="mynotes" class="card"><h2>MY NOTES</h2><p class="small">These fields are separate from AI-generated notes and are saved locally in your browser.</p>
+<div class="notes"><label><b>Personal Notes</b><textarea data-k="personal"></textarea></label><label><b>Doubts</b><textarea data-k="doubts"></textarea></label><label><b>Shortcuts / Mnemonics</b><textarea data-k="mnemonics"></textarea></label><label><b>Important Reminder</b><textarea data-k="reminder"></textarea></label><label><b>Mistakes to Avoid</b><textarea data-k="mistakes"></textarea></label></div></section>
+
+<section id="timer" class="card"><h2>Study Timer</h2><span id="clock">25:00</span><button class="btn" onclick="start()">Start</button> <button class="btn alt" onclick="pause()">Pause</button> <button class="btn" onclick="finish()">Finish & Save</button> <button class="btn alt" onclick="resetTimer()">Reset</button><p id="tm" class="small">25-minute default session.</p></section>
+
+<section id="quality" class="card"><h2>NOTE QUALITY CHECK</h2><ul><li><b>Source pages analyzed:</b> 9 / 9</li><li><b>Unreadable pages:</b> None identified.</li><li><b>Major topics covered:</b> Earth's shape, motion, latitude, longitude, important lines, time zones, great circles, hemispheres, seasons, eclipses, heat zones, tides and tidal energy.</li><li><b>Diagrams/tables detected:</b> Yes — source infographics/maps/diagrams on pages 1–9 reviewed and key concepts reconstructed as responsive visuals.</li><li><b>Questions generated:</b> 15 MCQs.</li><li><b>Potential ambiguities:</b> Some numerical values, country time-zone counts and date/terminology statements are reproduced as stated in the source. Verify against the prescribed textbook if your exam uses a different convention.</li></ul><p class="small"><b>All readable source material was processed.</b></p></section>
+</main>
+<footer>RISE NOTES • Standalone browser-ready HTML • Source-based study note</footer>
+
+<script>
+function menu(){side.classList.toggle('open');ov.classList.toggle('show')}function closeMenu(){side.classList.remove('open');ov.classList.remove('show')}
+document.querySelectorAll('.sidebar a').forEach(a=>a.onclick=closeMenu);
+function theme(){document.body.classList.toggle('dark');localStorage.riseLatTheme=document.body.classList.contains('dark')?'dark':'light'}if(localStorage.riseLatTheme==='dark')document.body.classList.add('dark');
+function save(){localStorage.riseLatSaved='1';document.querySelector('.side-btn').textContent='★ Saved';setTimeout(()=>document.querySelector('.side-btn').textContent='☆ Save Chapter',1300)}
+document.querySelectorAll('textarea[data-k]').forEach(x=>{let k='riseLatNote_'+x.dataset.k;x.value=localStorage[k]||'';x.oninput=()=>localStorage[k]=x.value});
+const qs=[
+["Earth's source-described shape is:","Perfect sphere","Geoid / Oblate spheroid","Cube","Flat disc","B"],
+["Mean radius of Earth in source:","6357 km","6371 km","6378 km","6400 km","B"],
+["Earth rotates from:","East to west","North to south","West to east","South to north","C"],
+["One rotation of Earth is:","24 h exactly","23 h 56 min 4 sec","365 days","12 h 25 min","B"],
+["Axial inclination stated in source:","66.5°","23.5°","82.5°","180°","B"],
+["Tropic of Cancer is:","23.5°S","66.5°N","23.5°N","0°","C"],
+["Prime Meridian is:","180°","82.5°","23.5°","0°","D"],
+["International Date Line is associated with:","0°","23.5°N","82.5°E","180°","D"],
+["IST longitude stated in source:","0°","82.5°","90°","180°","B"],
+["Perihelion means Earth is:","Farthest from Sun","Closest to Sun","Closest to Moon","Farthest from Moon","B"],
+["Solar eclipse occurs when:","Earth is between Sun and Moon","Moon is between Earth and Sun","Sun is between Earth and Moon","None","B"],
+["Spring tide occurs when Sun, Earth and Moon are:","Perpendicular","Aligned in a straight line","At random","At poles","B"],
+["Flood tide is the change from:","High to low","Low to high","Day to night","Summer to winter","B"],
+["A semi-diurnal tide has:","One high and one low","Two high and two low","Only high tides","Only low tides","B"],
+["Tidal energy uses tides to:","Create rainfall","Generate electricity","Change seasons","Create eclipses","B"]];
+function render(){quiz.innerHTML=qs.map((q,i)=>'<div class="q"><b>'+(i+1)+'. '+q[0]+'</b>'+['A','B','C','D'].map((l,j)=>'<label><input type="radio" name="q'+i+'" value="'+l+'"> '+l+'. '+q[j+1]+'</label>').join('')+'</div>').join('')}
+function checkQuiz(){let s=qs.reduce((n,q,i)=>n+((document.querySelector('input[name=q'+i+']:checked')||{}).value===q[5]?1:0),0);score.textContent='Score: '+s+'/15 ('+Math.round(s/15*100)+'%)';localStorage.riseLatScore=s}
+function resetQuiz(){render();score.textContent=''}render();
+let sec=1500,t=null;function paint(){clock.textContent=String(Math.floor(sec/60)).padStart(2,'0')+':'+String(sec%60).padStart(2,'0')}function start(){if(!t)t=setInterval(()=>{if(sec>0){sec--;paint()}else pause()},1000)}function pause(){clearInterval(t);t=null}function resetTimer(){pause();sec=1500;paint();tm.textContent='25-minute default session.'}function finish(){pause();let used=1500-sec;localStorage.riseLatStudy=Number(localStorage.riseLatStudy||0)+used;tm.textContent='Session saved: '+Math.floor(used/60)+' minutes.';resetTimer()}paint();
+</script>
+</body>
+</html>
